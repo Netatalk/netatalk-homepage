@@ -1,0 +1,277 @@
+/* body */
+body {
+    margin: 0em; /* no margin */
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 1em; /* we use relativ sizes below */
+    font-weight: normal;
+    color: #000000;
+    text-decoration: none;
+}
+
+.italic {
+   font-size: 90%; /* 90 percent of surrounding object text size */
+   font-style: italic;
+   text-decoration: none;
+}
+
+/*
+ * format the divs
+ */
+
+
+/* search box */ 
+div.search {
+    position: absolute;
+    left: 20px;
+    top: 145px;
+    font-size: 80%;
+    width: 145px;
+    font-family : Geneva, Arial, Helvetica, sans-serif;
+    border: 1px solid #424242;
+    text-align: center;
+    padding: 2px;
+    margin-bottom: 20px;
+}
+
+.search input {
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid #000000;
+}
+
+.search form {
+    padding: 2px;
+    margin: 2px;
+}
+
+.search p {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* navigation div */
+
+div#navbars{
+    position: absolute;
+    top: 235px;
+    left: 20px;
+    width: 150px;
+    padding: 0;
+}
+
+div.navbar {
+    font-size: 80%;
+    width: 145px;
+    font-family : Geneva, Arial, Helvetica, sans-serif;
+    border: 1px solid #424242;
+    text-align: left;
+    padding: 2px;
+    margin-bottom: 20px;
+}
+
+.navbar p {
+    padding: 0px;
+    padding-top: 1px;
+    padding-left: 2px;
+    padding-bottom: 5px;
+    margin: 0px;
+}
+
+.navbar ul {
+    padding: 0px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    margin: 0px 0px 0px 2px;
+    list-style-type: none;
+}
+
+.navbar h2,
+.search h2 {
+    font-size: 100%;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    background-color: #424242;
+    padding: 0px;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+    margin-top: -2px;
+    margin-left: -2px;
+    margin-right: -2px;
+}
+
+.navbar h3 {
+    font-size: 100%;
+    font-weight: normal;
+    text-align: left;
+    padding: 0px;
+    padding-bottom: 3px;
+    padding-left: 2px;
+    margin: 0px;
+}
+
+
+/* do not display the print header div */
+div#header-print {
+    display: none;
+	margin-left: 210px;
+}
+
+/* main content */
+div#content {
+    background-color: #FFFFFF;
+    /*declare a color together with a contrasting background color*/
+    margin-left: 210px;
+    /*to position the content area to the right of the navigation*/
+    margin-right: 30px;/*breathing space for the text*/
+    padding: 5px;/*space to separate navigation and content*/
+    /*font-family: Geneva, Arial, Helvetica, sans-serif;*/
+    font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 80%;
+    width: auto;
+    border: 0.1px solid #FFFFFF; 
+   /*to insure that NN4.xx renders the background-color of the content area*/
+}
+
+#content a,
+#content a:visited,
+#content a:link,
+#content a:visited {
+	text-decoration: none;
+	color: #660000;
+}
+
+#content a:hover {
+	text-decoration: underline;
+	color: #660000;
+}
+
+
+#content td {
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    text-decoration: none;
+}
+
+/* definitions for the header */
+div#header {
+    margin-top: 15px;
+    margin-left: 0px;
+    height: 109px;
+    white-space: nowrap;
+    background-color: #424242;
+    background-image: url(/gfx/bg.gif);
+    background-repeat: no-repeat;
+    background-position: 380px 0px;
+}
+
+div#logo {
+	position: absolute;
+	margin-top: 0px;
+	margin-left: 25px;
+	width: 225px;
+	height: 109px;
+	padding: 0px;
+	background-image: url(/gfx/netatalklogo.gif);
+	background-repeat: no-repeat;
+}
+
+#logo img {
+    border: 0px;
+}
+
+div#menlinks {
+	position: absolute;
+	left: 272px;
+	top: 102px;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+	white-space: nowrap;
+
+}
+
+div#menlinks a, div#menlinks a:visited {
+    color: #FFFFFF;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+#menlinks img {
+   border: 0px;
+}
+
+/* definitions for the footer */
+div.footer {
+	margin-left: 210px;
+	margin-top: 22px;
+	font-size: 75%;
+	width: 145px;
+	text-align: left;
+	white-space: nowrap;
+}
+
+.footer img {
+   padding-right: 5px;
+}
+
+/* default settings */
+
+h1 {
+	font-size: 150%;
+	font-weight: bold;
+	color: #000000;
+	margin-bottom: 1em;
+}
+
+h2 {
+	font-size: 130%;
+	font-weight: bold;
+	color: #000000;
+	margin-bottom: 1em;
+}
+
+h3 {
+	font-size: 110%;
+	font-weight: bold;
+	color: #000000;
+	margin-top: 1em;
+}
+
+/* we use h4 for the left div titles */
+h4 {
+    font-size: 100%;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    background-color: #424242;
+    padding: 0px;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+    margin-top: -2px;
+    margin-left: -2px; 
+    margin-right: -2px; 
+}
+
+h5 {
+    font-size: 100%;
+    font-weight: normal;
+    text-align: left;
+    padding: 0px;
+    padding-bottom: 3px;
+    padding-left: 2px;
+    margin: 0px;
+}
+
+
+/* no border for images */
+img {
+    border: 0px;
+}
+
+a, a:visited {
+        text-decoration: none;
+        color: #660000;
+}
