@@ -7,27 +7,30 @@
 <h1>Support</h1>
 
 
-<h3>Bug reports</h3>
-<a href="https://sourceforge.net/tracker/?atid=108642&amp;group_id=8642&amp;func=browse">Netatalk Bugtracker at SourceForge</a><br />
+<h3>Bug Reports</h3>
+<a href="https://github.com/Netatalk/netatalk/issues">Netatalk issue tracker at GitHub</a><br />
 
-<h3>Mailing lists</h3>
-<a href="http://lists.sourceforge.net/mailman/listinfo/netatalk-admins">Join instructions for netatalk-admins</a><br />
-<a href="http://lists.sourceforge.net/mailman/listinfo/netatalk-devel">Join instructions for netatalk-devel</a><br />
-
-<h1>Commercial Support</h1>
-Company and individual listings claiming to provide Commercial Netatalk support.
-If any company listed is found no longer to be contactable please notify a project member
-so that the listing can be removed. Thank you.<p/>
-Listings for and by companies and individuals who claim to provide commercial support
-for Netatalk  have been updated as of October, 2010.<p/>
-
-Notice:<br/>
-If you, or your company provides commercial support for Netatalk, and want to be listed, please email a project member
-asking to be listed.<p/>
-The Netatalk Team does not, and can not, provide any assurances about the companies that
-provide commercial support for Netatalk. This list is not an endorsement of any company or individual.<p/>
-
-<h3>Companies</h3>
-<a href="http://www.netafp.com/"NetAFP, Germany (worldwide 3rd-level support)</a><p/>
+<h3>Mailing Lists</h3>
+  <dl> 
+    <dt><strong>netatalk-admins@lists.sf.net</strong></dt>
+    <dd>
+      <p>This list consists of general discussion of Netatalk. The list is automated 
+	 and unmoderated. New releases are announced on this list.</p>
+      <p>Information on how you can join (or resign from) this list can be found <a
+	 href="https://sourceforge.net/projects/netatalk/lists/netatalk-admins">here</a>.</p>
+      <p>A <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-admins/">searchable archive</a> 
+         of this list is available on SourceForge.</p>
+    </dd>
+    <dt><strong>netatalk-devel@lists.sf.net</strong></dt>
+    <dd>
+      <p>This list is the list for developers of Netatalk. If you are interested 
+	 in developing Netatalk, you should probably subscribe to this list.</p>
+      <p>Information on how you can join (or resign from) this list can be found <a
+	 href="https://sourceforge.net/projects/netatalk/lists/netatalk-devel">here</a>.</p>
+      <p>A <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-devel/">searchable archive</a> 
+         of this list is available on SourceForge.
+      </p>
+    </dd>
+  </dl>
 
 <?php include "footer.php"; ?>

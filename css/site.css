@@ -25,7 +25,7 @@ div.search {
     left: 20px;
     top: 145px;
     font-size: 80%;
-    width: 145px;
+    width: 195px;
     font-family : Geneva, Arial, Helvetica, sans-serif;
     border: 1px solid #424242;
     text-align: center;
@@ -55,13 +55,13 @@ div#navbars{
     position: absolute;
     top: 235px;
     left: 20px;
-    width: 150px;
+    width: 200px;
     padding: 0;
 }
 
 div.navbar {
     font-size: 80%;
-    width: 145px;
+    width: 195px;
     font-family : Geneva, Arial, Helvetica, sans-serif;
     border: 1px solid #424242;
     text-align: left;
@@ -121,7 +121,7 @@ div#header-print {
 div#content {
     background-color: #FFFFFF;
     /*declare a color together with a contrasting background color*/
-    margin-left: 210px;
+    margin-left: 260px;
     /*to position the content area to the right of the navigation*/
     margin-right: 30px;/*breathing space for the text*/
     padding: 5px;/*space to separate navigation and content*/

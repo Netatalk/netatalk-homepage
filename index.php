@@ -4,69 +4,55 @@ $title = "Networking Apple Macintosh through Open Source";
 include "header.php";
 ?>
 
-<div id="navbars">
-  <!-- the left navigation/search bar -->
-  <div class="navbar"> 
-    <h2>current releases</h2>
-    <p><b>stable</b></p>
-    <ul>
-      <li><a title="download 3.1.13 bzip2 compressed" href="http://prdownloads.sourceforge.net/netatalk/netatalk-3.1.13.tar.bz2?download">&nbsp;3.1.13
-        (bzip2)</a></li>
-      <li><a title="download 3.1.13 gzip compressed" href="http://prdownloads.sourceforge.net/netatalk/netatalk-3.1.13.tar.gz?download">&nbsp;3.1.13
-        (gzip)</a></li>
-      <li><a title="view 3.1.13 Release Notes" href="http://netatalk.sourceforge.net/3.1/ReleaseNotes3.1.13.html">&nbsp;Release Notes </a></li>
-    </ul>
-    <p><b>previous stable</b></p>
-    <ul>
-      <li><a title="download 3.0.8 bzip2 compressed" href="http://prdownloads.sourceforge.net/netatalk/netatalk-3.0.8.tar.bz2?download">&nbsp;3.0.8
-        (bzip2)</a></li>
-      <li><a title="download 3.0.8 gzip compressed" href="http://prdownloads.sourceforge.net/netatalk/netatalk-3.0.8.tar.gz?download">&nbsp;3.0.8
-        (gzip)</a></li>
-      <li><a title="view 3.0.8 Release Notes" href="http://netatalk.sourceforge.net/3.0/ReleaseNotes3.0.8.html">&nbsp;Release Notes </a></li>
-    </ul>
-  </div>
-  <div class="navbar"> 
-    <h2>documentation</h2>
-    <h3><b>3.1 documentation</b></h3>
-      <p>
-      <a href="/3.1/htmldocs/">&nbsp;Manual (HTML) </a><br />
-      </p>
-    <h3><b>3.0 documentation</b></h3>
-      <p>
-      <a href="/3.0/htmldocs/">&nbsp;Manual (HTML) </a><br />
-      </p>
-    <h3><b>2.2 documentation</b></h3>
-      <p>
-      <a href="/2.2/htmldocs/">&nbsp;Manual (HTML) </a><br />
-      </p>
-  </div>
-  <div class="navbar">
-    <h2>Support</h2>
-    <p>
-       <h3><a title="Support" href="http://netatalk.sourceforge.net/support.php">Support</a></h3>
-    </p>
-  </div>
-  <div class="navbar">
-    <h2>Netatalk Wiki</h2>
-    <p>
-       <h3><a title="Wiki" href="http://netatalk.sourceforge.net/wiki/">Wiki</a></h3>
-    </p>
-  </div>
-  <div class="navbar">
-    <h2>Coverity</h2>
-      <p><a href="https://scan.coverity.com/projects/netatalk">
-        <img alt="Coverity Scan Build Status"
-           src="https://scan.coverity.com/projects/261/badge.svg"/>
-      </a></p>
-  </div>
-</div> <!-- /the left navigation/search bar -->
-
 <div id="content"> 
-  <h1>Welcome to netatalk.sourceforge.net!</h1>
+  <h1>Welcome to netatalk.sourceforge.io!</h1>
+
   <p>Netatalk is a freely-available Open Source AFP fileserver.
      A UNIX, Linux or BSD system running Netatalk is capable of serving
      many Macintosh clients simultaneously as an
     AppleShare file server (AFP).</p>
+
+<hr />
+  <small>25th of February 2023</small>
+  <h1>Netatalk 2.2.8 is available!</h1>
+  <p>The Netatalk development team is proud to announce version 2.2.8
+  of the Netatalk File Sharing suite. This release contains a range of bugfixes and
+  quality of life improvements.
+  All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.8.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-2-2-8">ReleaseNotes</a>.</p>
+
+<hr />
+  <small>10th of January 2023</small>
+  <h1>Netatalk 3.1.14 is available!</h1>
+
+  <p>The Netatalk development team is proud to announce latest release
+  of the Netatalk 3.1 release series. Please update to this latest
+  release as soon as possible, since it includes fixes for a critical
+  crash in afpd that was introduced with the security improvements in
+  3.1.13, in addition to a range of other minor improvements.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-3-1-14">ReleaseNotes</a>.</p>
+
+<hr />
+  <small>10th of January 2023</small>
+  <h1>Netatalk 2.2.7 is available!</h1>
+  <p>The Netatalk development team is proud to announce version 2.2.7
+  of the Netatalk File Sharing suite. This release fixes the following major
+  security issues: CVE-2018-1160, CVE-2022-23121, CVE-2022-23123, and CVE-2022-23125.
+  In addition, it restores full compatibility with Linux, while introducing cross-platform
+  systemd service support. Finally, a large number of 3.1 backports and community patches
+  have been adopted for improved usability and stability.
+  All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.7.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-2-2-7">ReleaseNotes</a>.</p>
+
+<hr />
+  <small>10th of January 2023</small>
+  <h1>Netatalk releases moving to GitHub</h1>
+
+  <p>Future Netatalk releases and release notes will be hosted on GitHub.
+  Over the last few years, the git repository, wiki, and issue tracker have been gradually moved to GitHub. This last move represents the next step in this process. Legacy release archives will remain on SourceForge and so will this website as well as the mailing lists.</p>
 
 <hr />
   <small>22th of March 2022</small>
@@ -86,10 +72,21 @@ include "header.php";
 
   <p>The Netatalk development team is proud to announce latest release
   of the Netatalk 3.1 release series. Please update to this latest
-  release as soon as possible as this releases fixes an major security
+  release as soon as possible as this releases fixes a major security
   issue (CVE-2018-1160).</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/3.1/ReleaseNotes3.1.12.html">ReleaseNotes</a>.</p>
+
+<hr />
+  <small>9rd of July 2017</small>
+  <h1>Netatalk 2.2.6 is available!</h1>
+  <p>The Netatalk development team is proud to announce version 2.2.6
+  of the Netatalk File Sharing suite. This release contains critical
+  fixes for AppleTalk networks coexisting with TCP/IP networks. In
+  addition, it improves compatibility with NetBSD.
+  All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.6.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="/2.2/ReleaseNotes2.2.6.html">ReleaseNotes</a>.</p>
 
 <hr />
   <small>15th of March 2017</small>
@@ -227,11 +224,11 @@ include "header.php";
   <p>For a list of older releases go to the
      <a href="archive.php">release archive</a>.</p>
 
-  <p>Netatalk is licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU 
-    General Public License</a>.</p>
+  <p>Netatalk is licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU 
+    General Public License 2.0</a>.</p>
   <p>If you are interested in contributing to the development process or just 
-    want to give Netatalk a try, please visit our sourceforge project page at 
-    <a href="http://sourceforge.net/projects/netatalk/">http://sourceforge.net/projects/netatalk/</a>.</p>
+    want to give Netatalk a try, please visit our
+    <a href="https://github.com/Netatalk/Netatalk">GitHub project page</a>.</p>
 
 <hr />
 
