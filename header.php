@@ -64,17 +64,17 @@
     <h2>current releases</h2>
     <p><b>stable</b></p>
     <ul>
-      <li><a title="download 3.1.14 bzip2 compressed" href="http://prdownloads.sourceforge.net/netatalk/netatalk-3.1.14.tar.bz2?download">&nbsp;3.1.14
+      <li><a title="download 3.1.14 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk/3.1.14/netatalk-3.1.14.tar.bz2/download">&nbsp;3.1.14
         (bzip2)</a></li>
-      <li><a title="download 3.1.14 gzip compressed" href="http://prdownloads.sourceforge.net/netatalk/netatalk-3.1.14.tar.gz?download">&nbsp;3.1.14
+      <li><a title="download 3.1.14 gzip compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk/3.1.14/netatalk-3.1.14.tar.gz/download">&nbsp;3.1.14
         (gzip)</a></li>
       <li><a title="view 3.1.14 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-14">&nbsp;Release Notes </a></li>
     </ul>
     <p><b>legacy (AppleTalk support)</b></p>
     <ul>
-      <li><a title="download 2.2.8 bzip2 compressed" href="http://prdownloads.sourceforge.net/netatalk/netatalk-2.2.8.tar.bz2?download">&nbsp;2.2.8
+      <li><a title="download 2.2.8 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk/2.2.8/netatalk-2.2.8.tar.bz2/download">&nbsp;2.2.8
         (bzip2)</a></li>
-      <li><a title="download 2.2.8 gzip compressed" href="http://prdownloads.sourceforge.net/netatalk/netatalk-2.2.8.tar.gz?download">&nbsp;2.2.8
+      <li><a title="download 2.2.8 gzip compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk/2.2.8/netatalk-2.2.8.tar.gz/download">&nbsp;2.2.8
         (gzip)</a></li>
       <li><a title="view 2.2.8 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-8">&nbsp;Release Notes </a></li>
     </ul>
