@@ -64,19 +64,19 @@
     <h2>current releases</h2>
     <p><b>stable</b></p>
     <ul>
-      <li><a title="download 3.1.14 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk/3.1.14/netatalk-3.1.14.tar.bz2/download">&nbsp;3.1.14
+      <li><a title="download 3.1.15 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-3-1-15/netatalk-3.1.15.tar.bz2/download">&nbsp;3.1.15
         (bzip2)</a></li>
-      <li><a title="download 3.1.14 gzip compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk/3.1.14/netatalk-3.1.14.tar.gz/download">&nbsp;3.1.14
+      <li><a title="download 3.1.15 gzip compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-3-1-15/netatalk-3.1.15.tar.gz/download">&nbsp;3.1.15
         (gzip)</a></li>
-      <li><a title="view 3.1.14 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-14">&nbsp;Release Notes </a></li>
+      <li><a title="view 3.1.15 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-15">&nbsp;Release Notes </a></li>
     </ul>
     <p><b>legacy (AppleTalk support)</b></p>
     <ul>
-      <li><a title="download 2.2.8 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk/2.2.8/netatalk-2.2.8.tar.bz2/download">&nbsp;2.2.8
+      <li><a title="download 2.2.9 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-2-2-9/netatalk-2.2.9.tar.bz2/download">&nbsp;2.2.9
         (bzip2)</a></li>
-      <li><a title="download 2.2.8 gzip compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk/2.2.8/netatalk-2.2.8.tar.gz/download">&nbsp;2.2.8
+      <li><a title="download 2.2.9 gzip compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-2-2-9/netatalk-2.2.9.tar.gz/download">&nbsp;2.2.9
         (gzip)</a></li>
-      <li><a title="view 2.2.8 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-8">&nbsp;Release Notes </a></li>
+      <li><a title="view 2.2.9 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-9">&nbsp;Release Notes </a></li>
     </ul>
   </div>
   <div class="navbar">
