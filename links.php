@@ -20,8 +20,8 @@ Browse and Search <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-a
 Browse and Search <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-devel/">netatalk-devel</a><br />
 
 <h3>Join Listserves</h3>
-<a href="http://lists.sourceforge.net/mailman/listinfo/netatalk-admins">Join instructions for netatalk-admins</a><br />
-<a href="http://lists.sourceforge.net/mailman/listinfo/netatalk-devel">Join instructions for netatalk-devel</a><br />
+<a href="https://lists.sourceforge.net/mailman/listinfo/netatalk-admins">Join instructions for netatalk-admins</a><br />
+<a href="https://lists.sourceforge.net/mailman/listinfo/netatalk-devel">Join instructions for netatalk-devel</a><br />
 
 <h3>Other Projects Built on Netatalk</h3>
 <a href="https://macipgw.sourceforge.io">macipgw</a><br />
