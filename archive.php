@@ -236,16 +236,16 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/2.1/ReleaseNotes2.1.html">ReleaseNotes</a>.</p>
   <p>In case, you want to upgrade an existing Netatalk 1.x installation, ensure 
-    you carefully read the <a href="http://netatalk.sourceforge.net/2.0/htmldocs/upgrade.html">upgrade 
+    you carefully read the <a href="/2.0/htmldocs/upgrade.html">upgrade
     guide</a> before and follow the steps outlined there.</p>
 
 <hr />
   <small>10th of November 2009</small>
   <h1>Netatalk 2.0.5 is available!</h1>
-  <p>The Netatalk development team is proud to announce version 2.0.5 of the Netatalk File Sharing suite. This is the latest stable version. It contains several important bugfixes, including a more complete security fix for <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5718">CVE-2008-5718</a>.  Time Machine support has been added with the new volume option "tm".  All users are encouraged to upgrade their systems to 2.0.5.</p>
+  <p>The Netatalk development team is proud to announce version 2.0.5 of the Netatalk File Sharing suite. This is the latest stable version. It contains several important bugfixes, including a more complete security fix for <a href="https://www.cve.org/CVERecord?id=CVE-2008-5718">CVE-2008-5718</a>.  Time Machine support has been added with the new volume option "tm".  All users are encouraged to upgrade their systems to 2.0.5.</p>
   <p>For a list of recent changes see the <a href="/2.0/NEWS.html">NEWS</a> file.</p>
   <p>In case, you want to upgrade an existing Netatalk 1.x installation, ensure 
-    you carefully read the <a href="http://netatalk.sourceforge.net/2.0/htmldocs/upgrade.html">upgrade 
+    you carefully read the <a href="/2.0/htmldocs/upgrade.html">upgrade
     guide</a> before and follow the steps outlined there. If you made use of symlinks 
     inside Netatalk shares consider setting up a test installation with 2.0 before 
     migrating since Netatalk 2.0 provides no support for symlinks any longer.</p>
@@ -256,7 +256,7 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
     General Public License 2.0</a>.</p>
   <p>If you are interested in contributing to the development process or just
     want to give Netatalk a try, please visit our
-    <a href="https://github.com/Netatalk/Netatalk">GitHub project page</a>.</p>
+    <a href="https://github.com/Netatalk/netatalk">GitHub project page</a>.</p>
 </div>
 
 <?php include "footer.php"; ?>
