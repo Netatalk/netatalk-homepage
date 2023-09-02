@@ -72,11 +72,11 @@
     </ul>
     <p><b>legacy (AppleTalk support)</b></p>
     <ul>
-      <li><a title="download 2.2.9 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-2-2-9/netatalk-2.2.9.tar.bz2/download">&nbsp;2.2.9
+      <li><a title="download 2.2.10 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-2-2-10/netatalk-2.2.10.tar.bz2/download">&nbsp;2.2.10
         (bzip2)</a></li>
-      <li><a title="download 2.2.9 gzip compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-2-2-9/netatalk-2.2.9.tar.gz/download">&nbsp;2.2.9
+      <li><a title="download 2.2.10 gzip compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-2-2-10/netatalk-2.2.10.tar.gz/download">&nbsp;2.2.10
         (gzip)</a></li>
-      <li><a title="view 2.2.9 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-9">&nbsp;Release Notes </a></li>
+      <li><a title="view 2.2.10 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-10">&nbsp;Release Notes </a></li>
     </ul>
   </div>
   <div class="navbar">
