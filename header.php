@@ -1,9 +1,9 @@
-<?php echo "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?".">"; ?>
+<?php echo "<?xml version=\"1.0\" encoding=\"utf-8\"?".">"; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="Netatalk - Unix file and print services for Apple clients" />
 <meta name="keywords" content="Netatalk, AFP, AFP Server, File Server, PAP, Print Server, Appletalk, Mac, OSX, OS X, OS9, OS 9" />
 <meta name="language" content="EN" />
@@ -92,20 +92,14 @@
   </div>
   <div class="navbar">
     <h2>community</h2>
-    <p>
        <h3><a title="Support" href="http://netatalk.sourceforge.net/support.php">Support</a></h3>
-    </p>
-    <p>
        <h3><a title="Wiki" href="https://github.com/Netatalk/netatalk/wiki">Wiki</a></h3>
-    </p>
   </div>
   <div class="navbar">
     <h2>development</h2>
-    <p>
        <h3><a title="Project Home (GitHub)" href="https://github.com/Netatalk/netatalk">Project Home (GitHub)</a></h3>
-    </p>
     <p><a href="https://sonarcloud.io/summary/overall?id=Netatalk_netatalk">
-      <img alt="Sonarcloud Scan Build Status" height=30
+      <img alt="Sonarcloud Scan Build Status" height="30"
          src="https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg"/>
     </a></p>
   </div>
