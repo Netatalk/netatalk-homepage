@@ -5,7 +5,11 @@ Netatalk static website written in PHP
 - Create a news story at the top of index.php.
 - Move an older news story to archive.php.
 - Update the current releases left rail in header.php.
-- Finally, run the upload.sh script to upload the updated sources to the web server.
+- Finally, as an admin, upload the updated sources to the web server:
+
+```
+scp -r *.php css gfx $USER@web.sourceforge.net:/home/project-web/netatalk/htdocs/
+```
 
 # See also
 - [Netatalk release process wiki](https://github.com/Netatalk/netatalk/wiki/Developer-Notes#user-content-Making_a_release)
