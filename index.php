@@ -13,6 +13,16 @@ include "header.php";
     AppleShare file server (AFP).</p>
 
 <hr />
+  <small>11th of September 2023</small>
+  <h1>Netatalk 3.1.16 is available!</h1>
+
+  <p>The Netatalk development team is proud to announce latest release
+  of the Netatalk 3.1 release series. It includes fixes for the "Invalid metadata EA" error, among other improvements.
+  All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.16.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-3-1-16">Release Notes</a>.</p>
+
+<hr />
   <small>17th of August 2023</small>
   <h1>Netatalk 2.2.10 is available!</h1>
   <p>The Netatalk development team is proud to announce version 2.2.10
@@ -233,14 +243,6 @@ include "header.php";
      This is the first update to the 3.0 release series. All users are encouraged to upgrade their systems to 3.0.8.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/3.0/ReleaseNotes3.0.8.html">Release Notes</a>.</p>
-
-<hr />
-  <small>2nd of Feb 2014</small>
-  <h1>Netatalk 3.0.7 is available!</h1>
-  <p>The Netatalk development team is proud to announce version 3.0.7 of the Netatalk File Sharing suite.
-     This is the first update to the 3.0 release series. All users are encouraged to upgrade their systems to 3.0.7.</p>
-  <p>For a summary of news and a detailed list of changes see the
-     <a href="/3.0/ReleaseNotes3.0.7.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older releases go to the

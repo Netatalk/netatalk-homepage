@@ -8,6 +8,14 @@ include "header.php";
   <h1>Older releases archive</h1>
 
 <hr />
+  <small>2nd of Feb 2014</small>
+  <h1>Netatalk 3.0.7 is available!</h1>
+  <p>The Netatalk development team is proud to announce version 3.0.7 of the Netatalk File Sharing suite.
+     This is the first update to the 3.0 release series. All users are encouraged to upgrade their systems to 3.0.7.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="/3.0/ReleaseNotes3.0.7.html">Release Notes</a>.</p>
+
+<hr />
   <small>28th of Oct 2013</small>
   <h1>Netatalk 3.1.0 is available!</h1>
   <p>The Netatalk development team is proud to announce version 3.1.0 of the Netatalk File Sharing suite.
