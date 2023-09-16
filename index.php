@@ -101,8 +101,8 @@ include "header.php";
   <small>10th of January 2023</small>
   <h1>Netatalk releases moving to GitHub</h1>
 
-  <p>Future Netatalk releases and release notes will be hosted on GitHub.
-  Over the last few years, the git repository, wiki, and issue tracker have been gradually moved to GitHub. This last move represents the next step in this process. Legacy release archives will remain on SourceForge and so will this website as well as the mailing lists.</p>
+  <p>Future Netatalk releases and release notes will be hosted on <a href="https://github.com/Netatalk/netatalk">GitHub</a>.
+  Over the last several years, the git repository, wiki, and issue tracker have been gradually moved to GitHub. This last move represents the next step in this process. Legacy release archives will remain on SourceForge, and so will this website as well as the mailing lists.</p>
 
 <hr />
   <small>22th of March 2022</small>
