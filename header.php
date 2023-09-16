@@ -64,11 +64,11 @@
     <h2>current releases</h2>
     <p><b>stable</b></p>
     <ul>
-      <li><a title="download 3.1.16 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-3-1-16/netatalk-3.1.16.tar.bz2/download">&nbsp;3.1.16
+      <li><a title="download 3.1.17 xz compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-3-1-17/netatalk-3.1.17.tar.xz/download">&nbsp;3.1.17
+        (xz)</a></li>
+      <li><a title="download 3.1.17 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-3-1-17/netatalk-3.1.17.tar.bz2/download">&nbsp;3.1.17
         (bzip2)</a></li>
-      <li><a title="download 3.1.16 gzip compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-3-1-16/netatalk-3.1.16.tar.gz/download">&nbsp;3.1.16
-        (gzip)</a></li>
-      <li><a title="view 3.1.16 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-16">&nbsp;Release Notes </a></li>
+      <li><a title="view 3.1.17 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-17">&nbsp;Release Notes </a></li>
     </ul>
     <p><b>legacy (AppleTalk support)</b></p>
     <ul>
