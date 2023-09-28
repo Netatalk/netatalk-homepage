@@ -17,7 +17,8 @@ include "header.php";
   <h1>Netatalk Webmin modules updated</h1>
 
   <p>
-    The Webmin modules for Netatalk 3 as well as Netatalk 2 have been updated for Webmin v2. Also included is numerous bugfixes as well as broader support for server settings. Find the release notes and tarballs for <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-0.2">Netatalk 3 module v0.2</a> and <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.0">Netatalk 2 module v1.0</a>.
+    The Webmin modules for Netatalk 3 as well as Netatalk 2 have been updated for Webmin v2. Also included is numerous bugfixes as well as broader support for server settings.</p>
+    <p>For more information, see the release notes for <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-0.2">Netatalk 3 module v0.2</a> and <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.0">Netatalk 2 module v1.0</a>.
   </p>
 
 <hr />
