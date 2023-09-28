@@ -21,7 +21,7 @@
 <link rel="home" href="http://www.sourceforge.net/projects/netatalk" title="Netatalk Sourceforge" />
 <link rel="bookmark" href="/3.1/htmldocs/" title="Netatalk Documentation" />
 <link rel="bookmark" href="https://github.com/Netatalk/netatalk/wiki" title="wiki" />
-<link rel="bookmark" href="https://sourceforge.net/projects/netatalk/files/netatalk/" title="Downloads" />
+<link rel="bookmark" href="https://sourceforge.net/projects/netatalk/files/" title="Downloads" />
 
 <title><?php echo ( $title ? ("Netatalk - ".$title) : "Netatalk" ); ?></title>
 </head>
