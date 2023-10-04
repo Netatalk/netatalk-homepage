@@ -70,7 +70,7 @@
         (bzip2)</a></li>
       <li><a title="view 3.1.17 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-17">&nbsp;Release Notes </a></li>
     </ul>
-    <p><b>legacy (AppleTalk support)</b></p>
+    <p><b>old (AppleTalk support)</b></p>
     <ul>
       <li><a title="download 2.2.10 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-2-2-10/netatalk-2.2.10.tar.bz2/download">&nbsp;2.2.10
         (bzip2)</a></li>
@@ -92,12 +92,14 @@
   </div>
   <div class="navbar">
     <h2>community</h2>
-       <h3><a title="Support" href="http://netatalk.sourceforge.net/support.php">Support</a></h3>
+       <h3><a title="Mailing Lists" href="https://sourceforge.net/p/netatalk/mailman/">Mailing Lists</a></h3>
        <h3><a title="Wiki" href="https://github.com/Netatalk/netatalk/wiki">Wiki</a></h3>
+       <h3><a title="Discussions" href="https://github.com/Netatalk/netatalk/discussions">Discussions</a></h3>
   </div>
   <div class="navbar">
     <h2>development</h2>
-       <h3><a title="Project Home (GitHub)" href="https://github.com/Netatalk/netatalk">Project Home (GitHub)</a></h3>
+       <h3><a title="Code Repository" href="https://github.com/Netatalk/netatalk">Code Repository</a></h3>
+       <h3><a title="How to Contribute" href="https://github.com/Netatalk/netatalk/wiki/Developer-Notes">How to Contribute</a></h3>
     <p><a href="https://sonarcloud.io/summary/overall?id=Netatalk_netatalk">
       <img alt="Sonarcloud Scan Build Status" height="30"
          src="https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg"/>
