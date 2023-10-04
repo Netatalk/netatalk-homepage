@@ -22,6 +22,7 @@
 <link rel="bookmark" href="/3.1/htmldocs/" title="Netatalk Documentation" />
 <link rel="bookmark" href="https://github.com/Netatalk/netatalk/wiki" title="wiki" />
 <link rel="bookmark" href="https://sourceforge.net/projects/netatalk/files/" title="Downloads" />
+<link rel="icon" type="image/x-icon" href="/gfx/favicon.ico">
 
 <title><?php echo ( $title ? ("Netatalk - ".$title) : "Netatalk" ); ?></title>
 </head>
