@@ -27,6 +27,7 @@ in developing Netatalk, you should subscribe to this list.</li>
 
 <ul>
 <li><a href="CVE-2023-42464.php">CVE-2023-42464</a></li>
+<li><a href="CVE-2022-22995.php">CVE-2022-22995</a></li>
 </ul>
 
 <?php include "footer.php"; ?>
