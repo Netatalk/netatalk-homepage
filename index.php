@@ -13,6 +13,16 @@ include "header.php";
     AppleShare file server (AFP).</p>
 
 <hr />
+  <small>5th of October 2023</small>
+  <h1>Netatalk 3.1.18 is available!</h1>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 3.1 release series. It includes a patch for security issue <a href="CVE-2022-22995.php">CVE-2022-22995</a>.
+  All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.18.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-3-1-18">Release Notes</a>.</p>
+
+<hr />
   <small>22nd of September 2023</small>
   <h1>Netatalk Webmin modules updated</h1>
 
