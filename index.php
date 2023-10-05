@@ -26,7 +26,7 @@ include "header.php";
   <h1>Netatalk 3.1.17 is available!</h1>
 
   <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 3.1 release series. It includes a 0-day fix for security issue <a href="https://www.cve.org/CVERecord?id=CVE-2023-42464">CVE-2023-42464</a>.
+  of the Netatalk 3.1 release series. It includes a 0-day fix for security issue <a href="CVE-2023-42464.php">CVE-2023-42464</a>.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.17.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-3-1-17">Release Notes</a>.</p>
