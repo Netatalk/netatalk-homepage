@@ -281,7 +281,7 @@ include "header.php";
     General Public License 2.0</a>.</p>
   <p>If you are interested in contributing to the development process or just 
     want to give Netatalk a try, please visit our
-    <a href="https://github.com/Netatalk/Netatalk">GitHub project page</a>.</p>
+    <a href="https://github.com/Netatalk/netatalk">GitHub project page</a>.</p>
 
 <hr />
 
