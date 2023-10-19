@@ -13,7 +13,7 @@ include "header.php";
 
 <hr />
   <small>5th of October 2023</small>
-  <h1>Netatalk 3.1.18 is available!</h1>
+  <h1>Netatalk 3.1.18 is available</h1>
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. It includes a patch for security issue <a href="CVE-2022-22995.php">CVE-2022-22995</a>.
@@ -32,7 +32,7 @@ include "header.php";
 
 <hr />
   <small>16th of September 2023</small>
-  <h1>Netatalk 3.1.17 is available!</h1>
+  <h1>Netatalk 3.1.17 is available</h1>
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. It includes a 0-day fix for security issue <a href="CVE-2023-42464.php">CVE-2023-42464</a>.
@@ -42,7 +42,7 @@ include "header.php";
 
 <hr />
   <small>11th of September 2023</small>
-  <h1>Netatalk 3.1.16 is available!</h1>
+  <h1>Netatalk 3.1.16 is available</h1>
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. It includes fixes for the "Invalid metadata EA" error, among other improvements.
@@ -52,7 +52,7 @@ include "header.php";
 
 <hr />
   <small>17th of August 2023</small>
-  <h1>Netatalk 2.2.10 is available!</h1>
+  <h1>Netatalk 2.2.10 is available</h1>
   <p>The Netatalk development team is proud to announce version 2.2.10
   of the Netatalk File Sharing suite. This release contains a range of bugfixes and
   quality of life improvements. Additionally, Netatalk now runs on macOS Ventura hosts.
@@ -62,7 +62,7 @@ include "header.php";
 
 <hr />
   <small>28th of April 2023</small>
-  <h1>Netatalk 3.1.15 is available!</h1>
+  <h1>Netatalk 3.1.15 is available</h1>
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. It includes fixes for security issues <a href="https://www.cve.org/CVERecord?id=CVE-2022-43634">CVE-2022-43634</a> and
@@ -72,7 +72,7 @@ include "header.php";
 
 <hr />
   <small>26th of April 2023</small>
-  <h1>Netatalk 2.2.9 is available!</h1>
+  <h1>Netatalk 2.2.9 is available</h1>
   <p>The Netatalk development team is proud to announce version 2.2.9
   of the Netatalk File Sharing suite. This release contains a fix for security issue <a href="https://www.cve.org/CVERecord?id=CVE-2022-45188">CVE-2022-45188</a>
   in addition to other minor bug fixes.
@@ -82,7 +82,7 @@ include "header.php";
 
 <hr />
   <small>25th of February 2023</small>
-  <h1>Netatalk 2.2.8 is available!</h1>
+  <h1>Netatalk 2.2.8 is available</h1>
   <p>The Netatalk development team is proud to announce version 2.2.8
   of the Netatalk File Sharing suite. This release contains a range of bugfixes and
   quality of life improvements.
@@ -92,7 +92,7 @@ include "header.php";
 
 <hr />
   <small>10th of January 2023</small>
-  <h1>Netatalk 3.1.14 is available!</h1>
+  <h1>Netatalk 3.1.14 is available</h1>
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. Please update to this latest
@@ -104,7 +104,7 @@ include "header.php";
 
 <hr />
   <small>10th of January 2023</small>
-  <h1>Netatalk 2.2.7 is available!</h1>
+  <h1>Netatalk 2.2.7 is available</h1>
   <p>The Netatalk development team is proud to announce version 2.2.7
   of the Netatalk File Sharing suite. This release fixes the following major
   security issues: <a href="https://www.cve.org/CVERecord?id=CVE-2018-1160">CVE-2018-1160</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23121">CVE-2022-23121</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23123">CVE-2022-23123</a>, and <a href="https://www.cve.org/CVERecord?id=CVE-2022-23125">CVE-2022-23125</a>.
@@ -124,7 +124,7 @@ include "header.php";
 
 <hr />
   <small>22th of March 2022</small>
-  <h1>Netatalk 3.1.13 is available!</h1>
+  <h1>Netatalk 3.1.13 is available</h1>
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. Please update to this latest
@@ -136,7 +136,7 @@ include "header.php";
 
 <hr />
   <small>20th of December 2018</small>
-  <h1>Netatalk 3.1.12 is available!</h1>
+  <h1>Netatalk 3.1.12 is available</h1>
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. Please update to this latest
@@ -147,7 +147,7 @@ include "header.php";
 
 <hr />
   <small>9rd of July 2017</small>
-  <h1>Netatalk 2.2.6 is available!</h1>
+  <h1>Netatalk 2.2.6 is available</h1>
   <p>The Netatalk development team is proud to announce version 2.2.6
   of the Netatalk File Sharing suite. This release contains critical
   fixes for AppleTalk networks coexisting with TCP/IP networks. In
@@ -158,7 +158,7 @@ include "header.php";
 
 <hr />
   <small>15th of March 2017</small>
-  <h1>Netatalk 3.1.11 is available!</h1>
+  <h1>Netatalk 3.1.11 is available</h1>
   <p>The Netatalk development team is proud to announce the latest release of
   the Netatalk 3.1 release series. Users are encouraged to update their
   servers to the 3.1 release series which is the stable and supported
@@ -168,7 +168,7 @@ include "header.php";
 
 <hr />
   <small>12th of September 2016</small>
-  <h1>Netatalk 3.1.10 is available!</h1>
+  <h1>Netatalk 3.1.10 is available</h1>
   <p>The Netatalk development team is proud to announce the latest release of
   the Netatalk 3.1 release series. Users are encouraged to update their
   servers to the 3.1 release series which is the stable and supported
@@ -178,7 +178,7 @@ include "header.php";
 
 <hr />
   <small>19th of July 2016</small>
-  <h1>Netatalk 3.1.9 is available!</h1>
+  <h1>Netatalk 3.1.9 is available</h1>
   <p>The Netatalk development team is proud to announce the latest release of
   the Netatalk 3.1 release series. Users are encouraged to update their
   servers to the 3.1 release series which is the stable and supported
@@ -188,7 +188,7 @@ include "header.php";
 
 <hr />
   <small>29th of December 2015</small>
-  <h1>Netatalk 3.1.8 is available!</h1>
+  <h1>Netatalk 3.1.8 is available</h1>
   <p>The Netatalk development team is proud to announce the latest release of
   the Netatalk 3.1 release series. Users are encouraged to update their
   servers to the 3.1 release series which is the stable and supported
@@ -198,7 +198,7 @@ include "header.php";
 
 <hr />
   <small>28th of November 2014</small>
-  <h1>Netatalk 3.1.7 is available!</h1>
+  <h1>Netatalk 3.1.7 is available</h1>
   <p>The Netatalk development team is proud to announce the latest release of
   the Netatalk 3.1 release series. Users are encouraged to update their
   servers to the 3.1 release series which is the stable and supported
@@ -208,7 +208,7 @@ include "header.php";
 
 <hr />
   <small>12th of August 2014</small>
-  <h1>Netatalk 3.1.6 is available!</h1>
+  <h1>Netatalk 3.1.6 is available</h1>
   <p>The Netatalk development team is proud to announce the latest release of
   the Netatalk 3.1 release series. Users are encouraged to update their
   servers to the 3.1 release series which is the stable and supported
@@ -218,7 +218,7 @@ include "header.php";
 
 <hr />
   <small>12th of August 2014</small>
-  <h1>Netatalk 3.1.5 is available!</h1>
+  <h1>Netatalk 3.1.5 is available</h1>
   <p>The Netatalk development team is proud to announce the latest release of
   the Netatalk 3.1 release series. Users are encouraged to update their
   servers to the 3.1 release series which is the stable and supported
@@ -228,7 +228,7 @@ include "header.php";
 
 <hr />
   <small>7th of August 2014</small>
-  <h1>Netatalk 3.1.4 is available!</h1>
+  <h1>Netatalk 3.1.4 is available</h1>
   <p>The Netatalk development team is proud to announce the latest release of
   the Netatalk 3.1 release series. Users are encouraged to update their
   servers to the 3.1 release series which is the stable and supported
@@ -238,7 +238,7 @@ include "header.php";
 
 <hr />
   <small>3rd of July 2014</small>
-  <h1>Netatalk 3.1.3 is available!</h1>
+  <h1>Netatalk 3.1.3 is available</h1>
   <p>The Netatalk development team is proud to announce the latest release of
   the Netatalk 3.1 release series. Users are encouraged to update their
   servers to the 3.1 release series which is the stable and supported
@@ -248,7 +248,7 @@ include "header.php";
 
 <hr />
   <small>3rd of June 2014</small>
-  <h1>Netatalk 3.1.2 is available!</h1>
+  <h1>Netatalk 3.1.2 is available</h1>
   <p>The Netatalk development team is proud to announce the third release of
   the Netatalk 3.1 release series. Users are encourage to update their
   servers to the 3.1 release series which can be considered stable enough
@@ -258,7 +258,7 @@ include "header.php";
 
 <hr />
   <small>13th of Mar 2014</small>
-  <h1>Netatalk 3.1.1 is available!</h1>
+  <h1>Netatalk 3.1.1 is available</h1>
   <p>The Netatalk development team is proud to announce version 3.1.1 of the Netatalk File Sharing suite.
      This is the second release of the 3.1 release series. Early adopters are encouraged to upgrade their systems to 3.1.1.</p>
   <p>For a summary of news and a detailed list of changes see the
@@ -266,7 +266,7 @@ include "header.php";
 
 <hr />
   <small>21st of Feb 2014</small>
-  <h1>Netatalk 3.0.8 is available!</h1>
+  <h1>Netatalk 3.0.8 is available</h1>
   <p>The Netatalk development team is proud to announce version 3.0.8 of the Netatalk File Sharing suite.
      This is the first update to the 3.0 release series. All users are encouraged to upgrade their systems to 3.0.8.</p>
   <p>For a summary of news and a detailed list of changes see the
