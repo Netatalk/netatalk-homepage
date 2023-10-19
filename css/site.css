@@ -85,6 +85,13 @@ div.navbar {
     list-style-type: none;
 }
 
+.navbar ol {
+    padding: 0px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    margin: 0px 0px 0px 2px;
+}
+
 .navbar h2,
 .search h2 {
     font-size: 100%;
