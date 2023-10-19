@@ -87,7 +87,7 @@
       <li><a href="/3.1/htmldocs/intro.html">1. Introduction</a></li>
       <li><a href="/3.1/htmldocs/installation.html">2. Installation</a></li>
       <li><a href="/3.1/htmldocs/configuration.html">3. Configuration</a></li>
-      <li><a href="/3.1/htmldocs/upgrade">4. Upgrading</a></li>
+      <li><a href="/3.1/htmldocs/upgrade.html">4. Upgrading</a></li>
       <li><a href="/3.1/htmldocs/man-pages.html">5. Man Pages</a></li>
     </ul>
     <h3><b>2.2 documentation</b></h3>
@@ -95,7 +95,7 @@
       <li><a href="/2.2/htmldocs/intro.html">1. Introduction</a></li>
       <li><a href="/2.2/htmldocs/installation.html">2. Installation</a></li>
       <li><a href="/2.2/htmldocs/configuration.html">3. Configuration</a></li>
-      <li><a href="/2.2/htmldocs/upgrade">4. Upgrading</a></li>
+      <li><a href="/2.2/htmldocs/upgrade.html">4. Upgrading</a></li>
       <li><a href="/2.2/htmldocs/man-pages.html">5. Man Pages</a></li>
     </ul>
   </div>
