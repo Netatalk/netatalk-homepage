@@ -22,7 +22,7 @@
 <link rel="bookmark" href="/3.1/htmldocs/" title="Netatalk Documentation" />
 <link rel="bookmark" href="https://github.com/Netatalk/netatalk/wiki" title="wiki" />
 <link rel="bookmark" href="https://sourceforge.net/projects/netatalk/files/" title="Downloads" />
-<link rel="icon" type="image/x-icon" href="/gfx/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/gfx/favicon.ico" />
 
 <title><?php echo ( $title ? ("Netatalk - ".$title) : "Netatalk" ); ?></title>
 </head>
@@ -83,13 +83,21 @@
   <div class="navbar">
     <h2>documentation</h2>
     <h3><b>3.1 documentation</b></h3>
-      <p>
-      <a href="/3.1/htmldocs/">&nbsp;Manual (HTML)</a><br />
-      </p>
+    <ul>
+      <li><a href="/3.1/htmldocs/intro.html">1. Introduction</a></li>
+      <li><a href="/3.1/htmldocs/installation.html">2. Installation</a></li>
+      <li><a href="/3.1/htmldocs/configuration.html">3. Configuration</a></li>
+      <li><a href="/3.1/htmldocs/upgrade">4. Upgrading</a></li>
+      <li><a href="/3.1/htmldocs/man-pages.html">5. Man Pages</a></li>
+    </ul>
     <h3><b>2.2 documentation</b></h3>
-      <p>
-      <a href="/2.2/htmldocs/">&nbsp;Manual (HTML)</a><br />
-      </p>
+    <ul>
+      <li><a href="/2.2/htmldocs/intro.html">1. Introduction</a></li>
+      <li><a href="/2.2/htmldocs/installation.html">2. Installation</a></li>
+      <li><a href="/2.2/htmldocs/configuration.html">3. Configuration</a></li>
+      <li><a href="/2.2/htmldocs/upgrade">4. Upgrading</a></li>
+      <li><a href="/2.2/htmldocs/man-pages.html">5. Man Pages</a></li>
+    </ul>
   </div>
   <div class="navbar">
     <h2>community</h2>
