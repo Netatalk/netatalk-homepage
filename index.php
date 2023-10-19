@@ -9,7 +9,7 @@ include "header.php";
 
   <p>Netatalk is a Free and Open Source Apple Filing Protocol (AFP) fileserver.
      A macOS, Linux, BSD, or Solaris system running Netatalk is capable of serving
-     many macOS (Mac OS X) and Classic Mac OS clients simultaneously.</p>
+     files to many macOS (Mac OS X) and Classic Mac OS clients simultaneously.</p>
 
 <hr />
   <small>5th of October 2023</small>
