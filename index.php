@@ -5,12 +5,11 @@ include "header.php";
 ?>
 
 <div id="content"> 
-  <h1>Welcome to netatalk.sourceforge.io!</h1>
+  <h1>Welcome to the Netatalk Homepage!</h1>
 
-  <p>Netatalk is a freely-available Open Source AFP fileserver.
-     A UNIX, Linux or BSD system running Netatalk is capable of serving
-     many Macintosh clients simultaneously as an
-    AppleShare file server (AFP).</p>
+  <p>Netatalk is a Free and Open Source Apple Filing Protocol (AFP) fileserver.
+     A macOS, Linux, BSD, or Solaris system running Netatalk is capable of serving
+     many macOS (Mac OS X) and Classic Mac OS clients simultaneously.</p>
 
 <hr />
   <small>5th of October 2023</small>
