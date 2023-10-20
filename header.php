@@ -82,7 +82,7 @@
   </div>
   <div class="navbar">
     <h2>documentation</h2>
-    <h3><b>3.1 documentation</b></h3>
+    <h3><b>3.1 manual</b></h3>
     <ol>
       <li><a href="/3.1/htmldocs/intro.html">Introduction</a></li>
       <li><a href="/3.1/htmldocs/installation.html">Installation</a></li>
@@ -90,7 +90,7 @@
       <li><a href="/3.1/htmldocs/upgrade.html">Upgrading</a></li>
       <li><a href="/3.1/htmldocs/man-pages.html">Man Pages</a></li>
     </ol>
-    <h3><b>2.2 documentation</b></h3>
+    <h3><b>2.2 manual</b></h3>
     <ol>
       <li><a href="/2.2/htmldocs/intro.html">Introduction</a></li>
       <li><a href="/2.2/htmldocs/installation.html">Installation</a></li>
