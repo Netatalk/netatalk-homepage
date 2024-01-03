@@ -473,15 +473,79 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
   <p>The Netatalk development team is proud to announce version 2.0.5 of the Netatalk File Sharing suite. This is the latest stable version. It contains several important bugfixes, including a more complete security fix for <a href="https://www.cve.org/CVERecord?id=CVE-2008-5718">CVE-2008-5718</a>.  Time Machine support has been added with the new volume option "tm".  All users are encouraged to upgrade their systems to 2.0.5.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/2.0/ReleaseNotes.html">Release Notes</a>.</p>
-  <p>See also <a href="/2.0/NEWS.html">this list of earlier changes</a> in the 2.0 release series.</p>
-  <p>In case you want to upgrade an existing Netatalk 1.x installation, ensure that
-    you carefully read the <a href="/2.0/htmldocs/upgrade.html">upgrade
-    guide</a> before and follow the steps outlined there. If you made use of symlinks
-    inside Netatalk shares consider setting up a test installation with 2.0 before
-    migrating since Netatalk 2.0 provides no support for symlinks any longer.</p>
 
 <hr />
+<small>29th of May 2009</small>
+<h2>Netatalk 2.0.4 is available!</h2>
+  <p>The Netatalk development team is proud to announce version 2.0.4 of the
+Netatalk File Sharing suite. This is the latest stable version. It
+contains several important bugfixes, including a security fix for papd (see <a href="https://www.cve.org/CVERecord?id=CVE-2008-5718">CVE-2008-5718</a>), therefore <i>all users are encouraged
+to upgrade their systems to 2.0.4.</i></p>
 
+<hr />
+<small>18th of May 2005</small>
+<h2>Netatalk 2.0.3 is available!</h2>
+  <p>The Netatalk development team is proud to announce version 2.0.3 of the
+Netatalk File Sharing suite. This is the latest stable version. It
+contains several important bugfixes, therefore <i>all users are encouraged
+to upgrade their systems to 2.0.3.</i></p>
+
+<hr />
+<small>3rd of January 2005</small>
+<h2>Netatalk 2.0.2 is available!</h2>
+  <p>The Netatalk development team is proud to announce version 2.0.2 of the
+Netatalk File Sharing suite. This is the latest stable version. It
+contains several important bugfixes, therefore <i>all users are encouraged
+to upgrade their systems to 2.0.2.</i></p>
+
+<hr />
+<small>28th of October 2004</small>
+  <h2>Netatalk 1.6.4a released</h2>
+  <p>This release is a security fix for the etc2ps.sh script.  See <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0974">CAN-2004-0974</a> for details.  No other changes were made from Netatalk 1.6.4.</p>
+
+   <hr />
+<small>27th of October 2004</small>
+<h2>Netatalk 2.0.1 is available!</h2>
+  <p>The Netatalk development team is proud to announce version 2.0.1 of the
+Netatalk File Sharing suite. This is the latest stable version. It
+contains several important bugfixes, therefore <i>all users are encouraged
+to upgrade their systems to 2.0.1.</i></p>
+  <p>The etc2ps.sh script delivered with all Netatalk versions prior to 2.0.1
+has been found to be vulnerable to symlink attacks. See <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0974">CAN-2004-0974</a> for
+details.</p>
+  <p>Please note that the handling of the default type/creator has changed with
+2.0.1. As a side effect, users upgrading from earlier versions, including
+2.0.0, will have to remove the default type/creator from the
+AppleVolumes.System file. The install process will not modify this file
+automatically. Please remove the line starting with</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"????"</p>
+  <p>manually.</p>
+
+  <hr />
+  <small>11th of October 2004</small>
+  <h2>Netatalk 2.0.0 is available!</h2>
+  <p>The Netatalk development team is proud to present the new stable 2.0.0 release.
+    Major improvements over the 1.6 series are:</p>
+  <ul>
+    <li>Netatalk's AFP 3.1 compliant file server allows long filenames, UTF-8
+      names, large file support and full Mac&nbsp;OS&nbsp;X compatibility</li>
+    <li>The print server task can directly interact with CUPS, automagically sharing
+      all CUPS queues</li>
+    <li>Kerberos V support, allowing true "Single Sign On"</li>
+    <li>Whole rework of the CNID subsystem, providing reliable and persistant
+      storage of file and directory IDs</li>
+    <li>Huge improvements regarding product documentation making Netatalk's features
+      accessible more easily</li>
+    <li>countless bugs fixed compared to previous versions</li>
+  </ul>
+  <p>In case, you want to upgrade an existing Netatalk 1.x installation, ensure 
+    you carefully read the <a href="/2.0/htmldocs/upgrade.html">upgrade 
+    guide</a> before and follow the steps outlined there. If you made use of symlinks 
+    inside Netatalk shares consider setting up a test installation with 2.0 before 
+    migrating since Netatalk 2.0 provides no support for symlinks any longer.</p>
+
+  <hr />
+  <p><a href="2.0/NEWS.html">Older Releases</a></p>
   <p>Netatalk is licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU
     General Public License 2.0</a>.</p>
   <p>If you are interested in contributing to the development process or just
