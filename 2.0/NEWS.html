@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Netatalk - Unix file and print services for Apple clients" />
+<meta name="keywords" content="Netatalk, AFP, AFP Server, File Server, PAP, Print Server, Appletalk, Mac, OSX, OS X, OS9, OS 9" />
+<meta name="language" content="EN" />
+<meta name="publisher" content="netatalk.sourceforge.net" />
+<meta name="robots" content="Follow" />
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" href="/css/site.css" />
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" href="/css/printer.css" media="print" />
+<link rel="alternate stylesheet" type="text/css" charset="iso-8859-1" href="/css/printer.css" title="Printer" />
+<link rel="copyright" title="GNU General Public License" href="http://www.gnu.org/copyleft/gpl.html#SEC1" />
+<link rel="author" title="The Netatalk Development Team" href="http://netatalk.sf.net" />
+<link rel="help" href="/2.0/htmldocs/" title="Documentation" />
+<link rel="home" href="index.php" title="Netatalk Home" />
+<link rel="home" href="http://www.sourceforge.net/projects/netatalk" title="Netatalk Sourceforge" />
+<link rel="bookmark" href="/2.0/htmldocs/" title="Netatalk Documentation" />
+<link rel="bookmark" href="/wiki/index.php" title="Netatalk FAQ" />
+<link rel="bookmark" href="http://sourceforge.net/project/showfiles.php?group_id=8642" title="Downloads" />
+
+<title> Netatalk NEWS </title>
+</head>
+<body>
+<div id="header">
+<div id="logo"></div>
+<div id="menlinks">
+<a href="/" title="Return to Netatalk home">[main]</a>
+<a href="/wiki/index.php/FrequentlyAskedQuestions" title="Frequently asked questions">[faq]</a>
+<a href="/2.0/htmldocs" title="Netatalk Manual">[documentation]</a>
+<a href="http://sourceforge.net/project/showfiles.php?group_id=8642" title="Download Netatalk from sourceforge">[downloads]</a>
+<a href="/links.php" title="Netatalk related links">[links]</a>
+<a href="/mailing_lists.php" title="Netatalk related mailing lists">[mailing&#160;lists]</a>
+<a href="/jp/index.php">[japanese main]</a>
+<img src="/gfx/end.gif" alt="" width="125" height="7" />
+</div>
+</div>
+<div id="header-print">
+<h1>netatalk.sourceforge.net</h1>
+</div>
+<div class="search">
+<h4> search netatalk.sf.net</h4>
+<form method="get" action="http://www.google.com/search">
+<p>
+<input type="text" name="q" size="10" maxlength="255" value="" />
+<input type="hidden" name="hl" value="de" />
+<input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+<input type="submit" name="btnG" value="Go" />
+</p>
+</form>
+<span class="italic">powered by Google</span>
+</div>
+<div id="content">
+<h1>Netatalk NEWS</h1>
+<h3>Changes in 2.0.5</h3>
+<ul>
+<li>
+<p>
+NEW: afpd: Time Machine support with new volume option "tm".
+</p>
+</li>
+<li>
+<p>
+FIX: papd: Remove variable expansion for BSD printers. Fixes CVE-2008-5718.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: .AppleDxxx folders were user accessible if option 'usedots' was set
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: vetoed files/dirs where still accessible
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: cnid_resolve: don't return '..' as a valid name.
+</p>
+</li>
+<li>
+<p>
+FIX: uniconv: -d option wasn't working
+</p>
+</li>
+</ul>
+<h3>Changes in 2.0.4</h3>
+<ul>
+<li>
+<p>
+REM: remove timeout
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: DHX2 uams using GNU libgcrypt.
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: volume options 'illegalseq', 'perm' and 'invisibledots'
+       'ilegalseq'  encode illegal sequence in filename asis, ex "\217-", which is not
+       a valid SHIFT-JIS char, is encoded  as U\217 -.
+       'perm' value OR with the client requested permissions. (help with OSX 10.5
+       strange permissions).
+       Make dot files visible by default with 'usedots', use 'invisibledots'
+       for keeping the old behavior, ie for OS9 (OSX hide dot files on its
+       own).
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: volume options allow_hosts/denied hosts
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: volume options dperm/fperm default directory and file
+       permissions or with server requests.
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: afpd.conf, allow line continuation with 
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: AppleVolumes.default allow line continuation with 
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: Mac greek encoding.
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: CJK encoding.
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: Default UAMs: DHX + DHX2
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: return the right error in createfile and copyfile if the disk
+       is full.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: resolveid return the same error code than OSX if it's a directory
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: server name check, test for the whole loopback subnet
+       not only 127.0.0.1.
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: limit comments size to 128 bytes, (workaround for Adobe CS2 bug).
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: no more daemon icon.
+</p>
+</li>
+<li>
+<p>
+UPD: usedots, return an invalide name only for .Applexxx files used by netatalk not
+       all files starting with .apple.
+</p>
+</li>
+<li>
+<p>
+UPD: cnid: increase the number of cnid_dbd slots to 512.
+</p>
+</li>
+<li>
+<p>
+FIX: cnid: dbd detach the daemon from the control terminal.
+</p>
+</li>
+<li>
+<p>
+UPD: cnid: never ending Berkeley API changes&hellip;
+</p>
+</li>
+<li>
+<p>
+UPD: cnid: dbd add a timeout when reading data from afpd client.
+</p>
+</li>
+<li>
+<p>
+UPD: cnid: Don't wait five second after the first error when speaking to the dbd
+       backend.
+</p>
+</li>
+<li>
+<p>
+FIX: papd: vars use % not $
+</p>
+</li>
+<li>
+<p>
+FIX: papd: quote chars in popen variables expansion. security fix.
+</p>
+</li>
+<li>
+<p>
+FIX: papd: papd -d didn't write to stderr.
+</p>
+</li>
+<li>
+<p>
+FIX: papd: ps comments don't always use ()
+</p>
+</li>
+<li>
+<p>
+FIX: many compilation errors (solaris, AFS, Tru64, xfs quota&hellip;).
+</p>
+</li>
+</ul>
+<h3>Changes in 2.0.3</h3>
+<ul>
+<li>
+<p>
+NEW: afpd: add a cachecnid option that controls if afpd should
+       use the IDs stored in the AD2 files as cache. Defaults
+       to off.
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: deal with more than 32 groups.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: several catsearch fixes, based on patch from
+       TSUBAKIMOTO Hiroya.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: fix a race when a client very quickly reconnects and
+       tries to kill its old session.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: OSX style symlink caused problems with Panther clients.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: old files with default type didn't show the right icon
+       in finder, from Shlomi Yaakobovich, slightly modified.
+</p>
+</li>
+<li>
+<p>
+FIX: cnid_check: disable cnid_check if CNID db was configured with
+       transactions and really bail out after the first error.
+</p>
+</li>
+<li>
+<p>
+FIX: admin-group configure option was broken.
+</p>
+</li>
+<li>
+<p>
+FIX: several problems with IDs cached in AD2 files.
+</p>
+</li>
+<li>
+<p>
+FIX: Ignore BIDI in UTF8 hints from OSX.
+</p>
+</li>
+<li>
+<p>
+FIX: Lots of gcc warning fixes.
+</p>
+</li>
+<li>
+<p>
+FIX: small configure script changes.
+</p>
+</li>
+</ul>
+<h3>Changes in 2.0.2</h3>
+<ul>
+<li>
+<p>
+NEW: cnid: Add an indexes check and rebuild, optional for dbd
+       (parameter check default no), standalone program cnid_index for
+       cdb.
+</p>
+</li>
+<li>
+<p>
+UPD: Enhanced afpd's -v command line switch and added -V for more
+       verbose information
+</p>
+</li>
+<li>
+<p>
+UPD: uams_gss: build the principal used by uams_gss.so from afpd's
+       configuration, don't use GSS_C_NT_HOSTBASED_SERVICE
+</p>
+</li>
+<li>
+<p>
+UPD: cnid_dbd: add process id in syslog and small clean up
+</p>
+</li>
+<li>
+<p>
+REM: remove netatalkshorternamelinks.pl cf. SF bug [ 1061396 ]
+       netatalkshorternamelinks.pl broken
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: check for DenyRead on FPCopyFile
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: add missing flush for AD2 Metadata on FPCopyFile, SF bug
+       [ 1055691 ] Word 98 OS 9 Saving an existing file
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Deal with AFP3 connection and type 2 (non-UTF8) names.
+       reported by Gair Heaton, HI RESOLUTION SYSTEMS
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Broken 'crlf' option
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: fix SF bug [ 1079622 ] afpd/dhx memory bug,
+       by Ralf Schuchardt
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Return an error if we cannot get the db stamp in
+       afp_openvol.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Fix slp registration with Solaris9 slpd, from
+       hat at fa2.so-net.ne.jp
+</p>
+</li>
+</ul>
+<h3>Changes in 2.0.1</h3>
+<ul>
+<li>
+<p>
+NEW: --enable-debian configure option. Will install /etc/init.d/atalk
+       to get not in conflict with standard debian /etc/init.d/netatalk.
+       Reads netatalk.conf from $ETCDIR and not from /etc/default/
+</p>
+</li>
+<li>
+<p>
+UPD: Disable logger code by default. Log to syslog instead
+</p>
+</li>
+<li>
+<p>
+UPD: changed netatalk.conf default settings to prevent problems with
+       AppleTalk zone names containing spaces
+</p>
+</li>
+<li>
+<p>
+FIX: insecure tempfile handling bug in etc2ps.sh,
+       found by Trustix, CAN-2004-0974.
+</p>
+</li>
+<li>
+<p>
+REM: remove add_netatalk_printer and netatalk.template from stable
+       branch until fixed. (possible symlink vulnerabilities)
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: set hasBeenInited in default finder info. This bug caused
+       endless finder refreshes with OS9 finder if the noadouble option
+       was used. From TSUBAKIMOTO Hiroya.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: fix a bug in default CREATOR/TYPE handling. Due to this bug
+       the type/creator mappings in AppleVolumes.system were ignored,
+       causing problems i.e. with OS9 clients.
+</p>
+</li>
+<li>
+<p>
+FIX: AppleVolumes.system: By default don't define a CREATOR/TYPE for a
+       file of unknown type.
+</p>
+</li>
+<li>
+<p>
+FIX: fix two Tru64 UNIX compilation errors,
+       from Burkhard Schmidt bs AT cpfs.mpg.de
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: FPMapId wasn't using UTF8 for groups if requested by client.
+</p>
+</li>
+</ul>
+<h3>Changes in 2.0.0</h3>
+<ul>
+<li>
+<p>
+UPD: afpd: add an error message if -ipaddr parameter cannot be parsed
+</p>
+</li>
+<li>
+<p>
+UPD: updated documentation
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: fix a file descriptor and memory leak with OSX ._ resource fork
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Prevent overwriting a file by renaming a file in the same
+       directory to the same name. Won't work with OSX, the dest file gets
+       deleted by OSX first.
+</p>
+</li>
+<li>
+<p>
+FIX: sometimes '0' was used instead of 0 for creator/type
+</p>
+</li>
+<li>
+<p>
+FIX: removed setpgrp check from configure, we don't use it anymore and
+       it doesn't work with cross compile.
+</p>
+</li>
+<li>
+<p>
+FIX: fix for Solaris "make maintainer-clean", from Alexander Barton
+</p>
+</li>
+<li>
+<p>
+FIX: fix username matching bug in afppasswd. from kanai at nadmin dot org
+</p>
+</li>
+<li>
+<p>
+FIX: reworked username check a little. Depending on the UAM, the wrong
+       username _could_ have been selected.
+</p>
+</li>
+</ul>
+</div>
+<div class="footer">
+<span class="italic">webspace sponsored by</span><br />
+<!-- use a table for now -->
+<table>
+<tr>
+<td><a href="http://www.sf.net"><img src="http://sourceforge.net/sflogo.php?group_id=8642&amp;type=1" style="border:0;width:88px;height:31px" width="88" height="31" alt="SourceForge.net Logo" /></a></td>
+<td><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></td>
+<td><a href="http://jigsaw.w3.org/css-validator/"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" /></a></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

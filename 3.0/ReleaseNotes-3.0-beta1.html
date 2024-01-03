@@ -1,0 +1,406 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Netatalk - Unix file and print services for Apple clients" />
+<meta name="keywords" content="Netatalk, AFP, AFP Server, File Server, PAP, Print Server, Appletalk, Mac, OSX, OS X, OS9, OS 9" />
+<meta name="language" content="EN" />
+<meta name="publisher" content="netatalk.sourceforge.net" />
+<meta name="robots" content="Follow" />
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" href="/css/site.css" />
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" href="/css/printer.css" media="print" />
+<link rel="alternate stylesheet" type="text/css" charset="iso-8859-1" href="/css/printer.css" title="Printer" />
+<link rel="copyright" title="GNU General Public License" href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt" />
+<link rel="author" title="The Netatalk Development Team" href="http://netatalk.sf.net" />
+<link rel="home" href="index.php" title="Netatalk Home" />
+<link rel="home" href="http://www.sourceforge.net/projects/netatalk" title="Netatalk Sourceforge" />
+<link rel="bookmark" href="http://sourceforge.net/project/showfiles.php?group_id=8642" title="Downloads" />
+
+<title>Netatalk Release Notes</title>
+</head>
+<body>
+<div id="header">
+<div id="logo"></div>
+<div id="menlinks">
+        <a href="/" title="Return to Netatalk home">[main]</a>
+        <a href="https://sourceforge.net/apps/mediawiki/netatalk/index.php?title=Main_Page" title="Netatalk Wiki">[wiki]</a>
+        <a href="/2.2/htmldocs" title="Netatalk Manual">[documentation]</a>
+        <a href="http://sourceforge.net/project/showfiles.php?group_id=8642" title="Download Netatalk from sourceforge">[downloads]</a>
+        <a href="/support.php" title="Support">[support]</a>
+        <a href="/links.php" title="Netatalk related links">[links]</a>
+        <img src="/gfx/end.gif" alt="" width="125" height="7" />
+</div>
+</div>
+<div id="header-print">
+<h1>netatalk.sourceforge.net</h1>
+</div>
+<div class="search">
+<h4> search netatalk.sf.net</h4>
+<form method="get" action="http://www.google.com/search">
+<p>
+<input type="text" name="q" size="10" maxlength="255" value="" />
+<input type="hidden" name="hl" value="de" />
+<input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+<input type="submit" name="btnG" value="Go" />
+</p>
+</form>
+<span class="italic">powered by Google</span>
+</div>
+<div id="content">
+<h1>Netatalk 3.0 beta1</h1>
+<div id="body">
+<div class="paragraph"><p>The Netatalk development team is proud to announce the release of
+the first beta version of the new major Netatalk release 3.0.
+This release is NOT intended for production systems.</p></div>
+<div class="paragraph"><p>Netatalk is a freely-available Open Source AFP fileserver.
+A *NIX/*BSD system running Netatalk is capable of serving many Macintosh
+clients simultaneously as an AppleShare file server (AFP).</p></div>
+<div class="paragraph"><p>The suite contains:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+netatalk   - the main server service controller
+</p>
+</li>
+<li>
+<p>
+afpd       - the AFP file server daemin
+</p>
+</li>
+<li>
+<p>
+cnid_metad - the CNID database multiplexing daemon
+</p>
+</li>
+<li>
+<p>
+cnid_dbd   - the CNID database daemon serving CNIDs for AFP volumes
+</p>
+</li>
+<li>
+<p>
+various supporting programs and utilities
+</p>
+</li>
+</ul></div>
+</div>
+<h3>Summary of major new features and enhancements in 3.0</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+New ini style configuration file afp.conf which replaces all previous
+  configuration files
+</p>
+</li>
+<li>
+<p>
+New default AppleDouble backend using filesytem Extended Attributes,
+  conversion from AppleDouble v2 is done automatically on access
+</p>
+</li>
+<li>
+<p>
+New service controller process "netatalk" responsible for starting and
+  restarting afpd and cnid_metad as necessary
+</p>
+</li>
+<li>
+<p>
+AppleTalk support has been removed
+</p>
+</li>
+<li>
+<p>
+Coherent cross-platform locking with Solaris CIFS server
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Please make sure to read the upgrading section in the Netatalk online
+manual before trying to upgrade your system to 3.0!</p></div>
+<h3>License</h3>
+<div class="paragraph"><p>Netatalk is a Free/Open Source Software project and is released under
+the GNU General Public License (GPLv2).  The full license text is available
+at:</p></div>
+<div class="literalblock">
+<div class="content monospaced">
+<pre>http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</pre>
+</div></div>
+<h3>Changes in 3.0 beta1</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+UPD: afpd: Performance tuning of read/write AFP operations. New option
+       "afp read locks" (default: no) which disables that the server
+       applies UNIX byte range locks to regions of files in AFP read and
+       write calls.
+</p>
+</li>
+<li>
+<p>
+UPD: apple_dump: Extended Attributes AppleDouble support.
+       (*BSD is not supported yet)
+</p>
+</li>
+</ul></div>
+<h3>Changes in 3.0 alpha3</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+NEW: afpd: Per volume "login message", NetAFP bug ID #18
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: Cross-platform locking (share modes) on Solaris and derivates
+       with Solaris CIFS/SMB server. Uses new Solaris fcntl F_SHARE share
+       reservation locking primitives. Enabled by default, set global
+       "solaris share reservations" option to false to disable it.
+</p>
+</li>
+<li>
+<p>
+NEW: ad: ad set subcommand for changing Mac metadata on the server
+</p>
+</li>
+<li>
+<p>
+UPD: unix charset is UTF8 by default
+       vol charset is same value as unix charset by default
+</p>
+</li>
+<li>
+<p>
+UPD: .AppleDesktop/ are stored in $localstatedir/netatalk/CNID
+       (default: /var/netatalk/CNID), databases found in AFP volumes are
+       automatically moved
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Server info packet was malformed resulting in broken
+       server names being displayed on clients
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Byte order detection. Fixes an error where Netatalk on
+       OpenIndiana returned wrong volume size information.
+</p>
+</li>
+</ul></div>
+<h3>Changes in 3.0 alpha2</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+UPD: afpd: Store <em>.</em> as is and <em>/</em> as <em>:</em> on the server, don&#8217;t
+       CAP hexencode as "2e" and "2f" respectively
+</p>
+</li>
+<li>
+<p>
+UPD: afdp: Automatic name conversion, renaming files and directories
+       containing CAP sequences to their not enscaped forms
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: Correct handling of user homes and users without homes
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: Perform complete automatic adouble:v2 to adouble:ea conversion
+       as root. Previously only unlinking the adouble:v2 file was done as root
+</p>
+</li>
+<li>
+<p>
+UPD: dbd: -C option removes CAP encoding
+</p>
+</li>
+<li>
+<p>
+UPD: Add graceful option to RedHat init script
+</p>
+</li>
+<li>
+<p>
+UPD: Add --disable-bundled-libevent configure options When set to yes,
+       we rely on a properly installed version on libevent CPPFLAGS and LDFLAGS
+       should be set properly to pick that up
+</p>
+</li>
+<li>
+<p>
+UPD: Run ldconfig on Linux at the end of make install
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: ad cp on appledouble = ea volumes
+</p>
+</li>
+<li>
+<p>
+FIX: dbd: ignore ._ appledouble files
+</p>
+</li>
+<li>
+<p>
+REM: Volumes options "use dots" and "hex encoding"
+</p>
+</li>
+</ul></div>
+<h3>Changes in 3.0 alpha1</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+NEW: Central configuration file afp.conf which replaces all previous files
+</p>
+</li>
+<li>
+<p>
+NEW: netatalk: service controller starting and restarting afpd and cnid_metad
+       as necessary
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: Extended Attributes AppleDouble backend (default)
+</p>
+</li>
+<li>
+<p>
+UPD: CNID databases are stored in $localstatedir/netatalk/CNID
+       (default: /var/netatalk/CNID), databases found in AFP volumes are
+       automatically moved
+</p>
+</li>
+<li>
+<p>
+UPD: Start scripts and service manifests have been changed to only start
+       the new netatalk service controller process
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: UNIX privileges and use dots enabled by default
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: Support for arbitrary AFP volumes using variable expansion has been
+       removed
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: afp_voluuid.conf and afp_signature.conf location has been
+       changed to $localstatedir/netatalk/ (default: /var/netatalk/)
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: default server messages dir changed to $localstatedir/netatalk/msg/
+</p>
+</li>
+<li>
+<p>
+UPD: dbd: new option -C for conversion from AppleDouble v2 to ea
+</p>
+</li>
+<li>
+<p>
+REM: AppleTalk support has been removed
+</p>
+</li>
+<li>
+<p>
+REM: afpd: SLP and AFP proxy support have been removed
+</p>
+</li>
+<li>
+<p>
+REM: afpd: legacy file extension to type/creator mapping has been removed
+</p>
+</li>
+<li>
+<p>
+REM: afpd: AppleDouble backends v1, osx and sfm have been removed
+</p>
+</li>
+</ul></div>
+<h3>Supported Platforms</h3>
+<div class="paragraph"><p>As of Netatalk 3.0 the following operating systems are supported:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+FreeBSD
+</p>
+</li>
+<li>
+<p>
+Linux
+</p>
+</li>
+<li>
+<p>
+OpenBSD
+</p>
+</li>
+<li>
+<p>
+NetBSD
+</p>
+</li>
+<li>
+<p>
+[Open]Solaris
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Netatalk may compile and run on other operating systems as well, but
+it is not well-tested on those.  We welcome patches and suggestions
+for enhancing the portability of Netatalk as well as success and failure
+stories.  Please write to <a href="mailto:netatalk-devel@lists.sourceforge.net">netatalk-devel@lists.sourceforge.net</a>.</p></div>
+<h3>Availability</h3>
+<div class="paragraph"><p>Netatalk tar-balls can be found at:</p></div>
+<div class="paragraph"><p><a href="http://sourceforge.net/project/showfiles.php?group_id=8642">http://sourceforge.net/project/showfiles.php?group_id=8642</a></p></div>
+<div class="paragraph"><p>Netatalk is also available via anonymous git.  See the SourceForge project
+site for anonymous git instructions.</p></div>
+<h3>Contact</h3>
+<div class="paragraph"><p>For more information about Netatalk, see its web page at:</p></div>
+<div class="paragraph"><p><a href="http://netatalk.sourceforge.net/">http://netatalk.sourceforge.net/</a></p></div>
+<div class="paragraph"><p>The project is hosted at SourceForge.  The SourceForge project page is
+located at:</p></div>
+<div class="paragraph"><p><a href="http://sourceforge.net/projects/netatalk/">http://sourceforge.net/projects/netatalk/</a></p></div>
+<div class="paragraph"><p>The Netatalk development team can be reached via the mailing list
+<a href="mailto:netatalk-devel@lists.sourceforge.net">netatalk-devel@lists.sourceforge.net</a>.  For subscription information and
+archives see Netatalk&#8217;s SourceForge project page.</p></div>
+<div class="paragraph"><p><a href="mailto:netatalk-admins@lists.sourceforge.net">netatalk-admins@lists.sourceforge.net</a> is a mailing list for Netatalk
+system administrators.  For subscription information and archives see
+the Netatalk web page.</p></div>
+<h3>Acknowledgements</h3>
+<div class="paragraph"><p>We would like to thank all contributors to the Netatalk project for
+their commitment.  Without the many suggestions, bug and problem reports,
+patches, and reviews this project wouldn&#8217;t be where it is.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+The Netatalk Development Team, May 2012
+</p>
+</li>
+</ul></div>
+</div>
+<div class="footer">
+<span class="italic">webspace sponsored by</span><br />
+<!-- use a table for now -->
+<table>
+<tr>
+<td><a href="http://www.sf.net"><img src="http://sourceforge.net/sflogo.php?group_id=8642&amp;type=1" style="border:0;width:88px;height:31px" width="88" height="31" alt="SourceForge.net Logo" /></a></td>
+<td><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></td>
+<td><a href="http://jigsaw.w3.org/css-validator/"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" /></a></td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Netatalk - Unix file and print services for Apple clients" />
+<meta name="keywords" content="Netatalk, AFP, AFP Server, File Server, PAP, Print Server, Appletalk, Mac, OSX, OS X, OS9, OS 9" />
+<meta name="language" content="EN" />
+<meta name="publisher" content="netatalk.sourceforge.net" />
+<meta name="robots" content="Follow" />
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" href="/css/site.css" />
+<link rel="stylesheet" type="text/css" charset="iso-8859-1" href="/css/printer.css" media="print" />
+<link rel="alternate stylesheet" type="text/css" charset="iso-8859-1" href="/css/printer.css" title="Printer" />
+<link rel="copyright" title="GNU General Public License" href="http://www.gnu.org/copyleft/gpl.html#SEC1" />
+<link rel="author" title="The Netatalk Development Team" href="http://netatalk.sf.net" />
+<link rel="help" href="/2.1/htmldocs/" title="Documentation" />
+<link rel="home" href="index.php" title="Netatalk Home" />
+<link rel="home" href="http://www.sourceforge.net/projects/netatalk" title="Netatalk Sourceforge" />
+<link rel="bookmark" href="/2.1/htmldocs/" title="Netatalk Documentation" />
+<link rel="bookmark" href="Wiki" title="Netatalk Wiki" />
+<link rel="bookmark" href="http://sourceforge.net/project/showfiles.php?group_id=8642" title="Downloads" />
+
+<title>Netatalk Release Notes</title>
+</head>
+<body>
+<div id="header">
+<div id="logo"></div>
+<div id="menlinks">
+<a href="/" title="Return to Netatalk home">[main]</a>
+<a href="https://sourceforge.net/apps/mediawiki/netatalk/index.php?title=Main_Page" title="Netatalk Wiki">[wiki]</a>
+<a href="/2.1/htmldocs" title="Netatalk Manual">[documentation]</a>
+<a href="http://sourceforge.net/project/showfiles.php?group_id=8642" title="Download Netatalk from sourceforge">[downloads]</a>
+<a href="/links.php" title="Netatalk related links">[links]</a>
+<a href="/mailing_lists.php" title="Netatalk related mailing lists">[mailing&#160;lists]</a>
+<img src="/gfx/end.gif" alt="" width="125" height="7" />
+</div>
+</div>
+<div id="header-print">
+<h1>netatalk.sourceforge.net</h1>
+</div>
+<div class="search">
+<h4> search netatalk.sf.net</h4>
+<form method="get" action="http://www.google.com/search">
+<p>
+<input type="text" name="q" size="10" maxlength="255" value="" />
+<input type="hidden" name="hl" value="de" />
+<input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+<input type="submit" name="btnG" value="Go" />
+</p>
+</form>
+<span class="italic">powered by Google</span>
+</div>
+<div id="content">
+<h2>Netatalk 2.1</h2>
+<p>
+The Netatalk development team is proud to announce version 2.1 of
+the Netatalk File Sharing suite. This is the latest stable version.
+</p>
+<p>
+Netatalk is a collection of server programs and utilities for handling
+various protocols employed by Apple Macintosh computers on Unix compatible
+systems. This allows Unix hosts to act as file, print, and time servers for
+Apple Macintosh (classic MacOS as well as MacOS X) computers.
+</p>
+<p>
+The suite contains:
+</p>
+<ul>
+<li>
+<p>
+afpd - a file server that implements the Apple Filing Protocol, allowing
+  clients running MacOS to access Unix file servers
+</p>
+</li>
+<li>
+<p>
+atalkd - an implementation of the AppleTalk protocol
+</p>
+</li>
+<li>
+<p>
+papd - a print server that enables Macintosh computers to access printers
+  connected to Unix servers
+</p>
+</li>
+<li>
+<p>
+timelord - a time server for synchronizing time over the network
+</p>
+</li>
+<li>
+<p>
+megatron - a tool to convert files in Macintosh specific formats like
+  BinHex, AppleSingle, or MacBinary into files readable by Unix computers
+</p>
+</li>
+<li>
+<p>
+various supporting programs and utilities
+</p>
+</li>
+</ul>
+<p>
+Netatalk is a Free/Open Source Software project and is released under
+the GNU General Public License (GPL). Please see
+</p>
+<p>
+http://www.gnu.org/licenses/gpl.html
+</p>
+<p>
+for the full license text.
+</p>
+<h3>News</h3>
+<p>
+Netatalk 2.1 is a minor upgrade highlighting the following new features and changes:
+</p>
+<p>
+Protocol level:
+</p>
+<ul>
+<li>
+<p>
+AFP 3.2
+</p>
+</li>
+<li>
+<p>
+IPv6
+</p>
+</li>
+<li>
+<p>
+Extended Attributes support
+</p>
+</li>
+<li>
+<p>
+ACL support with ZFS
+</p>
+</li>
+<li>
+<p>
+AppleTalk support in afpd and AppleTalk daemons (atalkd and papd) are disabled by default
+</p>
+</li>
+</ul>
+<p>
+afpd:
+</p>
+<ul>
+<li>
+<p>
+default CNID backend is "dbd"
+</p>
+</li>
+<li>
+<p>
+enable live debugging with SIGINT
+</p>
+</li>
+<li>
+<p>
+afpd uses an in memory temporary DB if can't open the volume's database, but currently this only
+  works with the "cdb" or "tdb" backends not with the default "dbd".
+</p>
+</li>
+</ul>
+<p>
+atalkd:
+</p>
+<ul>
+<li>
+<p>
+atalkd: workaround for broken Linux 2.6 AT kernel module:
+  Linux 2.6 sends broadcast queries to the first available socket which is in our case
+  the last configured one. atalkd now tries to find the right one.
+  Note: now a misconfigured or plugged router can broadcast a wrong route !
+</p>
+</li>
+</ul>
+<p>
+Tools:
+</p>
+<ul>
+<li>
+<p>
+dbd: "dbd" CNID database and volume maintanance and intergrity check utility
+</p>
+</li>
+<li>
+<p>
+apple_dump: dump AppleDouble files
+</p>
+</li>
+</ul>
+<h3>Upgrading from a 2.0 version</h3>
+<p>
+2.1 and 2.0 filenames encoding and adouble headers are compatible thus
+it's possible to upgrade and downgrade between 2.0 and 2.1, you may have
+to upgrade/downgrade (or delete) your .AppleDB folders in case the bdb versions differ.
+</p>
+<h3>Requirements</h3>
+<p>
+BerkeleyDB &gt;= 4.6
+</p>
+<h3>configure</h3>
+<p>
+New default:
+</p>
+<ul>
+<li>
+<p>
+sendfile is enabled on Linux
+</p>
+</li>
+</ul>
+<p>
+New options:
+</p>
+<ul>
+<li>
+<p>
+--disable-sendfile
+</p>
+</li>
+<li>
+<p>
+--enable-nfsv4acls    NFSv4 ACL Support (only Solaris?)
+</p>
+</li>
+</ul>
+<p>
+Webmin:
+</p>
+<ul>
+<li>
+<p>
+--with-webmin        path where webmin is installed [$PKGCONFDIR/webmin]
+</p>
+</li>
+<li>
+<p>
+--with-webminuser    name for the webmin admin user
+</p>
+</li>
+<li>
+<p>
+--with-webminversion Webmin version to fetch from sf.net [1.490]
+</p>
+</li>
+<li>
+<p>
+--with-webminpass    password for the webmin admin user
+</p>
+</li>
+<li>
+<p>
+--with-webminport    TCP port for webmin
+</p>
+</li>
+</ul>
+<p>
+Removed options:
+</p>
+<ul>
+<li>
+<p>
+--with-logfile
+</p>
+</li>
+<li>
+<p>
+--with-cnid-dbd-txn    dbd always use transaction
+</p>
+</li>
+<li>
+<p>
+--with-cnid-db3-backend  use dbd for transaction
+</p>
+</li>
+<li>
+<p>
+--with-cnid-hash-backend never really work
+</p>
+</li>
+</ul>
+<h3>afpd.conf</h3>
+<p>
+New defaults:
+</p>
+<ul>
+<li>
+<p>
+slp is disable by default
+</p>
+</li>
+<li>
+<p>
+ddp is disable by default
+</p>
+</li>
+</ul>
+<p>
+New options:
+</p>
+<ul>
+<li>
+<p>
+-slp                   advertise with SRVLOC
+</p>
+</li>
+<li>
+<p>
+-hostname
+</p>
+</li>
+<li>
+<p>
+-volnamelen
+</p>
+</li>
+<li>
+<p>
+-setuplog
+</p>
+</li>
+<li>
+<p>
+-closevol
+</p>
+</li>
+<li>
+<p>
+-ntdomain
+</p>
+</li>
+<li>
+<p>
+-ntseparator
+</p>
+</li>
+</ul>
+<p>
+Removed options:
+</p>
+<ul>
+<li>
+<p>
+-noslp
+</p>
+</li>
+</ul>
+<h3>AppleVolume.default</h3>
+<p>
+Set default options via a :DEFAULT: line: "upriv" and "usedots".
+</p>
+<p>
+New options:
+</p>
+<ul>
+<li>
+<p>
+acl
+</p>
+</li>
+<li>
+<p>
+caseinsensitive               volume is case insensitive (JFS in OS2 mode)
+</p>
+</li>
+<li>
+<p>
+nocnidcache
+</p>
+</li>
+<li>
+<p>
+ea:sys|ad
+</p>
+</li>
+</ul>
+<p>
+Removed options:
+</p>
+<ul>
+<li>
+<p>
+cachecnid
+</p>
+</li>
+</ul>
+<h3>Best Practices</h3>
+<p>
+Use a separate user group for cnid_dbd daemons:
+</p>
+&nbsp;&nbsp;&nbsp;<a href="|">
+cnid_metad -u afpd -g afpd
+</a>
+<p>
+All CNID databases in the same directory:
+</p>
+<ul>
+<li>
+<p>
+AppleVolumes.default:
+</p>
+&nbsp;&nbsp;&nbsp;<a href="|">
+:DEFAULT: dbpath:/var/lib/afpd/$v
+</a>
+</li>
+<li>
+<p>
+with /var/lib/afpd:
+</p>
+&nbsp;&nbsp;&nbsp;<a href="|">
+drwxr-xr-x  afpd afpd 4096 2009-11-24 15:12 /var/lib/afpd
+</a>
+</li>
+</ul>
+<p>
+afpd or cnid_metad will create the substituded subdirectory ($v is replaced by the
+volume name)
+</p>
+<h3>Changes in 2.1 since 2.1-beta2</h3>
+<ul>
+<li>
+<p>
+NEW: afpd: new volume option "volsizelimit" for limitting reported volume
+size. Useful for limitting TM backup size.
+</p>
+</li>
+<li>
+<p>
+UPD: dbd: -c option for rebuilding volumes which prevents the creation
+of .AppleDouble stuff, only removes orphaned files.
+</p>
+</li>
+</ul>
+<h3>Changes in 2.1-beta2 since 2.1-beta1</h3>
+<ul>
+<li>
+<p>
+NEW: afpd: static generated AFP signature stored in afp_signature.conf,
+       cf man 5 afp_signature.conf
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: clustering support: new per volume option "cnidserver".
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: set volume defaults options "upriv" and "usedots" in the
+       volume config file AppleVolumes.default. This will only affect
+       new installations, but not upgrades.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: prevent security attack guessing valid server accounts. afpd
+       now returns error -5023 for unknown users, as does AppleFileServer.
+</p>
+</li>
+</ul>
+<h3>Detailes list of changes in 2.1-beta1</h3>
+<ul>
+<li>
+<p>
+NEW: afpd: AFP 3.2 support
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: Extended Attributes support using native attributes or
+       using files inside .AppleDouble directories.
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: ACL support with ZFS
+</p>
+</li>
+<li>
+<p>
+NEW: cnid_metad: options -l and -f to configure logging
+</p>
+</li>
+<li>
+<p>
+NEW: IPv6 support
+</p>
+</li>
+<li>
+<p>
+NEW: AppleDouble compatible UNIX files utility suite `ad &hellip;`.
+       With 2.1 only `ad ls`.
+</p>
+</li>
+<li>
+<p>
+NEW: CNID database maintanance utility dbd
+</p>
+</li>
+<li>
+<p>
+NEW: support BerkeleyDB upgrade. Starting with the next release
+       after 2.1 in case of BerkeleyDB library updates, Netatalk
+       will be able to upgrade the CNID databases.
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: store and read CNIDs to/from AppleDouble files by default.
+       This is used as a cache and as a backup in case the database
+       is deleted or corrupted. It can be disabled with a new volume
+       option "nocnidcache".
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: sending SIGINT to a child afpd process enables debug logging
+       to /tmp/afpd.PID.XXXXXX.
+</p>
+</li>
+<li>
+<p>
+NEW: configure args to download and install a "private" Webmin instance
+       including only basic Webmin modules plus our netatalk.wbm.
+</p>
+</li>
+<li>
+<p>
+NEW: fallback to a temporary in memory tdb CNID database if the volume
+       database can't be opened.
+</p>
+</li>
+<li>
+<p>
+NEW: support for Unicode characters in the range above U+010000 using
+       internal surrogate pairs
+</p>
+</li>
+<li>
+<p>
+NEW: apple_dump: utility to dump AppleSingle and AppleDouble files
+</p>
+</li>
+<li>
+<p>
+NEW: afpldaptest: utility to check afp_ldap.conf.
+</p>
+</li>
+<li>
+<p>
+UPD: atalkd and papd are now disabled by default. AppleTalk is legacy.
+</p>
+</li>
+<li>
+<p>
+UPD: slp advertisement is now disabled by default. server option -slp
+       SRVLOC is legacy.
+</p>
+</li>
+<li>
+<p>
+UPD: cdb/dbd CNID backend requires BerkeleyDB &gt;= 4.6
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: default CNID backend is "dbd"
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: try to install PAM config that pulls in system|common auth
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: symlink handling: never followed server side, client resolves
+       them, so it's safe to use them now.
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: Comment out all extension-&gt;type/creator mappings in
+       AppleVolumes.system. They're unmaintained, possibly wrong and
+       do not fit for OS X.
+</p>
+</li>
+<li>
+<p>
+FIX: rewritten logger
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: UNIX permissions handling
+</p>
+</li>
+<li>
+<p>
+FIX: cnid_dbd: always use BerkeleyDB transactions
+</p>
+</li>
+<li>
+<p>
+FIX: initscripts installation now correctly uses autoconf paths,
+       ie they're installed to --sysconfdir.
+</p>
+</li>
+<li>
+<p>
+FIX: UTF-8 volume name length
+</p>
+</li>
+<li>
+<p>
+FIX: atalkd: workaround for broken Linux 2.6 AT kernel module:
+       Linux 2.6 sends broadcast queries to the first available socket
+       which is in our case the last configured one. atalkd now tries to
+       find the right one.
+       Note: now a misconfigured or plugged router can broadcast a wrong route !
+</p>
+</li>
+<li>
+<p>
+REM: afpd: removed CNID backends "db3", "hash" and "mtab"
+</p>
+</li>
+<li>
+<p>
+REM: cnid_maint: use dbd
+</p>
+</li>
+<li>
+<p>
+REM: cleanappledouble.pl: use dbd
+</p>
+</li>
+<li>
+<p>
+REM: nu: use `macusers` instead
+</p>
+</li>
+</ul>
+<h3>Supported Platforms</h3>
+<p>
+As of Netatalk 2.1 the following operating systems are supported:
+</p>
+<ul>
+<li>
+<p>
+FreeBSD
+</p>
+</li>
+<li>
+<p>
+Linux
+</p>
+</li>
+<li>
+<p>
+OpenBSD
+</p>
+</li>
+<li>
+<p>
+NetBSD
+</p>
+</li>
+<li>
+<p>
+[Open]Solaris
+</p>
+</li>
+<li>
+<p>
+Tru64 (TCP only)
+</p>
+</li>
+</ul>
+<p>
+Netatalk may compile and run on other operating systems as well, but
+it is not well-tested on those. We welcome patches and suggestions
+for enhancing the portability of Netatalk as well as success and failure
+stories. Please write to netatalk-devel@lists.sourceforge.net.
+</p>
+<h3>Availability</h3>
+<p>
+Netatalk tar-balls can be found at:
+</p>
+&nbsp;&nbsp;&nbsp;<a href="|">
+http://sourceforge.net/project/showfiles.php?group_id=8642
+</a>
+<p>
+Netatalk is also available via anonymous CVS. See the SourceForge project
+site for anonymous CVS instructions.
+</p>
+<h3>Contact</h3>
+<p>
+For more information about Netatalk, see its web page at:
+</p>
+&nbsp;&nbsp;&nbsp;<a href="|">
+http://netatalk.sourceforge.net/
+</a>
+<p>
+The project is hosted at SourceForge. The SourceForge project page is
+located at:
+</p>
+&nbsp;&nbsp;&nbsp;<a href="|">
+http://sourceforge.net/projects/netatalk/
+</a>
+<p>
+The Netatalk development team can be reached via the mailing list
+netatalk-devel@lists.sourceforge.net. For subscription information and
+archives see Netatalk's SourceForge project page.
+</p>
+<p>
+netatalk-admins@lists.sourceforge.net is a mailing list for Netatalk
+system administrators. For subscription information and archives see
+the Netatalk web page.
+</p>
+<h3>Acknowledgements</h3>
+<p>
+We would like to thank all contributors to the Netatalk project for
+their commitment. Without the many suggestions, bug and problem reports,
+patches, and reviews this project wouldn't be where it is.
+</p>
+<ul>
+<li>
+<p>
+The Netatalk Development Team, April 2010
+</p>
+</li>
+</ul>
+</div>
+<div class="footer">
+<span class="italic">webspace sponsored by</span><br />
+<!-- use a table for now -->
+<table>
+<tr>
+<td><a href="http://www.sf.net"><img src="http://sourceforge.net/sflogo.php?group_id=8642&amp;type=1" style="border:0;width:88px;height:31px" width="88" height="31" alt="SourceForge.net Logo" /></a></td>
+<td><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></td>
+<td><a href="http://jigsaw.w3.org/css-validator/"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" /></a></td>
+</tr>
+</table>
+</div>
+</body>
+</html>
