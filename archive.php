@@ -471,11 +471,13 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
   <small>10th of November 2009</small>
   <h2>Netatalk 2.0.5 is available</h2>
   <p>The Netatalk development team is proud to announce version 2.0.5 of the Netatalk File Sharing suite. This is the latest stable version. It contains several important bugfixes, including a more complete security fix for <a href="https://www.cve.org/CVERecord?id=CVE-2008-5718">CVE-2008-5718</a>.  Time Machine support has been added with the new volume option "tm".  All users are encouraged to upgrade their systems to 2.0.5.</p>
-  <p>For a list of recent changes see the <a href="/2.0/NEWS.html">NEWS</a> file.</p>
-  <p>In case, you want to upgrade an existing Netatalk 1.x installation, ensure 
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="/2.0/ReleaseNotes.html">Release Notes</a>.</p>
+  <p>See also <a href="/2.0/NEWS.html">this list of earlier changes</a> in the 2.0 release series.</p>
+  <p>In case you want to upgrade an existing Netatalk 1.x installation, ensure that
     you carefully read the <a href="/2.0/htmldocs/upgrade.html">upgrade
-    guide</a> before and follow the steps outlined there. If you made use of symlinks 
-    inside Netatalk shares consider setting up a test installation with 2.0 before 
+    guide</a> before and follow the steps outlined there. If you made use of symlinks
+    inside Netatalk shares consider setting up a test installation with 2.0 before
     migrating since Netatalk 2.0 provides no support for symlinks any longer.</p>
 
 <hr />
