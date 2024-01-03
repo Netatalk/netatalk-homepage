@@ -486,6 +486,1631 @@ FIX: reworked username check a little. Depending on the UAM, the wrong
 </p>
 </li>
 </ul>
+<h3>Changes in 2.0-rc2</h3>
+<ul>
+<li>
+<p>
+UPD: use 0 0 for default creator/type rather than UNIX TEXT, from
+       Shlomi Yaakobovich.
+</p>
+</li>
+<li>
+<p>
+UPD: updated documentation
+</p>
+</li>
+<li>
+<p>
+UPD: change machine type from Macintosh to Netatalk in status reply
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: CopyFile only create a resource fork for destination if source
+       has one.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: mangling: for utf8 --&gt; max filename length is 255 bytes, else 31.
+</p>
+</li>
+<li>
+<p>
+FIX: cnid_dbd: fix a signed/unsigned, 16/32 bits mismatch. from Burkhard
+       Schmidt, bs at cpfs.mpg.de.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: After ad_setid don't flush resource fork if it has not been
+       modified.
+</p>
+</li>
+<li>
+<p>
+FIX: NEWS: Fixed ancient NEWS entries. Removed umlauts
+</p>
+</li>
+<li>
+<p>
+FIX: fix macname cache, SF bug 1021642
+</p>
+</li>
+<li>
+<p>
+FIX: revert Makefile change from 2.0-rc1. We have to include BDB_CFLAGS
+       after CFLAGS
+</p>
+</li>
+</ul>
+<h3>Changes in 2.0-rc1</h3>
+<ul>
+<li>
+<p>
+NEW: new manual page for asip-status.pl
+</p>
+</li>
+<li>
+<p>
+UPD: updated documentation
+</p>
+</li>
+<li>
+<p>
+UPD: uams: link uam_dhx_passwd.so to lcrypt before lcrypto. might help with
+       MD5 passwords
+</p>
+</li>
+<li>
+<p>
+UPD: Improved BerkeleyDB detection
+</p>
+</li>
+<li>
+<p>
+UPD: sys/solaris/Makefile.in: enable 'make check', from Alexander Barton
+</p>
+</li>
+<li>
+<p>
+UPD: tcp wrappers detection should work on OpenBSD as well now
+</p>
+</li>
+<li>
+<p>
+UPD: macbin: increase the maximum size of macbinary forks, as suggested by
+       Sourceforge bug ID 829221
+</p>
+</li>
+<li>
+<p>
+UPD: ASP: rework getstatus. use several ASP packets if the client allows
+       it, otherwise just send as much as we can
+</p>
+</li>
+<li>
+<p>
+FIX: FreeBSD 5 build, from Alex Barton (alex at barton.de)
+</p>
+</li>
+<li>
+<p>
+FIX: OSX 10.3 build
+</p>
+</li>
+<li>
+<p>
+FIX: papd: workaround a problem with PJL before Postscript
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: make sure we only disconnect on old session if the users match
+</p>
+</li>
+<li>
+<p>
+FIX: apfd: Quark6 mangled long filenames should work better now
+</p>
+</li>
+<li>
+<p>
+FIX: enhance ADv1 to ADv2 conversion. Fixed a SIGSEGV reported by Mark Baker
+</p>
+</li>
+<li>
+<p>
+FIX: better detection of invalid resource forks
+</p>
+</li>
+<li>
+<p>
+FIX: fix some linking problems on OpenBSD
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: catsearch.c, filedir.c: fix bogus casts, from Olaf Hering
+       (olh at suse.de)
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: don't try to create special folders and .volinfo on read-only
+       volumes
+</p>
+</li>
+<li>
+<p>
+FIX: iconv/unicode enhancements. fixed a sigsegv on conversion error
+</p>
+</li>
+<li>
+<p>
+FIX: configure.in: fix a typo, reported by Joerg Rossdeutscher
+</p>
+</li>
+<li>
+<p>
+FIX: uniconv: enhanced uniconv behaviour
+</p>
+</li>
+<li>
+<p>
+FIX: fixed some Solaris compilation problems
+</p>
+</li>
+<li>
+<p>
+FIX: papd/Makefile.am: add a missing $DESTDIR, from Vlad Agranovsky
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: quota.c: remove a c99 declaration, from Yann Rouillard
+</p>
+</li>
+<li>
+<p>
+FIX: configure.in: Solaris/gcc 3.0 fix, from Yann Rouillard
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: fix a SIGSEGV when sharing home dirs without any options in
+       AppleVolumes.
+</p>
+</li>
+<li>
+<p>
+FIX: numerous small bugfixes
+</p>
+</li>
+</ul>
+<h3>Changes in 2.0-beta2</h3>
+<ul>
+<li>
+<p>
+NEW: atalkd, papd and npb tools now support nbpnames with extended
+       characters
+</p>
+</li>
+<li>
+<p>
+NEW: integrated CUPS support for papd
+</p>
+</li>
+<li>
+<p>
+NEW: optionally advertise SSH tunneling capabilties
+</p>
+</li>
+<li>
+<p>
+NEW: automatic logfile removal for cnid_metad
+</p>
+</li>
+<li>
+<p>
+NEW: asip-status.pl has been added to netatalk
+</p>
+</li>
+<li>
+<p>
+UPD: updated documentation
+</p>
+</li>
+<li>
+<p>
+UPD: we now require Berkeley DB &gt;= 4.1
+</p>
+</li>
+<li>
+<p>
+UPD: 64bit Linux fixes from Stew Benedict, Mandrakesoft
+</p>
+</li>
+<li>
+<p>
+UPD: remove --enable-sendfile
+</p>
+</li>
+<li>
+<p>
+UPD: more verbose error messages
+</p>
+</li>
+<li>
+<p>
+FIX: better handling for resource forks without read access
+</p>
+</li>
+<li>
+<p>
+FIX: Tru64 build, by Burkhard Schmidt
+</p>
+</li>
+<li>
+<p>
+FIX: MIT Kerberos detection
+</p>
+</li>
+<li>
+<p>
+FIX: varios *BSD compile problems
+</p>
+</li>
+<li>
+<p>
+FIX: compile problem with libiconv, reported by Joe Marcus Clarke
+</p>
+</li>
+<li>
+<p>
+FIX: adv1tov2: make it work with the new structure
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: filenames longer than 127 bytes were not enumerated correctly,
+       reported by Thies C. Arntzen
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: return IP before FQDN in status reply.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Mac chooser could crash on a codepage conversion error
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: KerberosV auth with Panther clients, make long AD tickets work,
+       reported by Andrew Smith
+</p>
+</li>
+<li>
+<p>
+FIX: atalkd: could send invalid NBPLKUP replies, e.g with more than 15
+       printers. Reported by Almacha
+</p>
+</li>
+<li>
+<p>
+FIX: papd: fix papd.conf parsing problems with consecutive ':' and missing
+       newline. Reported by Craig White.
+</p>
+</li>
+<li>
+<p>
+FIX: megatron: make megatron work with UTF-8 volumes
+</p>
+</li>
+<li>
+<p>
+FIX: timeout: running timeout with commands which accept arguments,
+       from Yuval Yeret.
+</p>
+</li>
+<li>
+<p>
+FIX: uniconv: fix a SEGFAULT, reported by Matthew Geier
+</p>
+</li>
+<li>
+<p>
+FIX: pam detection: PAM_C/LDFLAGS were always empty, from Alexander Barton
+</p>
+</li>
+<li>
+<p>
+FIX: numerous small bugfixes.
+</p>
+</li>
+</ul>
+<h3>Changes in 2.0-beta1</h3>
+<ul>
+<li>
+<p>
+NEW: OSX style adouble scheme
+</p>
+</li>
+<li>
+<p>
+NEW: japanese SHIFT_JIS codepage (iconv supplied)
+</p>
+</li>
+<li>
+<p>
+NEW: Solaris kernel module build integrated with configure
+</p>
+</li>
+<li>
+<p>
+NEW: Gentoo start scripts
+</p>
+</li>
+<li>
+<p>
+NEW: cnid_dbd doesn't use transactions by default
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: the volume casefold option was broken
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: update AD2 headers and keep owner on file exchange
+</p>
+</li>
+<li>
+<p>
+FIX: Solaris 9 and FreeBSD 4.9/5.2 compilation
+</p>
+</li>
+<li>
+<p>
+FIX: free space reported with groups quotas on Linux
+</p>
+</li>
+<li>
+<p>
+FIX: OS9/OS X didn't update free space
+</p>
+</li>
+<li>
+<p>
+FIX: finder crash if folder opened got deleted by another process
+</p>
+</li>
+<li>
+<p>
+FIX: randnum UAM wasn't AFP3 ready
+</p>
+</li>
+<li>
+<p>
+FIX: numerous small bugfixes.
+</p>
+</li>
+</ul>
+<h3>Changes in 2.0-alpha2</h3>
+<ul>
+<li>
+<p>
+NEW: uniconv tool for converting volume encoding.
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: Make sure getstatus doesn't return loopback address as server IP.
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: Specify USEDOTS with MSWINDOWS implicitely.
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: SRVLOC register with IP address instead of hostname by default,
+       if -fqdn is specified register with FQDN.  Added extended character
+       support for SLP, non ASCII characters are escaped Added ZONE to registration.
+</p>
+</li>
+<li>
+<p>
+NEW: atalkd: Make atalkd set interfaces to ALLMULTI on linux by default.
+</p>
+</li>
+<li>
+<p>
+NEW: cnid_metad: Use DB_PRIVATE attribute for dbd backend without transaction.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Partial workaround for an OSX client deadlock.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Reenumerate folder if db is out of sync in resolveID.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Don't modify modification date in copyfile.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Variable $v substitution: always use name defined in config files.
+</p>
+</li>
+<li>
+<p>
+FIX: libatalk: Speed optimisation for byte locking was broken on resource fork.
+</p>
+</li>
+<li>
+<p>
+FIX: Solaris 9 compilation.
+</p>
+</li>
+<li>
+<p>
+FIX: Tru64 compilation fixes.
+</p>
+</li>
+<li>
+<p>
+FIX: AFS compilation fixes.
+</p>
+</li>
+<li>
+<p>
+FIX: strncpy bugfix.
+</p>
+</li>
+<li>
+<p>
+FIX: configure, man pages update and small bugfixes.
+</p>
+</li>
+</ul>
+<h3>Changes in 2.0-alpha1</h3>
+<ul>
+<li>
+<p>
+NEW: afpd: We now support AFP 3.x, which features long filenames and
+       large file support
+</p>
+</li>
+<li>
+<p>
+NEW: CNID handling completely reworked. We now use per Volume configurable
+       CNID backends.
+</p>
+</li>
+<li>
+<p>
+NEW: Two new daemons, cnid_metad and cnid_dbd to implement the dbd CNID backend.
+       Using Berkeley DB transactions with the CNID database should be safe now.
+</p>
+</li>
+<li>
+<p>
+NEW: The on disk format of the CNID database has changed. We now support 8 byte
+       device and inode numbers and an additinal type field that should make
+       detection of file/directory changes outside of afpd more robust.
+       Changed from HASH to BTREE access which speeds things up in certain cases
+       and reduces database file size.
+</p>
+</li>
+<li>
+<p>
+NEW: Long file name mangling is now implemented using the CNID ID, so no database is
+       required to map names to mangled names. This is the same method Mac OS X uses.
+</p>
+</li>
+<li>
+<p>
+NEW: New format (version 2) for Metadata in AppleDouble files. We record device and
+       inode of the underlying file as well as the CNID. This can be used for recovery
+       and speeds up access to the CNID.
+</p>
+</li>
+<li>
+<p>
+NEW: The old NLS codepage system has been removed. It was replaced by an iconv
+       based conversion system, which provides much more flexibility.
+</p>
+</li>
+<li>
+<p>
+NEW: You can safely use extended characters in volume names and for SIGUSR2 messaging.
+</p>
+</li>
+<li>
+<p>
+NEW: The default volume encoding is UTF-8.
+</p>
+</li>
+<li>
+<p>
+NEW: All documentation is now generated using DocBook. New or completely reworked
+       sections about installing, setting up and upgrading Netatalk replace various
+       README files in the doc directory.
+</p>
+</li>
+<li>
+<p>
+FIX: Protect afpd better against unexpected signals during updates of the CNID
+       database with the cdb backend. This makes database corruption less likely.
+</p>
+</li>
+<li>
+<p>
+FIX: All manpages have been reviewed and should now be up to date.
+</p>
+</li>
+<li>
+<p>
+FIX: Tons of bug fixes since 1.6.4. Please consults the CVS change log for details.
+</p>
+</li>
+</ul>
+<h3>Changes in 1.6.4</h3>
+<ul>
+<li>
+<p>
+NEW: afpd: Using the mswindows option now implicitly specifies usedots.
+  [Sam Noble]
+</p>
+</li>
+<li>
+<p>
+UPD: afpd.8: Updated the option documentation.
+  [Thomas Kaiser, Sebastian Rittau]
+</p>
+</li>
+<li>
+<p>
+FIX: configure: Removed broken --with-flock-locks option. [Bjoern Fernhomberg]
+</p>
+</li>
+<li>
+<p>
+FIX: libatalk: Do not log network probe (OSX 10.3). [Didier Gautheron]
+</p>
+</li>
+<li>
+<p>
+FIX: libatalk: Deadlock in signal handlers. [Didier]
+</p>
+</li>
+<li>
+<p>
+FIX: libatalk: Compilation with Linux kernel 2.6 fixed. [Sebastian, Bjoern]
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Solaris compile issues. [Bjoern]
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: If connection broke in dsi_tickle the child did never die. [Bjoern]
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Catsearch, fixes a possible segmentation fault. [Bjoern]
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Compilation issues. [Olaf Hering, Sebastian]
+</p>
+</li>
+<li>
+<p>
+FIX: cnid: Fix compile problems on Tru64. [Burkhard Schmidt]
+</p>
+</li>
+<li>
+<p>
+FIX: megatron: Fixed an uninitialized variable. [Olaf]
+</p>
+</li>
+<li>
+<p>
+FIX: installation: Don't overwrite PAM file if --enable-overwrite configure
+       option is not set. [Sam, Ryan Cleary]
+</p>
+</li>
+<li>
+<p>
+FIX: installation: Fixed BSD installation. [Toru TAKAMIZU]
+</p>
+</li>
+<li>
+<p>
+FIX: docs: Removed ssl-dir/ssl-dirs confusion from doc/INSTALL. [Bjoern]
+</p>
+</li>
+</ul>
+<h3>Changes in 1.6.3</h3>
+<ul>
+<li>
+<p>
+UPD: afpd: Infrastructural support for an upcoming Kerberos 5 UAM.
+       [Sam Noble]
+</p>
+</li>
+<li>
+<p>
+UPD: uams_dhx_passwd: Better random seed in Tru64. [Burkhard Schmidt]
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Bug in AFP connection negotiation stage. [Sam]
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Catsearch, when Mac and unix name differ, search on attributes.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Files could be opened for writing on read-only filesystems.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Debugging using SIGUSR1 was broken. [Stefan Muenkner]
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Segfault after login. [Robby Griffin, Sean Bolton]
+</p>
+</li>
+<li>
+<p>
+FIX: psf: Correct path to etc2ps.sh.
+</p>
+</li>
+<li>
+<p>
+FIX: shell_utils: Don't distribute generated files.
+</p>
+</li>
+<li>
+<p>
+FIX: aecho: -A option didn't work. [Chris Shiels]
+</p>
+</li>
+<li>
+<p>
+FIX: configure: Berkeley DB path detection could be wrong. [Stefan]
+</p>
+</li>
+<li>
+<p>
+FIX: Automake build fixes.
+</p>
+</li>
+</ul>
+<h3>Changes in 1.6.2</h3>
+<ul>
+<li>
+<p>
+FIX: atalkd: Fixes for reading long configuration file lines. [Dan Wilga]
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: CNID id allocation in a multiuser environment.
+</p>
+</li>
+<li>
+<p>
+FIX: papd: Fix PSSP support when PAM is enabled.
+</p>
+</li>
+<li>
+<p>
+FIX: macusers: Can now cope with IP addresses as well as host names.
+</p>
+</li>
+<li>
+<p>
+FIX: etc2ps.sh: Install correctly.
+</p>
+</li>
+</ul>
+<h3>Changes in 1.6.1</h3>
+<ul>
+<li>
+<p>
+UPD: Improve --enable-fhs. [Olaf Hering]
+</p>
+</li>
+<li>
+<p>
+UPD: Add BDB 4.1.x support.
+</p>
+</li>
+<li>
+<p>
+UPD: Add more documentation on CNID, as well as list which versions
+       of Berkeley DB are supported.
+</p>
+</li>
+<li>
+<p>
+FIX: Codepage file maccode.koi8-r is now correctly cleaned.
+</p>
+</li>
+<li>
+<p>
+FIX: Fix init script location on SuSE. [Olaf]
+</p>
+</li>
+<li>
+<p>
+FIX: Build fixes. [Olaf, Steven N. Hirsch]
+</p>
+</li>
+<li>
+<p>
+FIX: Various bugs when a user doesn't have access permission to a folder.
+       (Fixes an OSX kernel panic.)
+</p>
+</li>
+<li>
+<p>
+FIX: CNID, folders' DID handling with concurrent access or symlinks.
+       (Fixes an endless loop in afpd.)
+</p>
+</li>
+</ul>
+<h3>Changes in 1.6.0</h3>
+<ul>
+<li>
+<p>
+FIX: pap looks at the STDOUT file descriptor to see if it's connected to
+       a tty, instead of STDIN.
+</p>
+</li>
+</ul>
+<h3>Changes in 1.6pre2</h3>
+<ul>
+<li>
+<p>
+UPD: Removed --with-catsearch option from configure and enable FPCatSearch
+       by default.
+</p>
+</li>
+<li>
+<p>
+UPD: The dbpath argument does now support variable substitution.
+</p>
+</li>
+<li>
+<p>
+FIX: Build fix for non-GNU-C compilers in libatalk/util/logger.c.
+</p>
+</li>
+<li>
+<p>
+FIX: Two directories with the same name but different case confused the
+       Mac Finder.
+</p>
+</li>
+<li>
+<p>
+FIX: The ROOT_PARENT directory could get invalidated.
+</p>
+</li>
+</ul>
+<h3>Changes in 1.6pre1</h3>
+<ul>
+<li>
+<p>
+NEW: Long file name mangling support.
+</p>
+</li>
+<li>
+<p>
+NEW: Improved log file support.
+</p>
+</li>
+<li>
+<p>
+NEW: Server-side find capability ("FPCatSearch")
+</p>
+</li>
+<li>
+<p>
+NEW: Concurrent datastore (CDB) is now the default CNID datastore.  This
+       should be heavily tested in a multiuser environment.
+</p>
+</li>
+<li>
+<p>
+NEW: Variable substitution support has been added for the dbpath AppleVolume
+       option.
+</p>
+</li>
+<li>
+<p>
+UPD: CNID DID handling is now enabled by default.
+</p>
+</li>
+<li>
+<p>
+FIX: Various bug and build fixes as well as code cleanups.
+</p>
+</li>
+</ul>
+<h3>Changes in 1.5.5</h3>
+<ul>
+<li>
+<p>
+NEW: Allow afpd debugging to be enabled by sending the afpd process
+       a SIGUSR1.
+</p>
+</li>
+<li>
+<p>
+NEW: Allow SLP to be disabled per afpd process by adding a new -noslp flag
+       to afpd.conf.
+</p>
+</li>
+<li>
+<p>
+FIX: Use server name (if not NULL) for the SLP URL.
+</p>
+</li>
+<li>
+<p>
+FIX: papd: buffer overflow during config file read (Olaf Hering)
+</p>
+</li>
+</ul>
+<h3>Changes in 1.5.4</h3>
+<ul>
+<li>
+<p>
+FIX: File open read only and then read write (aka pb with Illustrator).
+</p>
+</li>
+<li>
+<p>
+FIX: Problems with unexpected EOF when reading files on a ddp connection
+       Photoshop, old finder.
+</p>
+</li>
+<li>
+<p>
+FIX: --with-nls-dir option does now work
+</p>
+</li>
+</ul>
+<h3>Changes in 1.5.3</h3>
+<ul>
+<li>
+<p>
+UPD: Extend the --disable-shell-check functionality to ignore users
+       with _no_ shell.  Also, send a log message if a user is refused login
+       based on the fact that they have no shell.
+</p>
+</li>
+<li>
+<p>
+UPD: Autoconf updates.
+</p>
+</li>
+<li>
+<p>
+UPD: Tru64 afpd authentication updates.
+</p>
+</li>
+<li>
+<p>
+UPD: As always: lots of minor code cleanups.
+</p>
+</li>
+<li>
+<p>
+FIX: Problems with Photoshop trying to open image files has been
+       corrected.
+</p>
+</li>
+<li>
+<p>
+FIX: Preserve special permission bits when creating or modifying
+       directories.
+</p>
+</li>
+<li>
+<p>
+FIX: afp_deleteid() now deletes the specified file and not the parent
+       directory.
+</p>
+</li>
+<li>
+<p>
+FIX: papd does now announce that it supports binary data to its clients.
+</p>
+</li>
+<li>
+<p>
+FIX: NetBSD ELF support.
+</p>
+</li>
+<li>
+<p>
+FIX: acleandir.rc is now installed in the bin directory.
+</p>
+</li>
+<li>
+<p>
+FIX: megatron does now compile even if compiled with -DDEBUG.
+</p>
+</li>
+<li>
+<p>
+FIX: Clean up some syslog messages.
+</p>
+</li>
+</ul>
+<h3>Changes in 1.5.2</h3>
+<ul>
+<li>
+<p>
+NEW: NetBSD support contributed by David Rankin and NetBSD contributors.
+       This includes a new configure option --enable-netbsd.
+</p>
+</li>
+<li>
+<p>
+NEW: Add the -client_polling afpd.conf flag to allow for clients to poll
+       the server every 10 seconds for open window updates.  Currently
+       this is the only way to get asynchronous directory updates.
+</p>
+</li>
+<li>
+<p>
+UPD: Use separate macro for AFS configure check.
+</p>
+</li>
+<li>
+<p>
+UPD: Some Perl scripts are now (partially) auto-generated. This improves
+       out-of-the-box usage of Netatalk.
+</p>
+</li>
+<li>
+<p>
+UPD: Solaris Kernel Makefile is now auto-generated. This fixes some path
+       issues, but isn't perfect, yet. Added some Solaris compatibility
+       fixes to the Kernel sources, too.
+</p>
+</li>
+<li>
+<p>
+UPD: CNID DB code sync'd with the current CVS version.  NOTE: Using this
+       code requires you to delete _all_ existing .AppleDB directories in
+       order to avoid database corruption!
+</p>
+</li>
+<li>
+<p>
+FIX: The file AppleVolumes.system contained wrong line breaks so that
+       not all file types were properly recognized.
+</p>
+</li>
+<li>
+<p>
+FIX: AFS compilation would fail due to a misnamed variable.
+</p>
+</li>
+<li>
+<p>
+FIX: SLP configure check was wrong so SLP did not compile.
+</p>
+</li>
+<li>
+<p>
+FIX: Fix the way quotas are handled under certain situations.
+</p>
+</li>
+<li>
+<p>
+FIX: Do not enable debugging code if debugging option is not set.
+</p>
+</li>
+<li>
+<p>
+FIX: Some problems with wrongly assigned DIDs were fixed.
+</p>
+</li>
+<li>
+<p>
+FIX: Various bug fixes and code cleanups.
+</p>
+</li>
+</ul>
+<h3>Changes in 1.5.1</h3>
+<ul>
+<li>
+<p>
+NEW: Added a program called cnid_didname_verify that can be used to
+       verify the consistency of the CNID database.
+</p>
+</li>
+<li>
+<p>
+NEW: New afpd option: -timeout. Warning: This still doesn't do what it's
+       supposed to!
+</p>
+</li>
+<li>
+<p>
+UPD: Code cleanups and compatibility fixes to macusers.
+</p>
+</li>
+<li>
+<p>
+UPD: AppleVolumes.system was cleaned up.
+</p>
+</li>
+<li>
+<p>
+FIX: Really fix Tru64 compilation (see last entry).
+</p>
+</li>
+<li>
+<p>
+FIX: Hand correct error value back to AFP client when deleting files or
+       directories fails.
+</p>
+</li>
+<li>
+<p>
+FIX: Leading or trailing spaces are now forbidden on volumes that have
+       the AFPVOL_MSWINDOWS flag set.
+</p>
+</li>
+<li>
+<p>
+FIX: Minor code cleanups and warning fixes.
+</p>
+</li>
+<li>
+<p>
+FIX: Make quota support work on FreeBSD.
+</p>
+</li>
+</ul>
+<h3>Changes in 1.5.0</h3>
+<ul>
+<li>
+<p>
+FIX: Compilation on Tru64 systems was broken, since libtool's acinclude.m4
+       file on the packagers system did not contain the necessary patch.
+</p>
+</li>
+<li>
+<p>
+FIX: On some systems, atalkd refuses to start, since it couldn't detect
+       any interfaces. This was caused by an overzealous validity check.
+</p>
+</li>
+</ul>
+<h3>Changes in 1.5rc2</h3>
+<ul>
+<li>
+<p>
+FIX: contrib/shell_utils/lp2pap.sh was erased when "make clean" was called.
+       Now we distribute lp2pap.sh.tmpl instead, and lp2pap.sh is automatically
+       generated during package build.
+</p>
+</li>
+<li>
+<p>
+FIX: Some platforms (notably Tru64) don't have the snprintf() call, which
+       was used in etc/afp/afp_config.c. This call was replaced by sprintf()
+       and prior bounds checking.
+</p>
+</li>
+</ul>
+<h3>Changes from the 1.4b1 release:</h3>
+<ul>
+<li>
+<p>
+Fixed the maximum free/total volume size in afpd.
+</p>
+</li>
+<li>
+<p>
+Made ~ the default volume in afpd.
+</p>
+</li>
+<li>
+<p>
+Fixed pid file handling and changed setpgrp() to setpgid() in afpd,
+    papd, and atalkd.
+</p>
+</li>
+<li>
+<p>
+Added code to afpd to set the Unix file time stamps with utime().
+</p>
+</li>
+<li>
+<p>
+Fixed a bug in papd's printcap code which limited it to 15 or so
+    printers.
+</p>
+</li>
+<li>
+<p>
+Fixed papd's handling of piped printers.
+</p>
+</li>
+<li>
+<p>
+Fixed papd's handling of bad job names.
+</p>
+</li>
+<li>
+<p>
+Fixed atalkd to send NBP LKUP packets from NBP port.
+</p>
+</li>
+<li>
+<p>
+Added "sync;sync;sync" to Solaris kinstall to help with streams
+    file corruption.
+</p>
+</li>
+<li>
+<p>
+Added nlocalrts to streams ddp.conf.  Thanks Thomas Tornblom.
+</p>
+</li>
+<li>
+<p>
+Fixed signed extension infinite loop in Solaris module.
+</p>
+</li>
+<li>
+<p>
+Moved all the config files to &hellip;/config.
+</p>
+</li>
+</ul>
+<h3>Changes from the 1.3.3 release:</h3>
+<ul>
+<li>
+<p>
+Added code from Sun Microsystems, Inc (OPCOM) for Solaris support.
+    See COPYRIGHT.
+</p>
+</li>
+<li>
+<p>
+Added support for FreeBSD, mostly changes by Mark Dawson and Julian
+    Elischer.
+</p>
+</li>
+<li>
+<p>
+All sorts of other stuff.
+</p>
+</li>
+</ul>
+<h3>Changes from the 1.3.1 release:</h3>
+<ul>
+<li>
+<p>
+Added options to psf's filter names to support accounting on HPs.
+    !!! NOTE:  The location of the filters has changed, see the man
+    page for where.
+</p>
+</li>
+<li>
+<p>
+Added code from Alan Cox to support Linux.
+</p>
+</li>
+<li>
+<p>
+Rewrote papd.  Now handles dropped connections better.
+    Configuration has been modernized.  !!! NOTE: The format of the
+    configuration file has changed, but NOT THE NAME.
+</p>
+</li>
+<li>
+<p>
+Added Kerberos support to papd.
+</p>
+</li>
+<li>
+<p>
+atalkd now removes routes on a SIGTERM.  Still can't just restart
+    it, but it's closer.
+</p>
+</li>
+<li>
+<p>
+Changed atalkd and the kernel driver to remove a hack added to
+    support sending to 0.255.  Now the kernel will allow multiple open
+    sockets with the same port, so long as the addess associated with
+    the port is different.  atalkd now opens a socket for each port on
+    each interface.
+</p>
+</li>
+<li>
+<p>
+atalkd now rewrites its configuration file.  If no configuration
+    file is given, one will be generated.  Permissions on the new
+    configuration file will be inherited from the old one.  If there is
+    no old one, permissions default to 644.  Won't rewrite the file if
+    the owner doesn't have write permission.
+</p>
+</li>
+<li>
+<p>
+Removed support for the "AFS Kerberos UAM", in favor of the
+    "AuthMan UAM".  Kerberos support should now be much more
+    straight-forward.
+</p>
+</li>
+<li>
+<p>
+Fixed a bug in afpd which would cause incorrect group calculations
+    on ultrix machines.
+</p>
+</li>
+<li>
+<p>
+Fixed a bug in afpd which causes SimpleText and some other
+    applications to silently fail to write.  There's also a bug in
+    MacOS, but we can't fix that.
+</p>
+</li>
+<li>
+<p>
+Fixed a bad interaction with afpd and AFS which would cause file
+    writes to not propogate between AFS clients.
+</p>
+</li>
+<li>
+<p>
+!!! CHANGED the name(s) of afpd's config files.  The new files are
+    AppleVolumes.system and AppleVolumes.default.  If AppleVolumes.system
+    exists, it is always read, AppleVolumes.default is only read if the
+    user has no AppleVolumes file.  Included a flag "-u" to indicate
+    which file has precedence.  "-u" user wins, otherwise ".system"
+    wins.
+</p>
+</li>
+<li>
+<p>
+Rewrote the AppleVolumes parsing code.  Now works.
+</p>
+</li>
+<li>
+<p>
+Added a filename extension mapping to afpd.  User always takes
+    precedence, regardless of the "-u" flag.  Code to change the type
+    of all Unix files contributed by Kee Hinckley &lt;nazgul@utopia.com&gt;.
+</p>
+</li>
+<li>
+<p>
+afpd now supports both UFS and AFS volumes simultaneously.  It also
+    uses access() to attempt to calculate reasonable Mac permissions
+    for AFS directories.
+</p>
+</li>
+<li>
+<p>
+Changed reporting of file times.  Files that are written from Unix
+    now update the Mac's idea of the files modification time.  Unix
+    mtime is now reported instead of ctime.
+</p>
+</li>
+<li>
+<p>
+Added support for a new UAM to afpd.  This requires that client
+    Macs have MacTCP and AuthMan installed.  Should make running afpd
+    for AFS easier.
+</p>
+</li>
+<li>
+<p>
+Removed code so that otherwise valid volumes for which the mounting
+    user has no permission will appear in the volume selection dialog
+    on the Mac gray-ed out.
+</p>
+</li>
+<li>
+<p>
+Added code from Chris Metcalf of MIT to the AppleDouble library
+    which improves permission inheritance.
+</p>
+</li>
+<li>
+<p>
+Added code from G. Paul Ziemba of Alantec, Inc to better report
+    errors in psf.  Also changed psf to use syslog for errors that
+    users aren't interested in.
+</p>
+</li>
+<li>
+<p>
+Added information to psf's man page to better explain the
+    interaction between psf, pap, and lpd.
+</p>
+</li>
+<li>
+<p>
+Make psf/pap/psa do accounting when it's turnes on in
+    /etc/printcap.
+</p>
+</li>
+<li>
+<p>
+Changed pap's error message when there is no printer specified on
+    the command line and no .paprc is found.  Also heavily modified
+    pap's man page to reflect changes in the "new" version of pap,
+    including moving it from section 8 to section 1.
+</p>
+</li>
+<li>
+<p>
+Fixed a byte-order bug in pap's sequence numbers.  Doubt if pap has
+    ever worked right on little endian machines!
+</p>
+</li>
+<li>
+<p>
+Added a flag to pap to optionally close before receiving EOF from
+    the printer.  Off by default.  psf calls pap with this option on.
+</p>
+</li>
+<li>
+<p>
+Added timeouts to the nbp library calls.  This means that processes
+    won't hang when atalkd dies during boot, thus hanging your
+    machine.
+</p>
+</li>
+</ul>
+<h3>Changes from the 1.3 release:</h3>
+<ul>
+<li>
+<p>
+Fixed a bug in afpd which would cause APPL mappings to contain both
+    mac and unix path names.  The fixed code will handle the old
+    (corrupted) database.
+</p>
+</li>
+<li>
+<p>
+Fixed a *very* serious bug which would cause files to be corrupted
+    when copying to afpd.
+</p>
+</li>
+<li>
+<p>
+Fixed a bug in afpd which would cause replies to icon writes to
+    contain the written icon.
+</p>
+</li>
+<li>
+<p>
+Filled in the function code switch in afpd.  Previously, a hacker
+    could probably have used afpd to get unauthorized access to a
+    machine running afpd.
+</p>
+</li>
+<li>
+<p>
+Fixed a bug in the asp portion of libatalk.a which could cause the
+    malloc()/free() database to be corrupted.
+</p>
+</li>
+<li>
+<p>
+Fixed a bug in atalkd's zip query code.  With this bug, only the
+    first N % 255 nets get queried.  However, since nets bigger than
+    255 are usually pretty unstable, the unqueried for nets will
+    eventually get done, when N drops by one.
+</p>
+</li>
+<li>
+<p>
+Suppressed a spurious error ("route: No such process") in atalkd.
+</p>
+</li>
+</ul>
+<h3>Changes from the 1.2.1 release:</h3>
+<ul>
+<li>
+<p>
+atalkd is completely rewritten for phase 2 support.  atalkd.conf
+    from previous version will not work!
+</p>
+</li>
+<li>
+<p>
+afpd now has better AFS support.  In particular, the configuration
+    for AFS was made much easier; a number of Kerberos-related
+    byte-ordering and time problems were found; clear-text passwords
+    were added (thanks to geeb@umich.edu).
+</p>
+</li>
+<li>
+<p>
+afpd now handles Unix permissions much better (thanks to
+    metcalf@mit.edu).
+</p>
+</li>
+<li>
+<p>
+There are many, many more changes, but most are small bug fixes.
+</p>
+</li>
+</ul>
+<h3>Changes from the 1.2 release:</h3>
+<ul>
+<li>
+<p>
+The Sun support now uses loadable kernel modules (a la VDDRV)
+    instead of binary patches. As such, it should work on any sunos
+    greater than 4.1, and is confirmed to work under 4.1.1 and 4.1.2.
+</p>
+</li>
+<li>
+<p>
+The DEC support no longer requires source. It also runs under
+    ultrix 4.1 and 4.2. It still requires patching your kernel, but the
+    patches are limited to those files available to binary-only sites
+    &mdash; primarily hooks for things like netatalk.
+</p>
+</li>
+<li>
+<p>
+The etc.rc script now uses changes made to nbprgstr (see below).
+</p>
+</li>
+<li>
+<p>
+aecho now takes machine names on the command line.
+</p>
+</li>
+<li>
+<p>
+nbplkup now takes a command line argument specifying the number of
+    responses to accept. It also takes its defaults from the NBPLKUP
+    environment variable.
+</p>
+</li>
+<li>
+<p>
+nbprgstr may be used to register a name at any requested port.
+</p>
+</li>
+<li>
+<p>
+afpd now logs if an illegal shell is used during login, instead of
+    silently denying service.
+</p>
+</li>
+<li>
+<p>
+A bug in afpd which caused position information for the directory
+    children of the root of a volume to be ignored has been fixed.
+</p>
+</li>
+<li>
+<p>
+Several typos in afpd which would cause include files necessary to
+    ultrix to be skipped have been fixed.
+</p>
+</li>
+<li>
+<p>
+atalkd will no long propagate routes to networks whose zone
+    it doesn't know.
+</p>
+</li>
+<li>
+<p>
+atalkd no longer dumps core if it receives a ZIP GetMyZone request
+    from a network whose zone it doesn't know. (Since this currently
+    can only happen from off net, it's not precisely a legal request.)
+</p>
+</li>
+<li>
+<p>
+pap and papd (optionally) no longer check the connection id in PAP
+    DATA responses. Both also maintain the function code in non-first-packet
+    PAP DATA responses.  These changes are work-arounds to deal with
+    certain AppleTalk printer cards, notably the BridgePort LocalTalk
+    card for HP LJIIISIs.
+</p>
+</li>
+<li>
+<p>
+pap no longer sends an EOF response to each PAP SENDDATA request,
+    only the first.
+</p>
+</li>
+<li>
+<p>
+A bug in papd which would cause it to return a random value when
+    printing the procset to a piped printer has been fixed.
+</p>
+</li>
+<li>
+<p>
+A bug relating to NBP on reverse-endian machines has been fixed.
+</p>
+</li>
+<li>
+<p>
+atp_rsel() from libatalk now returns a correct value even if it
+    hasn't recieved anything yet.
+</p>
+</li>
+<li>
+<p>
+atalk_addr() from libatalk no longer accepts addresses in octal
+    format, since AppleTalk addresses can have leading zeros. Also it
+    checks that the separator character is a '.'.
+</p>
+</li>
+<li>
+<p>
+Pseudo man pages for nbplkup, nbprgstr, and nbpunrgstr, have been
+    added.
+</p>
+</li>
+<li>
+<p>
+The example in the psf(8) man page is now correct.
+</p>
+</li>
+<li>
+<p>
+The man pages for changed commands have been updated.
+</p>
+</li>
+<li>
+<p>
+The README files for various machine have been updated
+    appropriately.
+</p>
+</li>
+</ul>
 </div>
 <div class="footer">
 <span class="italic">webspace sponsored by</span><br />
