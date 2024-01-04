@@ -8,6 +8,16 @@ include "header.php";
   <h1>News Archive</h1>
 
 <hr />
+  <small>17th of August 2023</small>
+  <h2>Netatalk 2.2.10 is available</h2>
+  <p>The Netatalk development team is proud to announce version 2.2.10
+  of the Netatalk File Sharing suite. This release contains a range of bugfixes and
+  quality of life improvements. Additionally, Netatalk now runs on macOS Ventura hosts.
+  All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.10.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-10">Release Notes</a>.</p>
+
+<hr />
   <small>28th of April 2023</small>
   <h2>Netatalk 3.1.15 is available</h2>
 
@@ -15,7 +25,7 @@ include "header.php";
   of the Netatalk 3.1 release series. It includes fixes for security issues <a href="https://www.cve.org/CVERecord?id=CVE-2022-43634">CVE-2022-43634</a> and
   <a href="https://www.cve.org/CVERecord?id=CVE-2022-45188">CVE-2022-45188</a>, as well as a range of other bug fixes. Additionally, Netatalk now runs on macOS Ventura hosts.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-3-1-15">Release Notes</a>.</p>
+     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-15">Release Notes</a>.</p>
 
 <hr />
   <small>26th of April 2023</small>
@@ -25,7 +35,7 @@ include "header.php";
   in addition to other minor bug fixes.
   All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.9.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-2-2-9">Release Notes</a>.</p>
+     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-9">Release Notes</a>.</p>
 
 <hr />
   <small>25th of February 2023</small>
@@ -35,7 +45,7 @@ include "header.php";
   quality of life improvements.
   All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.8.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-2-2-8">Release Notes</a>.</p>
+     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-8">Release Notes</a>.</p>
 
 <hr />
   <small>10th of January 2023</small>
@@ -47,7 +57,7 @@ include "header.php";
   crash in afpd that was introduced with the security improvements in
   3.1.13, in addition to a range of other minor improvements.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-3-1-14">Release Notes</a>.</p>
+     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-14">Release Notes</a>.</p>
 
 <hr />
   <small>10th of January 2023</small>
@@ -60,7 +70,7 @@ include "header.php";
   have been adopted for improved usability and stability.
   All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.7.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-2-2-7">Release Notes</a>.</p>
+     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-7">Release Notes</a>.</p>
 
 <hr />
   <small>10th of January 2023</small>
@@ -413,7 +423,7 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
   <h2>Netatalk 2.2.0 is available for testing!</h2>
   <p>The Netatalk development team is proud to announce version 2.2.0 of
     the Netatalk File Sharing suite. This is the first stable release of the
-    new 2.2 series. Earyl adopters are encouraged to upgrade their systems
+    new 2.2 series. Early adopters are encouraged to upgrade their systems
     to 2.2.0.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/2.2/ReleaseNotes2.2.0.html">Release Notes</a>.</p>

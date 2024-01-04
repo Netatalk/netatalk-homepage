@@ -71,13 +71,13 @@
         (bzip2)</a></li>
       <li><a title="view 3.1.18 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-18">&nbsp;Release Notes</a></li>
     </ul>
-    <p><b>old (AppleTalk support)</b></p>
+    <p><b>old stable (AppleTalk)</b></p>
     <ul>
-      <li><a title="download 2.2.10 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-2-2-10/netatalk-2.2.10.tar.bz2/download">&nbsp;2.2.10
+      <li><a title="download 2.3.0 xz compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-2-3-0/netatalk-2.3.0.tar.xz/download">&nbsp;2.3.0
+        (xz)</a></li>
+      <li><a title="download 2.3.0 bzip2 compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-2-3-0/netatalk-2.3.0.tar.bz2/download">&nbsp;2.3.0
         (bzip2)</a></li>
-      <li><a title="download 2.2.10 gzip compressed" href="https://sourceforge.net/projects/netatalk/files/netatalk-2-2-10/netatalk-2.2.10.tar.gz/download">&nbsp;2.2.10
-        (gzip)</a></li>
-      <li><a title="view 2.2.10 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-10">&nbsp;Release Notes</a></li>
+      <li><a title="view 2.3.0 Release Notes" href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-3-0">&nbsp;Release Notes</a></li>
     </ul>
   </div>
   <div class="navbar">
@@ -90,13 +90,13 @@
       <li><a href="/3.1/htmldocs/upgrade.html">Upgrading</a></li>
       <li><a href="/3.1/htmldocs/man-pages.html">Man Pages</a></li>
     </ol>
-    <h3><b>2.2 manual</b></h3>
+    <h3><b>2.3 manual</b></h3>
     <ol>
-      <li><a href="/2.2/htmldocs/intro.html">Introduction</a></li>
-      <li><a href="/2.2/htmldocs/installation.html">Installation</a></li>
-      <li><a href="/2.2/htmldocs/configuration.html">Configuration</a></li>
-      <li><a href="/2.2/htmldocs/upgrade.html">Upgrading</a></li>
-      <li><a href="/2.2/htmldocs/man-pages.html">Man Pages</a></li>
+      <li><a href="/2.3/htmldocs/intro.html">Introduction</a></li>
+      <li><a href="/2.3/htmldocs/installation.html">Installation</a></li>
+      <li><a href="/2.3/htmldocs/configuration.html">Configuration</a></li>
+      <li><a href="/2.3/htmldocs/upgrade.html">Upgrading</a></li>
+      <li><a href="/2.3/htmldocs/man-pages.html">Man Pages</a></li>
     </ol>
   </div>
   <div class="navbar">

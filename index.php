@@ -34,6 +34,18 @@ include "header.php";
 <hr />
   <h1>Latest News</h1>
 
+  <small>28th of December 2023</small>
+  <h2>Netatalk 2.3.0 is available</h2>
+  <p>The Netatalk development team is proud to announce version 2.3.0 of
+    the Netatalk File Sharing suite. This is the first stable release of the
+    new 2.3 series. Early adopters are encouraged to upgrade their systems
+    to 2.3.0.</p>
+  <p>The theme for this release is security and code quality. Long-obsoleted
+    features have been removed, bugs have been fixed, and documentation improved.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-3-0">Release Notes</a>.</p>
+
+<hr />
   <small>5th of October 2023</small>
   <h2>Netatalk 3.1.18 is available</h2>
 
@@ -41,7 +53,7 @@ include "header.php";
   of the Netatalk 3.1 release series. It includes a patch for security issue <a href="CVE-2022-22995.php">CVE-2022-22995</a>.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.18.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-3-1-18">Release Notes</a>.</p>
+     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-18">Release Notes</a>.</p>
 
 <hr />
   <small>22nd of September 2023</small>
@@ -60,7 +72,7 @@ include "header.php";
   of the Netatalk 3.1 release series. It includes a 0-day fix for security issue <a href="CVE-2023-42464.php">CVE-2023-42464</a>.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.17.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-3-1-17">Release Notes</a>.</p>
+     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-17">Release Notes</a>.</p>
 
 <hr />
   <small>11th of September 2023</small>
@@ -70,20 +82,10 @@ include "header.php";
   of the Netatalk 3.1 release series. It includes fixes for the "Invalid metadata EA" error, among other improvements.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.16.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-3-1-16">Release Notes</a>.</p>
+     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-16">Release Notes</a>.</p>
 
 <hr />
-  <small>17th of August 2023</small>
-  <h2>Netatalk 2.2.10 is available</h2>
-  <p>The Netatalk development team is proud to announce version 2.2.10
-  of the Netatalk File Sharing suite. This release contains a range of bugfixes and
-  quality of life improvements. Additionally, Netatalk now runs on macOS Ventura hosts.
-  All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.10.</p>
-  <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/Netatalk/releases/tag/netatalk-2-2-10">Release Notes</a>.</p>
-
-<hr />
-  <p>For a list of older News go to the
+  <p>For a list of older releases, go to the
      <a href="archive.php">News Archive</a>.</p>
 
   <p>Netatalk is licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU 
