@@ -15,21 +15,64 @@ include "header.php";
      *NIX-like hosts, providing seamless compatibility with the unique requirements
      of Macintosh networking, file systems, and operating system services.</p>
 
-  <h2>Features:</h2>
-  <ul>
-  <li>Compliant with AFP 3.4, the final revision of the protocol</li>
-  <li>Backwards compatible with AFP 2.2</li>
-  <li>Time Machine</li>
-  <li>Bonjour</li>
-  <li>Spotlight</li>
-  <li>Macintosh file resource forks</li>
-  </ul>
-
-  <h2>Features (legacy version 2):</h2>
-  <ul>
-  <li>AppleTalk networking support</li>
-  <li>AppleTalk print server, time server, and Apple II netboot server</li>
-  </ul>
+  <h2>Features</h2>
+  <table summary="Netatalk feature comparison">
+  <tr>
+  <th>Feature</th>
+  <th>Netatalk v3</th>
+  <th>Netatalk v2</th>
+  </tr>
+  <tr>
+  <td>AFP Protocol Versions</td>
+  <td>2.2, 3.0, 3.1, 3.2, 3.3, 3.4</td>
+  <td>1.1, 2.0, 2.1, 2.2, 3.0, 3.1, 3.2, 3.3</td>
+  </tr>
+  <tr>
+  <td>AFP over TCP</td>
+  <td>Yes</td>
+  <td>Yes</td>
+  </tr>
+  <tr>
+  <td>AFP over AppleTalk</td>
+  <td>No</td>
+  <td>Yes</td>
+  </tr>
+  <tr>
+  <td>Macintosh Resource Forks</td>
+  <td>Supported via Extended Attributes</td>
+  <td>Supported via AppleDouble metadata</td>
+  </tr>
+  <tr>
+  <td>Bonjour Service Discovery</td>
+  <td>Zeroconf</td>
+  <td>Zeroconf and SLP</td>
+  </tr>
+  <tr>
+  <td>Time Machine</td>
+  <td>Yes</td>
+  <td>Yes</td>
+  </tr>
+  <tr>
+  <td>Spotlight</td>
+  <td>Yes</td>
+  <td>No</td>
+  </tr>
+  <tr>
+  <td>PAP Print Server</td>
+  <td>No</td>
+  <td>Yes, with CUPS support</td>
+  </tr>
+  <tr>
+  <td>Timelord Time Server</td>
+  <td>No</td>
+  <td>Yes</td>
+  </tr>
+  <tr>
+  <td>Apple II Netboot Server</td>
+  <td>No</td>
+  <td>Yes</td>
+  </tr>
+</table>
 
 <hr />
   <h1>Latest News</h1>
