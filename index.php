@@ -23,6 +23,11 @@ include "header.php";
   <th>Netatalk v2</th>
   </tr>
   <tr>
+  <td>Supports Clients</td>
+  <td>Mac OS 7.5 ~ Mac OS 9, Mac OS X, macOS</td>
+  <td>Apple II, Macintosh System 6 ~ Mac OS 9, Mac OS X, macOS</td>
+  </tr>
+  <tr>
   <td>AFP Protocol Versions</td>
   <td>2.2, 3.0, 3.1, 3.2, 3.3, 3.4</td>
   <td>1.1, 2.0, 2.1, 2.2, 3.0, 3.1, 3.2, 3.3</td>
@@ -69,6 +74,11 @@ include "header.php";
   </tr>
   <tr>
   <td>Apple II Netboot Server</td>
+  <td>No</td>
+  <td>Yes</td>
+  </tr>
+  <tr>
+  <td>AppleTalk Router Functionality</td>
   <td>No</td>
   <td>Yes</td>
   </tr>
