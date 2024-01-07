@@ -25,12 +25,12 @@ in developing Netatalk, you should subscribe to this list.</li>
 <h3>Security</h3>
 <p>The Netatalk Project takes cyber security very seriously. In this section we publish security advisories when vulnerabilies have been disclosed and fixed.</p>
 
-<table>
+<table summary="Security patch list">
 <tr>
 <th>CVE ID</th>
 <th>Subject</th>
 <th>Date</th>
-<th>Versions</th>
+<th>Affected Versions</th>
 </tr>
 <tr>
 <td><a href="CVE-2023-42464.php">CVE-2023-42464</a></td>

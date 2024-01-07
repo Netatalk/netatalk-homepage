@@ -16,21 +16,21 @@ body {
 
 /* table */
 
-table {
+div#content table {
 	border-collapse: collapse;
-	width: 100%;
+	width: 80%;
 }
 
-th, td {
+div#content th, td {
 	border: 1px solid #424242;
 }
 
-td {
-	padding: 8px;
+div#content td {
+	padding: 5px;
 	text-align: left;
 }
 
-th {
+div#content th {
     text-align: center;
     text-transform: lowercase;
     color: white;
