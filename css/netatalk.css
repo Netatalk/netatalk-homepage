@@ -1,4 +1,4 @@
-BODY {
+body {
 	/* font-family: helvetica, arial, "lucida sans", sans-serif; */
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;;
 	background-color: white;
@@ -13,40 +13,40 @@ BODY {
 	font-size: 12px;
 }
 
-TD {
+td {
 	/* font-family: helvetica, arial, "lucida sans", sans-serif; */
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;;
 	font-size: 12px;
 }
 
-H1, H2, H3 {
+h1, h2, h3 {
 	font-size: 130%;
 	padding: 2px;
 	margin-top: 0px;
 }
 
-H1 {
+h1 {
 	background-color: #424242;
 	color: #FFFFFF;
 }
 
-H2 {
+h2 {
 	background-color: #424242;
 	color: #FFFFFF;
 	text-decoration: none;
 }
 
-H3 {
+h3 {
 	background-color: #330000;
 	color: #FFFFFF;
 }
 
-H4 {
+h4 {
 	color: #330000;
 	font-size: 120%;
 }
 
-H5 {
+h5 {
 	font-size: 100%;
 	color: #330000;
 }
@@ -55,11 +55,11 @@ H5 {
 	color: black;
 }
 
-TR.qandadiv TD {
+tr.qandadiv td {
 	padding-top: 1em;
 }
 
-DIV.navheader {
+div.navheader {
 	font-size: 80%;
 	margin-top: 15px;
 }
@@ -68,91 +68,91 @@ div.titlepage {
 	margin-top: 15px;
 }
 
-DIV.navheader th{
+div.navheader th{
 	font-size: 100%;
 }
 
-DIV.navfooter {
+div.navfooter {
 	font-size: 80%;
 }
 
-A:link {
+a:link {
 	color: #660000;
 }
 
-A:visited {
+a:visited {
 	color: #CC0000;
 }
 
-A:active {
+a:active {
 	color: #FF0033;
 }
 
-TR.question {
+tr.question {
 	color: #33C;
 	font-weight: bold;
 }
 
-TR.question TD {
+tr.question td {
 	padding-top: 1em;
 }
 
-DIV.variablelist {
+div.variablelist {
 	padding-left: 2em;
 	color: #33C;
 }
 
-P {
+p {
 	color: black;
 }
 
-DIV.caution, DIV.tip, DIV.important {
+div.caution, div.tip, div.important {
 	border: dashed 1px;
 	background-color: #EEEEFF;
 	width: 60em;
 	padding: 5px;
 }
 
-PRE.programlisting, PRE.screen {
+pre.programlisting, pre.screen {
 	border: #630 1px dashed;
 	color: #993300;
 	padding: 2px;
 	font-size: 120%;
 }
-DIV.warning { 
+div.warning {
 	border: dashed 1px;
 	background-color: #BFBFBF;
 	width: 60em;
 	padding: 5px;
 } 
 
-DIV.note { 
+div.note {
 	border: dashed 1px;
 	background-color: #f2f2f2;
 	width: 60em;
 	padding: 5px;
 } 
 
-DIV.author {
+div.author {
 	padding-top: 1em;
 }
 
-DIV.revhistory table{
+div.revhistory table{
 	font-size: 12px;
 	border-collapse: collapse;
 	border-spacing: 0;
 	border: 0px;
 }
 
-DIV.revhistory tr {
+div.revhistory tr {
 	border: 0px;
 }
 
-DIV.revhistory td {
+div.revhistory td {
 	border: 0px;
 }
 
-DIV.revhistory th {
+div.revhistory th {
 	border: 0px;
 }
 
