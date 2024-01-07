@@ -34,6 +34,15 @@ include "header.php";
 <hr />
   <h1>Latest News</h1>
 
+  <small>6th of January 2024</small>
+  <h2>Netatalk 2 Webmin Module 1.1 Released</h2>
+
+  <p>
+    Version 1.1 of the Netatalk 2 Webmin Module is a companion to Netatalk 2.3.0. In addition, it includes a range of UX improvements and bugfixes.</p>
+    <p>For more information, see the <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.1">Release Notes</a>.
+  </p>
+
+<hr />
   <small>28th of December 2023</small>
   <h2>Netatalk 2.3.0 is available</h2>
   <p>The Netatalk development team is proud to announce version 2.3.0 of
@@ -73,16 +82,6 @@ include "header.php";
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.17.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-17">Release Notes</a>.</p>
-
-<hr />
-  <small>11th of September 2023</small>
-  <h2>Netatalk 3.1.16 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 3.1 release series. It includes fixes for the "Invalid metadata EA" error, among other improvements.
-  All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.16.</p>
-  <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-16">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older releases, go to the

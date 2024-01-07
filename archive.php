@@ -8,6 +8,16 @@ include "header.php";
   <h1>News Archive</h1>
 
 <hr />
+  <small>11th of September 2023</small>
+  <h2>Netatalk 3.1.16 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 3.1 release series. It includes fixes for the "Invalid metadata EA" error, among other improvements.
+  All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.16.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-16">Release Notes</a>.</p>
+
+<hr />
   <small>17th of August 2023</small>
   <h2>Netatalk 2.2.10 is available</h2>
   <p>The Netatalk development team is proud to announce version 2.2.10
