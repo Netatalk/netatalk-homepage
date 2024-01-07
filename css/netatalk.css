@@ -1,5 +1,4 @@
 body {
-	/* font-family: helvetica, arial, "lucida sans", sans-serif; */
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;;
 	background-color: white;
 	font-size: 1em;
@@ -8,13 +7,11 @@ body {
 }
 
 .pdparam{
-	/* font-family: helvetica, arial, "lucida sans", sans-serif; */
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;;
 	font-size: 12px;
 }
 
 td {
-	/* font-family: helvetica, arial, "lucida sans", sans-serif; */
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;;
 	font-size: 12px;
 }
