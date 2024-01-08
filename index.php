@@ -95,6 +95,14 @@ include_once "header.php";
   <small>6th of January 2024</small>
   <h2>Netatalk 2 Webmin Module 1.1 Released</h2>
 
+  <p>Version 0.3 of the Netatalk 3 Webmin Module is now available.
+  It introduces a range of minor improvements which makes usage of the module more convenient.</p>
+  <p>For more information, see the
+  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-0.3">Release Notes</a>.
+  </p>
+
+<hr />
+
   <p>Version 1.1 of the Netatalk 2 Webmin Module is a companion to Netatalk 2.3.0.
   In addition, it includes a range of UX improvements and bugfixes.</p>
   <p>For more information, see the
