@@ -82,6 +82,11 @@ include_once "header.php";
   <td>No</td>
   <td>Yes</td>
   </tr>
+  <tr>
+  <td>Administrative GUI</td>
+  <td>Webmin Module</td>
+  <td>Webmin Module</td>
+  </tr>
 </table>
 
 <hr />
