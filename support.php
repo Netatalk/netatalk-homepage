@@ -1,6 +1,6 @@
 <?php
  $title = "Support";
- include "header.php";
+ include_once "header.php";
 ?>
 
 <div id="content">
@@ -46,4 +46,4 @@ in developing Netatalk, you should subscribe to this list.</li>
 </tr>
 </table>
 
-<?php include "footer.php"; ?>
+<?php include_once "footer.php"; ?>

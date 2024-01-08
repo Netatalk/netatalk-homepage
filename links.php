@@ -1,6 +1,6 @@
 <?php
  $title = "Links";
- include "header.php";
+ include_once "header.php";
 ?>
 
 <div id="content">
@@ -45,4 +45,4 @@ Networking Apple Macintosh and Apple II through Open Source<br />
 <li><a href="https://www.macip.net">MacIPpi</a></li>
 </ul>
 
-<?php include "footer.php"; ?>
+<?php include_once "footer.php"; ?>

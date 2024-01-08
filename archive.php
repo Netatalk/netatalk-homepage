@@ -1,10 +1,10 @@
 <?php
  // main netatalk page
 $title = "Networking Apple Macintosh through Open Source";
-include "header.php";
+include_once "header.php";
 ?>
 
-<div id="content"> 
+<div id="content">
   <h1>News Archive</h1>
 
 <hr />
@@ -573,4 +573,4 @@ automatically. Please remove the line starting with</p>
     <a href="https://github.com/Netatalk/netatalk">GitHub project page</a>.</p>
 </div>
 
-<?php include "footer.php"; ?>
+<?php include_once "footer.php"; ?>

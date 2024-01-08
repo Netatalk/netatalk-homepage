@@ -1,4 +1,3 @@
-<?php echo "<?xml version=\"1.0\" encoding=\"utf-8\"?".">"; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -24,7 +23,7 @@
 <link rel="bookmark" href="https://sourceforge.net/projects/netatalk/files/" title="Downloads" />
 <link rel="icon" type="image/x-icon" href="/gfx/favicon.ico" />
 
-<title><?php echo ( $title ? ("Netatalk - ".$title) : "Netatalk" ); ?></title>
+<title><?php echo $title ? ("Netatalk - ".$title) : "Netatalk"; ?></title>
 </head>
 
 <body>
@@ -32,13 +31,13 @@
   <!-- header -->
   <div id="logo"></div>
   <div id="menlinks">
-	<a href="/" title="Return to Netatalk home">[main]</a>
-	<a href="https://github.com/Netatalk/netatalk/wiki" title="Netatalk Wiki">[wiki]</a> 
-	<a href="/3.1/htmldocs" title="Netatalk Manual">[documentation]</a>
-	<a href="https://sourceforge.net/projects/netatalk/files/" title="Download Netatalk from Sourceforge">[downloads]</a> 
-	<a href="/support.php" title="Support">[support]</a> 
-	<a href="/links.php" title="Netatalk related links">[links]</a>
-	<img src="/gfx/end.gif" alt="" width="125" height="7" />
+  <a href="/" title="Return to Netatalk home">[main]</a>
+  <a href="https://github.com/Netatalk/netatalk/wiki" title="Netatalk Wiki">[wiki]</a> 
+  <a href="/3.1/htmldocs" title="Netatalk Manual">[documentation]</a>
+  <a href="https://sourceforge.net/projects/netatalk/files/" title="Download Netatalk from Sourceforge">[downloads]</a> 
+  <a href="/support.php" title="Support">[support]</a> 
+  <a href="/links.php" title="Netatalk related links">[links]</a>
+  <img src="/gfx/end.gif" alt="" width="125" height="7" />
   </div>
 </div>
 
