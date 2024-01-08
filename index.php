@@ -9,10 +9,10 @@ include "header.php";
 
   <p>Netatalk is a Free and Open Source Apple Filing Protocol (AFP) fileserver.
      A macOS, Linux, BSD, or Solaris system running Netatalk is capable of serving
-     files to many macOS (Mac OS X) and Classic Mac OS clients simultaneously.</p>
+     files to many macOS (Mac OS X), Classic Mac OS, and Apple II clients simultaneously.</p>
 
-  <p>Since 1990, Netatalk has been providing fast and secure file sharing from
-     *NIX-like hosts, providing seamless compatibility with the unique requirements
+  <p>Since 1990, Netatalk has been providing fast and secure file sharing to Macs from
+     *NIX-like hosts, providing seamless support for the unique demands
      of Macintosh networking, file systems, and operating system services.</p>
 
   <h2>Features</h2>
@@ -23,7 +23,7 @@ include "header.php";
   <th>Netatalk v2</th>
   </tr>
   <tr>
-  <td>Supports Clients</td>
+  <td>Client Support</td>
   <td>Mac OS 7.5 ~ Mac OS 9, Mac OS X, macOS</td>
   <td>Apple II, Macintosh System 6 ~ Mac OS 9, Mac OS X, macOS</td>
   </tr>
@@ -53,12 +53,12 @@ include "header.php";
   <td>Zeroconf and SLP</td>
   </tr>
   <tr>
-  <td>Time Machine</td>
+  <td>Time Machine Backups</td>
   <td>Yes</td>
   <td>Yes</td>
   </tr>
   <tr>
-  <td>Spotlight</td>
+  <td>Spotlight Searches</td>
   <td>Yes</td>
   <td>No</td>
   </tr>
@@ -78,7 +78,7 @@ include "header.php";
   <td>Yes</td>
   </tr>
   <tr>
-  <td>AppleTalk Router Functionality</td>
+  <td>Built-in AppleTalk Router</td>
   <td>No</td>
   <td>Yes</td>
   </tr>
