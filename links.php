@@ -14,7 +14,7 @@ Networking Apple Macintosh and Apple II through Open Source<br />
 <li><a href="https://github.com/Netatalk">Netatalk Development Project at GitHub</a></li>
 <li><a href="https://netatalk.sourceforge.io/">Netatalk website (Here!)</a></li>
 <li><a href="https://sourceforge.net/projects/netatalk/">Netatalk's previous home at SourceForce</a></li>
-<li><a href="https://web.archive.org/web/20221006085616/https://websites.umich.edu/~rsug/netatalk/">UMich RSUG - Netatalk's first home</a></li>
+<li><a href="https://websites.umich.edu/~rsug/netatalk/">UMich RSUG - Netatalk's first home</a></li>
 </ul>
 
 <h3>Companion Projects</h3>
