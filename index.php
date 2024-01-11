@@ -44,21 +44,21 @@ include_once "header.php";
   </tr>
   <tr>
   <td>Macintosh Resource Forks</td>
-  <td>Supported via Extended Attributes</td>
-  <td>Supported via AppleDouble metadata</td>
+  <td></td>Extended Attributes, AppleDouble v2</td>
+  <td>AppleDouble v2, AppleDouble v1</td>
   </tr>
   <tr>
-  <td>Bonjour Service Discovery</td>
+  <td><i>Bonjour</i>Service Discovery</td>
   <td>Zeroconf</td>
   <td>Zeroconf and SLP</td>
   </tr>
   <tr>
-  <td>Time Machine Backups</td>
+  <td><i>Time Machine</i> Backups</td>
   <td>Yes</td>
   <td>Yes</td>
   </tr>
   <tr>
-  <td>Spotlight Searches</td>
+  <td><i>Spotlight</i> Indexed Search</td>
   <td>Yes</td>
   <td>No</td>
   </tr>
@@ -68,7 +68,7 @@ include_once "header.php";
   <td>Yes, with CUPS support</td>
   </tr>
   <tr>
-  <td>Timelord Time Server</td>
+  <td><i>Timelord</i> Time Server</td>
   <td>No</td>
   <td>Yes</td>
   </tr>
