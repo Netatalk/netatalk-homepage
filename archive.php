@@ -8,6 +8,28 @@ include_once "header.php";
   <h1>News Archive</h1>
 
 <hr />
+  <small>22nd of September 2023</small>
+  <h2>Netatalk Webmin modules updated</h2>
+
+  <p>The Webmin modules for Netatalk 3 as well as Netatalk 2 have been updated for Webmin v2.
+  Also included is numerous bugfixes as well as broader support for server settings.</p>
+  <p>For more information, see the release notes for
+  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-0.2">Netatalk 3 module v0.2</a>
+  and <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.0">Netatalk 2 module v1.0</a>.
+  </p>
+
+<hr />
+  <small>16th of September 2023</small>
+  <h2>Netatalk 3.1.17 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 3.1 release series. It includes a 0-day fix for security issue
+  <a href="CVE-2023-42464.php">CVE-2023-42464</a>.
+  All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.17.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-17">Release Notes</a>.</p>
+
+<hr />
   <small>11th of September 2023</small>
   <h2>Netatalk 3.1.16 is available</h2>
 
