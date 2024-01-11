@@ -5,8 +5,6 @@
 
 <div id="content">
 <h1>Netatalk Links</h1>
-<h2>AppleTalk Network Protocol for BSD, Linux, and Solaris</h2>
-Networking Apple Macintosh and Apple II through Open Source<br />
 <!-- Link Page created by Nathaniel Pendleton of Pendleton Press LLC. Copyleft 2000. -->
 
 <h3>Official Netatalk Pages</h3>
