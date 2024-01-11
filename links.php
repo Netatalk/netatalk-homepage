@@ -17,7 +17,7 @@ Networking Apple Macintosh and Apple II through Open Source<br />
 <li><a href="https://websites.umich.edu/~rsug/netatalk/">UMich RSUG - Netatalk's first home</a></li>
 </ul>
 
-<h3>Companion Projects</h3>
+<h3>Sub-Projects</h3>
 <ul>
 <li><a href="https://github.com/Netatalk/afptest">AFP Test-Suite</a>, compliance and performance tests for AFP servers</li>
 <li><a href="https://github.com/Netatalk/netatalk-webmin">Webmin Module</a>, GUI for administration of Netatalk servers</li>
@@ -35,14 +35,15 @@ Networking Apple Macintosh and Apple II through Open Source<br />
 <li><a href="https://lists.sourceforge.net/mailman/listinfo/netatalk-devel">Join instructions for netatalk-devel</a></li>
 </ul>
 
-<h3>3rd Party Projects Using Netatalk</h3>
+<h3>3rd Party Companion Projects</h3>
 <ul>
 <li><a href="https://macipgw.sourceforge.io">macipgw</a></li>
 <li><a href="https://github.com/jasonking3/macipgw">macipgw (Linux port)</a></li>
 <li><a href="https://github.com/RasppleII/a2server">A2SERVER</a></li>
 <li><a href="https://github.com/danmons/retronas">RetroNAS</a></li>
 <li><a href="https://github.com/PiSCSI/piscsi">PiSCSI</a></li>
-<li><a href="https://www.macip.net">MacIPpi</a></li>
+<li><a href="https://github.com/mabam/CAP">Columbia AppleTalk Package</a></li>
+<li><a href="https://sourceforge.net/projects/afpfs-ng/">afpfs-ng</a></li>
 </ul>
 
 <?php include_once "footer.php"; ?>
