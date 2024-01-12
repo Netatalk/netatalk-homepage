@@ -1,5 +1,7 @@
-# netatalk-web
+# netatalk-homepage
 Netatalk static website written in PHP
+
+We are also keeping historical generated manual and changelog pages in this repository, for posterity.
 
 # New release procedure
 - Create a news story at the top of index.php.
