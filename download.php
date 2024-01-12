@@ -81,4 +81,9 @@
     </li>
 </ul>
 
+<h3>Release Archives</h3>
+<p>For older releases, visit the <a href="https://sourceforge.net/projects/netatalk/files/">
+    Release Archives at SourceForge.net</a>
+</p>
+
 <?php include_once "footer.php"; ?>
