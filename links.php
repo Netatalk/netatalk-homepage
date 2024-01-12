@@ -37,7 +37,7 @@
 <ul>
 <li><a href="https://macipgw.sourceforge.io">macipgw</a></li>
 <li><a href="https://github.com/jasonking3/macipgw">macipgw (Linux port)</a></li>
-<li><a href="https://github.com/RasppleII/a2server">A2SERVER</a></li>
+<li><a href="https://appleii.ivanx.com/a2server/">A2SERVER</a></li>
 <li><a href="https://github.com/danmons/retronas">RetroNAS</a></li>
 <li><a href="https://github.com/PiSCSI/piscsi">PiSCSI</a></li>
 <li><a href="https://github.com/mabam/CAP">Columbia AppleTalk Package</a></li>
