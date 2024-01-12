@@ -34,14 +34,39 @@
 </ul>
 
 <h3>3rd Party Companion Projects</h3>
-<ul>
-<li><a href="https://macipgw.sourceforge.io">macipgw</a></li>
-<li><a href="https://github.com/jasonking3/macipgw">macipgw (Linux port)</a></li>
-<li><a href="https://appleii.ivanx.com/a2server/">A2SERVER</a></li>
-<li><a href="https://github.com/danmons/retronas">RetroNAS</a></li>
-<li><a href="https://github.com/PiSCSI/piscsi">PiSCSI</a></li>
-<li><a href="https://github.com/mabam/CAP">Columbia AppleTalk Package</a></li>
-<li><a href="https://sourceforge.net/projects/afpfs-ng/">afpfs-ng</a></li>
-</ul>
+<table summary="3rd party projects">
+  <tr>
+  <th>Project</th>
+  <th>Description</th>
+  </tr>
+  <tr>
+  <td><a href="https://appleii.ivanx.com/a2server/">A2SERVER</a></td>
+  <td>Plug'n'play distribution for file sharing with Apple IIs (and Macs)</td>
+  </tr>
+  <tr>
+  <td><a href="https://sourceforge.net/projects/afpfs-ng/">afpfs-ng</a></td>
+  <td>Cross-platform AFP client application</td>
+  </tr>
+  <tr>
+  <td><a href="https://github.com/mabam/CAP">Columbia AppleTalk Package</a></td>
+  <td>Historical AppleTalk network stack for *NIX-like systems</td>
+  </tr>
+  <tr>
+  <td><a href="https://macipgw.sourceforge.io">macipgw</a></td>
+  <td>MacIP bridge for LocalTalk-only Macs (FreeBSD original)</td>
+  </tr>
+  <tr>
+  <td><a href="https://github.com/jasonking3/macipgw">macipgw (Linux port)</a></td>
+  <td>Linux port of the above</td>
+  </tr>
+  <tr>
+  <td><a href="https://github.com/PiSCSI/piscsi">PiSCSI</a></td>
+  <td>SCSI emulator hat for Raspberry Pi, that comes with Netatalk integration</td>
+  </tr>
+  <tr>
+  <td><a href="https://github.com/danmons/retronas">RetroNAS</a></td>
+  <td>NAS software bundle that specializes in retro networking</td>
+  </tr>
+</table>
 
 <?php include_once "footer.php"; ?>
