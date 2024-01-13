@@ -12,6 +12,20 @@
 <p>If no similar bug has been reported yet, please create a new ticket and provide as much context as possible, including Netatalk version, OS version, contents of configuration files, and debug or backtrace logs.</p>
 <p>Use the same issue tracker if you want to file a feature request.</p>
 
+<h3>Discussion Fori</h3>
+<p>If you want to ask advice or get help from the community, try one of these fori:</p>
+<ul>
+<li>
+<a href="https://github.com/Netatalk/netatalk/discussions">Netatalk GitHub Discussion</a>
+</li>
+<li>
+<a href="https://tinkerdifferent.com/">TinkerDifferent</a>
+</li>
+<li>
+<a href="https://68kmla.org/bb/index.php">68kmla</a>
+</li>
+</ul>
+
 <h3>Mailing Lists</h3>
 <p>The Netatalk project has two active mailing lists where you can subscribe to ask questions or participate in conversations, as well as search the archives for historical discussion threads.</p>
 
