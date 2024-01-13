@@ -16,7 +16,7 @@
 <p>If you want to ask advice or get help from the community, try one of these fori:</p>
 <ul>
 <li>
-<a href="https://github.com/Netatalk/netatalk/discussions">Netatalk GitHub Discussion</a>
+<a href="https://github.com/Netatalk/netatalk/discussions">Netatalk GitHub Discussions</a>
 </li>
 <li>
 <a href="https://tinkerdifferent.com/">TinkerDifferent</a>
