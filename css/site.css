@@ -195,7 +195,7 @@ div#content {
 
 /* definitions for the header */
 div#header {
-  margin-top: 15px;
+  margin-top: 0px;
   margin-left: 0px;
   height: 109px;
   white-space: nowrap;
@@ -223,7 +223,7 @@ div#logo {
 div#menlinks {
   position: absolute;
   left: 272px;
-  top: 102px;
+  top: 87px;
   font-family: Geneva, Arial, Helvetica, sans-serif;
   font-size: 12px;
   font-weight: normal;
