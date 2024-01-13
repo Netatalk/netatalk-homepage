@@ -22,7 +22,7 @@
 <link rel="author" title="The Netatalk Development Team" href="http://netatalk.sf.net" />
 <link rel="help" href="/3.1/htmldocs/" title="Documentation" />
 <link rel="home" href="index.php" title="Netatalk Home" />
-<link rel="home" href="http://www.sourceforge.net/projects/netatalk" title="Netatalk Sourceforge" />
+<link rel="home" href="https://github.com/Netatalk/netatalk" title="Netatalk GitHub" />
 <link rel="bookmark" href="/3.1/htmldocs/" title="Netatalk Documentation" />
 <link rel="bookmark" href="https://github.com/Netatalk/netatalk/wiki" title="wiki" />
 <link rel="bookmark" href="https://sourceforge.net/projects/netatalk/files/" title="Downloads" />
@@ -37,7 +37,7 @@
   <div id="logo"></div>
   <div id="menlinks">
   <a href="/" title="Return to Netatalk home">[main]</a>
-  <a href="https://github.com/Netatalk/netatalk/wiki" title="Netatalk Wiki">[wiki]</a>
+  <a href="/docs" title="Netatalk Wiki">[wiki]</a>
   <a href="/3.1/htmldocs" title="Netatalk Manual">[documentation]</a>
   <a href="/download.php" title="Download Netatalk">[downloads]</a>
   <a href="/support.php" title="Support">[support]</a>
