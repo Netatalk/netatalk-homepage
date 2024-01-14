@@ -55,7 +55,7 @@ div#content th {
 div.search {
   position: absolute;
   left: 20px;
-  top: 145px;
+  top: 130px;
   font-size: 80%;
   width: 195px;
   font-family : Geneva, Arial, Helvetica, sans-serif;
@@ -85,7 +85,7 @@ div.search {
 
 div#navbars{
   position: absolute;
-  top: 235px;
+  top: 220px;
   left: 20px;
   width: 200px;
   padding: 0;
