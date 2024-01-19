@@ -7,6 +7,7 @@
 <h1>Netatalk Documentation</h1>
 
 <h3>Current Netatalk Manuals</h3>
+<p>The most up to date documentation for actively developed versions of Netatalk.</p>
 <ul>
     <li>
         <a href="3.1/htmldocs">
@@ -20,6 +21,7 @@
     </li>
 </ul>
 <h3>Obsolete Netatalk Manuals</h3>
+<p>Historical documentation for Netatalk. Refer to these only if you're running an old version.</p>
 <ul>
     <li>
         <a href="3.0/htmldocs">
@@ -44,6 +46,7 @@
 </ul>
 
 <h3>Release Notes</h3>
+<p>A full record of previous release notes are stored below for historical purposes.</p>
 <ul>
     <li>
         <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-18">
