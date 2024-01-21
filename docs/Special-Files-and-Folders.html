@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Wiki - Special Files and Folders</title>
+    <meta name="description" content="Netatalk Wiki">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/docs/Special-Files-and-Folders">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+    <div id="navbars">
+      <!-- the left navigation/search bar -->
+      <div class="navbar">
+        <h2>Table of contents</h2>
+            <p><a class="wikilink" href="/docs/index.html">Home</a></p>
+            <p><b>Resources</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
+            <li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
+            <li><a class="wikilink" href="/docs/Installation-Notes.html">Installation Notes</a></li>
+            </ul>
+            <p><b>Netatalk v3 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora.html">Installing Netatalk 3 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris-10.html">Installing Netatalk 3 on Solaris 10</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
+            </ul>
+            <p><b>Netatalk v2 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian.html">Installing Netatalk 2 on Debian</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora.html">Installing Netatalk 2 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+            </ul>
+            <p><b>Technical Docs</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/CatalogSearch.html">CatalogSearch</a></li>
+            <li><a class="wikilink" href="/docs/Kerberos.html">Kerberos</a></li>
+            <li><a class="wikilink" href="/docs/Special-Files-and-Folders.html">Special Files and Folders</a></li>
+            <li><a class="wikilink" href="/docs/Spotlight.html">Spotlight</a></li>
+            <li><a class="wikilink" href="/docs/AppleTalk-Kernel-Module.html">AppleTalk Kernel Module</a></li>
+            <li><a class="wikilink" href="/docs/Print-Server.html">Print Server</a></li>
+            </ul>
+            <p><b>Development</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
+            <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+            </ul>
+            </div>
+        </div> <!-- /the left navigation/search bar -->
+<div id="content"><!-- content -->
+<h1 id="Special-Files-and-Folders">Special Files and Folders</h1><hr/>
+<p>Inside netatalk share points you will find several files and directories
+which are created automatically by the afpd process either for its own
+internal use or for the internal use of the MacOS. None of them should
+be directly visible in the Finder on the Mac.</p>
+<p>Many of them have to be writeable in order for netatalk to function
+properly. This can present problems if users have shell access to the
+netatalk server. At the very least, users can &ldquo;hide&rdquo; files inside these
+writeable folders. At worst, a malicious user could confuse netatalk in
+a bad way. It is unlikely that a malicious user could cause loss of
+another user&rsquo;s data by exploiting permissions on these items.</p>
+<p>Below is what we hope to be a comprehensive list of these files and
+directories, their purpose, and a discussion of what Unix permissions
+should be set on them.</p>
+<p>Note that in general on Netatalk shares, all directories should have the
+setgid bit set. This forces any new files or folders created to have the
+same group as the folder they were created in. On some operating
+systems, notably FreeBSD, the group owner is always inherited from the
+parent directory, so the setgid bit is not necessary.</p>
+<h2>.AppleDouble</h2>
+<p>This directory exists inside each folder on a Netatalk share. It
+contains meta information like creator/type and eventually the resource
+fork of each file in that folder. Its permissions should match those of
+its parent directory, i.e. anyone who has write access to the parent
+directory must have write access to the corresponding .AppleDouble
+directory.</p>
+<h2>.AppleDouble/.Parent</h2>
+<p>This file specifically contains meta information about the directory. If
+the directory is the volume root then it contains the volume specific
+metadata, especially the &ldquo;volume creation time&rdquo; (important since
+AppleShare clients differentiate bitween different volumes on the same
+server by this timestamp)</p>
+<h2>.AppleDesktop/</h2>
+<p>This directory exists under the top level of each share point. It
+contains the &ldquo;desktop database&rdquo; which is the method by which the MacOS
+associates a type/creator code with a particular application (for an
+in-depth discussion have a look at
+<a href="http://www.tempel.org/macdev/#DTDB">http://www.tempel.org/macdev/#DTDB</a>). Without it, documents will lose
+their application-specific icons and will have a generic icon instead.
+Double-clicking documents will also fail.</p>
+<p>To allow the desktop database to be maintained correctly, any user who
+is likely to copy an application on to the share must have write access
+to this directory and all directories below it.</p>
+<h2>.AppleDesktop/.volinfo</h2>
+<p>This file contains afpd internal volume specific information like
+$MAC_CHARSET/$VOL_CHARSET, AppleDouble scheme, CNID backend (including
+cnid_metad settings if applicable), dbpath and the like. The information
+in this file will be also used by tools like megatron(1) to correctly
+convert files to data exchange formats like MacBinary for example.</p>
+<h2>Icon\r and .AppleDouble/Icon\r</h2>
+<p>These files will exist in any folder, including the top level of a
+share, if it has a custom icon and has been created with MacOS versions
+prior to MacOS X. Make them writeable to any user who should be allowed
+to change that custom icon; make them read-only if you don&rsquo;t want the
+custom icon to be changeable.</p>
+<h2>:2eVolumeIcon.icns (.VolumeIcon.icns)</h2>
+<p>MacOS X stores a custom volume icon into this file (this won&rsquo;t be
+displayed on Macs running MacOS versions \&lt; X)</p>
+<h2>.AppleDB/</h2>
+<p>This folder will exist eventually at the top level of each sharepoint
+driven by the cdb or dbd CNID-backends. When using cdb any user who has
+write access to any part of the share must have full write access to
+this directory and all the files within it otherwise the CNID-backend
+will not work properly. Please note that you can force a different
+location of this folder via the dbpath option in AppleVolumes.default.</p>
+<h2>Network Trash Folder/</h2>
+<p>This exists at the top level of each sharepoint. This is where files
+that are put in the Trash on clients (prior to MacOS X) go, until the
+Trash is emptied.</p>
+<p>The permissions of items in this directory are a pretty complicated
+subject, but basically you should make this directory and everything in
+it world-writeable if you want the Trash can to work properly. If you
+don&rsquo;t make it writeable then users will get a message &ldquo;That item cannot
+be put in the Trash. Do you want to delete it immediately?&rdquo; if they try
+to put something in the Trash.</p>
+<p>Unfortunately networked trash handling is broken in current versions of
+Mac OS X even if this directory is writeable.</p>
+<h2>Temporary Items/</h2>
+<p>This folder may exist at the top level of a sharepoint. This folder is
+used by certain applications (Adobe Photoshop among others) to store,
+well, temporary items. These programs may not work correctly if this
+folder is missing or not writeable, when a user tries to work on a
+document stored in that Netatalk share.</p>
+<h2>TheFindByContentFolder/</h2>
+<p>This folder is used by Sherlock 2 to store information use by its Find
+by Content feature. Make it writeable by users if you want to allow them
+to update the Find by Content index on a netatalk share. Otherwise, make
+it read-only.</p>
+<h2>TheVolumeSettingsFolder/</h2>
+<p>This folder is created at the top level of each share point. It always
+appears to be empty. It would be wise to set its permissions the same as
+the top level of the sharepoint.</p>
+<h2>:2eDS_Store (.DS_Store)</h2>
+<p>This appears in share points which have been accessed by a machine
+running Mac OS X and contains folder specific metadata as well as file
+specific like eg. file comments.</p>
+<h2>:2eFBCIndex (.FBCIndex)</h2>
+<p>FBC = FindByContent. This File is generated by OS X is roughly
+equivalent to OS 9&rsquo;s &ldquo;TheFindByContentFolder&rdquo;. Gets generated only if a
+search with activated indexing was performed. Make it writeable by users
+if you want to allow them to update the Find by Content index on a
+netatalk share. Otherwise, make it read-only.</p>
+<h2>:2eFBCLockFolder (.FBCLockFolder)</h2>
+<p>contains the :2eFBCSemaphoreFile (.FBCSemaphoreFile) for OS X.</p><hr /><p>Last updated 2024-01-21</p>
+<p>
+    This is a mirror of the <a href="https://github.com/Netatalk/netatalk/wiki">Netatalk GitHub Wiki</a> -
+    if you find an error or would like to contribute, please head over there.
+</p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>

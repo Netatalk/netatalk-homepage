@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Wiki - AppleTalk Kernel Module</title>
+    <meta name="description" content="Netatalk Wiki">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/docs/AppleTalk-Kernel-Module">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+    <div id="navbars">
+      <!-- the left navigation/search bar -->
+      <div class="navbar">
+        <h2>Table of contents</h2>
+            <p><a class="wikilink" href="/docs/index.html">Home</a></p>
+            <p><b>Resources</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
+            <li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
+            <li><a class="wikilink" href="/docs/Installation-Notes.html">Installation Notes</a></li>
+            </ul>
+            <p><b>Netatalk v3 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora.html">Installing Netatalk 3 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris-10.html">Installing Netatalk 3 on Solaris 10</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
+            </ul>
+            <p><b>Netatalk v2 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian.html">Installing Netatalk 2 on Debian</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora.html">Installing Netatalk 2 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+            </ul>
+            <p><b>Technical Docs</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/CatalogSearch.html">CatalogSearch</a></li>
+            <li><a class="wikilink" href="/docs/Kerberos.html">Kerberos</a></li>
+            <li><a class="wikilink" href="/docs/Special-Files-and-Folders.html">Special Files and Folders</a></li>
+            <li><a class="wikilink" href="/docs/Spotlight.html">Spotlight</a></li>
+            <li><a class="wikilink" href="/docs/AppleTalk-Kernel-Module.html">AppleTalk Kernel Module</a></li>
+            <li><a class="wikilink" href="/docs/Print-Server.html">Print Server</a></li>
+            </ul>
+            <p><b>Development</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
+            <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+            </ul>
+            </div>
+        </div> <!-- /the left navigation/search bar -->
+<div id="content"><!-- content -->
+<h1 id="AppleTalk-Kernel-Module">AppleTalk Kernel Module</h1><hr/>
+<h1>AppleTalk Kernel Module</h1>
+<p>Netatalk 2 relies on AppleTalk support in the kernel to make use of the DDP layer. The <code>atalkd</code> daemon will attempt to dynamically load the kernel module if not detected, and error out if all attempts fail. You can still use the DSI layer (TCP/IP) without an AppleTalk kernel module.</p>
+<p>At the time of writing, Linux and NetBSD are known to have officially maintained AppleTalk kernel modules. At least Debian Linux (as of Bullseye) comes with the kernel module compiled in by default. There is code for a Solaris kernel module in the Netatalk source tree.</p>
+<h2>Linux</h2>
+<p>To check if your kernel has AppleTalk support, first start the <code>atalkd</code> daemon, then issue this command and inspect the output:</p>
+<pre><code>$ lsmod | grep appletalk
+</code></pre>
+<p>If no <code>appletalk</code> module is detected, you may have to compile support into the kernel. This section describes the modular approach, but it should also be possible to compile the AppleTalk module directly into the kernel for a slight performance boost.</p>
+<p>This section will not describe the entire process, but rather follow the steps in the <a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html">Raspberry Pi documentation</a>. Do the steps in the documentation in this order:</p>
+<ul>
+<li><a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html#building-the-kernel-locally">Building the Kernel Locally</a></li>
+<li><a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html#default_configuration">Apply the Default Configuration</a></li>
+<li><a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html#preparing-to-configure">Preparing to Configure</a></li>
+<li><a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html#using-menuconfig">Using menuconfig</a></li>
+<li>Networking support &mdash;&gt; Networking options &mdash;&gt; Appletalk protocol support<ul>
+<li>Press M to select this</li>
+<li>Select &lsquo;&rsquo;Appletalk interfaces support&rsquo;&lsquo; and press M again</li>
+<li>Save and exit menuconfig</li>
+</ul>
+</li>
+<li><a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html#building-the-kernel">Building the Kernel</a></li>
+<li>Reboot the system once the process is completed (compilation may take an hour or longer on slower systems)</li>
+<li>Check that the &lsquo;&rsquo;appletalk&rsquo;&lsquo; kernel module has been loaded, as per the above</li>
+<li>If the module isn&rsquo;t automatically loaded, add a line to /etc/modules<ul>
+<li>appletalk</li>
+</ul>
+</li>
+</ul>
+<h2>Solaris</h2>
+<p>Netatalk distributes code for an AppleTalk module for Solaris / Illumos, located under <code>sys/solaris</code>. It is presently configured for the SPARC architecture only.</p><hr /><p>Last updated 2024-01-21</p>
+<p>
+    This is a mirror of the <a href="https://github.com/Netatalk/netatalk/wiki">Netatalk GitHub Wiki</a> -
+    if you find an error or would like to contribute, please head over there.
+</p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>

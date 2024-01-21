@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Wiki - FAQ</title>
+    <meta name="description" content="Netatalk Wiki">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/docs/FAQ">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+    <div id="navbars">
+      <!-- the left navigation/search bar -->
+      <div class="navbar">
+        <h2>Table of contents</h2>
+            <p><a class="wikilink" href="/docs/index.html">Home</a></p>
+            <p><b>Resources</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
+            <li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
+            <li><a class="wikilink" href="/docs/Installation-Notes.html">Installation Notes</a></li>
+            </ul>
+            <p><b>Netatalk v3 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora.html">Installing Netatalk 3 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris-10.html">Installing Netatalk 3 on Solaris 10</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
+            </ul>
+            <p><b>Netatalk v2 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian.html">Installing Netatalk 2 on Debian</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora.html">Installing Netatalk 2 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+            </ul>
+            <p><b>Technical Docs</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/CatalogSearch.html">CatalogSearch</a></li>
+            <li><a class="wikilink" href="/docs/Kerberos.html">Kerberos</a></li>
+            <li><a class="wikilink" href="/docs/Special-Files-and-Folders.html">Special Files and Folders</a></li>
+            <li><a class="wikilink" href="/docs/Spotlight.html">Spotlight</a></li>
+            <li><a class="wikilink" href="/docs/AppleTalk-Kernel-Module.html">AppleTalk Kernel Module</a></li>
+            <li><a class="wikilink" href="/docs/Print-Server.html">Print Server</a></li>
+            </ul>
+            <p><b>Development</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
+            <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+            </ul>
+            </div>
+        </div> <!-- /the left navigation/search bar -->
+<div id="content"><!-- content -->
+<h1 id="FAQ">FAQ</h1><hr/>
+<h2>What is Netatalk for? What can I do with it?</h2>
+<p>Netatalk is an Open Source software package, that can be used to turn an
+inexpensive *NIX machine into an extremely performant and reliable file
+and print server for Macintosh computers.</p>
+<p>Using Netatalk&rsquo;s AFP 3 compliant file-server leads to significantly
+higher transmissions speeds for older Macs compared with accessing a
+server via Samba/NFS while providing clients with the best user
+experience (full support for Macintosh metadata, flawlessly supporting
+mixed environments of classic Mac OS and Mac OS X / macOS clients).</p>
+<h2>What changed between Netatalk 2.x and 3.x?</h2>
+<p>Netatalk v3 has the best support for Mac OS X / macOS, and seamless
+interoperability with Samba. It is AFP 3.4 (the final version of the
+spec) compliant, and supports Spotlight and macOS style EA metadata.
+However, it is less useful for Classic Mac OS or Apple II clients.</p>
+<p>Netatalk v2 on the other hand speaks AppleTalk, the legacy Apple
+network stack. File sharing works out of the box with older clients,
+while providing capabilities to print to AppleTalk-only printers.
+Netatalk seamlessly interacts with CUPS via the <code>papd</code> daemon,
+enabling older Macs or Apple IIGS clients to print to modern
+printers. Via the <code>atalkd</code> daemon, it can act as an AppleTalk router,
+providing both segmentation and zone names in Macintosh networks. In
+addition, time server (<code>timelord</code> daemon) and Apple II netboot (<code>a2boot</code> daemon)
+services are available.</p>
+<h2>What changed between Netatalk 1.x and 2.x?</h2>
+<p>Let&rsquo;s have a look at what has changed compared to 1.6.4:</p>
+<ol>
+<li>Netatalk&rsquo;s file server, afpd, now speaking AFP 3.1 allows long
+    filenames, UTF-8 names, large file support and full Mac OS X
+    compatibility</li>
+<li>The print server task, papd, can directly interact with CUPS,
+    automagically sharing all CUPS queues</li>
+<li>Kerberos V support, allowing true &ldquo;Single Sign On&rdquo;</li>
+<li>Whole rework of the CNID subsystem, providing reliable and
+    persistent storage of file and directory IDs</li>
+<li>Huge improvements regarding product documentation making Netatalk&rsquo;s
+    features accessible more easily</li>
+<li>Tons of bugs fixed compared to all previous versions</li>
+</ol>
+<p>To make a long story short, everyone not using symlinks inside Netatalk
+shares (this violation of AFP specs is not supported any longer) and
+willing to complete the sometimes extensive upgrade process should
+switch to 2.0. But be sure to read carefully the chapter about upgrading
+in the docs first.</p>
+<h2>I think, I found a bug in Netatalk. Where should I report it?</h2>
+<p>First of all, try to isolate the problem and see whether it&rsquo;s not a
+feature instead (some of the underlying Mac-related basics like
+file/folder IDs and the like, look irritating for people newly entering
+the world of cross-platform networking)</p>
+<p>Then have a look in the <a href="https://github.com/Netatalk/netatalk/issues">Netatalk issue tracker</a>
+whether it&rsquo;s a known bug that is already being worked on.</p>
+<p>If that doesn&rsquo;t help, consider asking at the Netatalk mailing lists or an online forum whether others
+might have an idea what&rsquo;s going on.</p>
+<p>Before asking, try to understand and accept the basic
+principles for reporting bugs and asking for help. If you&rsquo;re finally sure
+you found a bug, then please report it at the issue tracker.</p>
+<p>In case, the developers want you to provide more details about crashing
+processes, have a look at [[Using GDB to Analyze a
+Crash]].</p>
+<h2>Which CNID scheme should I choose for my volumes?</h2>
+<p>&ldquo;dbd&rdquo;. The &ldquo;last&rdquo; backend is only suitable for sharing HFS CD-ROMs directly
+with Netatalk. Avoid if at all possible as this backend can lead to
+duplicate IDs which can cause data loss!</p>
+<p>The &ldquo;mysql&rdquo; backend is useful for very large deployments with hundreds of
+thousands or millions of files shared, where performance and reliability
+is at the utmost importance. The drawback is that you have to configure
+and operate a separate MySQL database instance by yourself.</p>
+<h2>I want to create a new volume to share via Netatalk. How should I start?</h2>
+<p>Always follow these steps unless you know exactly what you do:</p>
+<ul>
+<li>Create the sharepoint on the Unix side with appropriate permissions.
+    This means setting the SGID bit as well, so the old AppleShare
+    semantics (always treating files/folders with the permissions that
+    apply to the surrounding folder) will work flawlessly. So do not use
+    chmod 775 but chmod 2775 instead.</li>
+<li>Then decide which volume charset to use (it is strongly recommended
+    to use the default UTF8 volcharset but in some special cases it
+    might make sense to use another encoding like ISO-8859-15, instead.)</li>
+<li>Choose a CNID backend, in general this means &ldquo;dbd&rdquo; (see the chapter
+    about CNID backends in the manual)</li>
+<li>Finally add an entry in your configuration file and connect from a
+    Mac to the volume, to see if things work.</li>
+</ul>
+<h2>How does Netatalk integrate with Samba?</h2>
+<p>It depends. There are a couple of problems:</p>
+<ul>
+<li>Filename/foldername encoding: By default both Netatalk 2.0 and Samba
+    3.0 use UTF-8 precomposed on the server side. So at a first look,
+    this problem is solved.</li>
+<li>&ldquo;Illegal&rdquo; names, that make Windows choke, are still a problem. There
+    exists an
+    <a href="http://netatalk.sourceforge.net/2.3/htmldocs/AppleVolumes.default.5.html">AppleVolumes</a>
+    option called &ldquo;mswindows&rdquo;, which will prevent Mac clients from
+    saving such names (Netatalk v2 only.) But this leads to Netatalk&rsquo;s afpd breaking the
+    AFP specifications and is no real solution (like a working Samba VFS
+    module, that mangles such names on demand in a sane way, would be).
+    Additionally, this option breaks saving to Netatalk volumes for
+    several applications, i.e. OfficeX.</li>
+<li>Hiding the metadata stuff from the other platform: You might want to
+    hide all the directories and files described in the <a href="Special_Files_and_Folders">Special Files
+    and Folders</a> entry by using
+    Samba&rsquo;s veto option. You can do the same for Mac clients too using
+    Netatalk&rsquo;s veto option. For samba:</li>
+</ul>
+<p><code>veto files = /:2eFBCLockFolder/.FBCLockFolder/:2eFBCIndex/.FBCIndex/TheVolumeSettingsFolder/TheFindByContentFolder/Temporary Items/\</code><br />
+<code>Network Trash Folder/.AppleDB/:2eVolumeIcon.icns/.VolumeIcon.icns/Icon/.AppleDouble/.AppleDesktop/desktop.ini/RECYCLER/</code><br />
+<code>delete veto files = Yes</code></p>
+<ul>
+<li>File locking: partially working as Netatalk is using POSIX locks and
+    SAMBA uses them too. But SAMBA usually also uses oplocks which
+    should be disabled for interoperating with Netatalk. More
+    importantly, open modes are not synchronized. Thus Samba will now
+    nothing of a deny read/write open <a href="http://developer.apple.com/library/mac/#documentation/Networking/Conceptual/AFP/FileSharingModes/FileSharingModes.html%23//apple_ref/doc/uid/TP40000854-CH233-CHBDEIJE">AFP
+    mode</a>
+    from an AFP client and vice versa.</li>
+</ul>
+<h2>What are the .AppleDouble and .AppleDB? directories and .Parent files which are created in the Netatalk Shares?</h2>
+<p>These are described at the <a href="Special_Files_and_Folders">Special Files and
+Folders</a> page.</p>
+<h2>Why can&rsquo;t I mount more than one server?</h2>
+<p>When trying to mount multiple independent servers running Netatalk, you
+might run into a problem where the workstation thinks that the second
+server is the same as the first one that was mounted. This problem is
+often due to what the /etc/hosts file looks like.</p>
+<p>&ldquo;Out of the box&rdquo;, /etc/hosts often looks like:</p>
+<p><code>127.0.0.1 localhost.localdomain localhost</code><br />
+<some ip addr><code>hostname.domainname hostname</code></p>
+<p>Netatalk will look at the first line to find out what server it&rsquo;s
+running on. If both servers you&rsquo;re trying to mount have identical first
+lines in /etc/hosts, Netatalk will think it&rsquo;s trying to access the first
+server you mounted.</p>
+<p>The solution, in my hands and as suggested by several members of the
+Netatalk mailing list, is to change the order of entries in /etc/hosts.
+In the example given above, this could be done simply by changing it to:</p>
+<p><some ip addr><code>hostname.domainname hostname</code><br />
+<code>127.0.0.1 localhost.localdomain localhost</code></p>
+<p>That is, reversing the order.</p>
+<h2>How can I check the consistency of the CNID databases?</h2>
+<p>Starting with Netatalk 2.1 there&rsquo;s a dedicated and versatile utility
+exactly for this purpose:
+<a href="http://netatalk.sourceforge.net/3.1/htmldocs/dbd.1.html">dbd</a>.</p><hr /><p>Last updated 2024-01-21</p>
+<p>
+    This is a mirror of the <a href="https://github.com/Netatalk/netatalk/wiki">Netatalk GitHub Wiki</a> -
+    if you find an error or would like to contribute, please head over there.
+</p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>

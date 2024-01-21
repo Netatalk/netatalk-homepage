@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/AppleTalk-Kernel-Module.html</loc>
+    <lastmod>2023-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/CatalogSearch.html</loc>
+    <lastmod>2024-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Connect-to-AFP-Server-from-Mac-clients.html</loc>
+    <lastmod>2024-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Developer-Notes.html</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/FAQ.html</loc>
+    <lastmod>2024-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Home.html</loc>
+    <lastmod>2024-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Installation-Notes.html</loc>
+    <lastmod>2024-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Installing-Netatalk-2-on-Debian.html</loc>
+    <lastmod>2024-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Installing-Netatalk-2-on-Fedora.html</loc>
+    <lastmod>2024-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Installing-Netatalk-2-on-OmniOS.html</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Installing-Netatalk-2-on-macOS.html</loc>
+    <lastmod>2024-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Installing-Netatalk-3-on-Fedora.html</loc>
+    <lastmod>2024-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Installing-Netatalk-3-on-OpenIndiana.html</loc>
+    <lastmod>2024-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Installing-Netatalk-3-on-OpenSUSE.html</loc>
+    <lastmod>2024-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Installing-Netatalk-3-on-Solaris-10.html</loc>
+    <lastmod>2023-12-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Installing-Netatalk-3-on-Ubuntu.html</loc>
+    <lastmod>2024-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Installing-Netatalk-3-on-macOS.html</loc>
+    <lastmod>2023-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Kerberos.html</loc>
+    <lastmod>2024-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Print-Server.html</loc>
+    <lastmod>2023-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Special-Files-and-Folders.html</loc>
+    <lastmod>2024-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Spotlight.html</loc>
+    <lastmod>2024-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Troubleshooting.html</loc>
+    <lastmod>2024-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/Using-GDB-to-Analyze-a-Crash.html</loc>
+    <lastmod>2023-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.sourceforge.io/docs/_Sidebar.html</loc>
+    <lastmod>2024-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+</urlset>

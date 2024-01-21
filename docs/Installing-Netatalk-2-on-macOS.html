@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Wiki - Installing Netatalk 2 on macOS</title>
+    <meta name="description" content="Netatalk Wiki">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/docs/Installing-Netatalk-2-on-macOS">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+    <div id="navbars">
+      <!-- the left navigation/search bar -->
+      <div class="navbar">
+        <h2>Table of contents</h2>
+            <p><a class="wikilink" href="/docs/index.html">Home</a></p>
+            <p><b>Resources</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
+            <li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
+            <li><a class="wikilink" href="/docs/Installation-Notes.html">Installation Notes</a></li>
+            </ul>
+            <p><b>Netatalk v3 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora.html">Installing Netatalk 3 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris-10.html">Installing Netatalk 3 on Solaris 10</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
+            </ul>
+            <p><b>Netatalk v2 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian.html">Installing Netatalk 2 on Debian</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora.html">Installing Netatalk 2 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+            </ul>
+            <p><b>Technical Docs</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/CatalogSearch.html">CatalogSearch</a></li>
+            <li><a class="wikilink" href="/docs/Kerberos.html">Kerberos</a></li>
+            <li><a class="wikilink" href="/docs/Special-Files-and-Folders.html">Special Files and Folders</a></li>
+            <li><a class="wikilink" href="/docs/Spotlight.html">Spotlight</a></li>
+            <li><a class="wikilink" href="/docs/AppleTalk-Kernel-Module.html">AppleTalk Kernel Module</a></li>
+            <li><a class="wikilink" href="/docs/Print-Server.html">Print Server</a></li>
+            </ul>
+            <p><b>Development</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
+            <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+            </ul>
+            </div>
+        </div> <!-- /the left navigation/search bar -->
+<div id="content"><!-- content -->
+<h1 id="Installing-Netatalk-2-on-macOS">Installing Netatalk 2 on macOS</h1><hr/>
+<p>Apple started to switch from AFP to SMB file sharing from Mavericks (10.9) onwards. The built-in afp server was finally removed in Big Sur (11.0) so Netatalk comes in useful if you have a modern Intel or Apple Silicon Mac and wish to share files with a vintage Mac such as a PowerMac G3 or G4 running classic Mac OS 9.</p>
+<p>When installing Netatalk 2.2 on Macs running Mojave (10.14) onwards the dependencies are easily installed using Homebrew. To install <a href="https://brew.sh">Homebrew</a>,  open Terminal and paste the following:</p>
+<p><code>/bin/bash -c "$(curl -fsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></p>
+<p><strong>Then install the dependencies:</strong></p>
+<p><code>brew install berkeley-db libtool automake autoconf libevent libgcrypt mysql openssl@1.1 libressl pkg-config</code></p>
+<p><strong>Then clone the Netatalk repository, checkout the 2.2 branch and cd to that folder:</strong></p>
+<p><code>git clone https://github.com/Netatalk/netatalk.git</code></p>
+<p><code>git checkout branch-netatalk-2.2</code></p>
+<p><code>cd /path/to/netatalk/clone</code></p>
+<p><strong>The paths for your SSL and BDB installations can be found by typing:</strong></p>
+<p><code>brew --prefix berkeley-db</code></p>
+<p><code>brew --prefix openssl@1.1</code> or <code>brew --prefix libressl</code></p>
+<p><strong>To compile run the following commands:</strong></p>
+<p><code>./bootstrap</code></p>
+<p><code>./configure --disable-ddp --with-ssl-dir=/path/to/openssl/installation --with-bdb=/path/to/bdb/installation</code></p>
+<p><code>make</code></p>
+<p>Note: The <code>--disable-ddp</code> flag is required, since macOS doesn&rsquo;t have an AppleTalk network stack at the time of writing.</p>
+<p><strong>To install:</strong></p>
+<p><code>sudo make install</code></p><hr /><p>Last updated 2024-01-21</p>
+<p>
+    This is a mirror of the <a href="https://github.com/Netatalk/netatalk/wiki">Netatalk GitHub Wiki</a> -
+    if you find an error or would like to contribute, please head over there.
+</p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Wiki - Installation Notes</title>
+    <meta name="description" content="Netatalk Wiki">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/docs/Installation-Notes">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+    <div id="navbars">
+      <!-- the left navigation/search bar -->
+      <div class="navbar">
+        <h2>Table of contents</h2>
+            <p><a class="wikilink" href="/docs/index.html">Home</a></p>
+            <p><b>Resources</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
+            <li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
+            <li><a class="wikilink" href="/docs/Installation-Notes.html">Installation Notes</a></li>
+            </ul>
+            <p><b>Netatalk v3 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora.html">Installing Netatalk 3 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris-10.html">Installing Netatalk 3 on Solaris 10</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
+            </ul>
+            <p><b>Netatalk v2 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian.html">Installing Netatalk 2 on Debian</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora.html">Installing Netatalk 2 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+            </ul>
+            <p><b>Technical Docs</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/CatalogSearch.html">CatalogSearch</a></li>
+            <li><a class="wikilink" href="/docs/Kerberos.html">Kerberos</a></li>
+            <li><a class="wikilink" href="/docs/Special-Files-and-Folders.html">Special Files and Folders</a></li>
+            <li><a class="wikilink" href="/docs/Spotlight.html">Spotlight</a></li>
+            <li><a class="wikilink" href="/docs/AppleTalk-Kernel-Module.html">AppleTalk Kernel Module</a></li>
+            <li><a class="wikilink" href="/docs/Print-Server.html">Print Server</a></li>
+            </ul>
+            <p><b>Development</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
+            <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+            </ul>
+            </div>
+        </div> <!-- /the left navigation/search bar -->
+<div id="content"><!-- content -->
+<h1 id="Installation-Notes">Installation Notes</h1><hr/>
+<h1>Recommended packages</h1>
+<p>When compiling Netatalk from scratch, you will need to install a number of required and optional packages to get a fully functional installation.</p>
+<p>This page is intended to serve as a companion to the <a href="https://netatalk.sourceforge.io/3.1/htmldocs/installation.html">Installation chapter</a> (<a href="https://netatalk.sourceforge.io/2.3/htmldocs/installation.html">2.3</a>) of the Netatalk manual. Distros come and go and package names change, so this kind of fluid documentation is more suited for a wiki.</p>
+<h2>Debian Linux</h2>
+<p>Mandatory packages.</p>
+<pre><code>apt install build-essential libssl-dev libdb-dev autotools-dev automake libtool libtool-bin pkg-config libevent-dev
+</code></pre>
+<p>For <em>papd</em> printer server support, install CUPS packages. (netatalk2 only)</p>
+<pre><code>apt install libcups2-dev cups
+</code></pre>
+<p>For Zeroconf (Bonjour) service discovery in Mac OS X 10.2 or later, install Avahi packages.</p>
+<pre><code>apt install libavahi-client-dev
+</code></pre>
+<p>For DHX2 authentication support, required for Mac OS X 10.2 or later, install libgcrypt.</p>
+<pre><code>apt install libgcrypt20-dev
+</code></pre>
+<p>To use the TCP wrapper install tcpd.</p>
+<pre><code>apt install tcpd
+</code></pre>
+<p>To enable afpstats support, install libdbus. (netatalk3 only)</p>
+<pre><code>apt install libdbus-1-dev libdbus-glib-1-dev
+</code></pre>
+<p>To enable Spotlight, install tracker and libdbus (above). (netatalk3 only)</p>
+<pre><code>apt install tracker libtracker-sparql-X.Y-dev
+</code></pre>
+<p>To enable password strength check for the randnum UAM</p>
+<pre><code>apt install libcrack2-dev
+</code></pre>
+<h2>Red Hat</h2>
+<p>General usage notes for Red Hat derived distros.</p>
+<p>For the asip-status script, Perl socket libraries are required.</p>
+<pre><code>dnf install perl-IO-Socket-IP perl-IO-Socket-INET6
+</code></pre>
+<p>With Netatalk 2 and AppleTalk networking, you may have to remove the blacklisting of the <code>appletalk</code> kernel module.</p>
+<p>On Fedora 38, this is accomplished by deleting this file:</p>
+<pre><code>/etc/modprobe.d/appletalk-blacklist.conf
+</code></pre>
+<h3>Fedora Server</h3>
+<pre><code>dnf install openssl-devel libgcrypt-devel libdb-devel automake libtool avahi-devel cups-devel
+</code></pre>
+<h3>CentOS 9 Stream</h3>
+<pre><code>dnf install openssl-devel libgcrypt-devel libdb-devel automake libtool avahi-libs libevent-devel krb5-devel
+</code></pre>
+<h2>Alpine Linux</h2>
+<h3>netatalk2</h3>
+<p>For bootstrap:</p>
+<pre><code>apk add libtool autoconf automake pkgconfig
+</code></pre>
+<p>For compilation:</p>
+<pre><code>apk add build-base gcc cups cups-dev
+</code></pre>
+<p>Berkeley DB:
+As of <a href="https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.13.0">Alpine 3.13.0</a>, BDB is a deprecated package, so building BDB from code is required on Alpine. These are the rough steps:</p>
+<ol>
+<li>Get the latest v5 tarball of BDB, e.g.: https://github.com/berkeleydb/libdb/releases/tag/v5.3.28</li>
+<li>Extract the tarball</li>
+<li>From the source root, cd to the <code>build_unix</code> dir</li>
+<li>Run the <code>../dist/configure</code> script</li>
+<li>Run <code>make</code> then <code>make install</code></li>
+<li>Configure netatalk with e.g.: <code>./configure --with-bdb=/usr/local/BerkeleyDB.5.3</code></li>
+</ol>
+<h2>OmniOSce</h2>
+<p>To build a bootstrapped tarball:</p>
+<pre><code>pkg install git libtool automake gcc7 bdb
+</code></pre>
+<p>To bootstrap:</p>
+<pre><code>pkg install pkg-config
+</code></pre>
+<h2>FreeBSD 13.1</h2>
+<p>To bootstrap:</p>
+<pre><code>pkg install pkgconf autoconf libtool automake
+</code></pre>
+<p>To build:</p>
+<pre><code>pkg install libgcrypt db5 libevent
+</code></pre>
+<p>With FreeBSD 13.1, due to a bug in netatalk bootstrap the linker flag must be manually set when configuring in order to find libevent. This will be fixed in the next version after 3.1.15.</p>
+<pre><code>LDFLAGS=&quot;-L/usr/local/lib&quot; ./configure
+</code></pre>
+<h2>NetBSD 9.3</h2>
+<p>Make sure you have a working pgksrc environment: http://www.netbsd.org/docs/misc/index.html#package-management</p>
+<h3>netatalk 2</h3>
+<pre><code>pkg_add git mozilla-rootcerts-openssl gcc13 autoconf automake libtool pkg-config db5 libgcrypt libressl gmake cups cracklib
+</code></pre><hr /><p>Last updated 2024-01-21</p>
+<p>
+    This is a mirror of the <a href="https://github.com/Netatalk/netatalk/wiki">Netatalk GitHub Wiki</a> -
+    if you find an error or would like to contribute, please head over there.
+</p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>

@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Wiki - Installing Netatalk 3 on Ubuntu</title>
+    <meta name="description" content="Netatalk Wiki">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/docs/Installing-Netatalk-3-on-Ubuntu">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+    <div id="navbars">
+      <!-- the left navigation/search bar -->
+      <div class="navbar">
+        <h2>Table of contents</h2>
+            <p><a class="wikilink" href="/docs/index.html">Home</a></p>
+            <p><b>Resources</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
+            <li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
+            <li><a class="wikilink" href="/docs/Installation-Notes.html">Installation Notes</a></li>
+            </ul>
+            <p><b>Netatalk v3 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora.html">Installing Netatalk 3 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris-10.html">Installing Netatalk 3 on Solaris 10</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
+            </ul>
+            <p><b>Netatalk v2 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian.html">Installing Netatalk 2 on Debian</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora.html">Installing Netatalk 2 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+            </ul>
+            <p><b>Technical Docs</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/CatalogSearch.html">CatalogSearch</a></li>
+            <li><a class="wikilink" href="/docs/Kerberos.html">Kerberos</a></li>
+            <li><a class="wikilink" href="/docs/Special-Files-and-Folders.html">Special Files and Folders</a></li>
+            <li><a class="wikilink" href="/docs/Spotlight.html">Spotlight</a></li>
+            <li><a class="wikilink" href="/docs/AppleTalk-Kernel-Module.html">AppleTalk Kernel Module</a></li>
+            <li><a class="wikilink" href="/docs/Print-Server.html">Print Server</a></li>
+            </ul>
+            <p><b>Development</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
+            <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+            </ul>
+            </div>
+        </div> <!-- /the left navigation/search bar -->
+<div id="content"><!-- content -->
+<h1 id="Installing-Netatalk-3-on-Ubuntu">Installing Netatalk 3 on Ubuntu</h1><hr/>
+<h2>Netatalk Package</h2>
+<p><strong>Note:</strong> This guide was written for Ubuntu, but is likely to apply for Debian and other Debian-derived distros.</p>
+<p><strong>netatalk</strong> is distributed as a package in Ubuntu.</p>
+<p>Ubuntu is currently syncing the Unstable netatalk package with their
+production repository, so the package can be installed with apt on
+Ubuntu.</p>
+<p>Netatalk was dropped from Debian Bookworm, so if you use that OS you either
+have to <a href="https://github.com/Netatalk/netatalk/discussions/574">pin the netatalk package with the Unstable repo</a>,
+or build from scratch as described here.</p>
+<p>This page describes how to install it from scratch if you want to use a
+different version than the one that is distributed.</p>
+<h2>Required Packages</h2>
+<p>Install the following packages by <code>sudo apt install</code>.</p>
+<ul>
+<li><code>build-essential</code></li>
+<li><code>libevent-dev</code> (used by netatalk(8))</li>
+<li><code>libssl-dev</code> (DHX auth aka DHCAST128)</li>
+<li><code>libgcrypt-dev</code> (DHX2 auth)</li>
+<li><code>libkrb5-dev</code> (Kerberos V auth)</li>
+<li><code>libpam0g-dev</code> (PAM)</li>
+<li><code>libwrap0-dev</code> (TCP Wrapper)</li>
+<li><code>libdb-dev</code> (dbd CNID backend)</li>
+<li><code>libtdb-dev</code> (tdb CNID backend)</li>
+<li><code>libmysqlclient-dev</code> (mysql CNID backend)</li>
+<li><code>avahi-daemon</code> (Bonjour support)</li>
+<li><code>libavahi-client-dev</code> (Bonjour support)</li>
+<li><code>libacl1-dev</code> (ACL support)</li>
+<li><code>libldap2-dev</code> (enhanced ACL support)</li>
+<li><code>libcrack2-dev</code> (password check)</li>
+<li><code>systemtap-sdt-dev</code> (DTrace-compatible)</li>
+<li><code>libdbus-1-dev</code> (used by afpstats command)</li>
+<li><code>libdbus-glib-1-dev</code> (used by afpstats command)</li>
+<li><code>libglib2.0-dev</code> (used by afpstats command)</li>
+<li><code>libio-socket-inet6-perl</code> (used by asip-status.pl command)</li>
+<li><code>libtalloc-dev</code> (used for spotlight indexing)</li>
+<li><code>tracker</code> (used for spotlight indexing)</li>
+<li><code>libtracker-sparql-3.0-dev</code> (used for spotlight indexing) (version
+    number may differ)</li>
+<li><code>quota</code> (used for quota)</li>
+<li><code>libtirpc-dev</code> (used for quota)</li>
+</ul>
+<p>If tracker&rsquo;s version is unknown, you can know using command
+<code>apt search libtracker</code>.</p>
+<h2>Build</h2>
+<p>Get the tarball from <a href="http://netatalk.sourceforge.net/">Netatalk Web
+Site</a>.</p>
+<p>Extract the tarball</p>
+<pre><code>$ tar xvf netatalk-3.1.18.tar.xz $ cd
+netatalk-3.1.18
+</code></pre>
+<p>You should read the help message, in order to know configure options.</p>
+<p>If the applicable libraries are installed, many options will be detected
+automati
+lly.</p>
+<pre><code>$ ./configure --help
+</code></pre>
+<p>Do configure! The following options are not auto-detected.</p>
+<pre><code>$ ./configure \
+       --with-init-style=debian-systemd \
+       --without-talloc \
+       --without-tdb \
+       --with-cracklib \
+       --enable-krbV-uam \
+       --with-pam-confdir=/etc/pam.d \
+       --with-dbus-daemon=/usr/bin/dbus-daemon \
+       --with-dbus-sysconf-dir=/etc/dbus-1/system.d \
+       --with-tracker-pkgconfig-version=3.0
+</code></pre>
+<p>If you use Ubuntu 14.10 or earlier, the value of <code>--with-init-style</code>
+option is <code>debian-sysv</code>, not <code>debian-systemd</code>.</p>
+<p>The version 3.0 <code>--with-tracker-pkgconfig-version=3.0</code> must match the
+pkg-config version of the installed Tracker libraries. Use the following
+commands for finding the version info:</p>
+<pre><code>$ pkg-config --list-all | grep tracker
+...
+</code></pre>
+<p>On successful completion, you will see a report similar to the
+following:</p>
+<pre><code>Compilation summary:
+
+   CPPFLAGS       = -I$(top_srcdir)/include -I$(top_builddir)/include -I$(top_srcdir)
+   CFLAGS         = -D_U_=&quot;__attribute__((unused))&quot; -g -O2
+   LIBS           =  -lcrack
+   PTHREADS:
+       LIBS   =
+       CFLAGS = -pthread
+   TRACKER:
+       LIBS   = -ltracker-sparql-2.0 -lgio-2.0 -lgobject-2.0 -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0
+       CFLAGS = -pthread -I/usr/include/tracker-2.0 -I/usr/include/tracker-2.0/libtracker-sparql -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+   SSL:
+       LIBS   =  -L/usr/lib64 -lcrypto
+       CFLAGS =  -I/usr/include/openssl
+   LIBGCRYPT:
+       LIBS   = -lgcrypt
+       CFLAGS =
+   PAM:
+       LIBS   =  -lpam
+       CFLAGS =
+   WRAP:
+       LIBS   = -lwrap
+       CFLAGS =
+   BDB:
+       LIBS   =  -L/usr/lib64 -ldb-5.3
+       CFLAGS =
+   GSSAPI:
+       LIBS   = -L/usr/lib/x86_64-linux-gnu/mit-krb5 -Wl,-Bsymbolic-functions -Wl,-z,relro -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
+       CFLAGS = -isystem /usr/include/mit-krb5
+   ZEROCONF:
+       LIBS   =  -lavahi-common -lavahi-client
+       CFLAGS =  -D_REENTRANT
+   LDAP:
+       LIBS   =  -lldap
+       CFLAGS =
+   LIBEVENT:
+       LIBS   =
+       CFLAGS =
+   TDB:
+       LIBS   = -ltdb
+       CFLAGS =
+   MySQL:
+       LIBS   = -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -latomic -ldl
+       CFLAGS = -I/usr/include/mysql
+
+Configure summary:
+
+   INIT STYLE:
+        debian-systemd
+   AFP:
+        Extended Attributes: ad | sys
+        ACL support: yes
+        Spotlight: yes
+   CNID:
+        backends:  dbd last tdb mysql
+   UAMS:
+        DHX     (PAM SHADOW)
+        DHX2    (PAM SHADOW)
+        RANDNUM (afppasswd)
+        Kerberos V
+        clrtxt  (PAM SHADOW)
+        guest
+   Options:
+        Zeroconf support:        yes
+        tcp wrapper support:     yes
+        quota support:           yes
+        valid shell check:       yes
+        cracklib support:        yes
+        ACL support:             auto
+        Kerberos support:        yes
+        LDAP support:            yes
+        AFP stats via dbus:      yes
+        dtrace probes:           yes
+   Paths:
+        Netatalk lockfile:       /var/lock/netatalk
+        init directory:          /lib/systemd/system
+        dbus system directory:   /etc/dbus-1/system.d
+        dbus daemon path:        /usr/bin/dbus-daemon
+        tracker prefix:          /usr
+        tracker ins
+ll prefix:  /usr
+        tracker manager:         /usr/bin/tracker daemon
+        pam config directory:    /etc/pam.d
+   Documentation:
+        Docbook:                 no
+</code></pre>
+<p>Docbook is not needed unless you want to create fresh manual
+pages.</p>
+<p>Make and install.</p>
+<pre><code>$ make
+$ sudo make install
+</code></pre>
+<h2>Check</h2>
+<p>Check features and paths, using <code>netatalk -V</code> and <code>afpd -V</code>.</p>
+<pre><code>$ /usr/local/sbin/netatalk -V netatalk 3.1.12 - Netatalk AFP server
+service controller daemon
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version. Please see the file COPYING for further
+information and details.
+
+netatalk has been compiled with support for these features:
+
+     Zeroconf support: Avahi
+    Spotlight support: Yes
+
+                 afpd: /usr/local/sbin/afpd
+           cnid_metad: /usr/local/sbin/cnid_metad
+      tracker manager: /usr/bin/tracker daemon
+          dbus-daemon: /usr/bin/dbus-daemon
+             afp.conf: /usr/local/etc/afp.conf
+    dbus-session.conf: /usr/local/etc/dbus-session.conf
+   netatalk lock file: /var/lock/netatalk
+</code></pre>
+<pre><code>$ /usr/local/sbin/afpd -V
+afpd 3.1.12 - Apple Filing Protocol (AFP) daemon of Netatalk
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version. Please see the file COPYING for further
+information and details.
+
+afpd has been compiled with support for these features:
+
+         AFP versions: 2.2 3.0 3.1 3.2 3.3 3.4
+        CNID backends: dbd last tdb mysql
+     Zeroconf support: Avahi
+ TCP wrappers support: Yes
+        Quota support: Yes
+  Admin group support: Yes
+   Valid shell checks: Yes
+     cracklib support: Yes
+           EA support: ad | sys
+          ACL support: Yes
+         LDAP support: Yes
+        D-Bus support: Yes
+    Spotlight support: Yes
+        DTrace probes: Yes
+
+             afp.conf: /usr/local/etc/afp.conf
+          extmap.conf: /usr/local/etc/extmap.conf
+      state directory: /usr/local/var/netatalk/
+   afp_signature.conf: /usr/local/var/netatalk/afp_signature.conf
+     afp_voluuid.conf: /usr/local/var/netatalk/afp_voluuid.conf
+      UAM search path: /usr/local/lib/netatalk//
+ Server messages path: /usr/local/var/netatalk/msg/
+
+</code></pre>
+<h2>Setting Up</h2>
+<p>Edit <code>/usr/local/etc/afp.conf</code>.</p>
+<p>Ex:</p>
+<pre><code>[Global]
+
+[Homes]
+
+   basedir regex = /home
+
+[Test Volume]
+
+   path = /export/test1
+
+[My Time Machine Volume]
+
+   path = /export/timemachine
+   time machine = yes
+
+</code></pre>
+<p>It&rsquo;s recommended to enable extended attributes of filesystem. You can
+check it by <code>getfattr</code> and <code>setfattr</code> commands.</p>
+<p>If you use ACL, you shoud check it by <code>getfacl</code> and <code>setfacl</code>
+commands.</p>
+<p>If these are disabled, use <code>tune2fs</code> command or edit <code>/etc/fstab</code>
+file.</p>
+<p>Ex:</p>
+<pre><code>/dev/sdc2    /mountpoint    ext4    defaults,user_xattr,acl    0 2
+</code></pre>
+<p>You should check firewall. AFP&rsquo;s port number is <code>548</code>. Zeroconf&rsquo;s port
+number is <code>5353</code>.</p>
+<h2>Enabling and Starting</h2>
+<p>The systemd unit file is <code>/lib/systemd/system/netatalk.service</code>. You
+must run Avahi ahead of Netatalk.</p>
+<pre><code>$ sudo systemctl enable avahi-daemon
+$ sudo systemctl enable netatalk
+$ sudo systemctl start avahi-daemon
+$ sudo systemctl start netatalk
+</code></pre>
+<h2>Spotlight Feature</h2>
+<p>If you use Spotlight feature, read
+<a href="http://netatalk.sourceforge.net/3.1/htmldocs/configuration.html">Spotlight</a>
+section in Netatalk Manual.</p>
+<p>Set <code>spotlight = yes</code>.</p>
+<p>Set <code>spotlight = no</code> for Time Machine&rsquo;s
+volume. The mining for
+sparsebundle is wasteful.</p>
+<p>Ex:</p>
+<pre><code>[Global]
+
+   spotlight = yes
+
+[Homes]
+
+   basedir regex = /home
+
+[Test Volume]
+
+   path = /export/test1
+
+[My Time Machine Volume]
+
+   path = /export/timemachine
+   time machine = yes
+   spotlight = no
+
+</code></pre>
+<p>A problem has been reported.</p>
+<ul>
+<li><a href="http://sourceforge.net/p/netatalk/bugs/543/">Bug#543 Spotlight cannot search in user
+    homes</a> and <a href="https://github.com/Netatalk/Netatalk/pull/7">FIX:
+    Spotlight: searching in user homes, bug #543 by hat001 · Pull
+    Request #7 ·
+    Netatalk/Netatalk</a> -
+    There is still a problem with this patch.</li>
+</ul>
+<h2>Interoperation with Samba</h2>
+<p>Recent Netatalk and Samba can store metadata in the compatible format.</p>
+<p>Using this way, the following access becomes possible.</p>
+<ul>
+<li>from Mac to Netatalk</li>
+<li>from Mac to Samba</li>
+<li>from Windows to Samba</li>
+</ul>
+<h3>Netatalk</h3>
+<p>Using <code>vol preset</code> option, the same configuration is set for all
+volumes.</p>
+<p>Using <code>ea = samba</code>, Extended Attributes become compatible with Samba.</p>
+<p>Edi
+<code>/usr/local/etc/afp.conf</code>.</p>
+<p>Ex:</p>
+<pre><code>[Global]
+
+   vol preset = my default values
+
+[my default values]
+
+   ea = samba
+
+[Homes]
+
+   basedir regex = /home
+
+[Test Volume]
+
+   path = /export/test1
+
+[My Time Machine Volume]
+
+   path = /export/timemachine
+   time machine = yes
+</code></pre>
+<h3>Samba</h3>
+<p>Setting various options in <code>[global]</code>, the same configuration is set for
+all shares.</p>
+<p>Three vfs objects (catia, fruit and streams_xattr) provide enhanced
+compatibility with Apple SMB clients and interoperability with a
+Netatalk.</p>
+<p>Using <code>hide files</code>, the invisible files created via Netatalk are
+hidden from Windows. Use <code>hide files</code>, not <code>veto files</code>.</p>
+<p>Don&rsquo;t set the time machine at both of Netatalk and Samba, otherwise
+advertisement by Avahi will duplicate.</p>
+<p>Edit <code>/etc/samba/smb.conf</code>.</p>
+<p>Ex:</p>
+<pre><code>[global]
+    foo = bar
+    baz = qux
+
+    ea support = Yes
+    vfs objects = catia fruit streams_xattr
+    fruit:locking = netatalk
+    fruit:encoding = native
+    streams_xattr:prefix = user.
+    streams_xattr:store_stream_type = no
+    mdns name = mdns
+
+    hide files = /.DS_Store/Network Trash Folder/TheFindByContentFolder/TheVolumeSettingsFolder/Temporary Items/.TemporaryItems/.VolumeIcon.icns/Icon?/.FBCIndex/.FBCLockFolder/
+
+    read only = No
+
+[homes]
+
+[Test Volume]
+    path = /export/test1
+
+[My Time Machine Volume]
+    path = /export/timemachine
+    time machine = yes
+
+</code></pre><hr /><p>Last updated 2024-01-21</p>
+<p>
+    This is a mirror of the <a href="https://github.com/Netatalk/netatalk/wiki">Netatalk GitHub Wiki</a> -
+    if you find an error or would like to contribute, please head over there.
+</p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>

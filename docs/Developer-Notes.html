@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Wiki - Developer Notes</title>
+    <meta name="description" content="Netatalk Wiki">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/docs/Developer-Notes">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+    <div id="navbars">
+      <!-- the left navigation/search bar -->
+      <div class="navbar">
+        <h2>Table of contents</h2>
+            <p><a class="wikilink" href="/docs/index.html">Home</a></p>
+            <p><b>Resources</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
+            <li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
+            <li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
+            <li><a class="wikilink" href="/docs/Installation-Notes.html">Installation Notes</a></li>
+            </ul>
+            <p><b>Netatalk v3 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora.html">Installing Netatalk 3 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris-10.html">Installing Netatalk 3 on Solaris 10</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
+            </ul>
+            <p><b>Netatalk v2 Installation</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian.html">Installing Netatalk 2 on Debian</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora.html">Installing Netatalk 2 on Fedora</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
+            <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+            </ul>
+            <p><b>Technical Docs</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/CatalogSearch.html">CatalogSearch</a></li>
+            <li><a class="wikilink" href="/docs/Kerberos.html">Kerberos</a></li>
+            <li><a class="wikilink" href="/docs/Special-Files-and-Folders.html">Special Files and Folders</a></li>
+            <li><a class="wikilink" href="/docs/Spotlight.html">Spotlight</a></li>
+            <li><a class="wikilink" href="/docs/AppleTalk-Kernel-Module.html">AppleTalk Kernel Module</a></li>
+            <li><a class="wikilink" href="/docs/Print-Server.html">Print Server</a></li>
+            </ul>
+            <p><b>Development</b></p>
+            <ul>
+            <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
+            <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+            </ul>
+            </div>
+        </div> <!-- /the left navigation/search bar -->
+<div id="content"><!-- content -->
+<h1 id="Developer-Notes">Developer Notes</h1><hr/>
+<h1>Code Contribution Process</h1>
+<p>Netatalk source code is hosted in a shared git repository.</p>
+<p>This section describes the general workflow and lifecycle of code
+contributions in the Netatalk Project, and how to get new code accepted
+into release branches. It is applicable to Netatalk Team members and
+external contributors alike. Please read this thoroughly and familiarize
+yourself with the process before submitting code to the project.</p>
+<h2>Git Installation</h2>
+<p>If you haven&rsquo;t used git before, you should probably familiarize yourself
+with the <a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">Git
+tutorial</a>.</p>
+<p>The examples in the following sections are based off of the tools and
+syntax used by git v1.5.3 or later. Either apt-get, yum, or make install
+the tools. See <a href="http://www.kernel.org/pub/software/scm/git/">Git
+documentation</a> for more
+details on this part.</p>
+<h2>Branching model</h2>
+<ul>
+<li>the <strong>main</strong> branch is where development on new features is taking
+    place</li>
+<li>branches named <strong>branch-netatalk-x.y</strong> for stable releases</li>
+<li>currently stable release branch <strong>branch-netatalk-3-1</strong></li>
+<li>commits go to main (after a review, more on that below)</li>
+<li>commits can only go into a release branch if an issue report exists</li>
+<li>the issue report must be referenced in the commit message</li>
+<li>rebase merges only; no branch merges</li>
+</ul>
+<h2>Review process</h2>
+<p>We require formal review of all patches with more than trivial code
+changes.</p>
+<p>The author of patch should add a signed-off tag and the reviewer adds a
+reviewed-by tag. Very formal, but it encourages better coding and
+documentation.</p>
+<p>This means every commit in main should have been reviewed by two team
+members (if the author is a team member, only one review by another team
+member needed).</p>
+<p>This is inspired by the process used in the
+<a href="https://wiki.samba.org/index.php/CodeReview">Samba</a> project.</p>
+<h2>Commit messages</h2>
+<p>Commit messages should have a short, descriptive first summary line that
+begins with the affected component, and ends with the GitHub issue
+ticket # e.g.</p>
+<blockquote>
+<p>afpd: new options &ldquo;force user&rdquo; and &ldquo;force group&rdquo;, #1234</p>
+</blockquote>
+<p>This is helpful when browsing a git log in oneline mode.</p>
+<p>Then the commit message should explain what the change is about, the
+more, the better.</p>
+<p>At the end the author adds their signed-off tag.</p>
+<h2>Basic Netatalk Git</h2>
+<p>The mother git repository is located at
+<em>https://github.com/Netatalk/netatalk.git</em></p>
+<p>If you are a Netatalk team member, you create and push work branches
+directly in the mother repository.</p>
+<p>If you are an external code contributor (thank you for contributing!)
+then work from your own fork of the Netatalk repository. Please follow
+the <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">GitHub workflow to create your
+fork</a>,
+and then clone that fork in the steps below.</p>
+<p>Step Zero is to set your name and email address for commits: </p>
+<pre><code>$ git config --global user.email Your.Email@domain.com
+$ git config --global user.name &quot;Your Real Name&quot;
+</code></pre>
+<p>Next, clone the repository: </p>
+<pre><code>$ git clone https://github.com/Netatalk/netatalk.git 
+Initialized empty Git repository in /home/frank/test/.git/
+remote: Counting objects: 31503, done.
+remote: Compressing objects: 100% (11427/11427), done.
+remote: Total 31503 (delta 24830), reused 25450 (delta 19869)
+Receiving objects: 100% (31503/31503), 6.52 MiB | 2.38 MiB/s, done.
+Resolving deltas: 100% (24830/24830), done.
+$ cd netatalk
+</code></pre>
+<p>List local and remote branches: </p>
+<pre><code>$ git branch
+  * main
+
+$ git branch -r
+origin/branch-netatalk-2-0
+origin/branch-netatalk-2-1
+origin/branch-netatalk-2-2
+origin/branch-netatalk-3-0
+origin/branch-netatalk-3-1
+origin/main
+</code></pre>
+<p>Creating your own working branch from main:</p>
+<pre><code>$ git checkout main
+$ git checkout -b my_branch
+Branch my_branch set up to track remote branch refs/remotes/origin/develop.
+Switched to a new branch &quot;my_branch&quot;
+</code></pre>
+<p>Do your own local work:</p>
+<pre><code>$ mkdir git-test
+$ echo &quot;hello&quot; &gt; git-test/README
+</code></pre>
+<p>View status of changes</p>
+<pre><code>$ git status
+# On branch my_branch
+# Untracked files:
+#   (use &quot;git add `&lt;file&gt;`...&quot; to include in what will be committed)
+# 
+#       git-test/
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</code></pre>
+<p>Add our new file to the local branch index:</p>
+<pre><code>$ git add git-test
+$ git status
+# On branch my_branch
+# Changes to be committed:
+#   (use &quot;git reset HEAD `&lt;file&gt;`...&quot; to unstage)
+#
+#       new file:   git-test/README
+#
+</code></pre>
+<p>Commit changes </p>
+<pre><code>$ git commit -m &quot;Example file for HOWTO&quot;
+Created commit ad9a1eb: Example file for HOWTO
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 git-test/README
+</code></pre>
+<p>Do some more work and commit local changes....</p>
+<p>Now fetch the remote branch history: </p>
+<pre><code>$ git fetch
+</code></pre>
+<p>To present your patchset properly to other developers, please rebase
+your patches against the branch you are developing against: </p>
+<pre><code>$ git rebase origin/main
+</code></pre>
+<p>Obviously, replace &ldquo;origin/main&rdquo; by whatever branch you are
+developing against. If you have created a mess in your local patch
+queue, &ldquo;git rebase -i&rdquo; might help you out.</p>
+<h2>Pull Requests</h2>
+<p>All new code must go through the GitHub Pull Request workflow, which
+involves at least one project member doing code review and signing off
+on it, before merging to the target branch.</p>
+<p>The description of the workflow can be read in <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">GitHub
+documentation</a>
+and will not be repeated here.</p>
+<p>In the PR summary, make sure you add a description of the purpose of the
+PR, and a link back to the GitHub issue ticket.</p>
+<h2>Updating Documentation</h2>
+<p>The Netatalk documentation consists of two parts: the man pages and the
+manual on the website. Both are managed in docbook XML format under the
+<code>doc/</code> directory in the source tree.</p>
+<p>When making code changes that warrant an update to the documentation,
+such as adding, changing or deprecating functionality, please make sure
+the updates to the xml sources for the documentation are included as
+part of the changeset in your PR.</p>
+<p>If the changeset of your PR warrants a bullet point in the changelog,
+please include an update to NEWS as part of your changeset as well.</p>
+<h1>Administrative Workflows</h1>
+<h2>Making a release</h2>
+<ul>
+<li>Bump VERSION</li>
+</ul>
+<pre><code>$ echo &quot;x.x.x&quot; &gt; VERSION
+$ git commit -a -m &quot;Bump version to x.x.x&quot;
+</code></pre>
+<ul>
+<li>Update NEWS as necessary:</li>
+</ul>
+<pre><code>$ vi NEWS
+$ git commit -a -m &quot;Update NEWS&quot;
+</code></pre>
+<ul>
+<li>Re-run configure so the VERSION bump gets passed to the build system</li>
+</ul>
+<pre><code>$ ./configure
+</code></pre>
+<ul>
+<li>
+<p>Run <code>make distcheck</code>, fix any errors</p>
+</li>
+<li>
+<p>Regenerate manpages from XML sources using docbook-xsl stylesheets</p>
+</li>
+</ul>
+<p>Source a non-namespaced copy of docbook-xsl, f.e. from your OS&rsquo;s package
+repo (on Debian use the package <em>without</em> the <code>-ns</code> suffix) or from
+<a href="https://sourceforge.net/projects/docbook/files/docbook-xsl/">SourceForge</a>,
+then configure with <code>--with-docbook</code> pointing to the absolute path of
+the docbook-xsl directory.</p>
+<p>At the time of writing, the final non-namespaced docbook-xsl release is
+<em>docbook-xsl-1.79.1</em> on SourceForge. The packages published on GitHub
+are namespaced by default. See <a href="https://github.com/docbook/xslt10-stylesheets/issues/65">this upstream
+bug</a> for more
+info.</p>
+<pre><code>$ ./configure --with-docbook=/usr/share/xml/docbook/stylesheet/docbook-xsl
+$ make html
+$ git add man
+$ git commit -a -m &quot;Generate manpages from XML&quot;
+</code></pre>
+<ul>
+<li>Tag, release and roll tarballs</li>
+</ul>
+<pre><code>$ git tag TAG
+$ git push origin TAG
+$ make dist
+$ make dist-bzip2
+</code></pre>
+<ul>
+<li>Upload updates to online manual:</li>
+</ul>
+<pre><code>$ cd doc/manual/
+$ USER=netatalk-sourceforge-adminuser make html-upload
+</code></pre>
+<ul>
+<li>
+<p>Reset VERSION to eg 3.0.8dev</p>
+</li>
+<li>
+<p>In the GitHub web interface, draft a new release. Choose the tag
+    that you just pushed to the remote. Name the release and generate
+    the release notes. Touch up the release notes if needed, upload both
+    xz and bz2 tarballs generated by the build system, and publish the
+    release.</p>
+</li>
+<li>
+<p>Update the <a href="https://github.com/Netatalk/netatalk-homepage">website</a></p>
+</li>
+</ul>
+<h1>Technical Information</h1>
+<h2>Creating patches</h2>
+<p>This describes the traditional method of creating plain text patch
+files. It can be useful when requesting feedback for your code on the
+mailing lists, or when contributing patches downstream to distro
+repositories. These steps are optional if you&rsquo;re submitting a PR on
+GitHub.</p>
+<p>Assuming your patches are the last three commits on your current local
+git branch, this is the easiest way to create patches from them:</p>
+<pre><code>$ git format-patch -3
+</code></pre>
+<p>This will create three patch files in your current directory that you
+can then send to the netatalk-devel mailing list.</p>
+<p>Note that if you have a number of patches against a specific branch and
+don&rsquo;t feel like counting them, the following works as well (e.g. against
+the main branch):</p>
+<pre><code>$ git format-patch origin/main
+</code></pre>
+<p>This will create one patch file for every patch that is in your local
+branch but not in origin/main.</p>
+<p>If you have more patches which belong together it&rsquo;s sometimes useful to
+export them into one file:</p>
+<pre><code>$ git format-patch --stdout origin/main &gt; develop-featureX-01.patches.txt
+</code></pre>
+<h2>Debugging process crashes</h2>
+<p>We need a stack-backtrace (SBT) from a corefile with debugging symbols.</p>
+<ul>
+<li>Compile Netatalk with debugging symbols and without optimizations,
+    e.g. for gcc</li>
+</ul>
+<pre><code>CFLAGS=&quot;-g -O0&quot; ./configure ... &amp;&amp; make &amp;&amp; make install
+</code></pre>
+<ul>
+<li>Enable global corefile generation
+    (<a href="http://www.google.com/search?q=linux+enable+core+dump">Linux</a>,
+    <a href="http://www.google.com/search?q=man+coreadm">Solaris</a>)</li>
+<li>Enable corefile generation for Netatalk by adding</li>
+</ul>
+<pre><code>ulimit -c unlimited
+</code></pre>
+<p>&hellip; at the beginning of the Netatalk start script and restart
+Netatalk.</p>
+<ul>
+<li>Reproduce issue</li>
+<li>Get SBT (example for a crash of afpd and gdb):</li>
+</ul>
+<pre><code>$ gdb path/to/afpd path/to/corefile
+(gdb) bt full
+...
+(gdb) exit
+</code></pre>
+<h2>Integration tests</h2>
+<p>In order to run the integration tests located in test/ run make with the
+<code>check</code> target:</p>
+<pre><code>$ make -j
+$ make check
+</code></pre>
+<h2>FAQ</h2>
+<p><strong>Q.</strong> How do I revert a commit?</p>
+<p><strong>A.</strong> The &ldquo;git reset&rdquo; command allows you to reset the HEAD of the
+branch to any given point in history. To go back one commit, run</p>
+<pre><code>$ git reset HEAD^
+</code></pre>
+<p>This will keep your local changes and you can make any additional
+changes before re-committing the new work. Also see the &ldquo;git commit
+&ndash;amend&rdquo; command and the &ldquo;git reset&rdquo; man page for other examples.</p>
+<p>If the branch has already been pushed to remote, you can force-push the
+amended branch. Please be careful with force pushing, since it can be a
+destructive action.</p>
+<pre><code>$ git push origin my-work-branch --force
+</code></pre>
+<p><strong>Q.</strong> How can I maintain a feature branch against the upstream Netatalk
+branches?</p>
+<p><strong>A.</strong> You clone the Netatalk repository as per the instructions above.
+Then you make a new feature branch: </p>
+<pre><code>$ git checkout -b feature_foo main
+</code></pre>
+<p>Now you do your development in your feature branch. Any time the main
+branch gets too different to the code in your feature branch you should
+rebase your feature branch. The rebase rewinds your feature branch to
+the point there it was branched. Then it updates your feature branch to
+the HEAD of the main branch and re-applies your changes.</p>
+<pre><code>$ git rebase main
+First, rewinding head to replay your work on top of it...
+HEAD is now at 357f003... Add WERR_SERVICE_ALREADY_RUNNING.
+...
+Wrote tree 02299ef7c1cfa093248bfd9c6e3812805718845e
+Committed: e20a8c521d7860d9b7bd724ed5ea19c7306530ab
+</code></pre>
+<p>Rebase works best when you use it for local branches that are never
+pushed to a public repository, see <a href="https://archive.kernel.org/oldwiki/git.wiki.kernel.org/index.php/GitFaq.html#Why_won.27t_.22git_push.22_work_after_I_rebase_a_branch.3F">Why won&rsquo;t &ldquo;git push&rdquo; work after I
+rebased a
+branch?</a>.</p>
+<h2>Links to Developer Resources</h2>
+<ul>
+<li><a href="https://developer.apple.com/library/mac/#documentation/Networking/Conceptual/AFP/Introduction/Introduction.html">AFP Programming
+    Guide</a></li>
+<li><a href="https://developer.apple.com/library/mac/#documentation/Networking/Reference/AFP_Reference/Reference/reference.html">AFP Reference
+    Guide</a></li>
+<li><a href="http://developer.apple.com/legacy/mac/library/documentation/mac/toolbox/Toolbox-463.html">Inside Macintosh: Macintosh Toolbox Essentials Chapter 7 - Finder
+    Interface</a></li>
+<li><a href="http://developer.apple.com/legacy/mac/library/documentation/Carbon/Reference/Finder_Interface/Reference/reference.html">Finder Interface
+    Reference</a></li>
+<li><a href="http://developer.apple.com/mac/library/technotes/tn/tn1150.html#FinderInfo">Technical Note TN1150 HFS Plus Volume
+    Format</a></li>
+<li><a href="http://www.opensource.apple.com/source/CarbonHeaders/CarbonHeaders-9A581/Finder.h">CarbonHeaders
+    source</a></li>
+<li><a href="http://www.opensource.apple.com/source/xnu/xnu-1486.2.11/bsd/vfs/vfs_xattr.c">Mac OS X 10.6.2
+    source</a></li>
+<li><a href="http://users.phg-online.de/tk/netatalk/doc/Apple/v1/">AppleSingle and AppleDouble v1 format
+    internals</a></li>
+<li><a href="https://archive.org/details/AppleSingle_AppleDouble">AppleSingle/AppleDouble Formats for Foreign Files Developer&rsquo;s Note
+    (version2)</a></li>
+</ul><hr /><p>Last updated 2024-01-21</p>
+<p>
+    This is a mirror of the <a href="https://github.com/Netatalk/netatalk/wiki">Netatalk GitHub Wiki</a> -
+    if you find an error or would like to contribute, please head over there.
+</p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>
