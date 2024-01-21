@@ -86,7 +86,7 @@
       <li>
         <a
         title="view 3.1.18 Release Notes"
-        href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-18">
+        href="/3.1/ReleaseNotes3.1.18.html">
         &nbsp;Release Notes
         </a>
       </li>
@@ -110,7 +110,7 @@
       <li>
         <a
         title="view 2.3.0 Release Notes"
-        href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-3-0">
+        href="/2.3/ReleaseNotes2.3.0.html">
         &nbsp;Release Notes
         </a>
       </li>

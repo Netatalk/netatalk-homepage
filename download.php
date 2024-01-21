@@ -20,7 +20,7 @@
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-18">
+        <a href="/3.1/ReleaseNotes3.1.18.html">
             Release Notes
         </a>
     </li>
@@ -38,7 +38,7 @@
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-3-0">
+        <a href="/2.3/ReleaseNotes2.3.0.html">
             Release Notes
         </a>
     </li>

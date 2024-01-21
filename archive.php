@@ -27,7 +27,7 @@ include_once "header.php";
   <a href="CVE-2023-42464.php">CVE-2023-42464</a>.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.17.</p>
   <p>For a summary of news and a detailed list of changes see the
-  <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-17">Release Notes</a>.</p>
+  <a href="/3.1/ReleaseNotes3.1.17.html">Release Notes</a>.</p>
 
 <hr />
   <small>11th of September 2023</small>
@@ -37,7 +37,7 @@ include_once "header.php";
   of the Netatalk 3.1 release series. It includes fixes for the "Invalid metadata EA" error, among other improvements.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.16.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-16">Release Notes</a>.</p>
+     <a href="/3.1/ReleaseNotes3.1.16.html">Release Notes</a>.</p>
 
 <hr />
   <small>17th of August 2023</small>
@@ -47,7 +47,7 @@ include_once "header.php";
   quality of life improvements. Additionally, Netatalk now runs on macOS Ventura hosts.
   All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.10.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-10">Release Notes</a>.</p>
+     <a href="/2.2/ReleaseNotes2.2.10.html">Release Notes</a>.</p>
 
 <hr />
   <small>28th of April 2023</small>
@@ -57,7 +57,7 @@ include_once "header.php";
   of the Netatalk 3.1 release series. It includes fixes for security issues <a href="https://www.cve.org/CVERecord?id=CVE-2022-43634">CVE-2022-43634</a> and
   <a href="https://www.cve.org/CVERecord?id=CVE-2022-45188">CVE-2022-45188</a>, as well as a range of other bug fixes. Additionally, Netatalk now runs on macOS Ventura hosts.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-15">Release Notes</a>.</p>
+     <a href="/3.1/ReleaseNotes3.1.15.html">Release Notes</a>.</p>
 
 <hr />
   <small>26th of April 2023</small>
@@ -67,7 +67,7 @@ include_once "header.php";
   in addition to other minor bug fixes.
   All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.9.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-9">Release Notes</a>.</p>
+     <a href="/2.2/ReleaseNotes2.2.9.html">Release Notes</a>.</p>
 
 <hr />
   <small>25th of February 2023</small>
@@ -77,7 +77,7 @@ include_once "header.php";
   quality of life improvements.
   All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.8.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-8">Release Notes</a>.</p>
+     <a href="/2.2/ReleaseNotes2.2.8.html">Release Notes</a>.</p>
 
 <hr />
   <small>10th of January 2023</small>
@@ -89,7 +89,7 @@ include_once "header.php";
   crash in afpd that was introduced with the security improvements in
   3.1.13, in addition to a range of other minor improvements.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-14">Release Notes</a>.</p>
+     <a href="/3.1/ReleaseNotes3.1.14.html">Release Notes</a>.</p>
 
 <hr />
   <small>10th of January 2023</small>
@@ -102,7 +102,7 @@ include_once "header.php";
   have been adopted for improved usability and stability.
   All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.7.</p>
   <p>For a summary of news and a detailed list of changes see the
-     <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-7">Release Notes</a>.</p>
+     <a href="/2.2/ReleaseNotes2.2.7.html">Release Notes</a>.</p>
 
 <hr />
   <small>10th of January 2023</small>

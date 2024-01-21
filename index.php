@@ -121,7 +121,7 @@ include_once "header.php";
   <p>The theme for this release is security and code quality. Long-obsoleted
   features have been removed, bugs have been fixed, and documentation improved.</p>
   <p>For a summary of news and a detailed list of changes see the
-  <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-3-0">Release Notes</a>.</p>
+  <a href="/2.3/ReleaseNotes2.3.0.html">Release Notes</a>.</p>
 
 <hr />
   <small>5th of October 2023</small>
@@ -132,7 +132,7 @@ include_once "header.php";
   <a href="CVE-2022-22995.php">CVE-2022-22995</a>.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.18.</p>
   <p>For a summary of news and a detailed list of changes see the
-  <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-18">Release Notes</a>.</p>
+  <a href="/3.1/ReleaseNotes3.1.18.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older releases, go to the <a href="archive.php">News Archive</a>.</p>
