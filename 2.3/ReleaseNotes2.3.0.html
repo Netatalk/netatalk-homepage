@@ -46,9 +46,11 @@
 <p>The Netatalk development team is proud to announce a new feature release from the venerable Netatalk 2 branch, notable for maintaining support for AppleTalk clients.</p>
 <p>This version contains stability and security improvements, while removing long-obsoleted or less used functionality. Early adopters are recommended to upgrade their deployments to version 2.3.0.</p>
 <h2>New features</h2>
-<p>The following compile time options have been added:
-- &ndash;disable-install-privileged (skips actions that require root access)
-- &ndash;with-systemd-prefix</p>
+<p>The following compile time options have been added:</p>
+<ul>
+<li><code>--disable-install-privileged</code> (skips actions that require root access)</li>
+<li><code>--with-systemd-prefix</code></li>
+</ul>
 <h2>Breaking changes</h2>
 <p>As of Netatalk 2.3.0, the Database Daemon <code>dbd</code> CNID backend is the only one provided for use in production environments. The <code>last</code> CNID backend is still available for testing and read-only volumes.</p>
 <p>The DHX UAM is now disabled by default, to avoid errors stemming from <a href="https://github.com/openssl/openssl/issues/22158">OpenSSL v3.0 removal of 128 bit modulus size support</a>. See https://github.com/Netatalk/netatalk/issues/358 for more details on how to make DHX work on your system, and on using alternative UAMs for authenticating with older clients.</p>
@@ -73,26 +75,30 @@
 <li>UnixWare</li>
 </ul>
 <h3>afpd</h3>
-<p>The following runtime options have been removed:
-* nodebug (afpd.conf)
-* nostat
-* preexec
-* postexec
-* root_preexec
-* root_postexec
-* preexec_close
-* root_preexec_close
-* dropbox
-* dropkludge</p>
-<p>The following obsoleted compile time options have been removed:
-* &ndash;enable-debug
-* &ndash;enable-debug1
-* &ndash;enable-afs 
-* &ndash;enable-force-uidgid
-* &ndash;enable-dropkludge
-* &ndash;with-cnid-tdb-backend
-* &ndash;with-cnid-cdb-backend
-* &ndash;with-webmin</p>
+<p>The following runtime options have been removed:</p>
+<ul>
+<li>nodebug (afpd.conf)</li>
+<li>nostat</li>
+<li>preexec</li>
+<li>postexec</li>
+<li>root_preexec</li>
+<li>root_postexec</li>
+<li>preexec_close</li>
+<li>root_preexec_close</li>
+<li>dropbox</li>
+<li>dropkludge</li>
+</ul>
+<p>The following compile time options have been removed:</p>
+<ul>
+<li><code>--enable-debug</code></li>
+<li><code>--enable-debug1</code></li>
+<li><code>--enable-afs</code></li>
+<li><code>--enable-force-uidgid</code></li>
+<li><code>--enable-dropkludge</code></li>
+<li><code>--with-cnid-tdb-backend</code></li>
+<li><code>--with-cnid-cdb-backend</code></li>
+<li><code>--with-webmin</code></li>
+</ul>
 <p>Renamed:
 * asip-status.pl has been renamed to asip-status</p>
 <h3>atalkd</h3>
