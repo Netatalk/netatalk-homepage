@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Release Notes - 3.1.16</title>
+    <meta name="description" content="Netatalk Release Notes">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/3.1/ReleaseNotes3.1.16.html">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+<div id="content">
+<!-- content -->
+<h1>Netatalk 3.1.16</h1><p>Netatalk 3.1.16 is available!</p>
+<p>The Netatalk development team is proud to announce the latest release of the Netatalk 3.1 release series. Users are encouraged to update their servers to the 3.1 release series which is the stable and supported version for production systems.</p>
+<h2>What&rsquo;s Changed</h2>
+<ul>
+<li>FIX: libatalk: Fix CVE-2022-23121, CVE-2022-23123 regression<ul>
+<li>Added guard check before access ad_entry(), #357</li>
+<li>Allow zero length entry, for AppleDouble specification, #368</li>
+<li>Remove special handling for COMMENT entries, #236</li>
+<li>The assertion for invalid entires is still enabled,
+     so please report any future &ldquo;Invalid metadata EA&rdquo; errors!</li>
+</ul>
+</li>
+<li>FIX: build system: Fix autoconf warnings and modernize bootstrap
+       and configure.ac, #331</li>
+<li>FIX: build system: Correct syntax in libevent search macro,
+       summary macro and netatalk executable makefile, #342</li>
+<li>FIX: build system: Fix native libiconv detection on macOS, #343</li>
+<li>FIX: build system: Use non-interactive PAM session when available, #361</li>
+<li>FIX: build system: Fix detection of Berkeley DB installed
+       in multiarch location, #380</li>
+<li>FIX: build system: Fix support for cross-compilation
+       with mysql_config and dtrace, #384</li>
+<li>FIX: build system: Support building quota against libtirpc, #385</li>
+<li>FIX: build system: Fix variable substitution in configure summary, #443</li>
+<li>UPD: build system: Remove ABI checks and the &ndash;enable-developer option, #262</li>
+<li>FIX: initscript: Improvements to Debian SysV init script<ul>
+<li>Source init-functions, #386</li>
+<li>Add a Description and Short-Description, #428</li>
+</ul>
+</li>
+<li>FIX: docs: Clarify localstate dir configurability in manual, #401</li>
+<li>UPD: docs: Make BerkeleyDB 5.3.x the recommended version, #8</li>
+<li>FIX: docs: Update SourceForge URLs to fix CSS styles and download links</li>
+<li>FIX: docs: Remove obsoleted bug reporting sections, #455</li>
+<li>FIX: Sundry typo fixes in user visible strings and docs, #381, #382</li>
+<li>UPD: Rename asip-status.pl as asip-status
+       to make naming implementation-agnostic, #379</li>
+<li>UPD: Remove redundant uid.c|h files in etc/afpd</li>
+<li>UPD: Don&rsquo;t build and distribute deprecated cnid2_create tool, #412</li>
+<li>UPD: Remove deprecated megatron code and man page, #456</li>
+<li>UPD: Remove deprecated uniconv code and man page, #457</li>
+<li>UPD: Improvements to the GitHub CI workflow</li>
+</ul>
+<p><strong>Full Changelog</strong>: https://github.com/Netatalk/netatalk/compare/netatalk-3-1-15&hellip;netatalk-3-1-16</p><hr />
+<p>Release published at 2023-09-11</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-16">GitHub</a></p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>

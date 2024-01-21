@@ -49,27 +49,27 @@
 <p>A full record of previous release notes are stored below for historical purposes.</p>
 <ul>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-18">
+        <a href="3.1/ReleaseNotes3.1.18.html">
             Netatalk 3.1.18
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-17">
+        <a href="3.1/ReleaseNotes3.1.17.html">
             Netatalk 3.1.17
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-16">
+        <a href="3.1/ReleaseNotes3.1.16.html">
             Netatalk 3.1.16
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-15">
+        <a href="3.1/ReleaseNotes3.1.15.html">
             Netatalk 3.1.15
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-14">
+        <a href="3.1/ReleaseNotes3.1.14.html">
             Netatalk 3.1.14
         </a>
     </li>
@@ -229,27 +229,27 @@
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-3-0">
+        <a href="2.3/ReleaseNotes2.3.0.html">
             Netatalk 2.3.0
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-10">
+        <a href="2.2/ReleaseNotes2.2.10.html">
             Netatalk 2.2.10
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-9">
+        <a href="2.2/ReleaseNotes2.2.9.html">
             Netatalk 2.2.9
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-8">
+        <a href="2.2/ReleaseNotes2.2.8.html">
             Netatalk 2.2.8
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-7">
+        <a href="2.2/ReleaseNotes2.2.7.html">
             Netatalk 2.2.7
         </a>
     </li>

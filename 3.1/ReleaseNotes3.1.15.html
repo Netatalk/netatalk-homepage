@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Release Notes - 3.1.15</title>
+    <meta name="description" content="Netatalk Release Notes">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/3.1/ReleaseNotes3.1.15.html">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+<div id="content">
+<!-- content -->
+<h1>Netatalk 3.1.15</h1><p>Netatalk 3.1.15 is available!</p>
+<p>The Netatalk development team is proud to announce the latest release of the Netatalk 3.1 release series. Users are encouraged to update their servers to the 3.1 release series which is the stable and supported version for production systems.</p>
+<h2>What&rsquo;s Changed</h2>
+<ul>
+<li>FIX: CVE-2022-43634 #186</li>
+<li>FIX: CVE-2022-45188 #240</li>
+<li>NEW: Support for macOS hosts, Intel and Apple silicon, #281</li>
+<li>FIX: configure.ac: update deprecated autoconf syntax #331</li>
+<li>UPD: configure.ac: Support linking with system shared libraries, #265
+       Introduces the &ndash;with-talloc option</li>
+<li>FIX: macros: largefile-check macro for largefile (clang 16) #187</li>
+<li>UPD: macros: Update pthread macro to the latest from gnu.org #273</li>
+<li>FIX: initscripts: Modernize Systemd service file. #244</li>
+<li>FIX: libatalk/conf: include sys/file.h for LOCK_EX #187</li>
+<li>FIX: libatalk: Change log level for realpath() error, <a href="https://sourceforge.net/p/netatalk/bugs/666/">SF bug#666</a></li>
+<li>FIX: libatalk: Change log level for real_name error, <a href="https://sourceforge.net/p/netatalk/bugs/596/">SF bug#596</a></li>
+<li>FIX: libatalk: The my_bool type is deprecated as of MySQL 8.0.1, #129</li>
+<li>UPD: libatalk: allow afpd to read read-protected afp.conf, <a href="https://sourceforge.net/p/netatalk/bugs/546/">SF bug#546</a></li>
+<li>UPD: libatalk: Make the &ldquo;valid users&rdquo; option work in the Homes section, <a href="https://sourceforge.net/p/netatalk/bugs/449/">SF bug#449</a></li>
+<li>UPD: libatalk: Check that FPDisconnectOldSession is successful, <a href="https://sourceforge.net/p/netatalk/bugs/634/">SF bug#634</a></li>
+<li>UPD: libatalk: Bring iniparser library codebase in line with current version 4.1 #271 #282 #301</li>
+<li>FIX: afpd: Provide MNTTYPE_NFS on OmniOS to make quota work, #117</li>
+<li>FIX: afpd: Avoid triggering realpath() lookups with empty path, #277</li>
+<li>FIX: spotlight: Spotlight searches can cause afpd to segfault, #56</li>
+<li>UPD: spotlight: add support for tracker3, <a href="https://sourceforge.net/p/netatalk/patches/147/">SF patch#147</a></li>
+<li>FIX: macusers: Fix output for long usernames #219</li>
+<li>FIX: macusers: account for usernames with non-word characters #219</li>
+<li>FIX: macusers: Support NetBSD #219</li>
+<li>FIX: Fix all function declarations without a prototype #272</li>
+<li>FIX: Fix C99 compliance issues #294</li>
+<li>FIX: Fix gcc10 compiler warnings #295</li>
+<li>UPD: Remove acsiidocs sources and release notes script #227</li>
+<li>FIX: manpages: afp.conf: Parameters are not quoted, <a href="https://sourceforge.net/p/netatalk/bugs/617/">SF bug#617</a></li>
+<li>FIX: manpages: afp.conf: Document $u in home name, #123</li>
+<li>FIX: manpages: afp.conf: Document the usage of guest user, #298</li>
+<li>FIX: Document how the mysql cnid backend is configured, #69</li>
+<li>FIX: Fix user-visible typos in log output and man pages. #218</li>
+<li>FIX: Fix spelling, syntax, and dead URLs in html manual. #231</li>
+<li>NEW: Create README.md #217</li>
+<li>NEW: Set up GitHub workflow and static analysis with Sonarcloud #225</li>
+</ul>
+<p><strong>Full Changelog</strong>: https://github.com/Netatalk/netatalk/compare/netatalk-3-1-14&hellip;netatalk-3-1-15</p><hr />
+<p>Release published at 2023-04-28</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-15">GitHub</a></p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>

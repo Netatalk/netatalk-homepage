@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Release Notes - 3.1.14</title>
+    <meta name="description" content="Netatalk Release Notes">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/3.1/ReleaseNotes3.1.14.html">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+<div id="content">
+<!-- content -->
+<h1>Netatalk 3.1.14</h1><p>Netatalk 3.1.14 is available!</p>
+<p>The Netatalk development team is proud to announce latest release of the Netatalk 3.1 release series. Users are encouraged to update their servers to the 3.1 release series which is the stable and supported version for production systems.</p>
+<h2>What&rsquo;s Changed</h2>
+<ul>
+<li>FIX: fix build with libressl &gt;= 2.7.0 #105</li>
+<li>NEW: Added Ignore Directories Feature #120 </li>
+<li>UPD: Generate Unicode source code based on the latest UnicodeData.txt #114 </li>
+<li>FIX: Protect against removing AFP metadata xattr #174 </li>
+<li>FIX: avoid setting adouble entries on symlinks #174 </li>
+<li>FIX: add handling for cases where ad_entry() returns NULL #174 </li>
+<li>FIX: Fix setting of LD_LIBRARY_FLAGS ($shlibpath_var). #172 </li>
+<li>FIX: Fedora migrating away from IO::Socket::INET6 to IO::Socket::IP #130 </li>
+<li>FIX: afpd: check return values from setXXid() functions #115 </li>
+<li>FIX: libatalk: put back unintentionally removed copyright #118 </li>
+<li>FIX: afpd: drop groups in become_user_permanently() #126 </li>
+<li>FIX: Fix use after free in get_tm_used() #128 </li>
+<li>FIX: Fix sign extension problem in bsd_attr_list() <a href="https://sourceforge.net/p/netatalk/bugs/659/">SourceForge Bug #659</a></li>
+<li>FIX: Fix garbage read in bsd_attr_list #127 </li>
+<li>FIX: make afpstats python 3 compatible</li>
+<li>UPD: docs: manual: Remove wrong TCP-over-TCP info; minor copy editing #106 </li>
+<li>FIX: configure.ac: fix macro ordering for CentOS 6</li>
+<li>FIX: configure.ac: fix typo</li>
+<li>FIX: configure.ac: remove some trailing whitespace</li>
+<li>FIX: configure.ac: fix deprecated macro invocation</li>
+<li>FIX: configure.ac: replace obsolete macro</li>
+<li>FIX: libatalk/dsi/Makefile.am: fix deprecation warning</li>
+<li>FIX: Store AutoMake helper script in build-aux/</li>
+<li>FIX: configure.ac: define a dir for macros</li>
+<li>FIX: configure.ac: AM_CONFIG_HEADER is deprecated</li>
+<li>FIX: autotools: Fix another deprecation warning</li>
+<li>FIX: libgcrypt typo in configuration error message #96 </li>
+<li>UPD: Various CI improvements</li>
+<li>FIX: libatalk/conf: re-generation of afp_voluuid.conf</li>
+<li>UPD: libatalk/conf: code cleanup and add locking to get_vol_uuid()</li>
+<li>UPD: add documentation for the lv_flags_t</li>
+<li>FIX: No need to check for attropen on Solaris #44</li>
+</ul>
+<p><strong>Full Changelog</strong>: https://github.com/Netatalk/Netatalk/commits/netatalk-3-1-14</p><hr />
+<p>Release published at 2023-01-10</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-14">GitHub</a></p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>

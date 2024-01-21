@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Release Notes - 2.3.0</title>
+    <meta name="description" content="Netatalk Release Notes">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/2.3/ReleaseNotes2.3.0.html">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+<div id="content">
+<!-- content -->
+<h1>Netatalk 2.3.0</h1><h1>Netatalk 2.3.0</h1>
+<p>Netatalk 2.3.0 is available!</p>
+<p>The Netatalk development team is proud to announce a new feature release from the venerable Netatalk 2 branch, notable for maintaining support for AppleTalk clients.</p>
+<p>This version contains stability and security improvements, while removing long-obsoleted or less used functionality. Early adopters are recommended to upgrade their deployments to version 2.3.0.</p>
+<h2>New features</h2>
+<p>The following compile time options have been added:
+- &ndash;disable-install-privileged (skips actions that require root access)
+- &ndash;with-systemd-prefix</p>
+<h2>Breaking changes</h2>
+<p>As of Netatalk 2.3.0, the Database Daemon <code>dbd</code> CNID backend is the only one provided for use in production environments. The <code>last</code> CNID backend is still available for testing and read-only volumes.</p>
+<p>The DHX UAM is now disabled by default, to avoid errors stemming from <a href="https://github.com/openssl/openssl/issues/22158">OpenSSL v3.0 removal of 128 bit modulus size support</a>. See https://github.com/Netatalk/netatalk/issues/358 for more details on how to make DHX work on your system, and on using alternative UAMs for authenticating with older clients.</p>
+<p>The following features have been removed.</p>
+<ul>
+<li>Concurrent Database (cdb) CNID backend</li>
+<li>Trivial Database (tdb) CNID backend</li>
+<li>Volume mount preexec and postexec commands</li>
+<li>Dropbox / dropkludge</li>
+<li>Force UID/GID</li>
+<li>Andrew File System (AFS)</li>
+</ul>
+<p>Compatibility macros for the following long-obsoleted operating systems have been removed.</p>
+<ul>
+<li>SunOS</li>
+<li>IRIX</li>
+<li>AIX</li>
+<li>Ultrix</li>
+<li>HPUX</li>
+<li>Tru64,</li>
+<li>GNU/kFreeBSD</li>
+<li>UnixWare</li>
+</ul>
+<h3>afpd</h3>
+<p>The following runtime options have been removed:
+* nodebug (afpd.conf)
+* nostat
+* preexec
+* postexec
+* root_preexec
+* root_postexec
+* preexec_close
+* root_preexec_close
+* dropbox
+* dropkludge</p>
+<p>The following obsoleted compile time options have been removed:
+* &ndash;enable-debug
+* &ndash;enable-debug1
+* &ndash;enable-afs 
+* &ndash;enable-force-uidgid
+* &ndash;enable-dropkludge
+* &ndash;with-cnid-tdb-backend
+* &ndash;with-cnid-cdb-backend
+* &ndash;with-webmin</p>
+<p>Renamed:
+* asip-status.pl has been renamed to asip-status</p>
+<h3>atalkd</h3>
+<p>Netatalk versions 2.2.7 through 2.2.10 had the non-standard behavior of <a href="https://github.com/Netatalk/netatalk/issues/585">not rebroadcasting routing information originating from other subnets</a>. This made certain Asanté or Dayna LocalTalk hardware bridges able to coexist with netatalk, with the drawback that subnets behind other routers aren&rsquo;t visible to the netatalk clients.</p>
+<p>Netatalk 2.3.0 restores the correct behavior as per the AppleTalk specification. If you want to emulate the previous non-standard behavior, you can start <code>atalkd</code> with the newly introduced <code>-q</code> parameter.</p>
+<h2>What&rsquo;s Changed</h2>
+<ul>
+<li>[2.2] Run distcheck target in Ubuntu job by @rdmark in https://github.com/Netatalk/netatalk/pull/395</li>
+<li>[2.2] Add Documentation tags to systemd templates by @rdmark in https://github.com/Netatalk/netatalk/pull/394</li>
+<li>[2.2] Support building against libtirpc as separate from glibc by @rdmark in https://github.com/Netatalk/netatalk/pull/387</li>
+<li>[2.2] Fix detection of Berkeley DB installed in multiarch location by @rdmark in https://github.com/Netatalk/netatalk/pull/391</li>
+<li>[2.2] Configurable systemd prefix by @rdmark in https://github.com/Netatalk/netatalk/pull/417</li>
+<li>[2.2] autoconf: Option to skip privileged hooks for make install by @rdmark in https://github.com/Netatalk/netatalk/pull/419</li>
+<li>Flip the check for tm-&gt;tm_gmtoff to appease FreeBSD by @rdmark in https://github.com/Netatalk/netatalk/pull/416</li>
+<li>[2.2] Rename asip-status.pl to asip-status by @rdmark in https://github.com/Netatalk/netatalk/pull/397</li>
+<li>[2.2] Fix user visible typos and improve English grammar by @rdmark in https://github.com/Netatalk/netatalk/pull/399</li>
+<li>[2.2] autoconf: put UAM libraries in $libdir by @rdmark in https://github.com/Netatalk/netatalk/pull/420</li>
+<li>[2.2] Correct install hook for static config files by @rdmark in https://github.com/Netatalk/netatalk/pull/421</li>
+<li>[2.2] Create man page for cnid2_create tool by @rdmark in https://github.com/Netatalk/netatalk/pull/411</li>
+<li>[2.2] Do not install at.h when glibc header is present by @rdmark in https://github.com/Netatalk/netatalk/pull/414</li>
+<li>[2.2] autoconf: Fold a2boot and timelord under the appletalk conditional by @rdmark in https://github.com/Netatalk/netatalk/pull/424</li>
+<li>[2.2] Write a Description and Short-Description for the Debian init script by @rdmark in https://github.com/Netatalk/netatalk/pull/437</li>
+<li>[2.2] Document binheader, nadheader, and showpap in man pages by @rdmark in https://github.com/Netatalk/netatalk/pull/438</li>
+<li>[2.2] Improve readability of manual README by @rdmark in https://github.com/Netatalk/netatalk/pull/440</li>
+<li>[2.2] Recommend BerkeleyDB 5.3 by @rdmark in https://github.com/Netatalk/netatalk/pull/447</li>
+<li>[2.2] Update URL for css stylesheet in manual pages by @rdmark in https://github.com/Netatalk/netatalk/pull/445</li>
+<li>[2.2] workflow: Flesh out pull_request trigger and remove ignored paths by @rdmark in https://github.com/Netatalk/netatalk/pull/453</li>
+<li>[2.2] Use absolute XSL stylesheet path and source VERSION for manual pages by @rdmark in https://github.com/Netatalk/netatalk/pull/459</li>
+<li>[2.2] Remove obsoleted bug reporting sections by @rdmark in https://github.com/Netatalk/netatalk/pull/466</li>
+<li>[2.2] manpages: Fix typos, improve layout in afpd.conf man page by @rdmark in https://github.com/Netatalk/netatalk/pull/472</li>
+<li>Revert &ldquo;[2.2] Update atalkd.service to be consistent with other init scripts.&rdquo; by @rdmark in https://github.com/Netatalk/netatalk/pull/473</li>
+<li>[2.2] Default to xz compression for tarballs by @rdmark in https://github.com/Netatalk/netatalk/pull/483</li>
+<li>[2.2] Remove vestiges of a Webmin install target by @rdmark in https://github.com/Netatalk/netatalk/pull/517</li>
+<li>[2.2] Name the default home dir shared volume; clean up template by @rdmark in https://github.com/Netatalk/netatalk/pull/519</li>
+<li>[2.2] Remove redundant id properties in man page by @rdmark in https://github.com/Netatalk/netatalk/pull/520</li>
+<li>[2.3] Port 2.x fork code quality improvements by @rdmark in https://github.com/Netatalk/netatalk/pull/521</li>
+<li>[2.2] Rearrange the dummy file system paths for the tests by @rdmark in https://github.com/Netatalk/netatalk/pull/522</li>
+<li>[2.3] Don&rsquo;t seteuid() if process is already running as that uid. by @rdmark in https://github.com/Netatalk/netatalk/pull/532</li>
+<li>[2.3] Enable, sort, and flesh out file type translation by @rdmark in https://github.com/Netatalk/netatalk/pull/534</li>
+<li>[2.3] Remove dangerous afprun module from codebase by @dgsga in https://github.com/Netatalk/netatalk/pull/531</li>
+<li>[2.3] Remove experimental Dropbox Kludge feature by @rdmark in https://github.com/Netatalk/netatalk/pull/539</li>
+<li>[2.3] Remove redundant AUTHORS file by @rdmark in https://github.com/Netatalk/netatalk/pull/537</li>
+<li>[2.3] Remove the &ldquo;Force UID/GID&rdquo; feature by @rdmark in https://github.com/Netatalk/netatalk/pull/541</li>
+<li>[2.3] Add long-forgotten patch to make papd safer. by @rdmark in https://github.com/Netatalk/netatalk/pull/527</li>
+<li>[2.3] Remove nostat option by @rdmark in https://github.com/Netatalk/netatalk/pull/542</li>
+<li>[2.3] Minor cleanup of man pages by @rdmark in https://github.com/Netatalk/netatalk/pull/544</li>
+<li>[2.3] Validate size of ace_count in FPSetACL request by @rdmark in https://github.com/Netatalk/netatalk/pull/551</li>
+<li>[2.3] Run apt-get update before installing packages by @rdmark in https://github.com/Netatalk/netatalk/pull/558</li>
+<li>[2.3] Fixes for clean compilation on OpenIndiana by @rdmark in https://github.com/Netatalk/netatalk/pull/564</li>
+<li>Revert Asante and Dayna GS/OS Fix. by @NJRoadfan in https://github.com/Netatalk/netatalk/pull/596</li>
+<li>Add README for the v2.3 branch by @rdmark in https://github.com/Netatalk/netatalk/pull/588</li>
+<li>[2.3] Document the correct default log level for afpd by @rdmark in https://github.com/Netatalk/netatalk/pull/589</li>
+<li>[2.3] Standardize man page heading case by @rdmark in https://github.com/Netatalk/netatalk/pull/590</li>
+<li>[2.3] Deprecate AFS (Andrew File System) support by @rdmark in https://github.com/Netatalk/netatalk/pull/591</li>
+<li>atalkd: Introduce 3rd party bridge quirks mode by @rdmark in https://github.com/Netatalk/netatalk/pull/597</li>
+<li>[2.3] uams: Link PGP UAM with CRYPT_LIBS by @rdmark in https://github.com/Netatalk/netatalk/pull/607</li>
+<li>[2.3] Build Kerberos V and PGP UAMs in CI workflow by @rdmark in https://github.com/Netatalk/netatalk/pull/613</li>
+<li>[2.3] Improve logger_test, while re-enabling the syslog tests by @rdmark in https://github.com/Netatalk/netatalk/pull/616</li>
+<li>[2.3] Enable only DHX2 UAM by default by @rdmark in https://github.com/Netatalk/netatalk/pull/619</li>
+<li>[2.3] Switch from compile-time debug to run-time debug where applicable by @rdmark in https://github.com/Netatalk/netatalk/pull/618</li>
+<li>[2.3] Remove cdb and tdb CNID backends by @rdmark in https://github.com/Netatalk/netatalk/pull/611</li>
+<li>[2.3] Use portable fcntl() instead of flock()  by @rdmark in https://github.com/Netatalk/netatalk/pull/626</li>
+<li>[2.3] afpd: Use correct username length in afp_changepw by @rdmark in https://github.com/Netatalk/netatalk/pull/630</li>
+<li>[2.3] Clean up residual svn commit headers by @rdmark in https://github.com/Netatalk/netatalk/pull/631</li>
+<li>[2.3] Minor cleanup of residual afprun code by @rdmark in https://github.com/Netatalk/netatalk/pull/632</li>
+<li>Preparing for stable release 2.3.0 by @rdmark in https://github.com/Netatalk/netatalk/pull/633</li>
+</ul>
+<h2>New Contributors</h2>
+<ul>
+<li>@NJRoadfan made their first contribution in https://github.com/Netatalk/netatalk/pull/596</li>
+</ul>
+<p><strong>Full Changelog</strong>: https://github.com/Netatalk/netatalk/compare/netatalk-2-2-10&hellip;netatalk-2-3-0</p><hr />
+<p>Release published at 2023-12-28</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-3-0">GitHub</a></p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>

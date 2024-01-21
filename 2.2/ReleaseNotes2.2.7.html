@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Release Notes - 2.2.7</title>
+    <meta name="description" content="Netatalk Release Notes">
+    <link rel="canonical" href="https://netatalk.sourceforge.io/2.2/ReleaseNotes2.2.7.html">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+</head>
+<body>
+    <div id="header">
+      <!-- header -->
+      <div id="logo"></div>
+      <div id="menlinks">
+      <a href="/" title="Return to Netatalk home">[main]</a>
+      <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+      <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
+      <a href="/download.php" title="Download Netatalk">[downloads]</a>
+      <a href="/support.php" title="Support">[support]</a>
+      <a href="/links.php" title="Netatalk related links">[links]</a>
+      <img src="/gfx/end.gif" alt="" width="125" height="7" />
+      </div>
+    </div>
+
+    <div id="header-print">
+      <h1>netatalk.sourceforge.net</h1>
+    </div>
+
+    <div class="search"> 
+      <!-- search box -->
+      <h2>search netatalk.sf.net</h2>
+      <form method="get" action="https://www.google.com/search">
+        <p> 
+          <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+          <input type="hidden" name="sitesearch" value="netatalk.sourceforge.net" />
+          <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
+        </p>
+      </form>
+      <span class="italic">powered by Google</span>
+    </div>
+<div id="content">
+<!-- content -->
+<h1>Netatalk 2.2.7</h1><p>Netatalk 2.2.7 is available!</p>
+<p>The Netatalk development team is proud to announce latest release of the Netatalk 2.2 release series. Users are encouraged to update their servers to the 2.2 release series which is the stable and supported version for production systems.</p>
+<h2>What&rsquo;s Changed</h2>
+<ul>
+<li>CVE-2018-1160: libatalk/dsi: avoid double use of variable i by @slowfranklin</li>
+<li>CVE-2018-1160: libatalk/dsi: add correct bound checking to dsi_opensession by @slowfranklin</li>
+<li>CVE-2022-23121: libatalk: apply some hardening to ad_header_read<a href="">_osx</a> by @slowfranklin</li>
+<li>CVE-2022-23121: apply hardening to parse_entries() by @slowfranklin</li>
+<li>CVE-2022-23123: libatalk: add defines for icon lengths by @slowfranklin</li>
+<li>CVE-2022-23125: harden copyapplfile() by @slowfranklin</li>
+<li>[2.2] Fix &lsquo;multiple definition&rsquo; compile time errors by @rdmark in https://github.com/Netatalk/Netatalk/pull/136</li>
+<li>[2.2] Remove bitrotted code by @rdmark in https://github.com/Netatalk/Netatalk/pull/139</li>
+<li>[2.2] Fixes for the OpenSSL 1.1 API; add OpenSSL 1.0 backwards compat by @rdmark in https://github.com/Netatalk/Netatalk/pull/142</li>
+<li>[2.2] Install afp_ldap.conf based on LDAP support, not availability of ACLs. by @rdmark in https://github.com/Netatalk/Netatalk/pull/143</li>
+<li>[2.2] Resolve gcc 10 compile time warnings on Linux by @rdmark in https://github.com/Netatalk/Netatalk/pull/165</li>
+<li>[2.2] Downstream patches for NetBSD compatibility by @rdmark in https://github.com/Netatalk/Netatalk/pull/148</li>
+<li>[2.2] Make timelord work on non-big-endian systems; ability to sync localtime by @rdmark in https://github.com/Netatalk/Netatalk/pull/151</li>
+<li>[2.2] Resolve papd compile time errors due to deprecated CUPS calls by @rdmark in https://github.com/Netatalk/Netatalk/pull/152</li>
+<li>[2.2] Resolve automake warnings running bootstrap by @rdmark in https://github.com/Netatalk/Netatalk/pull/153</li>
+<li>[2.2] Handle special FIRSTNET behavior on NetBSD  by @rdmark in https://github.com/Netatalk/Netatalk/pull/154</li>
+<li>[2.2] papd patches for compatibility with older Apple LaserWriter drivers on Mac and GS/OS by @rdmark in https://github.com/Netatalk/Netatalk/pull/156</li>
+<li>[2.2] Allow non-unicode volume to be scanned by the repair tool. by @rdmark in https://github.com/Netatalk/Netatalk/pull/158</li>
+<li>[2.2] Update init script templates to start/stop a2boot daemon. by @rdmark in https://github.com/Netatalk/Netatalk/pull/160</li>
+<li>[2.2] Backport Netatalk 3 patches by @rdmark in https://github.com/Netatalk/Netatalk/pull/161</li>
+<li>[2.2] papd: Send replies to client when printing to prompt more data by @rdmark in https://github.com/Netatalk/Netatalk/pull/162</li>
+<li>[2.2] afpd: Add option to disable afp session tickles by @rdmark in https://github.com/Netatalk/Netatalk/pull/163</li>
+<li>[2.2] Update for Unicode 14 by @rdmark in https://github.com/Netatalk/Netatalk/pull/164</li>
+<li>[2.2] Made the AsanteTalk bridge consistently start up in AppleTalk Phase 2… by @rdmark in https://github.com/Netatalk/Netatalk/pull/166</li>
+<li>[2.2] Introduce fully functional systemd unit configurations for all daemons by @rdmark in https://github.com/Netatalk/Netatalk/pull/167</li>
+<li>[2.2] General stability patches by @rdmark in https://github.com/Netatalk/Netatalk/pull/168</li>
+<li>Fix some compile errors by @JensKSP in https://github.com/Netatalk/Netatalk/pull/176</li>
+</ul>
+<h2>New Contributors</h2>
+<ul>
+<li>@rdmark made their first contribution in https://github.com/Netatalk/Netatalk/pull/136</li>
+<li>@JensKSP made their first contribution in https://github.com/Netatalk/Netatalk/pull/176</li>
+</ul>
+<p><strong>Full Changelog</strong>: https://github.com/Netatalk/Netatalk/commits/netatalk-2-2-7</p><hr />
+<p>Release published at 2023-01-10</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-2-7">GitHub</a></p>
+<hr />
+</div>
+<!-- end content -->
+<div class="footer">
+    <span class="italic">webspace sponsored by</span><br />
+    <a href="https://sourceforge.net/projects/netatalk">
+      <img src="https://sflogo.sourceforge.net/sflogo.php?group_id=8642&amp;type=11"
+       width="120" height="30"
+       alt="Get netatalk at SourceForge.net. Fast, secure and Free Open Source software downloads" />
+    </a>
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a> 
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </div>
+  </body>
+  </html>
