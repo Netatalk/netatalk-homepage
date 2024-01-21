@@ -3,3 +3,4 @@ GitPython==3.1.40
 Markdown==3.4.3
 Pygments==2.15.1
 smmap==5.0.1
+requests==2.31.0

@@ -52,12 +52,22 @@ def site_map():
 """)
         site_map_xml.write('</urlset>')
 
+pre_footer = f"""<hr /><p>Last updated {date_time}</p>
+<p>
+    This is a mirror of the <a href="https://github.com/Netatalk/netatalk/wiki">Netatalk GitHub Wiki</a> -
+    if you find an error or would like to contribute, please head over there.
+</p>
+<hr />
+</div>
+"""
 
 for file in os.listdir("./wiki/"):
     if file.endswith(".md"):
         files.append(f"{file}")
 with open("templates/header.html", "r", encoding="utf-8") as header_file:
     header = header_file.read()
+with open("templates/navbar-wiki.html", "r", encoding="utf-8") as navbar_file:
+    navbar = navbar_file.read()
 with open("templates/footer.html", "r", encoding="utf-8") as footer_file:
     footer = footer_file.read()
 for file in files:
@@ -74,9 +84,10 @@ for file in files:
     with open(f"../docs/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
         output_file.write(html_head(new_name.replace('.html', '')))
         output_file.write(header)
-        output_file.write(f"\n<h1 id=\"{file.split('.')[0]}\">{file.split('.')[0].replace('-', ' ')}</h1><hr/>\n")
+        output_file.write(navbar)
+        output_file.write(f"<div id=\"content\"><!-- content -->\n<h1 id=\"{file.split('.')[0]}\">{file.split('.')[0].replace('-', ' ')}</h1><hr/>\n")
         output_file.write(html)
-        output_file.write(f"\n<hr /><p>Last updated {date_time}</p>\n")
+        output_file.write(pre_footer)
         output_file.write(footer)
 
     print(f"Converted: {file}")
