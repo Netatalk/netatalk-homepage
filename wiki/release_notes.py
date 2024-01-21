@@ -50,7 +50,7 @@ with open("templates/footer.html", "r", encoding="utf-8") as footer_file:
 with open(f"../{minor_version}/{file_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
     output_file.write(html_head)
     output_file.write(header)
-    output_file.write(f"<div id=\"content\">\n<!-- content -->\n<h1>Netatalk {release_version}</h1>")
+    output_file.write(f"<div id=\"content\">\n<!-- content -->\n<h1>Netatalk {release_version}</h1><hr />\n")
     output_file.write(html)
     output_file.write(pre_footer)
     output_file.write(footer)
