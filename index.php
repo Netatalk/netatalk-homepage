@@ -48,9 +48,9 @@ include_once "header.php";
   <td>AppleDouble v2, AppleDouble v1</td>
   </tr>
   <tr>
-  <td><i>Bonjour</i> Service Discovery</td>
-  <td>Zeroconf</td>
-  <td>Zeroconf and SLP</td>
+  <td>Service Discovery</td>
+  <td>Mac OS X 10.3 and later</td>
+  <td>Classic Mac OS, Mac OS X 10.0 and later</td>
   </tr>
   <tr>
   <td><i>Time Machine</i> Backups</td>
@@ -63,14 +63,14 @@ include_once "header.php";
   <td>No</td>
   </tr>
   <tr>
-  <td>PAP Print Server</td>
+  <td>Print Server</td>
   <td>No</td>
-  <td>Yes, with CUPS support</td>
+  <td>PAP with CUPS support</td>
   </tr>
   <tr>
-  <td><i>Timelord</i> Time Server</td>
+  <td>Time Server</td>
   <td>No</td>
-  <td>Yes</td>
+  <td>Yes, <i>Timelord</i> compatible</td>
   </tr>
   <tr>
   <td>Apple II Netboot Server</td>
