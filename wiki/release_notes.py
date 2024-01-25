@@ -44,12 +44,15 @@ pre_footer = f"""<hr />
 
 with open("templates/header.html", "r", encoding="utf-8") as header_file:
     header = header_file.read()
+with open("templates/navbar.html", "r", encoding="utf-8") as navbar_file:
+    navbar = navbar_file.read()
 with open("templates/footer.html", "r", encoding="utf-8") as footer_file:
     footer = footer_file.read()
 
 with open(f"../{minor_version}/{file_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
     output_file.write(html_head)
     output_file.write(header)
+    output_file.write(navbar)
     output_file.write(f"<div id=\"content\">\n<!-- content -->\n<h1>Netatalk {release_version}</h1><hr />\n")
     output_file.write(html)
     output_file.write(pre_footer)
