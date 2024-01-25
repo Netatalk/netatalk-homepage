@@ -65,7 +65,7 @@ include_once "header.php";
   <tr>
   <td>Print Server</td>
   <td>No</td>
-  <td>PAP with CUPS support</td>
+  <td>Yes, PAP with CUPS support</td>
   </tr>
   <tr>
   <td>Time Server</td>
