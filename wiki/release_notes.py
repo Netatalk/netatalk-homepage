@@ -36,7 +36,7 @@ html_head = f"""<!doctype html>
 html = markdown.markdown(body["body"], extensions=['fenced_code', 'smarty', 'tables'])
 
 pre_footer = f"""<hr />
-<p>Release published at {published_at}</p>
+<p>Release published on {published_at}</p>
 <p>Generated from the original at <a href=\"https://github.com/Netatalk/netatalk/releases/tag/{github_tag}\">GitHub</a></p>
 <hr />
 </div>
