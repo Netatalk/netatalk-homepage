@@ -27,9 +27,9 @@ html_head = f"""<!doctype html>
     <meta charset="utf-8">
     <title>Netatalk Release Notes - {release_version}</title>
     <meta name="description" content="Netatalk Release Notes">
-    <link rel="canonical" href="https://netatalk.sourceforge.io/{minor_version}/{file_name}">
-    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
-    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+    <link rel="canonical" href="https://netatalk.io/{minor_version}/{file_name}">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
 """
 

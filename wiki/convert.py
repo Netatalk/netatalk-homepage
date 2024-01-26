@@ -19,9 +19,9 @@ def html_head(name):
     <meta charset="utf-8">
     <title>Netatalk Wiki - {name.replace('-', ' ')}</title>
     <meta name="description" content="Netatalk Wiki">
-    <link rel="canonical" href="https://netatalk.sourceforge.io/docs/{name}">
-    <link rel="stylesheet" type="text/css" href="https://netatalk.sourceforge.io/css/site.css" />
-    <link rel="icon" type="image/x-icon" href="https://netatalk.sourceforge.io/gfx/favicon.ico" />
+    <link rel="canonical" href="https://netatalk.io/docs/{name}">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
 """
 
@@ -44,7 +44,7 @@ def site_map():
             datetime_obj = datetime.datetime.fromtimestamp(commit.committed_date)
             print(blob.path, datetime_obj.strftime("%Y-%m-%d"))
             site_map_xml.write(f"""<url>
-    <loc>https://netatalk.sourceforge.io/docs/{urllib.parse.quote(blob.path.replace('.md', '.html'))}</loc>
+    <loc>https://netatalk.io/docs/{urllib.parse.quote(blob.path.replace('.md', '.html'))}</loc>
     <lastmod>{datetime_obj.strftime("%Y-%m-%d")}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
