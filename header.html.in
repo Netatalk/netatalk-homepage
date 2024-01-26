@@ -28,7 +28,7 @@
 <link rel="bookmark" href="https://sourceforge.net/projects/netatalk/files/" title="Downloads" />
 <link rel="icon" type="image/x-icon" href="/gfx/favicon.ico" />
 
-<title><?php echo $title ? ("Netatalk - ".$title) : "Netatalk"; ?></title>
+<title>Netatalk</title>
 </head>
 
 <body>
@@ -50,11 +50,11 @@
   <h1>netatalk.sourceforge.io</h1>
 </div>
 
-<div class="search"> 
+<div class="search">
   <!-- search box -->
   <h2>search netatalk.sf.net</h2>
   <form method="get" action="https://www.google.com/search">
-    <p> 
+    <p>
       <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
       <input type="hidden" name="sitesearch" value="netatalk.sourceforge.io" />
       <input type="submit" name="btnG" value="Go" title="search netatalk.sf.net" />
@@ -65,7 +65,7 @@
 
 <div id="navbars">
   <!-- the left navigation/search bar -->
-  <div class="navbar"> 
+  <div class="navbar">
     <h2>current releases</h2>
     <p><b>stable</b></p>
     <ul>

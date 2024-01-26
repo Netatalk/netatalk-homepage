@@ -1,9 +1,3 @@
-<?php
- // main netatalk page
-$title = "Networking Apple Macintosh through Open Source";
-include_once "header.php";
-?>
-
 <div id="content">
   <h1>News Archive</h1>
 
@@ -505,7 +499,7 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
   <p>The Netatalk development team is proud to announce version 2.1 of the Netatalk File Sharing suite.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/2.1/ReleaseNotes2.1.html">Release Notes</a>.</p>
-  <p>In case, you want to upgrade an existing Netatalk 1.x installation, ensure 
+  <p>In case, you want to upgrade an existing Netatalk 1.x installation, ensure
     you carefully read the <a href="/2.0/htmldocs/upgrade.html">upgrade
     guide</a> before and follow the steps outlined there.</p>
 
@@ -580,10 +574,10 @@ automatically. Please remove the line starting with</p>
       accessible more easily</li>
     <li>countless bugs fixed compared to previous versions</li>
   </ul>
-  <p>In case, you want to upgrade an existing Netatalk 1.x installation, ensure 
-    you carefully read the <a href="/2.0/htmldocs/upgrade.html">upgrade 
-    guide</a> before and follow the steps outlined there. If you made use of symlinks 
-    inside Netatalk shares consider setting up a test installation with 2.0 before 
+  <p>In case, you want to upgrade an existing Netatalk 1.x installation, ensure
+    you carefully read the <a href="/2.0/htmldocs/upgrade.html">upgrade
+    guide</a> before and follow the steps outlined there. If you made use of symlinks
+    inside Netatalk shares consider setting up a test installation with 2.0 before
     migrating since Netatalk 2.0 provides no support for symlinks any longer.</p>
 
   <hr />
@@ -594,5 +588,3 @@ automatically. Please remove the line starting with</p>
     want to give Netatalk a try, please visit our
     <a href="https://github.com/Netatalk/netatalk">GitHub project page</a>.</p>
 </div>
-
-<?php include_once "footer.php"; ?>

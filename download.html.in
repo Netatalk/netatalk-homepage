@@ -1,8 +1,3 @@
-<?php
- $title = "Download";
- include_once "header.php";
-?>
-
 <div id="content">
 <h1>Download Netatalk</h1>
 
@@ -85,5 +80,3 @@
 <p>For older releases, visit the <a href="https://sourceforge.net/projects/netatalk/files/">
     Release Archives at SourceForge.net</a>
 </p>
-
-<?php include_once "footer.php"; ?>

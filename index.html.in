@@ -1,10 +1,4 @@
-<?php
- // main netatalk page
-$title = "Networking Apple Macintosh through Open Source";
-include_once "header.php";
-?>
-
-<div id="content"> 
+<div id="content">
   <h1>Welcome to the Netatalk Homepage!</h1>
 
   <p>Netatalk is a Free and Open Source Apple Filing Protocol (AFP) fileserver.
@@ -146,5 +140,3 @@ include_once "header.php";
 <hr />
 
 </div>
-
-<?php include_once "footer.php"; ?>

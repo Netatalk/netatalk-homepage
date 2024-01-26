@@ -1,8 +1,3 @@
-<?php
- $title = "Links";
- include_once "header.php";
-?>
-
 <div id="content">
 <h1>Netatalk Links</h1>
 <!-- Link Page created by Nathaniel Pendleton of Pendleton Press LLC. Copyleft 2000. -->
@@ -68,5 +63,3 @@
   <td>NAS software bundle that specializes in retro networking</td>
   </tr>
 </table>
-
-<?php include_once "footer.php"; ?>
