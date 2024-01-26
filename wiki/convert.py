@@ -81,7 +81,7 @@ for file in files:
     if new_name == "Home.html":
         new_name = "index.html"
 
-    with open(f"../docs/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
+    with open(f"../public/docs/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
         output_file.write(html_head(new_name.replace('.html', '')))
         output_file.write(header)
         output_file.write(navbar)

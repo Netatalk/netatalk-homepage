@@ -49,7 +49,7 @@ with open("templates/navbar.html", "r", encoding="utf-8") as navbar_file:
 with open("templates/footer.html", "r", encoding="utf-8") as footer_file:
     footer = footer_file.read()
 
-with open(f"../{minor_version}/{file_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
+with open(f"../public/{minor_version}/{file_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
     output_file.write(html_head)
     output_file.write(header)
     output_file.write(navbar)
