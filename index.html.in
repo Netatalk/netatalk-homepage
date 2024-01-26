@@ -123,13 +123,13 @@
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. It includes a patch for security issue
-  <a href="CVE-2022-22995.php">CVE-2022-22995</a>.
+  <a href="CVE-2022-22995.html">CVE-2022-22995</a>.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.18.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/3.1/ReleaseNotes3.1.18.html">Release Notes</a>.</p>
 
 <hr />
-  <p>For a list of older releases, go to the <a href="archive.php">News Archive</a>.</p>
+  <p>For a list of older releases, go to the <a href="archive.html">News Archive</a>.</p>
 
   <p>Netatalk is licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU
   General Public License 2.0</a>.</p>

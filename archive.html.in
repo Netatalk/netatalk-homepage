@@ -18,7 +18,7 @@
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. It includes a 0-day fix for security issue
-  <a href="CVE-2023-42464.php">CVE-2023-42464</a>.
+  <a href="CVE-2023-42464.html">CVE-2023-42464</a>.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.17.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/3.1/ReleaseNotes3.1.17.html">Release Notes</a>.</p>
