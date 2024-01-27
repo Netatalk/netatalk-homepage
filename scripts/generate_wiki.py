@@ -42,7 +42,6 @@ def site_map():
         for blob in tree:
             commit = next(repo.iter_commits(paths=blob.path, max_count=1))
             datetime_obj = datetime.datetime.fromtimestamp(commit.committed_date)
-            print(blob.path, datetime_obj.strftime("%Y-%m-%d"))
             site_map_xml.write(f"""<url>
     <loc>https://netatalk.io/docs/{urllib.parse.quote(blob.path.replace('.md', '.html'))}</loc>
     <lastmod>{datetime_obj.strftime("%Y-%m-%d")}</lastmod>
