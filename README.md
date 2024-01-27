@@ -10,16 +10,11 @@ Manual pages are static html generated with xsltproc from [XSL sources](https://
 # New release procedure
 - Create a news story at the top of `index.html.in`.
 - Move an older news story to `archive.html.in`. Limit the number of news stories on `index.html.in` to about 4.
-- Generate static release notes with the `wiki/release_notes.py` script.
 - Update the current releases left rail in the `header.html.in` sources.
 - Update `download.html.in` and `documentation.html.in` sources.
-- Run the `generate.py` script.
-- Commit changes and push to remote git.
-
-# Wiki docs update procedure
-- Run the `wiki/run.sh` script
-- Validate in the git diff that the generated html pages in `docs/` don't contain any unwanted edits or spam.
-- Commit the changes and upload to the web server
+- Add the new netatalk release version to the "versions" list in `scripts/generate_releasenotes.py`
+- Run the `run.sh` script, passing a GITHUB_TOKEN env variable with a valid GitHub API token.
+- Validate the correctness and absence of spam in generated html sources in `public/`, then push to remote git.
 
 # See also
 - [Netatalk release process wiki](https://github.com/Netatalk/netatalk/wiki/Developer-Notes#user-content-Making_a_release)
