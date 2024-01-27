@@ -4,11 +4,13 @@ import markdown
 import requests
 
 # The netatalk release versions with release notes on github
-versions = ("2.2.7", "2.2.8", "2.2.9", "2.2.10", "2.3.0", "3.1.14", "3.1.15", "3.1.16", "3.1.17", "3.1.18")
+versions = ["2.2.7", "2.2.8", "2.2.9", "2.2.10", "2.3.0", "3.1.14", "3.1.15", "3.1.16", "3.1.17", "3.1.18"]
 
-github_token = os.environ["GITHUB_TOKEN"] or exit("Please set GITHUB_TOKEN env variable")
+env = os.environ
 
-for release_version in versions {
+github_token = os.environ["GITHUB_TOKEN"]
+
+for release_version in versions:
     github_tag = "netatalk-" + release_version.replace(".", "-")
     minor_version = re.search(r"^(\d+\.\d+)", release_version).group()
     file_name = "ReleaseNotes" + release_version + ".html"
@@ -45,14 +47,14 @@ for release_version in versions {
     </div>
     """
 
-    with open("../templates/header.html", "r", encoding="utf-8") as header_file:
+    with open("./templates/header.html", "r", encoding="utf-8") as header_file:
         header = header_file.read()
-    with open("../templates/navbar.html", "r", encoding="utf-8") as navbar_file:
+    with open("./templates/navbar.html", "r", encoding="utf-8") as navbar_file:
         navbar = navbar_file.read()
-    with open("../templates/footer.html", "r", encoding="utf-8") as footer_file:
+    with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
         footer = footer_file.read()
 
-    with open(f"../public/{minor_version}/{file_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
+    with open(f"./public/{minor_version}/{file_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
         output_file.write(html_head)
         output_file.write(header)
         output_file.write(navbar)
@@ -62,4 +64,3 @@ for release_version in versions {
         output_file.write(footer)
         
         print(f"Converted: {file_name}")
-}

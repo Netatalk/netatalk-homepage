@@ -35,7 +35,7 @@ def site_map():
     repo = Repo("wiki/")
     tree = repo.tree()
 
-    with open(f"../docs/sitemap.xml", "w", encoding="utf-8", errors="xmlcharrefreplace") as site_map_xml:
+    with open(f"./public/docs/sitemap.xml", "w", encoding="utf-8", errors="xmlcharrefreplace") as site_map_xml:
         site_map_xml.write("""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 """)
@@ -64,11 +64,11 @@ pre_footer = f"""<hr /><p>Last updated {date_time}</p>
 for file in os.listdir("./wiki/"):
     if file.endswith(".md"):
         files.append(f"{file}")
-with open("../templates/header.html", "r", encoding="utf-8") as header_file:
+with open("./templates/header.html", "r", encoding="utf-8") as header_file:
     header = header_file.read()
-with open("../templates/navbar-wiki.html", "r", encoding="utf-8") as navbar_file:
+with open("./templates/navbar-wiki.html", "r", encoding="utf-8") as navbar_file:
     navbar = navbar_file.read()
-with open("../templates/footer.html", "r", encoding="utf-8") as footer_file:
+with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
     footer = footer_file.read()
 for file in files:
     # TODO: Sidebar is manually updated, for now.
@@ -81,7 +81,7 @@ for file in files:
     if new_name == "Home.html":
         new_name = "index.html"
 
-    with open(f"../public/docs/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
+    with open(f"./public/docs/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
         output_file.write(html_head(new_name.replace('.html', '')))
         output_file.write(header)
         output_file.write(navbar)
