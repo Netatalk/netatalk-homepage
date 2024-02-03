@@ -3,10 +3,21 @@ import re
 import markdown
 import requests
 
-# The netatalk release versions with release notes on github
-versions = ["2.2.7", "2.2.8", "2.2.9", "2.2.10", "2.3.0", "3.1.14", "3.1.15", "3.1.16", "3.1.17", "3.1.18"]
-
-env = os.environ
+# Netatalk releases 2023 onward which have release notes on GitHub.
+# Earlier versions have static release notes html pages.
+versions = [
+    "2.2.7",
+    "2.2.8",
+    "2.2.9",
+    "2.2.10",
+    "2.3.0",
+    "2.3.1",
+    "3.1.14",
+    "3.1.15",
+    "3.1.16",
+    "3.1.17",
+    "3.1.18",
+]
 
 github_token = os.environ["GITHUB_TOKEN"]
 
