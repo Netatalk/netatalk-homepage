@@ -224,6 +224,11 @@
         </a>
     </li>
     <li>
+        <a href="2.3/ReleaseNotes2.3.1.html">
+            Netatalk 2.3.1
+        </a>
+    </li>
+    <li>
         <a href="2.3/ReleaseNotes2.3.0.html">
             Netatalk 2.3.0
         </a>
@@ -364,3 +369,5 @@
         </a>
     </li>
 </ul>
+
+</div>
