@@ -27,11 +27,11 @@
       <h1>netatalk.io</h1>
     </div>
 
-    <div class="search"> 
+    <div class="search">
       <!-- search box -->
       <h2>search netatalk.io</h2>
       <form method="get" action="https://www.google.com/search">
-        <p> 
+        <p>
           <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
           <input type="hidden" name="sitesearch" value="netatalk.io" />
           <input type="submit" name="btnG" value="Go" title="search netatalk.io" />
@@ -103,9 +103,9 @@ documentation</a> for more
 details on this part.</p>
 <h2>Branching model</h2>
 <ul>
-<li>the <strong>main</strong> branch is where development on new features is taking
+<li>the <strong>main</strong> branch is where development of new features is taking
     place</li>
-<li>branches named <strong>branch-netatalk-x.y</strong> for stable releases</li>
+<li>branches named <strong>branch-netatalk-x-y</strong> for stable releases</li>
 <li>currently stable release branch <strong>branch-netatalk-3-1</strong></li>
 <li>commits go to main (after a review, more on that below)</li>
 <li>commits can only go into a release branch if an issue report exists</li>
@@ -122,7 +122,7 @@ documentation.</p>
 members (if the author is a team member, only one review by another team
 member needed).</p>
 <p>This is inspired by the process used in the
-<a href="https://wiki.samba.org/index.html/CodeReview">Samba</a> project.</p>
+<a href="https://wiki.samba.org/index.php/CodeReview">Samba</a> project.</p>
 <h2>Commit messages</h2>
 <p>Commit messages should have a short, descriptive first summary line that
 begins with the affected component, and ends with the GitHub issue
@@ -240,8 +240,8 @@ please include an update to NEWS as part of your changeset as well.</p>
 <ul>
 <li>Bump VERSION</li>
 </ul>
-<pre><code>$ echo &quot;x.x.x&quot; &gt; VERSION
-$ git commit -a -m &quot;Bump version to x.x.x&quot;
+<pre><code>$ echo &quot;3.1.18&quot; &gt; VERSION
+$ git commit -a -m &quot;Bump version to 3.1.18&quot;
 </code></pre>
 <ul>
 <li>Update NEWS as necessary:</li>
@@ -280,20 +280,14 @@ $ git commit -a -m &quot;Generate manpages from XML&quot;
 <ul>
 <li>Tag, release and roll tarballs</li>
 </ul>
-<pre><code>$ git tag TAG
-$ git push origin TAG
+<pre><code>$ git tag netatalk-3-1-18
+$ git push origin netatalk-3-1-18
 $ make dist
 $ make dist-bzip2
 </code></pre>
 <ul>
-<li>Upload updates to online manual:</li>
-</ul>
-<pre><code>$ cd doc/manual/
-$ USER=netatalk-sourceforge-adminuser make html-upload
-</code></pre>
-<ul>
 <li>
-<p>Reset VERSION to eg 3.0.8dev</p>
+<p>Reset VERSION to the &ldquo;dev&rdquo; version of the next planned release, e.g. <code>3.1.19dev</code></p>
 </li>
 <li>
 <p>In the GitHub web interface, draft a new release. Choose the tag
@@ -303,7 +297,7 @@ $ USER=netatalk-sourceforge-adminuser make html-upload
     release.</p>
 </li>
 <li>
-<p>Update the <a href="https://github.com/Netatalk/netatalk-homepage">website</a></p>
+<p>Commit updates to the html manual to the <a href="https://github.com/Netatalk/netatalk-homepage">netatalk-homepage</a> repository, generate html release notes, and author other release updates to the homepage.</p>
 </li>
 </ul>
 <h1>Technical Information</h1>
@@ -396,7 +390,7 @@ Wrote tree 02299ef7c1cfa093248bfd9c6e3812805718845e
 Committed: e20a8c521d7860d9b7bd724ed5ea19c7306530ab
 </code></pre>
 <p>Rebase works best when you use it for local branches that are never
-pushed to a public repository, see <a href="https://archive.kernel.org/oldwiki/git.wiki.kernel.org/index.html/GitFaq.html#Why_won.27t_.22git_push.22_work_after_I_rebase_a_branch.3F">Why won&rsquo;t &ldquo;git push&rdquo; work after I
+pushed to a public repository, see <a href="https://archive.kernel.org/oldwiki/git.wiki.kernel.org/index.php/GitFaq.html#Why_won.27t_.22git_push.22_work_after_I_rebase_a_branch.3F">Why won&rsquo;t &ldquo;git push&rdquo; work after I
 rebased a
 branch?</a>.</p>
 <h2>Links to Developer Resources</h2>
@@ -419,22 +413,21 @@ branch?</a>.</p>
     internals</a></li>
 <li><a href="https://archive.org/details/AppleSingle_AppleDouble">AppleSingle/AppleDouble Formats for Foreign Files Developer&rsquo;s Note
     (version2)</a></li>
-</ul><hr /><p>Last updated 2024-01-21</p>
+</ul><hr /><p>Last updated 2024-02-03</p>
 <p>
     This is a mirror of the <a href="https://github.com/Netatalk/netatalk/wiki">Netatalk GitHub Wiki</a> -
     if you find an error or would like to contribute, please head over there.
 </p>
 <hr />
 </div>
-<!-- end content -->
-<div class="footer">
+    <div class="footer">
     <a href="https://validator.w3.org/check?uri=referer">
       <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
-    </a> 
+    </a>
     <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-  </div>
-  </body>
-  </html>
+    </div>
+</body>
+</html>

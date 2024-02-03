@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Release Notes - 3.1.17</title>
+    <title>Netatalk Release Notes - 2.3.1</title>
     <meta name="description" content="Netatalk Release Notes">
-    <link rel="canonical" href="https://netatalk.io/3.1/ReleaseNotes3.1.17.html">
+    <link rel="canonical" href="https://netatalk.io/2.3/ReleaseNotes2.3.1.html">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -130,21 +130,60 @@
 </div> <!-- /the left navigation/search bar -->
 <div id="content">
 <!-- content -->
-<h1>Netatalk 3.1.17</h1><hr />
-<p>Netatalk 3.1.17 is available!</p>
-<p>The Netatalk development team is proud to announce the latest release of the Netatalk 3.1 release series. Users are encouraged to update their servers to the 3.1 release series which is the stable and supported version for production systems.</p>
+<h1>Netatalk 2.3.1</h1><hr />
+<p>Netatalk 2.3.1 is available!</p>
+<p>The Netatalk development team is proud to announce a new feature release from the <strong>version 2</strong> branch Netatalk, notable for maintaining support for AppleTalk clients.</p>
+<p>This version continues the effort of removing obsoleted code while improving stability and compatibility of all components. All users of prior Netatalk v2 releases are now encouraged to update their installations to this latest version.</p>
+<h2>New features</h2>
+<p>The following compile time option has been added:</p>
+<ul>
+<li><code>--with-docbook</code></li>
+<li>Used to generate man and html pages from XML sources, the latter which are now included in the tarball.</li>
+</ul>
+<h2>Breaking changes</h2>
+<p>The following obsoleted features have been removed:</p>
+<ul>
+<li>Kerberos IV UAM</li>
+<li>Version IV backwards compatibility headers were removed from Kerberos V 1.11 in 2012</li>
+<li>AppleDouble osx</li>
+<li>The AD format that Mac OS X 10.3 used, but was removed in subsequent versions</li>
+<li>AppleDouble sfm</li>
+<li>Microsoft&rsquo;s Services For Macintosh compatibility mode that required a long-gone hacked version of Samba</li>
+</ul>
+<h3>atalkd</h3>
+<p>The RTMP broadcast quirks mode that was introduced in v2.3.0 has been replaced with an automatic activation when atalkd is configured with a single interface and the <code>-router</code> flag.</p>
+<p>Therefore, the now-unneeded <code>-q</code> command line option has been removed.</p>
 <h2>What&rsquo;s Changed</h2>
 <ul>
-<li>FIX: CVE-2023-42464: Validate data type in dalloc_value_for_key(), GitHub #486</li>
-<li>FIX: Declare a variable before using it in a loop,
-       which was throwing off the default compiler on RHEL7, GitHub #481</li>
-<li>UPD: Distribute tarballs with xz compression by default, instead of gzip, GitHub #478</li>
-<li>UPD: Add AUTHOR sections to all man pages with a reference to CONTRIBUTORS,
-       and standardize headers and footers, GitHub #462</li>
+<li>[2.3] Fix Zeroconf support on *BSD platforms by @rdmark in https://github.com/Netatalk/netatalk/pull/647</li>
+<li>[2.3] Add NetBSD, Solaris, Fedora build workflows by @rdmark in https://github.com/Netatalk/netatalk/pull/642</li>
+<li>[2.3] Use correct BSD make syntax in initscripts Makefile by @rdmark in https://github.com/Netatalk/netatalk/pull/644</li>
+<li>[2.3] Remove long-outdated README and VERSION files, superseded by man pages by @rdmark in https://github.com/Netatalk/netatalk/pull/641</li>
+<li>[2.3] Two small memory handling patches ported from netatalk-classic by @rdmark in https://github.com/Netatalk/netatalk/pull/645</li>
+<li>[2.3] macusers: Fallback output when full name not available by @rdmark in https://github.com/Netatalk/netatalk/pull/652</li>
+<li>[2.3] papd: Update cups_print_job() to use CUPS destination API by @NJRoadfan in https://github.com/Netatalk/netatalk/pull/651</li>
+<li>[2.3] papd: Update cups_autoadd_printers() to use current API call. by @NJRoadfan in https://github.com/Netatalk/netatalk/pull/655</li>
+<li>[2.3] workflow: Compile on Debian with cracklib, ldap, quota by @rdmark in https://github.com/Netatalk/netatalk/pull/653</li>
+<li>[2.3] Use GitHub actions v4 for workflow jobs by @rdmark in https://github.com/Netatalk/netatalk/pull/662</li>
+<li>[2.3] manual: Link to custom download and wiki mirrors in navbar by @rdmark in https://github.com/Netatalk/netatalk/pull/671</li>
+<li>[2.3] papd - More cleanup and moderization of print_cups.c by @NJRoadfan in https://github.com/Netatalk/netatalk/pull/672</li>
+<li>[2.3] papd - Use cups_get_language() function by @NJRoadfan in https://github.com/Netatalk/netatalk/pull/674</li>
+<li>[2.3] papd: Use cupsGetOptions() to get printer URI by @NJRoadfan in https://github.com/Netatalk/netatalk/pull/678</li>
+<li>[2.3] atalkd: Fix for RTMP broadcast bug. by @NJRoadfan in https://github.com/Netatalk/netatalk/pull/680</li>
+<li>[2.3] Workflow: Bump SonarScanner to v2 by @rdmark in https://github.com/Netatalk/netatalk/pull/685</li>
+<li>[2.3] libatalk: Appease Fedora gcc incompatible pointer error by @rdmark in https://github.com/Netatalk/netatalk/pull/683</li>
+<li>[2.3] afpd: Remove support for AppleDouble osx and sfm by @rdmark in https://github.com/Netatalk/netatalk/pull/673</li>
+<li>[2.3] Remove obsoleted Kerberos v4 UAM by @rdmark in https://github.com/Netatalk/netatalk/pull/686</li>
+<li>[2.3] Generate man pages through build system by @rdmark in https://github.com/Netatalk/netatalk/pull/690</li>
+<li>[2.3] Cleanup of obsolete gitignore filters by @rdmark in https://github.com/Netatalk/netatalk/pull/693</li>
+<li>[2.3] manual: Update URLs to internal resources by @rdmark in https://github.com/Netatalk/netatalk/pull/695</li>
+<li>[2.3] papd: Refactor and cleanup cups_get_printer_ppd() by @NJRoadfan in https://github.com/Netatalk/netatalk/pull/700</li>
+<li>[2.3] papd: update cups_get_printer_status() by @NJRoadfan in https://github.com/Netatalk/netatalk/pull/696</li>
+<li>[2.3] manual: Remove obsoleted html-upload target, and update css URL by @rdmark in https://github.com/Netatalk/netatalk/pull/701</li>
 </ul>
-<p><strong>Full Changelog</strong>: https://github.com/Netatalk/netatalk/compare/netatalk-3-1-16&hellip;netatalk-3-1-17</p><hr />
-<p>Release published on 2023-09-16</p>
-<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-17">GitHub</a></p>
+<p><strong>Full Changelog</strong>: https://github.com/Netatalk/netatalk/compare/netatalk-2-3-0&hellip;netatalk-2-3-1</p><hr />
+<p>Release published on 2024-02-03</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-3-1">GitHub</a></p>
 <hr />
 </div>
         <div class="footer">
