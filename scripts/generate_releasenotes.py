@@ -19,6 +19,9 @@ versions = [
     "3.1.18",
 ]
 
+url_pattern = re.compile(r'((?:^|\s)(https?://\S+)(?=[<]))')
+github_pattern = re.compile(r'(GitHub #)(\d+)')
+
 github_token = os.environ["GITHUB_TOKEN"]
 
 for release_version in versions:
@@ -50,6 +53,9 @@ for release_version in versions:
     """
 
     html = markdown.markdown(body["body"], extensions=['fenced_code', 'smarty', 'tables'])
+
+    html = url_pattern.sub(r" <a href='\2'>\2</a>", html)
+    html = github_pattern.sub(r"<a href='https://github.com/Netatalk/netatalk/issues/\2'>\1\2</a>", html)
 
     pre_footer = f"""<hr />
 <p>Release published on {published_at}</p>
