@@ -135,22 +135,22 @@
 <p>The Netatalk development team is proud to announce latest release of the Netatalk 3.1 release series. Users are encouraged to update their servers to the 3.1 release series which is the stable and supported version for production systems.</p>
 <h2>What&rsquo;s Changed</h2>
 <ul>
-<li>FIX: fix build with libressl &gt;= 2.7.0 #105</li>
-<li>NEW: Added Ignore Directories Feature #120 </li>
-<li>UPD: Generate Unicode source code based on the latest UnicodeData.txt #114 </li>
-<li>FIX: Protect against removing AFP metadata xattr #174 </li>
-<li>FIX: avoid setting adouble entries on symlinks #174 </li>
-<li>FIX: add handling for cases where ad_entry() returns NULL #174 </li>
-<li>FIX: Fix setting of LD_LIBRARY_FLAGS ($shlibpath_var). #172 </li>
-<li>FIX: Fedora migrating away from IO::Socket::INET6 to IO::Socket::IP #130 </li>
-<li>FIX: afpd: check return values from setXXid() functions #115 </li>
-<li>FIX: libatalk: put back unintentionally removed copyright #118 </li>
-<li>FIX: afpd: drop groups in become_user_permanently() #126 </li>
-<li>FIX: Fix use after free in get_tm_used() #128 </li>
-<li>FIX: Fix sign extension problem in bsd_attr_list() <a href="https://sourceforge.net/p/netatalk/bugs/659/">SourceForge Bug #659</a></li>
-<li>FIX: Fix garbage read in bsd_attr_list #127 </li>
+<li>FIX: fix build with libressl &gt;= 2.7.0, <a href='https://github.com/Netatalk/netatalk/issues/105'>GitHub #105</a></li>
+<li>NEW: Added Ignore Directories Feature, <a href='https://github.com/Netatalk/netatalk/issues/120'>GitHub #120</a> </li>
+<li>UPD: Generate Unicode source code based on the latest UnicodeData.txt, <a href='https://github.com/Netatalk/netatalk/issues/114'>GitHub #114</a> </li>
+<li>FIX: Protect against removing AFP metadata xattr, <a href='https://github.com/Netatalk/netatalk/issues/174'>GitHub #174</a> </li>
+<li>FIX: avoid setting adouble entries on symlinks, <a href='https://github.com/Netatalk/netatalk/issues/174'>GitHub #174</a> </li>
+<li>FIX: add handling for cases where ad_entry() returns NULL, <a href='https://github.com/Netatalk/netatalk/issues/174'>GitHub #174</a> </li>
+<li>FIX: Fix setting of LD_LIBRARY_FLAGS ($shlibpath_var)., <a href='https://github.com/Netatalk/netatalk/issues/172'>GitHub #172</a> </li>
+<li>FIX: Fedora migrating away from IO::Socket::INET6 to IO::Socket::IP, <a href='https://github.com/Netatalk/netatalk/issues/130'>GitHub #130</a> </li>
+<li>FIX: afpd: check return values from setXXid() functions, <a href='https://github.com/Netatalk/netatalk/issues/115'>GitHub #115</a> </li>
+<li>FIX: libatalk: put back unintentionally removed copyright, <a href='https://github.com/Netatalk/netatalk/issues/118'>GitHub #118</a> </li>
+<li>FIX: afpd: drop groups in become_user_permanently(), <a href='https://github.com/Netatalk/netatalk/issues/126'>GitHub #126</a> </li>
+<li>FIX: Fix use after free in get_tm_used(), <a href='https://github.com/Netatalk/netatalk/issues/128'>GitHub #128</a> </li>
+<li>FIX: Fix sign extension problem in bsd_attr_list() <a href="https://sourceforge.net/p/netatalk/bugs/659/">SourceForge Bug, <a href='https://github.com/Netatalk/netatalk/issues/659'>GitHub #659</a></a></li>
+<li>FIX: Fix garbage read in bsd_attr_list, <a href='https://github.com/Netatalk/netatalk/issues/127'>GitHub #127</a> </li>
 <li>FIX: make afpstats python 3 compatible</li>
-<li>UPD: docs: manual: Remove wrong TCP-over-TCP info; minor copy editing #106 </li>
+<li>UPD: docs: manual: Remove wrong TCP-over-TCP info; minor copy editing, <a href='https://github.com/Netatalk/netatalk/issues/106'>GitHub #106</a> </li>
 <li>FIX: configure.ac: fix macro ordering for CentOS 6</li>
 <li>FIX: configure.ac: fix typo</li>
 <li>FIX: configure.ac: remove some trailing whitespace</li>
@@ -161,12 +161,12 @@
 <li>FIX: configure.ac: define a dir for macros</li>
 <li>FIX: configure.ac: AM_CONFIG_HEADER is deprecated</li>
 <li>FIX: autotools: Fix another deprecation warning</li>
-<li>FIX: libgcrypt typo in configuration error message #96 </li>
+<li>FIX: libgcrypt typo in configuration error message, <a href='https://github.com/Netatalk/netatalk/issues/96'>GitHub #96</a> </li>
 <li>UPD: Various CI improvements</li>
 <li>FIX: libatalk/conf: re-generation of afp_voluuid.conf</li>
 <li>UPD: libatalk/conf: code cleanup and add locking to get_vol_uuid()</li>
 <li>UPD: add documentation for the lv_flags_t</li>
-<li>FIX: No need to check for attropen on Solaris #44</li>
+<li>FIX: No need to check for attropen on Solaris, <a href='https://github.com/Netatalk/netatalk/issues/44'>GitHub #44</a></li>
 </ul>
 <p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/Netatalk/commits/netatalk-3-1-14'>https://github.com/Netatalk/Netatalk/commits/netatalk-3-1-14</a></p><hr />
 <p>Release published on 2023-01-10</p>

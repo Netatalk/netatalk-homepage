@@ -135,42 +135,42 @@
 <p>The Netatalk development team is proud to announce the latest release of the Netatalk 3.1 release series. Users are encouraged to update their servers to the 3.1 release series which is the stable and supported version for production systems.</p>
 <h2>What&rsquo;s Changed</h2>
 <ul>
-<li>FIX: CVE-2022-43634 #186</li>
-<li>FIX: CVE-2022-45188 #240</li>
-<li>NEW: Support for macOS hosts, Intel and Apple silicon, #281</li>
-<li>FIX: configure.ac: update deprecated autoconf syntax #331</li>
-<li>UPD: configure.ac: Support linking with system shared libraries, #265
+<li>FIX: CVE-2022-43634 <a href='https://github.com/Netatalk/netatalk/issues/186'>GitHub #186</a></li>
+<li>FIX: CVE-2022-45188 <a href='https://github.com/Netatalk/netatalk/issues/240'>GitHub #240</a></li>
+<li>NEW: Support for macOS hosts, Intel and Apple silicon, <a href='https://github.com/Netatalk/netatalk/issues/281'>GitHub #281</a></li>
+<li>FIX: configure.ac: update deprecated autoconf syntax <a href='https://github.com/Netatalk/netatalk/issues/331'>GitHub #331</a></li>
+<li>UPD: configure.ac: Support linking with system shared libraries, <a href='https://github.com/Netatalk/netatalk/issues/265'>GitHub #265</a>
        Introduces the &ndash;with-talloc option</li>
-<li>FIX: macros: largefile-check macro for largefile (clang 16) #187</li>
-<li>UPD: macros: Update pthread macro to the latest from gnu.org #273</li>
-<li>FIX: initscripts: Modernize Systemd service file. #244</li>
-<li>FIX: libatalk/conf: include sys/file.h for LOCK_EX #187</li>
+<li>FIX: macros: largefile-check macro for largefile (clang 16) <a href='https://github.com/Netatalk/netatalk/issues/187'>GitHub #187</a></li>
+<li>UPD: macros: Update pthread macro to the latest from gnu.org <a href='https://github.com/Netatalk/netatalk/issues/273'>GitHub #273</a></li>
+<li>FIX: initscripts: Modernize Systemd service file. <a href='https://github.com/Netatalk/netatalk/issues/244'>GitHub #244</a></li>
+<li>FIX: libatalk/conf: include sys/file.h for LOCK_EX <a href='https://github.com/Netatalk/netatalk/issues/187'>GitHub #187</a></li>
 <li>FIX: libatalk: Change log level for realpath() error, <a href="https://sourceforge.net/p/netatalk/bugs/666/">SF bug#666</a></li>
 <li>FIX: libatalk: Change log level for real_name error, <a href="https://sourceforge.net/p/netatalk/bugs/596/">SF bug#596</a></li>
-<li>FIX: libatalk: The my_bool type is deprecated as of MySQL 8.0.1, #129</li>
+<li>FIX: libatalk: The my_bool type is deprecated as of MySQL 8.0.1, <a href='https://github.com/Netatalk/netatalk/issues/129'>GitHub #129</a></li>
 <li>UPD: libatalk: allow afpd to read read-protected afp.conf, <a href="https://sourceforge.net/p/netatalk/bugs/546/">SF bug#546</a></li>
 <li>UPD: libatalk: Make the &ldquo;valid users&rdquo; option work in the Homes section, <a href="https://sourceforge.net/p/netatalk/bugs/449/">SF bug#449</a></li>
 <li>UPD: libatalk: Check that FPDisconnectOldSession is successful, <a href="https://sourceforge.net/p/netatalk/bugs/634/">SF bug#634</a></li>
-<li>UPD: libatalk: Bring iniparser library codebase in line with current version 4.1 #271 #282 #301</li>
-<li>FIX: afpd: Provide MNTTYPE_NFS on OmniOS to make quota work, #117</li>
-<li>FIX: afpd: Avoid triggering realpath() lookups with empty path, #277</li>
-<li>FIX: spotlight: Spotlight searches can cause afpd to segfault, #56</li>
+<li>UPD: libatalk: Bring iniparser library codebase in line with current version 4.1 <a href='https://github.com/Netatalk/netatalk/issues/271'>GitHub #271</a> <a href='https://github.com/Netatalk/netatalk/issues/282'>GitHub #282</a> <a href='https://github.com/Netatalk/netatalk/issues/301'>GitHub #301</a></li>
+<li>FIX: afpd: Provide MNTTYPE_NFS on OmniOS to make quota work, <a href='https://github.com/Netatalk/netatalk/issues/117'>GitHub #117</a></li>
+<li>FIX: afpd: Avoid triggering realpath() lookups with empty path, <a href='https://github.com/Netatalk/netatalk/issues/277'>GitHub #277</a></li>
+<li>FIX: spotlight: Spotlight searches can cause afpd to segfault, <a href='https://github.com/Netatalk/netatalk/issues/56'>GitHub #56</a></li>
 <li>UPD: spotlight: add support for tracker3, <a href="https://sourceforge.net/p/netatalk/patches/147/">SF patch#147</a></li>
-<li>FIX: macusers: Fix output for long usernames #219</li>
-<li>FIX: macusers: account for usernames with non-word characters #219</li>
-<li>FIX: macusers: Support NetBSD #219</li>
-<li>FIX: Fix all function declarations without a prototype #272</li>
-<li>FIX: Fix C99 compliance issues #294</li>
-<li>FIX: Fix gcc10 compiler warnings #295</li>
-<li>UPD: Remove acsiidocs sources and release notes script #227</li>
+<li>FIX: macusers: Fix output for long usernames <a href='https://github.com/Netatalk/netatalk/issues/219'>GitHub #219</a></li>
+<li>FIX: macusers: account for usernames with non-word characters <a href='https://github.com/Netatalk/netatalk/issues/219'>GitHub #219</a></li>
+<li>FIX: macusers: Support NetBSD <a href='https://github.com/Netatalk/netatalk/issues/219'>GitHub #219</a></li>
+<li>FIX: Fix all function declarations without a prototype <a href='https://github.com/Netatalk/netatalk/issues/272'>GitHub #272</a></li>
+<li>FIX: Fix C99 compliance issues <a href='https://github.com/Netatalk/netatalk/issues/294'>GitHub #294</a></li>
+<li>FIX: Fix gcc10 compiler warnings <a href='https://github.com/Netatalk/netatalk/issues/295'>GitHub #295</a></li>
+<li>UPD: Remove acsiidocs sources and release notes script <a href='https://github.com/Netatalk/netatalk/issues/227'>GitHub #227</a></li>
 <li>FIX: manpages: afp.conf: Parameters are not quoted, <a href="https://sourceforge.net/p/netatalk/bugs/617/">SF bug#617</a></li>
-<li>FIX: manpages: afp.conf: Document $u in home name, #123</li>
-<li>FIX: manpages: afp.conf: Document the usage of guest user, #298</li>
-<li>FIX: Document how the mysql cnid backend is configured, #69</li>
-<li>FIX: Fix user-visible typos in log output and man pages. #218</li>
-<li>FIX: Fix spelling, syntax, and dead URLs in html manual. #231</li>
-<li>NEW: Create README.md #217</li>
-<li>NEW: Set up GitHub workflow and static analysis with Sonarcloud #225</li>
+<li>FIX: manpages: afp.conf: Document $u in home name, <a href='https://github.com/Netatalk/netatalk/issues/123'>GitHub #123</a></li>
+<li>FIX: manpages: afp.conf: Document the usage of guest user, <a href='https://github.com/Netatalk/netatalk/issues/298'>GitHub #298</a></li>
+<li>FIX: Document how the mysql cnid backend is configured, <a href='https://github.com/Netatalk/netatalk/issues/69'>GitHub #69</a></li>
+<li>FIX: Fix user-visible typos in log output and man pages. <a href='https://github.com/Netatalk/netatalk/issues/218'>GitHub #218</a></li>
+<li>FIX: Fix spelling, syntax, and dead URLs in html manual. <a href='https://github.com/Netatalk/netatalk/issues/231'>GitHub #231</a></li>
+<li>NEW: Create README.md <a href='https://github.com/Netatalk/netatalk/issues/217'>GitHub #217</a></li>
+<li>NEW: Set up GitHub workflow and static analysis with Sonarcloud <a href='https://github.com/Netatalk/netatalk/issues/225'>GitHub #225</a></li>
 </ul>
 <p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-1-14&hellip;netatalk-3-1-15'>https://github.com/Netatalk/netatalk/compare/netatalk-3-1-14&hellip;netatalk-3-1-15</a></p><hr />
 <p>Release published on 2023-04-28</p>
