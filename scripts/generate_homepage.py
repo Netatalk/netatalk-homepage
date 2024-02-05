@@ -49,7 +49,7 @@ for file in files:
 
 <title>Netatalk - {page_title}</title>
 </head>
-    """
+"""
 
     with open(f"./public/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
         output_file.write(html_head)

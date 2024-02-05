@@ -50,7 +50,7 @@ for release_version in versions:
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
-    """
+"""
 
     html = markdown.markdown(body["body"], extensions=['fenced_code', 'smarty', 'tables'])
 
@@ -62,7 +62,7 @@ for release_version in versions:
 <p>Generated from the original at <a href=\"https://github.com/Netatalk/netatalk/releases/tag/{github_tag}\">GitHub</a></p>
 <hr />
 </div>
-    """
+"""
 
     with open("./templates/header.html", "r", encoding="utf-8") as header_file:
         header = header_file.read()
