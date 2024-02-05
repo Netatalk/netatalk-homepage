@@ -42,6 +42,8 @@
 
 <h3>Release Notes</h3>
 <p>A full record of previous release notes are stored below for historical purposes.</p>
+
+<h5>Netatalk v3 Release Series</h5>
 <ul>
     <li>
         <a href="3.1/ReleaseNotes3.1.18.html">
@@ -223,6 +225,10 @@
             Netatalk 3.0-alpha1
         </a>
     </li>
+</ul>
+
+<h5>Netatalk v2 Release Series</h5>
+<ul>
     <li>
         <a href="2.3/ReleaseNotes2.3.1.html">
             Netatalk 2.3.1
@@ -363,9 +369,13 @@
             Netatalk 2.0.5
         </a>
     </li>
+</ul>
+
+<h5>Netatalk v1.2 to v2.0.4</h5>
+<ul>
     <li>
         <a href="2.0/NEWS.html">
-            Older Netatalk Release Notes
+            Older NEWS
         </a>
     </li>
 </ul>
