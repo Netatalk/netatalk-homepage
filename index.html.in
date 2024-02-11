@@ -9,6 +9,28 @@
      UNIX-like hosts, providing seamless support for the unique requirements
      of Macintosh networking, file systems, and operating system services.</p>
 
+  <h2>Getting Started</h2>
+  <p>So you want to get started with running your own Netatalk file server
+  for your local network of Macs and Apple IIs? Well, you are in the right place!</p>
+
+  <p>For starters, the official (or an unofficial) package manager for your operating system
+  may be distributing a <b>netatalk</b> package. Please try to search for and install it
+  this way first.</p>
+
+  <p>If you prefer a containerized installation, the Netatalk team distributes
+  official <a href="https://hub.docker.com/u/netatalk">Docker images
+  on Docker Hub</a>. Download and launch with your usual Docker environment.</p>
+
+  <p>As a last resort, you can build Netatalk from the source code. You just need
+  a *NIX or BSD derived OS, a C compiler and dependent libraries. Read more in the
+  Netatalk manual (links in the left hand nav bar) or the OS specific guides
+  in the <a href="docs">wiki</a>.</p>
+
+  <p>Once netatalk is installed, start it using the init mechanism of your OS.
+  When it is up and running, test if the AFP server responds on port 548 by running
+  <code>asip-status localhost</code> on the local machine, or IP address on a remote machine.
+  If you get an "AFP reply" the Netatalk server is functioning properly!</p>
+
   <h2>Features</h2>
   <p>This table breaks down the major differences between Netatalk v3 and v2.
   Refer to this for deciding which version works best for your use case.</p>
