@@ -5,11 +5,14 @@
      A macOS, Linux, BSD, or Solaris system running Netatalk is capable of serving
      files to many macOS (Mac OS X), Classic Mac OS, and Apple II clients simultaneously.</p>
 
-  <p>Since 1990, Netatalk has been providing fast and secure file sharing to Macs from
-     *NIX-like hosts, providing seamless support for the unique demands
+  <p>Since 1990, Netatalk has been providing performant and versatile file sharing for Macs from
+     UNIX-like hosts, providing seamless support for the unique requirements
      of Macintosh networking, file systems, and operating system services.</p>
 
   <h2>Features</h2>
+  <p>This table breaks down the major differences between Netatalk v3 and v2.
+  Refer to this for deciding which version works best for your use case.</p>
+
   <table summary="Netatalk feature comparison">
   <tr>
   <th>Feature</th>
@@ -43,8 +46,8 @@
   </tr>
   <tr>
   <td>Service Discovery</td>
-  <td>Mac OS X 10.3 and later</td>
-  <td>Classic Mac OS, Mac OS X 10.0 and later</td>
+  <td>Mac OS X 10.2 and later (Zeroconf)</td>
+  <td>Any AppleShare client (AppleTalk), Mac OS X 10.1 (SLP), Mac OS X 10.2 and later (Zeroconf)</td>
   </tr>
   <tr>
   <td><i>Time Machine</i> Backups</td>
@@ -75,6 +78,11 @@
   <td>Built-in AppleTalk Router</td>
   <td>No</td>
   <td>Yes</td>
+  </tr>
+  <tr>
+  <td>Samba coexistence</td>
+  <td>Yes</td>
+  <td>Partial</td>
   </tr>
   <tr>
   <td>Administrative GUI</td>
