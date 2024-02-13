@@ -11,25 +11,34 @@
 
   <h2>Getting Started</h2>
   <p>So you want to get started with running your own Netatalk file server
-  for your local network of Macs and Apple IIs? Well, you are in the right place!</p>
+  for your local network of Macs and Apple IIs? Well, you have come to the right place!</p>
 
   <p>For starters, the official (or an unofficial) package manager for your operating system
-  may be distributing a <b>netatalk</b> package. Please try to search for and install it
-  this way first.</p>
+  may be distributing a ready-made binary <b>netatalk</b> package.
+  Use the package manager's search functionality to find out.</p>
 
   <p>If you prefer a containerized installation, the Netatalk team distributes
   official <a href="https://hub.docker.com/u/netatalk">Docker images
-  on Docker Hub</a>. Download and launch with your usual Docker environment.</p>
+  on Docker Hub</a>. These require Docker Engine to be installed.</p>
 
-  <p>As a last resort, you can build Netatalk from the source code. You just need
-  a *NIX or BSD derived OS, a C compiler and dependent libraries. Read more in the
-  Netatalk manual (links in the left hand nav bar) or the OS specific guides
-  in the <a href="docs">wiki</a>.</p>
+  <p>As a last resort, you can build Netatalk from the source code. You need
+  a compatible operating system (see above), a C compiler and dependent libraries.
+  Read more in the Netatalk manual (links in the left hand nav bar)
+  or the OS specific guides in the <a href="docs">wiki</a>.</p>
 
-  <p>Once netatalk is installed, start it using the init mechanism of your OS.
-  When it is up and running, test if the AFP server responds on port 548 by running
-  <code>asip-status localhost</code> on the local machine, or IP address on a remote machine.
-  If you get an "AFP reply" the Netatalk server is functioning properly!</p>
+  <p>Once Netatalk is installed, start it using the init mechanism of your OS.
+  When it is up and running, check that the AFP server responds on port 548 by running
+  <code>asip-status localhost</code> on the local machine,
+  or with the IP address when running on a remote machine.
+  If you get an "AFP reply" response, the Netatalk server is functioning properly!</p>
+
+  <p>Finally, you will likely need to adjust the configurations to suit your setup.
+  Netatalk has a dizzying amount of options which can be daunting initially.
+  However, each configuration file is thoroughly documented in their respective man page.
+  If you're running v3, look up <code>afp.conf</code>. If you're running v2,
+  look at <code>afpd.conf</code> (server settings), <code>AppleVolumes.default</code>
+  (shared volume settings), <code>atalkd.conf</code>
+  (AppleTalk settings), and <code>papd.conf</code> (print server settings).</p>
 
   <h2>Features</h2>
   <p>This table breaks down the major differences between Netatalk v3 and v2.
@@ -82,6 +91,11 @@
   <td>No</td>
   </tr>
   <tr>
+  <td>Samba Coexistence</td>
+  <td>Yes</td>
+  <td>Partial</td>
+  </tr>
+  <tr>
   <td>Print Server</td>
   <td>No</td>
   <td>Yes, PAP with CUPS support</td>
@@ -100,11 +114,6 @@
   <td>Built-in AppleTalk Router</td>
   <td>No</td>
   <td>Yes</td>
-  </tr>
-  <tr>
-  <td>Samba coexistence</td>
-  <td>Yes</td>
-  <td>Partial</td>
   </tr>
   <tr>
   <td>Administrative GUI</td>
