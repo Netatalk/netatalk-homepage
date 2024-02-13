@@ -1,0 +1,21 @@
+== Netatalk Logo
+
+This directory contains the Netatalk logo in various formats.
+
+- logo.png
+
+First published on January 4th 2005,
+on the cover page for the Netatalk manual PDF by Thomas Kaiser.
+The manual is distributed under GPL 2.0,
+so the logo image is assumed to be distributed under the same license.
+The png bitmap image was extracted from the PDF.
+
+http://web.archive.org/web/20050119004108/http://netatalk.sourceforge.net/2.0/Netatalk-Manual.pdf
+
+- logo.ai
+- logo.pdf
+
+Vector images redrawn from scratch by Tim Lindner
+and committed to CVS on June 6th 2009.
+
+https://sourceforge.net/p/netatalk/mailman/message/22681994/
