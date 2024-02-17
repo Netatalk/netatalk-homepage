@@ -1,11 +1,11 @@
 # netatalk-homepage
-Netatalk static website.
+Netatalk html website.
 
 The first layer of index pages are generated from fragments of static html.
 
-Release notes as well as wiki documentation pages are static html generated from markdown sources hosted on GitHub. See the Python scripts in the wiki/ dir.
+Release notes as well as wiki documentation pages are static html generated from markdown sources hosted on GitHub.
 
-Manual pages are static html generated with xsltproc from [XSL sources](https://github.com/Netatalk/netatalk/tree/main/doc).
+Manual pages are static html generated with xsltproc from [XSL sources](https://github.com/Netatalk/netatalk/tree/main/doc) in the main Netatalk repo.
 
 # New release procedure
 - Create a news story at the top of `index.html.in`.
