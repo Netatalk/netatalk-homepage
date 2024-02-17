@@ -34,11 +34,7 @@
 
   <p>Finally, you will likely need to adjust the configurations to suit your setup.
   Netatalk has a dizzying amount of options which can be daunting initially.
-  However, each configuration file is thoroughly documented in their respective man page.
-  If you're running v3, look up <code>afp.conf</code>. If you're running v2,
-  look at <code>afpd.conf</code> (server settings), <code>AppleVolumes.default</code>
-  (shared volume settings), <code>atalkd.conf</code>
-  (AppleTalk settings), and <code>papd.conf</code> (print server settings).</p>
+  The Configuration chapter in the Netatalk manual is a good place to start.</p>
 
   <h2>Features</h2>
   <p>This table breaks down the major differences between Netatalk v3 and v2.
