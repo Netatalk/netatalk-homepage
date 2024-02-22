@@ -82,9 +82,9 @@
   <td>Yes</td>
   </tr>
   <tr>
-  <td><i>Spotlight</i> Indexed Search</td>
-  <td>Yes</td>
-  <td>No</td>
+  <td>Indexed Search</td>
+  <td>Mac OS X 10.4 or later (Spotlight)</td>
+  <td>Mac OS 8 to Mac OS X 10.3 (CatSearch)</td>
   </tr>
   <tr>
   <td>Samba Interoperability</td>
@@ -92,12 +92,12 @@
   <td>Partial</td>
   </tr>
   <tr>
-  <td>Print Server</td>
+  <td>AppleTalk Print Server</td>
   <td>No</td>
   <td>Yes, PAP with CUPS support</td>
   </tr>
   <tr>
-  <td>Time Server</td>
+  <td>AppleTalk Time Server</td>
   <td>No</td>
   <td>Yes, <i>Timelord</i> compatible</td>
   </tr>
