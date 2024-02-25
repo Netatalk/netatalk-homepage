@@ -26,13 +26,12 @@
   Read more in the Netatalk manual (links in the left hand nav bar)
   or the OS specific guides in the <a href="docs">wiki</a>.</p>
 
-  <p>Once Netatalk is installed, start it using the init mechanism of your OS.
-  When it is up and running, check that the AFP server responds on port 548 by running
+  <p>Once Netatalk is up and running, test that the AFP server responds on port 548 by running
   <code>asip-status localhost</code> on the local machine,
-  or with the IP address when running on a remote machine.
+  or with the IP address instead of localhost when running on a remote machine.
   If you get an "AFP reply" response, the Netatalk server is functioning properly!</p>
 
-  <p>Finally, you will likely need to adjust the configurations to suit your setup.
+  <p>You will likely need to adjust the configurations to suit your setup.
   Netatalk has a dizzying amount of options which can be daunting initially.
   The Configuration chapter in the Netatalk manual is a good place to start.</p>
 
@@ -92,19 +91,19 @@
   <td>Partial</td>
   </tr>
   <tr>
-  <td>AppleTalk Print Server</td>
+  <td>AppleTalk Printing</td>
   <td>No</td>
-  <td>Yes, PAP with CUPS support</td>
+  <td>Yes: LocalTalk, lpd and CUPS</td>
   </tr>
   <tr>
   <td>AppleTalk Time Server</td>
   <td>No</td>
-  <td>Yes, <i>Timelord</i> compatible</td>
+  <td>Yes: <i>Timelord</i> compatible</td>
   </tr>
   <tr>
-  <td>Apple II Netboot Server</td>
+  <td>Apple II Netbooting</td>
   <td>No</td>
-  <td>Yes</td>
+  <td>Yes: //e and II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span></td>
   </tr>
   <tr>
   <td>Built-in AppleTalk Router</td>
