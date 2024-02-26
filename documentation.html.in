@@ -2,46 +2,27 @@
 <h1>Netatalk Documentation</h1>
 
 <h3>Current Netatalk Manuals</h3>
-<p>The most up to date documentation for actively developed versions of Netatalk.</p>
+
+<p>The latest documentation for the Netatalk v3 release series.</p>
 <ul>
     <li>
-        <a href="3.1/htmldocs">
-            Netatalk 3.1 manual
-        </a>
-    </li>
-    <li>
-        <a href="2.3/htmldocs">
-            Netatalk 2.3 manual
+        <a href="latest/htmldocs">
+            Netatalk v3 manual
         </a>
     </li>
 </ul>
-<h3>Obsolete Netatalk Manuals</h3>
-<p>Historical documentation for Netatalk. Refer to these only if you're running an old version.</p>
+
+<p>The latest documentation for the Netatalk v2 release series.</p>
 <ul>
     <li>
-        <a href="3.0/htmldocs">
-            Netatalk 3.0 manual
-        </a>
-    </li>
-    <li>
-        <a href="2.2/htmldocs">
-            Netatalk 2.2 manual
-        </a>
-    </li>
-    <li>
-        <a href="2.1/htmldocs">
-            Netatalk 2.1 manual
-        </a>
-    </li>
-    <li>
-        <a href="2.0/htmldocs">
-            Netatalk 2.0 manual
+        <a href="old/htmldocs">
+            Netatalk v2 manual
         </a>
     </li>
 </ul>
 
 <h3>Release Notes</h3>
-<p>A full record of previous release notes are stored below for historical purposes.</p>
+<p>A full record of release notes are stored below for historical purposes.</p>
 
 <h5>Netatalk v3 Release Series</h5>
 <ul>
