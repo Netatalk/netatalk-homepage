@@ -16,19 +16,19 @@
 <li><a href="https://github.com/Netatalk/netatalk-webmin">Webmin Module</a>, GUI for administration of Netatalk servers</li>
 </ul>
 
-<h3>Browse Listserves</h3>
+<h3>Browse Mailing Lists</h3>
 <ul>
 <li>Browse and Search <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-admins/">netatalk-admins</a></li>
 <li>Browse and Search <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-devel/">netatalk-devel</a></li>
 </ul>
 
-<h3>Join Listserves</h3>
+<h3>Join Mailing Lists</h3>
 <ul>
 <li><a href="https://lists.sourceforge.net/mailman/listinfo/netatalk-admins">Join instructions for netatalk-admins</a></li>
 <li><a href="https://lists.sourceforge.net/mailman/listinfo/netatalk-devel">Join instructions for netatalk-devel</a></li>
 </ul>
 
-<h3>3rd Party Companion Projects</h3>
+<h3>3rd Party Projects</h3>
 <table summary="3rd party projects">
   <tr>
   <th>Project</th>
@@ -36,7 +36,7 @@
   </tr>
   <tr>
   <td><a href="https://appleii.ivanx.com/a2server/">A2SERVER</a></td>
-  <td>Plug'n'play distribution for file sharing with Apple IIs (and Macs)</td>
+  <td>Plug'n'play distribution for Apple II file sharing and netbooting (ships with Netatalk)</td>
   </tr>
   <tr>
   <td><a href="https://sourceforge.net/projects/afpfs-ng/">afpfs-ng</a></td>
@@ -47,20 +47,41 @@
   <td>Historical AppleTalk network stack for *NIX-like systems</td>
   </tr>
   <tr>
-  <td><a href="https://macipgw.sourceforge.io">macipgw</a></td>
-  <td>MacIP bridge for LocalTalk-only Macs (FreeBSD original)</td>
+  <td><a href="https://github.com/Godzil/lpstyl">lpstyl</a></td>
+  <td>*NIX StyleWriter driver with optional AppleTalk support (uses <i>libatalk</i>)</td>
   </tr>
   <tr>
-  <td><a href="https://github.com/jasonking3/macipgw">macipgw (Linux port)</a></td>
+  <td><a href="https://macipgw.sourceforge.io">macipgw (FreeBSD)</a></td>
+  <td>MacIP bridge for LocalTalk-only Macs</td>
+  </tr>
+  <tr>
+  <td><a href="https://github.com/jasonking3/macipgw">macipgw (Linux)</a></td>
   <td>Linux port of the above</td>
   </tr>
   <tr>
+  <td><a href="https://github.com/mgcaret/davex-mg-utils">MG's davex utils</a></td>
+  <td>Apple II toolsuite that includes a ProDOS <i>tardis</i> client for <i>timelord</i></td>
+  </tr>
+  <tr>
+  <td><a href="http://web.archive.org/web/20130518225412/http://www.vmeng.com/vinnie/papers/pgpuam.html">PGPuam</a></td>
+  <td>Classic Mac OS UAM on which netatalk's <i>uams_pgp.so</i> was based</td>
+  </tr>
+  <tr>
   <td><a href="https://github.com/PiSCSI/piscsi">PiSCSI</a></td>
-  <td>SCSI emulator hat for Raspberry Pi, that comes with Netatalk integration</td>
+  <td>SCSI emulator hat for Raspberry Pi (ships with Netatalk)</td>
   </tr>
   <tr>
   <td><a href="https://github.com/danmons/retronas">RetroNAS</a></td>
-  <td>NAS software bundle that specializes in retro networking</td>
+  <td>NAS software bundle that specializes in retro networking (ships with Netatalk)</td>
+  </tr>
+  <tr>
+  <td><a href="https://web.archive.org/web/20010303220117/http://www.cs.mu.oz.au/appletalk/readmes/TMLD.README.html">tardis/Timelord</a></td>
+  <td>Classic Mac OS time sync client/server on which netatalk's <i>timelord</i> was based<br>
+  Download from: <tt>ftp://munnari.oz.au/mac/</tt></td>
+  </tr>
+  <tr>
+  <td><a href="https://github.com/lampmerchant/tashtalk">TashTalk</a></td>
+  <td>LocalTalk interface for low-powered microcontrollers</td>
   </tr>
 </table>
 
