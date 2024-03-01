@@ -1,11 +1,12 @@
 <div id="content">
   <h1>Welcome to the Netatalk Homepage!</h1>
 
-  <p>Netatalk is a Free and Open Source Apple Filing Protocol (AFP) fileserver.
-     A macOS, Linux, BSD, or Solaris system running Netatalk is capable of serving
-     files to many macOS (Mac OS X), Classic Mac OS, and Apple II clients simultaneously.</p>
+  <p>Netatalk is a Free and Open Source implementation of the
+     <a href="https://en.wikipedia.org/wiki/Apple_Filing_Protocol">Apple Filing Protocol</a> (AFP).
+     A macOS, Linux, BSD, or Solaris system running Netatalk can act as an AppleShare file server,
+     sharing files to multiple macOS, Classic Mac OS, and Apple II clients simultaneously.</p>
 
-  <p>Since 1990, Netatalk has been providing performant and versatile file sharing for Macs from
+  <p>Since 1990, Netatalk has been providing highly performant and versatile file sharing for Macs from
      UNIX-like hosts, providing seamless support for the unique requirements
      of Macintosh networking, file systems, and operating system services.</p>
 
@@ -23,12 +24,11 @@
 
   <p>Finally, if you need to build Netatalk from the source code,
   a C compiler (gcc or clang) and dependent libraries are required.
-  Read more in the Netatalk manual (links in the left hand nav bar)
+  Read more in the <a href="stable/htmldocs">Netatalk manual</a>
   or the OS specific guides in the <a href="docs">wiki</a>.</p>
 
   <p>Once Netatalk is up and running, test that the AFP server responds on port 548 by running
-  <code>asip-status localhost</code> on the local machine,
-  or with the IP address instead of localhost when running on a remote machine.
+  <tt>asip-status [server address]</tt>.
   If you get an "AFP reply" response, the Netatalk server is functioning properly!</p>
 
   <p>You will likely need to adjust the configurations to suit your setup.

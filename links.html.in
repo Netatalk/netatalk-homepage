@@ -52,7 +52,7 @@
   </tr>
   <tr>
   <td><a href="https://macipgw.sourceforge.io">macipgw (FreeBSD)</a></td>
-  <td>MacIP bridge for LocalTalk-only Macs</td>
+  <td><a href="https://en.wikipedia.org/wiki/MacIP">MacIP</a> bridge for LocalTalk-only Macs</td>
   </tr>
   <tr>
   <td><a href="https://github.com/jasonking3/macipgw">macipgw (Linux)</a></td>

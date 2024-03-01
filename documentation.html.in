@@ -6,7 +6,7 @@
 <p>The latest documentation for the Netatalk v3 release series.</p>
 <ul>
     <li>
-        <a href="latest/htmldocs">
+        <a href="stable/htmldocs">
             Netatalk v3 manual
         </a>
     </li>
@@ -15,7 +15,7 @@
 <p>The latest documentation for the Netatalk v2 release series.</p>
 <ul>
     <li>
-        <a href="old/htmldocs">
+        <a href="oldstable/htmldocs">
             Netatalk v2 manual
         </a>
     </li>
