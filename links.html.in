@@ -29,6 +29,7 @@
 </ul>
 
 <h3>3rd Party Projects</h3>
+<p>Other free and/or open source projects for old-school Mac and Apple II networking that make great Netatalk companions.</p>
 <table summary="3rd party projects">
   <tr>
   <th>Project</th>
@@ -48,11 +49,11 @@
   </tr>
   <tr>
   <td><a href="https://github.com/Godzil/lpstyl">lpstyl</a></td>
-  <td>*NIX StyleWriter driver with optional AppleTalk support (uses <i>libatalk</i>)</td>
+  <td>*NIX StyleWriter driver with optional AppleTalk support (depends on Netatalk)</td>
   </tr>
   <tr>
   <td><a href="https://macipgw.sourceforge.io">macipgw (FreeBSD)</a></td>
-  <td><a href="https://en.wikipedia.org/wiki/MacIP">MacIP</a> bridge for LocalTalk-only Macs</td>
+  <td><a href="https://en.wikipedia.org/wiki/MacIP">MacIP</a> bridge for LocalTalk-only Macs (depends on Netatalk)</td>
   </tr>
   <tr>
   <td><a href="https://github.com/jasonking3/macipgw">macipgw (Linux)</a></td>
