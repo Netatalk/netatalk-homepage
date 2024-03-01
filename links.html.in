@@ -16,18 +16,6 @@
 <li><a href="https://github.com/Netatalk/netatalk-webmin">Webmin Module</a>, GUI for administration of Netatalk servers</li>
 </ul>
 
-<h3>Browse Mailing Lists</h3>
-<ul>
-<li>Browse and Search <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-admins/">netatalk-admins</a></li>
-<li>Browse and Search <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-devel/">netatalk-devel</a></li>
-</ul>
-
-<h3>Join Mailing Lists</h3>
-<ul>
-<li><a href="https://lists.sourceforge.net/mailman/listinfo/netatalk-admins">Join instructions for netatalk-admins</a></li>
-<li><a href="https://lists.sourceforge.net/mailman/listinfo/netatalk-devel">Join instructions for netatalk-devel</a></li>
-</ul>
-
 <h3>3rd Party Projects</h3>
 <p>Other free and/or open source projects for old-school Mac and Apple II networking that make great Netatalk companions.</p>
 <table summary="3rd party projects">

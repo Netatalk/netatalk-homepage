@@ -2,12 +2,12 @@
 <h1>Support</h1>
 
 
-<h3>Bug Reports</h3>
+<h2>Bug Reports</h2>
 <p>If you think you have found a bug in Netatalk, first see if the bug has already been reported in the <a href="https://github.com/Netatalk/netatalk/issues">Netatalk issue tracker at GitHub</a>.</p>
 <p>If no similar bug has been reported yet, please create a new ticket and provide as much context as possible, including Netatalk version, OS version, contents of configuration files, and debug or backtrace logs.</p>
 <p>Use the same issue tracker if you want to file a feature request.</p>
 
-<h3>Discussion Fori</h3>
+<h2>Web Discussion Forum</h2>
 <p>If you want to ask advice or get help from the community, try one of these fori:</p>
 <ul>
 <li>
@@ -21,17 +21,27 @@
 </li>
 </ul>
 
-<h3>Mailing Lists</h3>
-<p>The Netatalk project has two active mailing lists where you can subscribe to ask questions or participate in conversations, as well as search the archives for historical discussion threads.</p>
+<h2>Mailing Lists</h2>
+<p>The Netatalk project has two active mailing lists where you can subscribe to ask questions or get project updates.
+There is also an archive where you can search for historical discussion threads.</p>
 
+<h3>Netatalk-Admins</h3>
+<p>General discussion of Netatalk (not just for admins). The list is automated
+and unmoderated. New releases are announced on this list.</p>
 <ul>
-<li>The <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-admins/">netatalk-admins</a> list consists of general discussion of Netatalk. The list is automated
-and unmoderated. New releases are announced on this list.</li>
-<li>The <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-devel/">netatalk-devel</a> list is the list for developers of Netatalk. If you are interested
-in developing Netatalk, you should subscribe to this list.</li>
+<li><a href="https://sourceforge.net/p/netatalk/mailman/netatalk-admins/">Browse and search netatalk-admins</a></li>
+<li><a href="https://lists.sourceforge.net/mailman/listinfo/netatalk-admins">Subscribe to netatalk-admins</a></li>
 </ul>
 
-<h3>Security</h3>
+<h3>Netatalk-Devel</h3>
+<p>The list for developers of Netatalk. If you are interested
+in writing code for Netatalk, you should subscribe to this list.</p>
+<ul>
+<li><a href="https://sourceforge.net/p/netatalk/mailman/netatalk-devel/">Browse and search netatalk-devel</a></li>
+<li><a href="https://lists.sourceforge.net/mailman/listinfo/netatalk-devel">Subscribe to netatalk-devel</a></li>
+</ul>
+
+<h2>Security Advisories</h2>
 <p>The Netatalk Project takes cyber security very seriously. In this section we publish security advisories when vulnerabilies have been disclosed and fixed.</p>
 
 <table summary="Security patch list">
@@ -54,5 +64,8 @@ in developing Netatalk, you should subscribe to this list.</li>
 <td>3.1.0 ~ 3.1.17</td>
 </tr>
 </table>
+
+<h3>See Also</h3>
+<a href="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=netatalk">More CVE advisories on cve.mitre.org</a>
 
 </div>
