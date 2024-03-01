@@ -25,6 +25,17 @@ def html_head(name):
 </head>
 """
 
+def pre_footer(name):
+    return f"""<hr />
+    <p>
+        This is a mirror of the Netatalk GitHub Wiki.
+        Please <a href="https://github.com/Netatalk/netatalk/wiki/{name}">visit the original page</a>
+        if you want to correct an error or contribute new contents.
+    </p>
+    <p>Last updated {date_time}</p>
+    <hr />
+    </div>
+"""
 
 def build_url(label, base, end):
     """ Build a URL from the label, a base, and an end. """
@@ -51,14 +62,6 @@ def site_map():
 """)
         site_map_xml.write('</urlset>')
 
-pre_footer = f"""<hr /><p>Last updated {date_time}</p>
-<p>
-    This is a mirror of the <a href="https://github.com/Netatalk/netatalk/wiki">Netatalk GitHub Wiki</a> -
-    if you find an error or would like to contribute, please head over there.
-</p>
-<hr />
-</div>
-"""
 
 for file in os.listdir("./wiki/"):
     if file.endswith(".md"):
@@ -76,17 +79,18 @@ for file in files:
     with open(f"./wiki/{file}", "r", encoding="utf-8") as input_file:
         text = input_file.read()
         html = markdown.markdown(text, extensions=['fenced_code', 'smarty', 'tables', WikiLinkExtension(base_url="/docs/", end_url=".html", build_url=build_url)])
+    page_title = file.replace('.md', '')
     new_name = file.replace('.md', '.html')
     if new_name == "Home.html":
         new_name = "index.html"
 
     with open(f"./public/docs/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
-        output_file.write(html_head(new_name.replace('.html', '')))
+        output_file.write(html_head(page_title))
         output_file.write(header)
         output_file.write(navbar)
-        output_file.write(f"<div id=\"content\"><!-- content -->\n<h1 id=\"{file.split('.')[0]}\">{file.split('.')[0].replace('-', ' ')}</h1><hr/>\n")
+        output_file.write(f"<div id=\"content\">\n<h1 id=\"{file.split('.')[0]}\">{file.split('.')[0].replace('-', ' ')}</h1><hr/>\n")
         output_file.write(html)
-        output_file.write(pre_footer)
+        output_file.write(pre_footer(page_title))
         output_file.write(footer)
 
     print(f"Converted: {file}")
