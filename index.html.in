@@ -21,8 +21,8 @@
   official <a href="https://hub.docker.com/u/netatalk">Docker images
   on Docker Hub</a>. These require Docker Engine to be installed.</p>
 
-  <p>As a last resort, you can build Netatalk from the source code. You need
-  a compatible operating system (see above), a C compiler and dependent libraries.
+  <p>Finally, if you need to build Netatalk from the source code,
+  a C compiler (gcc or clang) and dependent libraries are required.
   Read more in the Netatalk manual (links in the left hand nav bar)
   or the OS specific guides in the <a href="docs">wiki</a>.</p>
 
