@@ -10,6 +10,7 @@ import urllib.parse
 now = datetime.datetime.now()
 date_time = now.strftime("%Y-%m-%d")
 files = []
+navbar = ""
 
 
 def html_head(name):
@@ -63,17 +64,24 @@ def site_map():
         site_map_xml.write('</urlset>')
 
 
+with open("./wiki/_Sidebar.md", "r", encoding="utf-8") as input_file:
+    text = input_file.read()
+    html = markdown.markdown(text, extensions=['fenced_code', 'smarty', 'tables', WikiLinkExtension(base_url="/docs/", end_url=".html", build_url=build_url)])
+    navbar = f"""<div id="navbars">
+<div class="navbar">
+<h2>Table of contents</h2>
+{html}
+</div></div>
+"""
+
 for file in os.listdir("./wiki/"):
     if file.endswith(".md"):
         files.append(f"{file}")
 with open("./templates/header.html", "r", encoding="utf-8") as header_file:
     header = header_file.read()
-with open("./templates/navbar-wiki.html", "r", encoding="utf-8") as navbar_file:
-    navbar = navbar_file.read()
 with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
     footer = footer_file.read()
 for file in files:
-    # TODO: Sidebar is manually updated, for now.
     if file == "_Sidebar.md":
         continue
     with open(f"./wiki/{file}", "r", encoding="utf-8") as input_file:
