@@ -510,8 +510,8 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/2.1/ReleaseNotes2.1.html">Release Notes</a>.</p>
   <p>In case, you want to upgrade an existing Netatalk 1.x installation, ensure
-    you carefully read the <a href="/2.0/htmldocs/upgrade.html">upgrade
-    guide</a> before and follow the steps outlined there.</p>
+    you carefully read the upgrade
+    guide before and follow the steps outlined there.</p>
 
 <hr />
   <small>10th of November 2009</small>
@@ -565,13 +565,6 @@ to upgrade their systems to 2.0.1.</i></p>
   <p>The etc2ps.sh script delivered with all Netatalk versions prior to 2.0.1
 has been found to be vulnerable to symlink attacks. See <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0974">CAN-2004-0974</a> for
 details.</p>
-  <p>Please note that the handling of the default type/creator has changed with
-2.0.1. As a side effect, users upgrading from earlier versions, including
-2.0.0, will have to remove the default type/creator from the
-AppleVolumes.System file. The install process will not modify this file
-automatically. Please remove the line starting with</p>
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"????"</p>
-  <p>manually.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/2.0/ReleaseNotes2.0.1.html">Release Notes</a>.</p>
 
