@@ -17,7 +17,7 @@
 </ul>
 
 <h3>3rd Party Projects</h3>
-<p>Other free and/or open source projects for old-school Mac and Apple II networking that make great Netatalk companions.</p>
+<p>Other free and open source projects for old-school Mac and Apple II networking that make great Netatalk companions.</p>
 <table summary="3rd party projects">
   <tr>
   <th>Project</th>
@@ -53,7 +53,7 @@
   </tr>
   <tr>
   <td><a href="https://macintoshgarden.org/apps/multicast-dns-dns-sd">mDNS for Classic Mac OS</a></td>
-  <td><a href="https://github.com/apple-oss-distributions/mDNSResponder">DNS Service Discovery</a> (Zeroconf) extensions for Mac OS 9</td>
+  <td><a href="https://github.com/apple-oss-distributions/mDNSResponder">DNS Service Discovery</a> (Zeroconf) extension for Mac OS 9</td>
   </tr>
   <tr>
   <td><a href="http://web.archive.org/web/20130518225412/http://www.vmeng.com/vinnie/papers/pgpuam.html">PGPuam</a></td>
