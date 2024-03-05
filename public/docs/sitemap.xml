@@ -2,7 +2,7 @@
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
     <loc>https://netatalk.io/docs/AppleTalk-Kernel-Module.html</loc>
-    <lastmod>2023-10-06</lastmod>
+    <lastmod>2024-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -14,13 +14,13 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Connect-to-AFP-Server-from-Mac-clients.html</loc>
-    <lastmod>2024-01-12</lastmod>
+    <lastmod>2024-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Developer-Notes.html</loc>
-    <lastmod>2024-02-03</lastmod>
+    <lastmod>2024-02-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -32,7 +32,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Home.html</loc>
-    <lastmod>2024-01-19</lastmod>
+    <lastmod>2024-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -122,7 +122,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Spotlight.html</loc>
-    <lastmod>2024-01-12</lastmod>
+    <lastmod>2024-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -134,13 +134,25 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Using-GDB-to-Analyze-a-Crash.html</loc>
-    <lastmod>2023-02-10</lastmod>
+    <lastmod>2024-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Webmin-Module.html</loc>
+    <lastmod>2024-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/_Sidebar.html</loc>
-    <lastmod>2024-01-13</lastmod>
+    <lastmod>2024-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/gfx</loc>
+    <lastmod>2024-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>

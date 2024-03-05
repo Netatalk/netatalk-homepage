@@ -114,21 +114,21 @@
   </div>
   <div class="navbar">
     <h2>documentation</h2>
-    <h3><b>3.1 manual</b></h3>
+    <h3><b>Manual (version 3)</b></h3>
     <ol>
-      <li><a href="/3.1/htmldocs/intro.html">Introduction</a></li>
-      <li><a href="/3.1/htmldocs/installation.html">Installation</a></li>
-      <li><a href="/3.1/htmldocs/configuration.html">Configuration</a></li>
-      <li><a href="/3.1/htmldocs/upgrade.html">Upgrading</a></li>
-      <li><a href="/3.1/htmldocs/man-pages.html">Man Pages</a></li>
+      <li><a href="/stable/htmldocs/intro.html">Introduction</a></li>
+      <li><a href="/stable/htmldocs/installation.html">Installation</a></li>
+      <li><a href="/stable/htmldocs/configuration.html">Configuration</a></li>
+      <li><a href="/stable/htmldocs/upgrade.html">Upgrading</a></li>
+      <li><a href="/stable/htmldocs/man-pages.html">Man Pages</a></li>
     </ol>
-    <h3><b>2.3 manual</b></h3>
+    <h3><b>Manual (version 2)</b></h3>
     <ol>
-      <li><a href="/2.3/htmldocs/intro.html">Introduction</a></li>
-      <li><a href="/2.3/htmldocs/installation.html">Installation</a></li>
-      <li><a href="/2.3/htmldocs/configuration.html">Configuration</a></li>
-      <li><a href="/2.3/htmldocs/upgrade.html">Upgrading</a></li>
-      <li><a href="/2.3/htmldocs/man-pages.html">Man Pages</a></li>
+      <li><a href="/oldstable/htmldocs/intro.html">Introduction</a></li>
+      <li><a href="/oldstable/htmldocs/installation.html">Installation</a></li>
+      <li><a href="/oldstable/htmldocs/configuration.html">Configuration</a></li>
+      <li><a href="/oldstable/htmldocs/upgrade.html">Upgrading</a></li>
+      <li><a href="/oldstable/htmldocs/man-pages.html">Man Pages</a></li>
     </ol>
   </div>
   <div class="navbar">
@@ -167,19 +167,8 @@
 <li><a href="https://github.com/Netatalk/netatalk-webmin">Webmin Module</a>, GUI for administration of Netatalk servers</li>
 </ul>
 
-<h3>Browse Listserves</h3>
-<ul>
-<li>Browse and Search <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-admins/">netatalk-admins</a></li>
-<li>Browse and Search <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-devel/">netatalk-devel</a></li>
-</ul>
-
-<h3>Join Listserves</h3>
-<ul>
-<li><a href="https://lists.sourceforge.net/mailman/listinfo/netatalk-admins">Join instructions for netatalk-admins</a></li>
-<li><a href="https://lists.sourceforge.net/mailman/listinfo/netatalk-devel">Join instructions for netatalk-devel</a></li>
-</ul>
-
-<h3>3rd Party Companion Projects</h3>
+<h3>3rd Party Projects</h3>
+<p>Other free and/or open source projects for old-school Mac and Apple II networking that make great Netatalk companions.</p>
 <table summary="3rd party projects">
   <tr>
   <th>Project</th>
@@ -187,7 +176,7 @@
   </tr>
   <tr>
   <td><a href="https://appleii.ivanx.com/a2server/">A2SERVER</a></td>
-  <td>Plug'n'play distribution for file sharing with Apple IIs (and Macs)</td>
+  <td>Plug'n'play distribution for Apple II file sharing and netbooting (ships with Netatalk)</td>
   </tr>
   <tr>
   <td><a href="https://sourceforge.net/projects/afpfs-ng/">afpfs-ng</a></td>
@@ -198,24 +187,50 @@
   <td>Historical AppleTalk network stack for *NIX-like systems</td>
   </tr>
   <tr>
-  <td><a href="https://macipgw.sourceforge.io">macipgw</a></td>
-  <td>MacIP bridge for LocalTalk-only Macs (FreeBSD original)</td>
+  <td><a href="https://github.com/Godzil/lpstyl">lpstyl</a></td>
+  <td>*NIX StyleWriter driver with optional AppleTalk support (depends on Netatalk)</td>
   </tr>
   <tr>
-  <td><a href="https://github.com/jasonking3/macipgw">macipgw (Linux port)</a></td>
+  <td><a href="https://macipgw.sourceforge.io">macipgw (FreeBSD)</a></td>
+  <td><a href="https://en.wikipedia.org/wiki/MacIP">MacIP</a> bridge for LocalTalk-only Macs (depends on Netatalk)</td>
+  </tr>
+  <tr>
+  <td><a href="https://github.com/jasonking3/macipgw">macipgw (Linux)</a></td>
   <td>Linux port of the above</td>
   </tr>
   <tr>
+  <td><a href="https://github.com/mgcaret/davex-mg-utils">MG's davex utils</a></td>
+  <td>Apple II toolsuite that includes a ProDOS <i>tardis</i> client for <i>timelord</i></td>
+  </tr>
+  <tr>
+  <td><a href="https://macintoshgarden.org/apps/multicast-dns-dns-sd">mDNS for Classic Mac OS</a></td>
+  <td><a href="https://github.com/apple-oss-distributions/mDNSResponder">DNS Service Discovery</a> (Zeroconf) extensions for Mac OS 9</td>
+  </tr>
+  <tr>
+  <td><a href="http://web.archive.org/web/20130518225412/http://www.vmeng.com/vinnie/papers/pgpuam.html">PGPuam</a></td>
+  <td>Classic Mac OS UAM on which netatalk's <i>uams_pgp.so</i> was based</td>
+  </tr>
+  <tr>
   <td><a href="https://github.com/PiSCSI/piscsi">PiSCSI</a></td>
-  <td>SCSI emulator hat for Raspberry Pi, that comes with Netatalk integration</td>
+  <td>SCSI emulator hat for Raspberry Pi (ships with Netatalk)</td>
   </tr>
   <tr>
   <td><a href="https://github.com/danmons/retronas">RetroNAS</a></td>
-  <td>NAS software bundle that specializes in retro networking</td>
+  <td>NAS software bundle that specializes in retro networking (ships with Netatalk)</td>
+  </tr>
+  <tr>
+  <td><a href="https://web.archive.org/web/20010303220117/http://www.cs.mu.oz.au/appletalk/readmes/TMLD.README.html">tardis/Timelord</a></td>
+  <td>Classic Mac OS time sync client/server on which netatalk's <i>timelord</i> was based<br>
+  Download from: <tt>ftp://munnari.oz.au/mac/</tt></td>
+  </tr>
+  <tr>
+  <td><a href="https://github.com/lampmerchant/tashtalk">TashTalk</a></td>
+  <td>LocalTalk interface for low-powered microcontrollers</td>
   </tr>
 </table>
 
-</div><div class="footer">
+</div>
+<div class="footer">
     <a href="https://validator.w3.org/check?uri=referer">
       <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
     </a>

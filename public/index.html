@@ -114,21 +114,21 @@
   </div>
   <div class="navbar">
     <h2>documentation</h2>
-    <h3><b>3.1 manual</b></h3>
+    <h3><b>Manual (version 3)</b></h3>
     <ol>
-      <li><a href="/3.1/htmldocs/intro.html">Introduction</a></li>
-      <li><a href="/3.1/htmldocs/installation.html">Installation</a></li>
-      <li><a href="/3.1/htmldocs/configuration.html">Configuration</a></li>
-      <li><a href="/3.1/htmldocs/upgrade.html">Upgrading</a></li>
-      <li><a href="/3.1/htmldocs/man-pages.html">Man Pages</a></li>
+      <li><a href="/stable/htmldocs/intro.html">Introduction</a></li>
+      <li><a href="/stable/htmldocs/installation.html">Installation</a></li>
+      <li><a href="/stable/htmldocs/configuration.html">Configuration</a></li>
+      <li><a href="/stable/htmldocs/upgrade.html">Upgrading</a></li>
+      <li><a href="/stable/htmldocs/man-pages.html">Man Pages</a></li>
     </ol>
-    <h3><b>2.3 manual</b></h3>
+    <h3><b>Manual (version 2)</b></h3>
     <ol>
-      <li><a href="/2.3/htmldocs/intro.html">Introduction</a></li>
-      <li><a href="/2.3/htmldocs/installation.html">Installation</a></li>
-      <li><a href="/2.3/htmldocs/configuration.html">Configuration</a></li>
-      <li><a href="/2.3/htmldocs/upgrade.html">Upgrading</a></li>
-      <li><a href="/2.3/htmldocs/man-pages.html">Man Pages</a></li>
+      <li><a href="/oldstable/htmldocs/intro.html">Introduction</a></li>
+      <li><a href="/oldstable/htmldocs/installation.html">Installation</a></li>
+      <li><a href="/oldstable/htmldocs/configuration.html">Configuration</a></li>
+      <li><a href="/oldstable/htmldocs/upgrade.html">Upgrading</a></li>
+      <li><a href="/oldstable/htmldocs/man-pages.html">Man Pages</a></li>
     </ol>
   </div>
   <div class="navbar">
@@ -152,15 +152,44 @@
 <div id="content">
   <h1>Welcome to the Netatalk Homepage!</h1>
 
-  <p>Netatalk is a Free and Open Source Apple Filing Protocol (AFP) fileserver.
-     A macOS, Linux, BSD, or Solaris system running Netatalk is capable of serving
-     files to many macOS (Mac OS X), Classic Mac OS, and Apple II clients simultaneously.</p>
+  <p>Netatalk is a Free and Open Source implementation of the
+     <a href="https://en.wikipedia.org/wiki/Apple_Filing_Protocol">Apple Filing Protocol</a> (AFP).
+     A macOS, Linux, BSD, or Solaris system running Netatalk can act as an AppleShare file server,
+     sharing files to multiple macOS, Classic Mac OS, and Apple II clients simultaneously.</p>
 
-  <p>Since 1990, Netatalk has been providing fast and secure file sharing to Macs from
-     *NIX-like hosts, providing seamless support for the unique demands
+  <p>Since 1990, Netatalk has been providing highly performant and versatile file sharing for Macs from
+     UNIX-like hosts, providing seamless support for the unique requirements
      of Macintosh networking, file systems, and operating system services.</p>
 
+  <h2>Getting Started</h2>
+  <p>So you want to get started with running your own Netatalk file server
+  for your local network of Macs and Apple IIs? Well, you have come to the right place!</p>
+
+  <p>For starters, the official (or an unofficial) package manager for your operating system
+  may be distributing a ready-made binary <b>netatalk</b> package.
+  Use the package manager's search functionality to find out.</p>
+
+  <p>If you prefer a containerized installation, the Netatalk team distributes
+  official <a href="https://hub.docker.com/u/netatalk">Docker images
+  on Docker Hub</a>. These require Docker Engine to be installed.</p>
+
+  <p>Finally, if you need to build Netatalk from the source code,
+  a C compiler (gcc or clang) and dependent libraries are required.
+  Read more in the <a href="stable/htmldocs">Netatalk manual</a>
+  or the OS specific guides in the <a href="docs">wiki</a>.</p>
+
+  <p>Once Netatalk is up and running, test that the AFP server responds on port 548 by running
+  <tt>asip-status [server address]</tt>.
+  If you get an "AFP reply" response, the Netatalk server is functioning properly!</p>
+
+  <p>You will likely need to adjust the configurations to suit your setup.
+  Netatalk has a dizzying amount of options which can be daunting initially.
+  The Configuration chapter in the Netatalk manual is a good place to start.</p>
+
   <h2>Features</h2>
+  <p>This table breaks down the major differences between Netatalk v3 and v2.
+  Refer to this for deciding which version works best for your use case.</p>
+
   <table summary="Netatalk feature comparison">
   <tr>
   <th>Feature</th>
@@ -194,8 +223,8 @@
   </tr>
   <tr>
   <td>Service Discovery</td>
-  <td>Mac OS X 10.3 and later</td>
-  <td>Classic Mac OS, Mac OS X 10.0 and later</td>
+  <td>Mac OS X 10.2 and later (Zeroconf)</td>
+  <td>Any AppleShare client (AppleTalk), Mac OS X 10.1 (SLP), Mac OS X 10.2 and later (Zeroconf)</td>
   </tr>
   <tr>
   <td><i>Time Machine</i> Backups</td>
@@ -203,24 +232,29 @@
   <td>Yes</td>
   </tr>
   <tr>
-  <td><i>Spotlight</i> Indexed Search</td>
+  <td>Indexed Search</td>
+  <td>Mac OS X 10.4 or later (Spotlight)</td>
+  <td>Mac OS 8 to Mac OS X 10.3 (CatSearch)</td>
+  </tr>
+  <tr>
+  <td>Samba Interoperability</td>
   <td>Yes</td>
-  <td>No</td>
+  <td>Partial</td>
   </tr>
   <tr>
-  <td>Print Server</td>
+  <td>AppleTalk Printing</td>
   <td>No</td>
-  <td>Yes, PAP with CUPS support</td>
+  <td>Yes: LocalTalk, lpd and CUPS</td>
   </tr>
   <tr>
-  <td>Time Server</td>
+  <td>AppleTalk Time Server</td>
   <td>No</td>
-  <td>Yes, <i>Timelord</i> compatible</td>
+  <td>Yes: <i>Timelord</i> compatible</td>
   </tr>
   <tr>
-  <td>Apple II Netboot Server</td>
+  <td>Apple II Netbooting</td>
   <td>No</td>
-  <td>Yes</td>
+  <td>Yes: //e and II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span></td>
   </tr>
   <tr>
   <td>Built-in AppleTalk Router</td>
@@ -229,8 +263,8 @@
   </tr>
   <tr>
   <td>Administrative GUI</td>
-  <td><a href="https://github.com/Netatalk/netatalk-webmin/releases?q="Netatalk+3"&expanded=false">Webmin Module</a></td>
-  <td><a href="https://github.com/Netatalk/netatalk-webmin/releases?q="Netatalk+2"&expanded=false">Webmin Module</a></td>
+  <td><a href="https://github.com/Netatalk/netatalk-webmin/releases?q=%22Netatalk+3%22&expanded=false">Webmin Module</a></td>
+  <td><a href="https://github.com/Netatalk/netatalk-webmin/releases?q=%22Netatalk+2%22&expanded=false">Webmin Module</a></td>
   </tr>
 </table>
 
