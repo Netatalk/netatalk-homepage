@@ -28,6 +28,10 @@
   <td>Plug'n'play distribution for Apple II file sharing and netbooting (ships with Netatalk)</td>
   </tr>
   <tr>
+  <td><a href="https://scsi.blue">BlueSCSI</a></td>
+  <td>SCSI emulator device that can provide Ethernet network interface emulation</td>
+  </tr>
+  <tr>
   <td><a href="https://sourceforge.net/projects/afpfs-ng/">afpfs-ng</a></td>
   <td>Cross-platform AFP client application</td>
   </tr>
