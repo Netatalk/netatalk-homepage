@@ -527,6 +527,8 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
 Netatalk File Sharing suite. This is the latest stable version. It
 contains several important bugfixes, including a security fix for papd (see <a href="https://www.cve.org/CVERecord?id=CVE-2008-5718">CVE-2008-5718</a>), therefore <i>all users are encouraged
 to upgrade their systems to 2.0.4.</i></p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="/2.0/ReleaseNotes2.0.4.html">Release Notes</a>.</p>
 
 <hr />
 <small>18th of May 2005</small>
@@ -535,6 +537,8 @@ to upgrade their systems to 2.0.4.</i></p>
 Netatalk File Sharing suite. This is the latest stable version. It
 contains several important bugfixes, therefore <i>all users are encouraged
 to upgrade their systems to 2.0.3.</i></p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="/2.0/ReleaseNotes2.0.3.html">Release Notes</a>.</p>
 
 <hr />
 <small>3rd of January 2005</small>
@@ -543,6 +547,8 @@ to upgrade their systems to 2.0.3.</i></p>
 Netatalk File Sharing suite. This is the latest stable version. It
 contains several important bugfixes, therefore <i>all users are encouraged
 to upgrade their systems to 2.0.2.</i></p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="/2.0/ReleaseNotes2.0.2.html">Release Notes</a>.</p>
 
 <hr />
 <small>28th of October 2004</small>
@@ -566,6 +572,8 @@ AppleVolumes.System file. The install process will not modify this file
 automatically. Please remove the line starting with</p>
   <p>&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"????"</p>
   <p>manually.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="/2.0/ReleaseNotes2.0.1.html">Release Notes</a>.</p>
 
   <hr />
   <small>11th of October 2004</small>
