@@ -52,6 +52,10 @@
   <td>Apple II toolsuite that includes a ProDOS <i>tardis</i> client for <i>timelord</i></td>
   </tr>
   <tr>
+  <td><a href="https://macintoshgarden.org/apps/multicast-dns-dns-sd">mDNS for Classic Mac OS</a></td>
+  <td><a href="https://github.com/apple-oss-distributions/mDNSResponder">DNS Service Discovery</a> (Zeroconf) extensions for Mac OS 9</td>
+  </tr>
+  <tr>
   <td><a href="http://web.archive.org/web/20130518225412/http://www.vmeng.com/vinnie/papers/pgpuam.html">PGPuam</a></td>
   <td>Classic Mac OS UAM on which netatalk's <i>uams_pgp.so</i> was based</td>
   </tr>
