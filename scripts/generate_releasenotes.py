@@ -19,7 +19,7 @@ versions = [
     "3.1.18",
 ]
 
-url_pattern = re.compile(r'((?:^|\s)(https?://\S+)(?=[<]))')
+url_pattern = re.compile(r'((?:^|\s)(https?://\S+)(?=<))')
 github_pattern = re.compile(r'(GitHub #)(\d+)')
 
 github_token = os.environ["GITHUB_TOKEN"]
@@ -75,9 +75,9 @@ for release_version in versions:
         output_file.write(html_head)
         output_file.write(header)
         output_file.write(navbar)
-        output_file.write(f"<div id=\"content\">\n<!-- content -->\n<h1>Netatalk {release_version}</h1><hr />\n")
+        output_file.write(f"<div id=\"content\">\n<h1>Netatalk {release_version}</h1><hr />\n")
         output_file.write(html)
         output_file.write(pre_footer)
         output_file.write(footer)
-        
+
         print(f"Converted: {file_name}")

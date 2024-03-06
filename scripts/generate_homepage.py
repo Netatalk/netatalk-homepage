@@ -16,16 +16,18 @@ for file in files:
         html = input_file.read()
     new_name = file.replace('.html.in', '.html')
     page_title = file.replace('.html.in', '')
+    if page_title == "index":
+        page_title = "Networking Apple Macintosh through Open Source"
 
     html_head = f"""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="Netatalk - Unix file and print services for Apple clients" />
+<meta name="description" content="Netatalk - Networking Apple Macintosh through Open Source" />
 <meta
   name="keywords"
-  content="Netatalk, AFP, AFP Server, File Server, PAP, Print Server, AppleTalk, Mac, OSX, OS X, OS9, OS 9, macOS" />
+  content="Netatalk, AFP, AFP Server, AppleShare, File Server, PAP, Print Server, AppleTalk, Macintosh, Mac, OSX, OS X, OS9, OS 9, macOS, Apple II, IIGS, GS/OS, IIe" />
 <meta name="language" content="EN" />
 <meta name="publisher" content="netatalk.io" />
 <meta name="robots" content="index,follow" />
@@ -39,10 +41,10 @@ for file in files:
   title="GNU General Public License, version 2"
   href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" />
 <link rel="author" title="The Netatalk Development Team" href="http://netatalk.io" />
-<link rel="help" href="/3.1/htmldocs/" title="Documentation" />
+<link rel="help" href="/stable/htmldocs/" title="Documentation" />
 <link rel="home" href="index.html" title="Netatalk Home" />
 <link rel="home" href="https://github.com/Netatalk/netatalk" title="Netatalk GitHub" />
-<link rel="bookmark" href="/3.1/htmldocs/" title="Netatalk Documentation" />
+<link rel="bookmark" href="/stable/htmldocs/" title="Netatalk Documentation" />
 <link rel="bookmark" href="https://github.com/Netatalk/netatalk/wiki" title="wiki" />
 <link rel="bookmark" href="https://sourceforge.net/projects/netatalk/files/" title="Downloads" />
 <link rel="icon" type="image/x-icon" href="/gfx/favicon.ico" />
