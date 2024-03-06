@@ -47,7 +47,7 @@ def site_map():
     repo = Repo("wiki/")
     tree = repo.tree()
 
-    with open(f"./public/docs/sitemap.xml", "w", encoding="utf-8", errors="xmlcharrefreplace") as site_map_xml:
+    with open("./public/docs/sitemap.xml", "w", encoding="utf-8", errors="xmlcharrefreplace") as site_map_xml:
         site_map_xml.write("""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 """)
