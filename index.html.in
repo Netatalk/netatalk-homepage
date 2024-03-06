@@ -112,8 +112,8 @@
   </tr>
   <tr>
   <td>Administrative GUI</td>
-  <td><a href="https://github.com/Netatalk/netatalk-webmin/releases?q=%22Netatalk+3%22&expanded=false">Webmin Module</a></td>
-  <td><a href="https://github.com/Netatalk/netatalk-webmin/releases?q=%22Netatalk+2%22&expanded=false">Webmin Module</a></td>
+  <td><a href="https://github.com/Netatalk/netatalk-webmin/releases?expanded=false">Webmin Module</a></td>
+  <td><a href="https://github.com/Netatalk/netatalk-webmin/releases?expanded=false">Webmin Module</a></td>
   </tr>
 </table>
 
