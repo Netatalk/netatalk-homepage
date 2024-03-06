@@ -12,11 +12,8 @@
 <link rel="alternate stylesheet" type="text/css" charset="iso-8859-1" href="/css/printer.css" title="Printer" />
 <link rel="copyright" title="GNU General Public License" href="http://www.gnu.org/copyleft/gpl.html#SEC1" />
 <link rel="author" title="The Netatalk Development Team" href="http://netatalk.io" />
-<link rel="help" href="/2.0/htmldocs/" title="Documentation" />
 <link rel="home" href="index.html" title="Netatalk Home" />
 <link rel="home" href="http://www.sourceforge.net/projects/netatalk" title="Netatalk Sourceforge" />
-<link rel="bookmark" href="/2.0/htmldocs/" title="Netatalk Documentation" />
-<link rel="bookmark" href="/docs" title="Netatalk FAQ" />
 <link rel="bookmark" href="http://sourceforge.net/project/showfiles.html?group_id=8642" title="Downloads" />
 
 <title>Netatalk Release Notes</title>
@@ -26,7 +23,6 @@
 <div id="logo"></div>
 <div id="menlinks">
 <a href="/" title="Return to Netatalk home">[main]</a>
-
 <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
 <a href="/download.html" title="Download Netatalk">[downloads]</a>
 <a href="/links.html" title="Netatalk related links">[links]</a>
@@ -49,19 +45,21 @@
 <span class="italic">powered by Google</span>
 </div>
 <div id="content">
+<h2>Netatalk 2.2alpha3</h2>
 <p>
-<h2>Netatalk 2.0.5</h2>
-The Netatalk development team is proud to announce version 2.0.5 of the
-Netatalk File Sharing suite.  This is the latest stable version.  It
-contains several important bugfixes, including a more complete security fix
-for CVE-2008-5718.  Time Machine support has been added with the new volume
-option "tm".  All users are encouraged to upgrade their systems to 2.0.5.
+The Netatalk development team is proud to announce version 2.2alpha3 of
+the Netatalk File Sharing suite. This is an unstable version, published
+for the sole purpose of receiving wider testing. Do not run this on
+production systems.
 </p>
 <p>
-Netatalk is a collection of server programs and utilities for handling
-various protocols employed by Apple Macintosh computers on Unix compatible
-systems.  This allows Unix hosts to act as file, print, and time servers for
-Apple Macintosh (classic MacOS as well as MacOS X) computers.
+Netatalk is a freely-available Open Source AFP fileserver. It also
+provides a kernel level implementation of the AppleTalk Protocol Suite.
+A *NIX/*BSD system running Netatalk is capable of serving many Macintosh
+clients simultaneously as an AppleShare file server (AFP), AppleTalk
+router, *NIX/*BSD print server, and for accessing AppleTalk printers via
+Printer Access Protocol (PAP).
+Included are a number of minor printing and debugging utilities.
 </p>
 <p>
 The suite contains:
@@ -86,11 +84,6 @@ papd - a print server that enables Macintosh computers to access printers
 </li>
 <li>
 <p>
-timelord - a time server for synchronizing time over the network
-</p>
-</li>
-<li>
-<p>
 megatron - a tool to convert files in Macintosh specific formats like
   BinHex, AppleSingle, or MacBinary into files readable by Unix computers
 </p>
@@ -101,6 +94,46 @@ various supporting programs and utilities
 </p>
 </li>
 </ul>
+<h3>Summary of hot stuff and ehancements since 2.1</h3>
+<ul>
+<li>
+<p>
+Support for fast AFP searches (CNID backend "dbd" only)
+</p>
+</li>
+<li>
+<p>
+POSIX draft 1e ACL support
+</p>
+</li>
+<li>
+<p>
+Complete Netatalk volume compatible `ad` file utility suite
+</p>
+</li>
+<li>
+<p>
+Dynamic filesystem cache
+</p>
+</li>
+<li>
+<p>
+Builtin Zeroconf registration of the AFP server and TimeMachine volumes
+</p>
+</li>
+<li>
+<p>
+Support for ACLs without a common Directory Service between server and client
+</p>
+</li>
+</ul>
+<h3>Important</h3>
+<p>
+The enhancements for fast AFP searches are only implemented for the CNID backend "dbd"
+and require changes to the underlying CNID database, ie an additional index.
+This breaks drop-in compatibility between the CNID backends "cdb" and "dbd". Once "dbd"
+has upgraded a CNID database of a volume, "cdb" will reject to open it.
+</p>
 <p>
 Netatalk is a Free/Open Source Software project and is released under
 the GNU General Public License (GPL).  The full license text is available
@@ -109,43 +142,122 @@ at:
 &nbsp;&nbsp;&nbsp;<a href="http://www.gnu.org/licenses/gpl.html">
 http://www.gnu.org/licenses/gpl.html
 </a>
-<h3>Changes in 2.0.5</h3>
+<h3>Changes in 2.2alpha3</h3>
 <ul>
 <li>
 <p>
-NEW: afpd: Time Machine support with new volume option "tm".
+FIX: afpd: various fixes
 </p>
 </li>
 <li>
 <p>
-FIX: papd: Remove variable expansion for BSD printers. Fixes CVE-2008-5718.
+FIX: Any daemon did not run if atalkd doesn't exist (redhat/debian)
+</p>
+</li>
+</ul>
+<h3>Changes in 2.2alpha2</h3>
+<ul>
+<li>
+<p>
+FIX: afpd: fix compilation error when ACL support is not available
 </p>
 </li>
 <li>
 <p>
-FIX: afpd: .AppleDxxx folders were user accessible if option 'usedots'
-       was set
+FIX: Ensure Appletalk manpages and config files are distributed
+</p>
+</li>
+</ul>
+<h3>Changes in 2.2alpha1</h3>
+<ul>
+<li>
+<p>
+NEW: ad utility: ad cp
 </p>
 </li>
 <li>
 <p>
-FIX: afpd: vetoed files/dirs where still accessible
+NEW: ad utility: ad rm
 </p>
 </li>
 <li>
 <p>
-FIX: afpd: cnid_resolve: don't return '..' as a valid name.
+NEW: ad utility: ad mv
 </p>
 </li>
 <li>
 <p>
-FIX: uniconv: -d option wasn't working
+NEW: afpd: dynamic directoy and CNID cache (new config option -dircachesize)
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: POSIX 1e ACL support
+</p>
+</li>
+<li>
+<p>
+NEW: afpd: automagic Zeroconf registration with avahi, registering both
+       the service _afpovertcp._tcp and TimeMachine volumes with _adisk._tcp.
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: ACLs usable (though not visible on the client side) without common
+       directory service, by mapping ACLs to UARight
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: performance improvements for ACL access calculations
+</p>
+</li>
+<li>
+<p>
+UPD: AppleTalk ist disabled by default at configuration time. If needed
+       use configure switch --enable-ddp.
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: Solaris 10 compatibilty fix: don't use SO_SNDTIMEO/SO_RCVTIMEO,
+       use non-blocking IO and select instead.
+</p>
+</li>
+<li>
+<p>
+FIX: cnid_dbd: Solaris 10 compatibilty fix: don't use SO_SNDTIMEO/SO_RCVTIMEO,
+       use non-blocking IO and select instead.
+</p>
+</li>
+<li>
+<p>
+REM: afile/achfile/apple_cm/apple_mv/apple_rm: use ad
+</p>
+</li>
+</ul>
+<h3>Changes in not yet released 2.1.5</h3>
+<ul>
+<li>
+<p>
+UPD: afpd: support newlines in -loginmesg with \n escaping syntax
+</p>
+</li>
+<li>
+<p>
+UPD: afpd: support for changed chmod semantics on ZFS with ACLs
+       in onnv145+
+</p>
+</li>
+<li>
+<p>
+FIX: afpd: fix leaking ressource when moving objects on the server
 </p>
 </li>
 </ul>
 <h3>Supported Platforms</h3>
 <p>
-As of Netatalk 2.0.5 the following operating systems are supported:
+As of Netatalk 2.2 the following operating systems are supported:
 </p>
 <ul>
 <li>
@@ -170,7 +282,7 @@ NetBSD
 </li>
 <li>
 <p>
-Solaris
+[Open]Solaris
 </p>
 </li>
 <li>
@@ -193,22 +305,22 @@ Netatalk tar-balls can be found at:
 http://sourceforge.net/project/showfiles.html?group_id=8642
 </a>
 <p>
-Netatalk is also available via anonymous CVS.  See the SourceForge project
-site for anonymous CVS instructions.
+Netatalk is also available via anonymous git.  See the SourceForge project
+site for anonymous git instructions.
 </p>
 <h3>Contact</h3>
 <p>
 For more information about Netatalk, see its web page at:
 </p>
 &nbsp;&nbsp;&nbsp;<a href="http://netatalk.sourceforge.net/">
-  http://netatalk.sourceforge.net/
+http://netatalk.sourceforge.net/
 </a>
 <p>
 The project is hosted at SourceForge.  The SourceForge project page is
 located at:
 </p>
 &nbsp;&nbsp;&nbsp;<a href="http://sourceforge.net/projects/netatalk/">
-http://sourceforge.net/projects/netatalk/
+http://sourceforge.net/projects/netatalk
 </a>
 <p>
 The Netatalk development team can be reached via the mailing list
@@ -229,7 +341,7 @@ patches, and reviews this project wouldn't be where it is.
 <ul>
 <li>
 <p>
-The Netatalk Development Team, November 2009
+The Netatalk Development Team, November 2010
 </p>
 </li>
 </ul>
