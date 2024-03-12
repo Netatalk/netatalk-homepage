@@ -77,6 +77,10 @@
   Download from: <tt>ftp://munnari.oz.au/mac/</tt></td>
   </tr>
   <tr>
+  <td><a href="https://github.com/lampmerchant/tashrouter">TashRouter</a></td>
+  <td>AppleTalk router for LocalTalk and EtherTalk written in Python</td>
+  </tr>
+  <tr>
   <td><a href="https://github.com/lampmerchant/tashtalk">TashTalk</a></td>
   <td>LocalTalk interface for low-powered microcontrollers</td>
   </tr>
