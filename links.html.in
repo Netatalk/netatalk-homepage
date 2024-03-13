@@ -32,6 +32,10 @@
   <td>Cross-platform AFP client application</td>
   </tr>
   <tr>
+  <td><a href="https://github.com/AceHusky12/atalkvpn">atalkvpn</a></td>
+  <td>VPN tunnel for AppleTalk phase 1 (depends on Netatalk)</td>
+  </tr>
+  <tr>
   <td><a href="https://scsi.blue">BlueSCSI</a></td>
   <td>SCSI emulator device that can provide Ethernet interface emulation</td>
   </tr>
