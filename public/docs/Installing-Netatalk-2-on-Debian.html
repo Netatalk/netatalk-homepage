@@ -78,6 +78,7 @@
 <ul>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+<li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
 </ul>
 <p><a href="https://netatalk.sourceforge.io/docs"><img src="https://netatalk.sourceforge.io/gfx/daemon.gif" alt="Netatalk Logo"/></a></p>
 </div></div>
@@ -85,10 +86,27 @@
 <h1 id="Installing-Netatalk-2-on-Debian">Installing Netatalk 2 on Debian</h1><hr/>
 <h1>Installation</h1>
 <p>Install required packages with the package manager of your choice:</p>
-<pre><code>$ sudo apt install build-essential libssl-dev libdb-dev \
-autotools-dev automake libtool libtool-bin pkg-config libcups2-dev cups \
-libavahi-client-dev libgcrypt20-dev tcpd libcrack2-dev libacl1-dev \
-libldap2-dev quota libtirpc-dev
+<pre><code>$ sudo apt install \
+    autoconf \
+    automake \
+    docbook-xsl \
+    libacl1-dev \
+    libavahi-client-dev \
+    libcrack2-dev \
+    libcups2-dev \
+    libdb-dev \
+    libgcrypt-dev \
+    libkrb5-dev \
+    libldap2-dev \
+    libltdl-dev \
+    libpam0g-dev \
+    libssl-dev \
+    libtirpc-dev \
+    libtool \
+    libtool-bin \
+    libwrap0-dev \
+    quota \
+    tcpd
 </code></pre>
 <ul>
 <li>libcups2-dev is required for CUPS support. If you don&rsquo;t need an
@@ -109,7 +127,8 @@ $ ./bootstrap
 <p>Run the configure script with the following parameters, then compile and
 install the software:</p>
 <pre><code>$ ./configure --enable-systemd --sysconfdir=/etc --with-uams-path=/usr/lib/netatalk
-$ make all $ sudo make install
+$ make all
+$ sudo make install
 </code></pre>
 <p>If this process finishes without errors, you should now have the
 Netatalk software installed on your system. The next step is to tweak
@@ -194,7 +213,7 @@ $ sudo systemctl start papd.service timelord.service a2boot.service
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-Debian">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-03-06</p>
+    <p>Last updated 2024-03-14</p>
     <hr />
     </div>
 <div class="footer">
