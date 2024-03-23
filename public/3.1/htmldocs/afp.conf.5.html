@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>afp.conf</title><link rel="stylesheet" type="text/css" href="/css/netatalk.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><link rel="home" href="index.html" title="Netatalk 3.1 Manual" /><link rel="up" href="man-pages.html" title="Chapter 5. Manual Pages" /><link rel="prev" href="ad.1.html" title="ad" /><link rel="next" href="afp_signature.conf.5.html" title="afp_signature.conf" /></head><body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>afp.conf</title>
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/netatalk.css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Netatalk Manual" />
+    <link rel="up" href="man-pages.html" title="Chapter 5. Manual Pages" />
+    <link rel="prev" href="ad.1.html" title="ad" />
+    <link rel="next" href="afp_signature.conf.5.html" title="afp_signature.conf" />
+  </head>
+  <body>
     <div xmlns="" id="header">
         <div id="logo"></div>
         <div id="menlinks">
           <a href="/" title="Return to Netatalk home">[main]</a>
           <a href="/docs" title="Netatalk Wiki">[wiki]</a>
           <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
-          <a href="https://sourceforge.net/projects/netatalk/files/" title="Download Netatalk from SourceForge">[downloads]</a>
+          <a href="/download.html" title="Download Netatalk">[downloads]</a>
           <a href="/support.html" title="Support">[support]</a>
           <a href="/links.html" title="Netatalk related links">[links]</a>
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">afp.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ad.1.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="afp.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>afp.conf — Netatalk configuration file</p></div><div class="refsect1"><a id="idm2633"></a><h2>SYNOPSIS</h2><p>The <code class="filename">afp.conf</code> file is the configuration file for
+    <div xmlns="" class="navheader" align="center">Netatalk 3.1.18</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">afp.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ad.1.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="afp.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>afp.conf — Netatalk configuration file</p></div><div class="refsect1"><a id="idm2633"></a><h2>Synopsis</h2><p>The <code class="filename">afp.conf</code> file is the configuration file for
     the <span class="bold"><strong>Netatalk</strong></span> AFP file server.</p><p>All AFP specific configuration and AFP volume definitions are done
-    via this file.</p></div><div class="refsect1"><a id="FILEFORMATSECT"></a><h2>FILE FORMAT</h2><p>The file consists of sections and parameters. A section begins with
+    via this file.</p></div><div class="refsect1"><a id="FILEFORMATSECT"></a><h2>File Format</h2><p>The file consists of sections and parameters. A section begins with
     the name of the section in square brackets and continues until the next
     section begins. Sections contain parameters of the form: </p><pre class="programlisting">
     <em class="replaceable"><code>name</code></em> = <em class="replaceable"><code>value </code></em>
@@ -32,7 +45,7 @@
     in string values. Some items such as "file perm"s are numeric.</p><p>The parameter <code class="option">include =
     <em class="replaceable"><code>path</code></em></code> allows you to include one config
     file inside another. The file is included literally, as though typed in
-    place. Nested includes are not supported.</p></div><div class="refsect1"><a id="idm2658"></a><h2>SECTION DESCRIPTIONS</h2><p>Each section in the configuration file (except for the [Global]
+    place. Nested includes are not supported.</p></div><div class="refsect1"><a id="idm2658"></a><h2>Section Descriptions</h2><p>Each section in the configuration file (except for the [Global]
     section) describes a shared resource (known as a <span class="quote">“<span class="quote">volume</span>”</span>).
     The section name is the name of the volume and the parameters within the
     section define the volume attributes and options.</p><p>There are two special sections, [Global] and [Homes], which are
@@ -50,7 +63,7 @@
     server does not grant more access than the host system grants.</p><p>The following sample section defines an AFP volume. The user has
     full access to the path <code class="filename">/foo/bar</code>. The share is
     accessed via the share name <code class="literal">baz</code>: </p><pre class="programlisting"> [baz]
-    path = /foo/bar </pre></div><div class="refsect1"><a id="idm2676"></a><h2>SPECIAL SECTIONS</h2><div class="refsect2"><a id="idm2678"></a><h3>The [Global] section</h3><p>Parameters in this section apply to the server as a whole.
+    path = /foo/bar </pre></div><div class="refsect1"><a id="idm2676"></a><h2>Special Sections</h2><div class="refsect2"><a id="idm2678"></a><h3>The [Global] section</h3><p>Parameters in this section apply to the server as a whole.
       Parameters denoted by a (G) below are must be set in this
       section.</p></div><div class="refsect2"><a id="idm2681"></a><h3>The [Homes] section</h3><p>This section enable sharing of the UNIX server user home
       directories. Specifying an optional <code class="option">path</code> parameter
@@ -70,17 +83,17 @@
       of <code class="filename">/home/john/afp-data</code>.</p><p>If <code class="option">basedir regex</code> contains symlink, set the
       canonicalized absolute path. When <code class="filename">/home</code> links to
       <code class="filename">/usr/home</code>: </p><pre class="programlisting"> [Homes]
-      basedir regex = /usr/home</pre></div></div><div class="refsect1"><a id="idm2699"></a><h2>PARAMETERS</h2><p>Parameters define the specific attributes of sections.</p><p>Some parameters are specific to the [Global] section (e.g.,
+      basedir regex = /usr/home</pre></div></div><div class="refsect1"><a id="idm2699"></a><h2>Parameters</h2><p>Parameters define the specific attributes of sections.</p><p>Some parameters are specific to the [Global] section (e.g.,
     <span class="emphasis"><em>log type</em></span>). All others are permissible only in volume
     sections. The letter <span class="emphasis"><em>G</em></span> in parentheses indicates that
     a parameter is specific to the [Global] section. The letter
     <span class="emphasis"><em>V</em></span> indicates that a parameter can be specified in a
-    volume specific section.</p></div><div class="refsect1"><a id="idm2706"></a><h2>VARIABLE SUBSTITUTIONS</h2><p>You can use variables in volume names. The use of variables in paths
+    volume specific section.</p></div><div class="refsect1"><a id="idm2706"></a><h2>Variable Substitutions</h2><p>You can use variables in volume names. The use of variables in paths
      is limited to $u.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>if you specify an unknown variable, it will not get
         converted.</p></li><li class="listitem"><p>if you specify a known variable, but that variable doesn't have
         a value, it will get ignored.</p></li></ol></div><p>The variables which can be used for substitutions are:</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">$b</span></dt><dd><p>basename</p></dd><dt><span class="term">$c</span></dt><dd><p>client's ip address</p></dd><dt><span class="term">$d</span></dt><dd><p>volume pathname on server</p></dd><dt><span class="term">$f</span></dt><dd><p>full name (contents of the gecos field in the passwd
           file)</p></dd><dt><span class="term">$g</span></dt><dd><p>group name</p></dd><dt><span class="term">$h</span></dt><dd><p>hostname</p></dd><dt><span class="term">$i</span></dt><dd><p>client's ip, without port</p></dd><dt><span class="term">$s</span></dt><dd><p>server name (this can be the hostname)</p></dd><dt><span class="term">$u</span></dt><dd><p>user name (if guest, it is the user that guest is running
-          as)</p></dd><dt><span class="term">$v</span></dt><dd><p>volume name</p></dd><dt><span class="term">$$</span></dt><dd><p>prints dollar sign ($)</p></dd></dl></div></div><div class="refsect1"><a id="idm2760"></a><h2>EXPLANATION OF GLOBAL PARAMETERS</h2><div class="refsect2"><a id="idm2762"></a><h3>Authentication Options</h3><div class="variablelist"><dl class="variablelist"><dt><span class="term">ad domain = <em class="parameter"><code>DOMAIN</code></em>
+          as)</p></dd><dt><span class="term">$v</span></dt><dd><p>volume name</p></dd><dt><span class="term">$$</span></dt><dd><p>prints dollar sign ($)</p></dd></dl></div></div><div class="refsect1"><a id="idm2760"></a><h2>Explanation of Global Parameters</h2><div class="refsect2"><a id="idm2762"></a><h3>Authentication Options</h3><div class="variablelist"><dl class="variablelist"><dt><span class="term">ad domain = <em class="parameter"><code>DOMAIN</code></em>
           <span class="type">(G)</span></span></dt><dd><p>Append @DOMAIN to username when authenticating. Useful in
             Active Directory environments that otherwise would require the
             user to enter the full user@domain string.</p></dd><dt><span class="term">admin auth user = <em class="parameter"><code>user</code></em>
@@ -448,7 +461,7 @@
           <span class="type">(G)</span></span></dt><dd><p>Optional LDAP filter that matches user objects. This is necessary for Active Directory
             environments where users and groups are stored in the same directory subtree.</p><p>Recommended setting for Active Directory: <em class="parameter"><code>objectClass=user</code></em>.</p></dd><dt><span class="term">ldap group filter = <em class="parameter"><code>STRING (default: unused)</code></em>
           <span class="type">(G)</span></span></dt><dd><p>Optional LDAP filter that matches group objects. This is necessary for Active Directory
-            environments where users and groups are stored in the same directory subtree.</p><p>Recommended setting for Active Directory: <em class="parameter"><code>objectClass=group</code></em>.</p></dd></dl></div></div></div><div class="refsect1"><a id="idm3603"></a><h2>EXPLANATION OF VOLUME PARAMETERS</h2><div class="refsect2"><a id="idm3605"></a><h3>Parameters</h3><p>The section name defines the volume name.
+            environments where users and groups are stored in the same directory subtree.</p><p>Recommended setting for Active Directory: <em class="parameter"><code>objectClass=group</code></em>.</p></dd></dl></div></div></div><div class="refsect1"><a id="idm3603"></a><h2>Explanation of Volume Parameters</h2><div class="refsect2"><a id="idm3605"></a><h3>Parameters</h3><p>The section name defines the volume name.
       No two volumes may have the same
       name. The volume name cannot contain the <span class="keycode">':'</span>
       character. The volume name is mangled if it is very long. Mac charset
@@ -636,4 +649,5 @@
     another volume encoding. <span class="command"><strong>afpd</strong></span> will accept any
     <span class="citerefentry"><span class="refentrytitle"><span class="command"><strong>iconv</strong></span></span>(1)</span>
       provided charset. It is highly recommended to stick to the default
-    UTF-8.</p></div><div class="refsect1"><a id="idm3967"></a><h2>SEE ALSO</h2><p><span class="citerefentry"><span class="refentrytitle">afpd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">afppasswd</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">afp_signature.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">extmap.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">cnid_metad</span>(8)</span></p></div><div class="refsect1"><a id="idm3985"></a><h2>AUTHOR</h2><p>See <a class="ulink" href="https://github.com/Netatalk/netatalk/blob/main/CONTRIBUTORS" target="_top">CONTRIBUTORS</a></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ad.1.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">ad </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> afp_signature.conf</td></tr></table></div></body></html>
+    UTF-8.</p></div><div class="refsect1"><a id="idm3967"></a><h2>See Also</h2><p><span class="citerefentry"><span class="refentrytitle">afpd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">afppasswd</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">afp_signature.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">extmap.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">cnid_metad</span>(8)</span></p></div><div class="refsect1"><a id="idm3985"></a><h2>Author</h2><p>See <a class="ulink" href="https://github.com/Netatalk/netatalk/blob/main/CONTRIBUTORS" target="_top">CONTRIBUTORS</a></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ad.1.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">ad </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> afp_signature.conf</td></tr></table></div></body>
+</html>
