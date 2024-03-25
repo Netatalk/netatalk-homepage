@@ -15,13 +15,11 @@ for file in files:
     with open(f"./{file}", "r", encoding="utf-8") as input_file:
         html = input_file.read()
     new_name = file.replace('.html.in', '.html')
+    page_title = new_name.replace('.html', '')
     if new_name[0:3] == "CVE":
         new_name = new_name.replace("CVE", "security/CVE")
-    page_title = new_name.replace('.html', '')
     if page_title == "index":
         page_title = "Networking Apple Macintosh through Open Source"
-    elif page_title[0:8] == "security":
-        page_title = f"Security - {page_title}"
 
     html_head = f"""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
