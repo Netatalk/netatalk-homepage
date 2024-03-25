@@ -12,9 +12,8 @@
 
   <h2>Getting Started</h2>
   <p>So you want to get started with running your own Netatalk file server
-  for your local network of Macs and Apple IIs? Well, you have come to the right place!</p>
-
-  <p>For starters, the official (or an unofficial) package manager for your operating system
+  for your local network of Macs and Apple IIs? Well, you have come to the right place!
+  For starters, the official (or an unofficial) package manager for your operating system
   may be distributing a ready-made binary <b>netatalk</b> package.
   Use the package manager's search functionality to find out.</p>
 
@@ -29,9 +28,8 @@
 
   <p>Once Netatalk is up and running, test that the AFP server responds on port 548 by running
   <tt>asip-status [server address]</tt>.
-  If you get an "AFP reply" response, the Netatalk server is functioning properly!</p>
-
-  <p>You will likely need to adjust the configurations to suit your setup.
+  If you get an "AFP reply" response, the Netatalk server is functioning properly!
+  You will likely need to adjust the configurations to suit your setup.
   Netatalk has a dizzying amount of options which can be daunting initially.
   The Configuration chapter in the Netatalk manual is a good place to start.</p>
 
@@ -169,7 +167,7 @@
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
 
-  <p>Netatalk is licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU
+  <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
   General Public License 2.0</a>.</p>
   <p>If you are interested in contributing to the development process or just
   want to give Netatalk a try, please visit our
