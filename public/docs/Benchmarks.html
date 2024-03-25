@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Wiki - AppleTalk Kernel Module</title>
+    <title>Netatalk Wiki - Benchmarks</title>
     <meta name="description" content="Netatalk Wiki">
-    <link rel="canonical" href="https://netatalk.io/docs/AppleTalk-Kernel-Module">
+    <link rel="canonical" href="https://netatalk.io/docs/Benchmarks">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -84,43 +84,54 @@
 <p><a href="https://netatalk.sourceforge.io/docs"><img src="https://netatalk.sourceforge.io/gfx/daemon.gif" alt="Netatalk Logo"/></a></p>
 </div></div>
 <div id="content">
-<h1 id="AppleTalk-Kernel-Module">AppleTalk Kernel Module</h1><hr/>
-<h1>AppleTalk Kernel Module</h1>
-<p>Netatalk 2 relies on AppleTalk support in the kernel to make use of the DDP transport layer. The <code>atalkd</code> daemon will attempt to dynamically load the kernel module if not detected, and error out if all attempts fail:</p>
-<pre><code>Address family not supported by protocol
-</code></pre>
-<p>You can still use Netatalk&rsquo;s DSI transport layer (TCP/IP) without AppleTalk support in the kernel.</p>
-<p>At the time of writing, Linux and NetBSD are known to have officially maintained AppleTalk kernel modules. At least Debian Linux (as of Bullseye) comes with the kernel module compiled in by default. There is code for a Solaris kernel module in the Netatalk source tree.</p>
-<h2>Linux</h2>
-<p>To check if your kernel has AppleTalk support, first start the <code>atalkd</code> daemon, then issue this command and inspect the output:</p>
-<pre><code>$ lsmod | grep appletalk
-</code></pre>
-<p>If no <code>appletalk</code> module is detected, you may have to compile support into the kernel. This section describes the modular approach, but it should also be possible to compile the AppleTalk module directly into the kernel for a slight performance boost.</p>
-<p>This section will not describe the entire process, but rather follow the steps in the <a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html">Raspberry Pi documentation</a>. Do the steps in the documentation in this order:</p>
+<h1 id="Benchmarks">Benchmarks</h1><hr/>
+<p>Benchmarks of file sharing server transfer speeds.</p>
+<h1>Comparisons</h1>
+<p>Upload is a transfer from client to server. Download is a transfer from server to client.</p>
 <ul>
-<li><a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html#building-the-kernel-locally">Building the Kernel Locally</a></li>
-<li><a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html#default_configuration">Apply the Default Configuration</a></li>
-<li><a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html#preparing-to-configure">Preparing to Configure</a></li>
-<li><a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html#using-menuconfig">Using menuconfig</a></li>
-<li>Networking support &mdash;&gt; Networking options &mdash;&gt; Appletalk protocol support<ul>
-<li>Press M to select this</li>
-<li>Select <strong>Appletalk interfaces support</strong> and press M again</li>
-<li>Save and exit menuconfig</li>
+<li>Server: Debian 12</li>
+<li>Client: macOS Sonoma</li>
+<li>Network: Both connected to the same Wi-Fi AP</li>
 </ul>
-</li>
-<li><a href="https://www.raspberrypi.com/documentation/computers/linux_kernel.html#building-the-kernel">Building the Kernel</a></li>
-<li>Reboot the system once the process is completed (compilation may take an hour or longer on slower systems)</li>
-<li>Check that the <code>appletalk</code> kernel module has been loaded, as per the above</li>
-<li>If the module isn&rsquo;t automatically loaded, add a line to /etc/modules<ul>
-<li>appletalk</li>
-</ul>
-</li>
-</ul>
-<h2>Solaris</h2>
-<p>Netatalk distributes code for an AppleTalk module for Solaris / Illumos, located under <code>sys/solaris</code>. It is presently configured for the SPARC architecture only.</p><hr />
+<p>Three data points per test case, with the median result is marked in bold below. Lower is better.</p>
+<table>
+<thead>
+<tr>
+<th>Server App</th>
+<th>1x 2GB file Upload</th>
+<th>Download</th>
+<th>1000x 10KB files Upload</th>
+<th>Download</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Netatalk 3.1.18</td>
+<td>42 <strong>45</strong> 46</td>
+<td>44 <strong>45</strong> 48</td>
+<td>84 <strong>86</strong> 94</td>
+<td>50 <strong>55</strong> 58</td>
+</tr>
+<tr>
+<td>Samba 4.17.12</td>
+<td>45 <strong>47</strong> 52</td>
+<td>45 <strong>48</strong> 52</td>
+<td>99 <strong>100</strong> 101</td>
+<td>53 <strong>53</strong> 54</td>
+</tr>
+<tr>
+<td>NFS 2.6.2</td>
+<td>204 <strong>205</strong> 208</td>
+<td>136 <strong>139</strong> 139</td>
+<td>97 <strong>97</strong> 99</td>
+<td>24 <strong>24</strong> 25</td>
+</tr>
+</tbody>
+</table>
+<p><em>Unit is seconds, rounded down to the integer</em></p><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
-        Please <a href="https://github.com/Netatalk/netatalk/wiki/AppleTalk-Kernel-Module">visit the original page</a>
+        Please <a href="https://github.com/Netatalk/netatalk/wiki/Benchmarks">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
     <p>Last updated 2024-03-25</p>

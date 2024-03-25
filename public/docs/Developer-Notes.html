@@ -48,6 +48,7 @@
 <li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
 <li><a class="wikilink" href="/docs/Installation-Notes.html">Installation Notes</a></li>
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
+<li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
 <p>Netatalk v3 Installation</p>
 <ul>
@@ -237,6 +238,13 @@ part of the changeset in your PR.</p>
 <p>If the changeset of your PR warrants a bullet point in the changelog,
 please include an update to the NEWS file as part of your changeset as well.</p>
 <h1>Technical Information</h1>
+<h2>Documentation</h2>
+<p>Netatalk documentation is maintained in DocBook XML format, which can be transformed to human-readable formats for consumption.</p>
+<p>For one, use DocBook XSL stylesheets to transform to for instance troff manual pages, or html pages for publishing on the web.
+The Netatalk build system provides this facility through the <code>--with-docbook</code> configure option.</p>
+<p>Or, use something like <code>dblatex</code> to transform to a variety of formats, for instance PDF.</p>
+<pre><code>$ dblatex ./doc/manual/manual.xml
+</code></pre>
 <h2>Creating patches</h2>
 <p>This describes the traditional method of creating plain text patch
 files. It can be useful when requesting feedback for your code on the
@@ -355,7 +363,7 @@ branch?</a>.</p>
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Developer-Notes">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-03-14</p>
+    <p>Last updated 2024-03-25</p>
     <hr />
     </div>
 <div class="footer">

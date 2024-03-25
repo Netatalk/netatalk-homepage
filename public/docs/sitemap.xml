@@ -7,6 +7,12 @@
     <priority>1.0</priority>
 </url>
 <url>
+    <loc>https://netatalk.io/docs/Benchmarks.html</loc>
+    <lastmod>2024-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
     <loc>https://netatalk.io/docs/CatalogSearch.html</loc>
     <lastmod>2024-01-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -20,7 +26,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Developer-Notes.html</loc>
-    <lastmod>2024-03-08</lastmod>
+    <lastmod>2024-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -32,7 +38,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Home.html</loc>
-    <lastmod>2024-03-05</lastmod>
+    <lastmod>2024-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -152,7 +158,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/_Sidebar.html</loc>
-    <lastmod>2024-03-08</lastmod>
+    <lastmod>2024-03-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
