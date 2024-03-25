@@ -15,9 +15,13 @@ for file in files:
     with open(f"./{file}", "r", encoding="utf-8") as input_file:
         html = input_file.read()
     new_name = file.replace('.html.in', '.html')
-    page_title = file.replace('.html.in', '')
+    if new_name[0:3] == "CVE":
+        new_name = new_name.replace("CVE", "security/CVE")
+    page_title = new_name.replace('.html', '')
     if page_title == "index":
         page_title = "Networking Apple Macintosh through Open Source"
+    elif page_title[0:8] == "security":
+        page_title = f"Security - {page_title}"
 
     html_head = f"""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -33,9 +37,9 @@ for file in files:
 <meta name="robots" content="index,follow" />
 <meta name="audience" content="all" />
 
-<link rel="stylesheet" type="text/css" href="css/site.css" />
-<link rel="stylesheet" type="text/css" href="css/printer.css" media="print" />
-<link rel="alternate stylesheet" type="text/css" href="css/printer.css" title="Printer" />
+<link rel="stylesheet" type="text/css" href="/css/site.css" />
+<link rel="stylesheet" type="text/css" href="/css/printer.css" media="print" />
+<link rel="alternate stylesheet" type="text/css" href="/css/printer.css" title="Printer" />
 <link
   rel="copyright"
   title="GNU General Public License, version 2"
