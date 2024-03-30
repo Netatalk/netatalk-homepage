@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>papstatus</title><link rel="stylesheet" href="/css/netatalk.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.74.3" /><link rel="home" href="index.html" title="Netatalk 2.0 Manual" /><link rel="up" href="man-pages.html" title="Chapter 5. Manual Pages" /><link rel="prev" href="papd.conf.5.html" title="papd.conf" /><link rel="next" href="psf.8.html" title="psf" /></head><body>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>papstatus</title><link rel="stylesheet" href="https://netatalk.io/css/netatalk.css" type="text/css" /><meta name="generator" content="DocBook XSL Stylesheets V1.74.3" /><link rel="home" href="index.html" title="Netatalk 2.0 Manual" /><link rel="up" href="man-pages.html" title="Chapter 5. Manual Pages" /><link rel="prev" href="papd.conf.5.html" title="papd.conf" /><link rel="next" href="psf.8.html" title="psf" /></head><body>
     <div xmlns="" id="header">
         <div id="logo"></div>
         <div id="menlinks">
-            <a href="/" title="Return to Netatalk home">[main]</a>
-            
-            <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
-            <a href="/download.html" title="Download Netatalk">[downloads]</a>
-            <a href="/links.html" title="Netatalk related links">[links]</a>
-
-            <img src="/gfx/end.gif" alt="" width="125" height="7" />
+          <a href="/" title="Return to Netatalk home">[main]</a>
+          <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+          <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
+          <a href="/download.html" title="Download Netatalk">[downloads]</a>
+          <a href="/support.html" title="Support">[support]</a>
+          <a href="/links.html" title="Netatalk related links">[links]</a>
+          <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-<div class="warning">This documentation is for an outdated version of Netatalk!</div>
+<div class="warning" style="font-size: 12px;">
+<h3>Note</h3>
+<p>Old documentation! <a href="/oldstable/htmldocs">Read the manual for the latest version in the Netatalk v2 release series.</a>
+</p>
+</div>
+<div xmlns="" class="navheader" align="center">Netatalk 2.0.5</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">papstatus</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="papd.conf.5.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="psf.8.html">Next</a></td></tr></table><hr /></div><div class="refentry" lang="en" xml:lang="en"><a id="papstatus.8"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>papstatus — get the status of an AppleTalk-connected printer</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">papstatus<a id="id4109677" class="indexterm"></a></code>  [-d] [ -p    <em class="replaceable"><code>printer</code></em> ] [<em class="replaceable"><code>retrytime</code></em>]</p></div></div><div class="refsect1" lang="en" xml:lang="en"><a id="id4109723"></a><h2>DESCRIPTION</h2><p><span class="emphasis"><em>papstatus</em></span> is used to obtain the
     current status message from an AppleTalk connected printer. It uses the
     Printer Access Protocol (PAP) to obtain the status information.</p><p>If no printer is specified on the command line, <span class="emphasis"><em>papstatus</em></span>
