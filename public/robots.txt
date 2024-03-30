@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /2.0/htmldocs/
-Disallow: /2.1/htmldocs/
-Disallow: /2.2/htmldocs/
-Disallow: /3.0/htmldocs/
