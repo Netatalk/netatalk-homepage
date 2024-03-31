@@ -10,8 +10,8 @@ Manual pages are static html generated with xsltproc from [XSL sources](https://
 # New release procedure
 - Create a news story at the top of `index.html.in`.
 - Move an older news story to `archive.html.in`. Limit the number of news stories on `index.html.in` to about 4.
-- Update the current releases left rail in the `templates/navbar.html` sources.
-- Add the new release to `download.html.in` and `documentation.html.in` sources.
+- Update the download and release note links in `templates/navbar.html`.
+- Add link to release notes in `documentation.html.in`.
 - Add the new netatalk release version to the "versions" list in `scripts/generate_releasenotes.py`
 - Run the `run.sh` script, passing a GITHUB_TOKEN env variable with a valid GitHub API token.
 - Validate the correctness and absence of spam in generated html sources in `public/`.
