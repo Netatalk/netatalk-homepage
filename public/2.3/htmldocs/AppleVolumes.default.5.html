@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>AppleVolumes.default</title><link rel="stylesheet" type="text/css" href="https://netatalk.io/css/netatalk.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><link rel="home" href="index.html" title="Netatalk 2.3 Manual" /><link rel="up" href="man-pages.html" title="Chapter 5. Manual Pages" /><link rel="prev" href="afppasswd.1.html" title="afppasswd" /><link rel="next" href="apple_dump.1.html" title="apple_dump" /></head><body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>AppleVolumes.default</title>
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/netatalk.css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Netatalk Manual" />
+    <link rel="up" href="man-pages.html" title="Chapter 5. Manual Pages" />
+    <link rel="prev" href="apple_dump.1.html" title="apple_dump" />
+    <link rel="next" href="asip-status.1.html" title="asip-status" />
+  </head>
+  <body>
     <div xmlns="" id="header">
         <div id="logo"></div>
         <div id="menlinks">
           <a href="/" title="Return to Netatalk home">[main]</a>
           <a href="/docs" title="Netatalk Wiki">[wiki]</a>
-          <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
-          <a href="/download.php" title="Download Netatalk">[downloads]</a>
-          <a href="/support.php" title="Support">[support]</a>
-          <a href="/links.php" title="Netatalk related links">[links]</a>
+          <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
+          <a href="/download.html" title="Download Netatalk">[downloads]</a>
+          <a href="/support.html" title="Support">[support]</a>
+          <a href="/links.html" title="Netatalk related links">[links]</a>
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">AppleVolumes.default</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="afppasswd.1.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="apple_dump.1.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="AppleVolumes.default.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>AppleVolumes.default, AppleVolumes.system, AppleVolumes — Configuration file used by <span class="command"><strong>afpd</strong></span>(8) to
-    determine the shares made available through AFP and specify file name
-    extension mappings.<a id="idm2801" class="indexterm"></a><a id="idm2803" class="indexterm"></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">AppleVolumes.default</code> </p></div><div class="cmdsynopsis"><p><code class="command">AppleVolumes.system</code> </p></div><div class="cmdsynopsis"><p><code class="command">~/AppleVolumes</code> </p></div><div class="cmdsynopsis"><p><code class="command">~/.AppleVolumes</code> </p></div><div class="cmdsynopsis"><p><code class="command">~/applevolumes</code> </p></div><div class="cmdsynopsis"><p><code class="command">~/.applevolumes</code> </p></div></div><div class="refsect1"><a id="idm2819"></a><h2>Description</h2><p>
+    <div xmlns="" class="navheader" align="center">Netatalk 2.3.2</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">AppleVolumes.default</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apple_dump.1.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="asip-status.1.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="AppleVolumes.default.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>AppleVolumes.default, AppleVolumes.system, AppleVolumes — Configuration file(s) used by <span class="command"><strong>afpd</strong></span>(8) to
+    determine the shared volumes made available through AFP<a id="idm2939" class="indexterm"></a><a id="idm2941" class="indexterm"></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">AppleVolumes.default</code> </p></div><div class="cmdsynopsis"><p><code class="command">AppleVolumes.system</code> </p></div><div class="cmdsynopsis"><p><code class="command">~/AppleVolumes</code> </p></div><div class="cmdsynopsis"><p><code class="command">~/.AppleVolumes</code> </p></div><div class="cmdsynopsis"><p><code class="command">~/applevolumes</code> </p></div><div class="cmdsynopsis"><p><code class="command">~/.applevolumes</code> </p></div></div><div class="refsect1"><a id="idm2957"></a><h2>Description</h2><p>
     <code class="filename">AppleVolumes.system</code> and one of
     <code class="filename">AppleVolumes.default</code>,
     <code class="filename">~/AppleVolumes</code>,
     <code class="filename">~/.AppleVolumes</code>,
     <code class="filename">~/applevolumes</code>, or
-    <code class="filename">~/.applevolumes</code>  are the
+    <code class="filename">~/.applevolumes</code> are the
     configuration files used by <span class="command"><strong>afpd</strong></span> to determine what
-    portions of the file system will be shared via Apple Filing Protocol, as
-    well as their behaviour.</p><p>Any line not prefixed with # is interpreted.
+    portions of the file system will be shared via Apple Filing Protocol,
+    their behaviour, as well as file name extension mappings.</p><p>The present convention is that <code class="filename">AppleVolumes.system</code>
+    contains the global file extension mappings, while
+    <code class="filename">AppleVolumes.default</code> contains the global shared volumes.
+    When present, the config file in the user's home dir contains
+    user overrides to either.</p><p>Any line not prefixed with # is interpreted.
     Newline escaping is supported. The configuration lines are composed
     like:</p><p><code class="filename">path</code> <em class="replaceable"><code>[ volume name ] [ options
     ]</code></em></p><p><code class="filename">.extension</code> <em class="replaceable"><code>[ type [
@@ -41,9 +57,9 @@
       supported.</p></div><p>The leading-dot lines specify file name extension mappings.
     The extension '.' sets the default creator and type for otherwise
     untyped Unix files.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>File name extension mapping is useful for Mac OS 9 and earlier.
-      But it should not use for Mac OS X.</p></div><p>It is possible to specify default options for all volumes with a
+      However, it is not helpful on Mac OS X.</p></div><p>It is possible to specify default options for all volumes with a
     <span class="emphasis"><em>:DEFAULT: </em></span>line preceding these volume
-    definitions:</p><div class="example"><a id="idm2847"></a><p class="title"><strong>Example 5.13. :DEFAULT: configuration line</strong></p><div class="example-contents"><pre class="programlisting">:DEFAULT: options:upriv,usedots dbpath:/var/dbd/AppleDB/$v dperm:0775 fperm:0664</pre></div></div><br class="example-break" /><p>The possible options and their meanings are:</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">adouble:<em class="replaceable"><code>[v1|v2]</code></em></span></dt><dd><p>Specify the format of the metadata files which are used for
+    definitions:</p><div class="example"><a id="idm2988"></a><p class="title"><strong>Example 5.13. :DEFAULT: configuration line</strong></p><div class="example-contents"><pre class="programlisting">:DEFAULT: options:upriv,usedots dbpath:/var/dbd/AppleDB/$v dperm:0775 fperm:0664</pre></div></div><br class="example-break" /><p>The possible options and their meanings are:</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">adouble:<em class="replaceable"><code>[v1|v2]</code></em></span></dt><dd><p>Specify the format of the metadata files which are used for
           saving the Mac resource fork. Earlier versions of Netatalk used AppleDouble
           V1, while the current default format is V2.</p></dd><dt><span class="term">volsizelimit:<em class="replaceable"><code>size in MiB</code></em></span></dt><dd><p>Useful for Time Machine: limits the reported volume size,
             thus preventing TM from using the whole real disk space for
@@ -78,7 +94,7 @@
           <span class="emphasis"><em>4700</em></span>) for CNIDs. Only used with CNID backend
           "<span class="emphasis"><em>dbd</em></span>". This option here overrides any setting
           from
-          <code class="filename">afpd.conf</code>:<code class="option">cnidserver</code>.</p></dd><dt><span class="term">ea:<em class="replaceable"><code>[none|auto|sys|ad]</code></em></span></dt><dd><p>Specify how Extended Attributes<a id="idm2910" class="indexterm"></a> are stored. <code class="option">auto</code> is the
+          <code class="filename">afpd.conf</code>:<code class="option">cnidserver</code>.</p></dd><dt><span class="term">ea:<em class="replaceable"><code>[none|auto|sys|ad]</code></em></span></dt><dd><p>Specify how Extended Attributes<a id="idm3051" class="indexterm"></a> are stored. <code class="option">auto</code> is the
           default.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">auto</span></dt><dd><p>Try <code class="option">sys</code> (by setting an EA on the shared
                 directory itself), fallback to <code class="option">ad</code>. Requires
                 a writeable volume for performing the test.
@@ -111,18 +127,18 @@
           <code class="option">perm</code> affects files and directories,
           <code class="option">fperm</code> is for files only, <code class="option">dperm</code> is
           for directories only. Use with
-          <code class="option">options:upriv</code>.</p><div class="example"><a id="idm3006"></a><p class="title"><strong>Example 5.14. Volume for a collaborative workgroup</strong></p><div class="example-contents"><pre class="programlisting">/path/to/volume "Workgroup" options:upriv dperm:0770 fperm:0660</pre></div></div><br class="example-break" /></dd><dt><span class="term">umask:<em class="replaceable"><code>[mode]</code></em></span></dt><dd><p>set perm mask. Use with <code class="option">options:upriv</code>.</p></dd><dt><span class="term">rolist:[<code class="option">users/groups</code>]</span></dt><dd><p>Allows certain users and groups to have read-only access to a
+          <code class="option">options:upriv</code>.</p><div class="example"><a id="idm3147"></a><p class="title"><strong>Example 5.14. Volume for a collaborative workgroup</strong></p><div class="example-contents"><pre class="programlisting">/path/to/volume "Workgroup" options:upriv dperm:0770 fperm:0660</pre></div></div><br class="example-break" /></dd><dt><span class="term">umask:<em class="replaceable"><code>[mode]</code></em></span></dt><dd><p>set perm mask. Use with <code class="option">options:upriv</code>.</p></dd><dt><span class="term">rolist:[<code class="option">users/groups</code>]</span></dt><dd><p>Allows certain users and groups to have read-only access to a
           share. This follows the allow option format.</p></dd><dt><span class="term">rwlist:<em class="replaceable"><code>[users/groups]</code></em></span></dt><dd><p>Allows certain users and groups to have read/write access to a
           share. This follows the allow option format.</p></dd><dt><span class="term">veto:<em class="replaceable"><code>[vetoed names]</code></em></span></dt><dd><p>hide files and directories where the path matches one of the
           '/' delimited vetoed names. The veto string must always be
           terminated with a '/', e.g. "veto1/", "veto1/veto2/".</p></dd><dt><span class="term">volcharset:<em class="replaceable"><code>[charset]</code></em></span></dt><dd><p>specifies the volume codepage, e.g. "UTF8", "UTF8-MAC",
-          "ISO-8859-15". Defaults to "UTF8".</p></dd></dl></div></div><div class="refsect1"><a id="idm3035"></a><h2>Variable substitutions</h2><p>You can use variables in both volume path and volume name.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>if you specify an unknown variable, it will not get
+          "ISO-8859-15". Defaults to "UTF8".</p></dd></dl></div></div><div class="refsect1"><a id="idm3176"></a><h2>Variable substitutions</h2><p>You can use variables in both volume path and volume name.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>if you specify an unknown variable, it will not get
         converted.</p></li><li class="listitem"><p>if you specify a known variable, but that variable doesn't have
         a value, it will get ignored.</p></li></ol></div><p>The variables which can be used for substitutions are:</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">$b</span></dt><dd><p>basename</p></dd><dt><span class="term">$c</span></dt><dd><p>client's ip or appletalk address</p></dd><dt><span class="term">$d</span></dt><dd><p>volume pathname on server</p></dd><dt><span class="term">$f</span></dt><dd><p>full name (contents of the gecos field in the passwd
           file)</p></dd><dt><span class="term">$g</span></dt><dd><p>group name</p></dd><dt><span class="term">$h</span></dt><dd><p>hostname</p></dd><dt><span class="term">$i</span></dt><dd><p>client's ip, without port</p></dd><dt><span class="term">$s</span></dt><dd><p>server name (this can be the hostname)</p></dd><dt><span class="term">$u</span></dt><dd><p>user name (if guest, it is the user that guest is running
-          as)</p></dd><dt><span class="term">$v</span></dt><dd><p>volume name (either ADEID_NAME or basename of path)</p></dd><dt><span class="term">$z</span></dt><dd><p>appletalk zone (may not exist)</p></dd><dt><span class="term">$$</span></dt><dd><p>prints dollar sign ($)</p></dd></dl></div><div class="example"><a id="idm3093"></a><p class="title"><strong>Example 5.15. Using variable substitution when defining volumes</strong></p><div class="example-contents"><pre class="programlisting">/home/groups/$g "Groupdir for $g"
+          as)</p></dd><dt><span class="term">$v</span></dt><dd><p>volume name (either ADEID_NAME or basename of path)</p></dd><dt><span class="term">$z</span></dt><dd><p>appletalk zone (may not exist)</p></dd><dt><span class="term">$$</span></dt><dd><p>prints dollar sign ($)</p></dd></dl></div><div class="example"><a id="idm3234"></a><p class="title"><strong>Example 5.15. Using variable substitution when defining volumes</strong></p><div class="example-contents"><pre class="programlisting">/home/groups/$g "Groupdir for $g"
 ~ "$f is the best one"</pre><p> We define "groupdirs" for each primary
-      group and use a personalized server name for homedir shares.</p></div></div><br class="example-break" /></div><div class="refsect1"><a id="idm3097"></a><h2>CNID backends</h2><p>The AFP protocol mostly refers to files and directories by ID and
+      group and use a personalized server name for homedir shares.</p></div></div><br class="example-break" /></div><div class="refsect1"><a id="idm3238"></a><h2>CNID backends</h2><p>The AFP protocol mostly refers to files and directories by ID and
     not by name. Netatalk needs a way to store these ID's in a persistent way,
     to achieve this several different CNID backends are available. The CNID
     Databases are by default located in the <code class="filename">.AppleDB</code>
@@ -138,7 +154,7 @@
           <span class="emphasis"><em>NOT</em></span> recommended to use this backend for writable
           voumes, as <span class="command"><strong>afpd</strong></span> relies heavily on a
           persistent ID database. Aliases will likely not work and filename
-          mangling is not supported.</p></dd></dl></div></div><div class="refsect1"><a id="idm3117"></a><h2>Charset options</h2><p>With OS X Apple introduced the AFP3 protocol. One of the most
+          mangling is not supported.</p></dd></dl></div></div><div class="refsect1"><a id="idm3258"></a><h2>Charset options</h2><p>With OS X Apple introduced the AFP3 protocol. One of the most
     important changes was that AFP3 uses Unicode names encoded as UTF-8
     decomposed. Previous AFP/OS versions used codepages like MacRoman,
     MacCentralEurope, etc.</p><p><span class="command"><strong>afpd</strong></span> needs a way to preserve extended Macintosh
@@ -157,11 +173,11 @@
     <span class="citerefentry"><span class="refentrytitle"><span class="command"><strong>iconv</strong></span></span>(1)</span> provided charset. If a character cannot be converted
     from the mac codepage to the selected volcharset, afpd will save it as a
     CAP encoded character. For AFP3 clients, <span class="command"><strong>afpd</strong></span> will
-    convert the UTF-8<a id="idm3139" class="indexterm"></a><a id="idm3142" class="indexterm"></a><a id="idm3145" class="indexterm"></a><a id="idm3148" class="indexterm"></a> character to <code class="option">-maccharset</code> first. If this
+    convert the UTF-8<a id="idm3280" class="indexterm"></a><a id="idm3283" class="indexterm"></a><a id="idm3286" class="indexterm"></a><a id="idm3289" class="indexterm"></a> character to <code class="option">-maccharset</code> first. If this
     conversion fails, you'll receive a -50 error on the mac.</p><p><span class="emphasis"><em>Note</em></span>: Whenever you can, please stick with the
-    default UTF-8 volume format.</p></div><div class="refsect1"><a id="idm3154"></a><h2>Compatibility with earlier versions</h2><p>To use a volume created with an earlier <span class="command"><strong>afpd</strong></span>
-    version, you'll have to specify the following options:</p><div class="example"><a id="idm3158"></a><p class="title"><strong>Example 5.16. use a 1.x style volume</strong></p><div class="example-contents"><pre class="programlisting">/path/to/volume "Volname" adouble:v1 volcharset:ASCII<a id="idm3161" class="indexterm"></a></pre></div></div><br class="example-break" /><p>In case you used an NLS you could try using a compatible iconv
-    charset for <code class="option">-volcharset</code>.</p><div class="example"><a id="idm3166"></a><p class="title"><strong>Example 5.17. use a 1.x style volume, created with maccode.iso8859-1</strong></p><div class="example-contents"><pre class="programlisting">/path/to/volume "Volname" adouble:v1 volcharset:ISO-8859-1</pre></div></div><br class="example-break" /><p>You should consider converting old style volumes to the new
+    default UTF-8 volume format.</p></div><div class="refsect1"><a id="idm3295"></a><h2>Compatibility with earlier versions</h2><p>To use a volume created with an earlier <span class="command"><strong>afpd</strong></span>
+    version, you'll have to specify the following options:</p><div class="example"><a id="idm3299"></a><p class="title"><strong>Example 5.16. use a 1.x style volume</strong></p><div class="example-contents"><pre class="programlisting">/path/to/volume "Volname" adouble:v1 volcharset:ASCII<a id="idm3302" class="indexterm"></a></pre></div></div><br class="example-break" /><p>In case you used an NLS you could try using a compatible iconv
+    charset for <code class="option">-volcharset</code>.</p><div class="example"><a id="idm3307"></a><p class="title"><strong>Example 5.17. use a 1.x style volume, created with maccode.iso8859-1</strong></p><div class="example-contents"><pre class="programlisting">/path/to/volume "Volname" adouble:v1 volcharset:ISO-8859-1</pre></div></div><br class="example-break" /><p>You should consider converting old style volumes to the new
     UTF-8/AD2 format. The safest way to do this, is to create a new volume
     with the default options and copy the files between this volumes with a
     mac.</p><p><span class="emphasis"><em>Note</em></span>: Using above example options will allow
@@ -171,7 +187,7 @@
     "MAC_CHINESE_TRAD", "MAC_JAPANESE" and "MAC_KOREAN". These are not
     supported anymore. You'll have to copy the contents of those volumes files
     to a Mac and then back to the netatalk server, preferably to an UTF-8
-    volume.</p></div><div class="refsect1"><a id="idm3175"></a><h2>Advanced Options</h2><p>The following options should only be used after serious
+    volume.</p></div><div class="refsect1"><a id="idm3316"></a><h2>Advanced Options</h2><p>The following options should only be used after serious
     consideration. Be sure you fully understood the, sometimes complex,
     consequences, before using them.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">casefold:<code class="option">[option]</code></span></dt><dd><p>The casefold option handles, if the case of filenames should
           be changed. The available options are:</p><p><code class="option">tolower</code> - Lowercases names in both
@@ -211,4 +227,5 @@
                 calls.</p></dd><dt><span class="term">nohex</span></dt><dd><p>Disables :hex translations for anything except dot
                 files. This option makes the <span class="keycode">'/</span>' character
                 illegal.</p></dd><dt><span class="term">prodos</span></dt><dd><p>Provides compatibility with Apple II clients.
-                (legacy)</p></dd></dl></div></dd></dl></div></div><div class="refsect1"><a id="idm3250"></a><h2>File Name Extension Mappings</h2><div class="example"><a id="idm3252"></a><p class="title"><strong>Example 5.18. Extension is jpg. Type is "JPEG". Creator is "ogle".</strong></p><div class="example-contents"><pre class="programlisting">.jpg "JPEG" "ogle"</pre></div></div><br class="example-break" /><div class="example"><a id="idm3255"></a><p class="title"><strong>Example 5.19. Extension is lzh. Type is "LHA ". Creator is not defined.</strong></p><div class="example-contents"><pre class="programlisting">.lzh "LHA "</pre></div></div><br class="example-break" /></div><div class="refsect1"><a id="idm3258"></a><h2>See Also</h2><p><span class="citerefentry"><span class="refentrytitle">afpd.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">afpd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">cnid_metad</span>(8)</span></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="afppasswd.1.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="apple_dump.1.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">afppasswd </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> apple_dump</td></tr></table></div></body></html>
+                (legacy)</p></dd></dl></div></dd></dl></div></div><div class="refsect1"><a id="idm3391"></a><h2>File Name Extension Mappings</h2><div class="example"><a id="idm3393"></a><p class="title"><strong>Example 5.18. Extension is jpg. Type is "JPEG". Creator is "ogle".</strong></p><div class="example-contents"><pre class="programlisting">.jpg "JPEG" "ogle"</pre></div></div><br class="example-break" /><div class="example"><a id="idm3396"></a><p class="title"><strong>Example 5.19. Extension is lzh. Type is "LHA ". Creator is not defined.</strong></p><div class="example-contents"><pre class="programlisting">.lzh "LHA "</pre></div></div><br class="example-break" /></div><div class="refsect1"><a id="idm3399"></a><h2>See Also</h2><p><span class="citerefentry"><span class="refentrytitle">afpd.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">afpd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">cnid_metad</span>(8)</span></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apple_dump.1.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="asip-status.1.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">apple_dump </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> asip-status</td></tr></table></div></body>
+</html>

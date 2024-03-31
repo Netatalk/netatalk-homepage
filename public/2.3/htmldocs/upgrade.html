@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Chapter 4. Upgrading from Netatalk 1.x</title><link rel="stylesheet" type="text/css" href="https://netatalk.io/css/netatalk.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><link rel="home" href="index.html" title="Netatalk 2.3 Manual" /><link rel="up" href="index.html" title="Netatalk 2.3 Manual" /><link rel="prev" href="configuration.html" title="Chapter 3. Setting up Netatalk" /><link rel="next" href="man-pages.html" title="Chapter 5. Manual Pages" /></head><body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Chapter 4. Upgrading from Netatalk 1.x</title>
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/netatalk.css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Netatalk Manual" />
+    <link rel="up" href="index.html" title="Netatalk Manual" />
+    <link rel="prev" href="configuration.html" title="Chapter 3. Setting up Netatalk" />
+    <link rel="next" href="man-pages.html" title="Chapter 5. Manual Pages" />
+  </head>
+  <body>
     <div xmlns="" id="header">
         <div id="logo"></div>
         <div id="menlinks">
           <a href="/" title="Return to Netatalk home">[main]</a>
           <a href="/docs" title="Netatalk Wiki">[wiki]</a>
-          <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
-          <a href="/download.php" title="Download Netatalk">[downloads]</a>
-          <a href="/support.php" title="Support">[support]</a>
-          <a href="/links.php" title="Netatalk related links">[links]</a>
+          <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
+          <a href="/download.html" title="Download Netatalk">[downloads]</a>
+          <a href="/support.html" title="Support">[support]</a>
+          <a href="/links.html" title="Netatalk related links">[links]</a>
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 4. Upgrading from  Netatalk 1.x</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="configuration.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="man-pages.html">Next</a></td></tr></table><hr /></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="upgrade"></a>Chapter 4. Upgrading from  Netatalk 1.x</h1></div><div><div class="author"><h3 class="author"><span class="firstname">Jörg</span> <span class="surname">Lenneis</span></h3><span class="contrib">initial version</span> </div></div><div><p class="pubdate">26 June, 2004</p></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="upgrade.html#idm1115">Overview</a></span></dt><dt><span class="sect1"><a href="upgrade.html#volumes-and-filenames">Volumes and filenames</a></span></dt><dd><dl><dt><span class="sect2"><a href="upgrade.html#volupgrade">How to upgrade a volume to 2.x</a></span></dt><dt><span class="sect2"><a href="upgrade.html#capvol">How to use a 1.x CAP encoded volume with 2.x</a></span></dt><dt><span class="sect2"><a href="upgrade.html#idm1195">How to use a 1.x NLS volume with 2.x</a></span></dt></dl></dd><dt><span class="sect1"><a href="upgrade.html#choosecnidscheme">Choosing a CNID storage scheme</a></span></dt><dd><dl><dt><span class="sect2"><a href="upgrade.html#idm1266">How to upgrade if no persistent CNID storage was used</a></span></dt><dt><span class="sect2"><a href="upgrade.html#idm1273">How to upgrade if a persistent CNID storage scheme was
+    <div xmlns="" class="navheader" align="center">Netatalk 2.3.2</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 4. Upgrading from  Netatalk 1.x</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="configuration.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="man-pages.html">Next</a></td></tr></table><hr /></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="upgrade"></a>Chapter 4. Upgrading from  Netatalk 1.x</h1></div><div><div class="author"><h3 class="author"><span class="firstname">Jörg</span> <span class="surname">Lenneis</span></h3><span class="contrib">initial version</span> </div></div><div><p class="pubdate">26 June, 2004</p></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="upgrade.html#idm1122">Overview</a></span></dt><dt><span class="sect1"><a href="upgrade.html#volumes-and-filenames">Volumes and filenames</a></span></dt><dd><dl><dt><span class="sect2"><a href="upgrade.html#volupgrade">How to upgrade a volume to 2.x</a></span></dt><dt><span class="sect2"><a href="upgrade.html#capvol">How to use a 1.x CAP encoded volume with 2.x</a></span></dt><dt><span class="sect2"><a href="upgrade.html#idm1202">How to use a 1.x NLS volume with 2.x</a></span></dt></dl></dd><dt><span class="sect1"><a href="upgrade.html#choosecnidscheme">Choosing a CNID storage scheme</a></span></dt><dd><dl><dt><span class="sect2"><a href="upgrade.html#idm1273">How to upgrade if no persistent CNID storage was used</a></span></dt><dt><span class="sect2"><a href="upgrade.html#idm1280">How to upgrade if a persistent CNID storage scheme was
       used</a></span></dt><dt><span class="sect2"><a href="upgrade.html#bruteforceupgrade">How to upgrade if a persistent CNID storage scheme was used, the
-      brute force approach</a></span></dt></dl></dd><dt><span class="sect1"><a href="upgrade.html#testserver">Setting up a test server on the same machine</a></span></dt><dd><dl><dt><span class="sect2"><a href="upgrade.html#idm1349">Setting up an empty test share</a></span></dt><dt><span class="sect2"><a href="upgrade.html#idm1353">Duplicating an already existing share</a></span></dt><dt><span class="sect2"><a href="upgrade.html#idm1359">Configuring and running the test afpd</a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm1115"></a>Overview</h2></div></div></div><p>Version 2.x of the Netatalk suite includes significant changes and
+      brute force approach</a></span></dt></dl></dd><dt><span class="sect1"><a href="upgrade.html#testserver">Setting up a test server on the same machine</a></span></dt><dd><dl><dt><span class="sect2"><a href="upgrade.html#idm1356">Setting up an empty test share</a></span></dt><dt><span class="sect2"><a href="upgrade.html#idm1360">Duplicating an already existing share</a></span></dt><dt><span class="sect2"><a href="upgrade.html#idm1366">Configuring and running the test afpd</a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm1122"></a>Overview</h2></div></div></div><p>Version 2.x of the Netatalk suite includes significant changes and
     enhancements in functionality compared to 1.x. Netatalk 2.x is
     now supported which allows UTF8-MAC encoded filenames of up to 255 bytes
     (85-255 chars) in length amongst other things. The Catalogue Node ID
@@ -32,16 +45,16 @@
         convert existing filenames</p></li><li class="listitem"><p>what storage scheme to use for CNIDs and maybe convert an
         existing database to that scheme</p></li></ol></div><p>The following two sections deal with each of these areas in
     turn.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="volumes-and-filenames"></a>Volumes and filenames</h2></div></div></div><p>Netatalk 1.x saved filenames in the so called
-    <span class="emphasis"><em>CAP<a id="idm1130" class="indexterm"></a></em></span> encoding by default. Alternatively, there was
-    the NLS<a id="idm1133" class="indexterm"></a> system, that allowed you to convert filenames to other
+    <span class="emphasis"><em>CAP<a id="idm1137" class="indexterm"></a></em></span> encoding by default. Alternatively, there was
+    the NLS<a id="idm1140" class="indexterm"></a> system, that allowed you to convert filenames to other
     codepages, like ISO-8859-1.</p><p>For Netatalk 2.x the charset conversion routines had to be
     completely rewritten to support AFP 3.x. For more indepth information on
     character sets please read the <a class="link" href="configuration.html#charsets" title="Charsets/Unicode">Unicode/charsets</a> section in the manual.</p><p>As a consequence, Netatalk 2.x now stores filenames in UTF-8 by
     default. Additionally you <span class="bold"><strong>have</strong></span> to specify
     a maccodepage in afpd.conf, if your Mac clients are not using
     <span class="emphasis"><em>MacRoman</em></span>.</p><p>The format of the metadata files stored in the .AppleDouble folders
-    has changed from AppleDouble v1 to AppleDouble v2<a id="idm1142" class="indexterm"></a>. Netatalk 2.x is still able to use AD1 files, if
-    configured. Otherwise ADv1<a id="idm1145" class="indexterm"></a> files will silently be updated to the new ADv2 format,
+    has changed from AppleDouble v1 to AppleDouble v2<a id="idm1149" class="indexterm"></a>. Netatalk 2.x is still able to use AD1 files, if
+    configured. Otherwise ADv1<a id="idm1152" class="indexterm"></a> files will silently be updated to the new ADv2 format,
     which will prevent you from using this volume with 1.x again.</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>Do not share a 1.x volume with Netatalk 2.x without setting the
       proper options!</p></div><p></p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>In case of MacChineseTraditional, MacJapanese or MacKorean,
       This method cannot be used.</p><p>Before upgrading, copy all files to the client. And restore
@@ -61,7 +74,7 @@
       <span class="emphasis"><em>ASCII</em></span>.</p><p>Set <code class="option">adouble:v1</code>, this will make sure the metadata
       files will not be changed to AppleDouble v2. If you do not set this
       option, it will not be possible to use the volume with Netatalk 1.x
-      anymore.</p><p><span class="bold"><strong>Example</strong></span>:</p><p><code class="filename">afpd.conf</code>:</p><pre class="programlisting"> - -transall -maccodepage:MAC_CENTRALEUROPE</pre><p><code class="filename">AppleVolumes.default</code>:</p><pre class="programlisting"> /path/to/share "1.x Volume" adouble:v1 volcharset:ASCII</pre><p></p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1195"></a>How to use a 1.x NLS volume with 2.x</h3></div></div></div><p>Whether you can still use an 1.x NLS encoded volume with Netatalk
+      anymore.</p><p><span class="bold"><strong>Example</strong></span>:</p><p><code class="filename">afpd.conf</code>:</p><pre class="programlisting"> - -transall -maccodepage:MAC_CENTRALEUROPE</pre><p><code class="filename">AppleVolumes.default</code>:</p><pre class="programlisting"> /path/to/share "1.x Volume" adouble:v1 volcharset:ASCII</pre><p></p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1202"></a>How to use a 1.x NLS volume with 2.x</h3></div></div></div><p>Whether you can still use an 1.x NLS encoded volume with Netatalk
       2.x mainly depends on which NLS setting you used with 1.x.</p><p>Make sure you set the correct <code class="option">maccodepage</code> in
       <code class="filename">afpd.conf</code> !</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">maccode.iso8859-1</span></dt><dd><p>Use the following settings in
             <code class="filename">AppleVolumes.default</code>:</p><pre class="programlisting"> /path/to/share "1.x Volume" adouble:v1 volcharset:ISO-8859-1</pre></dd><dt><span class="term">maccode.iso8859-1.adapted</span></dt><dd><p>Sorry, you're out of luck. This NLS contains a non standard
@@ -73,7 +86,7 @@
             untested:</p><pre class="programlisting"> /path/to/share "1.x Volume" adouble:v1 volcharset:CP850</pre></dd><dt><span class="term">maccode.koi8-r</span></dt><dd><p>Using the following settings in
             <code class="filename">AppleVolumes.default</code> might work, but is
             untested:</p><pre class="programlisting"> /path/to/share "1.x Volume" adouble:v1 volcharset:KOI8-R</pre></dd></dl></div><p></p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>All of the above require <a class="ulink" href="http://www.gnu.org/software/libiconv/" target="_top">iconv</a> to be
-        installed and to supply the volcharset codepage!</p></div><p></p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="choosecnidscheme"></a>Choosing a CNID<a id="idm1238" class="indexterm"></a> storage scheme</h2></div></div></div><p>Previous versions of Netatalk allocated CNIDs either on the fly or
+        installed and to supply the volcharset codepage!</p></div><p></p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="choosecnidscheme"></a>Choosing a CNID<a id="idm1245" class="indexterm"></a> storage scheme</h2></div></div></div><p>Previous versions of Netatalk allocated CNIDs either on the fly or
     CNIDs were recorded in a persistent database. "On the fly methods" work by
     either generating a CNID from the device and inode number or simply by
     using a counter that is increased by one on each access to a file or
@@ -96,8 +109,8 @@
     is now a runtime option for a volume. That means that you can make the
     choice per volume based on your requirements. Here are the properties as
     well as the advantages and disadvantages of the two supported schemes:
-    </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><span class="bold"><strong>last<a id="idm1249" class="indexterm"></a>:</strong></span> See above. Avoid, if at all
-          possible.</p></li><li class="listitem"><p><span class="bold"><strong>dbd<a id="idm1255" class="indexterm"></a>:</strong></span> There is only a single daemon that
+    </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><span class="bold"><strong>last<a id="idm1256" class="indexterm"></a>:</strong></span> See above. Avoid, if at all
+          possible.</p></li><li class="listitem"><p><span class="bold"><strong>dbd<a id="idm1262" class="indexterm"></a>:</strong></span> There is only a single daemon that
           accesses the CNID database for a given volume. Any afpd process that
           wishes to retrieve or update CNIDs for that volume needs to do it
           via the daemon. The CNID can database be (this is a compile time
@@ -108,14 +121,14 @@
           database should still be in a consistent state.
           Also, have a look at the nosync
           option documented in the cnid_dbd manual page.</p></li></ol></div><p>Note that the <span class="emphasis"><em>dbd</em></span> backend needs an
-    auxiliary daemon, called <span class="command"><strong>cnid_metad</strong></span><a id="idm1261" class="indexterm"></a>, to work. It should be started together with afpd. If the
+    auxiliary daemon, called <span class="command"><strong>cnid_metad</strong></span><a id="idm1268" class="indexterm"></a>, to work. It should be started together with afpd. If the
     <span class="emphasis"><em>dbd</em></span> backend is compiled into afpd (the
     default), this should happen automatically. If you cannot find it in the
     process list even though the <span class="emphasis"><em>dbd</em></span> backend is
-    used please check for errors in the startup scripts.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1266"></a>How to upgrade if no persistent CNID storage was used</h3></div></div></div><p>That is easy. Just pick a CNID backend from above, configure it
+    used please check for errors in the startup scripts.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1273"></a>How to upgrade if no persistent CNID storage was used</h3></div></div></div><p>That is easy. Just pick a CNID backend from above, configure it
       properly in afpd.conf and the AppleVolumes file and start up the
       necessary Netatalk processes. The databases will be automatically
-      created in a subdirectory <code class="filename">.AppleDB</code><a id="idm1270" class="indexterm"></a> of the volume in question.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1273"></a>How to upgrade if a persistent CNID storage scheme was
+      created in a subdirectory <code class="filename">.AppleDB</code><a id="idm1277" class="indexterm"></a> of the volume in question.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1280"></a>How to upgrade if a persistent CNID storage scheme was
       used</h3></div></div></div><p>In that case the CNID databases need to be upgraded. A script
       called cnid2_create that comes with Netatalk 2.0 does most of the work.
       The steps you have to take depend on what version of Berkeley DB is
@@ -183,15 +196,15 @@
     new share and another one that has been duplicated/converted from an
     already existing volume. This helps finding mistakes you probably made in
     the upgrade process when the first share behaves well and the latter
-    not.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1349"></a>Setting up an empty test share</h3></div></div></div><p>First, you have to provide some space for the test share. Just
+    not.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1356"></a>Setting up an empty test share</h3></div></div></div><p>First, you have to provide some space for the test share. Just
       create a directory on one of your data filesystems. However, this
       directory must not be accessible from the production afpd server. Don't
       forget to set appropriate permissions for the share. For example:</p><pre class="programlisting"> mkdir /macdata/testshare
  chown root.macusers /macdata/testshare
- chmod g+wrx,g+s /macdata/testshare</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1353"></a>Duplicating an already existing share</h3></div></div></div><p>Ensure that users cannot access the share in question and copy the
+ chmod g+wrx,g+s /macdata/testshare</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1360"></a>Duplicating an already existing share</h3></div></div></div><p>Ensure that users cannot access the share in question and copy the
       whole contents (including all the metadata directories like
       <code class="filename">.AppleDB</code>) to another location.</p><pre class="programlisting"> cp -pr /production/testshare /macdata/</pre><p>Then do the somewhat extensive upgrade of CNID databases and
-      filename encodings outlined earlier in this chapter.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1359"></a>Configuring and running the test afpd</h3></div></div></div><p>Normally the test afpd cannot listen on the standard afpovertcp
+      filename encodings outlined earlier in this chapter.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="idm1366"></a>Configuring and running the test afpd</h3></div></div></div><p>Normally the test afpd cannot listen on the standard afpovertcp
       port, because that one is already bound by the production afpd. So the
       <code class="filename">afpd.conf</code> should look like</p><pre class="programlisting"> - -noddp -nouservol -port 5480 -loginmsg "WARNING: test server"</pre><p>You also have to present the share to the Mac users by editing the
       <code class="filename">AppleVolumes.default</code> file. Remove the line
@@ -216,4 +229,5 @@
         the server.</p></div><p>The test server should appear in the chooser on Macs. You can also
       test that from the UNIX command line:</p><pre class="programlisting"> nbplkup =:AFPServer</pre><p>or</p><pre class="programlisting"> netstat -an | grep 5480</pre><p>If everything went fine spread the word about the test server
       among your more experienced Mac users and see whether things work as
-      expected.</p></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="configuration.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="man-pages.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 3. Setting up Netatalk </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 5. Manual Pages</td></tr></table></div></body></html>
+      expected.</p></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="configuration.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="man-pages.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 3. Setting up Netatalk </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 5. Manual Pages</td></tr></table></div></body>
+</html>

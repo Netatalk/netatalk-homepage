@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>atalkd.conf</title><link rel="stylesheet" type="text/css" href="https://netatalk.io/css/netatalk.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><link rel="home" href="index.html" title="Netatalk 2.3 Manual" /><link rel="up" href="man-pages.html" title="Chapter 5. Manual Pages" /><link rel="prev" href="atalkd.8.html" title="atalkd" /><link rel="next" href="atalk_aton.3.html" title="atalk_aton" /></head><body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>atalkd.conf</title>
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/netatalk.css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Netatalk Manual" />
+    <link rel="up" href="man-pages.html" title="Chapter 5. Manual Pages" />
+    <link rel="prev" href="atalkd.8.html" title="atalkd" />
+    <link rel="next" href="atalk_aton.3.html" title="atalk_aton" />
+  </head>
+  <body>
     <div xmlns="" id="header">
         <div id="logo"></div>
         <div id="menlinks">
           <a href="/" title="Return to Netatalk home">[main]</a>
           <a href="/docs" title="Netatalk Wiki">[wiki]</a>
-          <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
-          <a href="/download.php" title="Download Netatalk">[downloads]</a>
-          <a href="/support.php" title="Support">[support]</a>
-          <a href="/links.php" title="Netatalk related links">[links]</a>
+          <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
+          <a href="/download.html" title="Download Netatalk">[downloads]</a>
+          <a href="/support.html" title="Support">[support]</a>
+          <a href="/links.html" title="Netatalk related links">[links]</a>
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">atalkd.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="atalkd.8.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="atalk_aton.3.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="atalkd.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>atalkd.conf — Configuration file used by atalkd(8) to determine the
-    interfaces used by the master Netatalk daemon<a id="idm3677" class="indexterm"></a><a id="idm3679" class="indexterm"></a><a id="idm3682" class="indexterm"></a></p></div><div class="refsect1"><a id="idm3685"></a><h2>Description</h2><p><span class="emphasis"><em>atalkd.conf</em></span> is the
+    <div xmlns="" class="navheader" align="center">Netatalk 2.3.2</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">atalkd.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="atalkd.8.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="atalk_aton.3.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="atalkd.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>atalkd.conf — Configuration file used by <span class="command"><strong>atalkd</strong></span>(8) to configure the
+    interfaces used by AppleTalk<a id="idm3701" class="indexterm"></a><a id="idm3703" class="indexterm"></a><a id="idm3706" class="indexterm"></a></p></div><div class="refsect1"><a id="idm3709"></a><h2>Description</h2><p><span class="emphasis"><em>atalkd.conf</em></span> is the
     configuration file used by atalkd to configure the Appletalk interfaces
     and their behavior</p><p>Any line not prefixed with <span class="emphasis"><em>#</em></span> is
     interpreted. The configuration lines are composed like:</p><p><span class="emphasis"><em>Interface</em></span> <span class="emphasis"><em>[</em></span> <span class="emphasis"><em>options</em></span> <span class="emphasis"><em>]</em></span></p><p>The simplest case is to have either no atalkd.conf, or to have one
@@ -38,4 +51,5 @@
         <em class="replaceable"><code>zonename</code></em></code></span></dt><dd><p>Specifies a specific zone that this interface should appear on (example:
           <code class="option">-zone "Parking Lot"</code>). Please note that zones with
           spaces and other special characters should be enclosed in
-          parentheses.</p></dd></dl></div></div><div class="refsect1"><a id="idm3749"></a><h2>See Also</h2><p><span class="citerefentry"><span class="refentrytitle">atalkd</span>(8)</span></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="atalkd.8.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="atalk_aton.3.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">atalkd </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> atalk_aton</td></tr></table></div></body></html>
+          parentheses.</p></dd></dl></div></div><div class="refsect1"><a id="idm3773"></a><h2>See Also</h2><p><span class="citerefentry"><span class="refentrytitle">atalkd</span>(8)</span></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="atalkd.8.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="atalk_aton.3.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">atalkd </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> atalk_aton</td></tr></table></div></body>
+</html>

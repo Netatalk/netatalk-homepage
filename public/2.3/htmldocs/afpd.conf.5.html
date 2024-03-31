@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>afpd.conf</title><link rel="stylesheet" type="text/css" href="https://netatalk.io/css/netatalk.css" /><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" /><link rel="home" href="index.html" title="Netatalk 2.3 Manual" /><link rel="up" href="man-pages.html" title="Chapter 5. Manual Pages" /><link rel="prev" href="afpd.8.html" title="afpd" /><link rel="next" href="afpldaptest.1.html" title="afpldaptest" /></head><body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>afpd.conf</title>
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/netatalk.css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Netatalk Manual" />
+    <link rel="up" href="man-pages.html" title="Chapter 5. Manual Pages" />
+    <link rel="prev" href="afpd.8.html" title="afpd" />
+    <link rel="next" href="afpldaptest.1.html" title="afpldaptest" />
+  </head>
+  <body>
     <div xmlns="" id="header">
         <div id="logo"></div>
         <div id="menlinks">
           <a href="/" title="Return to Netatalk home">[main]</a>
           <a href="/docs" title="Netatalk Wiki">[wiki]</a>
-          <a href="/documentation.php" title="Netatalk Manual">[documentation]</a>
-          <a href="/download.php" title="Download Netatalk">[downloads]</a>
-          <a href="/support.php" title="Support">[support]</a>
-          <a href="/links.php" title="Netatalk related links">[links]</a>
+          <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
+          <a href="/download.html" title="Download Netatalk">[downloads]</a>
+          <a href="/support.html" title="Support">[support]</a>
+          <a href="/links.html" title="Netatalk related links">[links]</a>
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">afpd.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="afpd.8.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="afpldaptest.1.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="afpd.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>afpd.conf — Configuration file used by afpd(8) to determine the setup of
-    its file sharing services</p></div><div class="refsect1"><a id="idm2185"></a><h2>Description</h2><p><code class="filename">afpd.conf</code> is the configuration file
+    <div xmlns="" class="navheader" align="center">Netatalk 2.3.2</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">afpd.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="afpd.8.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="afpldaptest.1.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="afpd.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>afpd.conf — Configuration file used by <span class="command"><strong>afpd</strong></span>(8)
+    to determine the capabilities of its file sharing services</p></div><div class="refsect1"><a id="idm2204"></a><h2>Description</h2><p><code class="filename">afpd.conf</code> is the configuration file
     used by <span class="command"><strong>afpd</strong></span> to determine the behavior and
-    configuration of the different virtual file servers that it
+    capabilities of one or more virtual file servers that it
     provides.</p><p>Any line not prefixed with # is interpreted. The configuration lines
     are composed like: server name [ options ] If a <code class="option">-</code> is used
     instead of a server name, the default server is specified. Server names
@@ -23,10 +36,10 @@
     The path name must be a fully qualified path name, or a path name using
     either the ~ shell shorthand or any of the substitution variables, which
     are listed below.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Each server has to be configured on a <span class="bold"><strong>single</strong></span> line. Though, using "\" character,
-        newline escaping is supported.</p></div><p>The possible options and their meanings are:</p></div><div class="refsect1"><a id="idm2196"></a><h2>AppleVolumes Files</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-defaultvol <em class="replaceable"><code>[path]</code></em></span></dt><dd><p>Specifies path to AppleVolumes.default file.</p></dd><dt><span class="term">-systemvol <em class="replaceable"><code>[path]</code></em></span></dt><dd><p>Specifies path to AppleVolumes.system file.</p></dd><dt><span class="term">-[no]uservol</span></dt><dd><p>Enables or disables reading of the users' individual volumes
+        newline escaping is supported.</p></div><p>The possible options and their meanings are:</p></div><div class="refsect1"><a id="idm2215"></a><h2>AppleVolumes Files</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-defaultvol <em class="replaceable"><code>[path]</code></em></span></dt><dd><p>Specifies path to AppleVolumes.default file.</p></dd><dt><span class="term">-systemvol <em class="replaceable"><code>[path]</code></em></span></dt><dd><p>Specifies path to AppleVolumes.system file.</p></dd><dt><span class="term">-[no]uservol</span></dt><dd><p>Enables or disables reading of the users' individual volumes
           file entirely.</p></dd><dt><span class="term">-[no]uservolfirst</span></dt><dd><p>Enables or disables reading of the users' individual volumes
           file before processing the global
-          <code class="filename">AppleVolumes.default</code> file.</p></dd></dl></div></div><div class="refsect1"><a id="idm2218"></a><h2>Authentication Methods</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-uamlist <em class="replaceable"><code>[uams list]</code></em></span></dt><dd><p>Comma separated list of UAMs. (The default is
+          <code class="filename">AppleVolumes.default</code> file.</p></dd></dl></div></div><div class="refsect1"><a id="idm2237"></a><h2>Authentication Methods</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-uamlist <em class="replaceable"><code>[uams list]</code></em></span></dt><dd><p>Comma separated list of UAMs. (The default is
           uams_dhx2.so).</p><p>The most commonly used UAMs are:</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">uams_guest.so</span></dt><dd><p>allows guest logins</p></dd><dt><span class="term">uams_clrtxt.so</span></dt><dd><p>(uams_pam.so or uams_passwd.so) Allow logins with
                 passwords transmitted in the clear. (legacy)</p></dd><dt><span class="term">uams_randnum.so</span></dt><dd><p>allows Random Number and Two-Way Random Number Exchange
                 for authentication (requires a separate file containing the
@@ -43,7 +56,7 @@
             the specified <code class="option">adminauthuser</code>. If this succeeds, a normal session is created
             for the original connecting user. Said differently: if you know the
             password of <code class="option">adminauthuser</code>, you can authenticate as any other user.
-          </p></dd></dl></div></div><div class="refsect1"><a id="idm2282"></a><h2>Codepage Options</h2><p>With OS X Apple introduced the AFP3 protocol. One of the big changes
+          </p></dd></dl></div></div><div class="refsect1"><a id="idm2301"></a><h2>Codepage Options</h2><p>With OS X Apple introduced the AFP3 protocol. One of the big changes
     was, that AFP3 uses Unicode names encoded as Decomposed UTF-8 (UTF8-MAC).
     Previous AFP/OS versions used codepages like MacRoman, MacCentralEurope,
     etc.</p><p>To be able to serve AFP3 and older clients at the same time,
@@ -67,14 +80,14 @@
           used to convert strings and filenames to the clients codepage for
           Mac OS 9 and Classic, i.e. for authentication and AFP messages (SIGUSR2
           messaging). This will also be the default for the volumes
-          maccharset. Defaults to MAC_ROMAN.</p></dd></dl></div></div><div class="refsect1"><a id="idm2306"></a><h2>Password Options</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-loginmaxfail [<em class="parameter"><code>number</code></em>]</span></dt><dd><p>Sets the maximum number of failed logins, if supported by the
+          maccharset. Defaults to MAC_ROMAN.</p></dd></dl></div></div><div class="refsect1"><a id="idm2325"></a><h2>Password Options</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-loginmaxfail [<em class="parameter"><code>number</code></em>]</span></dt><dd><p>Sets the maximum number of failed logins, if supported by the
           UAM (currently none)</p></dd><dt><span class="term">-passwdfile [<em class="parameter"><code>path</code></em>]</span></dt><dd><p>Sets the path to the Randnum UAM passwd file for this server.</p></dd><dt><span class="term">-passwdminlen [<em class="parameter"><code>number</code></em>]</span></dt><dd><p>Sets the minimum password length, if supported by the
           UAM</p></dd><dt><span class="term">-[no]savepassword</span></dt><dd><p>Enables or disables the ability of clients to save passwords
           locally</p></dd><dt><span class="term">-[no]setpassword</span></dt><dd><p>Enables or disables the ability of clients to change their
-          passwords via the Chooser or the "connect to server" dialog</p></dd></dl></div></div><div class="refsect1"><a id="idm2332"></a><h2>Transport Protocols</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-[no]ddp</span></dt><dd><p>Enables or disables AFP-over-Appletalk. If
+          passwords via the Chooser or the "connect to server" dialog</p></dd></dl></div></div><div class="refsect1"><a id="idm2351"></a><h2>Transport Protocols</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-[no]ddp</span></dt><dd><p>Enables or disables AFP-over-Appletalk. If
           <code class="option">-proxy</code> is specified, you must instead use
           <code class="option">-uamlist ""</code> to prevent DDP connections from
-          working.</p></dd><dt><span class="term">-[no]tcp</span></dt><dd><p>Enables or disables AFP-over-TCP</p></dd><dt><span class="term">-transall</span></dt><dd><p>Make both available (default)</p></dd></dl></div></div><div class="refsect1"><a id="idm2349"></a><h2>Transport Options</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-advertise_ssh</span></dt><dd><p>Allows Mac OS X clients (10.3.3-10.4) to automagically
+          working.</p></dd><dt><span class="term">-[no]tcp</span></dt><dd><p>Enables or disables AFP-over-TCP</p></dd><dt><span class="term">-transall</span></dt><dd><p>Make both available (default)</p></dd></dl></div></div><div class="refsect1"><a id="idm2368"></a><h2>Transport Options</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-advertise_ssh</span></dt><dd><p>Allows Mac OS X clients (10.3.3-10.4) to automagically
           establish a tunneled AFP connection through SSH. If this option is
           set, the server's answers to client's FPGetSrvrInfo requests contain
           an additional entry. It depends on both client's settings and a
@@ -97,8 +110,8 @@
           incoming request. The network address may be specified either in
           dotted-decimal format for IPv4 or in hexadecimal format for IPv6.
           This option also allows one to use one machine to advertise the
-          AFP-over-TCP/IP settings of another machine via NBP<a id="idm2383" class="indexterm"></a> when used together with the <code class="option">-proxy</code>
-          option.</p><div class="example"><a id="idm2387"></a><p class="title"><strong>Example 5.4. afpd.conf configuration line</strong></p><div class="example-contents"><pre class="programlisting">
+          AFP-over-TCP/IP settings of another machine via NBP<a id="idm2402" class="indexterm"></a> when used together with the <code class="option">-proxy</code>
+          option.</p><div class="example"><a id="idm2406"></a><p class="title"><strong>Example 5.4. afpd.conf configuration line</strong></p><div class="example-contents"><pre class="programlisting">
               fluxxus -hostname afp.example.org -ipaddr 192.168.0.1 -fqdn www.example.com
             </pre><p>
               <span class="bold"><strong>Result</strong></span>
@@ -109,7 +122,7 @@
           default is 548.</p></dd><dt><span class="term">-proxy</span></dt><dd><p>Runs an AppleTalk proxy server for the specified AFP-over-TCP
           server. If the address and port aren't given, then the first IP
           address of the system and port 548 will be used. If you don't want
-          the proxy server to act as a DDP<a id="idm2402" class="indexterm"></a> server as well, set <code class="option">-uamlist
+          the proxy server to act as a DDP<a id="idm2421" class="indexterm"></a> server as well, set <code class="option">-uamlist
           ""</code>.</p></dd><dt><span class="term">-server_quantum <em class="replaceable"><code>[number]</code></em></span></dt><dd><p>This specifies the DSI server quantum. The default value is
           303840. The maximum value is 0xFFFFFFFFF, the minimum is 32000. If
           you specify a value that is out of range, the default value will be
@@ -127,8 +140,8 @@
           </p></dd><dt><span class="term">-tcpsndbuf <em class="replaceable"><code>[number]</code></em></span></dt><dd><p>
             Try to set TCP send buffer using setsockpt(). Often OSes impose restrictions
             on the applications' ability to set this value.
-          </p></dd><dt><span class="term">-nozeroconf</span></dt><dd><p>Disable automatic Zeroconf<a id="idm2432" class="indexterm"></a> service registration if support was compiled in.</p></dd><dt><span class="term">-slp</span></dt><dd><p>Register this server using the Service Location Protocol (if
-          SLP<a id="idm2439" class="indexterm"></a> support was compiled in).</p></dd></dl></div></div><div class="refsect1"><a id="idm2442"></a><h2>Miscellaneous Options</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-admingroup <em class="replaceable"><code>[group]</code></em></span></dt><dd><p>Allows users of a certain group to be seen as the superuser
+          </p></dd><dt><span class="term">-nozeroconf</span></dt><dd><p>Disable automatic Zeroconf<a id="idm2451" class="indexterm"></a> service registration if support was compiled in.</p></dd><dt><span class="term">-slp</span></dt><dd><p>Register this server using the Service Location Protocol (if
+          SLP<a id="idm2458" class="indexterm"></a> support was compiled in).</p></dd></dl></div></div><div class="refsect1"><a id="idm2461"></a><h2>Miscellaneous Options</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-admingroup <em class="replaceable"><code>[group]</code></em></span></dt><dd><p>Allows users of a certain group to be seen as the superuser
           when they log in. This option is disabled by default.</p></dd><dt><span class="term">-authprintdir <em class="replaceable"><code>[path]</code></em></span></dt><dd><p>Specifies the path to be used (per server) to store the files
           required to do CAP-style print authentication which papd will
           examine to determine if a print job should be allowed. These files
@@ -188,7 +201,7 @@
           automatically (based on a random number). The "host" signature type
           switches back to "auto" because it is obsoleted. The "user" signature
           type allows an administrator to set up a signature string manually. The
-          maximum length is 16 characters.</p><div class="example"><a id="idm2543"></a><p class="title"><strong>Example 5.5. Three server definitions using 2 different server
+          maximum length is 16 characters.</p><div class="example"><a id="idm2562"></a><p class="title"><strong>Example 5.5. Three server definitions using 2 different server
             signatures</strong></p><div class="example-contents"><pre class="programlisting">first -signature user:USERS 
             second -signature user:USERS 
             third -signature user:ADMINS</pre></div></div><br class="example-break" /><p>The first two servers will appear as one logical AFP service to
@@ -204,7 +217,7 @@
 	  255: limit of spec</pre><p>
           Mac OS 9 and earlier are not influenced by
           this, because Maccharset volume name is always limited to 27
-          bytes.</p></dd></dl></div></div><div class="refsect1"><a id="idm2555"></a><h2>Logging Options</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-setuplog "<em class="parameter"><code>&lt;logtype&gt; &lt;loglevel&gt;
+          bytes.</p></dd></dl></div></div><div class="refsect1"><a id="idm2574"></a><h2>Logging Options</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term">-setuplog "<em class="parameter"><code>&lt;logtype&gt; &lt;loglevel&gt;
         [&lt;filename&gt;]</code></em>"</span></dt><dd><p>Specify that any message of a loglevel up to the given
           <code class="option">loglevel</code> should be logged to the given file. If the
           filename is omitted, the loglevel applies to messages passed to
@@ -212,21 +225,22 @@
           to syslog with a default logging setup equivalent to
           <code class="option">-setuplog "default log_note"</code>.</p><p>logtypes: Default, AFPDaemon, Logger, UAMSDaemon</p><p>loglevels: LOG_SEVERE, LOG_ERROR, LOG_WARN, LOG_NOTE,
           LOG_INFO, LOG_DEBUG, LOG_DEBUG6, LOG_DEBUG7, LOG_DEBUG8, LOG_DEBUG9,
-          LOG_MAXDEBUG</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The config is case insensitive</p></div><div class="example"><a id="idm2570"></a><p class="title"><strong>Example 5.6. Useful default config</strong></p><div class="example-contents"><pre class="programlisting">- -setuplog "default log_info /var/log/afpd.log"
-</pre></div></div><br class="example-break" /><div class="example"><a id="idm2573"></a><p class="title"><strong>Example 5.7. Debugging config</strong></p><div class="example-contents"><pre class="programlisting">- -setuplog "default log_maxdebug /var/log/afpd.log"
-</pre></div></div><br class="example-break" /><div class="example"><a id="idm2576"></a><p class="title"><strong>Example 5.8. afpd logging to different files</strong></p><div class="example-contents"><pre class="programlisting">- -setuplog "default log_info /var/log/afpd.log" \
+          LOG_MAXDEBUG</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The config is case insensitive</p></div><div class="example"><a id="idm2589"></a><p class="title"><strong>Example 5.6. Useful default config</strong></p><div class="example-contents"><pre class="programlisting">- -setuplog "default log_info /var/log/afpd.log"
+</pre></div></div><br class="example-break" /><div class="example"><a id="idm2592"></a><p class="title"><strong>Example 5.7. Debugging config</strong></p><div class="example-contents"><pre class="programlisting">- -setuplog "default log_maxdebug /var/log/afpd.log"
+</pre></div></div><br class="example-break" /><div class="example"><a id="idm2595"></a><p class="title"><strong>Example 5.8. afpd logging to different files</strong></p><div class="example-contents"><pre class="programlisting">- -setuplog "default log_info /var/log/afpd.log" \
 -setuplog "UAMSDaemon log_maxdebug /var/log/uams.log"
 </pre></div></div><br class="example-break" /></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">-unsetuplog "<em class="parameter"><code>&lt;logtype&gt;
         [&lt;filename&gt;]</code></em>"</span></dt><dd><p>Note that for <code class="option">unsetuplog</code> specifying any
           string as filename is sufficient for the config parser to
           distinguish between requests to disable syslog logging or
-          file-logging.</p><div class="example"><a id="idm2586"></a><p class="title"><strong>Example 5.9. Disable afpd logging set at build-time from
+          file-logging.</p><div class="example"><a id="idm2605"></a><p class="title"><strong>Example 5.9. Disable afpd logging set at build-time from
             configure</strong></p><div class="example-contents"><pre class="programlisting">- -unsetuplog "default -"
-</pre></div></div><br class="example-break" /></dd></dl></div></div><div class="refsect1"><a id="idm2589"></a><h2>Debug Options</h2><p>These options are useful for debugging only.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">-tickleval <em class="replaceable"><code>[number]</code></em></span></dt><dd><p>Sets the tickle timeout interval (in seconds). Defaults to
+</pre></div></div><br class="example-break" /></dd></dl></div></div><div class="refsect1"><a id="idm2608"></a><h2>Debug Options</h2><p>These options are useful for debugging only.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">-tickleval <em class="replaceable"><code>[number]</code></em></span></dt><dd><p>Sets the tickle timeout interval (in seconds). Defaults to
           30. A value of 0 disables session timer tickles.</p></dd><dt><span class="term">-timeout <em class="replaceable"><code>[number]</code></em></span></dt><dd><p>Specify the number of tickles to send before timing out a
           connection. The default is 4, therefore a connection will timeout
-          after 2 minutes.</p></dd></dl></div></div><div class="refsect1"><a id="idm2603"></a><h2>Examples</h2><div class="example"><a id="idm2605"></a><p class="title"><strong>Example 5.10. afpd.conf MacCyrillic setup / UTF8 unix locale</strong></p><div class="example-contents"><pre class="programlisting">- -maccodepage mac_cyrillic -unixcodepage utf8</pre></div></div><br class="example-break" /><div class="example"><a id="idm2608"></a><p class="title"><strong>Example 5.11. afpd.conf setup for Kerberos V auth with newline escaping</strong></p><div class="example-contents"><pre class="programlisting">- -uamlist uams_dhx.so,uams_dhx2.so,uams_guest.so,uams_gss.so \ 
+          after 2 minutes.</p></dd></dl></div></div><div class="refsect1"><a id="idm2622"></a><h2>Examples</h2><div class="example"><a id="idm2624"></a><p class="title"><strong>Example 5.10. afpd.conf MacCyrillic setup / UTF8 unix locale</strong></p><div class="example-contents"><pre class="programlisting">- -maccodepage mac_cyrillic -unixcodepage utf8</pre></div></div><br class="example-break" /><div class="example"><a id="idm2627"></a><p class="title"><strong>Example 5.11. afpd.conf setup for Kerberos V auth with newline escaping</strong></p><div class="example-contents"><pre class="programlisting">- -uamlist uams_dhx.so,uams_dhx2.so,uams_guest.so,uams_gss.so \ 
 -k5service afpserver -k5keytab /path/to/afpserver.keytab \ 
--k5realm YOUR.REALM -fqdn your.fqdn.namel:548</pre></div></div><br class="example-break" /><div class="example"><a id="idm2611"></a><p class="title"><strong>Example 5.12. afpd.conf letting afpd appear as three servers on the net</strong></p><div class="example-contents"><pre class="programlisting">"Guest Server" -uamlist uams_guest.so -loginmesg "Welcome guest!"
+-k5realm YOUR.REALM -fqdn your.fqdn.namel:548</pre></div></div><br class="example-break" /><div class="example"><a id="idm2630"></a><p class="title"><strong>Example 5.12. afpd.conf letting afpd appear as three servers on the net</strong></p><div class="example-contents"><pre class="programlisting">"Guest Server" -uamlist uams_guest.so -loginmesg "Welcome guest!"
 "User Server" -uamlist uams_dhx2.so -port 12000
-"special" -ddp -notcp -defaultvol &lt;path&gt; -systemvol &lt;path&gt;</pre></div></div><br class="example-break" /></div><div class="refsect1"><a id="idm2614"></a><h2>See also</h2><p><span class="citerefentry"><span class="refentrytitle">afpd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">afppasswd</span>(1)</span>, <span class="citerefentry"><span class="refentrytitle">AppleVolumes.default</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">afp_signature.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">cnid_metad</span>(8)</span></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="afpd.8.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="afpldaptest.1.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">afpd </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> afpldaptest</td></tr></table></div></body></html>
+"special" -ddp -notcp -defaultvol &lt;path&gt; -systemvol &lt;path&gt;</pre></div></div><br class="example-break" /></div><div class="refsect1"><a id="idm2633"></a><h2>See also</h2><p><span class="citerefentry"><span class="refentrytitle">afpd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">afppasswd</span>(1)</span>, <span class="citerefentry"><span class="refentrytitle">AppleVolumes.default</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">afp_signature.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">cnid_metad</span>(8)</span></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="afpd.8.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="afpldaptest.1.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">afpd </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> afpldaptest</td></tr></table></div></body>
+</html>
