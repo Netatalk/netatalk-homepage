@@ -117,6 +117,16 @@
 
 <hr />
   <h1>Latest News</h1>
+<hr />
+    <small>31st of Mars 2024</small>
+    <h2>Netatalk 2.3.2 is available</h2>
+    <p>The Netatalk development team is proud to announce version 2.3.2 of
+    the Netatalk File Sharing suite. This release comes with improvements for
+    AppleTalk and pap, as well as native init scripts for modern
+    macOS. All users of previous Netatalk v2 releases are
+    encouraged to upgrade their installations to 2.3.2.</p>
+    <p>For a summary of news and a detailed list of changes see the
+    <a href="/2.3/ReleaseNotes2.3.2.html">Release Notes</a>.</p>
 
 <hr />
   <small>3rd of February 2024</small>
@@ -140,29 +150,6 @@
   <p>For more information, see the
   <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-0.3">Release Notes</a>.
   </p>
-
-<hr />
-  <small>28th of December 2023</small>
-  <h2>Netatalk 2.3.0 is available</h2>
-  <p>The Netatalk development team is proud to announce version 2.3.0 of
-  the Netatalk File Sharing suite. This is the first stable release of the
-  new 2.3 series. Early adopters are encouraged to upgrade their systems
-  to 2.3.0.</p>
-  <p>The theme for this release is security and code quality. Long-obsoleted
-  features have been removed, bugs have been fixed, and documentation improved.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/2.3/ReleaseNotes2.3.0.html">Release Notes</a>.</p>
-
-<hr />
-  <small>5th of October 2023</small>
-  <h2>Netatalk 3.1.18 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 3.1 release series. It includes a patch for security issue
-  <a href="CVE-2022-22995.html">CVE-2022-22995</a>.
-  All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.18.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/3.1/ReleaseNotes3.1.18.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>

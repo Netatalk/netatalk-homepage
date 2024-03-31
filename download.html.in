@@ -23,17 +23,17 @@
 <h5>Netatalk 2.x</h5>
 <ul>
     <li>
-        <a href="https://sourceforge.net/projects/netatalk/files/netatalk-2-3-1/netatalk-2.3.1.tar.xz/download">
-            Download Netatalk 2.3.1 (xz compressed)
+        <a href="https://sourceforge.net/projects/netatalk/files/netatalk-2-3-2/netatalk-2.3.2.tar.xz/download">
+            Download Netatalk 2.3.2 (xz compressed)
         </a>
     </li>
     <li>
-        <a href="https://sourceforge.net/projects/netatalk/files/netatalk-2-3-1/netatalk-2.3.1.tar.bz2/download">
-            Download Netatalk 2.3.1 (bzip2 compressed)
+        <a href="https://sourceforge.net/projects/netatalk/files/netatalk-2-3-2/netatalk-2.3.2.tar.bz2/download">
+            Download Netatalk 2.3.2 (bzip2 compressed)
         </a>
     </li>
     <li>
-        <a href="/2.3/ReleaseNotes2.3.1.html">
+        <a href="/2.3/ReleaseNotes2.3.2.html">
             Release Notes
         </a>
     </li>

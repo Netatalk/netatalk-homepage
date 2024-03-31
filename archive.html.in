@@ -2,6 +2,18 @@
   <h1>News Archive</h1>
 
 <hr />
+  <small>28th of December 2023</small>
+  <h2>Netatalk 2.3.0 is available</h2>
+  <p>The Netatalk development team is proud to announce version 2.3.0 of
+  the Netatalk File Sharing suite. This is the first stable release of the
+  new 2.3 series. Early adopters are encouraged to upgrade their systems
+  to 2.3.0.</p>
+  <p>The theme for this release is security and code quality. Long-obsoleted
+  features have been removed, bugs have been fixed, and documentation improved.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/2.3/ReleaseNotes2.3.0.html">Release Notes</a>.</p>
+
+<hr />
   <small>6th of January 2024</small>
   <h2>Netatalk 2 Webmin Module 1.1 Released</h2>
 
@@ -10,6 +22,17 @@
   <p>For more information, see the
   <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.1">Release Notes</a>.
   </p>
+
+<hr />
+  <small>5th of October 2023</small>
+  <h2>Netatalk 3.1.18 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 3.1 release series. It includes a patch for security issue
+  <a href="CVE-2022-22995.html">CVE-2022-22995</a>.
+  All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.18.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/3.1/ReleaseNotes3.1.18.html">Release Notes</a>.</p>
 
 <hr />
   <small>22nd of September 2023</small>
