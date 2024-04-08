@@ -46,24 +46,26 @@
 <li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
 <li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
 <li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
-<li><a class="wikilink" href="/docs/Installation-Notes.html">Installation Notes</a></li>
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
 <li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
 <p>Netatalk v3 Installation</p>
 <ul>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora.html">Installing Netatalk 3 on Fedora</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris-10.html">Installing Netatalk 3 on Solaris 10</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
 </ul>
 <p>Netatalk v2 Installation</p>
 <ul>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Alpine-Linux.html">Installing Netatalk 2 on Alpine Linux</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian.html">Installing Netatalk 2 on Debian</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora.html">Installing Netatalk 2 on Fedora</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-NetBSD.html">Installing Netatalk 2 on NetBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
 </ul>
 <p>Technical Docs</p>
@@ -150,6 +152,15 @@ $ make dist-bzip2
 <p>Commit updates to the html manual to the <a href="https://github.com/Netatalk/netatalk-homepage">netatalk-homepage</a> repository, generate html release notes, and author other release updates to the homepage.</p>
 </li>
 </ul>
+<h3>Versioning Scheme</h3>
+<p>This project uses a custom variant of <a href="https://semver.org/">Semantic Versioning</a>.</p>
+<p>Given a version number <strong>MAJOR.MINOR.PATCH</strong>, increment the:</p>
+<ol>
+<li><strong>MAJOR</strong> version when you make incompatible API changes</li>
+<li><strong>MINOR</strong> version when you add functionality, deprecate unused functionality, or introduce changes that require modification to configuration in existing deployment</li>
+<li><strong>PATCH</strong> version when you make backward compatible bug fixes, or add minor functionality</li>
+</ol>
+<p>Historically, this project has used <strong>alpha</strong> and <strong>beta</strong> suffices for early major and minor releases, but this is not a practice at the time of writing.</p>
 <h2>Docker</h2>
 <p>Build and publish netatalk Docker images.</p>
 <h3>Environment Preparation</h3>
@@ -174,8 +185,12 @@ $ make dist-bzip2
 <pre><code>docker login -u yourusername
 </code></pre>
 <ol>
-<li>Cross compile Docker images with docker buildx, and push to the Docker Hub container registry.
-Tag both &ldquo;latest&rdquo; as well as the current release version, e.g. &ldquo;3.2.0&rdquo;.</li>
+<li>
+<p>Cross compile Docker images with docker buildx, and push to the Docker Hub container registry. We currently cross compile for 32bit/64bit x86, and 32bit/64bit ARM.</p>
+</li>
+<li>
+<p>Tag both &ldquo;latest&rdquo; as well as the current release version, e.g. &ldquo;3.2.0&rdquo;.</p>
+</li>
 </ol>
 <pre><code>docker buildx build --push --platform=linux/386,linux/amd64,linux/arm/v6,linux/arm64 . -t netatalk/netatalk3:latest -t netatalk/netatalk3:3.2.0
 </code></pre>
@@ -187,7 +202,7 @@ Tag both &ldquo;latest&rdquo; as well as the current release version, e.g. &ldqu
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Release-Process">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-03-25</p>
+    <p>Last updated 2024-04-08</p>
     <hr />
     </div>
 <div class="footer">

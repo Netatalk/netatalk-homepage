@@ -46,24 +46,26 @@
 <li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
 <li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
 <li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
-<li><a class="wikilink" href="/docs/Installation-Notes.html">Installation Notes</a></li>
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
 <li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
 <p>Netatalk v3 Installation</p>
 <ul>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora.html">Installing Netatalk 3 on Fedora</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris-10.html">Installing Netatalk 3 on Solaris 10</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
 </ul>
 <p>Netatalk v2 Installation</p>
 <ul>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Alpine-Linux.html">Installing Netatalk 2 on Alpine Linux</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian.html">Installing Netatalk 2 on Debian</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora.html">Installing Netatalk 2 on Fedora</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-NetBSD.html">Installing Netatalk 2 on NetBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
 </ul>
 <p>Technical Docs</p>
@@ -88,7 +90,7 @@
 <p>This page contains notes on configuring and installing Netatalk on <a href="https://omnios.org">OmniOS Community Edition</a>; specific version used for this article was r151044. </p>
 <h1>Prepare environment</h1>
 <p>A git client as well as the autotools, gcc compiler and Berkeley DB are needed.</p>
-<pre><code>pkg install git libtool automake gcc7 bdb
+<pre><code>pkg install git libtool automake gcc7 bdb pkg-config
 </code></pre>
 <h1>Configure and compile</h1>
 <p>Here we assume a bootstrapped tarball release is used, so we skip the bootstrap step</p>
@@ -97,30 +99,20 @@ make all
 make install
 </code></pre>
 <h1>PAM support</h1>
-<p>TODO: Configuration in <code>/etc/pam.conf</code> is required</p>
-<h1>[2.2] AppleTalk kernel module</h1>
-<p>The AppleTalk kernel module code is located in <code>sys/solaris</code> and should be built by make by default on a Solaris derived OS.</p>
-<p>To install the kernel, do as root:</p>
-<pre><code>cd sys/solaris
-make kinstall
-</code></pre>
-<p>TODO: The Makefile is hard coded for SPARC architecture. To figure out how to get it work with x86/amd64 systems.</p>
+<p>OmniOS uses an old-school PAM configuration, so manual modification of <code>/etc/pam.conf</code> is required</p>
+<p>See one example in https://www.marzocchi.net/Olafsen/Software/NetatalkWithPAMIntegration?setview=en</p>
 <h1>Controlling the Netatalk service</h1>
 <p>Use the init script in <code>/etc/rc2.d/S90netatalk</code> to control the Netatalk service.</p>
 <p>Ex.</p>
 <pre><code>sudo /etc/rc2.d/S90netatalk start
 sudo /etc/rc2.d/S90netatalk stop
-</code></pre>
-<h1>Links</h1>
-<ul>
-<li><a href="https://www.adamretter.org.uk/blog.xql?tag=AFP">Installation Guide for OpenIndiana</a></li>
-</ul><hr />
+</code></pre><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-OmniOS">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-03-25</p>
+    <p>Last updated 2024-04-08</p>
     <hr />
     </div>
 <div class="footer">

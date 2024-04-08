@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Release Notes - 3.1.17</title>
+    <title>Netatalk Release Notes - 2.3.2</title>
     <meta name="description" content="Netatalk Release Notes">
-    <link rel="canonical" href="https://netatalk.io/3.1/ReleaseNotes3.1.17.html">
+    <link rel="canonical" href="https://netatalk.io/2.3/ReleaseNotes2.3.2.html">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -131,21 +131,38 @@
   </div>
 </div>
 <div id="content">
-<h1>Netatalk 3.1.17</h1><hr />
-<p>Netatalk 3.1.17 is available!</p>
-<p>The Netatalk development team is proud to announce the latest release of the Netatalk 3.1 release series. Users are encouraged to update their servers to the 3.1 release series which is the stable and supported version for production systems.</p>
+<h1>Netatalk 2.3.2</h1><hr />
+<p>Netatalk 2.3.2 is available!</p>
+<p>The Netatalk development team is proud to announce a new release of the Netatalk 2 release series, notable for maintaining support for AppleTalk clients.</p>
+<h2>New Features</h2>
+<p>A Dockerfile and container entry script have been added which allows you to run Netatalk 2 containerized. AppleTalk networking is supported if the host OS has an AppleTalk network stack. Either build a Docker image yourself from the code, or pull a pre-built image from <a href="https://hub.docker.com/r/netatalk/netatalk2">Docker Hub</a>.</p>
+<p>A macOS style launchd configuration file and <code>netatalkd</code> helper script has been added. Build it by configuring the build system with the <code>--enable-macos</code> parameter. Using these allows you to bypass recent limitations in macOS Sonoma that prevents forking daemons to run.</p>
+<p>Netatalk&rsquo;s <code>pap</code> is now able to print to an <em>ImageWriter II</em> or <em>LQ</em> connected to the LocalTalk network, with <code>papstatus</code> providing more status information for this line of Apple printers.</p>
 <h2>What&rsquo;s Changed</h2>
 <ul>
-<li>FIX: CVE-2023-42464: Validate data type in dalloc_value_for_key(), <a href='https://github.com/Netatalk/netatalk/issues/486'>GitHub #486</a></li>
-<li>FIX: Declare a variable before using it in a loop,
-       which was throwing off the default compiler on RHEL7, <a href='https://github.com/Netatalk/netatalk/issues/481'>GitHub #481</a></li>
-<li>UPD: Distribute tarballs with xz compression by default, instead of gzip, <a href='https://github.com/Netatalk/netatalk/issues/478'>GitHub #478</a></li>
-<li>UPD: Add AUTHOR sections to all man pages with a reference to CONTRIBUTORS,
-       and standardize headers and footers, <a href='https://github.com/Netatalk/netatalk/issues/462'>GitHub #462</a></li>
+<li>[2.3] Create Dockerfile and entry point by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/704'>https://github.com/Netatalk/netatalk/pull/704</a></li>
+<li>[2.3] Remove binary logo images from revision control by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/717'>https://github.com/Netatalk/netatalk/pull/717</a></li>
+<li>[2.3] Docker: Unprivileged build; expose ports and volume by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/714'>https://github.com/Netatalk/netatalk/pull/714</a></li>
+<li>[2.3] Docker: Check for mandatory env variables; more configurability by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/721'>https://github.com/Netatalk/netatalk/pull/721</a></li>
+<li>[2.3] atalkd: Bail out when attempting to -seed a single interface by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/720'>https://github.com/Netatalk/netatalk/pull/720</a></li>
+<li>[2.3] pap,papstatus:  changes to allow Imagewriters to print, and nicer status messages by @nutzman in <a href='https://github.com/Netatalk/netatalk/pull/722'>https://github.com/Netatalk/netatalk/pull/722</a></li>
+<li>[2.3] docs: Correct descriptions for afpd -D and -T options by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/727'>https://github.com/Netatalk/netatalk/pull/727</a></li>
+<li>[2.3] Clean up residual CVS commit headers by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/734'>https://github.com/Netatalk/netatalk/pull/734</a></li>
+<li>[2.3] docs: Improve man page summaries by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/733'>https://github.com/Netatalk/netatalk/pull/733</a></li>
+<li>[2.3] docs: Print netatalk version as subtitle, and header on each html page by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/741'>https://github.com/Netatalk/netatalk/pull/741</a></li>
+<li>[2.3] docs: manual XML source improvements, backported from main by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/753'>https://github.com/Netatalk/netatalk/pull/753</a></li>
+<li>[2.3] Create init scripts for macOS  by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/757'>https://github.com/Netatalk/netatalk/pull/757</a></li>
+<li>[2.3] Detect system docbook stylesheets at configure time by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/763'>https://github.com/Netatalk/netatalk/pull/763</a></li>
+<li>[2.3] docker: Check for atalkd interface before starting atalkd daemons by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/769'>https://github.com/Netatalk/netatalk/pull/769</a></li>
+<li>[2.3] Rename launchd plist to io.netatalk* and sort file names by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/765'>https://github.com/Netatalk/netatalk/pull/765</a></li>
 </ul>
-<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-1-16&hellip;netatalk-3-1-17'>https://github.com/Netatalk/netatalk/compare/netatalk-3-1-16&hellip;netatalk-3-1-17</a></p><hr />
-<p>Release published on 2023-09-16</p>
-<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-17">GitHub</a></p>
+<h2>New Contributors</h2>
+<ul>
+<li>@nutzman made their first contribution in <a href='https://github.com/Netatalk/netatalk/pull/722'>https://github.com/Netatalk/netatalk/pull/722</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-2-3-1&hellip;netatalk-2-3-2'>https://github.com/Netatalk/netatalk/compare/netatalk-2-3-1&hellip;netatalk-2-3-2</a></p><hr />
+<p>Release published on 2024-03-31</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-3-2">GitHub</a></p>
 <hr />
 </div>
 <div class="footer">
