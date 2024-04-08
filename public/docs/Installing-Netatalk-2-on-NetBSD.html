@@ -88,16 +88,18 @@
 <div id="content">
 <h1 id="Installing-Netatalk-2-on-NetBSD">Installing Netatalk 2 on NetBSD</h1><hr/>
 <p>NetBSD is one out of a handful of distributions that still actively maintain an AppleTalk kernel module.</p>
-<p>Additionally, it has an up-to-date Netatalk 2.x package in its package repository:</p>
-<p>https://pkgsrc.se/net/netatalk22</p>
+<p>Additionally, it has an up-to-date <a href="https://pkgsrc.se/net/netatalk22">Netatalk 2.x package</a> in the pkgsrc repository that works out of the box.</p>
 <h1>Required packages</h1>
-<p>Before starting, make sure you have a working pgksrc environment: http://www.netbsd.org/docs/misc/index.html#package-management</p>
+<p>Before starting, make sure you have a <a href="http://www.netbsd.org/docs/misc/index.html#package-management">working pkgsrc environment</a>. </p>
 <p>Install the packages that netatalk22 depends on:</p>
 <pre><code>pkg_add git mozilla-rootcerts-openssl gcc13 autoconf automake libtool pkg-config db5 libgcrypt libressl gmake cups cracklib
 </code></pre>
 <p>Install netatalk22 itself:</p>
 <pre><code>pkg_add netatalk22
-</code></pre><hr />
+</code></pre>
+<h1>Configuration</h1>
+<p>When building netatalk from source code, make sure to enable the NetBSD init script with <code>--enable-netbsd</code> or equivalent.</p>
+<p>Once installed, you can control the netatalk service as <a href="https://www.netbsd.org/docs/guide/en/chap-rc.html">any other NetBSD service</a>.</p><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-NetBSD">visit the original page</a>

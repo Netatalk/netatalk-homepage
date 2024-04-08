@@ -88,24 +88,36 @@
 <div id="content">
 <h1 id="Installing-Netatalk-2-on-macOS">Installing Netatalk 2 on macOS</h1><hr/>
 <p>Apple started to switch from AFP to SMB file sharing from Mavericks (10.9) onwards. The built-in afp server was finally removed in Big Sur (11.0) so Netatalk comes in useful if you have a modern Intel or Apple Silicon Mac and wish to share files with a vintage Mac such as a PowerMac G3 or G4 running classic Mac OS 9.</p>
-<p>When installing Netatalk 2.2 on Macs running Mojave (10.14) onwards the dependencies are easily installed using Homebrew. To install <a href="https://brew.sh">Homebrew</a>,  open Terminal and paste the following:</p>
+<p>When installing Netatalk 2.3 on Macs running Mojave (10.14) onwards the dependencies are easily installed using Homebrew. To install <a href="https://brew.sh">Homebrew</a>,  open Terminal and paste the following:</p>
 <p><code>/bin/bash -c "$(curl -fsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></p>
-<p><strong>Then install the dependencies:</strong></p>
+<h2>Install the dependencies</h2>
 <p><code>brew install berkeley-db libtool automake autoconf libevent libgcrypt mysql openssl@1.1 libressl pkg-config</code></p>
-<p><strong>Then clone the Netatalk repository, checkout the 2.3 branch and cd to that folder:</strong></p>
+<h2>Clone the Netatalk repository</h2>
+<p>Checkout the 2.3 branch and cd to that folder:</p>
 <p><code>git clone https://github.com/Netatalk/netatalk.git</code></p>
-<p><code>git checkout branch-netatalk-2.3</code></p>
+<p><code>git checkout branch-netatalk-2-3</code></p>
 <p><code>cd /path/to/netatalk/clone</code></p>
-<p><strong>The paths for your SSL and BDB installations can be found by typing:</strong></p>
+<h3>The paths for your SSL and BDB installations can be found by typing</h3>
 <p><code>brew --prefix berkeley-db</code></p>
 <p><code>brew --prefix openssl@1.1</code> or <code>brew --prefix libressl</code></p>
-<p><strong>To compile run the following commands:</strong></p>
+<h2>Compile and run</h2>
 <p><code>./bootstrap</code></p>
 <p><code>./configure --disable-ddp --with-ssl-dir=/path/to/openssl/installation --with-bdb=/path/to/bdb/installation</code></p>
 <p><code>make</code></p>
 <p>Note: The <code>--disable-ddp</code> flag is required, since macOS doesn&rsquo;t have an AppleTalk network stack at the time of writing.</p>
-<p><strong>To install:</strong></p>
-<p><code>sudo make install</code></p><hr />
+<h2>Install</h2>
+<p><code>sudo make install</code></p>
+<h2>Enable the launchd daemon</h2>
+<pre><code>sudo launchctl enable system/io.netatalk.daemon
+launchctl start netatalk
+</code></pre>
+<p>Underneath the hood we use a controller script called <code>netatalkd</code> that sets up the required environment.</p>
+<p>To start netatalk daemons:</p>
+<pre><code>sudo netatalkd start
+</code></pre>
+<p>To stop netatalk daemons:</p>
+<pre><code>sudo netatalkd stop
+</code></pre><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-macOS">visit the original page</a>
