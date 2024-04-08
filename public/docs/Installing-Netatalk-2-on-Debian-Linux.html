@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Wiki - Installing Netatalk 2 on Debian Linux</title>
+    <meta name="description" content="Netatalk Wiki">
+    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-2-on-Debian-Linux">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
+</head>
+<body>
+<div id="header">
+    <div id="logo"></div>
+    <div id="menlinks">
+        <a href="/" title="Return to Netatalk home">[main]</a>
+        <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+        <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
+        <a href="/download.html" title="Download Netatalk">[downloads]</a>
+        <a href="/support.html" title="Support">[support]</a>
+        <a href="/links.html" title="Netatalk related links">[links]</a>
+        <img src="/gfx/end.gif" alt="" width="125" height="7" />
+    </div>
+</div>
+
+<div id="header-print">
+    <h1>netatalk.io</h1>
+</div>
+
+<div class="search">
+    <h2>search netatalk.io</h2>
+    <form method="get" action="https://www.google.com/search">
+        <p>
+            <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+            <input type="hidden" name="sitesearch" value="netatalk.io" />
+            <input type="submit" name="btnG" value="Go" title="search netatalk.io" />
+        </p>
+    </form>
+    <span class="italic">powered by Google</span>
+</div>
+
+<div id="navbars">
+<div class="navbar">
+<h2>Table of contents</h2>
+<p>Resources</p>
+<ul>
+<li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
+<li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
+<li><a class="wikilink" href="/docs/Connect-to-AFP-Server.html">Connect to AFP Server</a></li>
+<li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
+<li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
+</ul>
+<p>Netatalk v3 Installation</p>
+<ul>
+<li>[[Installing on Fedora Linux|Installing Netatalk 3 on Fedora Linux]]</li>
+<li>[[Installing on FreeBSD|Installing Netatalk 3 on FreeBSD]]</li>
+<li>[[Installing on macOS|Installing Netatalk 3 on macOS]]</li>
+<li>[[Installing on Solaris|Installing Netatalk 3 on Solaris]]</li>
+<li>[[Installing on OpenIndiana|Installing Netatalk 3 on OpenIndiana]]</li>
+<li>[[Installing on OpenSUSE|Installing Netatalk 3 on OpenSUSE]]</li>
+<li>[[Installing on Ubuntu|Installing Netatalk 3 on Ubuntu]]</li>
+</ul>
+<p>Netatalk v2 Installation</p>
+<ul>
+<li>[[Installing on Alpine Linux|Installing Netatalk 2 on Alpine Linux]]</li>
+<li>[[Installing on Debian GNU/Linux|Installing Netatalk 2 on Debian Linux]]</li>
+<li>[[Installing on Fedora Linux|Installing Netatalk 2 on Fedora Linux]]</li>
+<li>[[Installing on macOS|Installing Netatalk 2 on macOS]]</li>
+<li>[[Installing on NetBSD|Installing Netatalk 2 on NetBSD]]</li>
+<li>[[Installing on OmniOS|Installing Netatalk 2 on OmniOS]]</li>
+</ul>
+<p>Technical Docs</p>
+<ul>
+<li><a class="wikilink" href="/docs/CatalogSearch.html">CatalogSearch</a></li>
+<li><a class="wikilink" href="/docs/Kerberos.html">Kerberos</a></li>
+<li><a class="wikilink" href="/docs/Special-Files-and-Folders.html">Special Files and Folders</a></li>
+<li><a class="wikilink" href="/docs/Spotlight.html">Spotlight</a></li>
+<li><a class="wikilink" href="/docs/AppleTalk-Kernel-Module.html">AppleTalk Kernel Module</a></li>
+<li><a class="wikilink" href="/docs/Print-Server.html">Print Server</a></li>
+</ul>
+<p>Development</p>
+<ul>
+<li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
+<li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+<li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+</ul>
+<p><a href="https://netatalk.io/docs"><img src="https://netatalk.io/gfx/daemon.gif" alt="Netatalk Logo"/></a></p>
+</div></div>
+<div id="content">
+<h1 id="Installing-Netatalk-2-on-Debian-Linux">Installing Netatalk 2 on Debian Linux</h1><hr/>
+<h1>Installation</h1>
+<p>Install required packages with the package manager of your choice:</p>
+<pre><code>$ sudo apt install \
+    autoconf \
+    automake \
+    docbook-xsl \
+    libacl1-dev \
+    libavahi-client-dev \
+    libcrack2-dev \
+    libcups2-dev \
+    libdb-dev \
+    libgcrypt-dev \
+    libkrb5-dev \
+    libldap2-dev \
+    libltdl-dev \
+    libpam0g-dev \
+    libssl-dev \
+    libtirpc-dev \
+    libtool \
+    libtool-bin \
+    libwrap0-dev \
+    quota \
+    tcpd
+</code></pre>
+<ul>
+<li>libcups2-dev is required for CUPS support. If you don&rsquo;t need an
+    AppleTalk printer server, you can omit this.</li>
+<li>libavahi-client-dev is required for zeroconf support, which Mac OS X
+    / macOS uses for service discovery. (Classic Mac OS uses built-in
+    AppleTalk service discovery.)</li>
+<li>libgcrypt20-dev is needed to compile the dhx2 UAM, which later Mac
+    OS X / macOS versions require.</li>
+</ul>
+<p>Get the latest release tarball of Netatalk 2, or clone the netatalk git
+repository and check out the latest bleeding-edge Netatalk 2 branch.</p>
+<p>If you chose the latter option, you need to first bootstrap the build
+system with autoconf to generate the configure script:</p>
+<pre><code>$ git clone https://github.com/Netatalk/netatalk.git -b branch-netatalk-2-3 netatalk2
+$ ./bootstrap
+</code></pre>
+<p>Run the configure script with the following parameters, then compile and
+install the software:</p>
+<pre><code>$ ./configure --enable-systemd --sysconfdir=/etc --with-uams-path=/usr/lib/netatalk
+$ make all
+$ sudo make install
+</code></pre>
+<p>If this process finishes without errors, you should now have the
+Netatalk software installed on your system. The next step is to tweak
+the configuration.</p>
+<p>First off, decide on the directory(ies) that you want to share, as well
+as the user that you want sharing them. You will need the Linux username
+and password of the user to access the shared directories, and due to
+limitations of classic Mac OS the password cannot be longer than 8
+characters.</p>
+<p>The following example uses the a user called &ldquo;pi&rdquo;, a single shared
+directory, and a single routerless AppleTalk network without Zones.</p>
+<pre><code>$ mkdir ~/afpshare $ chmod 2775 ~/afpshare
+</code></pre>
+<p>Edit the following configuration files:</p>
+<pre><code>$ sudo pico /etc/netatalk/AppleVolumes.default
+</code></pre>
+<p>At the bottom of the file, add this line:</p>
+<pre><code>/home/pi/afpshare &quot;File Server&quot;
+</code></pre>
+<p>Tip: You can append <code>adouble:v1 volcharset:ASCII</code> if you are having
+issues with very old versions of Mac OS.</p>
+<p>Next file to edit:</p>
+<pre><code>$ sudo pico /etc/netatalk/afpd.conf
+</code></pre>
+<p>Add this to the bottom of the file:</p>
+<pre><code>- -transall -uamlist uams_guest.so,uams_clrtxt.so,uams_dhx2.so -nosavepassword
+</code></pre>
+<p>You may customize the <code>-uamlist</code> option to disable and enable various
+authentication methods. For instance, remove uams_guest.so if you want
+to disallow guest access.</p>
+<p>Note that the <code>-nosavepassword</code> is for additional security, and you may
+opt omit this if you&rsquo;re on a private network.</p>
+<p>If your Mac OS system is using a codepage different from MAC_ROMAN, e.g.
+MAC_CYRILLIC, you can specify this in <code>-maccodepage</code>. See the afpd.conf
+documentation for more info. Similarly, if your host system uses a
+different codepage than UTF-8, you can specify that with
+<code>-unixcodepage</code>.</p>
+<p>For troubleshooting, append something like this:</p>
+<pre><code>-setuplog &quot;default log_maxdebug /var/log/afpd.log&quot;
+</code></pre>
+<p>See the man page for &lsquo;afpd.conf&rsquo; for a breakdown of all of the options
+available.</p>
+<p>(Optional - Netatalk will autodetect the network in most cases) Finally,
+edit this file:</p>
+<pre><code>$ sudo pico /etc/netatalk/atalkd.conf
+</code></pre>
+<p>Specify the interface you want Netatalk to use by adding this to the
+bottom of the file using eth0 as an example:</p>
+<pre><code>eth0
+</code></pre>
+<p>If you are running into issues connecting to your File Server, you can
+try to change this line to:</p>
+<pre><code>eth0 -phase 2 -net 0-65534 -addr 65280.163
+</code></pre>
+<h2>AppleTalk Support in Kernel</h2>
+<p>In order to use AppleShare / AFP over AppleTalk (DDP) the Linux system
+must have an AppleTalk networking stack. Luckily, Debian&rsquo;s Linux kernel
+comes with a module called &ldquo;appletalk&rdquo;, which provides this
+functionality. Without an AppleTalk networking stack, you will only be
+able to use Netatalk with TCP.</p>
+<p>To check if your kernel has AppleTalk support, issue this command and
+inspect the output:</p>
+<pre><code>$ lsmod | grep appletalk
+</code></pre>
+<p>If the module isn&rsquo;t detected, try launching <strong>atalkd</strong> first and try
+again. If <strong>atalkd</strong> errors out complaining about &ldquo;Address family not
+supported by protocol&rdquo;, you may have to try another version of Linux, or
+compile the Linux kernel yourself. There are guides elsewhere on this
+topic that you can follow.</p>
+<h1>Using Netatalk</h1>
+<p>At this point, you should be able to run the Netatalk daemons on your
+system.</p>
+<pre><code>$ sudo systemctl enable atalkd.service afpd.service cnid.service
+$ sudo systemctl start atalkd.service afpd.service cnid.service
+</code></pre>
+<p>Optional services:</p>
+<pre><code>$ sudo systemctl enable papd.service timelord.service a2boot.service
+$ sudo systemctl start papd.service timelord.service a2boot.service
+</code></pre><hr />
+    <p>
+        This is a mirror of the Netatalk GitHub Wiki.
+        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-Debian-Linux">visit the original page</a>
+        if you want to correct an error or contribute new contents.
+    </p>
+    <p>Last updated 2024-04-08</p>
+    <hr />
+    </div>
+<div class="footer">
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a>
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+</div>
+</body>
+</html>
+

@@ -19,8 +19,8 @@
     <priority>1.0</priority>
 </url>
 <url>
-    <loc>https://netatalk.io/docs/Connect-to-AFP-Server-from-Mac-clients.html</loc>
-    <lastmod>2024-02-08</lastmod>
+    <loc>https://netatalk.io/docs/Connect-to-AFP-Server.html</loc>
+    <lastmod>2024-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -55,14 +55,14 @@
     <priority>1.0</priority>
 </url>
 <url>
-    <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Debian.html</loc>
-    <lastmod>2024-03-14</lastmod>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Debian-Linux.html</loc>
+    <lastmod>2024-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
-    <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Fedora.html</loc>
-    <lastmod>2024-01-13</lastmod>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Fedora-Linux.html</loc>
+    <lastmod>2024-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -85,7 +85,7 @@
     <priority>1.0</priority>
 </url>
 <url>
-    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-Fedora.html</loc>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-Fedora-Linux.html</loc>
     <lastmod>2024-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>

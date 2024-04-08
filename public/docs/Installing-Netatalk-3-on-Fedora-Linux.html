@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Wiki - Installing Netatalk 3 on OpenIndiana</title>
+    <title>Netatalk Wiki - Installing Netatalk 3 on Fedora Linux</title>
     <meta name="description" content="Netatalk Wiki">
-    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-3-on-OpenIndiana">
+    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-3-on-Fedora-Linux">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -86,41 +86,62 @@
 <p><a href="https://netatalk.io/docs"><img src="https://netatalk.io/gfx/daemon.gif" alt="Netatalk Logo"/></a></p>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-3-on-OpenIndiana">Installing Netatalk 3 on OpenIndiana</h1><hr/>
-<p>This article describes how to install Netatalk 3.1 on OpenIndiana
-Hipster</p>
-<h2>Update system and install compiler toolchain</h2>
-<pre><code>$ sudo pfexec pkg image-update
-$ sudo pkg install build-essential crackle
-</code></pre>
-<h2>Build and install libtalloc</h2>
-<pre><code>$ wget https://www.samba.org/ftp/talloc/talloc-2.4.1.tar.gz
-$ tar xvzf talloc-2.4.1.tar.gz
-$ cd talloc-2.4.1
-$ ./configure CC=gcc
-$ make
-$ sudo make install
-</code></pre>
+<h1 id="Installing-Netatalk-3-on-Fedora-Linux">Installing Netatalk 3 on Fedora Linux</h1><hr/>
+<h1>Overview</h1>
+<p>This installation guide was originally written for Netatalk 3.2.0-devel
+on Fedora 39</p>
+<h2>Required Packages</h2>
+<p>Install the following packages by <code>dnf</code>.</p>
+<ul>
+<li><code>gcc</code></li>
+<li><code>libtool</code></li>
+<li><code>make</code></li>
+<li><code>automake</code></li>
+<li><code>libevent-devel</code> (used by netatalk(8))</li>
+<li><code>libdb-devel</code> (dbd CNID backend)</li>
+<li><code>libgcrypt-devel</code> (DHX2 auth)</li>
+<li><code>openssl-devel</code> or <code>libressl-devel</code> (DHX auth aka DHCAST128)</li>
+<li><code>krb5-devel</code> (Kerberos V auth)</li>
+<li><code>pam-devel</code> (PAM)</li>
+<li><code>avahi-devel</code> (Bonjour support)</li>
+<li><code>cracklib-devel</code> (password ckeck)</li>
+<li><code>libacl-devel</code> (ACL support)</li>
+<li><code>openldap-devel</code> (enhanced ACL support)</li>
+<li><code>dbus-devel</code> (used by afpstats command)</li>
+<li><code>dbus-glib-devel</code> (used by afpstats command)</li>
+<li><code>glib2-devel</code> (used by afpstats command)</li>
+<li><code>perl-IO-Socket-INET6</code> (used by asip-status command)</li>
+<li><code>perl-IO-Socket-IP</code> (used by asip-status command)</li>
+<li><code>systemtap-sdt-devel</code> (DTrace-compatible)</li>
+<li><code>tracker</code> (used for spotlight indexing)</li>
+<li><code>tracker-devel</code> (used for spotlight indexing)</li>
+<li><code>libtalloc-devel</code> (spotlight dependency)</li>
+</ul>
 <h2>Build</h2>
-<p>Extract a tarball.</p>
-<pre><code>$ tar xvf netatalk-3.1.8.tar.bz2
-$ cd netatalk-3.1.8
-</code></pre>
-<p>You should read the help message, in order to know configure options.</p>
+<p>Get the tarball from <a href="http://netatalk.sourceforge.net/">Netatalk Web
+Site</a> and extract it, or clone the git
+repo from GitHub.</p>
+<p>If cloned from git repo, run bootstrap to generate the build files.</p>
+<p><code>$ ./bootstrap</code></p>
+<p>You should read the configure help message, in order to know configure
+options.</p>
 <p>If the applicable libraries are installed, many options will be detected
 automatically.</p>
-<pre><code>$ ./configure --help
-</code></pre>
+<p><code>$ ./configure --help</code></p>
 <p>Do configure! The following options are not auto-detected.</p>
 <pre><code>$ ./configure \
-   PKG_CONFIG_PATH=/usr/local/lib/pkgconfig \
-   CFLAGS=-I/usr/include/gssapi \
-   --with-init-style=solaris \
+   --with-init-style=redhat-systemd \
+   --with-cracklib \
    --enable-krbV-uam \
-   --with-dbus-sysconf-dir=/etc/dbus-1/system.d \
    --with-pam-confdir=/etc/pam.d \
-   --with-tracker-plgconfig-version=1.0 \
-   --with-cracklib
+   --with-dbus-sysconf-dir=/etc/dbus-1/system.d \
+   --with-tracker-pkgconfig-version=3.0
+</code></pre>
+<p>The version 3.0 <code>--with-tracker-pkgconfig-version=3.0</code> must match the
+pkg-config version of the installed Tracker libraries. Use the following
+commands for finding the version info:</p>
+<pre><code>$ pkg-config --list-all | grep tracker
+...
 </code></pre>
 <p>On successful completion, you will see a report similar to the
 following:</p>
@@ -128,18 +149,15 @@ following:</p>
 
    CPPFLAGS       = -I$(top_srcdir)/include -I$(top_builddir)/include -I$(top_srcdir)
    CFLAGS         = -D_U_=&quot;__attribute__((unused))&quot; -g -O2
-   LIBS           = -lsendfile -lsocket -lnsl
+   LIBS           =  -lcrack
    PTHREADS:
-       LIBS   =
-       CFLAGS = -D_REENTRANT -pthreads
+       LIBS   = -lpthread
+       CFLAGS = -pthread
    TRACKER:
-       LIBS   =  -ltracker-sparql-1.0 -lgio-2.0 -lgobject-2.0 -lgmodule-2.0 -lglib-2.0
-       CFLAGS =  -DFFI_NO_RAW_API -pthread -I/usr/include/tracker-1.0
-                 -I/usr/include/tracker-1.0/libtracker-sparql
-                 -I/usr/lib/amd64/libffi-3.2.1/include -I/usr/include/glib-2.0
-                 -I/usr/lib/amd64/glib-2.0/include -I/usr/include/pcre
+       LIBS   = -ltracker-sparql-3.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0
+       CFLAGS = -I/usr/include/tracker-3.0 -I/usr/include/tracker-3.0/libtracker-sparql -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/gio-unix-2.0 -I/usr/include/json-glib-1.0 -I/usr/include/libxml2 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/sysprof-6 -pthread
    SSL:
-       LIBS   =  -lcrypto -R/usr/lib -R/usr
+       LIBS   =  -L/usr/lib64 -lcrypto
        CFLAGS =  -I/usr/include/openssl
    LIBGCRYPT:
        LIBS   = -lgcrypt -lgpg-error
@@ -148,14 +166,14 @@ following:</p>
        LIBS   =  -lpam
        CFLAGS =
    WRAP:
-       LIBS   = -lwrap
+       LIBS   =
        CFLAGS =
    BDB:
-       LIBS   =  -ldb-5.1 -R/usr/lib
+       LIBS   =  -L/usr/lib64 -ldb-5.3
        CFLAGS =
    GSSAPI:
-       LIBS   =  -L/usr/lib -lgss -lkrb5
-       CFLAGS =  -I/usr/include/kerberosv5
+       LIBS   = -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
+       CFLAGS =
    ZEROCONF:
        LIBS   =  -lavahi-common -lavahi-client
        CFLAGS =  -D_REENTRANT
@@ -163,22 +181,22 @@ following:</p>
        LIBS   =  -lldap
        CFLAGS =
    LIBEVENT:
-       LIBS.  =  -levent-2.1
-       CFLAGS =  -I/usr/include/libevent2
+       LIBS   = -levent
+       CFLAGS =
    TALLOC:
-       LIBS   =  -L/usr/local/lib -Wl, -rpath,/usr/local/lib -ltalloc
-       CFLAGS =  -I/usr/local/include`
+       LIBS   =
+       CFLAGS =
 
 Configure summary:
 
    INIT STYLE:
-        solaris
+        redhat-systemd
    AFP:
         Extended Attributes: ad | sys
         ACL support: yes
         Spotlight: yes
    CNID:
-        backends:  dbd last tdb
+        backends:  dbd last
    UAMS:
         DHX     (PAM SHADOW)
         DHX2    (PAM SHADOW)
@@ -188,9 +206,7 @@ Configure summary:
         guest
    Options:
         Zeroconf support:        yes
-        tcp wrapper support:     yes
-        quota support:           yes
-        admin group support:     yes
+        tcp wrapper support:     no
         valid shell check:       yes
         cracklib support:        yes
         ACL support:             auto
@@ -199,61 +215,26 @@ Configure summary:
         AFP stats via dbus:      yes
         dtrace probes:           yes
    Paths:
-        Netatalk lockfile:       /var/spool/locks/netatalk
-        init directory:          /lib/svc/manifest/network/
+        Netatalk lockfile:       /var/lock/netatalk
+        init directory:          /usr/lib/systemd/system
         dbus system directory:   /etc/dbus-1/system.d
-        dubs daemon path:        /bin/dbus-daemon
+        dbus daemon path:        /bin/dbus-daemon
         tracker prefix:          /usr
         tracker install prefix:  /usr
-        tracker manager:         /usr/bin/tracker daemon
+        tracker manager:         /usr/bin/tracker3 daemon
         pam config directory:    /etc/pam.d
    Documentation:
         Docbook:                 no
 </code></pre>
-<p>Docbook is only needed if you want to regenerate the manual from XML sources.</p>
-<p>The mysql CNID backend cannot be used. See <a href="http://marc.info/?l=netatalk&amp;m=139496475903793&amp;w=2">Netatalk-admins
-ML</a>.</p>
+<p>Docbook is not needed because it is for developers only, when
+regenerating documentation.</p>
 <p>Make and install.</p>
 <pre><code>$ make
-$ sudo make install
+# make install
 </code></pre>
 <h2>Check</h2>
-<p>Check features and paths, using <code>afpd -V</code>.</p>
-<pre><code>$ /usr/local/sbin/afpd -V
-afpd 3.1.6 - Apple Filing Protocol (AFP) daemon of Netatalk
-
-This program is free software; you can redistribute it and/or modify it
-under the terms of the GNU General Public License as published by the
-Free Software Foundation; either version 2 of the License, or (at your
-option) any later version. Please see the file COPYING for further
-information and details.
-
-afpd has been compiled with support for these features:
-
-         AFP versions: 2.2 3.0 3.1 3.2 3.3 3.4
-        CNID backends: dbd last tdb
-     Zeroconf support: mDNSResponder
- TCP wrappers support: Yes
-        Quota support: Yes
-  Admin group support: Yes
-   Valid shell checks: Yes
-     cracklib support: Yes
-           EA support: ad | sys
-          ACL support: Yes
-         LDAP support: Yes
-        D-Bus support: Yes
-    Spotlight support: Yes
-        DTrace probes: Yes`
-
-             afp.conf: /usr/local/etc/afp.conf
-          extmap.conf: /usr/local/etc/extmap.conf
-      state directory: /usr/local/var/netatalk/
-   afp_signature.conf: /usr/local/var/netatalk/afp_signature.conf
-     afp_voluuid.conf: /usr/local/var/netatalk/afp_voluuid.conf
-      UAM search path: /usr/local/lib/netatalk//
- Server messages path: /usr/local/var/netatalk/msg/
-</code></pre>
-<h2>Setting Up</h2>
+<p>Check features and paths, using <code>netatalk -V</code> and <code>afpd -V</code>.</p>
+<h2>Setting</h2>
 <p>Edit <code>/usr/local/etc/afp.conf</code>.</p>
 <p>Ex:</p>
 <pre><code>[Global]
@@ -270,29 +251,16 @@ afpd has been compiled with support for these features:
 
    path = /export/timemachine
    time machine = yes
-   vol size limit = 512000
 </code></pre>
-<p>You should check firewall. AFP&rsquo;s port number is <code>548</code>. Zeroconf&rsquo;s port
-number is <code>5353</code>.</p>
-<h2>Starting</h2>
-<p>Start mDNSResponder.</p>
-<pre><code># svcadm enable svc:/network/dns/multicast:default
-</code></pre>
-<p>Start Netatalk.</p>
-<pre><code># svcadm enable svc:/network/netatalk:default
-</code></pre>
-<h2>See also</h2>
-<ul>
-<li><a href="http://wiki.openindiana.org/oi/Netatalk">OpenIndiana Wiki</a></li>
-<li><a href="http://pkg.openindiana.org/sfe/en/search.shtml?token=netatalk">Package Search -
-    netatalk</a></li>
-<li><a href="http://www.opencsw.org/packages/netatalk/">netatalk - Solaris
-    package</a></li>
-<li><a href="https://www.adamretter.org.uk/blog.xql?tag=AFP">Installation Guide for OpenIndiana</a></li>
-</ul><hr />
+<p>You should check the firewall. AFP&rsquo;s port number is <code>548</code>. Zeroconf&rsquo;s
+port number is <code>5353</code>.</p>
+<h2>Enabling and Starting</h2>
+<pre><code># systemctl enable netatalk
+# systemctl start netatalk
+</code></pre><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
-        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-OpenIndiana">visit the original page</a>
+        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-Fedora-Linux">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
     <p>Last updated 2024-04-08</p>

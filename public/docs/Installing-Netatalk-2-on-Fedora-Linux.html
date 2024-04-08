@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Wiki - Installing Netatalk 2 on Alpine Linux</title>
+    <title>Netatalk Wiki - Installing Netatalk 2 on Fedora Linux</title>
     <meta name="description" content="Netatalk Wiki">
-    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-2-on-Alpine-Linux">
+    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-2-on-Fedora-Linux">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -86,26 +86,34 @@
 <p><a href="https://netatalk.io/docs"><img src="https://netatalk.io/gfx/daemon.gif" alt="Netatalk Logo"/></a></p>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-2-on-Alpine-Linux">Installing Netatalk 2 on Alpine Linux</h1><hr/>
-<p>For bootstrap:</p>
-<pre><code>apk add libtool autoconf automake pkgconfig
-</code></pre>
-<p>For compilation:</p>
-<pre><code>apk add build-base gcc cups cups-dev
-</code></pre>
-<p>Berkeley DB:
-As of <a href="https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.13.0">Alpine 3.13.0</a>, BDB is a deprecated package, so building BDB from code is required on Alpine. These are the rough steps:</p>
-<ol>
-<li>Get the latest v5 tarball of BDB, e.g.: https://github.com/berkeleydb/libdb/releases/tag/v5.3.28</li>
-<li>Extract the tarball</li>
-<li>From the source root, cd to the <code>build_unix</code> dir</li>
-<li>Run the <code>../dist/configure</code> script</li>
-<li>Run <code>make</code> then <code>make install</code></li>
-<li>Configure netatalk with e.g.: <code>./configure --with-bdb=/usr/local/BerkeleyDB.5.3</code></li>
-</ol><hr />
+<h1 id="Installing-Netatalk-2-on-Fedora-Linux">Installing Netatalk 2 on Fedora Linux</h1><hr/>
+<p>Netatalk 2.2 works well on Fedora (tested on Fedora 38 and 39 for x86-64) with just a few wrinkles.  The steps are the same for Fedora Workstation and Fedora Server.  This guide does not replace <a href="https://netatalk.sourceforge.io/2.2/htmldocs/">the full documentation</a>; instead it supplements it.</p>
+<h1>Prepare the environment</h1>
+<p>First up, the prerequisites.  Install them with this command:</p>
+<p><code>dnf install openssl-devel libgcrypt-devel libdb-devel automake libtool avahi-devel cups-devel</code></p>
+<h1>Compiling and installing</h1>
+<p>After that, untar netatalk and go into its directory.  (I&rsquo;m using 2.2.10 here as an example, adjust the filenames as required for other versions).</p>
+<p>Type <code>tar jxvf netatalk-2.2.10.tar.bz2</code> to untar and then <code>cd netatalk-2.2.10</code></p>
+<p>When configuring, use the <code>--enable-redhat-systemd</code> option:
+<code>./configure --enable-redhat-systemd</code></p>
+<p>Build netatalk (you can change the number 4 to the number of CPU cores you have to get the fastest possible compile):
+<code>make -j4</code> </p>
+<p>And install (you must be root here or use <code>sudo</code>):
+<code>make install</code></p>
+<p>Once installed, you&rsquo;ll need to remove Fedora&rsquo;s default blacklist of the atalk kernel module, by typing the following, either when logged in as root or with <code>sudo</code>:
+<code>rm /etc/modprobe.d/appletalk-blacklist.conf</code></p>
+<p>This will allow Fedora to load the <code>atalk</code> kernel module.</p>
+<h1>Some quick configuration examples</h1>
+<p>The configuration files after install can be found in <code>/usr/local/etc/netatalk</code>.  </p>
+<p>For <code>afpd.conf</code>, here&rsquo;s an example server line that I use.</p>
+<p><code>"Gozer" -transall -uamlist uams_guest.so,uams_clrtxt.so,uams_dhx2.so</code></p>
+<p>This names the server &ldquo;Gozer&rdquo; when it appears in the Chooser on connected Macs and allows either guest access or access by logging in with a valid username and password on your Fedora system.  This works well for Mac System 7 and 8 clients (both real and emulated) all the way up to present day macOS Sonoma (press Command-K in the Finder and type <code>afp://</code> followed by the IP address or DNS name of your Fedora system).  If you are not going to connect with a System 7 client, it is strongly recommended to remove <code>uams_clrtxt.so</code> from your server config line for security reasons.</p>
+<p>To set up shared volumes, edit <code>AppleVolumes.default</code>.  Here is an example line that I use.</p>
+<p><code>/data/A2 Apple_II</code></p>
+<p>This causes a volume named &ldquo;Apple_II&rdquo; to appear to connected machines, and its files come from the UNIX path /data/A2.</p><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
-        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-Alpine-Linux">visit the original page</a>
+        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-Fedora-Linux">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
     <p>Last updated 2024-04-08</p>
