@@ -11,6 +11,11 @@
         </a>
     </li>
     <li>
+        <a href="/3.1/htmldocs/ja">
+            Netatalk 3.1 マニュアル (Japanese localization)
+        </a>
+    </li>
+    <li>
         <a href="/3.0/htmldocs">
             Netatalk 3.0 manual
         </a>
@@ -43,11 +48,6 @@
 
 <p>Historical manuals</p>
 <ul>
-    <li>
-        <a href="/3.1/htmldocs/ja">
-            Netatalk 3.1.11 manual (Japanese localization)
-        </a>
-    </li>
     <li>
         <a href="/2.0/Netatalk-Manual2.0.5.pdf">
             Netatalk 2.0.5 manual (PDF)
