@@ -41,6 +41,30 @@
     </li>
 </ul>
 
+<p>Historical manuals</p>
+<ul>
+    <li>
+        <a href="http://web.archive.org/web/20170428120431/http://netatalk-doc-ja.osdn.jp/3.1/htmldocs/index.html">
+            Netatalk 3.1.11 manual (Japanese localization)
+        </a>
+    </li>
+    <li>
+        <a href="/2.0/Netatalk-Manual2.0.5.pdf">
+            Netatalk 2.0.5 manual (PDF)
+        </a>
+    </li>
+    <li>
+        <a href="/2.0/Netatalk-Manual2.0.3.pdf">
+            Netatalk 2.0.3 manual (PDF)
+        </a>
+    </li>
+    <li>
+        <a href="/2.0/Netatalk-Manual.pdf">
+            Netatalk 2.0.2 manual (PDF)
+        </a>
+    </li>
+</ul>
+
 <h3>Release Notes</h3>
 <p>A full record of release notes are stored below for historical purposes.</p>
 
