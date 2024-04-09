@@ -1,16 +1,16 @@
-== Netatalk Logo
+# Netatalk Logo
 
 This directory contains the Netatalk logo in various formats.
 
-- logo.png
+- logo.png (moved to public/gfx)
 
-First published on January 4th 2005,
+First published on January 4th 2005 on http://netatalk.sourceforge.net
 on the cover page for the Netatalk manual PDF by Thomas Kaiser.
-The manual is distributed under GPL 2.0,
+The manual is distributed under the GNU GPL 2.0,
 so the logo image is assumed to be distributed under the same license.
-The png bitmap image was extracted from the PDF.
+The canonical png bitmap image was subsequently extracted from said PDF.
 
-http://web.archive.org/web/20050119004108/http://netatalk.sourceforge.net/2.0/Netatalk-Manual.pdf
+https://netatalk.io/2.0/Netatalk-Manual.pdf
 
 - logo.ai
 - logo.pdf
