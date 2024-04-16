@@ -4,7 +4,7 @@
 <h3>Netatalk Releases</h3>
 
 <p>The most recent stable Netatalk releases can be downloaded
-from the navbar to the left on this website.</p>
+from the <b>navbar to the left</b> on this website.</p>
 
 <p>For older releases, go to
 <a href="https://sourceforge.net/projects/netatalk/files/">
@@ -56,7 +56,7 @@ from the navbar to the left on this website.</p>
 <h3>Docker</h3>
 <ul>
     <li>
-        <a href="https://hub.docker.com/repositories/netatalk">
+        <a href="https://hub.docker.com/u/netatalk">
             Official Netatalk images on Docker Hub
         </a>
     </li>
