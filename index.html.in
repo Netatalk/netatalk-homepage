@@ -118,6 +118,19 @@
 <hr />
   <h1>Latest News</h1>
 <hr />
+  <small>20th of April 2024</small>
+  <h2>Netatalk 3 Webmin Module 1.0 Released</h2>
+
+  <p>The first stable and fully compliant version of the Netatalk 3 Webmin Module is now available.
+  A large number of supportet options and help text has been added.</p>
+  <p>For more information and to download the module, see the
+  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-1.0">Release Notes</a>.
+  <p>Simultaneously, a bugfix
+  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.3">v1.3 release
+  of the Netatalk 2 module</a> is also available now.</p>
+  </p>
+
+<hr />
     <small>31st of March 2024</small>
     <h2>Netatalk 2.3.2 is available</h2>
     <p>The Netatalk development team is proud to announce version 2.3.2 of
@@ -141,15 +154,6 @@
   <p>For a summary of news and a detailed list of changes see the
   <a href="/2.3/ReleaseNotes2.3.1.html">Release Notes</a>.</p>
 
-<hr />
-  <small>8th of January 2024</small>
-  <h2>Netatalk 3 Webmin Module 0.3 Released</h2>
-
-  <p>Version 0.3 of the Netatalk 3 Webmin Module is now available.
-  It introduces a range of minor improvements which makes usage of the module more convenient.</p>
-  <p>For more information, see the
-  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-0.3">Release Notes</a>.
-  </p>
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
