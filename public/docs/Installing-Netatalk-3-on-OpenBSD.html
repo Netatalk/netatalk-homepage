@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Wiki - Installing Netatalk 3 on Solaris 10</title>
+    <title>Netatalk Wiki - Installing Netatalk 3 on OpenBSD</title>
     <meta name="description" content="Netatalk Wiki">
-    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-3-on-Solaris-10">
+    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-3-on-OpenBSD">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -45,25 +45,28 @@
 <ul>
 <li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
 <li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
-<li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
-<li><a class="wikilink" href="/docs/Installation-Notes.html">Installation Notes</a></li>
+<li><a class="wikilink" href="/docs/Connect-to-AFP-Server.html">Connect to AFP Server</a></li>
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
 <li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
 <p>Netatalk v3 Installation</p>
 <ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora.html">Installing Netatalk 3 on Fedora</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora-Linux.html">Installing Netatalk 3 on Fedora Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris-10.html">Installing Netatalk 3 on Solaris 10</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
 </ul>
 <p>Netatalk v2 Installation</p>
 <ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian.html">Installing Netatalk 2 on Debian</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora.html">Installing Netatalk 2 on Fedora</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Alpine-Linux.html">Installing Netatalk 2 on Alpine Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian-Linux.html">Installing Netatalk 2 on Debian Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora-Linux.html">Installing Netatalk 2 on Fedora Linux</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-NetBSD.html">Installing Netatalk 2 on NetBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
 </ul>
 <p>Technical Docs</p>
@@ -78,43 +81,73 @@
 <p>Development</p>
 <ul>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
-<li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+<li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
+<li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
-<p><a href="https://netatalk.sourceforge.io/docs"><img src="https://netatalk.sourceforge.io/gfx/daemon.gif" alt="Netatalk Logo"/></a></p>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-3-on-Solaris-10">Installing Netatalk 3 on Solaris 10</h1><hr/>
-<p>Tested on <a href="https://www.oracle.com/solaris/solaris10/downloads/solaris10-get-jsp-downloads.html">Solaris 10 (1/13)</a></p>
-<h1>Prep work</h1>
-<p>Install the <a href="https://www.opencsw.org/manual/for-administrators/getting-started.html">OpenCSW</a> repository and package manager.</p>
-<p>Add paths to development tool dirs to the PATH variable, e.g. by adding this line to .profile</p>
-<pre><code>PATH=$PATH:/usr/ccs/bin:/usr/sfw/bin:/opt/csw/bin
+<h1 id="Installing-Netatalk-3-on-OpenBSD">Installing Netatalk 3 on OpenBSD</h1><hr/>
+<p>Instructions for installing netatalk 3.x on OpenBSD 7.5</p>
+<h1>Prepare</h1>
+<p>Install requisite packages for netatalk:</p>
+<pre><code>pkg_add -I \
+  autoconf-2.71 \
+  automake-1.16.5 \
+  avahi \
+  bison \
+  dbus-glib \
+  db-4.6.21p7v0 \
+  gcc-11.2.0p11 \
+  gmake \
+  libevent \
+  libgcrypt \
+  libtalloc \
+  libtool \
+  meson \
+  openldap-client-2.6.7v0 \
+  openpam \
+  pkgconf \
+  tracker3
 </code></pre>
-<h1>Install required packages</h1>
-<pre><code>pkgutil -y -i git libtool automake autoconf pkgconfig gcc5core berkeleydb48_devel libgcrypt_dev libevent_dev
-</code></pre>
-<h1>Configure and compile</h1>
-<pre><code>./bootstrap
-env PKG_CONFIG_PATH=/opt/csw/lib/pkgconfig ./configure \
-    --with-init-style=solaris \
-    --with-libgcrypt-dir=/opt/csw \
-    --with-pam-confdir=/etc/pam.d \
-    --with-bdb=/opt/csw/bdb48 \
-    --with-mysql-config=no
+<h1>Build</h1>
+<pre><code>export AUTOCONF_VERSION=2.71
+export AUTOMAKE_VERSION=1.16
+export CFLAGS=-I/usr/local/include
+export LDFLAGS=-L/usr/local/lib
+./bootstrap
+./configure --with-tracker-pkgconfig-version=3.0
 make
 make install
 </code></pre>
-<h1>Starting</h1>
-<p>Start Netatalk.</p>
-<pre><code># svcadm enable svc:/network/netatalk:default
+<h1>Run</h1>
+<p>Create an init script like the below as <code>/etc/rc.d/netatalk</code>; from the netatalk source tree root:</p>
+<pre><code>#!/bin/ksh
+
+daemon=&quot;/usr/local/sbin/netatalk&quot;
+
+. /etc/rc.d/rc.subr
+
+rc_start() {
+        rc_exec &quot;. ~/.profile; ${daemon}&quot;
+}
+
+rc_cmd $1
+</code></pre>
+<p>Set the right permissions</p>
+<pre><code>chmod 0555 /etc/rc.d/netatalk
+</code></pre>
+<p>Enable and start the service</p>
+<pre><code>rcctl -d enable netatalk
+rcctl -d start netatalk
 </code></pre><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
-        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-Solaris-10">visit the original page</a>
+        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-OpenBSD">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-03-25</p>
+    <p>Last updated 2024-04-30</p>
     <hr />
     </div>
 <div class="footer">

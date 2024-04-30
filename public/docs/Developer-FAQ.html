@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Wiki - Installing Netatalk 2 on macOS</title>
+    <title>Netatalk Wiki - Developer FAQ</title>
     <meta name="description" content="Netatalk Wiki">
-    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-2-on-macOS">
+    <link rel="canonical" href="https://netatalk.io/docs/Developer-FAQ">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -88,41 +88,102 @@
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-2-on-macOS">Installing Netatalk 2 on macOS</h1><hr/>
-<p>Apple started to switch from AFP to SMB file sharing from Mavericks (10.9) onwards. The built-in afp server was finally removed in Big Sur (11.0) so Netatalk comes in useful if you have a modern Intel or Apple Silicon Mac and wish to share files with a vintage Mac such as a PowerMac G3 or G4 running classic Mac OS 9.</p>
-<p>When installing Netatalk 2.3 on Macs running Mojave (10.14) onwards the dependencies are easily installed using Homebrew. To install <a href="https://brew.sh">Homebrew</a>,  open Terminal and paste the following:</p>
-<p><code>/bin/bash -c "$(curl -fsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></p>
-<h2>Install the dependencies</h2>
-<p><code>brew install berkeley-db libtool automake autoconf libevent libgcrypt mysql openssl@1.1 libressl pkg-config</code></p>
-<h2>Clone the Netatalk repository</h2>
-<p>Checkout the 2.3 branch and cd to that folder:</p>
-<p><code>git clone https://github.com/Netatalk/netatalk.git</code></p>
-<p><code>git checkout branch-netatalk-2-3</code></p>
-<p><code>cd /path/to/netatalk/clone</code></p>
-<h3>The paths for your SSL and BDB installations can be found by typing</h3>
-<p><code>brew --prefix berkeley-db</code></p>
-<p><code>brew --prefix openssl@1.1</code> or <code>brew --prefix libressl</code></p>
-<h2>Compile and run</h2>
-<p><code>./bootstrap</code></p>
-<p><code>./configure --disable-ddp --with-ssl-dir=/path/to/openssl/installation --with-bdb=/path/to/bdb/installation</code></p>
-<p><code>make</code></p>
-<p>Note: The <code>--disable-ddp</code> flag is required, since macOS doesn&rsquo;t have an AppleTalk network stack at the time of writing.</p>
-<h2>Install</h2>
-<p><code>sudo make install</code></p>
-<h2>Enable the launchd daemon</h2>
-<pre><code>sudo launchctl enable system/io.netatalk.daemon
-launchctl start netatalk
+<h1 id="Developer-FAQ">Developer FAQ</h1><hr/>
+<p><strong>Q.</strong> How can I create stand-alone patch files?</p>
+<p><strong>A.</strong>
+This describes the traditional method of creating plain text patch
+files. It can be useful when requesting feedback for your code on the
+mailing lists, or when contributing patches to downstream distros.</p>
+<p><strong>Note:</strong> We do not use this workflow (anymore) for contributing patches to Netatalk.
+Please use the GitHub PR workflow instead.</p>
+<p>Assuming your patches are the last three commits on your current local
+git branch, this is the easiest way to create patches from them:</p>
+<pre><code>$ git format-patch -3
 </code></pre>
-<p>Underneath the hood we use a controller script called <code>netatalkd</code> that sets up the required environment.</p>
-<p>To start netatalk daemons:</p>
-<pre><code>sudo netatalkd start
+<p>This will create three patch files in your current directory that you
+can then send to the netatalk-devel mailing list.</p>
+<p>Note that if you have a number of patches against a specific branch and
+don&rsquo;t feel like counting them, the following works as well (e.g. against
+the main branch):</p>
+<pre><code>$ git format-patch origin/main
 </code></pre>
-<p>To stop netatalk daemons:</p>
-<pre><code>sudo netatalkd stop
-</code></pre><hr />
+<p>This will create one patch file for every patch that is in your local
+branch but not in origin/main.</p>
+<p>If you have more patches which belong together it&rsquo;s sometimes useful to
+export them into one file:</p>
+<pre><code>$ git format-patch --stdout origin/main &gt; develop-featureX-01.patches.txt
+</code></pre>
+<p><strong>Q.</strong> How can I debug process crashes?</p>
+<p><strong>A.</strong> We need a stack-backtrace (SBT) from a corefile with debugging symbols.</p>
+<ul>
+<li>Compile Netatalk with debugging symbols and without optimizations,
+    e.g. for gcc</li>
+</ul>
+<pre><code>CFLAGS=&quot;-g -O0&quot; ./configure ... &amp;&amp; make &amp;&amp; make install
+</code></pre>
+<ul>
+<li>Enable global corefile generation
+    (<a href="http://www.google.com/search?q=linux+enable+core+dump">Linux</a>,
+    <a href="http://www.google.com/search?q=man+coreadm">Solaris</a>)</li>
+<li>Enable corefile generation for Netatalk by adding</li>
+</ul>
+<pre><code>ulimit -c unlimited
+</code></pre>
+<p>&hellip; at the beginning of the Netatalk start script and restart
+Netatalk.</p>
+<ul>
+<li>Reproduce issue</li>
+<li>Get SBT (example for a crash of afpd and gdb):</li>
+</ul>
+<pre><code>$ gdb path/to/afpd path/to/corefile
+(gdb) bt full
+...
+(gdb) exit
+</code></pre>
+<p><strong>Q.</strong> How can I run the netatalk integration tests?</p>
+<p>In order to run the integration tests located in test/ run make with the
+<code>check</code> target:</p>
+<pre><code>$ make -j
+$ make check
+</code></pre>
+<p><strong>Q.</strong> How do I revert a commit?</p>
+<p><strong>A.</strong> The &ldquo;git reset&rdquo; command allows you to reset the HEAD of the
+branch to any given point in history. To go back one commit, run</p>
+<pre><code>$ git reset HEAD^
+</code></pre>
+<p>This will keep your local changes and you can make any additional
+changes before re-committing the new work. Also see the &ldquo;git commit
+&ndash;amend&rdquo; command and the &ldquo;git reset&rdquo; man page for other examples.</p>
+<p>If the branch has already been pushed to remote, you can force-push the
+amended branch. Please be careful with force pushing, since it can be a
+destructive action.</p>
+<pre><code>$ git push origin my-work-branch --force
+</code></pre>
+<p><strong>Q.</strong> How can I maintain a feature branch against the upstream Netatalk
+branches?</p>
+<p><strong>A.</strong> You clone the Netatalk repository as per the instructions above.
+Then you make a new feature branch: </p>
+<pre><code>$ git checkout -b feature_foo main
+</code></pre>
+<p>Now you do your development in your feature branch. Any time the main
+branch gets too different to the code in your feature branch you should
+rebase your feature branch. The rebase rewinds your feature branch to
+the point there it was branched. Then it updates your feature branch to
+the HEAD of the main branch and re-applies your changes.</p>
+<pre><code>$ git rebase main
+First, rewinding head to replay your work on top of it...
+HEAD is now at 357f003... Add WERR_SERVICE_ALREADY_RUNNING.
+...
+Wrote tree 02299ef7c1cfa093248bfd9c6e3812805718845e
+Committed: e20a8c521d7860d9b7bd724ed5ea19c7306530ab
+</code></pre>
+<p>Rebase works best when you use it for local branches that are never
+pushed to a public repository, see <a href="https://archive.kernel.org/oldwiki/git.wiki.kernel.org/index.php/GitFaq.html#Why_won.27t_.22git_push.22_work_after_I_rebase_a_branch.3F">Why won&rsquo;t &ldquo;git push&rdquo; work after I
+rebased a
+branch?</a>.</p><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
-        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-macOS">visit the original page</a>
+        Please <a href="https://github.com/Netatalk/netatalk/wiki/Developer-FAQ">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
     <p>Last updated 2024-04-30</p>

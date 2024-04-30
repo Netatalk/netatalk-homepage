@@ -55,8 +55,9 @@
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
 </ul>
 <p>Netatalk v2 Installation</p>
@@ -80,10 +81,11 @@
 <p>Development</p>
 <ul>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
-<li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+<li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
+<li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
-<p><a href="https://netatalk.io/docs"><img src="https://netatalk.io/gfx/daemon.gif" alt="Netatalk Logo"/></a></p>
 </div></div>
 <div id="content">
 <h1 id="Developer-Notes">Developer Notes</h1><hr/>
@@ -227,118 +229,23 @@ documentation</a>
 and will not be repeated here.</p>
 <p>In the PR summary, make sure you add a description of the purpose of the
 PR, and a link back to the GitHub issue ticket.</p>
-<h2>Updating Documentation</h2>
-<p>The Netatalk documentation consists of two parts:
-the *NIX manual pages in <a href="https://troff.org/">troff</a> format
-and the <a href="https://netatalk.io/stable/htmldocs/">html manual</a> hosted on the website.
-Both are generated from <a href="https://docbook.org/">docbook</a> XML sources housed under the
-<code>doc/</code> directory in the source tree.</p>
-<p>When making code changes that warrant an update to the documentation,
-such as adding, changing or deprecating functionality, please make sure
-the updates to the XML sources for the documentation are included as
-part of the changeset in your PR.</p>
-<p>If the changeset of your PR warrants a bullet point in the changelog,
-please include an update to the NEWS file as part of your changeset as well.</p>
-<h1>Technical Information</h1>
-<h2>Documentation</h2>
-<p>Netatalk documentation is maintained in DocBook XML format, which can be transformed to human-readable formats for consumption.</p>
-<p>For one, use DocBook XSL stylesheets to transform to for instance troff manual pages, or html pages for publishing on the web.
-The Netatalk build system provides this facility through the <code>--with-docbook</code> configure option.</p>
-<p>Or, use something like <code>dblatex</code> to transform to a variety of formats, for instance PDF.</p>
-<pre><code>$ dblatex ./doc/manual/manual.xml
+<h2>Build system</h2>
+<p>In the stable netatalk release following 3.1.x (and 2.3.x) we are introducing the <a href="https://mesonbuild.com/">Meson build system</a>, initially in addition to the traditional GNU autotools build system, but eventually as a full replacement.</p>
+<p>Meson is faster at building the netatalk source code by an order of magnitude. Additionally, it allows us in the development team to work more effectively to fix bugs and add functionality. And finally, it removes the need to &ldquo;bootstrap&rdquo; the build system which introduces thousands of lines of boilerplate macros.</p>
+<p>See the <a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL">INSTALL</a> file in the netatalk code tree for more details on how to use the Meson build system.</p>
+<h3>Formatting</h3>
+<p>We use <code>muon fmt</code> to format all the meson.build files as it applies the meson syntax recommendations to all files.
+<a href="https://github.com/annacrombie/muon">Muon</a> is an independent implementation of Meson that comes with a powerful formatter.</p>
+<p>Install muon and save the following script as &lsquo;muonfmt&rsquo; in your local bin directory (chmod +x it too):</p>
+<pre><code>#!/bin/bash
+
+find . -type f -name &quot;meson.build&quot; -exec muon fmt -i {} \;
 </code></pre>
-<h2>Creating patches</h2>
-<p>This describes the traditional method of creating plain text patch
-files. It can be useful when requesting feedback for your code on the
-mailing lists, or when contributing patches downstream to distro
-repositories. These steps are optional if you&rsquo;re submitting a PR on
-GitHub.</p>
-<p>Assuming your patches are the last three commits on your current local
-git branch, this is the easiest way to create patches from them:</p>
-<pre><code>$ git format-patch -3
+<p>Then all you need to do is:</p>
+<pre><code>cd netatalk
+muonfmt
 </code></pre>
-<p>This will create three patch files in your current directory that you
-can then send to the netatalk-devel mailing list.</p>
-<p>Note that if you have a number of patches against a specific branch and
-don&rsquo;t feel like counting them, the following works as well (e.g. against
-the main branch):</p>
-<pre><code>$ git format-patch origin/main
-</code></pre>
-<p>This will create one patch file for every patch that is in your local
-branch but not in origin/main.</p>
-<p>If you have more patches which belong together it&rsquo;s sometimes useful to
-export them into one file:</p>
-<pre><code>$ git format-patch --stdout origin/main &gt; develop-featureX-01.patches.txt
-</code></pre>
-<h2>Debugging process crashes</h2>
-<p>We need a stack-backtrace (SBT) from a corefile with debugging symbols.</p>
-<ul>
-<li>Compile Netatalk with debugging symbols and without optimizations,
-    e.g. for gcc</li>
-</ul>
-<pre><code>CFLAGS=&quot;-g -O0&quot; ./configure ... &amp;&amp; make &amp;&amp; make install
-</code></pre>
-<ul>
-<li>Enable global corefile generation
-    (<a href="http://www.google.com/search?q=linux+enable+core+dump">Linux</a>,
-    <a href="http://www.google.com/search?q=man+coreadm">Solaris</a>)</li>
-<li>Enable corefile generation for Netatalk by adding</li>
-</ul>
-<pre><code>ulimit -c unlimited
-</code></pre>
-<p>&hellip; at the beginning of the Netatalk start script and restart
-Netatalk.</p>
-<ul>
-<li>Reproduce issue</li>
-<li>Get SBT (example for a crash of afpd and gdb):</li>
-</ul>
-<pre><code>$ gdb path/to/afpd path/to/corefile
-(gdb) bt full
-...
-(gdb) exit
-</code></pre>
-<h2>Integration tests</h2>
-<p>In order to run the integration tests located in test/ run make with the
-<code>check</code> target:</p>
-<pre><code>$ make -j
-$ make check
-</code></pre>
-<h2>FAQ</h2>
-<p><strong>Q.</strong> How do I revert a commit?</p>
-<p><strong>A.</strong> The &ldquo;git reset&rdquo; command allows you to reset the HEAD of the
-branch to any given point in history. To go back one commit, run</p>
-<pre><code>$ git reset HEAD^
-</code></pre>
-<p>This will keep your local changes and you can make any additional
-changes before re-committing the new work. Also see the &ldquo;git commit
-&ndash;amend&rdquo; command and the &ldquo;git reset&rdquo; man page for other examples.</p>
-<p>If the branch has already been pushed to remote, you can force-push the
-amended branch. Please be careful with force pushing, since it can be a
-destructive action.</p>
-<pre><code>$ git push origin my-work-branch --force
-</code></pre>
-<p><strong>Q.</strong> How can I maintain a feature branch against the upstream Netatalk
-branches?</p>
-<p><strong>A.</strong> You clone the Netatalk repository as per the instructions above.
-Then you make a new feature branch: </p>
-<pre><code>$ git checkout -b feature_foo main
-</code></pre>
-<p>Now you do your development in your feature branch. Any time the main
-branch gets too different to the code in your feature branch you should
-rebase your feature branch. The rebase rewinds your feature branch to
-the point there it was branched. Then it updates your feature branch to
-the HEAD of the main branch and re-applies your changes.</p>
-<pre><code>$ git rebase main
-First, rewinding head to replay your work on top of it...
-HEAD is now at 357f003... Add WERR_SERVICE_ALREADY_RUNNING.
-...
-Wrote tree 02299ef7c1cfa093248bfd9c6e3812805718845e
-Committed: e20a8c521d7860d9b7bd724ed5ea19c7306530ab
-</code></pre>
-<p>Rebase works best when you use it for local branches that are never
-pushed to a public repository, see <a href="https://archive.kernel.org/oldwiki/git.wiki.kernel.org/index.php/GitFaq.html#Why_won.27t_.22git_push.22_work_after_I_rebase_a_branch.3F">Why won&rsquo;t &ldquo;git push&rdquo; work after I
-rebased a
-branch?</a>.</p>
+<p><em>Note:</em> In Debian, the muon package and binary are called <code>muon-meson</code>.</p>
 <h2>Links to Developer Resources</h2>
 <ul>
 <li><a href="https://developer.apple.com/library/mac/#documentation/Networking/Conceptual/AFP/Introduction/Introduction.html">AFP Programming
@@ -365,7 +272,7 @@ branch?</a>.</p>
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Developer-Notes">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-04-08</p>
+    <p>Last updated 2024-04-30</p>
     <hr />
     </div>
 <div class="footer">

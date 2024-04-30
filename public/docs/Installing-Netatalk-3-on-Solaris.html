@@ -55,8 +55,9 @@
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
 </ul>
 <p>Netatalk v2 Installation</p>
@@ -80,10 +81,11 @@
 <p>Development</p>
 <ul>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
-<li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+<li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
+<li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
-<p><a href="https://netatalk.io/docs"><img src="https://netatalk.io/gfx/daemon.gif" alt="Netatalk Logo"/></a></p>
 </div></div>
 <div id="content">
 <h1 id="Installing-Netatalk-3-on-Solaris">Installing Netatalk 3 on Solaris</h1><hr/>
@@ -91,18 +93,19 @@
 <p>Tested on <a href="https://www.oracle.com/solaris/solaris11/downloads/solaris-downloads.html">Solaris 11.4.42</a></p>
 <h2>Prep work</h2>
 <p>Install the latest SRU for Solaris 11 to get as modern packages as possible.</p>
+<p>You may need to <a href="https://docs.oracle.com/cd/E23824_01/html/821-1455/dnsref-51.html">configure mDNS</a> in order for Zeroconf to work properly.</p>
 <h2>Install required packages</h2>
 <pre><code>pkg install \
-              autoconf \
-              automake \
-              bison \
-              flex \
-              gcc \
-              libevent \
-              libgcrypt \
-              libtool \
-              pkg-config \
-              tracker
+  autoconf \
+  automake \
+  bison \
+  flex \
+  gcc \
+  libevent \
+  libgcrypt \
+  libtool \
+  pkg-config \
+  tracker
 </code></pre>
 <h3>Build additional packages from source</h3>
 <p>At the time of writing, you need to build autoconf, automake, and talloc from source.</p>
@@ -132,8 +135,8 @@ cd ..
 ./configure \
   --enable-krbV-uam \
   --enable-pgp-uam \
-  --with-init-style=solaris
-  --with-tracker-pkgconfig-version=2.0
+  --with-init-style=solaris \
+  --with-tracker-pkgconfig-version=2.0 \
   --without-afpstats \
   MAKE=gmake \
   PKG_CONFIG_PATH=/usr/lib/amd64/pkgconfig
@@ -150,11 +153,20 @@ cd ..
 </code></pre>
 <p>Enjoy!</p>
 <h2>Meson build system</h2>
-<p>This applies only if you are using the Meson build system instead of GNU Autotools:</p>
+<p>This applies only if you are using the Meson build system instead of GNU Autotools (Netatalk 3.2 or later):</p>
 <p>The base image of Solaris 11.4 comes with Meson v0.59.2 which is too old for Netatalk. Uninstall the stock Meson and install the one distributed by Python pip instead.</p>
 <pre><code># pkg uninstall meson
 # pkg update --accept
 # pip install meson
+</code></pre>
+<p>Configure</p>
+<pre><code># PKG_CONFIG_PATH=/usr/lib/amd64/pkgconfig meson setup build \
+  -Dwith-init-style=solaris \
+  -Dwith-tracker-pkgconfig-version=2.0
+</code></pre>
+<p>Build and install</p>
+<pre><code># ninja -C build
+# ninja -C build install
 </code></pre>
 <h1>Solaris 10</h1>
 <p>Tested on <a href="https://www.oracle.com/solaris/solaris10/downloads/solaris10-get-jsp-downloads.html">Solaris 10 (1/13)</a></p>
@@ -165,10 +177,16 @@ cd ..
 <p>Add paths to development tool dirs to the PATH variable, e.g. by adding this line to .profile</p>
 <pre><code>PATH=$PATH:/usr/ccs/bin:/usr/sfw/bin:/opt/csw/bin
 </code></pre>
-<h2>Install required packages</h2>
+<h2>Install netatalk package</h2>
+<p>To install the prebuilt binary package for netatalk, do:</p>
+<pre><code>pkgutil -y -i netatalk
+</code></pre>
+<h2>Build from source</h2>
+<p>These instructions are for building netatalk from scratch.</p>
+<h3>Install required packages</h3>
 <pre><code>pkgutil -y -i git libtool automake autoconf pkgconfig gcc5core berkeleydb48_devel libgcrypt_dev libevent_dev
 </code></pre>
-<h2>Configure and build</h2>
+<h3>Configure and build</h3>
 <pre><code>./bootstrap
 env PKG_CONFIG_PATH=/opt/csw/lib/pkgconfig ./configure \
     --with-init-style=solaris \
@@ -188,7 +206,7 @@ make install
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-Solaris">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-04-08</p>
+    <p>Last updated 2024-04-30</p>
     <hr />
     </div>
 <div class="footer">

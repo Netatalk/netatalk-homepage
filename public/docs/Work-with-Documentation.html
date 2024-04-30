@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Wiki - Installing Netatalk 2 on Fedora</title>
+    <title>Netatalk Wiki - Work with Documentation</title>
     <meta name="description" content="Netatalk Wiki">
-    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-2-on-Fedora">
+    <link rel="canonical" href="https://netatalk.io/docs/Work-with-Documentation">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -45,25 +45,26 @@
 <ul>
 <li><a class="wikilink" href="/docs/FAQ.html">FAQ</a></li>
 <li><a class="wikilink" href="/docs/Troubleshooting.html">Troubleshooting</a></li>
-<li><a class="wikilink" href="/docs/Connect-to-AFP-Server-from-Mac-clients.html">Connect to AFP Server from Mac clients</a></li>
+<li><a class="wikilink" href="/docs/Connect-to-AFP-Server.html">Connect to AFP Server</a></li>
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
 <li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
 <p>Netatalk v3 Installation</p>
 <ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora.html">Installing Netatalk 3 on Fedora</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora-Linux.html">Installing Netatalk 3 on Fedora Linux</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
 </ul>
 <p>Netatalk v2 Installation</p>
 <ul>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Alpine-Linux.html">Installing Netatalk 2 on Alpine Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian.html">Installing Netatalk 2 on Debian</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora.html">Installing Netatalk 2 on Fedora</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian-Linux.html">Installing Netatalk 2 on Debian Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora-Linux.html">Installing Netatalk 2 on Fedora Linux</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-NetBSD.html">Installing Netatalk 2 on NetBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
@@ -80,43 +81,49 @@
 <p>Development</p>
 <ul>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
-<li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+<li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
+<li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
-<p><a href="https://netatalk.sourceforge.io/docs"><img src="https://netatalk.sourceforge.io/gfx/daemon.gif" alt="Netatalk Logo"/></a></p>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-2-on-Fedora">Installing Netatalk 2 on Fedora</h1><hr/>
-<p>Netatalk 2.2 works well on Fedora (tested on Fedora 38 and 39 for x86-64) with just a few wrinkles.  The steps are the same for Fedora Workstation and Fedora Server.  This guide does not replace <a href="https://netatalk.sourceforge.io/2.2/htmldocs/">the full documentation</a>; instead it supplements it.</p>
-<h1>Prepare the environment</h1>
-<p>First up, the prerequisites.  Install them with this command:</p>
-<p><code>dnf install openssl-devel libgcrypt-devel libdb-devel automake libtool avahi-devel cups-devel</code></p>
-<h1>Compiling and installing</h1>
-<p>After that, untar netatalk and go into its directory.  (I&rsquo;m using 2.2.10 here as an example, adjust the filenames as required for other versions).</p>
-<p>Type <code>tar jxvf netatalk-2.2.10.tar.bz2</code> to untar and then <code>cd netatalk-2.2.10</code></p>
-<p>When configuring, use the <code>--enable-redhat-systemd</code> option:
-<code>./configure --enable-redhat-systemd</code></p>
-<p>Build netatalk (you can change the number 4 to the number of CPU cores you have to get the fastest possible compile):
-<code>make -j4</code> </p>
-<p>And install (you must be root here or use <code>sudo</code>):
-<code>make install</code></p>
-<p>Once installed, you&rsquo;ll need to remove Fedora&rsquo;s default blacklist of the atalk kernel module, by typing the following, either when logged in as root or with <code>sudo</code>:
-<code>rm /etc/modprobe.d/appletalk-blacklist.conf</code></p>
-<p>This will allow Fedora to load the <code>atalk</code> kernel module.</p>
-<h1>Some quick configuration examples</h1>
-<p>The configuration files after install can be found in <code>/usr/local/etc/netatalk</code>.  </p>
-<p>For <code>afpd.conf</code>, here&rsquo;s an example server line that I use.</p>
-<p><code>"Gozer" -transall -uamlist uams_guest.so,uams_clrtxt.so,uams_dhx2.so</code></p>
-<p>This names the server &ldquo;Gozer&rdquo; when it appears in the Chooser on connected Macs and allows either guest access or access by logging in with a valid username and password on your Fedora system.  This works well for Mac System 7 and 8 clients (both real and emulated) all the way up to present day macOS Sonoma (press Command-K in the Finder and type <code>afp://</code> followed by the IP address or DNS name of your Fedora system).  If you are not going to connect with a System 7 client, it is strongly recommended to remove <code>uams_clrtxt.so</code> from your server config line for security reasons.</p>
-<p>To set up shared volumes, edit <code>AppleVolumes.default</code>.  Here is an example line that I use.</p>
-<p><code>/data/A2 Apple_II</code></p>
-<p>This causes a volume named &ldquo;Apple_II&rdquo; to appear to connected machines, and its files come from the UNIX path /data/A2.</p><hr />
+<h1 id="Work-with-Documentation">Work with Documentation</h1><hr/>
+<h1>Docbook</h1>
+<p>Netatalk documentation is maintained in DocBook XML format, which can be transformed to human-readable formats for perusal.</p>
+<p>For one, use DocBook XSL stylesheets to transform to for instance troff manual pages, or html pages for publishing on the web.
+The Netatalk build system provides this facility through the <code>--with-docbook</code> configure option.</p>
+<p>You can also use something like <code>dblatex</code> to transform the XML sources to a variety of formats, for instance PDF.</p>
+<pre><code>$ dblatex --pdf ./doc/manual/manual.xml
+</code></pre>
+<h2>Updating Documentation</h2>
+<p>The Netatalk documentation consists of two parts:
+the *NIX manual pages in <a href="https://troff.org/">troff</a> format
+and the <a href="https://netatalk.io/stable/htmldocs/">html manual</a> hosted on the website.
+Both are generated from <a href="https://docbook.org/">docbook</a> XML sources housed under the
+<code>doc/</code> directory in the source tree.</p>
+<p>When making code changes that warrant an update to the documentation,
+such as adding, changing or deprecating functionality, please make sure
+the updates to the XML sources for the documentation are included as
+part of the changeset in your PR.</p>
+<p>If the changeset of your PR warrants a bullet point in the changelog,
+please include an update to the NEWS file as part of your changeset as well.</p>
+<h3>Docbook editor</h3>
+<p>A free WYSIWYG editor with only one minor drawback is <a href="http://www.xmlmind.com/xmleditor/">XMLEditor from XMLmind</a>.</p>
+<p>Drawback: in order to be able to edit any of the  nested xml files, you have to
+&ldquo;promote&rdquo; them to valid Docbook files by referencing the Docbook DTD, insert as line 2+3:</p>
+<pre><code>&lt;!DOCTYPE book PUBLIC &quot;-//OASIS//DTD DocBook XML V4.5//EN&quot;
+&quot;http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd&quot;&gt;
+</code></pre>
+<p>These changes will however prevent XMLeditor from opening the master xml file
+<code>manual.xml</code>. Before further processing or committing to git can be done,
+these changes then have to be reverted for any changed file.</p><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
-        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-Fedora">visit the original page</a>
+        Please <a href="https://github.com/Netatalk/netatalk/wiki/Work-with-Documentation">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-04-08</p>
+    <p>Last updated 2024-04-30</p>
     <hr />
     </div>
 <div class="footer">

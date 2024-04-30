@@ -55,8 +55,9 @@
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenSUSE.html">Installing Netatalk 3 on OpenSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
 </ul>
 <p>Netatalk v2 Installation</p>
@@ -80,10 +81,11 @@
 <p>Development</p>
 <ul>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
-<li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
+<li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
+<li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
-<p><a href="https://netatalk.io/docs"><img src="https://netatalk.io/gfx/daemon.gif" alt="Netatalk Logo"/></a></p>
 </div></div>
 <div id="content">
 <h1 id="Home">Home</h1><hr/>
@@ -93,14 +95,60 @@ Here you can find and contribute to collaborative articles covering topics regar
 <p>Netatalk is a cross-platform open source implementation of AFP (Apple Filing
 Protocol), the protocol used for file sharing on Apple II, Classic Mac
 OS, and Mac OS X. At the time of writing, AFP is one of several file sharing protocols with client support in macOS.</p>
-<p>Netatalk supports &ldquo;AFP over TCP&rdquo;, and if you use the old stable Netatalk v2 release series
-also &ldquo;AFP over AppleTalk&rdquo;. AppleTalk is required for file sharing with
-very old Macs as well as Apple IIe and IIGS computers, that don&rsquo;t
-support AFP over TCP natively. Additionally, AppleTalk support brings the
-convenience of automatic service discovery, a print server (<em>papd</em>)
-which can act as a two-way bridge for using modern printers on old Macs,
-a time server (<em>timelord</em>), and an Apple II netboot server (<em>a2boot</em>.)</p>
-<p>You will see a mix of documentation for Netatalk v3 and v2 on this wiki.</p>
+<h2>Architecture</h2>
+<p><em>Netatalk 3.x</em> is an implementation of <strong>AFP over TCP</strong>.
+DSI is a session layer used to carry AFP over TCP.
+The complete stack looks like this:</p>
+<pre><code>          AFP
+           |
+          DSI
+           |
+           | (port:548)
+           |
+   -+---------------------------+- (kernel boundary)
+    |         Socket            |
+    +------------+--------------+
+    |     TCP    |    UDP       |
+    +------------+--------------+
+    |       IP v4 or v6         |
+    +---------------------------+
+    |     Network Interface     |
+    +---------------------------+
+</code></pre>
+<p><em>Netatalk 2.x</em> also supports the <strong>AppleTalk Protocol Suite</strong> for legacy Macs,
+Lisas and Apple IIs via the <code>atalkd</code> daemon.
+In provides support for EtherTalk Phase I and II, RTMP, NBP, ZIP, AEP, ATP, PAP, and ASP protocols,
+while expecting the operating system&rsquo;s kernel to supply the DDP protocol.
+The complete stack looks like this:</p>
+<pre><code>    AFP                          AFP
+     |                            |
+    ASP    PAP                   DSI
+      \   /                       |
+       ATP RTMP NBP ZIP AEP       | (port:548)
+        |    |   |   |   |        |
+   -+---------------------------------------------------+- (kernel boundary)
+    |                    Socket                         |
+    +-----------------------+------------+--------------+
+    |                       |     TCP    |    UDP       |
+    |          DDP          +------------+--------------+
+    |                       |           IP              |
+    +-----------------------+---------------------------+
+    |                Network Interface                  |
+    +---------------------------------------------------+
+</code></pre>
+<p>Additionally, AppleTalk support brings the convenience
+of automatic service discovery on Classic Mac OS,
+a print server <code>papd</code> for printing to CUPS or lpd printers,
+a <code>pap</code> client for printing to LocalTalk printers,
+a time server <code>timelord</code>, and an Apple II netboot server <code>a2boot</code>.</p>
+<h2>Netatalk Logo</h2>
+<p>The Netatalk logo depicts a stylized <a href="https://en.wikipedia.org/wiki/BSD_Daemon">BSD Daemon</a> on top of an <a href="https://en.wikipedia.org/wiki/AppleShare">AppleShare</a> serving tray, hooked up to a daisy-chained <a href="https://en.wikipedia.org/wiki/LocalTalk">LocalTalk</a> network.</p>
+<p><img src="https://netatalk.io/gfx/afpd-icon.gif" alt="Netatalk Logo" width="128px" height="auto"></p>
+<p>It evolved from an early Netatalk AFP volume icon <a href="https://github.com/Netatalk/netatalk/blob/main/etc/afpd/icon.h">encoded in the project&rsquo;s source code</a>.</p>
+<p><img src="https://netatalk.io/gfx/daemon.gif" alt="Netatalk Logo"></p>
+<p>By the early 2000s, a colorized version was featured on the <a href="http://web.archive.org/web/20030207075049/http://rsug.itd.umich.edu/software/netatalk.html">project website</a>.</p>
+<p><img src="https://netatalk.io/gfx/logo.png" alt="Netatalk Logo" width="140px" height="auto"></p>
+<p>The present design was <a href="https://netatalk.io/2.0/Netatalk-Manual.pdf">introduced in 2005</a> following the release of Netatalk 2.0.</p>
 <h1>External Links</h1>
 <p>See <a href="https://netatalk.io/links">Netatalk Links</a></p><hr />
     <p>
@@ -108,7 +156,7 @@ a time server (<em>timelord</em>), and an Apple II netboot server (<em>a2boot</e
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Home">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-04-08</p>
+    <p>Last updated 2024-04-30</p>
     <hr />
     </div>
 <div class="footer">
