@@ -1,14 +1,13 @@
 <div id="content">
 <h1>Support</h1>
 
-
 <h2>Bug Reports</h2>
 <p>If you think you have found a bug in Netatalk, first see if the bug has already been reported in the <a href="https://github.com/Netatalk/netatalk/issues">Netatalk issue tracker at GitHub</a>.</p>
 <p>If no similar bug has been reported yet, please create a new ticket and provide as much context as possible, including Netatalk version, OS version, contents of configuration files, and debug or backtrace logs.</p>
-<p>Use the same issue tracker if you want to file a feature request.</p>
+<p>Feature requests can also be filed via the same issue tracker.</p>
 
 <h2>Web Discussion Forum</h2>
-<p>If you want to ask advice or get help from the community, try one of these fori:</p>
+<p>If you want to ask advice or get help from the community, try one of these friendly discussion boards:</p>
 <ul>
 <li>
 <a href="https://github.com/Netatalk/netatalk/discussions">Netatalk GitHub Discussions</a>
@@ -66,6 +65,6 @@ in writing code for Netatalk, you should subscribe to this list.</p>
 </table>
 
 <h3>See Also</h3>
-<a href="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=netatalk">More CVE advisories on cve.mitre.org</a>
+<a href="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=netatalk">CVE advisory archives on cve.mitre.org</a>
 
 </div>
