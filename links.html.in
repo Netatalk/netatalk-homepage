@@ -32,6 +32,10 @@
   <td>Cross-platform AFP client application</td>
   </tr>
   <tr>
+  <td><a href="https://github.com/rdmark/afpfs-ng">afpfs-ng</a> (fork)</td>
+  <td>Fork of afpfs-ng that runs on modern systems</td>
+  </tr>
+  <tr>
   <td><a href="https://github.com/AceHusky12/atalkvpn">atalkvpn</a></td>
   <td>VPN tunnel for AppleTalk phase 1 (depends on Netatalk)</td>
   </tr>
