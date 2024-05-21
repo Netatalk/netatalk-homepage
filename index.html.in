@@ -126,6 +126,7 @@
   A large number of supportet options and help text has been added.</p>
   <p>For more information and to download the module, see the
   <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-1.0">Release Notes</a>.
+  </p>
   <p>Simultaneously, a bugfix
   <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.3">v1.3 release
   of the Netatalk 2 module</a> is also available now.</p>
