@@ -624,10 +624,4 @@ details.</p>
     migrating since Netatalk 2.0 provides no support for symlinks any longer.</p>
 
   <hr />
-  <p><a href="2.0/NEWS.html">Older Release Notes</a></p>
-  <p>Netatalk is licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU
-    General Public License 2.0</a>.</p>
-  <p>If you are interested in contributing to the development process or just
-    want to give Netatalk a try, please visit our
-    <a href="https://github.com/Netatalk/netatalk">GitHub project page</a>.</p>
 </div>
