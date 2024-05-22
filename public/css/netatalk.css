@@ -115,21 +115,21 @@ pre.programlisting, pre.screen {
   border: #630 1px dashed;
   color: #993300;
   padding: 2px;
-  font-size: 120%;
+  font-size: 100%;
 }
 div.warning {
   border: dashed 1px;
   background-color: #BFBFBF;
   width: 60em;
   padding: 5px;
-} 
+}
 
 div.note {
   border: dashed 1px;
   background-color: #f2f2f2;
   width: 60em;
   padding: 5px;
-} 
+}
 
 div.author {
   padding-top: 1em;
@@ -155,7 +155,7 @@ div.revhistory th {
 }
 
 div.book, div.chapter, div.refentry {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 div.indexdiv {

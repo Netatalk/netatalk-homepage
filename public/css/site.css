@@ -9,7 +9,7 @@ body {
 }
 
 .italic {
-  font-size: 90%; /* 90 percent of surrounding object text size */
+  font-size: 90%;
   font-style: italic;
   text-decoration: none;
 }
@@ -51,7 +51,7 @@ div#content th {
  */
 
 
-/* search box */ 
+/* search box */
 div.search {
   position: absolute;
   left: 20px;
@@ -167,9 +167,9 @@ div#content {
   padding: 5px;/*space to separate navigation and content*/
   /*font-family: Geneva, Arial, Helvetica, sans-serif;*/
   font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
-  font-size: 80%;
+  font-size: 100%;
   width: auto;
-  border: 0.1px solid #FFFFFF; 
+  border: 0.1px solid #FFFFFF;
   /*to ensure that NN4.xx renders the background-color of the content area*/
 }
 
@@ -291,8 +291,8 @@ h4 {
   padding-bottom: 2px;
   margin-bottom: 2px;
   margin-top: -2px;
-  margin-left: -2px; 
-  margin-right: -2px; 
+  margin-left: -2px;
+  margin-right: -2px;
 }
 
 h5 {
@@ -314,4 +314,9 @@ img {
 a, a:visited {
   text-decoration: none;
   color: #660000;
+}
+
+code {
+  color: #993300;
+  padding: 2px;
 }
