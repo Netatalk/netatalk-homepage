@@ -155,15 +155,15 @@ div.revhistory th {
 }
 
 div.book, div.chapter, div.refentry {
-  font-size: 14px;
+  font-size: 90%;
 }
 
 div.indexdiv {
-  font-size: 12px;
+  font-size: 80%;
 }
 
 tt {
-  font-size: 12px;
+  font-size: 80%;
 }
 
 /**

@@ -167,7 +167,7 @@ div#content {
   padding: 5px;/*space to separate navigation and content*/
   /*font-family: Geneva, Arial, Helvetica, sans-serif;*/
   font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
-  font-size: 100%;
+  font-size: 90%;
   width: auto;
   border: 0.1px solid #FFFFFF;
   /*to ensure that NN4.xx renders the background-color of the content area*/
