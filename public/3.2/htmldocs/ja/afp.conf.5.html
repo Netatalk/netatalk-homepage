@@ -15,18 +15,17 @@
     <div xmlns="" id="header">
         <div id="logo"></div>
         <div id="menlinks">
-          <a href="/" title="Return to Netatalk home">[main]</a>
+          <a href="/" title="Netatalk ホームに戻る">[main]</a>
           <a href="/docs" title="Netatalk Wiki">[wiki]</a>
-          <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
-          <a href="/download.html" title="Download Netatalk">[downloads]</a>
-          <a href="/support.html" title="Support">[support]</a>
-          <a href="/links.html" title="Netatalk related links">[links]</a>
+          <a href="/documentation.html" title="Netatalk マニュアル">[documentation]</a>
+          <a href="/download.html" title="Netatalk をダウンロード">[downloads]</a>
+          <a href="/support.html" title="お問い合わせ">[support]</a>
+          <a href="/links.html" title="Netatalk 関連リンク">[links]</a>
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
     <div xmlns="" class="navheader" align="center">Netatalk 3.2.0</div>
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">afp.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ad.1.html">戻る</a> </td><th width="60%" align="center">第5章 マニュアルページ</th><td width="20%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">次へ</a></td></tr></table><hr /></div><div class="refentry"><a id="afp.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>名前</h2><p>afp.conf — Netatalkの設定ファイル</p></div><div class="refsect1"><a id="id-1.8.4.3"></a><h2>概要</h2><p><code class="filename">afp.conf</code>は<span class="bold"><strong>Netatalk</strong></span> AFPファイルサーバの設定ファイルである。</p><p>全てのAFP固有の設定とAFPボリュームの定義がこのファイルを通して行われる。</p></div><div class="refsect1"><a id="FILEFORMATSECT"></a><h2>ファイルの書式</h2><p>ファイルはセクションとパラメータから構成される。セクションはブラケット[各括弧]で囲まれたセクション名に始まり、次のセクションが始まるまで続く。セクションには次のような書式のパラメータが含まれている:
-    </p><pre class="programlisting">
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">afp.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ad.1.html">戻る</a> </td><th width="60%" align="center">第5章 マニュアルページ</th><td width="20%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">次へ</a></td></tr></table><hr /></div><div class="refentry"><a id="afp.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>名前</h2><p>afp.conf — Netatalkの設定ファイル</p></div><div class="refsect1"><a id="id-1.8.4.3"></a><h2>概要</h2><p><code class="filename">afp.conf</code>は<span class="bold"><strong>Netatalk</strong></span> AFPファイルサーバの設定ファイルである。</p><p>全てのAFP固有の設定とAFPボリュームの定義がこのファイルを通して行われる。</p></div><div class="refsect1"><a id="FILEFORMATSECT"></a><h2>ファイルの書式</h2><p>ファイルはセクションとパラメータから構成される。セクションはブラケット[各括弧]で囲まれたセクション名に始まり、次のセクションが始まるまで続く。セクションには次のような書式のパラメータが含まれている:</p><pre class="programlisting">
     <em class="replaceable"><code>name</code></em> = <em class="replaceable"><code>value </code></em>
     </pre><p>このファイルは行を基本とする。それぞれの行は改行文字で終端し、コメント、セクション名、パラメータのうちどれかを表す。</p><p>セクション名とパラメータ名は大文字と小文字の区別がある。</p><p>パラメータに最初に現れる等号だけは重要な意味を持つ。最初の等号の前後にある空白は破棄される。セクション名とパラメータ名の前、後、途中にある空白は意味を持たない。パラメータ値の前後の空白は破棄される。パラメータ値の途中の空白はそのま維持される。</p><p>セミコロン(<span class="quote">「<span class="quote">;</span>」</span>)やハッシュ文字(<span class="quote">「<span class="quote">#</span>」</span>)で始まるいかなる行も、空白だけの行と同様に無視される。</p><p><span class="quote">「<span class="quote"> <code class="literal">\</code>
     </span>」</span>で終わるいかなる行も、通例のUNIX方式で次の行に続くことを意味する。</p><p>パラメータにおいて等号の後ろに続く値は、文字列(引用符は必要ない)または真偽値である。真偽値はyes/no、1/0、true/falseで表現する。大文字と小文字の区別は真偽値では意味を持たないが、文字列では保存される。「file
@@ -150,7 +149,8 @@
           <span class="type">(G)</span></span></dt><dd><p>クライアント上に表示されるアイコンモデルを指定する。デフォルトではクライアント Mac
             に任せること。netatalkがZeroconfをサポートしなければならないことに注意してください。例:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="option">Laptop</code></p></li><li class="listitem"><p><code class="option">RackMount</code></p></li><li class="listitem"><p><code class="option">Tower</code></p></li></ul></div><p>macOSは認識しているモデルコードは
             <code class="filename">/System/Library/CoreServices/CoreTypes.bundle/Contents/Info.plist
-            </code> を参照すれば確認できる。(macOS 14 Sonoma の場合)</p></dd><dt><span class="term">signature = &lt;text&gt; <span class="type">(G)</span></span></dt><dd><p>サーバシグネチャを指定する。最大長は16文字である。このオプションは障害隔離などを提供するクラスタ環境において有用である。デフォルトでは、afpdは自動的にシグネチャを(乱数を元に)生成し、それを<code class="filename">afp_signature.conf</code>に保存する。asip-status(1)も見よ。</p></dd><dt><span class="term">solaris share reservations =
+            </code> を参照すれば確認できる。(macOS 14 Sonoma の場合)</p></dd><dt><span class="term">signature = <em class="replaceable"><code>STRING</code></em>
+          <span class="type">(G)</span></span></dt><dd><p>サーバシグネチャを指定する。最大長は16文字である。このオプションは障害隔離などを提供するクラスタ環境において有用である。デフォルトでは、afpdは自動的にシグネチャを(乱数を元に)生成し、それを<code class="filename">afp_signature.conf</code>に保存する。asip-status(1)も見よ。</p></dd><dt><span class="term">solaris share reservations =
           <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト: <span class="emphasis"><em>yes</em></span>)
           <span class="type">(G)</span></span></dt><dd><p>Solarisの共有予約を利用する。Solaris
             CIFSサーバもこれを利用するので、ロックを統一したマルチプロトコルサーバを形成する。</p></dd><dt><span class="term">sparql results limit = <em class="replaceable"><code>NUMBER</code></em>
@@ -178,11 +178,13 @@
             全ボリューム、(ボリュームセクションで設定したときは)そのボリュームのオプション初期設定となるセクションの<code class="option">name</code>を使う。</p></dd><dt><span class="term">zeroconf name = <em class="replaceable"><code>name</code></em>
           <span class="type">(G)</span></span></dt><dd><p>登録サービスをユニークに表した、人間が読めるnameを設定する。このzeroconf
             nameは最大長63オクテット（バイト）のUTF-8で宣伝される。netatalkがZeroconfをサポートしなければならないことに注意してください。</p></dd></dl></div></div><div class="refsect2"><a id="id-1.8.4.9.7"></a><h3>ログのオプション</h3><div class="variablelist"><dl class="variablelist"><dt><span class="term">log file = <em class="replaceable"><code>logfile</code></em>
-          <span class="type">(G)</span></span></dt><dd><p>指定しない場合、Netatalkはsyslogデーモン機能にログを出力する。そうでない場合は<code class="option">logfile</code>に出力する。</p></dd><dt><span class="term">log level = <em class="replaceable"><code>type:level [type:level
+          <span class="type">(G)</span></span></dt><dd><p>ログを<code class="option">logfile</code>に出力する。指定しない場合、Netatalkはsyslogデーモン機能にログを出力する。</p></dd><dt><span class="term">log level = <em class="replaceable"><code>type:level [type:level
           ...]</code></em> <span class="type">(G)</span>, </span><span class="term">log level = <em class="replaceable"><code>type:level,[type:level,
           ...]</code></em> <span class="type">(G)</span></span></dt><dd><p>与えられた<code class="option">log
             level</code>までのログレベルのメッセージを出力するように設定する。</p><p>デフォルトではafpdは<code class="option">default:note</code>に相当する設定でsyslogに出力する。</p><p>ログタイプ: default, afpdaemon, logger, uamsdaemon</p><p>ログレベル: severe, error, warn, note, info, debug, debug6,
-            debug7, debug8, debug9, maxdebug</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">注記</h3><p>ログタイプとログレベルはどちらも大文字小文字を区別しない。</p></div></dd></dl></div></div><div class="refsect2"><a id="fceconf"></a><h3>ファイルシステム変更イベント (FCE<a id="id-1.8.4.9.8.1.1" class="indexterm"></a>)</h3><p>Netatalk には素敵なファイルシステム変更イベント機構が含まれている。ここで、afpd
+            debug7, debug8, debug9, maxdebug</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">注記</h3><p>ログタイプとログレベルはどちらも大文字小文字を区別しない。</p></div></dd><dt><span class="term">log microseconds = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
+          <span class="emphasis"><em>yes</em></span>) <span class="type">(G)</span></span></dt><dd><p>タイムスタンプをマイクロ秒単位の精度でログに記録する。無効にすると、タイムスタンプは秒単位のみを記録する。<code class="option">log
+            file</code> オプションと組み合わせて使用​​した場合にのみ有効になる。</p></dd></dl></div></div><div class="refsect2"><a id="fceconf"></a><h3>ファイルシステム変更イベント (FCE<a id="id-1.8.4.9.8.1.1" class="indexterm"></a>)</h3><p>Netatalk には素敵なファイルシステム変更イベント機構が含まれている。ここで、afpd
       プロセスは、なにがしかのファイルシステムイベントについて、関心を寄せているリスナーに、UDP ネットワークデータグラムで通知する。</p><p>以下の FCE イベントが定義されている:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>ファイル変更 (<code class="option">fmod</code>)</p></li><li class="listitem"><p>ファイル削除 (<code class="option">fdel</code>)</p></li><li class="listitem"><p>ディレクトリ削除 (<code class="option">ddel</code>)</p></li><li class="listitem"><p>ファイル作成 (<code class="option">fcre</code>)</p></li><li class="listitem"><p>ディレクトリ作成 (<code class="option">dcre</code>)</p></li><li class="listitem"><p>ファイル移動または名前変更 (<code class="option">fmov</code>)</p></li><li class="listitem"><p>ディレクトリ移動または名前変更 (<code class="option">dmov</code>)</p></li><li class="listitem"><p>ログイン (<code class="option">login</code>)</p></li><li class="listitem"><p>ログアウト (<code class="option">logout</code>)</p></li></ul></div><div class="variablelist"><dl class="variablelist"><dt><span class="term">fce listener = <em class="replaceable"><code>host[:port]</code></em>
           <span class="type">(G)</span></span></dt><dd><p>FCE イベントを指定された <em class="parameter"><code>host</code></em>
             に送ることができるようにする。もし指定されていなければデフォルトの <em class="parameter"><code>port</code></em> は
@@ -195,7 +197,7 @@
           <span class="type">(G)</span></span></dt><dd><p>FCE イベントを結合する。</p></dd><dt><span class="term">fce holdfmod = <em class="replaceable"><code>seconds</code></em>
           <span class="type">(G)</span></span></dt><dd><p>これは、もしクライアントによって FCE ファイル変更イベント (fmod)
             を送信する前に同じファイルに対する別の変更が同時に行われる場合、常に待機する遅延時間を秒単位で決定する。例えば、フォトショップでファイルを保存することでそのファイル自体の複数のイベントを引き起こす。なぜなら、アプリケーションはその“保存する”たびにファイルを複数回、開き、変更しそして閉じるからである。デフォルトでは
-            60 秒である。</p></dd><dt><span class="term">fce sendwait = <em class="replaceable"><code>ミリ秒</code></em>
+            60 秒である。</p></dd><dt><span class="term">fce sendwait = <em class="replaceable"><code>milliseconds</code></em>
           <span class="type">(G)</span></span></dt><dd><p>各 FCE イベントの発行間の遅延をミリ秒単位で定義する。 非常に多くのファイルを一度に作成または削除するときに、FCE
             イベントの損失が発生する場合は、これを使用して問題を防げる。 このような操作によって引き起こされる大量のイベントにより、UDP
             バッファ オーバーフローが発生し、その後パケット損失が発生する可能性があります。 0 から 999 までの値は設定可能。デフォルト:
