@@ -118,6 +118,28 @@
 
 <hr />
   <h1>Latest News</h1>
+
+<hr />
+  <small>1st of June 2024</small>
+  <h2>Netatalk 3.2.0 is available</h2>
+  <p>The Netatalk development team is proud to announce version 3.2.0 of
+  Netatalk. This is the first stable release of the new 3.2 series.
+  Early adopters are encouraged to upgrade their systems
+  to 3.2.0.</p>
+
+  <p>The standout new feature in this version, is a bundled WolfSSL library
+  which enables support for the older DHX and Random Number UAMs
+  on modern systems. The Meson build system is also introduced,
+  which is what enables the former.</p>
+
+  <p>A companion release of the Netatalk 3 Webmin Module, version 1.1,
+  is also available now. Find more information in the
+  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.1">Release Notes</a>.
+  </p>
+
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/3.2/ReleaseNotes3.2.0.html">Release Notes</a>.</p>
+
 <hr />
   <small>20th of April 2024</small>
   <h2>Netatalk 3 Webmin Module 1.0 Released</h2>
@@ -142,20 +164,6 @@
     encouraged to upgrade their installations to 2.3.2.</p>
     <p>For a summary of news and a detailed list of changes see the
     <a href="/2.3/ReleaseNotes2.3.2.html">Release Notes</a>.</p>
-
-<hr />
-  <small>3rd of February 2024</small>
-  <h2>Netatalk 2.3.1 is available</h2>
-  <p>The Netatalk development team is proud to announce version 2.3.1 of
-  the Netatalk File Sharing suite. This release comes with a range of compatibility
-  and stability improvements. All users of previous Netatalk v2 releases are
-  encouraged to upgrade their installations to 2.3.1.</p>
-  <p>A <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.2">
-  companion release of the Webmin module</a> is also available which
-  adds functionality and fixes bugs.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/2.3/ReleaseNotes2.3.1.html">Release Notes</a>.</p>
-
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
