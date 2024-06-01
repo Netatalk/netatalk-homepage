@@ -54,10 +54,10 @@
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora-Linux.html">Installing Netatalk 3 on Fedora Linux</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
 </ul>
 <p>Netatalk v2 Installation</p>
@@ -96,8 +96,8 @@ Here you can find and contribute to collaborative articles covering topics regar
 Protocol), the protocol used for file sharing on Apple II, Classic Mac
 OS, and Mac OS X. At the time of writing, AFP is one of several file sharing protocols with client support in macOS.</p>
 <h2>Architecture</h2>
-<p><em>Netatalk 3.x</em> is an implementation of <strong>AFP over TCP</strong>.
-DSI is a session layer used to carry AFP over TCP.
+<p><em>Netatalk</em> implements <strong>AFP over TCP</strong>.
+The session layer used to carry AFP over TCP is called <strong>DSI</strong>.
 The complete stack looks like this:</p>
 <pre><code>          AFP
            |
@@ -115,7 +115,7 @@ The complete stack looks like this:</p>
     |     Network Interface     |
     +---------------------------+
 </code></pre>
-<p><em>Netatalk 2.x</em> also supports the <strong>AppleTalk Protocol Suite</strong> for legacy Macs,
+<p><em>Netatalk 2.x</em> (the previous stable version) also supports the <strong>AppleTalk Protocol Suite</strong> for legacy Macs,
 Lisas and Apple IIs via the <code>atalkd</code> daemon.
 In provides support for EtherTalk Phase I and II, RTMP, NBP, ZIP, AEP, ATP, PAP, and ASP protocols,
 while expecting the operating system&rsquo;s kernel to supply the DDP protocol.
@@ -156,7 +156,7 @@ a time server <code>timelord</code>, and an Apple II netboot server <code>a2boot
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Home">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-04-30</p>
+    <p>Last updated 2024-06-01</p>
     <hr />
     </div>
 <div class="footer">

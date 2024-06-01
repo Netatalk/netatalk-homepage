@@ -54,10 +54,10 @@
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora-Linux.html">Installing Netatalk 3 on Fedora Linux</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
 </ul>
 <p>Netatalk v2 Installation</p>
@@ -90,7 +90,8 @@
 <div id="content">
 <h1 id="Installing-Netatalk-2-on-Debian-Linux">Installing Netatalk 2 on Debian Linux</h1><hr/>
 <h1>Installation</h1>
-<p>Install required packages with the package manager of your choice:</p>
+<p>Install dependent packages with the package manager of your choice.
+Some of these are mandatory to build and run netatalk; others are optional and provide additional functionality.</p>
 <pre><code>$ sudo apt install \
     autoconf \
     automake \
@@ -111,21 +112,38 @@
     libtool-bin \
     libwrap0-dev \
     quota \
-    tcpd
+    tcpd \
+    xsltproc
 </code></pre>
+<h2>Mandatory packages</h2>
 <ul>
-<li>libcups2-dev is required for CUPS support. If you don&rsquo;t need an
-    AppleTalk printer server, you can omit this.</li>
-<li>libavahi-client-dev is required for zeroconf support, which Mac OS X
-    / macOS uses for service discovery. (Classic Mac OS uses built-in
-    AppleTalk service discovery.)</li>
-<li>libgcrypt20-dev is needed to compile the dhx2 UAM, which later Mac
-    OS X / macOS versions require.</li>
+<li><code>libdb-dev</code> (BerkeleyDB) is used for the default CNID backend, which stores a database of the shared volumes.</li>
+<li><code>libgcrypt20-dev</code> is used for the DHX2 UAM, which is required to authenticate with macOS (Mac OS X) clients.</li>
 </ul>
+<p>Depending on your Debian version, if you don&rsquo;t already have a C compiler and make installed, you may also need <code>build-essential</code>.</p>
+<h2>Optional packages (generally useful)</h2>
+<ul>
+<li><code>libssl-dev</code> is used for the DHX and RandNum UAMs, which provide encrypted authentication with Classic Mac OS clients. <strong>NOTE</strong> OpenSSL 1.1 is the only supported version. OpenSSL 3.0 removed support for DHX cryptography.</li>
+<li><code>libcups2-dev</code> is required for CUPS printing support (papd).</li>
+<li><code>libavahi-client-dev</code> is required for zeroconf support, which macOS (Mac OS X) uses for service discovery.</li>
+<li><code>libpam0g-dev</code> may be required to build with PAM authentication support.</li>
+</ul>
+<h2>Optional packages (specialized use cases)</h2>
+<ul>
+<li><code>autoconf automake libtool libtool-bin libltdl-dev</code> are used to bootstrap the source code for building with GNU Autotools. If you are using code from a release tarball, you don&rsquo;t need them.</li>
+<li><code>libacl1-dev libldap2-dev</code> are for ACL/LDAP identity and access management.</li>
+<li><code>libkrb5-dev</code> will enable the Kerberos UAM for single sign-on support.</li>
+<li><code>libtirpc-dev quota</code> are for file system quota support.</li>
+<li><code>libwrap0-dev tcpd</code> are for TCP wrapper support.</li>
+<li><code>libcrack2-dev</code> enables password checking for the RandNum UAM.</li>
+<li><code>docbook-xsl xsltproc</code> are needed to build the html manual.</li>
+</ul>
+<p>Description of all dependencies can be found in the <a href="https://netatalk.io/oldstable/htmldocs/installation#idm103">Installation chapter of the Netatalk manual</a></p>
+<h2>Build the code</h2>
 <p>Get the latest release tarball of Netatalk 2, or clone the netatalk git
 repository and check out the latest bleeding-edge Netatalk 2 branch.</p>
 <p>If you chose the latter option, you need to first bootstrap the build
-system with autoconf to generate the configure script:</p>
+system with autoconf to generate the configure script.</p>
 <pre><code>$ git clone https://github.com/Netatalk/netatalk.git -b branch-netatalk-2-3 netatalk2
 $ ./bootstrap
 </code></pre>
@@ -218,7 +236,7 @@ $ sudo systemctl start papd.service timelord.service a2boot.service
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-Debian-Linux">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-04-30</p>
+    <p>Last updated 2024-06-01</p>
     <hr />
     </div>
 <div class="footer">

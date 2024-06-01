@@ -2,7 +2,7 @@
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
     <loc>https://netatalk.io/docs/AppleTalk-Kernel-Module.html</loc>
-    <lastmod>2024-04-28</lastmod>
+    <lastmod>2024-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -44,7 +44,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Home.html</loc>
-    <lastmod>2024-04-13</lastmod>
+    <lastmod>2024-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -62,7 +62,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Debian-Linux.html</loc>
-    <lastmod>2024-04-08</lastmod>
+    <lastmod>2024-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -152,7 +152,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Release-Process.html</loc>
-    <lastmod>2024-04-01</lastmod>
+    <lastmod>2024-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -194,7 +194,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/_Sidebar.html</loc>
-    <lastmod>2024-04-28</lastmod>
+    <lastmod>2024-05-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>

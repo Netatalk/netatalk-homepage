@@ -54,10 +54,10 @@
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora-Linux.html">Installing Netatalk 3 on Fedora Linux</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
 </ul>
 <p>Netatalk v2 Installation</p>
@@ -122,10 +122,11 @@
 </li>
 </ul>
 <h3>Broadcast packets handling issue</h3>
-<p>At the time of writing, the Linux kernel module has a known unpatched bug with multi-interface routing. In short, the bug will cause <code>atalkd</code> to send responses on the first socket listening on port 6 that it finds, regardless of which interface packets originated from. There is a <a href="https://gist.github.com/VinDuv/4db433b6dce39d51a5b7847ee749b2a4">proposed patch</a> for this bug available that you can apply if this affects you.</p>
-<h2>FreeBSD</h2>
-<p>As of FreeBSD 9.3, the kernel comes with an AppleTalk kernel module, confusingly named &ldquo;netatalk&rdquo;, located under <code>sys/netatalk</code> in the kernel source tree.</p>
-<p>The AppleTalk kernel module is available in FreeBSD&rsquo;s default configuration, and should work with netatalk out of the box.</p>
+<p>The module in Linux kernel v6.8 and earlier has a known bug with multi-interface routing. In short, the bug will cause <code>atalkd</code> to send responses on the first socket listening on port 6 that it finds, regardless of which interface packets originated from. This may lead to devices on the network not consistently showing up in the Chooser on Mac clients on the same network. E.g. appearing and then disappearing. </p>
+<p>There is a <a href="https://gist.github.com/VinDuv/4db433b6dce39d51a5b7847ee749b2a4">patch</a> for this bug available that you can apply if this affects you. The patch has been <a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=2e82a58d6c0797092eabe7ba66a532c11548047f">accepted into the Linux kernel</a> and is included as of v6.9.</p>
+<h2>NetBSD</h2>
+<p>As of NetBSD 9.3, the kernel comes with an AppleTalk kernel module, confusingly named &ldquo;netatalk&rdquo;, located under <code>sys/netatalk</code> in the kernel source tree.</p>
+<p>The AppleTalk kernel module is available in NetBSD&rsquo;s default configuration, and should work with <code>atalkd</code> out of the box.</p>
 <h2>Solaris</h2>
 <p>Older versions of Netatalk distributed code for an AppleTalk module for Solaris (SPARC architecture), located under <code>sys/solaris</code> in the netatalk source tree. It has not been confirmed working with contemporary Solaris releases.</p><hr />
     <p>
@@ -133,7 +134,7 @@
         Please <a href="https://github.com/Netatalk/netatalk/wiki/AppleTalk-Kernel-Module">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-04-30</p>
+    <p>Last updated 2024-06-01</p>
     <hr />
     </div>
 <div class="footer">
