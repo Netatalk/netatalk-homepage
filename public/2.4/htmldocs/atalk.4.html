@@ -24,7 +24,7 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 2.4.0dev</div>
+    <div xmlns="" class="navheader" align="center">Netatalk 2.4.0</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">atalk</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="asip-status.1.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="atalkd.8.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="atalk.4"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>atalk — AppleTalk protocol family<a id="id-1.8.16.2.2.1" class="indexterm"></a></p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;sys/types.h&gt;
 #include &lt;netatalk/at.h&gt;</pre></div></div><div class="refsect1"><a id="id-1.8.16.4"></a><h2>Description</h2><p>The AppleTalk protocol family is a collection of protocols layered
     above the Datagram Delivery Protocol (DDP), and using AppleTalk address
@@ -36,7 +36,7 @@
     defines the AppleTalk address format.</p><p>Sockets in the AppleTalk protocol family use the following address
     structure:</p><pre class="programlisting">struct sockaddr_at {
     short sat_family;
-    u_char sat_port;
+    unsigned char sat_port;
     struct at_addr sat_addr;
     char sat_zero[ 8 ];
 };
