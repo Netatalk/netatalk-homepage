@@ -113,6 +113,7 @@ branch but not in origin/main.</p>
 export them into one file:</p>
 <pre><code>$ git format-patch --stdout origin/main &gt; develop-featureX-01.patches.txt
 </code></pre>
+<hr />
 <p><strong>Q.</strong> How can I debug process crashes?</p>
 <p><strong>A.</strong> We need a stack-backtrace (SBT) from a corefile with debugging symbols.</p>
 <ul>
@@ -140,12 +141,14 @@ Netatalk.</p>
 ...
 (gdb) exit
 </code></pre>
+<hr />
 <p><strong>Q.</strong> How can I run the netatalk integration tests?</p>
-<p>In order to run the integration tests located in test/ run make with the
+<p><strong>A.</strong> In order to run the integration tests located in test/ run make with the
 <code>check</code> target:</p>
 <pre><code>$ make -j
 $ make check
 </code></pre>
+<hr />
 <p><strong>Q.</strong> How do I revert a commit?</p>
 <p><strong>A.</strong> The &ldquo;git reset&rdquo; command allows you to reset the HEAD of the
 branch to any given point in history. To go back one commit, run</p>
@@ -159,6 +162,7 @@ amended branch. Please be careful with force pushing, since it can be a
 destructive action.</p>
 <pre><code>$ git push origin my-work-branch --force
 </code></pre>
+<hr />
 <p><strong>Q.</strong> How can I maintain a feature branch against the upstream Netatalk
 branches?</p>
 <p><strong>A.</strong> You clone the Netatalk repository as per the instructions above.
@@ -186,7 +190,7 @@ branch?</a>.</p><hr />
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Developer-FAQ">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-01</p>
+    <p>Last updated 2024-06-07</p>
     <hr />
     </div>
 <div class="footer">

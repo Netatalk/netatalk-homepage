@@ -90,12 +90,7 @@
 <div id="content">
 <h1 id="Work-with-Documentation">Work with Documentation</h1><hr/>
 <h1>Docbook</h1>
-<p>Netatalk documentation is maintained in DocBook XML format, which can be transformed to human-readable formats for perusal.</p>
-<p>For one, use DocBook XSL stylesheets to transform to for instance troff manual pages, or html pages for publishing on the web.
-The Netatalk build system provides this facility through the <code>--with-docbook</code> configure option.</p>
-<p>You can also use something like <code>dblatex</code> to transform the XML sources to a variety of formats, for instance PDF.</p>
-<pre><code>$ dblatex --pdf ./doc/manual/manual.xml
-</code></pre>
+<p>Netatalk documentation is maintained in DocBook XML format, which can be transformed to human-readable formats for publishing.</p>
 <h2>Updating Documentation</h2>
 <p>The Netatalk documentation consists of two parts:
 the *NIX manual pages in <a href="https://troff.org/">troff</a> format
@@ -117,13 +112,36 @@ please include an update to the NEWS file as part of your changeset as well.</p>
 </code></pre>
 <p>These changes will however prevent XMLeditor from opening the master xml file
 <code>manual.xml</code>. Before further processing or committing to git can be done,
-these changes then have to be reverted for any changed file.</p><hr />
+these changes then have to be reverted for any changed file.</p>
+<h2>Generating documentation</h2>
+<p>We use DocBook XSL stylesheets to transform the Docbook XML to troff manual pages for installation on Unix like systems, or html pages for publishing on the web.
+The Netatalk build system provides this facility through the <code>-Dbuild-manual</code> configure option, which uses the <code>xsltproc</code> tool on the back end. If your DocBook XSL stylesheet directory isn&rsquo;t automatically detected, use <code>-Dwith-docbook=[path]</code> to tell the build system where it is.</p>
+<p>You can also run <code>xsltproc</code> directly, to experiment with various outputs.</p>
+<p>Source a non-namespaced copy of docbook-xsl, f.e. from your OS&rsquo;s package
+repo (on Debian use the <code>docbook-xsl</code> package <em>without</em> the <code>-ns</code> suffix) or from
+<a href="https://sourceforge.net/projects/docbook/files/docbook-xsl/">SourceForge</a>,
+then point the Netatalk build system to the absolute path of
+where you installed the docbook-xsl styles.</p>
+<p>At the time of writing, the final non-namespaced docbook-xsl release is
+<em>docbook-xsl-1.79.1</em> on SourceForge. The packages published on GitHub
+are namespaced by default. See <a href="https://github.com/docbook/xslt10-stylesheets/issues/65">this upstream
+bug</a> for more
+info.</p>
+<p>Once all requirements are in place, the manual pages will be generated when building Netatalk.</p>
+<pre><code>$ meson setup build -Dbuild-manual=true -Dwith-docbook=/path/to/docbook
+$ ninja -C build
+</code></pre>
+<p>The generated pages are then found under the build/ directory.</p>
+<h3>PDF manual</h3>
+<p>If you want a local PDF manual for reading on the screen or printing, use something like <code>dblatex</code> to transform the XML sources to a variety of formats, including PDF.</p>
+<pre><code>$ dblatex --pdf ./doc/manual/manual.xml
+</code></pre><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Work-with-Documentation">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-01</p>
+    <p>Last updated 2024-06-07</p>
     <hr />
     </div>
 <div class="footer">

@@ -26,7 +26,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Developer-FAQ.html</loc>
-    <lastmod>2024-04-17</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -92,19 +92,19 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-Fedora-Linux.html</loc>
-    <lastmod>2024-04-08</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-FreeBSD.html</loc>
-    <lastmod>2024-04-23</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-OpenBSD.html</loc>
-    <lastmod>2024-04-28</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -116,25 +116,25 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-Solaris.html</loc>
-    <lastmod>2024-04-13</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-Ubuntu.html</loc>
-    <lastmod>2024-01-14</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-macOS.html</loc>
-    <lastmod>2023-11-14</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-openSUSE.html</loc>
-    <lastmod>2024-04-28</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -152,7 +152,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Release-Process.html</loc>
-    <lastmod>2024-05-19</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -188,7 +188,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Work-with-Documentation.html</loc>
-    <lastmod>2024-04-17</lastmod>
+    <lastmod>2024-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>

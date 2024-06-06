@@ -171,181 +171,90 @@
 <p>The <em>Concurrent Database</em> (cdb) and <em>Trivial Database</em> (tdb) CNID backends have been removed in this version. The former was previously the default backend (v2.0 and earlier), but is prone to data loss and corruption. The latter was considered an incomplete implementation.</p>
 <p>In Netatalk 3.2.0, <em>Database Daemon</em> (dbd) is the default and recommended backend, while the <em>MySQL</em> (mysql) backend is considered experimental but reportedly used in production environments with success.</p>
 <h2>What&rsquo;s Changed</h2>
-<details>
-<summary>Click to expand</summary>
-
-<pre>
-* Regenerate sparql_parser code using GNU Bison 3.7.5 by @rdmark in https://github.com/Netatalk/netatalk/pull/274
-* Bump to Development Version 3.1.99 by @rdmark in https://github.com/Netatalk/netatalk/pull/328
-* Remove unused pap directory in libatalk by @dgsga in https://github.com/Netatalk/netatalk/pull/490
-* Remove trailing whitespace from codebase by @dgsga in https://github.com/Netatalk/netatalk/pull/495
-* Replace gfx files corrupted by commit 06e427e by @dgsga in https://github.com/Netatalk/netatalk/pull/502
-* Remove quota support from netatalk 3 by @dgsga in https://github.com/Netatalk/netatalk/pull/496
-* Fix libevent2 linking on OpenIndiana by @dgsga in https://github.com/Netatalk/netatalk/pull/512
-* libatalk: Restore invalid metadata cleanup in ad_open.c by @rdmark in https://github.com/Netatalk/netatalk/pull/513
-* Remove substitutions for configurable file paths in man pages by @rdmark in https://github.com/Netatalk/netatalk/pull/514
-* add return 0 into become_user_permanently() by @pgajdos in https://github.com/Netatalk/netatalk/pull/524
-* Deprecate legacy cnid backends by @dgsga in https://github.com/Netatalk/netatalk/pull/528
-* Remove redundant AUTHORS file by @rdmark in https://github.com/Netatalk/netatalk/pull/538
-* Remove code for obsolete host operating systems by @dgsga in https://github.com/Netatalk/netatalk/pull/530
-* Better default Homes basedir regex example by @rdmark in https://github.com/Netatalk/netatalk/pull/547
-* Validate size of ace_count in FPSetACL request by @rdmark in https://github.com/Netatalk/netatalk/pull/546
-* Fix build issue with system talloc by @dgsga in https://github.com/Netatalk/netatalk/pull/556
-* Run apt-get update before installing packages by @rdmark in https://github.com/Netatalk/netatalk/pull/557
-* Update comments in configure.ac and netatalk macro by @dgsga in https://github.com/Netatalk/netatalk/pull/568
-* pam_conv: Only Solarish seems to use non-const struct type. by @rdmark in https://github.com/Netatalk/netatalk/pull/563
-* Remove bundled talloc and only build libatalk/libtalloc when needed by @dgsga in https://github.com/Netatalk/netatalk/pull/565
-* Delete obsolete locking directory in libatalk by @dgsga in https://github.com/Netatalk/netatalk/pull/570
-* Enable / disable the entire spotlight support toolchain at configure time by @dgsga in https://github.com/Netatalk/netatalk/pull/572
-* libatalk: fix parsing of macOS created AppleDouble files by @rdmark in https://github.com/Netatalk/netatalk/pull/575
-* Compile spotlight.h only when Spotlight is enabled by @rdmark in https://github.com/Netatalk/netatalk/pull/578
-* Fix error in macOS workflow resulting from changes in Homebrew behaviour by @dgsga in https://github.com/Netatalk/netatalk/pull/579
-* Remove GitLab CI config file by @rdmark in https://github.com/Netatalk/netatalk/pull/582
-* Introduce option to control the format of file log timestamp by @rdmark in https://github.com/Netatalk/netatalk/pull/583
-* Update README.md with a blurb about AppleTalk by @rdmark in https://github.com/Netatalk/netatalk/pull/587
-* Fix multiple 'missing field initializer' warnings introduced by commit a9c4ec2 by @dgsga in https://github.com/Netatalk/netatalk/pull/593
-* Standardize man page heading case by @rdmark in https://github.com/Netatalk/netatalk/pull/598
-* Deprecate AFS (Andrew File System) support in Netatalk 3 by @dgsga in https://github.com/Netatalk/netatalk/pull/594
-* Fix Spotlight support detection and compilation on Fedora by @dgsga in https://github.com/Netatalk/netatalk/pull/600
-* Update summary macro to check for all three Spotlight requirements by @dgsga in https://github.com/Netatalk/netatalk/pull/604
-* uams: Link PGP UAM with CRYPT_LIBS by @rdmark in https://github.com/Netatalk/netatalk/pull/608
-* Improve logger_test and remove outdated comments by @rdmark in https://github.com/Netatalk/netatalk/pull/601
-* Build Kerberos V and PGP UAMs in CI workflow by @rdmark in https://github.com/Netatalk/netatalk/pull/614
-* Fixing bugs that can cause system errors by @neko-hat in https://github.com/Netatalk/netatalk/pull/628
-* afpd: Remove tdb fallback mechanism, and other remnants of tdb and cdb by @rdmark in https://github.com/Netatalk/netatalk/pull/612
-* Check for attr.h before using (Solaris 10 compat) by @rdmark in https://github.com/Netatalk/netatalk/pull/622
-* libatalk: Use portable fcntl() instead of flock() by @rdmark in https://github.com/Netatalk/netatalk/pull/624
-* Create OmniOS, FreeBSD OpenBSD and NetBSD workflows by @dgsga in https://github.com/Netatalk/netatalk/pull/634
-* Create DragonflyBSD and Solaris workflows by @dgsga in https://github.com/Netatalk/netatalk/pull/635
-* 636 test program should only be compiled and run on make check/distcheck by @dgsga in https://github.com/Netatalk/netatalk/pull/637
-* Refresh docs and adjust for the upcoming 3.2 release by @rdmark in https://github.com/Netatalk/netatalk/pull/638
-* Fix Zeroconf support on *BSD platforms by @dgsga in https://github.com/Netatalk/netatalk/pull/640
-* Add Fedora VM workflow by @dgsga in https://github.com/Netatalk/netatalk/pull/650
-* Update actions to latest versions in GitHub workflow by @dgsga in https://github.com/Netatalk/netatalk/pull/660
-* Add Debian VM and improve readability of GitHub workflow by @dgsga in https://github.com/Netatalk/netatalk/pull/658
-* Remove unneeded HAVE_TRACKER conditional by @dgsga in https://github.com/Netatalk/netatalk/pull/664
-* workflow: Sundry fixes to get more options to build on more OSes by @rdmark in https://github.com/Netatalk/netatalk/pull/670
-* manual: Link to custom download and wiki mirrors in navbar by @rdmark in https://github.com/Netatalk/netatalk/pull/669
-* Workflow: Bump SonarScanner to v2 by @rdmark in https://github.com/Netatalk/netatalk/pull/684
-* manual: Link to docs landing page by @rdmark in https://github.com/Netatalk/netatalk/pull/687
-* Clean up obsoleted man pages by @rdmark in https://github.com/Netatalk/netatalk/pull/691
-* Cleanup of obsolete gitignore filters by @rdmark in https://github.com/Netatalk/netatalk/pull/692
-* CI workflow: generate manpages from XML by @rdmark in https://github.com/Netatalk/netatalk/pull/698
-* Clean up remainders of SourgeForge hosting by @rdmark in https://github.com/Netatalk/netatalk/pull/703
-* Update vmactions VM's in GitHub workflow by @dgsga in https://github.com/Netatalk/netatalk/pull/709
-* Fix 'MAXPHYS' macro redefinition warning in macOS by @dgsga in https://github.com/Netatalk/netatalk/pull/706
-* DragonflyBSD vmactions VM has been fixed upstream by @dgsga in https://github.com/Netatalk/netatalk/pull/718
-* Remove binary files and logo images from revision control by @rdmark in https://github.com/Netatalk/netatalk/pull/716
-* Docker configuration for netatalk v3 by @rdmark in https://github.com/Netatalk/netatalk/pull/713
-* Remove residual code for discontinued oses by @rdmark in https://github.com/Netatalk/netatalk/pull/723
-* Create GitHub issue templates by @rdmark in https://github.com/Netatalk/netatalk/pull/726
-* Make macOS initscripts prefix sensitive by @dgsga in https://github.com/Netatalk/netatalk/pull/730
-* Refresh README.md by @rdmark in https://github.com/Netatalk/netatalk/pull/731
-* README.md: Add docker run example; spruce up a few paragraphs by @rdmark in https://github.com/Netatalk/netatalk/pull/732
-* Update .gitignore for generated macOS initscripts by @rdmark in https://github.com/Netatalk/netatalk/pull/737
-* spotlight: Remove generated parser/lexer code from revision control by @rdmark in https://github.com/Netatalk/netatalk/pull/736
-* Add more badges to README.md by @rdmark in https://github.com/Netatalk/netatalk/pull/738
-* docs: Improve docbook templates, man page summaries, GPL text by @rdmark in https://github.com/Netatalk/netatalk/pull/744
-* docs: Limit max TOC depth to 2 in html manual; use DocBook 4.5 DTD by @rdmark in https://github.com/Netatalk/netatalk/pull/747
-* Detect system docbook stylesheets at configure time by @dgsga in https://github.com/Netatalk/netatalk/pull/748
-* Update checkout action for debian container by @dgsga in https://github.com/Netatalk/netatalk/pull/752
-* Regenerate manpages by @dgsga in https://github.com/Netatalk/netatalk/pull/749
-* Create meson build system by @dgsga in https://github.com/Netatalk/netatalk/pull/750
-* Delete .travis.yml as no longer required by @dgsga in https://github.com/Netatalk/netatalk/pull/760
-* Fix errors in initscripts meson.build by @dgsga in https://github.com/Netatalk/netatalk/pull/771
-* Add GitHub CODEOWNERS file by @rdmark in https://github.com/Netatalk/netatalk/pull/764
-* Swap out the old ldap_init for the wonderful ldap_initialize by @rdmark in https://github.com/Netatalk/netatalk/pull/768
-* Rename launchd plist to io.netatalk* and sort file names by @rdmark in https://github.com/Netatalk/netatalk/pull/778
-* meson: Refactor tcpwrap macro and widen gssapi/kerberos header searches by @dgsga in https://github.com/Netatalk/netatalk/pull/780
-* README.md: Improve AppleTalk and Benchmark paragraphs by @rdmark in https://github.com/Netatalk/netatalk/pull/782
-* Revert to using launchd startup script on macOS hosts by @dgsga in https://github.com/Netatalk/netatalk/pull/789
-* meson: Add init-style to configuration summary and fix missing gentoo-systemd style by @dgsga in https://github.com/Netatalk/netatalk/pull/785
-* docs: Update the git instructions in the Install chapter by @rdmark in https://github.com/Netatalk/netatalk/pull/786
-* Meson hotfixes by @dgsga in https://github.com/Netatalk/netatalk/pull/800
-* GitHub CI: Run install steps, init styles, descriptive names by @rdmark in https://github.com/Netatalk/netatalk/pull/802
-* Migrate GitHub CI SonarCloud job to Meson by @dgsga in https://github.com/Netatalk/netatalk/pull/803
-* meson: Fix executables not linking correctly with libatalk shared library by @dgsga in https://github.com/Netatalk/netatalk/pull/811
-* docs: Generate compilation manual page from build.yml by @rdmark in https://github.com/Netatalk/netatalk/pull/792
-* meson: Fix incorrect symlinking of uams modules and refactor uams meson.build by @dgsga in https://github.com/Netatalk/netatalk/pull/815
-* Remove extraneous line in launchd plist template by @dgsga in https://github.com/Netatalk/netatalk/pull/814
-* docs: Japanese localization of the manual by @rdmark in https://github.com/Netatalk/netatalk/pull/809
-* meson: Ensure mysql backend is only enabled when  mysqlclient library and headers are present by @dgsga in https://github.com/Netatalk/netatalk/pull/822
-* docs: Build Japanese manual with the autotools build system by @rdmark in https://github.com/Netatalk/netatalk/pull/824
-* docker: Build with Meson by @rdmark in https://github.com/Netatalk/netatalk/pull/821
-* meson: Print compiled backends in configuration summary by @dgsga in https://github.com/Netatalk/netatalk/pull/828
-* meson: Fix linking of afpd with glibc on Debian Bullseye by @dgsga in https://github.com/Netatalk/netatalk/pull/829
-* Spelling fix in dsi_tcp.c log message by @rdmark in https://github.com/Netatalk/netatalk/pull/834
-* docs: improve description of mimic model option by @rdmark in https://github.com/Netatalk/netatalk/pull/837
-* docs: Build system rules for compile.xml manual by @rdmark in https://github.com/Netatalk/netatalk/pull/839
-* docs: Simplify the DEVELOPER readme by @rdmark in https://github.com/Netatalk/netatalk/pull/844
-* docker: Platform independent image building by @rdmark in https://github.com/Netatalk/netatalk/pull/845
-* meson: Fix failure of BDB macro when multiple Berkeley DB versions are present by @dgsga in https://github.com/Netatalk/netatalk/pull/847
-* meson: Fix dbus-session.conf.tmpl substitution by @dgsga in https://github.com/Netatalk/netatalk/pull/851
-* afpd: Deal better with large numbers of FCE events by @rdmark in https://github.com/Netatalk/netatalk/pull/849
-* Build system improvements for initscripts by @rdmark in https://github.com/Netatalk/netatalk/pull/854
-* docs: Overhaul the install and configuration chapters by @rdmark in https://github.com/Netatalk/netatalk/pull/855
-* meson: Fix BerkeleyDB header detection on openSUSE by @dgsga in https://github.com/Netatalk/netatalk/pull/875
-* GitHub CI job with Alpine Linux by @rdmark in https://github.com/Netatalk/netatalk/pull/864
-* GitHub CI job with openSUSE Tumbleweed by @rdmark in https://github.com/Netatalk/netatalk/pull/860
-* meson: add flex and bison as requirements for Spotlight support by @dgsga in https://github.com/Netatalk/netatalk/pull/881
-* meson: Fix false positive for DHX support in Alpine when SSL headers absent by @dgsga in https://github.com/Netatalk/netatalk/pull/878
-* meson: Print the zeroconf provider in configuration summary by @dgsga in https://github.com/Netatalk/netatalk/pull/882
-* GitHub CI: Use libdb package for Alpine by @rdmark in https://github.com/Netatalk/netatalk/pull/885
-* GitHub CI: macOS runner was upgraded to Sonoma by @rdmark in https://github.com/Netatalk/netatalk/pull/890
-* Adopt rc script from FreeBSD ports. by @rdmark in https://github.com/Netatalk/netatalk/pull/877
-* Remove hard dependency on perl and grep by @rdmark in https://github.com/Netatalk/netatalk/pull/892
-* Rewrite afpstats in Perl by @rdmark in https://github.com/Netatalk/netatalk/pull/895
-* Enable PAM support in OpenBSD workflow by @dgsga in https://github.com/Netatalk/netatalk/pull/896
-* meson: Fix configuration data path to tracker, tracker3 and tracker-control by @dgsga in https://github.com/Netatalk/netatalk/pull/897
-* meson: Fix zeroconf detection on Alpine Linux by @dgsga in https://github.com/Netatalk/netatalk/pull/898
-* meson: Match netatalk-dbus.conf install dir to value of -Dwith-dbus-sysconf-dir option by @dgsga in https://github.com/Netatalk/netatalk/pull/903
-* Fix openSUSE CI job by @rdmark in https://github.com/Netatalk/netatalk/pull/904
-* docker: Alpine based container by @rdmark in https://github.com/Netatalk/netatalk/pull/889
-* Create requirements.txt for the manual gen script by @rdmark in https://github.com/Netatalk/netatalk/pull/905
-* meson: Fix typos in spotlight configure messages by @rdmark in https://github.com/Netatalk/netatalk/pull/907
-* Pretty formatting of afpstats output by @rdmark in https://github.com/Netatalk/netatalk/pull/910
-* UAMs in summary by @rdmark in https://github.com/Netatalk/netatalk/pull/915
-* docker: add missing tracker-miner package; refactoring by @rdmark in https://github.com/Netatalk/netatalk/pull/913
-* afpstats: Check for unexpected output; example in man page by @rdmark in https://github.com/Netatalk/netatalk/pull/918
-* afppasswd: Check for valid password length by @rdmark in https://github.com/Netatalk/netatalk/pull/934
-* Add archlinux GitHub actions job by @dgsga in https://github.com/Netatalk/netatalk/pull/926
-* afppasswd: Introduce -w option for password string by @rdmark in https://github.com/Netatalk/netatalk/pull/941
-* Fix broken cracklib macro in autotools and meson by @dgsga in https://github.com/Netatalk/netatalk/pull/940
-* afppasswd: Correct setting of <8 length passwords with -w option by @rdmark in https://github.com/Netatalk/netatalk/pull/943
-* afppasswd: Prevent null pointer reference by @rdmark in https://github.com/Netatalk/netatalk/pull/950
-* docs: Fix typos in DEVELOPERS readme by @rdmark in https://github.com/Netatalk/netatalk/pull/953
-* Forward-port netatalk-classic patches by @rdmark in https://github.com/Netatalk/netatalk/pull/952
-* docker: Use RandNum UAM instead of DHX by @rdmark in https://github.com/Netatalk/netatalk/pull/948
-* netatalkd: Netatalk service can only be stopped if it is already running by @dgsga in https://github.com/Netatalk/netatalk/pull/966
-* meson: Add WolfSSL as DHX provider  by @dgsga in https://github.com/Netatalk/netatalk/pull/965
-* meson: Fix 'libatalk not found' error on NetBSD by @dgsga in https://github.com/Netatalk/netatalk/pull/967
-* meson: Fix setup failure when openssl-dev headers missing by @dgsga in https://github.com/Netatalk/netatalk/pull/972
-* Start netatalk in GitHub CI jobs by @rdmark in https://github.com/Netatalk/netatalk/pull/959
-* docker: Use embedded wolfssl for the DHX UAM by @rdmark in https://github.com/Netatalk/netatalk/pull/970
-* meson: Fix rpaths for all executables by @dgsga in https://github.com/Netatalk/netatalk/pull/975
-* spotlight: Use https URLs for sparql type mapping references by @rdmark in https://github.com/Netatalk/netatalk/pull/973
-* Embedded SSL: Comment out _GNU_SOURCE redefinitions by @dgsga in https://github.com/Netatalk/netatalk/pull/976
-* Document the netatalk -d option by @rdmark in https://github.com/Netatalk/netatalk/pull/979
-* NEWS for 3.2.0 by @rdmark in https://github.com/Netatalk/netatalk/pull/857
-* Optimize sort order of all headers by @dgsga in https://github.com/Netatalk/netatalk/pull/984
-* meson: Fix duplicate dependency from commit 0f9cae5 by @dgsga in https://github.com/Netatalk/netatalk/pull/989
-* docs: Update manual for 3.2.0 release by @rdmark in https://github.com/Netatalk/netatalk/pull/987
-* docs: Update Japanese manual for 3.2.0 by @rdmark in https://github.com/Netatalk/netatalk/pull/991
-* meson: Fix duplicate -liconv libraries warning on macOS by @dgsga in https://github.com/Netatalk/netatalk/pull/996
-* meson: Remove unneeded embedded SSL configure flag from workflow by @dgsga in https://github.com/Netatalk/netatalk/pull/1003
-* meson: Refactor SSL macro by @dgsga in https://github.com/Netatalk/netatalk/pull/1000
-* meson: Install atalk/cast.h header by @dgsga in https://github.com/Netatalk/netatalk/pull/1011
-* meson: Fix linking of UAM modules using embedded SSL by @dgsga in https://github.com/Netatalk/netatalk/pull/1016
-* meson: Reduce footprint of embedded SSL by @dgsga in https://github.com/Netatalk/netatalk/pull/1022
-* Remove superfluous extern variable declarations by @rdmark in https://github.com/Netatalk/netatalk/pull/1023
-* Embedded SSL: Remove OpenSSL compatibility layer and unused headers by @dgsga in https://github.com/Netatalk/netatalk/pull/1036
-* Reintroduce quota support, modernized with meson build system by @rdmark in https://github.com/Netatalk/netatalk/pull/1034
-* Enable building with quota and libtirpc on Fedora 40 by @rdmark in https://github.com/Netatalk/netatalk/pull/1040
-* docs: Restructure some sources, and localize Japanese header navbar by @rdmark in https://github.com/Netatalk/netatalk/pull/1042
-</pre>
-
-</details>
-
+<ul>
+<li>Remove unused pap directory in libatalk by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/490'>https://github.com/Netatalk/netatalk/pull/490</a></li>
+<li>Remove trailing whitespace from codebase by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/495'>https://github.com/Netatalk/netatalk/pull/495</a></li>
+<li>Fix libevent2 linking on OpenIndiana by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/512'>https://github.com/Netatalk/netatalk/pull/512</a></li>
+<li>libatalk: Restore invalid metadata cleanup in ad_open.c by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/513'>https://github.com/Netatalk/netatalk/pull/513</a></li>
+<li>Remove substitutions for configurable file paths in man pages by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/514'>https://github.com/Netatalk/netatalk/pull/514</a></li>
+<li>add return 0 into become_user_permanently() by @pgajdos in <a href='https://github.com/Netatalk/netatalk/pull/524'>https://github.com/Netatalk/netatalk/pull/524</a></li>
+<li>Deprecate legacy cnid backends by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/528'>https://github.com/Netatalk/netatalk/pull/528</a></li>
+<li>Remove redundant AUTHORS file by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/538'>https://github.com/Netatalk/netatalk/pull/538</a></li>
+<li>Remove code for obsolete host operating systems by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/530'>https://github.com/Netatalk/netatalk/pull/530</a></li>
+<li>Better default Homes basedir regex example by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/547'>https://github.com/Netatalk/netatalk/pull/547</a></li>
+<li>Validate size of ace_count in FPSetACL request by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/546'>https://github.com/Netatalk/netatalk/pull/546</a></li>
+<li>Update comments in configure.ac and netatalk macro by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/568'>https://github.com/Netatalk/netatalk/pull/568</a></li>
+<li>pam_conv: Only Solarish seems to use non-const struct type. by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/563'>https://github.com/Netatalk/netatalk/pull/563</a></li>
+<li>Remove bundled talloc and only build libatalk/libtalloc when needed by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/565'>https://github.com/Netatalk/netatalk/pull/565</a></li>
+<li>Delete obsolete locking directory in libatalk by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/570'>https://github.com/Netatalk/netatalk/pull/570</a></li>
+<li>Enable / disable the entire spotlight support toolchain at configure time by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/572'>https://github.com/Netatalk/netatalk/pull/572</a></li>
+<li>libatalk: fix parsing of macOS created AppleDouble files by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/575'>https://github.com/Netatalk/netatalk/pull/575</a></li>
+<li>Compile spotlight.h only when Spotlight is enabled by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/578'>https://github.com/Netatalk/netatalk/pull/578</a></li>
+<li>Introduce option to control the format of file log timestamp by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/583'>https://github.com/Netatalk/netatalk/pull/583</a></li>
+<li>Standardize man page heading case by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/598'>https://github.com/Netatalk/netatalk/pull/598</a></li>
+<li>Deprecate AFS (Andrew File System) support in Netatalk 3 by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/594'>https://github.com/Netatalk/netatalk/pull/594</a></li>
+<li>Fix Spotlight support detection and compilation on Fedora by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/600'>https://github.com/Netatalk/netatalk/pull/600</a></li>
+<li>Update summary macro to check for all three Spotlight requirements by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/604'>https://github.com/Netatalk/netatalk/pull/604</a></li>
+<li>uams: Link PGP UAM with CRYPT_LIBS by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/608'>https://github.com/Netatalk/netatalk/pull/608</a></li>
+<li>Improve logger_test and remove outdated comments by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/601'>https://github.com/Netatalk/netatalk/pull/601</a></li>
+<li>afpd: Prevent a potential buffer overflow when changing password by @neko-hat in <a href='https://github.com/Netatalk/netatalk/pull/628'>https://github.com/Netatalk/netatalk/pull/628</a></li>
+<li>afpd: Remove tdb fallback mechanism, and other remnants of tdb and cdb by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/612'>https://github.com/Netatalk/netatalk/pull/612</a></li>
+<li>Check for attr.h before using (Solaris 10 compat) by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/622'>https://github.com/Netatalk/netatalk/pull/622</a></li>
+<li>libatalk: Use portable fcntl() instead of flock() by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/624'>https://github.com/Netatalk/netatalk/pull/624</a></li>
+<li>test program should only be compiled and run on make check/distcheck by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/637'>https://github.com/Netatalk/netatalk/pull/637</a></li>
+<li>Refresh docs and adjust for the upcoming 3.2 release by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/638'>https://github.com/Netatalk/netatalk/pull/638</a></li>
+<li>Fix Zeroconf support on *BSD platforms by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/640'>https://github.com/Netatalk/netatalk/pull/640</a></li>
+<li>Remove unneeded HAVE_TRACKER conditional by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/664'>https://github.com/Netatalk/netatalk/pull/664</a></li>
+<li>manual: Link to custom download and wiki mirrors in navbar by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/669'>https://github.com/Netatalk/netatalk/pull/669</a></li>
+<li>manual: Link to docs landing page by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/687'>https://github.com/Netatalk/netatalk/pull/687</a></li>
+<li>Clean up obsoleted man pages by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/691'>https://github.com/Netatalk/netatalk/pull/691</a></li>
+<li>Cleanup of obsolete gitignore filters by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/692'>https://github.com/Netatalk/netatalk/pull/692</a></li>
+<li>Clean up remainders of SourgeForge hosting by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/703'>https://github.com/Netatalk/netatalk/pull/703</a></li>
+<li>Fix &lsquo;MAXPHYS&rsquo; macro redefinition warning in macOS by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/706'>https://github.com/Netatalk/netatalk/pull/706</a></li>
+<li>Remove binary files and logo images from revision control by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/716'>https://github.com/Netatalk/netatalk/pull/716</a></li>
+<li>Docker configuration for netatalk v3 by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/713'>https://github.com/Netatalk/netatalk/pull/713</a></li>
+<li>Remove residual code for discontinued oses by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/723'>https://github.com/Netatalk/netatalk/pull/723</a></li>
+<li>Make macOS initscripts prefix sensitive by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/730'>https://github.com/Netatalk/netatalk/pull/730</a></li>
+<li>spotlight: Remove generated parser/lexer code from revision control by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/736'>https://github.com/Netatalk/netatalk/pull/736</a></li>
+<li>docs: Improve docbook templates, man page summaries, GPL text by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/744'>https://github.com/Netatalk/netatalk/pull/744</a></li>
+<li>docs: Limit max TOC depth to 2 in html manual; use DocBook 4.5 DTD by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/747'>https://github.com/Netatalk/netatalk/pull/747</a></li>
+<li>Detect system docbook stylesheets at configure time by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/748'>https://github.com/Netatalk/netatalk/pull/748</a></li>
+<li>Create meson build system by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/750'>https://github.com/Netatalk/netatalk/pull/750</a></li>
+<li>Swap out the old ldap_init for the wonderful ldap_initialize by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/768'>https://github.com/Netatalk/netatalk/pull/768</a></li>
+<li>Rename launchd plist to io.netatalk* and sort file names by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/778'>https://github.com/Netatalk/netatalk/pull/778</a></li>
+<li>Revert to using launchd startup script on macOS hosts by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/789'>https://github.com/Netatalk/netatalk/pull/789</a></li>
+<li>meson: Add init-style to configuration summary and fix missing gentoo-systemd style by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/785'>https://github.com/Netatalk/netatalk/pull/785</a></li>
+<li>docs: Update the git instructions in the Install chapter by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/786'>https://github.com/Netatalk/netatalk/pull/786</a></li>
+<li>docs: Generate compilation manual page from build.yml by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/792'>https://github.com/Netatalk/netatalk/pull/792</a></li>
+<li>docs: Japanese localization of the manual by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/809'>https://github.com/Netatalk/netatalk/pull/809</a></li>
+<li>meson: Ensure mysql backend is only enabled when mysqlclient library and headers are present by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/822'>https://github.com/Netatalk/netatalk/pull/822</a></li>
+<li>docker: Build with Meson by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/821'>https://github.com/Netatalk/netatalk/pull/821</a></li>
+<li>Spelling fix in dsi_tcp.c log message by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/834'>https://github.com/Netatalk/netatalk/pull/834</a></li>
+<li>docs: improve description of mimic model option by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/837'>https://github.com/Netatalk/netatalk/pull/837</a></li>
+<li>docs: Simplify the DEVELOPER readme by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/844'>https://github.com/Netatalk/netatalk/pull/844</a></li>
+<li>afpd: Deal better with large numbers of FCE events by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/849'>https://github.com/Netatalk/netatalk/pull/849</a></li>
+<li>Build system improvements for initscripts by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/854'>https://github.com/Netatalk/netatalk/pull/854</a></li>
+<li>docs: Overhaul the install and configuration chapters by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/855'>https://github.com/Netatalk/netatalk/pull/855</a></li>
+<li>Adopt rc script from FreeBSD ports. by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/877'>https://github.com/Netatalk/netatalk/pull/877</a></li>
+<li>Remove hard dependency on perl and grep by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/892'>https://github.com/Netatalk/netatalk/pull/892</a></li>
+<li>Rewrite afpstats in Perl by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/895'>https://github.com/Netatalk/netatalk/pull/895</a></li>
+<li>docker: Alpine based container by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/889'>https://github.com/Netatalk/netatalk/pull/889</a></li>
+<li>Pretty formatting of afpstats output by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/910'>https://github.com/Netatalk/netatalk/pull/910</a></li>
+<li>afppasswd: Check for valid password length by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/934'>https://github.com/Netatalk/netatalk/pull/934</a></li>
+<li>afppasswd: Introduce -w option for password string by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/941'>https://github.com/Netatalk/netatalk/pull/941</a></li>
+<li>Fix broken cracklib macro in autotools and meson by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/940'>https://github.com/Netatalk/netatalk/pull/940</a></li>
+<li>Forward-port netatalk-classic patches by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/952'>https://github.com/Netatalk/netatalk/pull/952</a></li>
+<li>netatalkd: Netatalk service can only be stopped if it is already running by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/966'>https://github.com/Netatalk/netatalk/pull/966</a></li>
+<li>meson: Add WolfSSL as DHX provider  by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/965'>https://github.com/Netatalk/netatalk/pull/965</a></li>
+<li>spotlight: Use https URLs for sparql type mapping references by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/973'>https://github.com/Netatalk/netatalk/pull/973</a></li>
+<li>Document the netatalk -d option by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/979'>https://github.com/Netatalk/netatalk/pull/979</a></li>
+<li>Optimize sort order of all headers by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/984'>https://github.com/Netatalk/netatalk/pull/984</a></li>
+<li>docs: Update manual for 3.2.0 release by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/987'>https://github.com/Netatalk/netatalk/pull/987</a></li>
+<li>docs: Update Japanese manual for 3.2.0 by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/991'>https://github.com/Netatalk/netatalk/pull/991</a></li>
+<li>Remove superfluous extern variable declarations by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1023'>https://github.com/Netatalk/netatalk/pull/1023</a></li>
+<li>Reintroduce quota support, modernized with meson build system by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1034'>https://github.com/Netatalk/netatalk/pull/1034</a></li>
+<li>Enable building with quota and libtirpc on Fedora 40 by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1040'>https://github.com/Netatalk/netatalk/pull/1040</a></li>
+</ul>
 <h2>New Contributors</h2>
 <ul>
 <li>@pgajdos made their first contribution in <a href='https://github.com/Netatalk/netatalk/pull/524'>https://github.com/Netatalk/netatalk/pull/524</a></li>
