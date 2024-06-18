@@ -20,12 +20,12 @@ from the <b>navbar to the left</b> on this website.</p>
 <h5>For Netatalk 3.x</h5>
 <ul>
     <li>
-        <a href="https://sourceforge.net/projects/netatalk/files/Webmin/netatalk3-wbm-1.0.tgz/download">
-            Download Webmin Module 1.0
+        <a href="https://sourceforge.net/projects/netatalk/files/Webmin/netatalk3-wbm-1.1.tgz/download">
+            Download Webmin Module 1.1
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-1.0">
+        <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-1.1">
             Release Notes
         </a>
     </li>
