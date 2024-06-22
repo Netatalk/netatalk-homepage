@@ -59,11 +59,7 @@
           interface, specified in AppleTalk numbering format (example:
           <code class="option">-addr 66.6</code>).</p></dd><dt><span class="term"><code class="option">-dontroute</code></span></dt><dd><p>Disables AppleTalk routing. It is the inverse of
           <code class="option">-router</code>.</p></dd><dt><span class="term"><code class="option">-net first[-last]</code></span></dt><dd><p>Allows the available net to be set, optionally as a
-          range.</p></dd><dt><span class="term"><code class="option">-noallmulti</code> (Linux only)</span></dt><dd><p>On Linux, the interfaces atalkd uses are set to ALLMULTI by
-          default, because of countless NICs having problems when not being
-          forced into this mode (some don't even work with ALLMULTI set). In
-          case you have a NIC known to support multicasts properly, you might
-          want to set this option to make fewer packets be processed</p></dd><dt><span class="term"><code class="option">-phase ( 1 | 2 )</code></span></dt><dd><p>Specifies the AppleTalk phase that this interface is to use
+          range.</p></dd><dt><span class="term"><code class="option">-phase ( 1 | 2 )</code></span></dt><dd><p>Specifies the AppleTalk phase that this interface is to use
           (either Phase 1 or Phase 2).</p></dd><dt><span class="term"><code class="option">-router</code></span></dt><dd><p>Seed an AppleTalk router on a single interface. The inverse
           option is <code class="option">-dontroute</code>. Akin to
           <code class="option">-seed</code>, but allows single interface routing.</p></dd><dt><span class="term"><code class="option">-seed</code></span></dt><dd><p>Seed an AppleTalk router. This requires two or more interfaces
