@@ -2,6 +2,17 @@
   <h1>News Archive</h1>
 
 <hr />
+    <small>31st of March 2024</small>
+    <h2>Netatalk 2.3.2 is available</h2>
+    <p>The Netatalk development team is proud to announce version 2.3.2 of
+    the Netatalk File Sharing suite. This release comes with improvements for
+    AppleTalk and pap, as well as native init scripts for modern
+    macOS. All users of previous Netatalk v2 releases are
+    encouraged to upgrade their installations to 2.3.2.</p>
+    <p>For a summary of news and a detailed list of changes see the
+    <a href="/2.3/ReleaseNotes2.3.2.html">Release Notes</a>.</p>
+
+<hr />
   <small>3rd of February 2024</small>
   <h2>Netatalk 2.3.1 is available</h2>
   <p>The Netatalk development team is proud to announce version 2.3.1 of

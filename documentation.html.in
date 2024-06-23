@@ -35,6 +35,11 @@
 <p>Documentation for the Netatalk version 2 release series.</p>
 <ul>
     <li>
+        <a href="/2.4/htmldocs">
+            Netatalk 2.4 manual
+        </a>
+    </li>
+    <li>
         <a href="/2.3/htmldocs">
             Netatalk 2.3 manual
         </a>
@@ -269,6 +274,11 @@
 
 <h5>Netatalk Version 2 Release Series</h5>
 <ul>
+    <li>
+        <a href="/2.4/ReleaseNotes2.4.0.html">
+            Netatalk 2.4.0
+        </a>
+    </li>
     <li>
         <a href="/2.3/ReleaseNotes2.3.2.html">
             Netatalk 2.3.2

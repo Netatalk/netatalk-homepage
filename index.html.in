@@ -120,6 +120,27 @@
   <h1>Latest News</h1>
 
 <hr />
+  <small>22nd of June 2024</small>
+  <h2>Netatalk 2.4.0 is available</h2>
+  <p>The Netatalk development team is proud to announce version 2.4.0 of
+  Netatalk. This is the first stable release of the new 2.4 series.
+  Early adopters are encouraged to upgrade their systems
+  to 2.4.0.</p>
+
+  <p>The standout new feature in this version, is a bundled WolfSSL library
+  which enables support for the older DHX and Random Number UAMs
+  on modern systems. The Meson build system is also introduced,
+  which is what enables the former.</p>
+
+  <p>A companion release of the Netatalk 2 Webmin Module, version 2.0,
+  is also available now. Find more information in the
+  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-2.0">Release Notes</a>.
+  </p>
+
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/2.4/ReleaseNotes2.4.0.html">Release Notes</a>.</p>
+
+<hr />
   <small>1st of June 2024</small>
   <h2>Netatalk 3.2.0 is available</h2>
   <p>The Netatalk development team is proud to announce version 3.2.0 of
@@ -134,7 +155,7 @@
 
   <p>A companion release of the Netatalk 3 Webmin Module, version 1.1,
   is also available now. Find more information in the
-  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.1">Release Notes</a>.
+  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-1.1">Release Notes</a>.
   </p>
 
   <p>For a summary of news and a detailed list of changes see the
@@ -153,17 +174,6 @@
   <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.3">v1.3 release
   of the Netatalk 2 module</a> is also available now.
   </p>
-
-<hr />
-    <small>31st of March 2024</small>
-    <h2>Netatalk 2.3.2 is available</h2>
-    <p>The Netatalk development team is proud to announce version 2.3.2 of
-    the Netatalk File Sharing suite. This release comes with improvements for
-    AppleTalk and pap, as well as native init scripts for modern
-    macOS. All users of previous Netatalk v2 releases are
-    encouraged to upgrade their installations to 2.3.2.</p>
-    <p>For a summary of news and a detailed list of changes see the
-    <a href="/2.3/ReleaseNotes2.3.2.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>

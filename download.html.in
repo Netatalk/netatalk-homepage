@@ -33,12 +33,12 @@ from the <b>navbar to the left</b> on this website.</p>
 <h5>For Netatalk 2.x</h5>
 <ul>
     <li>
-        <a href="https://sourceforge.net/projects/netatalk/files/Webmin/netatalk2-wbm-1.3.tgz/download">
-            Download Webmin Module 1.3
+        <a href="https://sourceforge.net/projects/netatalk/files/Webmin/netatalk2-wbm-2.0.tgz/download">
+            Download Webmin Module 2.0
         </a>
     </li>
     <li>
-        <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.3">
+        <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-2.0">
             Release Notes
         </a>
     </li>
