@@ -90,11 +90,12 @@
 <div id="content">
 <h1 id="AppleTalk-Kernel-Module">AppleTalk Kernel Module</h1><hr/>
 <h1>AppleTalk Kernel Module</h1>
-<p>Netatalk 2 relies on AppleTalk support in the kernel to make use of the DDP transport layer. The <code>atalkd</code> daemon will attempt to dynamically load the kernel module if not detected, and errors out if all attempts fail:</p>
+<p>Netatalk 2 relies on AppleTalk support in the kernel to make use of the DDP transport layer. The <code>atalkd</code> daemon will attempt to dynamically load the kernel module if not detected, and errors out with the following message if all attempts fail:</p>
 <pre><code>Address family not supported by protocol
 </code></pre>
 <p>You can still use Netatalk&rsquo;s DSI transport layer (TCP/IP) without AppleTalk support in the kernel.</p>
-<p>At the time of writing, Linux and NetBSD are known to have actively maintained AppleTalk kernel modules. At least Debian Linux (as of Bookworm) comes with the kernel module compiled in by default.</p>
+<p>At the time of writing, Linux and NetBSD are known to have actively maintained AppleTalk kernel modules. Many distros, notably Alpine, Debian, and Ubuntu, all ship with the AppleTalk module enabled out of the box.</p>
+<p>Other distros, such as Fedora, may have an active blacklisting in the default configuration that needs to be disabled first. See the <a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora-Linux.html">Installing Netatalk 2 on Fedora Linux</a> guide for more info.</p>
 <h2>Linux</h2>
 <p>To check if your kernel has AppleTalk support, first start the <code>atalkd</code> daemon, then issue this command and inspect the output:</p>
 <pre><code>$ lsmod | grep appletalk
@@ -134,7 +135,7 @@
         Please <a href="https://github.com/Netatalk/netatalk/wiki/AppleTalk-Kernel-Module">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-07</p>
+    <p>Last updated 2024-06-28</p>
     <hr />
     </div>
 <div class="footer">

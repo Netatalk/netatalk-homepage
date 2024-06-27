@@ -89,7 +89,10 @@
 </div></div>
 <div id="content">
 <h1 id="Installing-Netatalk-2-on-Fedora-Linux">Installing Netatalk 2 on Fedora Linux</h1><hr/>
-<p>Netatalk 2.2 works well on Fedora (tested on Fedora 38 and 39 for x86-64) with just a few wrinkles.  The steps are the same for Fedora Workstation and Fedora Server.  This guide does not replace <a href="https://netatalk.sourceforge.io/2.3/htmldocs/">the full documentation</a>; instead it supplements it.</p>
+<h1>See Also</h1>
+<p><strong><a href="https://netatalk.io/oldstable/htmldocs/compile#build-fedora">Compile Netatalk from Source: Fedora</a></strong> in the Manual</p>
+<h1>Overview</h1>
+<p>Netatalk 2.2 works well on Fedora (tested on Fedora 38 and 39 for x86-64) with just a few wrinkles.  The steps are the same for Fedora Workstation and Fedora Server.  This guide does not replace <a href="https://netatalk.io/oldstable/htmldocs/">the full documentation</a>; instead it supplements it.</p>
 <h1>Prepare the environment</h1>
 <p>First up, the prerequisites.  Install them with this command:</p>
 <p><code>dnf install openssl-devel libgcrypt-devel libdb-devel automake libtool avahi-devel cups-devel</code></p>
@@ -102,9 +105,11 @@
 <code>make -j4</code> </p>
 <p>And install (you must be root here or use <code>sudo</code>):
 <code>make install</code></p>
-<p>Once installed, you&rsquo;ll need to remove Fedora&rsquo;s default blacklist of the atalk kernel module, by typing the following, either when logged in as root or with <code>sudo</code>:
+<h2>AppleTalk</h2>
+<p>Once installed, you will need to remove Fedora&rsquo;s default blacklist of the atalk kernel module, in case you want to make use of the DDP transport layer in Netatalk.
+This can be achieved by typing the following, either when logged in as root or with <code>sudo</code>:
 <code>rm /etc/modprobe.d/appletalk-blacklist.conf</code></p>
-<p>This will allow Fedora to load the <code>atalk</code> kernel module.</p>
+<p>This will allow Fedora to load the <code>appletalk</code> kernel module.</p>
 <h1>Some quick configuration examples</h1>
 <p>The configuration files after install can be found in <code>/usr/local/etc/netatalk</code>.  </p>
 <p>For <code>afpd.conf</code>, here&rsquo;s an example server line that I use.</p>
@@ -118,7 +123,7 @@
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-Fedora-Linux">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-07</p>
+    <p>Last updated 2024-06-28</p>
     <hr />
     </div>
 <div class="footer">

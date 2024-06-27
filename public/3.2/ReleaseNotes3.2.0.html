@@ -50,6 +50,13 @@
         3.2.0 (xz)
         </a>
       </li>
+        <li>
+          <a
+          title="download 3.2.0 checksum"
+          href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-0/netatalk-3.2.0.tar.xz.sha256sum/download">
+          3.2.0 (sha256sum)
+          </a>
+        </li>
       <li>
         <a
         title="view 3.2.0 Release Notes"
@@ -62,22 +69,22 @@
     <ul>
       <li>
         <a
-        title="download 2.3.2 xz compressed"
-        href="https://sourceforge.net/projects/netatalk/files/netatalk-2-3-2/netatalk-2.3.2.tar.xz/download">
-        2.3.2 (xz)
+        title="download 2.4.0 xz compressed"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-0/netatalk-2.4.0.tar.xz/download">
+        2.4.0 (xz)
         </a>
       </li>
+        <li>
+          <a
+          title="download 2.4.0 checksum"
+          href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-0/netatalk-2.4.0.tar.xz.sha256sum/download">
+          2.4.0 (sha256sum)
+          </a>
+        </li>
       <li>
         <a
-        title="download 2.3.2 bzip2 compressed"
-        href="https://sourceforge.net/projects/netatalk/files/netatalk-2-3-2/netatalk-2.3.2.tar.bz2/download">
-        2.3.2 (bzip2)
-        </a>
-      </li>
-      <li>
-        <a
-        title="view 2.3.2 Release Notes"
-        href="/2.3/ReleaseNotes2.3.2.html">
+        title="view 2.4.0 Release Notes"
+        href="/2.4/ReleaseNotes2.4.0.html">
         Release Notes
         </a>
       </li>
@@ -125,6 +132,9 @@
 </div>
 <div id="content">
 <h1>Netatalk 3.2.0</h1><hr />
+<h1>COMPATIBILITY WARNING</h1>
+<p>If you previously used the Netatalk 3.1.18 image for making Time Machine backups in macOS, you may <a href="https://github.com/Netatalk/netatalk/issues/1068">run into errors</a> after upgrading to the Netatalk 3.2.0 image or later. It is recommended to discard the backup sparsebundle and redo the backup. If you absolutely must access the older backup sparsebundle, downgrading to the 3.1.18 image should restore access.</p>
+<hr />
 <p>Netatalk 3.2.0 is available!</p>
 <p>The Netatalk team is proud to announce the first release in the <strong>Netatalk 3.2</strong> release series.</p>
 <p>This release contains a number of breaking changes compared to Netatalk 3.1, and is recommended for early adopters. It is highly recommended that you take a backup of your production environment before attempting to upgrade an existing Netatalk deployment to 3.2.0.</p>
@@ -162,7 +172,7 @@
 <p>This introduces a compile- and runtime dependency on a system-supplied shared <code>talloc</code> library, which most contemporary operating systems have at the time of writing.</p>
 <p>Additionally, a yacc parser (e.g. <code>bison</code>) and lexer (e.g. <code>flex</code>) are now compile time dependencies for building with Spotlight support.</p>
 <h3>Perl</h3>
-<p>The Perl runtime is now an <em>optional</em> dependency for Netatalk (it was previously mandatory.) If Perl is not detected at compile time, the administrative CLI utilities that use the Perl runtime are installed.</p>
+<p>The Perl runtime is now an <em>optional</em> dependency for Netatalk (it was previously mandatory.) Only when Perl is detected at compile time, the administrative CLI utilities that use the Perl runtime are installed.</p>
 <p>At the same time, the <code>afpstats</code> CLI utility has been rewritten in Perl (previously: Python.)</p>
 <h2>Deprecated Features</h2>
 <h3>Andrew File System</h3>

@@ -99,23 +99,20 @@ troubleshooting your vintage Mac network.</p>
 10.2 or later) or SLP (for Mac OS X 10.0 and 10.1) service discovery
 should work, and the file server should automatically be listed in the
 Network drawer.</p>
-<p>In Classic Mac OS, you have to enter the IP address to the AFP file
-server manually with the stock AppleShare Client.</p>
-<p>AFP over TCP can be used on Mac OS 7.1 and later. Mac OS 8.1 and later
+<p>In Classic Mac OS, you may have to enter the IP address to the AFP file
+server manually in the AppleShare Client, unless you also have AppleTalk networking enabled.</p>
+<p>AFP over TCP can be used on Mac OS 7.5 and later. Mac OS 8.1 and later
 supports AFP over TCP out of the box, but on older versions you need to
 install <a href="https://macintoshgarden.org/apps/appleshare-client-372">AppleShare Client
-3.7.4</a> (or
-later.) You may also need to install <a href="https://macintoshgarden.org/apps/open-transport-13-gold-master">Open Transport
+3.7.0</a> (or
+later.) It is also recommended to install <a href="https://macintoshgarden.org/apps/open-transport-13-gold-master">Open Transport
 1.3</a> if
-a compatible version of OT is not already installed.</p>
-<p>Note that the AppleShare Client 3.7.4 will refuse to install on a 7.1
-System, so you will have to copy the AppleShare extension over manually.</p>
+a compatible version of Open Transport is not already installed.</p>
 <p>On Classic Mac OS, open the Chooser, click on AppleTalk, and then the
 Server IP Address button.</p>
 <p>On Mac OS X 10.8 or earlier, enter the Go menu, Connect to Server, enter
 afp://[ip address], Connect, and then the same username and
 password as above.</p>
-<p>On Mac OS 9, you can use a <a href="https://github.com/dgsga/netatalk/blob/oldmacos/extension/Multicast%20DNS%20%26%20DNS-SD.sit">unofficial Apple extension</a> to enable support for Zeroconf service discovery.</p>
 <h3>Troubleshooting</h3>
 <p>Netatalk comes with a handy tool for inquiring the status of an AFP
 server, <code>asip-status</code>, regardless of whether it&rsquo;s run by Netatalk or a
@@ -188,7 +185,7 @@ to reach the shared drive through TCP, if not DDP.</p>
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Connect-to-AFP-Server">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-07</p>
+    <p>Last updated 2024-06-28</p>
     <hr />
     </div>
 <div class="footer">

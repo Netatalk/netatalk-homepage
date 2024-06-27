@@ -2,7 +2,7 @@
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
     <loc>https://netatalk.io/docs/AppleTalk-Kernel-Module.html</loc>
-    <lastmod>2024-05-13</lastmod>
+    <lastmod>2024-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -20,7 +20,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Connect-to-AFP-Server.html</loc>
-    <lastmod>2024-04-08</lastmod>
+    <lastmod>2024-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -32,7 +32,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Developer-Notes.html</loc>
-    <lastmod>2024-04-29</lastmod>
+    <lastmod>2024-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -56,37 +56,37 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Alpine-Linux.html</loc>
-    <lastmod>2024-04-28</lastmod>
+    <lastmod>2024-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Debian-Linux.html</loc>
-    <lastmod>2024-05-21</lastmod>
+    <lastmod>2024-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Fedora-Linux.html</loc>
-    <lastmod>2024-04-08</lastmod>
+    <lastmod>2024-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-NetBSD.html</loc>
-    <lastmod>2024-04-18</lastmod>
+    <lastmod>2024-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-OmniOS.html</loc>
-    <lastmod>2024-04-08</lastmod>
+    <lastmod>2024-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-macOS.html</loc>
-    <lastmod>2024-04-08</lastmod>
+    <lastmod>2024-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -128,7 +128,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-macOS.html</loc>
-    <lastmod>2024-06-02</lastmod>
+    <lastmod>2024-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -152,7 +152,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Release-Process.html</loc>
-    <lastmod>2024-06-02</lastmod>
+    <lastmod>2024-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -188,7 +188,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Work-with-Documentation.html</loc>
-    <lastmod>2024-06-02</lastmod>
+    <lastmod>2024-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
