@@ -62,6 +62,24 @@ in writing code for Netatalk, you should subscribe to this list.</p>
 <td>2023/10/05</td>
 <td>3.1.0 ~ 3.1.17</td>
 </tr>
+<tr>
+<td><a href="/security/CVE-2024-38439.html">CVE-2024-38439</a></td>
+<td>Heap out-of-bounds write in uams_pam.c</td>
+<td>2024/06/28</td>
+<td>2.0.0 ~ 2.4.0; 3.0.0 ~ 3.2.0</td>
+</tr>
+<tr>
+<td><a href="/security/CVE-2024-38440.html">CVE-2024-38440</a></td>
+<td>Heap out-of-bounds write in uams_dhx_pam.c</td>
+<td>2024/06/28</td>
+<td>2.0.0 ~ 2.4.0; 3.0.0 ~ 3.2.0</td>
+</tr>
+<tr>
+<td><a href="/security/CVE-2024-38441.html">CVE-2024-38441</a></td>
+<td>Heap out-of-bounds write in directory.c</td>
+<td>2024/06/28</td>
+<td>2.0.0 ~ 2.4.0; 3.0.0 ~ 3.2.0</td>
+</tr>
 </table>
 
 <h3>See Also</h3>
