@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Release Notes - 3.1.14</title>
+    <title>Netatalk Release Notes - 3.1.19</title>
     <meta name="description" content="Netatalk Release Notes">
-    <link rel="canonical" href="https://netatalk.io/3.1/ReleaseNotes3.1.14.html">
+    <link rel="canonical" href="https://netatalk.io/3.1/ReleaseNotes3.1.19.html">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -131,47 +131,27 @@
   </div>
 </div>
 <div id="content">
-<h1>Netatalk 3.1.14</h1><hr />
-<p>Netatalk 3.1.14 is available!</p>
-<p>The Netatalk development team is proud to announce latest release of the Netatalk 3.1 release series. Users are encouraged to update their servers to the 3.1 release series which is the stable and supported version for production systems.</p>
+<h1>Netatalk 3.1.19</h1><hr />
+<p>Netatalk 3.1.19 is available!</p>
+<p>The Netatalk development team is proud to announce the latest release of the Netatalk 3.1 release series. Users are encouraged to update their servers to the 3.1 release series which is the stable and supported version for production systems.</p>
 <h2>What&rsquo;s Changed</h2>
 <ul>
-<li>FIX: fix build with libressl &gt;= 2.7.0, <a href='https://github.com/Netatalk/netatalk/issues/105'>GitHub #105</a></li>
-<li>NEW: Added Ignore Directories Feature, <a href='https://github.com/Netatalk/netatalk/issues/120'>GitHub #120</a> </li>
-<li>UPD: Generate Unicode source code based on the latest UnicodeData.txt, <a href='https://github.com/Netatalk/netatalk/issues/114'>GitHub #114</a> </li>
-<li>FIX: Protect against removing AFP metadata xattr, <a href='https://github.com/Netatalk/netatalk/issues/174'>GitHub #174</a> </li>
-<li>FIX: avoid setting adouble entries on symlinks, <a href='https://github.com/Netatalk/netatalk/issues/174'>GitHub #174</a> </li>
-<li>FIX: add handling for cases where ad_entry() returns NULL, <a href='https://github.com/Netatalk/netatalk/issues/174'>GitHub #174</a> </li>
-<li>FIX: Fix setting of LD_LIBRARY_FLAGS ($shlibpath_var)., <a href='https://github.com/Netatalk/netatalk/issues/172'>GitHub #172</a> </li>
-<li>FIX: Fedora migrating away from IO::Socket::INET6 to IO::Socket::IP, <a href='https://github.com/Netatalk/netatalk/issues/130'>GitHub #130</a> </li>
-<li>FIX: afpd: check return values from setXXid() functions, <a href='https://github.com/Netatalk/netatalk/issues/115'>GitHub #115</a> </li>
-<li>FIX: libatalk: put back unintentionally removed copyright, <a href='https://github.com/Netatalk/netatalk/issues/118'>GitHub #118</a> </li>
-<li>FIX: afpd: drop groups in become_user_permanently(), <a href='https://github.com/Netatalk/netatalk/issues/126'>GitHub #126</a> </li>
-<li>FIX: Fix use after free in get_tm_used(), <a href='https://github.com/Netatalk/netatalk/issues/128'>GitHub #128</a> </li>
-<li>FIX: Fix sign extension problem in bsd_attr_list() <a href="https://sourceforge.net/p/netatalk/bugs/659/">SF Bug#659</a></li>
-<li>FIX: Fix garbage read in bsd_attr_list, <a href='https://github.com/Netatalk/netatalk/issues/127'>GitHub #127</a> </li>
-<li>FIX: make afpstats python 3 compatible</li>
-<li>UPD: docs: manual: Remove wrong TCP-over-TCP info; minor copy editing, <a href='https://github.com/Netatalk/netatalk/issues/106'>GitHub #106</a> </li>
-<li>FIX: configure.ac: fix macro ordering for CentOS 6</li>
-<li>FIX: configure.ac: fix typo</li>
-<li>FIX: configure.ac: remove some trailing whitespace</li>
-<li>FIX: configure.ac: fix deprecated macro invocation</li>
-<li>FIX: configure.ac: replace obsolete macro</li>
-<li>FIX: libatalk/dsi/Makefile.am: fix deprecation warning</li>
-<li>FIX: Store AutoMake helper script in build-aux/</li>
-<li>FIX: configure.ac: define a dir for macros</li>
-<li>FIX: configure.ac: AM_CONFIG_HEADER is deprecated</li>
-<li>FIX: autotools: Fix another deprecation warning</li>
-<li>FIX: libgcrypt typo in configuration error message, <a href='https://github.com/Netatalk/netatalk/issues/96'>GitHub #96</a> </li>
-<li>UPD: Various CI improvements</li>
-<li>FIX: libatalk/conf: re-generation of afp_voluuid.conf</li>
-<li>UPD: libatalk/conf: code cleanup and add locking to get_vol_uuid()</li>
-<li>UPD: add documentation for the lv_flags_t</li>
-<li>FIX: No need to check for attropen on Solaris, <a href='https://github.com/Netatalk/netatalk/issues/44'>GitHub #44</a></li>
+<li>FIX: CVE-2024-38439,CVE-2024-38440,CVE-2024-38441: Harden user login, <a href='https://github.com/Netatalk/netatalk/issues/1158'>GitHub #1158</a></li>
+<li>NEW: Introduce an official Dockerfile and entry script, <a href='https://github.com/Netatalk/netatalk/issues/713'>GitHub #713</a></li>
+<li>UPD: docs: Improvements to manual, <a href='https://github.com/Netatalk/netatalk/issues/744'>GitHub #744</a></li>
+<li>Move legal notice into the Introduction chapter</li>
+<li>Improve manual page summaries</li>
+<li>Print netatalk version number as subtitle</li>
+<li>NEW: docs: Distribute a manual appendix with the GNU GPL v2 text, <a href='https://github.com/Netatalk/netatalk/issues/745'>GitHub #745</a></li>
+<li>NEW: docs: Distribute the Japanese localization of the manual, <a href='https://github.com/Netatalk/netatalk/issues/806'>GitHub #806</a></li>
+<li>FIX: docs: Inconsistent man page heading case, <a href='https://github.com/Netatalk/netatalk/issues/545'>GitHub #545</a></li>
+<li>UPD: docs: Refresh DEVELOPER readme and Docbook templates, <a href='https://github.com/Netatalk/netatalk/issues/638'>GitHub #638</a></li>
+<li>UPD: docs: Clean up remainders of SourgeForge hosting, <a href='https://github.com/Netatalk/netatalk/issues/703'>GitHub #703</a></li>
+<li>UPD: docs: Limit max TOC depth to 2 in manual, bump DocBook to 4.5, <a href='https://github.com/Netatalk/netatalk/issues/747'>GitHub #747</a></li>
 </ul>
-<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/Netatalk/commits/netatalk-3-1-14'>https://github.com/Netatalk/Netatalk/commits/netatalk-3-1-14</a></p><hr />
-<p>Release published on 2023-01-10</p>
-<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-14">GitHub</a></p>
+<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-1-18&hellip;netatalk-3-1-19'>https://github.com/Netatalk/netatalk/compare/netatalk-3-1-18&hellip;netatalk-3-1-19</a></p><hr />
+<p>Release published on 2024-06-29</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-19">GitHub</a></p>
 <hr />
 </div>
 <div class="footer">

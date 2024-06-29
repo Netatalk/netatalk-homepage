@@ -45,22 +45,22 @@
     <ul>
       <li>
         <a
-        title="download 3.2.0 xz compressed"
-        href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-0/netatalk-3.2.0.tar.xz/download">
-        3.2.0 (xz)
+        title="download 3.2.1 xz compressed"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-1/netatalk-3.2.1.tar.xz/download">
+        3.2.1 (xz)
         </a>
       </li>
         <li>
           <a
-          title="download 3.2.0 checksum"
-          href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-0/netatalk-3.2.0.tar.xz.sha256sum/download">
-          3.2.0 (sha256sum)
+          title="download 3.2.1 checksum"
+          href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-1/netatalk-3.2.1.tar.xz.sha256sum/download">
+          3.2.1 (sha256sum)
           </a>
         </li>
       <li>
         <a
-        title="view 3.2.0 Release Notes"
-        href="/3.2/ReleaseNotes3.2.0.html">
+        title="view 3.2.1 Release Notes"
+        href="/3.2/ReleaseNotes3.2.1.html">
         Release Notes
         </a>
       </li>
@@ -69,22 +69,22 @@
     <ul>
       <li>
         <a
-        title="download 2.4.0 xz compressed"
-        href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-0/netatalk-2.4.0.tar.xz/download">
+        title="download 2.4.1 xz compressed"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-1/netatalk-2.4.1.tar.xz/download">
         2.4.0 (xz)
         </a>
       </li>
         <li>
           <a
-          title="download 2.4.0 checksum"
-          href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-0/netatalk-2.4.0.tar.xz.sha256sum/download">
-          2.4.0 (sha256sum)
+          title="download 2.4.1 checksum"
+          href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-1/netatalk-2.4.1.tar.xz.sha256sum/download">
+          2.4.1 (sha256sum)
           </a>
         </li>
       <li>
         <a
-        title="view 2.4.0 Release Notes"
-        href="/2.4/ReleaseNotes2.4.0.html">
+        title="view 2.4.1 Release Notes"
+        href="/2.4/ReleaseNotes2.4.1.html">
         Release Notes
         </a>
       </li>
@@ -132,10 +132,10 @@
 </div>
 <div id="content">
 <h1>Netatalk 3.2.0</h1><hr />
-<h1>COMPATIBILITY WARNING</h1>
-<p>If you previously used the Netatalk 3.1.18 image for making Time Machine backups in macOS, you may <a href="https://github.com/Netatalk/netatalk/issues/1068">run into errors</a> after upgrading to the Netatalk 3.2.0 image or later. It is recommended to discard the backup sparsebundle and redo the backup. If you absolutely must access the older backup sparsebundle, downgrading to the 3.1.18 image should restore access.</p>
+<h1>COMPATIBILITY ALERT</h1>
+<p>If you previously used the Netatalk 3.1.18 <em>Docker image</em> for making Time Machine backups in macOS, you may <a href="https://github.com/Netatalk/netatalk/issues/1068">run into errors</a> after upgrading to the Netatalk 3.2.0 image or later. It is recommended to discard the backup sparsebundle and redo the backup. If you absolutely must access the older backup sparsebundle, downgrading to the 3.1.18 image should restore access.</p>
 <hr />
-<p>Netatalk 3.2.0 is available!</p>
+<h1>Netatalk 3.2.0 is available!</h1>
 <p>The Netatalk team is proud to announce the first release in the <strong>Netatalk 3.2</strong> release series.</p>
 <p>This release contains a number of breaking changes compared to Netatalk 3.1, and is recommended for early adopters. It is highly recommended that you take a backup of your production environment before attempting to upgrade an existing Netatalk deployment to 3.2.0.</p>
 <p>A companion release of the <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-1.1">Webmin Module (v1.1)</a> is also available, with support for the new and updated features in Netatalk 3.2.0, as well as a range of improvements and bugfixes.</p>
@@ -143,7 +143,7 @@
 <h2>New Features</h2>
 <h3>Meson build system</h3>
 <p>The Meson build system has been introduced, and exists in parallel with the traditional GNU Autotools build system. We plan to remove Autotools in a future feature release version of Netatalk.</p>
-<p>Please see <a href="https://github.com/Netatalk/netatalk/blob/netatalk-3-2-0/INSTALL">INSTALL</a> for instruction how to use the new build system. The online manual also has a <a href="https://netatalk.io/3.2/htmldocs/compile">new appendix</a> with build instructions for specific operating systems.</p>
+<p>Please see <a href="https://github.com/Netatalk/netatalk/blob/netatalk-3-2-0/INSTALL">INSTALL</a> for instructions how to use the new build system. The online manual also has a <a href="https://netatalk.io/3.2/htmldocs/compile">new appendix</a> with build instructions for specific operating systems.</p>
 <p>Consequently, starting with this release, we no longer distribute tarballs that were bootstrapped by autoconf. We still ship the bootstrap script and all the macros required so that you can bootstrap it yourself if needed.</p>
 <h3>Bundled WolfSSL</h3>
 <p>OpenSSL 3.0 has deprecated the <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">DHCAST128</a> and <a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard">DES</a> encryption algorithms used by Apple&rsquo;s <strong>DHX</strong> and <strong>Random Number</strong> UAMs, respectively. These UAMs are used for (somewhat) secure authentication with very old Mac OS clients (early OS X, Classic Mac OS, and Apple IIGS.)</p>

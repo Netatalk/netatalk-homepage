@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Release Notes - 3.2.1</title>
+    <meta name="description" content="Netatalk Release Notes">
+    <link rel="canonical" href="https://netatalk.io/3.2/ReleaseNotes3.2.1.html">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
+</head>
+<body>
+<div id="header">
+    <div id="logo"></div>
+    <div id="menlinks">
+        <a href="/" title="Return to Netatalk home">[main]</a>
+        <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+        <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
+        <a href="/download.html" title="Download Netatalk">[downloads]</a>
+        <a href="/support.html" title="Support">[support]</a>
+        <a href="/links.html" title="Netatalk related links">[links]</a>
+        <img src="/gfx/end.gif" alt="" width="125" height="7" />
+    </div>
+</div>
+
+<div id="header-print">
+    <h1>netatalk.io</h1>
+</div>
+
+<div class="search">
+    <h2>search netatalk.io</h2>
+    <form method="get" action="https://www.google.com/search">
+        <p>
+            <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+            <input type="hidden" name="sitesearch" value="netatalk.io" />
+            <input type="submit" name="btnG" value="Go" title="search netatalk.io" />
+        </p>
+    </form>
+    <span class="italic">powered by Google</span>
+</div>
+
+<div id="navbars">
+  <div class="navbar">
+    <h2>current releases</h2>
+    <p><b>stable</b></p>
+    <ul>
+      <li>
+        <a
+        title="download 3.2.1 xz compressed"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-1/netatalk-3.2.1.tar.xz/download">
+        3.2.1 (xz)
+        </a>
+      </li>
+        <li>
+          <a
+          title="download 3.2.1 checksum"
+          href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-1/netatalk-3.2.1.tar.xz.sha256sum/download">
+          3.2.1 (sha256sum)
+          </a>
+        </li>
+      <li>
+        <a
+        title="view 3.2.1 Release Notes"
+        href="/3.2/ReleaseNotes3.2.1.html">
+        Release Notes
+        </a>
+      </li>
+    </ul>
+    <p><b>old stable (AppleTalk)</b></p>
+    <ul>
+      <li>
+        <a
+        title="download 2.4.1 xz compressed"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-1/netatalk-2.4.1.tar.xz/download">
+        2.4.0 (xz)
+        </a>
+      </li>
+        <li>
+          <a
+          title="download 2.4.1 checksum"
+          href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-1/netatalk-2.4.1.tar.xz.sha256sum/download">
+          2.4.1 (sha256sum)
+          </a>
+        </li>
+      <li>
+        <a
+        title="view 2.4.1 Release Notes"
+        href="/2.4/ReleaseNotes2.4.1.html">
+        Release Notes
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar">
+    <h2>documentation</h2>
+    <h3><b>Manual (version 3)</b></h3>
+    <ol>
+      <li><a href="/stable/htmldocs/intro.html">Introduction</a></li>
+      <li><a href="/stable/htmldocs/installation.html">Installation</a></li>
+      <li><a href="/stable/htmldocs/configuration.html">Configuration</a></li>
+      <li><a href="/stable/htmldocs/upgrade.html">Upgrading</a></li>
+      <li><a href="/stable/htmldocs/man-pages.html">Man Pages</a></li>
+    </ol>
+    <h3><b>Manual (version 2)</b></h3>
+    <ol>
+      <li><a href="/oldstable/htmldocs/intro.html">Introduction</a></li>
+      <li><a href="/oldstable/htmldocs/installation.html">Installation</a></li>
+      <li><a href="/oldstable/htmldocs/configuration.html">Configuration</a></li>
+      <li><a href="/oldstable/htmldocs/upgrade.html">Upgrading</a></li>
+      <li><a href="/oldstable/htmldocs/man-pages.html">Man Pages</a></li>
+    </ol>
+  </div>
+  <div class="navbar">
+    <h2>community</h2>
+    <ul>
+       <li><a title="Wiki" href="https://github.com/Netatalk/netatalk/wiki">Contribute to Wiki Pages</a></li>
+       <li><a title="Discussions" href="https://github.com/Netatalk/netatalk/discussions">Participate in Discussions</a></li>
+       <li><a title="Mailing Lists" href="https://sourceforge.net/p/netatalk/mailman/">Subscribe to Mailing Lists</a></li>
+    </ul>
+  </div>
+  <div class="navbar">
+    <h2>development</h2>
+    <ul>
+       <li><a title="Code Repository" href="https://github.com/Netatalk/netatalk">Code Repository</a></li>
+       <li><a title="How to Contribute" href="https://netatalk.io/docs/Developer-Notes.html">
+        How to Contribute</a></li>
+    </ul>
+    <p><a href="https://sonarcloud.io/summary/overall?id=Netatalk_netatalk">
+      <img alt="Sonarcloud Scan Build Status" height="30"
+         src="https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg"/>
+    </a></p>
+  </div>
+</div>
+<div id="content">
+<h1>Netatalk 3.2.1</h1><hr />
+<h1>COMPATIBILITY ALERT</h1>
+<p>If you previously used the Netatalk 3.1.18 <em>Docker image</em> for making Time Machine backups in macOS, you may <a href="https://github.com/Netatalk/netatalk/issues/1068">run into errors</a> after upgrading to the Netatalk 3.2.0 image or later. It is recommended to discard the backup sparsebundle and redo the backup. If you absolutely must access the older backup sparsebundle, downgrading to the 3.1.18 image should restore access.</p>
+<hr />
+<h1>Netatalk 3.2.1 is available!</h1>
+<p>The Netatalk team is proud to announce the latest version in the <strong>Netatalk 3.2</strong> release series.</p>
+<p>This release includes a patch for security vulnerabilities CVE-2024-38439, CVE-2024-38440, and CVE-2024-38441. Users of the 3.x release series are encouraged to update their servers to this version.</p>
+<p>Additionally, this version reworks the configuration options for the new Meson build system, following user feedback to the prior release. See the table below for a breakdown of the changes.</p>
+<p>The <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-1.1">Netatalk 3 Webmin Module v1.1</a> is recommended to use with this version.</p>
+<p>Please see <a href="https://github.com/Netatalk/netatalk/blob/netatalk-3-2-1/NEWS">NEWS</a> for the full changelog.</p>
+<h2>Major Changes</h2>
+<h3>Meson build system</h3>
+<p>The Meson build system was introduced in Netatalk 3.2.0, and exists in parallel with the traditional GNU Autotools build system. We plan to remove Autotools in a future feature release version of Netatalk.</p>
+<p>Please see <a href="https://github.com/Netatalk/netatalk/blob/netatalk-3-2-1/INSTALL">INSTALL</a> for instructions how to use the new build system. The online manual also has a <a href="https://netatalk.io/3.2/htmldocs/compile">new appendix</a> with build instructions for specific operating systems.</p>
+<p>The following table breaks down the changes to the Meson build system between 3.2.0 and 3.2.1. Options in italics are <em>unchanged</em>.</p>
+<table>
+<thead>
+<tr>
+<th>3.2.0 option</th>
+<th>takes</th>
+<th>3.2.1 option</th>
+<th>takes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>build-manual</td>
+<td>true/false</td>
+<td>with-manual</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>build-tests</td>
+<td>true/false</td>
+<td>with-tests</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>disable-init-hooks</td>
+<td>true/false</td>
+<td>with-init-hooks</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>disable-largefile</td>
+<td>true/false</td>
+<td>with-largefile</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>disable-sendfile</td>
+<td>true/false</td>
+<td>with-sendfile</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>disable-shell-check</td>
+<td>true/false</td>
+<td>with-shell-check</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>disable-tcp-wrappers</td>
+<td>true/false</td>
+<td>with-tcp-wrappers</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>enable-debug</td>
+<td>true/false</td>
+<td>with-debug</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>enable-debugging</td>
+<td>true/false</td>
+<td>with-debugging</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>enable-krbV-uam</td>
+<td>enabled/disabled</td>
+<td>with-krbV-uam</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>enable-overwrite</td>
+<td>true/false</td>
+<td>with-overwrite</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>enable-pgp-uam</td>
+<td>enabled/disabled</td>
+<td>with-pgp-uam</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>enable-quota</td>
+<td>enabled/disabled</td>
+<td>with-quota</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>enable-rpath</td>
+<td>true/false</td>
+<td>with-rpath</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>enable-zeroconf</td>
+<td>enabled/disabled</td>
+<td>with-zeroconf</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>with-acls</td>
+<td>enabled/disabled</td>
+<td>with-acls</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>with-afpstats</td>
+<td>enabled/disabled</td>
+<td>with-acls</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>with-bdb</td>
+<td>string</td>
+<td>with-bdb-path</td>
+<td>string</td>
+</tr>
+<tr>
+<td><em>with-cnid-dbd-backend</em></td>
+<td><em>true/false</em></td>
+<td><em>with-cnid-dbd-backend</em></td>
+<td><em>true/false</em></td>
+</tr>
+<tr>
+<td>with-cnid-default-backend</td>
+<td>string</td>
+<td>with-cnid-default-backend</td>
+<td>combo</td>
+</tr>
+<tr>
+<td><em>with-cnid-last-backend</em></td>
+<td><em>true/false</em></td>
+<td><em>with-cnid-last-backend</em></td>
+<td><em>true/false</em></td>
+</tr>
+<tr>
+<td>with-cracklib</td>
+<td>string</td>
+<td>with-cracklib</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>with-cracklib-path</td>
+<td>string</td>
+</tr>
+<tr>
+<td>with-dbus-daemon</td>
+<td>string</td>
+<td>with-dbus-daemon-path</td>
+<td>string</td>
+</tr>
+<tr>
+<td>with-dbus-sysconf-dir</td>
+<td>string</td>
+<td>with-dbus-sysconf-path</td>
+<td>string</td>
+</tr>
+<tr>
+<td>with-docbook</td>
+<td>string</td>
+<td>with-docbook-path</td>
+<td>string</td>
+</tr>
+<tr>
+<td><em>with-dtrace</em></td>
+<td><em>true/false</em></td>
+<td><em>with-dtrace</em></td>
+<td><em>true/false</em></td>
+</tr>
+<tr>
+<td><em>with-embedded-ssl</em></td>
+<td><em>true/false</em></td>
+<td><em>with-embedded-ssl</em></td>
+<td><em>true/false</em></td>
+</tr>
+<tr>
+<td>with-gssapi</td>
+<td>string</td>
+<td>with-gssapi</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>with-gssapi-path</td>
+<td>string</td>
+</tr>
+<tr>
+<td><em>with-init-dir</em></td>
+<td><em>string</em></td>
+<td><em>with-init-dir</em></td>
+<td><em>string</em></td>
+</tr>
+<tr>
+<td><em>with-init-style</em></td>
+<td><em>combo</em></td>
+<td><em>with-init-style</em></td>
+<td><em>combo</em></td>
+</tr>
+<tr>
+<td>with-kerberos</td>
+<td>enabled/disabled</td>
+<td>with-kerberos</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>with-ldap</td>
+<td>string</td>
+<td>with-ldap</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>with-ldap-path</td>
+<td>string</td>
+</tr>
+<tr>
+<td>with-libgcrypt-dir</td>
+<td>string</td>
+<td>with-libgcrypt-path</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>with-libiconv</td>
+<td>string</td>
+<td>with-libiconv</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>with-libiconv-path</td>
+<td>string</td>
+</tr>
+<tr>
+<td>with-libtirpc</td>
+<td>true/false</td>
+<td>REMOVED</td>
+<td></td>
+</tr>
+<tr>
+<td>with-lockfile</td>
+<td>string</td>
+<td>with-lockfile-path</td>
+<td>string</td>
+</tr>
+<tr>
+<td><em>with-mysql-config</em></td>
+<td><em>string</em></td>
+<td><em>with-mysql-config</em></td>
+<td><em>string</em></td>
+</tr>
+<tr>
+<td>with-pam</td>
+<td>string</td>
+<td>with-pam-path</td>
+<td>string</td>
+</tr>
+<tr>
+<td>without-pam</td>
+<td>true/false</td>
+<td>with-pam</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>with-shadow</td>
+<td>enabled/disabled</td>
+<td>with-shadow</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>with-spotlight</td>
+<td>enabled/disabled</td>
+<td>with-spotlight</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>with-ssl-dir</td>
+<td>string</td>
+<td>REMOVED</td>
+<td></td>
+</tr>
+<tr>
+<td><em>with-tracker-install-prefix</em></td>
+<td><em>string</em></td>
+<td><em>with-tracker-install-prefix</em></td>
+<td><em>string</em></td>
+</tr>
+<tr>
+<td>with-tracker-pkgconfig-version</td>
+<td>string</td>
+<td>REMOVED</td>
+<td></td>
+</tr>
+<tr>
+<td><em>with-tracker-prefix</em></td>
+<td><em>string</em></td>
+<td><em>with-tracker-prefix</em></td>
+<td><em>string</em></td>
+</tr>
+<tr>
+<td><em>with-uams-path</em></td>
+<td><em>string</em></td>
+<td><em>with-uams-path</em></td>
+<td><em>string</em></td>
+</tr>
+</tbody>
+</table>
+<h3>Bundled WolfSSL</h3>
+<p>WolfSSL was introduced in Netatalk 3.2.0 as the recommended SSL provider for the DHX (DHCAST128) and Random Number user authentication modules.</p>
+<p>In addition to the bundled <a href="https://www.wolfssl.com/">WolfSSL</a> library, the latest version of Netatalk now supports building with system provided WolfSSL libraries. At the time of release, only Debian and Ubuntu could be confirmed shipping a fully-featured WolfSSL library.</p>
+<p>Alpine Linux, Arch Linux, DragonFly BSD and FreeBSD also ship WolfSSL libraries. However in our testing neither were complete enough to be used with Netatalk. On these platforms we will still use the bundled WolfSSL library.</p>
+<h2>What&rsquo;s Changed</h2>
+<ul>
+<li>meson: Fix -Doption paths on systems where rpath is enabled by default by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1053'>https://github.com/Netatalk/netatalk/pull/1053</a></li>
+<li>meson: Fix library search macro on Omnios hosts by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1056'>https://github.com/Netatalk/netatalk/pull/1056</a></li>
+<li>docker: Don&rsquo;t bail out when password is longer than 8 chars by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1067'>https://github.com/Netatalk/netatalk/pull/1067</a></li>
+<li>meson: afpstats should depend on Perl; don&rsquo;t install dev scripts by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1070'>https://github.com/Netatalk/netatalk/pull/1070</a></li>
+<li>meson: set setuid bit to allow user afppasswd changing by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1071'>https://github.com/Netatalk/netatalk/pull/1071</a></li>
+<li>meson: Fix logic of UCS-2-INTERNAL detection macro by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1075'>https://github.com/Netatalk/netatalk/pull/1075</a></li>
+<li>meson: Address various issues with the meson build system by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1082'>https://github.com/Netatalk/netatalk/pull/1082</a></li>
+<li>Use portable linux macro in etc/afpd header by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1083'>https://github.com/Netatalk/netatalk/pull/1083</a></li>
+<li>meson: Further refinements to meson build system by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1086'>https://github.com/Netatalk/netatalk/pull/1086</a></li>
+<li>meson: Fix issues with quota support on linux and macOS hosts by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1092'>https://github.com/Netatalk/netatalk/pull/1092</a></li>
+<li>meson: Simplify options semantics and standardize feature macros by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1099'>https://github.com/Netatalk/netatalk/pull/1099</a></li>
+<li>docker: Bump to Alpine 3.20 base image by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1111'>https://github.com/Netatalk/netatalk/pull/1111</a></li>
+<li>docker: Correct group management for Alpine by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1116'>https://github.com/Netatalk/netatalk/pull/1116</a></li>
+<li>meson: Set executable flags when installing scripts by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1117'>https://github.com/Netatalk/netatalk/pull/1117</a></li>
+<li>meson: with-rpath syntax is invalid by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1130'>https://github.com/Netatalk/netatalk/pull/1130</a></li>
+<li>docs: Indicate license for software package, and add SSLeay notice by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1125'>https://github.com/Netatalk/netatalk/pull/1125</a></li>
+<li>autotools and meson: Use pkg-config to find libgcrypt by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1132'>https://github.com/Netatalk/netatalk/pull/1132</a></li>
+<li>Debian Trixie expects systemd scripts in /usr/lib by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1135'>https://github.com/Netatalk/netatalk/pull/1135</a></li>
+<li>Add copyright for mac_roman.h by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1137'>https://github.com/Netatalk/netatalk/pull/1137</a></li>
+<li>Cleanup of copyright headers to make them more scanner friendly by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1142'>https://github.com/Netatalk/netatalk/pull/1142</a></li>
+<li>Remove unused atalk/talloc.h header by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1154'>https://github.com/Netatalk/netatalk/pull/1154</a></li>
+<li>CVE-2024-38439,CVE-2024-38440,CVE-2024-38441: Harden user login by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1158'>https://github.com/Netatalk/netatalk/pull/1158</a></li>
+<li>docs: Rephrase tarball section of manual by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1164'>https://github.com/Netatalk/netatalk/pull/1164</a></li>
+<li>meson: Prioritize native WolfSSL package over built-in SSL library if it has the correct configuration by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1160'>https://github.com/Netatalk/netatalk/pull/1160</a></li>
+<li>Changelog for 3.2.1 release by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1168'>https://github.com/Netatalk/netatalk/pull/1168</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-2-0&hellip;netatalk-3-2-1'>https://github.com/Netatalk/netatalk/compare/netatalk-3-2-0&hellip;netatalk-3-2-1</a></p><hr />
+<p>Release published on 2024-06-29</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-2-1">GitHub</a></p>
+<hr />
+</div>
+<div class="footer">
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a>
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+</div>
+</body>
+</html>
+

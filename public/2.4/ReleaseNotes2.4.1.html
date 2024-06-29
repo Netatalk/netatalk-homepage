@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Release Notes - 3.1.14</title>
+    <title>Netatalk Release Notes - 2.4.1</title>
     <meta name="description" content="Netatalk Release Notes">
-    <link rel="canonical" href="https://netatalk.io/3.1/ReleaseNotes3.1.14.html">
+    <link rel="canonical" href="https://netatalk.io/2.4/ReleaseNotes2.4.1.html">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -131,47 +131,38 @@
   </div>
 </div>
 <div id="content">
-<h1>Netatalk 3.1.14</h1><hr />
-<p>Netatalk 3.1.14 is available!</p>
-<p>The Netatalk development team is proud to announce latest release of the Netatalk 3.1 release series. Users are encouraged to update their servers to the 3.1 release series which is the stable and supported version for production systems.</p>
+<h1>Netatalk 2.4.1</h1><hr />
+<h1>Netatalk 2.4.1 is available!</h1>
+<p>The Netatalk team is proud to announce the latest version in the <strong>Netatalk 2.4</strong> release series. Unlike the Netatalk 3.x releases, 2.x maintains support for the AppleTalk transport layer for networking with very old Mac and Apple II clients.</p>
+<p>This release includes a patch for security vulnerabilities CVE-2024-38439, CVE-2024-38440, and CVE-2024-38441. Users of the 2.x release series are encouraged to update their servers to this version</p>
+<p>Please see <a href="https://github.com/Netatalk/netatalk/blob/netatalk-2-4-1/INSTALL">INSTALL</a> for instructions how to use the new Meson build system. The online manual also has a <a href="https://netatalk.io/2.4/htmldocs/compile">new appendix</a> with build instructions for specific operating systems.</p>
+<p>The recommended version of the Netatalk Webmin module for this release is <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-2.0">v2.0</a>.</p>
+<p>Please see <a href="https://github.com/Netatalk/netatalk/blob/netatalk-2-4-1/NEWS">NEWS</a> for the full changelog.</p>
+<h2>Major Changes</h2>
+<h3>Bundled WolfSSL</h3>
+<p>WolfSSL was introduced in Netatalk 2.4.0 as the recommended SSL provider for the DHX (DHCAST128) and Random Number user authentication modules.</p>
+<p>In addition to the bundled <a href="https://www.wolfssl.com/">WolfSSL</a> library, the latest version of Netatalk now supports building with system provided WolfSSL libraries. At the time of release, only Debian and Ubuntu could be confirmed shipping a fully-featured WolfSSL library.</p>
+<p>Alpine Linux, Arch Linux, DragonFly BSD and FreeBSD also ship WolfSSL libraries. However in our testing neither were complete enough to be used with Netatalk. On these platforms we will still use the bundled WolfSSL library.</p>
 <h2>What&rsquo;s Changed</h2>
 <ul>
-<li>FIX: fix build with libressl &gt;= 2.7.0, <a href='https://github.com/Netatalk/netatalk/issues/105'>GitHub #105</a></li>
-<li>NEW: Added Ignore Directories Feature, <a href='https://github.com/Netatalk/netatalk/issues/120'>GitHub #120</a> </li>
-<li>UPD: Generate Unicode source code based on the latest UnicodeData.txt, <a href='https://github.com/Netatalk/netatalk/issues/114'>GitHub #114</a> </li>
-<li>FIX: Protect against removing AFP metadata xattr, <a href='https://github.com/Netatalk/netatalk/issues/174'>GitHub #174</a> </li>
-<li>FIX: avoid setting adouble entries on symlinks, <a href='https://github.com/Netatalk/netatalk/issues/174'>GitHub #174</a> </li>
-<li>FIX: add handling for cases where ad_entry() returns NULL, <a href='https://github.com/Netatalk/netatalk/issues/174'>GitHub #174</a> </li>
-<li>FIX: Fix setting of LD_LIBRARY_FLAGS ($shlibpath_var)., <a href='https://github.com/Netatalk/netatalk/issues/172'>GitHub #172</a> </li>
-<li>FIX: Fedora migrating away from IO::Socket::INET6 to IO::Socket::IP, <a href='https://github.com/Netatalk/netatalk/issues/130'>GitHub #130</a> </li>
-<li>FIX: afpd: check return values from setXXid() functions, <a href='https://github.com/Netatalk/netatalk/issues/115'>GitHub #115</a> </li>
-<li>FIX: libatalk: put back unintentionally removed copyright, <a href='https://github.com/Netatalk/netatalk/issues/118'>GitHub #118</a> </li>
-<li>FIX: afpd: drop groups in become_user_permanently(), <a href='https://github.com/Netatalk/netatalk/issues/126'>GitHub #126</a> </li>
-<li>FIX: Fix use after free in get_tm_used(), <a href='https://github.com/Netatalk/netatalk/issues/128'>GitHub #128</a> </li>
-<li>FIX: Fix sign extension problem in bsd_attr_list() <a href="https://sourceforge.net/p/netatalk/bugs/659/">SF Bug#659</a></li>
-<li>FIX: Fix garbage read in bsd_attr_list, <a href='https://github.com/Netatalk/netatalk/issues/127'>GitHub #127</a> </li>
-<li>FIX: make afpstats python 3 compatible</li>
-<li>UPD: docs: manual: Remove wrong TCP-over-TCP info; minor copy editing, <a href='https://github.com/Netatalk/netatalk/issues/106'>GitHub #106</a> </li>
-<li>FIX: configure.ac: fix macro ordering for CentOS 6</li>
-<li>FIX: configure.ac: fix typo</li>
-<li>FIX: configure.ac: remove some trailing whitespace</li>
-<li>FIX: configure.ac: fix deprecated macro invocation</li>
-<li>FIX: configure.ac: replace obsolete macro</li>
-<li>FIX: libatalk/dsi/Makefile.am: fix deprecation warning</li>
-<li>FIX: Store AutoMake helper script in build-aux/</li>
-<li>FIX: configure.ac: define a dir for macros</li>
-<li>FIX: configure.ac: AM_CONFIG_HEADER is deprecated</li>
-<li>FIX: autotools: Fix another deprecation warning</li>
-<li>FIX: libgcrypt typo in configuration error message, <a href='https://github.com/Netatalk/netatalk/issues/96'>GitHub #96</a> </li>
-<li>UPD: Various CI improvements</li>
-<li>FIX: libatalk/conf: re-generation of afp_voluuid.conf</li>
-<li>UPD: libatalk/conf: code cleanup and add locking to get_vol_uuid()</li>
-<li>UPD: add documentation for the lv_flags_t</li>
-<li>FIX: No need to check for attropen on Solaris, <a href='https://github.com/Netatalk/netatalk/issues/44'>GitHub #44</a></li>
+<li>[2.4] meson: with-rpath syntax is invalid by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1131'>https://github.com/Netatalk/netatalk/pull/1131</a></li>
+<li>[2.4] docs: Indicate license for software package, and add SSLeay notice by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1126'>https://github.com/Netatalk/netatalk/pull/1126</a></li>
+<li>[2.4] docker: Use guest auth only with INSECURE_AUTH flag by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1127'>https://github.com/Netatalk/netatalk/pull/1127</a></li>
+<li>[2.4] meson: Remove obsolete with-libtirpc option by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1129'>https://github.com/Netatalk/netatalk/pull/1129</a></li>
+<li>[2.4] autotools and meson: Use pkg-config to find libgcrypt by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1133'>https://github.com/Netatalk/netatalk/pull/1133</a></li>
+<li>[2.4] Add copyright for mac_roman.h by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1138'>https://github.com/Netatalk/netatalk/pull/1138</a></li>
+<li>[2.4] Debian Trixie expects systemd scripts in /usr/lib by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1136'>https://github.com/Netatalk/netatalk/pull/1136</a></li>
+<li>[2.4] Don&rsquo;t attempt to restart atalkd systemd service if NBP registrations fail by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1141'>https://github.com/Netatalk/netatalk/pull/1141</a></li>
+<li>[2.4] meson: Fix version number substitution by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1150'>https://github.com/Netatalk/netatalk/pull/1150</a></li>
+<li>[2.4] Cleanup of copyright headers to make them more scanner friendly by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1143'>https://github.com/Netatalk/netatalk/pull/1143</a></li>
+<li>[2.4] CVE-2024-38439,CVE-2024-38440,CVE-2024-38441: Harden user login by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1159'>https://github.com/Netatalk/netatalk/pull/1159</a></li>
+<li>[2.4] docs: Rephrase tarball section of manual by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1165'>https://github.com/Netatalk/netatalk/pull/1165</a></li>
+<li>[2.4] meson: Prioritize native WolfSSL package over built-in SSL library if it has the correct configuration by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1161'>https://github.com/Netatalk/netatalk/pull/1161</a></li>
+<li>[2.4] meson: Restore SLP (srvloc) support by @dgsga in <a href='https://github.com/Netatalk/netatalk/pull/1153'>https://github.com/Netatalk/netatalk/pull/1153</a></li>
 </ul>
-<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/Netatalk/commits/netatalk-3-1-14'>https://github.com/Netatalk/Netatalk/commits/netatalk-3-1-14</a></p><hr />
-<p>Release published on 2023-01-10</p>
-<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-14">GitHub</a></p>
+<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-2-4-0&hellip;netatalk-2-4-1'>https://github.com/Netatalk/netatalk/compare/netatalk-2-4-0&hellip;netatalk-2-4-1</a></p><hr />
+<p>Release published on 2024-06-29</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-4-1">GitHub</a></p>
 <hr />
 </div>
 <div class="footer">
