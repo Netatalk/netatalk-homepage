@@ -24,12 +24,13 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 3.2.0</div>
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Compile Netatalk from Source</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="netatalkconfig.1.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">Next</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="compile"></a>Appendix A. Compile Netatalk from Source</h1></div><div><p class="pubdate">2024-05-31</p></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="compile.html#compile-overview">Overview</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.4"></a></span></dt><dt><span class="sect1"><a href="compile.html#compile-os">Operating Systems</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.6"></a></span></dt><dd><dl><dt><span class="sect2"><a href="compile.html#build-alpine">Alpine Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-archlinux">Arch Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-debian">Debian Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-fedora">Fedora Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-opensuse">openSUSE Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-ubuntu">Ubuntu Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-dflybsd">DragonflyBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-freebsd">FreeBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-netbsd">NetBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-openbsd">OpenBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-macos">macOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-omnios">OmniOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-solaris">Solaris</a></span></dt><dt><span class="sect2"><a href="compile.html#id-1.9.6.14"></a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-overview"></a>Overview</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><p>This appendix describes how to compile Netatalk from source for specific operating systems.</p><p>Please note that the steps below are automatically generated, and may not be optimized for your system.</p><p>Choose one of the build systems: Autotools or Meson. Test steps are optional.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-os"></a>Operating Systems</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-alpine"></a>Alpine Linux</h3></div></div></div><p>Install dependencies</p><p>
+    <div xmlns="" class="navheader" align="center">Netatalk 3.2.1</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Compile Netatalk from Source</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="netatalkconfig.1.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">Next</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="compile"></a>Appendix A. Compile Netatalk from Source</h1></div><div><p class="pubdate">2024-06-29</p></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="compile.html#compile-overview">Overview</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.4"></a></span></dt><dt><span class="sect1"><a href="compile.html#compile-os">Operating Systems</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.6"></a></span></dt><dd><dl><dt><span class="sect2"><a href="compile.html#build-alpine">Alpine Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-archlinux">Arch Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-debian">Debian Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-fedora">Fedora Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-opensuse">openSUSE Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-ubuntu">Ubuntu Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-dflybsd">DragonflyBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-freebsd">FreeBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-netbsd">NetBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-openbsd">OpenBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-macos">macOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-omnios">OmniOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-solaris">Solaris</a></span></dt><dt><span class="sect2"><a href="compile.html#id-1.9.6.14"></a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-overview"></a>Overview</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><p>This appendix describes how to compile Netatalk from source for specific operating systems.</p><p>Please note that the steps below are automatically generated, and may not be optimized for your system.</p><p>Choose one of the build systems: Autotools or Meson. Test steps are optional.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-os"></a>Operating Systems</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-alpine"></a>Alpine Linux</h3></div></div></div><p>Install dependencies</p><p>
 				</p><pre class="screen">apk add \
   acl-dev \
   autoconf \
   automake \
+  avahi-compat-libdns_sd \
   avahi-dev \
   bison \
   build-base \
@@ -58,7 +59,8 @@
   rpcsvc-proto-dev \
   talloc-dev \
   tracker \
-  tracker-dev
+  tracker-dev \
+  tracker-miners
 </pre><p>
 			</p><p>Autotools - Bootstrap</p><p>
 				</p><pre class="screen">./bootstrap</pre><p>
@@ -68,7 +70,6 @@
   --enable-pgp-uam \
   --with-cracklib \
   --with-init-style=openrc \
-  --with-libtirpc \
   --with-tracker-pkgconfig-version=3.0
 </pre><p>
 			</p><p>Autotools - Build</p><p>
@@ -81,16 +82,15 @@
 				</p><pre class="screen">make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
-  -Dbuild-tests=true \
-  -Dwith-init-style=openrc \
-  -Dwith-libtirpc=true
+  -Dwith-tests=true \
+  -Dwith-init-style=openrc
 </pre><p>
 			</p><p>Meson - Build</p><p>
-				</p><pre class="screen">ninja -C build</pre><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Meson - Run tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
 			</p><p>Meson - Install</p><p>
-				</p><pre class="screen">ninja -C build install</pre><p>
+				</p><pre class="screen">meson install -C build</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-archlinux"></a>Arch Linux</h3></div></div></div><p>Install dependencies</p><p>
@@ -103,7 +103,8 @@
   make \
   meson \
   ninja \
-  pkgconfig
+  pkgconfig \
+  rpcsvc-proto
 </pre><p>
 			</p><p>Autotools - Bootstrap</p><p>
 				</p><pre class="screen">./bootstrap</pre><p>
@@ -123,16 +124,16 @@
 				</p><pre class="screen">make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
-  -Dbuild-tests=true \
-  -Ddisable-init-hooks=true \
+  -Dwith-tests=true \
+  -Dwith-init-hooks=false \
   -Dwith-init-style=systemd
 </pre><p>
 			</p><p>Meson - Build</p><p>
-				</p><pre class="screen">ninja -C build</pre><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Meson - Run tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
 			</p><p>Meson - Install</p><p>
-				</p><pre class="screen">ninja -C build install</pre><p>
+				</p><pre class="screen">meson install -C build</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-debian"></a>Debian Linux</h3></div></div></div><p>Install dependencies</p><p>
@@ -164,6 +165,7 @@ apt-get install --assume-yes --no-install-recommends \
   libtool \
   libtool-bin \
   libtracker-sparql-3.0-dev \
+  libwolfssl-dev \
   libwrap0-dev \
   make \
   meson \
@@ -171,7 +173,8 @@ apt-get install --assume-yes --no-install-recommends \
   quota \
   systemtap-sdt-dev \
   tcpd \
-  tracker
+  tracker \
+  tracker-miner-fs
 </pre><p>
 			</p><p>Autotools - Bootstrap</p><p>
 				</p><pre class="screen">./bootstrap</pre><p>
@@ -183,7 +186,6 @@ apt-get install --assume-yes --no-install-recommends \
   --enable-quota \
   --with-cracklib \
   --with-init-style=debian-sysv \
-  --with-libtirpc \
   --with-tracker-pkgconfig-version=3.0
 </pre><p>
 			</p><p>Autotools - Build</p><p>
@@ -200,16 +202,15 @@ apt-get install --assume-yes --no-install-recommends \
 				</p><pre class="screen">make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
-  -Dbuild-tests=true \
-  -Dwith-init-style=debian-sysv \
-  -Dwith-libtirpc=true
+  -Dwith-tests=true \
+  -Dwith-init-style=debian-sysv
 </pre><p>
 			</p><p>Meson - Build</p><p>
-				</p><pre class="screen">ninja -C build</pre><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Meson - Run tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
 			</p><p>Meson - Install</p><p>
-				</p><pre class="screen">ninja -C build install</pre><p>
+				</p><pre class="screen">meson install -C build</pre><p>
 			</p><p>Start netatalk</p><p>
 				</p><pre class="screen">/etc/init.d/netatalk start &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
 			</p><p>Stop netatalk</p><p>
@@ -255,7 +256,6 @@ apt-get install --assume-yes --no-install-recommends \
   --enable-quota \
   --with-cracklib \
   --with-init-style=redhat-systemd \
-  --with-libtirpc \
   --with-tracker-pkgconfig-version=3.0
 </pre><p>
 			</p><p>Autotools - Build</p><p>
@@ -268,17 +268,16 @@ apt-get install --assume-yes --no-install-recommends \
 				</p><pre class="screen">sudo make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
-  -Dbuild-tests=true \
-  -Ddisable-init-hooks=true \
-  -Dwith-init-style=redhat-systemd \
-  -Dwith-libtirpc=true
+  -Dwith-tests=true \
+  -Dwith-init-hooks=false \
+  -Dwith-init-style=redhat-systemd
 </pre><p>
 			</p><p>Meson - Build</p><p>
-				</p><pre class="screen">ninja -C build</pre><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Meson - Run tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
 			</p><p>Meson - Install</p><p>
-				</p><pre class="screen">sudo ninja -C build install</pre><p>
+				</p><pre class="screen">sudo meson install -C build</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">sudo ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-opensuse"></a>openSUSE Linux</h3></div></div></div><p>Install dependencies</p><p>
@@ -339,16 +338,16 @@ zypper in -y \
 				</p><pre class="screen">make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
-  -Dbuild-tests=true \
-  -Ddisable-init-hooks=true \
+  -Dwith-tests=true \
+  -Dwith-init-hooks=false \
   -Dwith-init-style=suse-systemd
 </pre><p>
 			</p><p>Meson - Build</p><p>
-				</p><pre class="screen">ninja -C build</pre><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Meson - Run tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
 			</p><p>Meson - Install</p><p>
-				</p><pre class="screen">ninja -C build install</pre><p>
+				</p><pre class="screen">meson install -C build</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-ubuntu"></a>Ubuntu Linux</h3></div></div></div><p>Install dependencies</p><p>
@@ -377,6 +376,7 @@ libtirpc-dev \
 libtool \
 libtool-bin \
 libtracker-sparql-3.0-dev \
+libwolfssl-dev \
 libwrap0-dev \
 meson \
 ninja-build \
@@ -384,6 +384,7 @@ quota \
 systemtap-sdt-dev \
 tcpd \
 tracker \
+tracker-miner-fs \
 xsltproc
 
 </pre><p>
@@ -398,7 +399,6 @@ xsltproc
   --with-cracklib \
   --with-docbook=/usr/share/xml/docbook/stylesheet/docbook-xsl \
   --with-init-style=debian-systemd \
-  --with-libtirpc \
   --with-tracker-pkgconfig-version=3.0
 </pre><p>
 			</p><p>Autotools - Generate manual pages</p><p>
@@ -419,20 +419,19 @@ xsltproc
 				</p><pre class="screen">sudo make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
-  -Dbuild-tests=true \
-  -Dbuild-manual=true \
-  -Ddisable-init-hooks=true \
-  -Dwith-init-style=debian-systemd \
-  -Dwith-libtirpc=true
+  -Dwith-tests=true \
+  -Dwith-manual=true \
+  -Dwith-init-hooks=false \
+  -Dwith-init-style=debian-systemd
 </pre><p>
 			</p><p>Meson - Build and generate manual pages</p><p>
-				</p><pre class="screen">ninja -C build</pre><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Meson - Run tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
 			</p><p>Meson - Run distribution tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson dist</pre><p>
 			</p><p>Meson - Install</p><p>
-				</p><pre class="screen">sudo ninja -C build install</pre><p>
+				</p><pre class="screen">sudo meson install -C build</pre><p>
 			</p><p>Start netatalk</p><p>
 				</p><pre class="screen">sudo systemctl start netatalk &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
 			</p><p>Stop netatalk</p><p>
@@ -447,10 +446,12 @@ xsltproc
   bison \
   db5 \
   gmake \
+  krb5-devel \
   libevent \
   libgcrypt \
   libtool \
   meson \
+  openldap26-client \
   perl5 \
   pkgconf \
   py39-gdbm \
@@ -473,8 +474,8 @@ gmake install
 gmake uninstall
 echo "Building with Meson"
 meson setup build
-ninja -C build
-ninja -C build install
+meson compile -C build
+meson install -C build
 ninja -C build uninstall
 </pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-freebsd"></a>FreeBSD</h3></div></div></div><p>Install required packages</p><p>
@@ -520,8 +521,8 @@ echo "Building with Meson"
 meson setup build \
   -Dpkg_config_path=/usr/local/libdata/pkgconfig \
   -Dwith-init-style=freebsd
-ninja -C build
-ninja -C build install
+meson compile -C build
+meson install -C build
 /etc/rc.d/netatalk start
 sleep 2
 asip-status localhost
@@ -554,14 +555,11 @@ ninja -C build uninstall
 echo "Building with Autotools"
 ./bootstrap
 ./configure \
+  MAKE=gmake \
   --enable-krbV-uam \
   --enable-pgp-uam \
-  --with-bdb=/usr/pkg \
   --with-init-style=netbsd \
-  --with-libgcrypt-dir=/usr/pkg \
-  --with-tracker-pkgconfig-version=3.0 \
-  MAKE=gmake \
-  PKG_CONFIG_PATH=/usr/pkg/lib/pkgconfig
+  --with-tracker-pkgconfig-version=3.0
 gmake -j $(nproc)
 gmake install
 service netatalk onestart
@@ -574,8 +572,8 @@ meson setup build \
   -Dpkg_config_path=/usr/pkg/lib/pkgconfig \
   -Dwith-dtrace=false \
   -Dwith-init-style=netbsd
-ninja -C build
-ninja -C build install
+meson compile -C build
+meson install -C build
 service netatalk onestart
 sleep 2
 asip-status localhost
@@ -626,8 +624,8 @@ echo "Building with Meson"
 meson setup build \
   -Dpkg_config_path=/usr/local/lib/pkgconfig \
   -Dwith-init-style=openbsd
-ninja -C build
-ninja -C build install
+meson compile -C build
+meson install -C build
 rcctl -d start netatalk
 sleep 2
 asip-status localhost
@@ -661,16 +659,15 @@ ninja -C build uninstall
 				</p><pre class="screen">sudo make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
-  -Dwith-bdb=/opt/homebrew/opt/berkeley-db \
   -Dwith-init-style=macos-launchd \
-  -Dbuild-tests=true
+  -Dwith-tests=true
 </pre><p>
 			</p><p>Meson - Build</p><p>
-				</p><pre class="screen">ninja -C build</pre><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Meson - Run tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
 			</p><p>Meson - Install</p><p>
-				</p><pre class="screen">sudo ninja -C build install</pre><p>
+				</p><pre class="screen">sudo meson install -C build</pre><p>
 			</p><p>Start netatalk</p><p>
 				</p><pre class="screen">sudo netatalkd start &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
 			</p><p>Stop netatalk</p><p>
@@ -682,8 +679,8 @@ ninja -C build uninstall
   build-essential \
   libtool \
   pkg-config
-curl -O https://pkgsrc.smartos.org/packages/SmartOS/bootstrap/bootstrap-trunk-x86_64-20230910.tar.gz
-tar -zxpf bootstrap-trunk-x86_64-20230910.tar.gz -C /
+curl -O https://pkgsrc.smartos.org/packages/SmartOS/bootstrap/bootstrap-trunk-x86_64-20240116.tar.gz
+tar -zxpf bootstrap-trunk-x86_64-20240116.tar.gz -C /
 export PATH=/opt/local/sbin:/opt/local/bin:/usr/gnu/bin:/usr/bin:/usr/sbin:/sbin:$PATH
 pkgin -y install \
   avahi \
@@ -698,30 +695,28 @@ pkgin -y install \
 				</p><pre class="screen">set -e
 export PATH=/opt/local/sbin:/opt/local/bin:/usr/gnu/bin:/usr/bin:/usr/sbin:/sbin:$PATH
 echo "Building with Autotools"
+export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig
 ./bootstrap
 ./configure \
   --enable-pgp-uam \
   --with-bdb=/opt/local \
   --with-init-style=solaris \
   --with-ldap=/opt/local \
-  --with-libgcrypt-dir=/opt/local \
-  --with-tracker-pkgconfig-version=3.0 \
-  MAKE=gmake \
-  PKG_CONFIG_PATH=/opt/local/lib/pkgconfig
-gmake -j $(nproc)
-gmake install
+  --with-tracker-pkgconfig-version=3.0
+make -j $(nproc)
+make install
 svcadm enable svc:/network/netatalk:default
 sleep 2
 /usr/local/bin/asip-status localhost
 svcadm disable svc:/network/netatalk:default
-gmake uninstall
+make uninstall
 echo "Building with Meson"
 meson setup build \
   -Dpkg_config_path=/opt/local/lib/pkgconfig \
   -Dwith-init-style=solaris \
-  -Dwith-ldap=/opt/local
-ninja -C build
-ninja -C build install
+  -Dwith-ldap-path=/opt/local
+meson compile -C build
+meson install -C build
 svcadm enable svc:/network/netatalk:default
 sleep 2
 /usr/local/bin/asip-status localhost
