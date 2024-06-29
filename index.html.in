@@ -120,60 +120,44 @@
   <h1>Latest News</h1>
 
 <hr />
-  <small>22nd of June 2024</small>
-  <h2>Netatalk 2.4.0 is available</h2>
-  <p>The Netatalk development team is proud to announce version 2.4.0 of
-  Netatalk. This is the first stable release of the new 2.4 series.
-  Early adopters are encouraged to upgrade their systems
-  to 2.4.0.</p>
+  <small>29th of June 2024</small>
+  <h2>Netatalk 2.4.1 is available</h2>
 
-  <p>The standout new feature in this version, is a bundled WolfSSL library
-  which enables support for the older DHX and Random Number UAMs
-  on modern systems. The Meson build system is also introduced,
-  which is what enables the former.</p>
-
-  <p>A companion release of the Netatalk 2 Webmin Module, version 2.0,
-  is also available now. Find more information in the
-  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-2.0">Release Notes</a>.
-  </p>
-
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 2.4 release series. It includes a patch for security issues
+  <a href="CVE-2024-38439.html">CVE-2024-38439</a>,
+  <a href="CVE-2024-38440.html">CVE-2024-38440</a>, and
+  <a href="CVE-2024-38441.html">CVE-2024-38441</a>.
+  All users of Netatalk 2.4 are encouraged to upgrade their systems to 2.4.1.</p>
   <p>For a summary of news and a detailed list of changes see the
-  <a href="/2.4/ReleaseNotes2.4.0.html">Release Notes</a>.</p>
+  <a href="/2.4/ReleaseNotes2.4.1.html">Release Notes</a>.</p>
 
 <hr />
-  <small>1st of June 2024</small>
-  <h2>Netatalk 3.2.0 is available</h2>
-  <p>The Netatalk development team is proud to announce version 3.2.0 of
-  Netatalk. This is the first stable release of the new 3.2 series.
-  Early adopters are encouraged to upgrade their systems
-  to 3.2.0.</p>
+  <small>29th of June 2024</small>
+  <h2>Netatalk 3.2.1 is available</h2>
 
-  <p>The standout new feature in this version, is a bundled WolfSSL library
-  which enables support for the older DHX and Random Number UAMs
-  on modern systems. The Meson build system is also introduced,
-  which is what enables the former.</p>
-
-  <p>A companion release of the Netatalk 3 Webmin Module, version 1.1,
-  is also available now. Find more information in the
-  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-1.1">Release Notes</a>.
-  </p>
-
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 3.2 release series. It includes a patch for security issues
+  <a href="CVE-2024-38439.html">CVE-2024-38439</a>,
+  <a href="CVE-2024-38440.html">CVE-2024-38440</a>, and
+  <a href="CVE-2024-38441.html">CVE-2024-38441</a>. Additionally, the Meson
+  build system options have been completely reworked for ease of use.
+  All users of Netatalk 3.2 are encouraged to upgrade their systems to 3.2.1.</p>
   <p>For a summary of news and a detailed list of changes see the
-  <a href="/3.2/ReleaseNotes3.2.0.html">Release Notes</a>.</p>
+  <a href="/3.2/ReleaseNotes3.2.1.html">Release Notes</a>.</p>
 
 <hr />
-  <small>20th of April 2024</small>
-  <h2>Netatalk 3 Webmin Module 1.0 Released</h2>
+  <small>29th of June 2024</small>
+  <h2>Netatalk 3.1.19 is available</h2>
 
-  <p>The first stable and fully compliant version of the Netatalk 3 Webmin Module is now available.
-  A large number of supportet options and help text has been added.</p>
-  <p>For more information and to download the module, see the
-  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-1.0">Release Notes</a>.
-  </p>
-  <p>Simultaneously, a bugfix
-  <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-1.3">v1.3 release
-  of the Netatalk 2 module</a> is also available now.
-  </p>
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 3.1 release series. It includes a patch for security issues
+  <a href="CVE-2024-38439.html">CVE-2024-38439</a>,
+  <a href="CVE-2024-38440.html">CVE-2024-38440</a>, and
+  <a href="CVE-2024-38441.html">CVE-2024-38441</a>.
+  All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.19.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/3.1/ReleaseNotes3.1.19.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
