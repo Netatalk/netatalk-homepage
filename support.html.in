@@ -41,7 +41,10 @@ in writing code for Netatalk, you should subscribe to this list.</p>
 </ul>
 
 <h2>Security Advisories</h2>
-<p>The Netatalk Project takes cyber security very seriously. In this section we publish security advisories when vulnerabilies have been disclosed and fixed.</p>
+<p>The Netatalk Project takes cyber security very seriously. In this section we publish security advisories when vulnerabilities have been disclosed and fixed.</p>
+
+<p>If you think you have found a new exploit in Netatalk, please file a <a href="https://github.com/Netatalk/netatalk/security/advisories/new">
+new security vulnerability report</a> via GitHub. This enables us to collaborate on a patch in private.</p>
 
 <table summary="Security patch list">
 <tr>
