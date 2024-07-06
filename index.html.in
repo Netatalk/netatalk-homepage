@@ -120,6 +120,30 @@
   <h1>Latest News</h1>
 
 <hr />
+  <small>6th of July 2024</small>
+  <h2>Netatalk 2.4.2 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 2.4 release series. This version reintroduces OpenSSL/LibreSSL
+  as a required library when building with the bundled SSL provider.
+  This addresses a potential obstacle to redistribution of Netatalk binaries.
+  All users of Netatalk 2.4 are encouraged to upgrade their systems to 2.4.2.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/2.4/ReleaseNotes2.4.2.html">Release Notes</a>.</p>
+
+<hr />
+  <small>6th of July 2024</small>
+  <h2>Netatalk 3.2.2 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 3.2 release series. This version reintroduces OpenSSL/LibreSSL
+  as a required library when building with the bundled SSL provider.
+  This addresses a potential obstacle to redistribution of Netatalk binaries.
+  All users of Netatalk 3.2 are encouraged to upgrade their systems to 3.2.2.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/3.2/ReleaseNotes3.2.2.html">Release Notes</a>.</p>
+
+<hr />
   <small>29th of June 2024</small>
   <h2>Netatalk 2.4.1 is available</h2>
 
@@ -131,33 +155,6 @@
   All users of Netatalk 2.4 are encouraged to upgrade their systems to 2.4.1.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/2.4/ReleaseNotes2.4.1.html">Release Notes</a>.</p>
-
-<hr />
-  <small>29th of June 2024</small>
-  <h2>Netatalk 3.2.1 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 3.2 release series. It includes a patch for security issues
-  <a href="security/CVE-2024-38439.html">CVE-2024-38439</a>,
-  <a href="security/CVE-2024-38440.html">CVE-2024-38440</a>, and
-  <a href="security/CVE-2024-38441.html">CVE-2024-38441</a>. Additionally, the Meson
-  build system options have been completely reworked for ease of use.
-  All users of Netatalk 3.2 are encouraged to upgrade their systems to 3.2.1.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/3.2/ReleaseNotes3.2.1.html">Release Notes</a>.</p>
-
-<hr />
-  <small>29th of June 2024</small>
-  <h2>Netatalk 3.1.19 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 3.1 release series. It includes a patch for security issues
-  <a href="security/CVE-2024-38439.html">CVE-2024-38439</a>,
-  <a href="security/CVE-2024-38440.html">CVE-2024-38440</a>, and
-  <a href="security/CVE-2024-38441.html">CVE-2024-38441</a>.
-  All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.19.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/3.1/ReleaseNotes3.1.19.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
