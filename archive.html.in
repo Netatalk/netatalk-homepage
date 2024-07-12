@@ -3,6 +3,19 @@
 
 <hr />
   <small>29th of June 2024</small>
+  <h2>Netatalk 2.4.1 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 2.4 release series. It includes a patch for security issues
+  <a href="security/CVE-2024-38439.html">CVE-2024-38439</a>,
+  <a href="security/CVE-2024-38440.html">CVE-2024-38440</a>, and
+  <a href="security/CVE-2024-38441.html">CVE-2024-38441</a>.
+  All users of Netatalk 2.4 are encouraged to upgrade their systems to 2.4.1.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/2.4/ReleaseNotes2.4.1.html">Release Notes</a>.</p>
+
+<hr />
+  <small>29th of June 2024</small>
   <h2>Netatalk 3.2.1 is available</h2>
 
   <p>The Netatalk development team is proud to announce the latest release
