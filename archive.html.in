@@ -755,6 +755,8 @@ details.</p>
     guide before and follow the steps outlined there. If you made use of symlinks
     inside Netatalk shares consider setting up a test installation with 2.0 before
     migrating since Netatalk 2.0 provides no support for symlinks any longer.</p>
+  <p>For a summary of news and a detailed list of changes see the
+     <a href="/2.0/ReleaseNotes2.0.0.html">Release Notes</a>.</p>
 
   <hr />
 </div>
