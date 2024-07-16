@@ -494,8 +494,38 @@
 <h5>Netatalk Version 1 Release Series</h5>
 <ul>
     <li>
-        <a href="/1.0/NEWS.html">
-            Netatalk 1.2 - 1.6.4
+        <a href="/1.6/ReleaseNotes1.6.4.html">
+            Netatalk 1.6.4
+        </a>
+    </li>
+    <li>
+        <a href="/1.6/ReleaseNotes1.6.3.html">
+            Netatalk 1.6.3
+        </a>
+    </li>
+    <li>
+        <a href="/1.6/ReleaseNotes1.6.2.html">
+            Netatalk 1.6.2
+        </a>
+    </li>
+    <li>
+        <a href="/1.6/ReleaseNotes1.6.1.html">
+            Netatalk 1.6.1
+        </a>
+    </li>
+    <li>
+        <a href="/1.6/ReleaseNotes1.6.0.html">
+            Netatalk 1.6.0
+        </a>
+    </li>
+    <li>
+        <a href="/1.5/ReleaseNotes1.5.5.html">
+            Netatalk 1.5.5
+        </a>
+    </li>
+    <li>
+        <a href="/1.5/ReleaseNotes1.5.0.html">
+            Netatalk 1.5.0
         </a>
     </li>
 </ul>
