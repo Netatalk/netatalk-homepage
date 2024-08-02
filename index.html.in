@@ -120,6 +120,28 @@
   <h1>Latest News</h1>
 
 <hr />
+  <small>1st of August 2024</small>
+  <h2>Netatalk 2.4.5 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 2.4 release series.
+  This release contains primarily bug fixes for the Meson build system.
+  All users of Netatalk 2.4 are encouraged to upgrade their systems to 2.4.5.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/2.4/ReleaseNotes2.4.5.html">Release Notes</a>.</p>
+
+<hr />
+  <small>1st of August 2024</small>
+  <h2>Netatalk 3.2.5 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 3.2 release series.
+  This release contains primarily bug fixes for the Meson build system.
+  All users of Netatalk 3.2 are encouraged to upgrade their systems to 3.2.5.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/3.2/ReleaseNotes3.2.5.html">Release Notes</a>.</p>
+
+<hr />
   <small>19th of July 2024</small>
   <h2>Netatalk 2.4.4 is available</h2>
 
@@ -129,29 +151,6 @@
   All users of Netatalk 2.4 are encouraged to upgrade their systems to 2.4.4.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/2.4/ReleaseNotes2.4.4.html">Release Notes</a>.</p>
-
-<hr />
-  <small>19th of July 2024</small>
-  <h2>Netatalk 3.2.4 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 3.2 release series.
-  This release contains primarily bug fixes for the Meson build system.
-  All users of Netatalk 3.2 are encouraged to upgrade their systems to 3.2.4.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/3.2/ReleaseNotes3.2.4.html">Release Notes</a>.</p>
-
-<hr />
-  <small>14th of July 2024</small>
-  <h2>Netatalk 2.4.3 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 2.4 release series.
-  This release contains primarily bug fixes for the Meson build system.
-  Notably, the with-rpath option now correctly enables or disables runpath for all compiled binaries.
-  All users of Netatalk 2.4 are encouraged to upgrade their systems to 2.4.3.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/2.4/ReleaseNotes2.4.3.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
