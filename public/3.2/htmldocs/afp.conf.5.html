@@ -24,7 +24,7 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 3.2.5</div>
+    <div xmlns="" class="navheader" align="center">Netatalk 3.2.6</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">afp.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ad.1.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="afp.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>afp.conf — Netatalk configuration file</p></div><div class="refsect1"><a id="id-1.8.4.3"></a><h2>Synopsis</h2><p>The <code class="filename">afp.conf</code> file is the configuration file for
     the <span class="bold"><strong>Netatalk</strong></span> AFP file server.</p><p>All AFP-specific configurations and AFP volume definitions are done
     via this file.</p></div><div class="refsect1"><a id="FILEFORMATSECT"></a><h2>File Format</h2><p>The file consists of sections and parameters. A section begins with
@@ -135,7 +135,7 @@
                   Diffie-Hellman eXchange (DHX) for authentication.</p></dd><dt><span class="term">uams_dhx2.so</span></dt><dd><p>(uams_dhx2_pam.so or uams_dhx2_passwd.so) Allow
                   Diffie-Hellman eXchange 2 (DHX2) for authentication.</p></dd><dt><span class="term">uam_gss.so</span></dt><dd><p>Allow Kerberos V for authentication (optional)</p></dd></dl></div></dd><dt><span class="term">uam path = <em class="replaceable"><code>path</code></em>
           <span class="type">(G)</span></span></dt><dd><p>Sets the default path for UAMs for this server (default is
-            /opt/homebrew/lib/netatalk).</p></dd></dl></div></div><div class="refsect2"><a id="id-1.8.4.9.3"></a><h3>Charset Options</h3><p>With OS X Apple introduced the AFP3 protocol. One of the big
+            /usr/local/lib/x86_64-linux-gnu/netatalk).</p></dd></dl></div></div><div class="refsect2"><a id="id-1.8.4.9.3"></a><h3>Charset Options</h3><p>With OS X Apple introduced the AFP3 protocol. One of the big
       changes was, that AFP3 uses Unicode names encoded as Decomposed UTF-8
       (UTF8-MAC). Previous AFP/OS versions used charsets like MacRoman,
       MacCentralEurope, etc.</p><p>To be able to serve AFP3 and older clients at the same time,
