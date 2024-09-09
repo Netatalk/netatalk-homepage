@@ -118,6 +118,29 @@
 
 <hr />
   <h1>Latest News</h1>
+
+<hr />
+  <small>8th of September 2024</small>
+  <h2>Netatalk 2.4.8 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 2.4 release series.
+  This release contains security fixes for the bundled WolfSSL library.
+  All users of Netatalk 2.4 who use the bundled WolfSSL library are strongly encouraged to upgrade their systems to 2.4.8.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/2.4/ReleaseNotes2.4.8.html">Release Notes</a>.</p>
+
+<hr />
+  <small>8th of September 2024</small>
+  <h2>Netatalk 3.2.8 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 3.2 release series.
+  This release contains security fixes for the bundled WolfSSL library.
+  All users of Netatalk 3.2 who use the bundled WolfSSL library are strongly encouraged to upgrade their systems to 3.2.8.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/3.2/ReleaseNotes3.2.8.html">Release Notes</a>.</p>
+
 <hr />
   <small>19th of August 2024</small>
   <h2>Netatalk 2.4.7 is available</h2>
@@ -139,28 +162,6 @@
   All users of Netatalk 3.2 who use Meson are encouraged to upgrade their systems to 3.2.7.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/3.2/ReleaseNotes3.2.7.html">Release Notes</a>.</p>
-
-<hr />
-  <small>11th of August 2024</small>
-  <h2>Netatalk 2.4.6 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 2.4 release series.
-  This release contains bug fixes for the Meson build system.
-  All users of Netatalk 2.4 who use Meson are encouraged to upgrade their systems to 2.4.6.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/2.4/ReleaseNotes2.4.6.html">Release Notes</a>.</p>
-
-<hr />
-  <small>11th of August 2024</small>
-  <h2>Netatalk 3.2.6 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 3.2 release series.
-  This release contains bug fixes for the Meson build system.
-  All users of Netatalk 3.2 who use Meson are encouraged to upgrade their systems to 3.2.6.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/3.2/ReleaseNotes3.2.6.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
