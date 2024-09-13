@@ -80,10 +80,71 @@
     </li>
 </ul>
 
-<h3>Release Notes</h3>
-<p>A full record of release notes are stored below for historical purposes.</p>
+<h1>Tech Notes</h1>
+<p>A series of articles covering various technical topics on Netatalk and Mac networking.</p>
 
-<h5>Netatalk Version 3 Release Series</h5>
+<ul>
+    <li>
+        <a href="tn011.html">
+            [TN#011] Capturing AFP network traffic
+        </a>
+    </li>
+    <li>
+        <a href="tn010.html">
+            [TN#010] Using libatalk from third party apps
+        </a>
+    </li>
+    <li>
+        <a href="tn009.html">
+            [TN#009] Netatalk and ZFS nbmand property
+        </a>
+    </li>
+    <li>
+        <a href="tn008.html">
+            [TN#008] Limiting the available size of Time Machine volumes
+        </a>
+    </li>
+    <li>
+        <a href="tn007.html">
+            [TN#007] Announcing remote Netatalk AFP servers with Avahi
+        </a>
+    </li>
+    <li>
+        <a href="tn006.html">
+            [TN#006] Fix Time Machine Sparsebundle
+        </a>
+    </li>
+    <li>
+        <a href="tn005.html">
+            [TN#005] 10.7 LION, Time Machine and Netatalk/AFP
+        </a>
+    </li>
+    <li>
+        <a href="tn004.html">
+            [TN#004] 10.6.3 and TimeMachine over AFP image size limitation
+        </a>
+    </li>
+    <li>
+        <a href="tn003.html">
+            [TN#003] Slow AFP read performance
+        </a>
+    </li>
+    <li>
+        <a href="tn002.html">
+            [TN#002] TimeMachine Warning
+        </a>
+    </li>
+    <li>
+        <a href="tn001.html">
+            [TN#001] Snow Leopard permission errors
+        </a>
+    </li>
+</ul>
+
+<h1>Release Notes</h1>
+<p>Records of historical Netatalk releases.</p>
+
+<h3>Netatalk Version 3 Release Series</h3>
 <ul>
     <li>
         <a href="/3.2/ReleaseNotes3.2.8.html">
@@ -317,7 +378,7 @@
     </li>
 </ul>
 
-<h5>Netatalk Version 2 Release Series</h5>
+<h3>Netatalk Version 2 Release Series</h3>
 <ul>
     <li>
         <a href="/2.4/ReleaseNotes2.4.8.html">
@@ -541,7 +602,7 @@
     </li>
 </ul>
 
-<h5>Netatalk Version 1 Release Series</h5>
+<h3>Netatalk Version 1 Release Series</h3>
 <ul>
     <li>
         <a href="/1.6/ReleaseNotes1.6.4.html">

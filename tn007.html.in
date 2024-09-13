@@ -1,0 +1,26 @@
+<div id="content">
+<h1>[TN#007] Announcing remote Netatalk AFP servers with Avahi</h1>
+
+<dl>
+<dt><strong>Author</strong></dt>
+<dd>Ralph Böhme</dd>
+<dt><strong>Published date</strong></dt>
+<dd>November 8, 2011</dd>
+</dl>
+
+<p>Let&#8217;s assume that we are advertising for a Netatalk server at IP address 192.168.1.100, named &#8220;Netatalk-Server&#8221;.</p>
+<p>First off, let&#8217;s create a hosts entry for Avahi in the /etc/avahi/hosts file:</p>
+<blockquote><p>192.168.1.100 Netatalk-Server.local</p></blockquote>
+<p>You&#8217;ll always want to use the .local domain for Mac OS X compatibility. Even if you have a FQDN, use .local</p>
+<p>Next, we need to create a .service file in /etc/avahi/services named Netatalk-Server.service :</p>
+<blockquote><p>&lt;?xml version=&#8221;1.0&#8243; standalone=&#8217;no&#8217;?&gt;<br/>
+&lt;!DOCTYPE service-group SYSTEM &#8220;avahi-service.dtd&#8221;&gt;<br/>
+&lt;service-group&gt;<br/>
+&lt;name&gt;Netatalk AFP server on XXXXX&lt;/name&gt;<br/>
+&lt;service protocol=&#8221;ipv4&#8243;&gt;<br/>
+&lt;type&gt;_afpovertcp._tcp&lt;/type&gt;<br/>
+&lt;port&gt;548&lt;/port&gt;<br/>
+&lt;host-name&gt;Netatalk-Server.local&lt;/host-name&gt;<br/>
+&lt;/service&gt;<br/>
+&lt;/service-group&gt;</p></blockquote>
+<p>Restart Avahi, and you&#8217;re good to go. In Finder sidebar, you should now see &#8220;Netatalk AFP server on XXXXX&#8221; automagically.</p>

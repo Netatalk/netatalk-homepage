@@ -1,0 +1,26 @@
+<div id="content">
+<h1>[TN#003] Slow AFP read performance</h1>
+
+<dl>
+<dt><strong>Author</strong></dt>
+<dd>Ralph Böhme</dd>
+<dt><strong>Published date</strong></dt>
+<dd>April 8, 2010</dd>
+</dl>
+
+<p>Throughout the years the have been numerous reports of problems with Netatalk where the AFP read performance is very, very bad.</p>
+<p><span id="more-90"></span></p>
+<p>Our investigations have shown that this is caused by subtle TCP/IP stack incompatibilites: OS X clients from 10.4 upwards use a TCP feature called delayed ACKing, which in some cases causes the server TCP stack stop sending because it is (wrongly) assuming the client is not yet ready to receive data.</p>
+<p>Fortunately there is an easy workaround: by adjusting a sysctl tunable you can configure the OS X TCP stack to ACK in a more traditional way. It is easy to try out if you&#8217;re affected by this problem: as a user with administrative rights run the following commands on one affected OS X client:</p>
+<blockquote><p>$ sudo -s<br/>
+Password: &#8230;enter password&#8230;<br/>
+# sysctl -w net.inet.tcp.delayed_ack=2<br/>
+# exit</p></blockquote>
+<p>Now check if the read performance goes up to a normal level. If it does: this way of adjusting the sysctl tunable does not survice a system reboot. In order to have it applied automatically upon system start use the following commands:</p>
+<blockquote><p>$ sudo -s<br/>
+Password: &#8230;enter password&#8230;<br/>
+# echo &#8220;net.inet.tcp.delayed_ack=2&#8221; &gt; /etc/sysctl.conf<br/>
+# exit</p></blockquote>
+<p>After rebooting you can check if the change got applied by:</p>
+<blockquote><p>$ sysctl net.inet.tcp.delayed_ack<br/>
+2</p></blockquote>
