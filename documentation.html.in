@@ -1,9 +1,8 @@
 <div id="content">
-<h1>Netatalk Documentation</h1>
+<h1>Netatalk Manuals</h1>
+<p>The manual covers topics including how to install, configure, start, and upgrade Netatalk.</p>
 
-<h3>Netatalk Manuals</h3>
-
-<p>Documentation for the Netatalk version 3 release series.</p>
+<h3>Netatalk version 3 release series</h3>
 <ul>
     <li>
         <a href="/3.2/htmldocs">
@@ -32,7 +31,7 @@
     </li>
 </ul>
 
-<p>Documentation for the Netatalk version 2 release series.</p>
+<h3>Netatalk version 2 release series</h3>
 <ul>
     <li>
         <a href="/2.4/htmldocs">
@@ -59,10 +58,6 @@
             Netatalk 2.0 manual
         </a>
     </li>
-</ul>
-
-<p>Historical manuals</p>
-<ul>
     <li>
         <a href="/2.0/Netatalk-Manual2.0.5.pdf">
             Netatalk 2.0.5 manual (PDF)
