@@ -89,11 +89,11 @@
 </div></div>
 <div id="content">
 <h1 id="Webmin-Module">Webmin Module</h1><hr/>
-<p>Since 2000, Netatalk has distributed an official <a href="https://webmin.com/">Webmin</a> module for facilitating the administration of the AFP server via a user friendly Web GUI.</p>
-<p>At the time of writing, maintained modules for the latest stable Netatalk v3 as well as the oldstable Netatalk v2 exist. Find the source code and release tarballs for both in the <a href="https://github.com/Netatalk/netatalk-webmin">netatalk-webmin</a> Git repository. They are confirmed compatible with Debian, Fedora, and Solaris.</p>
+<p>The official <a href="https://webmin.com/">Webmin</a> module for Netatalk was first created in the year 2000. It facilitates the administration of the AFP server via a user friendly Web GUI.</p>
+<p>At the time of writing, maintained modules for the latest stable Netatalk v3 as well as oldstable Netatalk v2 exist. Find the source code and release tarballs for both in the <a href="https://github.com/Netatalk/netatalk-webmin">netatalk-webmin</a> Git repository. They are confirmed compatible with Debian, Fedora, and Solaris.</p>
 <p>This page is meant to give an overview of the feature set and usage notes of the module. Installation instructions can be found in the respective README file, and will not be repeated here.</p>
 <h2>v3 Module</h2>
-<p>Netatalk v3 got an entirely rewritten ini-style configuration file format, and therefore the Webmin module was almost entirely rewritten from scratch.</p>
+<p>Netatalk v3 got an entirely rewritten ini-style configuration file format, replacing the legacy format in v2 and earlier. Therefore, the backend of the Webmin module was entirely rewritten from scratch.</p>
 <p>The module index is the hub for all of the module&rsquo;s features. You can see the configured shared volumes, as well as start and stop the netatalk daemons from here.</p>
 <p><img src="https://netatalk.io/gfx/webmin3_1.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
 <h3>Create or edit a shared volume</h3>
@@ -104,7 +104,6 @@
 <h3>Create or edit home shares</h3>
 <p><img src="https://netatalk.io/gfx/webmin3_4.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
 <h3>Modify global server settings</h3>
-<p>Note: A subset of commonly used settings are exposed in the GUI.</p>
 <p><img src="https://netatalk.io/gfx/webmin3_5.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
 <h2>v2 Module</h2>
 <p>The legacy v2 version of the Webmin module allows you to control the AFP server as well as the AppleTalk services.</p>
@@ -114,10 +113,10 @@
 <p>Complete support for all volume options are available when creating new or editing shared volumes. Equivalent to editing <code>AppleVolumes.default</code>.</p>
 <p><img src="https://netatalk.io/gfx/webmin2_2.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
 <h3>Global server settings</h3>
-<p>The most commonly used virtual AppleShare server options are available through the GUI. Equivalent to editing <code>afpd.conf</code>.</p>
+<p>All virtual AppleShare server options are available through the GUI. Equivalent to editing <code>afpd.conf</code>.</p>
 <p><img src="https://netatalk.io/gfx/webmin2_3.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
 <h3>Config editor</h3>
-<p>An interactive config file editor is also available for manual fine tuning of settings, including the config files not covered above.</p>
+<p>An interactive config file editor is also available for manual fine tuning of settings.</p>
 <p><img src="https://netatalk.io/gfx/webmin2_6.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
 <h2>Common Functions</h2>
 <p>These functions are identical between the v3 and v2 versions of the module.</p>
@@ -132,7 +131,7 @@
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Webmin-Module">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

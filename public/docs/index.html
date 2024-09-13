@@ -115,11 +115,7 @@ The complete stack looks like this:</p>
     |     Network Interface     |
     +---------------------------+
 </code></pre>
-<p><em>Netatalk 2.x</em> (the previous stable version) also supports the <strong>AppleTalk Protocol Suite</strong> for legacy Macs,
-Lisas and Apple IIs via the <code>atalkd</code> daemon.
-In provides support for EtherTalk Phase I and II, RTMP, NBP, ZIP, AEP, ATP, PAP, and ASP protocols,
-while expecting the operating system&rsquo;s kernel to supply the DDP protocol.
-The complete stack looks like this:</p>
+<p>When Netatalk is built with <strong>AFP over AppleTalk</strong> for very old Macs, the complete network stack looks like this:</p>
 <pre><code>    AFP                          AFP
      |                            |
     ASP    PAP                   DSI
@@ -136,19 +132,7 @@ The complete stack looks like this:</p>
     |                Network Interface                  |
     +---------------------------------------------------+
 </code></pre>
-<p>Additionally, AppleTalk support brings the convenience
-of automatic service discovery on Classic Mac OS,
-a print server <code>papd</code> for printing to CUPS or lpd printers,
-a <code>pap</code> client for printing to LocalTalk printers,
-a time server <code>timelord</code>, and an Apple II netboot server <code>a2boot</code>.</p>
-<h2>Netatalk Logo</h2>
-<p>The Netatalk logo depicts a stylized <a href="https://en.wikipedia.org/wiki/BSD_Daemon">BSD Daemon</a> on top of an <a href="https://en.wikipedia.org/wiki/AppleShare">AppleShare</a> serving tray, hooked up to a daisy-chained <a href="https://en.wikipedia.org/wiki/LocalTalk">LocalTalk</a> network.</p>
-<p><img src="https://netatalk.io/gfx/afpd-icon.gif" alt="Netatalk Logo" width="128px" height="auto"></p>
-<p>It evolved from an early Netatalk AFP volume icon <a href="https://github.com/Netatalk/netatalk/blob/main/etc/afpd/icon.h">encoded in the project&rsquo;s source code</a>.</p>
-<p><img src="https://netatalk.io/gfx/daemon.gif" alt="Netatalk Logo"></p>
-<p>By the early 2000s, a colorized version was featured on the <a href="http://web.archive.org/web/20030207075049/http://rsug.itd.umich.edu/software/netatalk.html">project website</a>.</p>
-<p><img src="https://netatalk.io/gfx/logo.png" alt="Netatalk Logo" width="140px" height="auto"></p>
-<p>The present design was <a href="https://netatalk.io/2.0/Netatalk-Manual.pdf">introduced in 2005</a> following the release of Netatalk 2.0.</p>
+<p>See the <a href="https://github.com/Netatalk/netatalk/blob/main/doc/DEVELOPER">DEVELOPER</a> readme for descriptions of the AppleTalk family of protocols.</p>
 <h1>External Links</h1>
 <p>See <a href="https://netatalk.io/links">Netatalk Links</a></p><hr />
     <p>
@@ -156,7 +140,7 @@ a time server <code>timelord</code>, and an Apple II netboot server <code>a2boot
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Home">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

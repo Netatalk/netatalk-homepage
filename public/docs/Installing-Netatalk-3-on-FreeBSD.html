@@ -90,13 +90,18 @@
 <div id="content">
 <h1 id="Installing-Netatalk-3-on-FreeBSD">Installing Netatalk 3 on FreeBSD</h1><hr/>
 <h1>See Also</h1>
-<p><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-freebsd">Compile Netatalk from Source: FreeBSD</a></strong> in the Manual</p>
+<ul>
+<li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-freebsd">Compile Netatalk from Source: FreeBSD</a></strong> in the Manual</li>
+<li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
+</ul>
 <h1>Packages</h1>
 <p>Packages required to bootstrap the code:</p>
 <pre><code>pkg install autoconf automake libtool pkgconf
 </code></pre>
 <p>Packages required to build the code:</p>
 <pre><code>pkg install -y \
+  autoconf \
+  automake \
   avahi \
   bison \
   db5 \
@@ -105,7 +110,9 @@
   libevent \
   libgcrypt \
   libressl \
-  openldap26-client-2.6.7 \
+  libtool \
+  openldap26-client-2.6.8 \
+  pkgconf \
   talloc \
   tracker3
 </code></pre>
@@ -114,6 +121,7 @@
 <p>Bootstrap, configure, build, and install the code:</p>
 <pre><code>./bootstrap
 ./configure \
+  --with-init-style=freebsd \
   --with-ldap=/usr/local \
   --with-ssl-dir=/usr/local \
   --with-tracker-pkgconfig-version=3.0 \
@@ -122,21 +130,8 @@ gmake
 gmake install
 </code></pre>
 <h1>Run</h1>
-<p>Create an rc init script like the following in /etc/rc.d/netatalk</p>
-<pre><code>#!/bin/ksh
-
-daemon=&quot;/usr/local/sbin/netatalk&quot;
-
-. /etc/rc.d/rc.subr
-
-rc_start() {
-        rc_exec &quot;. ~/.profile; ${daemon}&quot;
-}
-
-rc_cmd $1
-</code></pre>
-<p>Set permissions on the script to <code>chmod 0555</code></p>
-<p>Activate the script with</p>
+<p>The Netatalk 3.2 release series ships with an init script for FreeBSD.</p>
+<p>If needed, activate the script with</p>
 <pre><code>/etc/rc.d/netatalk enable
 </code></pre>
 <p>Start or stop the script with</p>
@@ -148,7 +143,7 @@ rc_cmd $1
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-FreeBSD">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

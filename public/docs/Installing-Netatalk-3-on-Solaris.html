@@ -90,11 +90,18 @@
 <div id="content">
 <h1 id="Installing-Netatalk-3-on-Solaris">Installing Netatalk 3 on Solaris</h1><hr/>
 <h1>See Also</h1>
-<p><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-solaris">Compile Netatalk from Source: Solaris</a></strong> in the Manual</p>
+<ul>
+<li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-solaris">Compile Netatalk from Source: Solaris</a></strong> in the Manual</li>
+<li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
+</ul>
 <h1>Solaris 11</h1>
 <p>Tested on <a href="https://www.oracle.com/solaris/solaris11/downloads/solaris-downloads.html">Solaris 11.4.42</a></p>
 <h2>Prep work</h2>
-<p>Install the latest SRU for Solaris 11 to get as modern packages as possible.</p>
+<p>The Solaris system will need to get the very latest package updates from Oracle in order to build contemporary Netatalk.</p>
+<p>First, run a full system update.</p>
+<pre><code>pkg update --accept
+</code></pre>
+<p>If needed, manually install the latest SRU for Solaris 11.</p>
 <p>You may need to <a href="https://docs.oracle.com/cd/E23824_01/html/821-1455/dnsref-51.html">configure mDNS</a> in order for Zeroconf to work properly.</p>
 <h2>Install required packages</h2>
 <pre><code>pkg install \
@@ -208,7 +215,7 @@ make install
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-Solaris">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

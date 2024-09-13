@@ -90,18 +90,21 @@
 <div id="content">
 <h1 id="Installing-Netatalk-3-on-Ubuntu">Installing Netatalk 3 on Ubuntu</h1><hr/>
 <h1>See Also</h1>
-<p><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-ubuntu">Compile Netatalk from Source: Ubuntu</a></strong> in the Manual</p>
+<ul>
+<li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-ubuntu">Compile Netatalk from Source: Ubuntu</a></strong> in the Manual</li>
+<li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
+</ul>
 <h1>Netatalk Package</h1>
 <p><strong>Note:</strong> This guide was written for Ubuntu, but is likely to apply for Debian and other Debian-derived distros.</p>
 <p><strong>netatalk</strong> is distributed as a package in Ubuntu.</p>
-<p>Ubuntu is currently syncing the Unstable netatalk package with their
+<p>Ubuntu is currently syncing the Debian Unstable netatalk package with their
 production repository, so the package can be installed with apt on
 Ubuntu.</p>
-<p>Netatalk was dropped from Debian Bookworm, so if you use that OS you either
-have to <a href="https://github.com/Netatalk/netatalk/discussions/574">pin the netatalk package with the Unstable repo</a>,
-or build from scratch as described here.</p>
 <p>This page describes how to install it from scratch if you want to use a
 different version than the one that is distributed.</p>
+<p><strong>Note:</strong> Netatalk was dropped from Debian Bookworm,
+so if you use that OS you can either install the <a href="https://github.com/Netatalk/netatalk/releases">deb distributed by the Netatalk project</a>,
+or build from scratch as described here.</p>
 <h2>Required Packages</h2>
 <p>Install the following packages by <code>sudo apt install</code>.</p>
 <ul>
@@ -127,16 +130,17 @@ different version than the one that is distributed.</p>
 <li><code>libio-socket-inet6-perl</code> (used by asip-status.pl command)</li>
 <li><code>libtalloc-dev</code> (used for spotlight indexing)</li>
 <li><code>tracker</code> (used for spotlight indexing)</li>
-<li><code>libtracker-sparql-3.0-dev</code> (used for spotlight indexing) (version
-    number may differ)</li>
+<li><code>tracker-miner-fs</code> (used for spotlight indexing)</li>
+<li><code>libtracker-sparql-3.0-dev</code> (used for spotlight indexing) (version number may differ)</li>
+<li><code>bison</code> (required to build spotlight)</li>
+<li><code>flex</code> (required to build spotlight)</li>
 <li><code>quota</code> (used for quota)</li>
 <li><code>libtirpc-dev</code> (used for quota)</li>
 </ul>
 <p>If tracker&rsquo;s version is unknown, you can know using command
 <code>apt search libtracker</code>.</p>
 <h2>Build</h2>
-<p>Get the tarball from <a href="http://netatalk.sourceforge.net/">Netatalk Web
-Site</a>.</p>
+<p>Get the tarball from <a href="http://netatalk.io/">Netatalk Web Site</a>.</p>
 <p>Extract the tarball</p>
 <pre><code>$ tar xvf netatalk-3.1.18.tar.xz $ cd
 netatalk-3.1.18
@@ -150,8 +154,6 @@ lly.</p>
 <p>Do configure! The following options are not auto-detected.</p>
 <pre><code>$ ./configure \
        --with-init-style=debian-systemd \
-       --without-talloc \
-       --without-tdb \
        --with-cracklib \
        --enable-krbV-uam \
        --with-pam-confdir=/etc/pam.d \
@@ -474,7 +476,7 @@ advertisement by Avahi will duplicate.</p>
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-Ubuntu">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

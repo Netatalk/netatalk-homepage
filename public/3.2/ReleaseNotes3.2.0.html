@@ -45,22 +45,22 @@
     <ul>
       <li>
         <a
-        title="download 3.2.1 xz compressed"
-        href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-1/netatalk-3.2.1.tar.xz/download">
-        3.2.1 (xz)
+        title="download 3.2.8 xz compressed"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-8/netatalk-3.2.8.tar.xz/download">
+        3.2.8 (xz)
         </a>
       </li>
         <li>
           <a
-          title="download 3.2.1 checksum"
-          href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-1/netatalk-3.2.1.tar.xz.sha256sum/download">
-          3.2.1 (sha256sum)
+          title="download 3.2.8 checksum"
+          href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-8/netatalk-3.2.8.tar.xz.sha256sum/download">
+          3.2.8 (sha256sum)
           </a>
         </li>
       <li>
         <a
-        title="view 3.2.1 Release Notes"
-        href="/3.2/ReleaseNotes3.2.1.html">
+        title="view 3.2.8 Release Notes"
+        href="/3.2/ReleaseNotes3.2.8.html">
         Release Notes
         </a>
       </li>
@@ -69,22 +69,22 @@
     <ul>
       <li>
         <a
-        title="download 2.4.1 xz compressed"
-        href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-1/netatalk-2.4.1.tar.xz/download">
-        2.4.1 (xz)
+        title="download 2.4.8 xz compressed"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-8/netatalk-2.4.8.tar.xz/download">
+        2.4.8 (xz)
         </a>
       </li>
         <li>
           <a
-          title="download 2.4.1 checksum"
-          href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-1/netatalk-2.4.1.tar.xz.sha256sum/download">
-          2.4.1 (sha256sum)
+          title="download 2.4.8 checksum"
+          href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-8/netatalk-2.4.8.tar.xz.sha256sum/download">
+          2.4.8 (sha256sum)
           </a>
         </li>
       <li>
         <a
-        title="view 2.4.1 Release Notes"
-        href="/2.4/ReleaseNotes2.4.1.html">
+        title="view 2.4.8 Release Notes"
+        href="/2.4/ReleaseNotes2.4.8.html">
         Release Notes
         </a>
       </li>
@@ -132,6 +132,8 @@
 </div>
 <div id="content">
 <h1>Netatalk 3.2.0</h1><hr />
+<h1>REDISTRIBUTION LICENSING ALERT</h1>
+<p>If you redistribute binary Netatalk packages, please be advised that there may be <a href="https://github.com/Netatalk/netatalk/issues/1185">incompatible licensing terms</a> in this source package. To avoid potential issues when redistributing, it is strongly recommended to build this package with <code>-Dwith-embedded-ssl=false</code> when using the Meson build system. The Autotools build system is not affected. A future release version will address this issue.</p>
 <h1>COMPATIBILITY ALERT</h1>
 <p>If you previously used the Netatalk 3.1.18 <em>Docker image</em> for making Time Machine backups in macOS, you may <a href="https://github.com/Netatalk/netatalk/issues/1068">run into errors</a> after upgrading to the Netatalk 3.2.0 image or later. It is recommended to discard the backup sparsebundle and redo the backup. If you absolutely must access the older backup sparsebundle, downgrading to the 3.1.18 image should restore access.</p>
 <hr />
@@ -270,7 +272,8 @@
 <li>@pgajdos made their first contribution in <a href='https://github.com/Netatalk/netatalk/pull/524'>https://github.com/Netatalk/netatalk/pull/524</a></li>
 <li>@neko-hat made their first contribution in <a href='https://github.com/Netatalk/netatalk/pull/628'>https://github.com/Netatalk/netatalk/pull/628</a></li>
 </ul>
-<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-1-18&hellip;netatalk-3-2-0'>https://github.com/Netatalk/netatalk/compare/netatalk-3-1-18&hellip;netatalk-3-2-0</a></p><hr />
+<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-1-18&hellip;netatalk-3-2-0'>https://github.com/Netatalk/netatalk/compare/netatalk-3-1-18&hellip;netatalk-3-2-0</a></p>
+<p><strong>Note:</strong> The Debian deb package distributed with this release is built for Debian 12 Bookworm.</p><hr />
 <p>Release published on 2024-06-01</p>
 <p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-2-0">GitHub</a></p>
 <hr />

@@ -99,19 +99,13 @@ server via Samba/NFS while providing clients with the best user
 experience (full support for Macintosh metadata, flawlessly supporting
 mixed environments of classic Mac OS and Mac OS X / macOS clients).</p>
 <h2>What changed between Netatalk 2.x and 3.x?</h2>
-<p>Netatalk v3 has the best support for Mac OS X / macOS, and seamless
-interoperability with Samba. It is AFP 3.4 (the final version of the
-spec) compliant, and supports Spotlight and macOS style EA metadata.
-However, it is less useful for Classic Mac OS or Apple II clients.</p>
-<p>Netatalk v2 on the other hand speaks AppleTalk, the legacy Apple
-network stack. File sharing works out of the box with older clients,
-while providing capabilities to print to AppleTalk-only printers.
-Netatalk seamlessly interacts with CUPS via the <code>papd</code> daemon,
-enabling older Macs or Apple IIGS clients to print to modern
-printers. Via the <code>atalkd</code> daemon, it can act as an AppleTalk router,
-providing both segmentation and zone names in Macintosh networks. In
-addition, time server (<code>timelord</code> daemon) and Apple II netboot (<code>a2boot</code> daemon)
-services are available.</p>
+<p>Netatalk v3 supports Mac OS X / macOS style filesystem metadata, while providing seamless
+interoperability with Samba. It is compliant with AFP 3.4, which was the final revision of the
+protocol, and supports Spotlight in version 3.1 and later.</p>
+<p>However, it is less useful for Classic Mac OS or Apple II clients,
+because AppleTalk support was removed, and with it the ability to connect with
+AFP 2.1 clients or earlier.</p>
+<p>See also the <a href="https://netatalk.io/3.0/ReleaseNotes-3.0">release notes for Netatalk 3.0.0</a>.</p>
 <h2>What changed between Netatalk 1.x and 2.x?</h2>
 <p>Let&rsquo;s have a look at what has changed compared to 1.6.4:</p>
 <ol>
@@ -132,6 +126,7 @@ shares (this violation of AFP specs is not supported any longer) and
 willing to complete the sometimes extensive upgrade process should
 switch to 2.0. But be sure to read carefully the chapter about upgrading
 in the docs first.</p>
+<p>See also the <a href="https://netatalk.io/2.0/ReleaseNotes2.0.0">release notes for Netatalk 2.0.0</a>.</p>
 <h2>I think I found a bug in Netatalk. Where should I report it?</h2>
 <p>First of all, try to isolate the problem and see whether it&rsquo;s not a
 feature instead (some of the underlying Mac-related basics like
@@ -147,12 +142,13 @@ you found a bug, then please report it at the issue tracker.</p>
 <p>In case, the developers want you to provide more details about crashing
 processes, have a look at <a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a>.</p>
 <h2>Which CNID scheme should I choose for my volumes?</h2>
-<p>&ldquo;dbd&rdquo;. The &ldquo;last&rdquo; backend is only suitable for sharing HFS CD-ROMs directly
+<p>In the vast majority of scenarios, use <code>dbd</code>.</p>
+<p>The <code>last</code> backend is only suitable for sharing HFS CD-ROMs directly
 with Netatalk. Avoid if at all possible as this backend can lead to
 duplicate IDs which can cause data loss!</p>
-<p>The &ldquo;mysql&rdquo; backend is useful for very large deployments with hundreds of
+<p>The <code>mysql</code> backend is useful for very large deployments with hundreds of
 thousands or millions of files shared, where performance and reliability
-is at the utmost importance. The drawback is that you have to configure
+is of utmost importance. The drawback is that you have to configure
 and operate a separate MySQL database instance by yourself.</p>
 <h2>I want to create a new volume to share via Netatalk. How should I start?</h2>
 <p>Always follow these steps unless you know exactly what you do:</p>
@@ -171,14 +167,14 @@ and operate a separate MySQL database instance by yourself.</p>
     Mac to the volume, to see if things work.</li>
 </ul>
 <h2>How does Netatalk integrate with Samba?</h2>
-<p>It depends. There are a couple of problems:</p>
+<p>It depends. While Netatalk 3.x integrates almost flawlessly with Samba, there are a couple of problems when using Netatalk 2.x and earlier:</p>
 <ul>
-<li>Filename/foldername encoding: By default both Netatalk 2.0 and Samba
+<li>Filename/foldername encoding: By default both Netatalk 2.x and Samba
     3.0 use UTF-8 precomposed on the server side. So at a first look,
     this problem is solved.</li>
 <li>&ldquo;Illegal&rdquo; names, that make Windows choke, are still a problem. There
     exists an
-    <a href="http://netatalk.sourceforge.net/2.3/htmldocs/AppleVolumes.default.5.html">AppleVolumes</a>
+    <a href="http://netatalk.sourceforge.net/oldstable/htmldocs/AppleVolumes.default.5.html">AppleVolumes</a>
     option called <code>mswindows</code>, which will prevent Mac clients from
     saving such names (Netatalk v2 only.) But this leads to Netatalk&rsquo;s afpd breaking the
     AFP specifications and is no real solution (like a working Samba VFS
@@ -225,13 +221,37 @@ exactly for this purpose:
 <a href="https://netatalk.io/stable/htmldocs/dbd.1.html">dbd</a>.</p>
 <h2>How do I pronouce netatalk?</h2>
 <p>Ah, good question! The unenlightened often mispronounce this word 'net-&lsquo;a-to.k. The correct pronunciation is 'ned-*-to.k\ (the &lsquo;t&rsquo; is soft, like d, and the first &lsquo;a&rsquo; is a schwa).</p>
-<p><img alt="Netatalk pronunciation guide" src="https://netatalk.io/gfx/nedetok.gif" /></p><hr />
+<p><img alt="Netatalk pronunciation guide" src="https://netatalk.io/gfx/nedetok.gif" /></p>
+<h2>What is the Netatalk logo?</h2>
+<p>The Netatalk logo depicts a stylized <a href="https://en.wikipedia.org/wiki/BSD_Daemon">BSD Daemon</a> on top of an <a href="https://en.wikipedia.org/wiki/AppleShare">AppleShare</a> serving tray, hooked up to a daisy-chained <a href="https://en.wikipedia.org/wiki/LocalTalk">LocalTalk</a> network.</p>
+<table>
+<thead>
+<tr>
+<th>Logo</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://netatalk.io/gfx/afpd-icon.gif" alt="Netatalk Logo" width="128px" height="auto"></td>
+<td>Its first appearance was as a custom AppleShare volume icon, <a href="https://github.com/Netatalk/netatalk/blob/main/etc/afpd/icon.h">encoded in the project&rsquo;s source code</a> since at least 1994 (version 1.3).</td>
+</tr>
+<tr>
+<td><img src="https://netatalk.io/gfx/daemon.gif" alt="Netatalk Logo"></td>
+<td>In the early 2000s, a colorized version of the Netatalk Daemon was featured on the <a href="http://web.archive.org/web/20030207075049/http://rsug.itd.umich.edu/software/netatalk.html">UMich project website</a>.</td>
+</tr>
+<tr>
+<td><img src="https://netatalk.io/gfx/logo-new.png" alt="Netatalk Logo" width="128px" height="auto"></td>
+<td>The present design was <a href="https://netatalk.io/2.0/Netatalk-Manual.pdf">introduced in 2005</a> in the documentation for Netatalk 2.0, where the Daemon has been reduced to a silhouette, overlaid with twisted network cables.</td>
+</tr>
+</tbody>
+</table><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/FAQ">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

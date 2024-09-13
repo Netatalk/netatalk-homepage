@@ -90,8 +90,12 @@
 <div id="content">
 <h1 id="Installing-Netatalk-2-on-Debian-Linux">Installing Netatalk 2 on Debian Linux</h1><hr/>
 <h1>See Also</h1>
-<p><strong><a href="https://netatalk.io/oldstable/htmldocs/compile#build-debian">Compile Netatalk from Source: Debian</a></strong> in the Manual</p>
+<ul>
+<li><strong><a href="https://netatalk.io/oldstable/htmldocs/compile#build-debian">Compile Netatalk from Source: Debian</a></strong> in the Manual</li>
+<li><strong><a href="https://github.com/Netatalk/netatalk/blob/branch-netatalk-2-4/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
+</ul>
 <h1>Installation</h1>
+<p>This guide was written for Netatalk 2.4.x.</p>
 <p>Install dependent packages with the package manager of your choice.
 Some of these are mandatory to build and run netatalk; others are optional and provide additional functionality.</p>
 <pre><code>$ sudo apt install \
@@ -146,7 +150,7 @@ Some of these are mandatory to build and run netatalk; others are optional and p
 repository and check out the latest bleeding-edge Netatalk 2 branch.</p>
 <p>If you chose the latter option, you need to first bootstrap the build
 system with autoconf to generate the configure script.</p>
-<pre><code>$ git clone https://github.com/Netatalk/netatalk.git -b branch-netatalk-2-3 netatalk2
+<pre><code>$ git clone https://github.com/Netatalk/netatalk.git -b branch-netatalk-2-4 netatalk2
 $ ./bootstrap
 </code></pre>
 <p>Run the configure script with the following parameters, then compile and
@@ -238,7 +242,7 @@ $ sudo systemctl start papd.service timelord.service a2boot.service
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-Debian-Linux">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

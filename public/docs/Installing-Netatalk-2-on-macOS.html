@@ -90,17 +90,20 @@
 <div id="content">
 <h1 id="Installing-Netatalk-2-on-macOS">Installing Netatalk 2 on macOS</h1><hr/>
 <h1>See Also</h1>
-<p><strong><a href="https://netatalk.io/oldstable/htmldocs/compile#build-macos">Compile Netatalk from Source: macOS</a></strong> in the Manual</p>
+<ul>
+<li><strong><a href="https://netatalk.io/oldstable/htmldocs/compile#build-macos">Compile Netatalk from Source: macOS</a></strong> in the Manual</li>
+<li><strong><a href="https://github.com/Netatalk/netatalk/blob/branch-netatalk-2-4/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
+</ul>
 <h1>Introduction</h1>
 <p>Apple started to switch from AFP to SMB file sharing from Mavericks (10.9) onwards. The built-in afp server was finally removed in Big Sur (11.0) so Netatalk comes in useful if you have a modern Intel or Apple Silicon Mac and wish to share files with a vintage Mac such as a PowerMac G3 or G4 running classic Mac OS 9.</p>
-<p>When installing Netatalk 2.3 on Macs running Mojave (10.14) onwards the dependencies are easily installed using Homebrew. To install <a href="https://brew.sh">Homebrew</a>,  open Terminal and paste the following:</p>
+<p>When installing Netatalk 2.x on Macs running Mojave (10.14) onwards the dependencies are easily installed using Homebrew. To install <a href="https://brew.sh">Homebrew</a>,  open Terminal and paste the following:</p>
 <p><code>/bin/bash -c "$(curl -fsS https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></p>
 <h2>Install the dependencies</h2>
 <p><code>brew install berkeley-db libtool automake autoconf libevent libgcrypt mysql openssl@1.1 libressl pkg-config</code></p>
 <h2>Clone the Netatalk repository</h2>
-<p>Checkout the 2.3 branch and cd to that folder:</p>
+<p>Checkout the 2.4 branch and cd to that folder:</p>
 <p><code>git clone https://github.com/Netatalk/netatalk.git</code></p>
-<p><code>git checkout branch-netatalk-2-3</code></p>
+<p><code>git checkout branch-netatalk-2-4</code></p>
 <p><code>cd /path/to/netatalk/clone</code></p>
 <h3>The paths for your SSL and BDB installations can be found by typing</h3>
 <p><code>brew --prefix berkeley-db</code></p>
@@ -128,7 +131,7 @@ launchctl start netatalk
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-macOS">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

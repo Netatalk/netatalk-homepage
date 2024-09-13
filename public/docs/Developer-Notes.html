@@ -107,14 +107,13 @@ documentation</a> for more
 details on this part.</p>
 <h2>Branching model</h2>
 <ul>
-<li>the <strong>main</strong> branch is where development of new features is taking
-    place</li>
-<li>branches named <strong>branch-netatalk-x-y</strong> for stable releases</li>
-<li>currently stable release branch <strong>branch-netatalk-3-1</strong></li>
-<li>commits go to main (after a review, more on that below)</li>
-<li>commits can only go into a release branch if an issue report exists</li>
-<li>the issue report must be referenced in the commit message</li>
-<li>rebase merges only; no branch merges</li>
+<li>The <code>main</code> branch is where development of new features is taking place.</li>
+<li>Branches named <code>branch-netatalk-x-y</code> are for stable releases.</li>
+<li>Make your code changes in a feature branch, and submit a Pull Request against the target branch.</li>
+<li>Before submitting PRs against stable branches, please make sure an issue report has been filed first.</li>
+<li>When patching stable branches, prioritize submitting PRs for those stable branches. The patches can be cherry-picked to <code>main</code> by a maintainer later.</li>
+<li>The issue report must be referenced in the commit message.</li>
+<li>We allow rebase merges only; no branch merges.</li>
 </ul>
 <h2>Review process</h2>
 <p>We require formal review of all patches with more than trivial code
@@ -132,7 +131,7 @@ member needed).</p>
 begins with the affected component, and ends with the GitHub issue
 ticket # e.g.</p>
 <blockquote>
-<p>afpd: new options &ldquo;force user&rdquo; and &ldquo;force group&rdquo;, #1234</p>
+<p>afpd: new options &ldquo;force user&rdquo; and &ldquo;force group&rdquo;, GitHub #1234</p>
 </blockquote>
 <p>This is helpful when browsing a git log in oneline mode.</p>
 <p>Then the commit message should explain what the change is about, the
@@ -227,10 +226,19 @@ on it, before merging to the target branch.</p>
 <p>The description of the workflow can be read in <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">GitHub
 documentation</a>
 and will not be repeated here.</p>
-<p>In the PR summary, make sure you add a description of the purpose of the
-PR, and a link back to the GitHub issue ticket.</p>
+<p>The title of the PR should be descriptive and fit on one line. It should <em>not</em> contain the GitHub ticket number.
+When it is a PR against a <em>stable branch</em>, prepend a tag with the major and minor Netatalk version.
+For PRs against the <strong>main</strong> development branch, do not prepend any tags.</p>
+<p>A good example:</p>
+<blockquote>
+<p>[3.2] meson: Allow choosing shared or static libraries to build</p>
+</blockquote>
+<p>In the PR summary, make sure you add a description of the purpose of the PR,
+with a breakdown of the major changes that it is making.</p>
+<p>The PR reviewers will be automatically assigned based on the CODEOWNERS settings,
+so sit back and relax while a project member follows up!</p>
 <h2>Build system</h2>
-<p>In the stable netatalk release following 3.1.x (and 2.3.x) we are introducing the <a href="https://mesonbuild.com/">Meson build system</a>, initially in addition to the traditional GNU autotools build system, but eventually as a full replacement.</p>
+<p>In the stable netatalk release 3.2.0 (and 2.4.0) we introduced the <a href="https://mesonbuild.com/">Meson build system</a>, initially in addition to the traditional GNU autotools build system, but eventually as a full replacement.</p>
 <p>Meson is faster at building the netatalk source code by an order of magnitude. Additionally, it allows us in the development team to work more effectively to fix bugs and add functionality. And finally, it removes the need to &ldquo;bootstrap&rdquo; the build system which introduces thousands of lines of boilerplate macros.</p>
 <p>See the <a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL">INSTALL</a> file in the netatalk code tree for more details on how to use the Meson build system.</p>
 <h3>Formatting</h3>
@@ -276,7 +284,7 @@ muonfmt
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Developer-Notes">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

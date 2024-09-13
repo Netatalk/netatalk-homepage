@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Release Notes - 3.1.17</title>
+    <title>Netatalk Release Notes - 3.2.7</title>
     <meta name="description" content="Netatalk Release Notes">
-    <link rel="canonical" href="https://netatalk.io/3.1/ReleaseNotes3.1.17.html">
+    <link rel="canonical" href="https://netatalk.io/3.2/ReleaseNotes3.2.7.html">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -131,21 +131,29 @@
   </div>
 </div>
 <div id="content">
-<h1>Netatalk 3.1.17</h1><hr />
-<p>Netatalk 3.1.17 is available!</p>
-<p>The Netatalk development team is proud to announce the latest release of the Netatalk 3.1 release series. Users are encouraged to update their servers to the 3.1 release series which is the stable and supported version for production systems.</p>
+<h1>Netatalk 3.2.7</h1><hr />
+<h1>COMPATIBILITY ALERT</h1>
+<p>If you previously used the Netatalk 3.1.18 <em>Docker image</em> for making Time Machine backups in macOS, you may <a href="https://github.com/Netatalk/netatalk/issues/1068">run into errors</a> after upgrading to the Netatalk 3.2.0 image or later. It is recommended to discard the backup sparsebundle and redo the backup. If you absolutely must access the older backup sparsebundle, downgrading to the 3.1.18 image should restore access.</p>
+<hr />
+<h1>Netatalk 3.2.7 is available!</h1>
+<p>The Netatalk team is proud to announce the latest version in the <strong>Netatalk 3.2</strong> release series.</p>
+<p>This release contains primarily improvements and bug fixes for the Meson build system. All users of the 3.2 release series who build with Meson are recommended to upgrade their versions to 3.2.7.</p>
+<h2>Breaking changes (Meson)</h2>
+<p>The RPATH build system option is now enabled by default, while the run-time linker config file is now controlled by an opt-in option.</p>
+<p>Modify the default behavior with <code>-Dwith-rpath</code> and the newly added <code>-Dwith-ldsoconf</code>, both boolean options.</p>
 <h2>What&rsquo;s Changed</h2>
 <ul>
-<li>FIX: CVE-2023-42464: Validate data type in dalloc_value_for_key(), <a href='https://github.com/Netatalk/netatalk/issues/486'>GitHub #486</a></li>
-<li>FIX: Declare a variable before using it in a loop,
-       which was throwing off the default compiler on RHEL7, <a href='https://github.com/Netatalk/netatalk/issues/481'>GitHub #481</a></li>
-<li>UPD: Distribute tarballs with xz compression by default, instead of gzip, <a href='https://github.com/Netatalk/netatalk/issues/478'>GitHub #478</a></li>
-<li>UPD: Add AUTHOR sections to all man pages with a reference to CONTRIBUTORS,
-       and standardize headers and footers, <a href='https://github.com/Netatalk/netatalk/issues/462'>GitHub #462</a></li>
+<li>[3.2] meson: Ability to control the run-time linker path config file by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1396'>https://github.com/Netatalk/netatalk/pull/1396</a></li>
+<li>[3.2] meson: Allow ldconfig to run unprivileged during setup by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1407'>https://github.com/Netatalk/netatalk/pull/1407</a></li>
+<li>[3.2] docker: Add entry script step to clean up any residual lock file by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1412'>https://github.com/Netatalk/netatalk/pull/1412</a></li>
+<li>[3.2] docker: Ship a docker-compose.yml sample file by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1414'>https://github.com/Netatalk/netatalk/pull/1414</a></li>
+<li>[3.2] docker: Check for AFP_USER and AFP_PASS when launching container by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1415'>https://github.com/Netatalk/netatalk/pull/1415</a></li>
+<li>[3.2] meson: Enable rpath and disable ldsoconf by default by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1418'>https://github.com/Netatalk/netatalk/pull/1418</a></li>
 </ul>
-<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-1-16&hellip;netatalk-3-1-17'>https://github.com/Netatalk/netatalk/compare/netatalk-3-1-16&hellip;netatalk-3-1-17</a></p><hr />
-<p>Release published on 2023-09-16</p>
-<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-1-17">GitHub</a></p>
+<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-2-6&hellip;netatalk-3-2-7'>https://github.com/Netatalk/netatalk/compare/netatalk-3-2-6&hellip;netatalk-3-2-7</a></p>
+<p><strong>Note</strong>: The Debian deb package distributed with this release is built for Debian 12 Bookworm.</p><hr />
+<p>Release published on 2024-08-18</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-2-7">GitHub</a></p>
 <hr />
 </div>
 <div class="footer">

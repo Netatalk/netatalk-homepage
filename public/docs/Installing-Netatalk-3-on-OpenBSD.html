@@ -90,7 +90,10 @@
 <div id="content">
 <h1 id="Installing-Netatalk-3-on-OpenBSD">Installing Netatalk 3 on OpenBSD</h1><hr/>
 <h1>See Also</h1>
-<p><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-openbsd">Compile Netatalk from Source: OpenBSD</a></strong> in the Manual</p>
+<ul>
+<li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-openbsd">Compile Netatalk from Source: OpenBSD</a></strong> in the Manual</li>
+<li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
+</ul>
 <h1>Prepare</h1>
 <p>Instructions for installing netatalk 3.x on OpenBSD 7.5</p>
 <p>Install requisite packages for netatalk:</p>
@@ -119,27 +122,12 @@ export AUTOMAKE_VERSION=1.16
 export CFLAGS=-I/usr/local/include
 export LDFLAGS=-L/usr/local/lib
 ./bootstrap
-./configure --with-tracker-pkgconfig-version=3.0
+./configure --with-init-style=openbsd --with-tracker-pkgconfig-version=3.0
 make
 make install
 </code></pre>
 <h1>Run</h1>
-<p>Create an init script like the below as <code>/etc/rc.d/netatalk</code>; from the netatalk source tree root:</p>
-<pre><code>#!/bin/ksh
-
-daemon=&quot;/usr/local/sbin/netatalk&quot;
-
-. /etc/rc.d/rc.subr
-
-rc_start() {
-        rc_exec &quot;. ~/.profile; ${daemon}&quot;
-}
-
-rc_cmd $1
-</code></pre>
-<p>Set the right permissions</p>
-<pre><code>chmod 0555 /etc/rc.d/netatalk
-</code></pre>
+<p>The Netatalk 3.2 release series ships with an OpenBSD init script.</p>
 <p>Enable and start the service</p>
 <pre><code>rcctl -d enable netatalk
 rcctl -d start netatalk
@@ -149,7 +137,7 @@ rcctl -d start netatalk
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-OpenBSD">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

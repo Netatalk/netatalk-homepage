@@ -89,8 +89,12 @@
 </div></div>
 <div id="content">
 <h1 id="Installing-Netatalk-3-on-OpenIndiana">Installing Netatalk 3 on OpenIndiana</h1><hr/>
-<p>This article describes how to install Netatalk 3.1 on OpenIndiana
-Hipster</p>
+<h1>See Also</h1>
+<ul>
+<li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
+</ul>
+<h1>Install on OpenIndiana</h1>
+<p>This article describes how to install Netatalk 3.1 on OpenIndiana Hipster</p>
 <h2>Update system and install compiler toolchain</h2>
 <pre><code>$ sudo pfexec pkg image-update
 $ sudo pkg install build-essential crackle
@@ -121,7 +125,7 @@ automatically.</p>
    --enable-krbV-uam \
    --with-dbus-sysconf-dir=/etc/dbus-1/system.d \
    --with-pam-confdir=/etc/pam.d \
-   --with-tracker-plgconfig-version=1.0 \
+   --with-tracker-pkgconfig-version=1.0 \
    --with-cracklib
 </code></pre>
 <p>On successful completion, you will see a report similar to the
@@ -297,7 +301,7 @@ number is <code>5353</code>.</p>
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-OpenIndiana">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

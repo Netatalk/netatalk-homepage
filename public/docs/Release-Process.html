@@ -92,43 +92,41 @@
 <p>Process for preparing and publishing Netatalk releases. The intended audience for this document is Netatalk project maintainers.</p>
 <h2>Making a stable release</h2>
 <ul>
-<li>Bump version number</li>
+<li>
+<p>Bump version number by editing <code>./meson.build</code> and update the &ldquo;version&rdquo; line near the top. Commit the changes.</p>
+</li>
+<li>
+<p>For 3.2 and 2.x branches, also update the version string in <code>./VERSION</code>.</p>
+</li>
+<li>
+<p>Update NEWS and commit the changes.</p>
+</li>
+<li>
+<p>Build netatalk with manual and tests (requires <code>docbook-xsl</code> and <code>xsltproc</code> on your dev machine)</p>
+</li>
 </ul>
-<p>First, use an editor to edit <code>./meson.build</code> and update the &ldquo;version&rdquo; line near the top. Then:</p>
-<pre><code>$ echo &quot;3.2.0&quot; &gt; VERSION
-$ git commit -a -m &quot;Bump version to 3.2.0&quot;
-</code></pre>
-<p><em>(We temporarily need to update the version number in two places, because of supporting both Meson and Autotools build systems.)</em></p>
-<ul>
-<li>Update NEWS as necessary:</li>
-</ul>
-<pre><code>$ vi NEWS
-$ git commit -a -m &quot;Update NEWS&quot;
-</code></pre>
-<ul>
-<li>Build netatalk with manual and tests (requires <code>docbook-xsl</code> and <code>xsltproc</code> on your dev machine)</li>
-</ul>
-<pre><code>$ meson setup build -Dwith-manual=true -Dwith-tests=true -Dwith-docbook-path=/path/to/docbook
-$ meson compile -C build
+<pre><code>meson setup build -Dwith-manual=true -Dwith-manual-l10n=ja -Dwith-tests=true
+meson compile -C build
 </code></pre>
 <ul>
-<li>Commit the regenerated troff man pages</li>
+<li>Commit the regenerated troff man pages (for 3.x and 2.x branches)</li>
 </ul>
-<pre><code>$ git add man
-$ git commit -a -m &quot;Generate manpages from XML&quot;
+<pre><code>git add man
+git commit -a -m &quot;Generate manpages from XML&quot;
 </code></pre>
 <p>Read more about how to <a class="wikilink" href="/docs/work-with-Documentation.html">work with Documentation</a></p>
 <ul>
 <li>Run the distribution script, and fix any errors</li>
 </ul>
-<pre><code>$ cd build
-$ meson dist
+<pre><code>cd build
+meson dist
 </code></pre>
 <ul>
-<li>Once the distribution builds cleanly, tag the release</li>
+<li>Once the distribution builds cleanly, tag the release.</li>
+<li>Requires a PGP public key to be registered with GitHub in order to sign the tag.</li>
 </ul>
-<pre><code>$ git tag netatalk-3-2-0
-$ git push origin netatalk-3-2-0
+<pre><code>git tag -s netatalk-3-2-0
+git push origin netatalk-3-2-0
 </code></pre>
 <ul>
 <li>
@@ -202,14 +200,31 @@ $ git push origin netatalk-3-2-0
 <p>Then, read through the rest of the chapters in the linked manual before proceeding.</p>
 <p>Leverage <a href="https://www.debian.org/doc/manuals/debmake-doc/ch07.en.html#chroot">chroot environments</a> to have a clean system for building and testing. Note that debuild will create deb packages for the specific OS version it is running on, so chroot enables you to control this.</p>
 <p>If needed, set up <a href="https://wiki.debian.org/CrossCompiling">cross-compilation</a> to generate debs for architectures other than your actual machine.</p>
+<h3>Prepare the Debian Source</h3>
+<ol>
+<li>Download the latest netatalk release tarball (should be non-bootstrapped)</li>
+<li>Rename the tarball to match the debuild naming scheme, typically something like &ldquo;netatalk_3.2.0.orig.tar.xz&rdquo;</li>
+<li>In the same dir as the tarball, clone the Debian Source from Salsa (see above)</li>
+<li>Fetch the upstream references (create a new remote for the upstream git repo if needed.)</li>
+</ol>
 <h3>New netatalk release (automated)</h3>
 <p>When working off the latest mainline release series (e.g. 3.x) you can use <code>gbp</code> to automate the process.</p>
 <ol>
-<li>If you don&rsquo;t have a remote called &ldquo;upstream&rdquo;, create it first <code>git remote add upstream https://github.com/Netatalk/netatalk.git</code></li>
-<li>Fetch the latest references from upstream, <code>git fetch upstream</code></li>
-<li>Merge the latest release tag, <code>gbp import-orig --upstream-vcs-tag=netatalk-x-y-z --uscan</code></li>
-<li>Respond to the questions appropriately. A successful run should look something like this:</li>
+<li>If you don&rsquo;t have a remote called &ldquo;upstream&rdquo;, create it first</li>
 </ol>
+<pre><code>git remote add upstream https://github.com/Netatalk/netatalk.git
+</code></pre>
+<ol>
+<li>Fetch the latest references from upstream, <code>git fetch upstream</code></li>
+<li>Make sure the following branches have local checkouts: <code>debian/latest</code> <code>upstream/latest</code> <code>pristine-tar</code></li>
+<li>Merge the latest release tag</li>
+</ol>
+<pre><code>gbp import-orig --upstream-vcs-tag=netatalk-x-y-z --uscan
+</code></pre>
+<ol>
+<li>Indicate the latest version number when prompted, e.g. &ldquo;3.2.0&rdquo;</li>
+</ol>
+<p>A successful run should look something like this:</p>
 <pre><code>gbp:info: Launching uscan...
 Newest version of netatalk on remote site is 3.2.0, local version is 3.1.18
        (mangled local version is 3.1.18)
@@ -221,28 +236,26 @@ uscan warn: No files matched excluded pattern as the last matching glob: etc/spo
 uscan warn: No files matched excluded pattern as the last matching glob: include/atalk/tdb.h
 uscan warn: No files matched excluded pattern as the last matching glob: libatalk/talloc/talloc.c
 uscan warn: No files matched excluded pattern as the last matching glob: libatalk/tdb/*
-Successfully repacked ../netatalk--3-2-0.tar.gz as ../netatalk_3.2.0~ds.orig.tar.xz, deleting 1 files from itgbp:info: Using uscan downloaded tarball ../netatalk_3.2.0~ds.orig.tar.xz
-What is the upstream version? [3.2.0~ds] 
-gbp:info: Importing '../netatalk_3.2.0~ds.orig.tar.xz' to branch 'upstream/latest' (filtering out ['*/.git*'])...
+Successfully repacked ../netatalk--3-2-0.tar.gz as ../netatalk_3.2.0.orig.tar.xz, deleting 1 files from itgbp:info: Using uscan downloaded tarball ../netatalk_3.2.0.orig.tar.xz
+What is the upstream version? [3.2.0] 
+gbp:info: Importing '../netatalk_3.2.0.orig.tar.xz' to branch 'upstream/latest' (filtering out ['*/.git*'])...
 gbp:info: Source package is netatalk
-gbp:info: Upstream version is 3.2.0~ds
+gbp:info: Upstream version is 3.2.0
 gbp:info: Replacing upstream source on 'debian/latest'
-gbp:info: Successfully imported version 3.2.0~ds of ../netatalk_3.2.0~ds.orig.tar.xz
+gbp:info: Successfully imported version 3.2.0 of ../netatalk_3.2.0.orig.tar.xz
 </code></pre>
 <h3>New netatalk release (manual)</h3>
-<p>When working off older branches, the following manual process can be used.</p>
+<p>When working off older branches, i.e. 2.x, the following manual process can be used.</p>
 <ol>
-<li>Download the latest netatalk release tarball (should be non-bootstrapped)</li>
-<li>Rename the tarball to match the debuild naming scheme, typically something like &ldquo;netatalk_3.1.18~ds.orig.tar.xz&rdquo;</li>
-<li>In the same dir as the tarball, clone the Debian source (see above), then fetch the upstream references (create a new remote for the upstream git repo if needed.)</li>
-<li>Check out the <code>upstream/latest</code> (or <code>upstream/old</code>) branch</li>
+<li>Check out the <code>upstream/old</code> branch (or equivalent)</li>
+<li>Fetch references from the upstream remote</li>
 <li>Do a merge commit with the upstream release tag</li>
 <li>Resolve any conflicts (typically due to the Debian source removing certain files.)</li>
-<li>Tag <code>upstream/x.y.z_ds</code> (make sure you follow the naming convention)</li>
-<li>Check out the <code>debian/latest</code> (or <code>debian/old</code>) branch</li>
-<li>Do a merge commit with <code>upstream/x.y.z_ds</code></li>
+<li>Tag <code>upstream/x.y.z</code> (make sure you follow the naming convention)</li>
+<li>Check out the `debian/old branch (or equivalent)</li>
+<li>Do a merge commit with <code>upstream/x.y.z</code></li>
 <li>Resolve any conflicts</li>
-<li>From the root of the Debian source, run <code>pristine-tar commit ../netatalk_x.y.z_ds.orig.tar.xz upstream/x.y.z_ds</code> to create a pristine tar commit in the &ldquo;pristine-tar&rdquo; branch</li>
+<li>From the root of the salsa source, run <code>pristine-tar commit ../netatalk2_x.y.z.orig.tar.xz upstream/x.y.z</code> to create a pristine tar commit in the &ldquo;pristine-tar&rdquo; branch</li>
 </ol>
 <h3>Local changes to the deb</h3>
 <ol>
@@ -252,14 +265,14 @@ gbp:info: Successfully imported version 3.2.0~ds of ../netatalk_3.2.0~ds.orig.ta
 <li>Remove any obsoleted patches under &ldquo;debian/patches&rdquo;</li>
 <li>Unfuzz patches that apply with fuzz, or not at all</li>
 <li>If needed, <a href="https://www.debian.org/doc/manuals/debmake-doc/ch04.en.html#dquilt">create new patches</a> with <code>dquilt</code> and put them under &ldquo;debian/patches&rdquo;</li>
-<li>From the root of the Debian source, run <code>dch -v x.y.z~ds-n</code> (with appropriate versioning numbers) to generate the changelog</li>
+<li>From the root of the Debian source, run <code>dch -v x.y.z-n</code> (with appropriate versioning numbers) to generate the changelog</li>
 <li>Write the changelog and commit</li>
 <li>From the root of the Debian source, run <code>debuild</code></li>
 <li>If the build passes, check the lintian log</li>
 <li>If there are any lintian warnings or errors, fix them</li>
 <li>Test the created deb package in the parent directory by installing it with <code>dpgk</code></li>
-<li>Tag the release <code>git tag x.y.z_ds-n</code></li>
-<li>Push all branches (upstream/latest debian/latest pristine-tar) and tags (upstream/x.y.z debian/x.y.z_ds-n) to remote</li>
+<li>Tag the release <code>git tag x.y.z-n</code></li>
+<li>Push all branches (upstream/latest debian/latest pristine-tar) and tags (upstream/x.y.z debian/x.y.z-n) to remote</li>
 <li>You did it!</li>
 </ol><hr />
     <p>
@@ -267,7 +280,7 @@ gbp:info: Successfully imported version 3.2.0~ds of ../netatalk_3.2.0~ds.orig.ta
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Release-Process">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

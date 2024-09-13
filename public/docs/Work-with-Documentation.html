@@ -128,10 +128,21 @@ are namespaced by default. See <a href="https://github.com/docbook/xslt10-styles
 bug</a> for more
 info.</p>
 <p>Once all requirements are in place, the manual pages will be generated when building Netatalk.</p>
-<pre><code>$ meson setup build -Dwith-manual=true -Dwith-docbook-path=/path/to/docbook
+<pre><code>$ meson setup build -Dwith-manual=true
 $ meson compile -C build
 </code></pre>
 <p>The generated pages are then found under the build/doc/manual directory.</p>
+<h3>Generate manual appendix</h3>
+<p>Run a Python script to refresh the <em>Compilation</em> html manual appendix.
+Refer to <code>doc/requirements.txt</code> for a list of required Python libraries.
+Either install system Python libraries, or create a venv with pip.</p>
+<p>Once the Python environment is prepared, execute the following script:</p>
+<pre><code>$ cd doc
+$ python3 generate_compile_docs.py 
+Wrote to ./manual/compile.xml
+Wrote to ./ja/manual/compile.xml
+</code></pre>
+<p>Commit the generated xml files to git in preparation for a new stable netatalk release.</p>
 <h3>PDF manual</h3>
 <p>If you want a local PDF manual for reading on the screen or printing, use something like <code>dblatex</code> to transform the XML sources to a variety of formats, including PDF.</p>
 <pre><code>$ dblatex --pdf ./doc/manual/manual.xml
@@ -141,7 +152,7 @@ $ meson compile -C build
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Work-with-Documentation">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">

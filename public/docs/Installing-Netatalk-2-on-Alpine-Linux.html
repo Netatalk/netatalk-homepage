@@ -90,7 +90,10 @@
 <div id="content">
 <h1 id="Installing-Netatalk-2-on-Alpine-Linux">Installing Netatalk 2 on Alpine Linux</h1><hr/>
 <h1>See Also</h1>
-<p><strong><a href="https://netatalk.io/oldstable/htmldocs/compile#build-alpine">Compile Netatalk from Source: Alpine</a></strong> in the Manual</p>
+<ul>
+<li><strong><a href="https://netatalk.io/oldstable/htmldocs/compile#build-alpine">Compile Netatalk from Source: Alpine</a></strong> in the Manual</li>
+<li><strong><a href="https://github.com/Netatalk/netatalk/blob/branch-netatalk-2-4/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
+</ul>
 <h1>Prepare</h1>
 <p>Packages required for bootstrapping the build system:</p>
 <pre><code>apk add autoconf automake libtool pkgconfig
@@ -102,7 +105,8 @@
 <pre><code>apk add acl-dev cracklib-dev krb5-dev libtirpc-dev openldap-dev
 </code></pre>
 <h2>Berkeley DB</h2>
-<p>As of <a href="https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.13.0">Alpine 3.13.0</a> (Jan 14, 2021), BDB is officially a deprecated package. At the time of writing <code>db-dev</code> still lives on in the Alpine repository, however.</p>
+<p>As of <a href="https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.13.0">Alpine 3.13.0</a> (Jan 14, 2021), BDB is officially a deprecated package.</p>
+<p>At the time of writing <code>db-dev</code> still lives on in the Alpine repository, however. In the worst case, building BDB is always an option.</p>
 <h2>Avahi</h2>
 <p>If you see Avahi initialization errors, the <a href="https://wiki.alpinelinux.org/wiki/MDNS">avahi-daemon may need to be launched manually</a>. Do this if zeroconf service discovery doesn&rsquo;t work out of the box.</p>
 <h1>Build</h1>
@@ -113,7 +117,7 @@
 <pre><code>./configure
 </code></pre>
 <p>Or, if you installed all the optional packages:</p>
-<pre><code>./configure --enable-gentoo --enable-krbV-uam --with-cracklib --with-libtirpc
+<pre><code>./configure --enable-openrc --enable-krbV-uam --with-cracklib --with-libtirpc
 </code></pre>
 <p>Third, compile and link the code:</p>
 <pre><code>make
@@ -139,7 +143,7 @@
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-2-on-Alpine-Linux">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-06-29</p>
+    <p>Last updated 2024-09-13</p>
     <hr />
     </div>
 <div class="footer">
