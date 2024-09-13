@@ -24,3 +24,5 @@ Password: &#8230;enter password&#8230;<br/>
 <p>After rebooting you can check if the change got applied by:</p>
 <blockquote><p>$ sysctl net.inet.tcp.delayed_ack<br/>
 2</p></blockquote>
+
+</div>

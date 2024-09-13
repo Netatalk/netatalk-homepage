@@ -23,3 +23,5 @@
 <li>TM completes uploading backup but “Finishing Backup” takes longer than expected or does not complete until manually “Stopping Backup”</li>
 </ul>
 <p>After analysis and research we understand that these issues are unrelated to the Netatalk AFP services. Reading Apple Time Capsule customer feedback in the Apple Communities support forums it is apparent that the same problems exist there too.</p>
+
+</div>

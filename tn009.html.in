@@ -24,3 +24,5 @@ $ /path/to/nbmand-demo file<br/>
 &#8230; failure &#8230;</p>
 <p>Therefor it is necessary to turn nbmand to off on any ZFS dataset you use for Netatalk AFP volumes.</p>
 <p><a href="https://web.archive.org/web/20160423174948/http://www.netafp.com/wp-content/uploads/nbmand-demo.c">nbmand-demo</a></p>
+
+</div>

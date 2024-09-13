@@ -14,3 +14,5 @@
 <p>In prior versions the space usage of the AFP volumes was calculated by recursively walking the whole filesystem and stating every filesystem object for size information. Although the resulting value was cached for some time, for large volumes and low power hosts the process might take up to 60 s seconds which results in a tremedous slow down of TimeMachine operation.</p>
 <p>Starting with <strong>Netatalk 2.2.1-p7</strong> the calculation works as follows:</p>
 <p>The Info.plist XML file of the sparsebundle is searched for the band size of the Time Machine sparse-bundle, then reading the bands/ directory counting the number of band files, and then multiplying one with the other. The resulting value is cached for 60 seconds and updated by the amount of new written data.</p>
+
+</div>

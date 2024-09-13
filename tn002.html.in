@@ -24,3 +24,5 @@
 <p>Anyway, since Netatalk 2.0.5 there&#8217;s the option <strong>options:tm</strong> which you can specify in AppleVolumes.default which will make Netatalk tell the client it supports lock stealing, which in fact it does as described.<em> </em></ol>
 <div><em>Update (Feb-17-2011):</em></div>
 <div>Netatalk 2.2 (to be released soon) will support the AFP &#8220;<strong>Server Reply Cache&#8221;</strong>. How nice!</div>
+
+</div>

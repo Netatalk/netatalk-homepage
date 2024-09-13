@@ -24,3 +24,5 @@
 &lt;/service&gt;<br/>
 &lt;/service-group&gt;</p></blockquote>
 <p>Restart Avahi, and you&#8217;re good to go. In Finder sidebar, you should now see &#8220;Netatalk AFP server on XXXXX&#8221; automagically.</p>
+
+</div>

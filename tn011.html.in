@@ -28,3 +28,5 @@
 <p>Another useful thing only available in Terminal with tcpdump is using a ringbuffer:</p>
 <pre># tcpdump -s 0 -w afp.pcap -C 10 -W 2 port 548</pre>
 <p>This limits the captured data to two capture files (-W 2) with a size of 10 MB each (-C 10). This way for large amount of AFP traffic, only the last 10-20 MB will be saved and available for analysis.</p>
+
+</div>
