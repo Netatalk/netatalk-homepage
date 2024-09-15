@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>getzones</title>
-    <link rel="stylesheet" type="text/css" href="../netatalk.css" />
+    <link rel="stylesheet" type="text/css" href="/css/netatalk.css" />
     <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
     <link rel="home" href="index.html" title="Netatalk マニュアル" />
     <link rel="up" href="man-pages.html" title="第6章 マニュアルページ" />
@@ -12,105 +12,23 @@
     <link rel="next" href="macusers.1.html" title="macusers" />
   </head>
   <body>
-    <div class="navheader">
-      <table width="100%" summary="Navigation header">
-        <tr>
-          <th colspan="3" align="center">getzones</th>
-        </tr>
-        <tr>
-          <td width="20%" align="left"><a accesskey="p" href="extmap.conf.5.html">戻る</a> </td>
-          <th width="60%" align="center">第6章 マニュアルページ</th>
-          <td width="20%" align="right"> <a accesskey="n" href="macusers.1.html">次へ</a></td>
-        </tr>
-      </table>
-      <hr />
-    </div>
-    <div class="refentry">
-      <a id="getzones.1"></a>
-      <div class="titlepage"></div>
-      <div class="refnamediv">
-        <h2>名前</h2>
-        <p>getzones — AppleTalk ゾーン名を一覧表示する</p>
-      </div>
-      <div class="refsynopsisdiv">
-        <h2>概要</h2>
-        <div class="cmdsynopsis">
-          <p><code class="command">getzones<a id="id-1.9.23.3.1.1.1" class="indexterm"></a></code>  [ -m  |   -l ] [<em class="replaceable"><code>address</code></em>]</p>
+    <div xmlns="" id="header">
+        <div id="logo"></div>
+        <div id="menlinks">
+          <a href="/" title="Netatalk ホームに戻る">[main]</a>
+          <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+          <a href="/documentation.html" title="Netatalk マニュアル">[documentation]</a>
+          <a href="/download.html" title="Netatalk をダウンロード">[downloads]</a>
+          <a href="/support.html" title="お問い合わせ">[support]</a>
+          <a href="/links.html" title="Netatalk 関連リンク">[links]</a>
+          <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
-      </div>
-      <div class="refsect1">
-        <a id="id-1.9.23.4"></a>
-        <h2>説明</h2>
-        <p><span class="emphasis"><em>Getzones</em></span> は、Zone Information Protocol
+    </div>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.0.0dev</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">getzones</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="extmap.conf.5.html">戻る</a> </td><th width="60%" align="center">第6章 マニュアルページ</th><td width="20%" align="right"> <a accesskey="n" href="macusers.1.html">次へ</a></td></tr></table><hr /></div><div class="refentry"><a id="getzones.1"></a><div class="titlepage"></div><div class="refnamediv"><h2>名前</h2><p>getzones — AppleTalk ゾーン名を一覧表示する</p></div><div class="refsynopsisdiv"><h2>概要</h2><div class="cmdsynopsis"><p><code class="command">getzones<a id="id-1.9.23.3.1.1.1" class="indexterm"></a></code>  [ -m  |   -l ] [<em class="replaceable"><code>address</code></em>]</p></div></div><div class="refsect1"><a id="id-1.9.23.4"></a><h2>説明</h2><p><span class="emphasis"><em>Getzones</em></span> は、Zone Information Protocol
     (ZIP) を使用して AppleTalk ゾーン名のリストを取得するために使用されます。GetZoneList 要求を AppleTalk
-    ルーターに送信します。デフォルトでは、ローカルで実行されている <span class="citerefentry"><span class="refentrytitle">atalkd</span>(8)</span> にリクエストを送信します。</p>
-      </div>
-      <div class="refsect1">
-        <a id="id-1.9.23.5"></a>
-        <h2>オプション</h2>
-        <div class="variablelist">
-          <dl class="variablelist">
-            <dt>
-              <span class="term">
-                <code class="option">-m</code>
-              </span>
-            </dt>
-            <dd>
-              <p>ローカル ゾーンの名前のみを一覧表示します。これは、ZIP GetMyZone
-          リクエストを送信することで実現されます。</p>
-            </dd>
-            <dt>
-              <span class="term">
-                <code class="option">-l</code>
-              </span>
-            </dt>
-            <dd>
-              <p>ローカル ゾーンを一覧表示します。これは、GetLocalZones 要求を送信することで実現されます。</p>
-            </dd>
-            <dt>
-              <span class="term">
-                <span class="emphasis">
-                  <em>address</em>
-                </span>
-              </span>
-            </dt>
-            <dd>
-              <p>AppleTalk ルーターに <span class="emphasis"><em>address</em></span> で接続します。
-          <span class="emphasis"><em>address</em></span> は、<span class="citerefentry"><span class="refentrytitle">atalk_aton</span>(3)</span> によって解析されます。</p>
-            </dd>
-          </dl>
-        </div>
-      </div>
-      <div class="refsect1">
-        <a id="id-1.9.23.6"></a>
-        <h2>参照</h2>
-        <p><span class="citerefentry"><span class="refentrytitle">atalk_aton</span>(3)</span>, <span class="citerefentry"><span class="refentrytitle">atalkd</span>(8)</span>.</p>
-      </div>
-      <div class="refsect1">
-        <a id="id-1.9.23.7"></a>
-        <h2>著者</h2>
-        <p><a class="ulink" href="https://github.com/Netatalk/netatalk/blob/main/CONTRIBUTORS" target="_top">CONTRIBUTORS</a>
-    を参照してください</p>
-      </div>
-    </div>
-    <div class="navfooter">
-      <hr />
-      <table width="100%" summary="Navigation footer">
-        <tr>
-          <td width="40%" align="left"><a accesskey="p" href="extmap.conf.5.html">戻る</a> </td>
-          <td width="20%" align="center">
-            <a accesskey="u" href="man-pages.html">上に戻る</a>
-          </td>
-          <td width="40%" align="right"> <a accesskey="n" href="macusers.1.html">次へ</a></td>
-        </tr>
-        <tr>
-          <td width="40%" align="left" valign="top">extmap.conf </td>
-          <td width="20%" align="center">
-            <a accesskey="h" href="index.html">ホーム</a>
-          </td>
-          <td width="40%" align="right" valign="top"> macusers</td>
-        </tr>
-      </table>
-    </div>
-  </body>
+    ルーターに送信します。デフォルトでは、ローカルで実行されている <span class="citerefentry"><span class="refentrytitle">atalkd</span>(8)</span> にリクエストを送信します。</p></div><div class="refsect1"><a id="id-1.9.23.5"></a><h2>オプション</h2><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="option">-m</code></span></dt><dd><p>ローカル ゾーンの名前のみを一覧表示します。これは、ZIP GetMyZone
+          リクエストを送信することで実現されます。</p></dd><dt><span class="term"><code class="option">-l</code></span></dt><dd><p>ローカル ゾーンを一覧表示します。これは、GetLocalZones 要求を送信することで実現されます。</p></dd><dt><span class="term"><span class="emphasis"><em>address</em></span></span></dt><dd><p>AppleTalk ルーターに <span class="emphasis"><em>address</em></span> で接続します。
+          <span class="emphasis"><em>address</em></span> は、<span class="citerefentry"><span class="refentrytitle">atalk_aton</span>(3)</span> によって解析されます。</p></dd></dl></div></div><div class="refsect1"><a id="id-1.9.23.6"></a><h2>参照</h2><p><span class="citerefentry"><span class="refentrytitle">atalk_aton</span>(3)</span>, <span class="citerefentry"><span class="refentrytitle">atalkd</span>(8)</span>.</p></div><div class="refsect1"><a id="id-1.9.23.7"></a><h2>著者</h2><p><a class="ulink" href="https://github.com/Netatalk/netatalk/blob/main/CONTRIBUTORS" target="_top">CONTRIBUTORS</a>
+    を参照してください</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="extmap.conf.5.html">戻る</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">上に戻る</a></td><td width="40%" align="right"> <a accesskey="n" href="macusers.1.html">次へ</a></td></tr><tr><td width="40%" align="left" valign="top">extmap.conf </td><td width="20%" align="center"><a accesskey="h" href="index.html">ホーム</a></td><td width="40%" align="right" valign="top"> macusers</td></tr></table></div></body>
 </html>

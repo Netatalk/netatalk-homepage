@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>付録A Netatalk をソースコードからコンパイルする</title>
-    <link rel="stylesheet" type="text/css" href="../netatalk.css" />
+    <title>付録A ソースコードから Netatalk をコンパイルする</title>
+    <link rel="stylesheet" type="text/css" href="/css/netatalk.css" />
     <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
     <link rel="home" href="index.html" title="Netatalk マニュアル" />
     <link rel="up" href="index.html" title="Netatalk マニュアル" />
@@ -12,169 +12,21 @@
     <link rel="next" href="gpl.html" title="付録B GNU General Public License" />
   </head>
   <body>
-    <div class="navheader">
-      <table width="100%" summary="Navigation header">
-        <tr>
-          <th colspan="3" align="center">付録A Netatalk をソースコードからコンパイルする</th>
-        </tr>
-        <tr>
-          <td width="20%" align="left"><a accesskey="p" href="timelord.8.html">戻る</a> </td>
-          <th width="60%" align="center"> </th>
-          <td width="20%" align="right"> <a accesskey="n" href="gpl.html">次へ</a></td>
-        </tr>
-      </table>
-      <hr />
+    <div xmlns="" id="header">
+        <div id="logo"></div>
+        <div id="menlinks">
+          <a href="/" title="Netatalk ホームに戻る">[main]</a>
+          <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+          <a href="/documentation.html" title="Netatalk マニュアル">[documentation]</a>
+          <a href="/download.html" title="Netatalk をダウンロード">[downloads]</a>
+          <a href="/support.html" title="お問い合わせ">[support]</a>
+          <a href="/links.html" title="Netatalk 関連リンク">[links]</a>
+          <img src="/gfx/end.gif" alt="" width="125" height="7" />
+        </div>
     </div>
-    <div class="appendix">
-      <div class="titlepage">
-        <div>
-          <div>
-            <h1 class="title"><a id="compile"></a>付録A Netatalk をソースコードからコンパイルする</h1>
-          </div>
-          <div>
-            <p class="pubdate">2024-09-07</p>
-          </div>
-        </div>
-      </div>
-      <div class="toc">
-        <p>
-          <strong>目次</strong>
-        </p>
-        <dl class="toc">
-          <dt>
-            <span class="sect1">
-              <a href="compile.html#compile-overview">概要</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect1">
-              <a href="compile.html#id-1.10.4"></a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect1">
-              <a href="compile.html#compile-os">オペレーティング システム一覧</a>
-            </span>
-          </dt>
-          <dt>
-            <span class="sect1">
-              <a href="compile.html#id-1.10.6"></a>
-            </span>
-          </dt>
-          <dd>
-            <dl>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-alpine">Alpine Linux</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-archlinux">Arch Linux</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-debian">Debian Linux</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-fedora">Fedora Linux</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-opensuse">openSUSE Linux</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-ubuntu">Ubuntu Linux</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-dflybsd">DragonflyBSD</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-freebsd">FreeBSD</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-netbsd">NetBSD</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-openbsd">OpenBSD</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-macos">macOS</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-omnios">OmniOS</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#build-solaris">Solaris</a>
-                </span>
-              </dt>
-              <dt>
-                <span class="sect2">
-                  <a href="compile.html#id-1.10.6.14"></a>
-                </span>
-              </dt>
-            </dl>
-          </dd>
-        </dl>
-      </div>
-      <div class="sect1">
-        <div class="titlepage">
-          <div>
-            <div>
-              <h2 class="title" style="clear: both"><a id="compile-overview"></a>概要</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="sect1">
-        <div class="titlepage"></div>
-        <p>本付録では、以下オペレーティング システムで Netatalk のソースコードをコンパイルする手順が記載されている。</p>
-        <p>本手順書は自動的に生成されたため、ご使用のシステムに最適化されていない可能性があるのでご了承ください。</p>
-        <p>Autotools か Meson のビルドシステムは選択可能。 テスト手順は任意である。</p>
-      </div>
-      <div class="sect1">
-        <div class="titlepage">
-          <div>
-            <div>
-              <h2 class="title" style="clear: both"><a id="compile-os"></a>オペレーティング システム一覧</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="sect1">
-        <div class="titlepage"></div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-alpine"></a>Alpine Linux</h3>
-              </div>
-            </div>
-          </div>
-          <p>Install dependencies</p>
-          <p>
-				</p>
-          <pre class="screen">apk add \
+    <div xmlns="" class="navheader" align="center">Netatalk 4.0.0dev</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">付録A ソースコードから Netatalk をコンパイルする</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="timelord.8.html">戻る</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">次へ</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="compile"></a>付録A ソースコードから Netatalk をコンパイルする</h1></div><div><p class="pubdate">2024-09-15</p></div></div></div><div class="toc"><p><strong>目次</strong></p><dl class="toc"><dt><span class="sect1"><a href="compile.html#compile-overview">概要</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.10.4"></a></span></dt><dt><span class="sect1"><a href="compile.html#compile-os">オペレーティング システム一覧</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.10.6"></a></span></dt><dd><dl><dt><span class="sect2"><a href="compile.html#build-alpine">Alpine Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-archlinux">Arch Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-debian">Debian Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-fedora">Fedora Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-opensuse">openSUSE Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-ubuntu">Ubuntu Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-macos">macOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-dflybsd">DragonflyBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-freebsd">FreeBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-netbsd">NetBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-openbsd">OpenBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-omnios">OmniOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-solaris">Solaris</a></span></dt><dt><span class="sect2"><a href="compile.html#id-1.10.6.14"></a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-overview"></a>概要</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><p>本付録では、以下オペレーティング システムで Netatalk のソースコードをコンパイルする手順が記載されている。</p><p>本手順書は自動的に生成されたため、ご使用のシステムに最適化されていない可能性があるのでご了承ください。</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-os"></a>オペレーティング システム一覧</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-alpine"></a>Alpine Linux</h3></div></div></div><p>Install dependencies</p><p>
+				</p><pre class="screen">apk add \
   acl-dev \
   avahi-compat-libdns_sd \
   avahi-dev \
@@ -213,61 +65,24 @@
   tracker-dev \
   tracker-miners \
   unicode-character-database
-</pre>
-          <p>
-			</p>
-          <p>Configure</p>
-          <p>
-				</p>
-          <pre class="screen">meson setup build \
+</pre><p>
+			</p><p>Configure</p><p>
+				</p><pre class="screen">meson setup build \
   -Dwith-appletalk=true \
   -Dwith-tests=true
-</pre>
-          <p>
-			</p>
-          <p>Build</p>
-          <p>
-				</p>
-          <pre class="screen">meson compile -C build</pre>
-          <p>
-			</p>
-          <p>Run tests</p>
-          <p>
-				</p>
-          <pre class="screen">cd build &amp;&amp; meson test</pre>
-          <p>
-			</p>
-          <p>Install</p>
-          <p>
-				</p>
-          <pre class="screen">meson install -C build</pre>
-          <p>
-			</p>
-          <p>Start netatalk</p>
-          <p>
-				</p>
-          <pre class="screen">/usr/local/sbin/netatalk -V</pre>
-          <p>
-			</p>
-          <p>Uninstall</p>
-          <p>
-				</p>
-          <pre class="screen">ninja -C build uninstall</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-archlinux"></a>Arch Linux</h3>
-              </div>
-            </div>
-          </div>
-          <p>Install dependencies</p>
-          <p>
-				</p>
-          <pre class="screen">pacman -Sy --noconfirm \
+</pre><p>
+			</p><p>Build</p><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
+			</p><p>Run tests</p><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+			</p><p>Install</p><p>
+				</p><pre class="screen">meson install -C build</pre><p>
+			</p><p>Start netatalk</p><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+			</p><p>Uninstall</p><p>
+				</p><pre class="screen">ninja -C build uninstall</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-archlinux"></a>Arch Linux</h3></div></div></div><p>Install dependencies</p><p>
+				</p><pre class="screen">pacman -Sy --noconfirm \
   avahi \
   cmark-gfm \
   cracklib \
@@ -284,63 +99,26 @@
   pkgconfig \
   rpcsvc-proto \
   unicode-character-database
-</pre>
-          <p>
-			</p>
-          <p>Configure</p>
-          <p>
-				</p>
-          <pre class="screen">meson setup build \
+</pre><p>
+			</p><p>Configure</p><p>
+				</p><pre class="screen">meson setup build \
   -Dwith-appletalk=true \
   -Dwith-docbook-path=/usr/share/xml/docbook/xsl-stylesheets-1.79.2 \
   -Dwith-init-hooks=false \
   -Dwith-tests=true
-</pre>
-          <p>
-			</p>
-          <p>Build</p>
-          <p>
-				</p>
-          <pre class="screen">meson compile -C build</pre>
-          <p>
-			</p>
-          <p>Run tests</p>
-          <p>
-				</p>
-          <pre class="screen">cd build &amp;&amp; meson test</pre>
-          <p>
-			</p>
-          <p>Install</p>
-          <p>
-				</p>
-          <pre class="screen">meson install -C build</pre>
-          <p>
-			</p>
-          <p>Start netatalk</p>
-          <p>
-				</p>
-          <pre class="screen">/usr/local/sbin/netatalk -V</pre>
-          <p>
-			</p>
-          <p>Uninstall</p>
-          <p>
-				</p>
-          <pre class="screen">ninja -C build uninstall</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-debian"></a>Debian Linux</h3>
-              </div>
-            </div>
-          </div>
-          <p>Install dependencies</p>
-          <p>
-				</p>
-          <pre class="screen">apt-get update
+</pre><p>
+			</p><p>Build</p><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
+			</p><p>Run tests</p><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+			</p><p>Install</p><p>
+				</p><pre class="screen">meson install -C build</pre><p>
+			</p><p>Start netatalk</p><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+			</p><p>Uninstall</p><p>
+				</p><pre class="screen">ninja -C build uninstall</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-debian"></a>Debian Linux</h3></div></div></div><p>Install dependencies</p><p>
+				</p><pre class="screen">apt-get update
 apt-get install --assume-yes --no-install-recommends bison \
 cmark-gfm \
 docbook-xsl \
@@ -376,64 +154,27 @@ tracker-miner-fs \
 unicode-data \
 xsltproc
 
-</pre>
-          <p>
-			</p>
-          <p>Configure</p>
-          <p>
-				</p>
-          <pre class="screen">meson setup build \
+</pre><p>
+			</p><p>Configure</p><p>
+				</p><pre class="screen">meson setup build \
   -Dwith-appletalk=true \
   -Dwith-init-hooks=false \
   -Dwith-init-style=debian-sysv,systemd \
   -Dwith-pkgconfdir-path=/etc/netatalk \
   -Dwith-tests=true
-</pre>
-          <p>
-			</p>
-          <p>Build</p>
-          <p>
-				</p>
-          <pre class="screen">meson compile -C build</pre>
-          <p>
-			</p>
-          <p>Run tests</p>
-          <p>
-				</p>
-          <pre class="screen">cd build &amp;&amp; meson test</pre>
-          <p>
-			</p>
-          <p>Install</p>
-          <p>
-				</p>
-          <pre class="screen">meson install -C build</pre>
-          <p>
-			</p>
-          <p>Start netatalk</p>
-          <p>
-				</p>
-          <pre class="screen">/usr/local/sbin/netatalk -V</pre>
-          <p>
-			</p>
-          <p>Uninstall</p>
-          <p>
-				</p>
-          <pre class="screen">ninja -C build uninstall</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-fedora"></a>Fedora Linux</h3>
-              </div>
-            </div>
-          </div>
-          <p>Install dependencies</p>
-          <p>
-				</p>
-          <pre class="screen">dnf --setopt=install_weak_deps=False --assumeyes install \
+</pre><p>
+			</p><p>Build</p><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
+			</p><p>Run tests</p><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+			</p><p>Install</p><p>
+				</p><pre class="screen">meson install -C build</pre><p>
+			</p><p>Start netatalk</p><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+			</p><p>Uninstall</p><p>
+				</p><pre class="screen">ninja -C build uninstall</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-fedora"></a>Fedora Linux</h3></div></div></div><p>Install dependencies</p><p>
+				</p><pre class="screen">dnf --setopt=install_weak_deps=False --assumeyes install \
   avahi-devel \
   bison \
   chkconfig \
@@ -464,62 +205,25 @@ xsltproc
   tracker \
   tracker-devel \
   unicode-ucd
-</pre>
-          <p>
-			</p>
-          <p>Configure</p>
-          <p>
-				</p>
-          <pre class="screen">meson setup build \
+</pre><p>
+			</p><p>Configure</p><p>
+				</p><pre class="screen">meson setup build \
   -Dwith-appletalk=true \
   -Dwith-init-hooks=false \
   -Dwith-tests=true
-</pre>
-          <p>
-			</p>
-          <p>Build</p>
-          <p>
-				</p>
-          <pre class="screen">meson compile -C build</pre>
-          <p>
-			</p>
-          <p>Run tests</p>
-          <p>
-				</p>
-          <pre class="screen">cd build &amp;&amp; meson test</pre>
-          <p>
-			</p>
-          <p>Install</p>
-          <p>
-				</p>
-          <pre class="screen">sudo meson install -C build</pre>
-          <p>
-			</p>
-          <p>Start netatalk</p>
-          <p>
-				</p>
-          <pre class="screen">/usr/local/sbin/netatalk -V</pre>
-          <p>
-			</p>
-          <p>Uninstall</p>
-          <p>
-				</p>
-          <pre class="screen">sudo ninja -C build uninstall</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-opensuse"></a>openSUSE Linux</h3>
-              </div>
-            </div>
-          </div>
-          <p>Install dependencies</p>
-          <p>
-				</p>
-          <pre class="screen">zypper in -y \
+</pre><p>
+			</p><p>Build</p><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
+			</p><p>Run tests</p><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+			</p><p>Install</p><p>
+				</p><pre class="screen">sudo meson install -C build</pre><p>
+			</p><p>Start netatalk</p><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+			</p><p>Uninstall</p><p>
+				</p><pre class="screen">sudo ninja -C build uninstall</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-opensuse"></a>openSUSE Linux</h3></div></div></div><p>Install dependencies</p><p>
+				</p><pre class="screen">zypper in -y \
   bison \
   cracklib-devel \
   dbus-1-devel \
@@ -550,63 +254,26 @@ xsltproc
   tcpd-devel \
   tracker \
   unicode-ucd
-</pre>
-          <p>
-			</p>
-          <p>Configure</p>
-          <p>
-				</p>
-          <pre class="screen">meson setup build \
+</pre><p>
+			</p><p>Configure</p><p>
+				</p><pre class="screen">meson setup build \
   -Dwith-appletalk=true \
   -Dwith-docbook-path=/usr/share/xml/docbook/stylesheet/nwalsh/1.79.2 \
   -Dwith-init-hooks=false \
   -Dwith-tests=true
-</pre>
-          <p>
-			</p>
-          <p>Build</p>
-          <p>
-				</p>
-          <pre class="screen">meson compile -C build</pre>
-          <p>
-			</p>
-          <p>Run tests</p>
-          <p>
-				</p>
-          <pre class="screen">cd build &amp;&amp; meson test</pre>
-          <p>
-			</p>
-          <p>Install</p>
-          <p>
-				</p>
-          <pre class="screen">meson install -C build</pre>
-          <p>
-			</p>
-          <p>Start netatalk</p>
-          <p>
-				</p>
-          <pre class="screen">/usr/local/sbin/netatalk -V</pre>
-          <p>
-			</p>
-          <p>Uninstall</p>
-          <p>
-				</p>
-          <pre class="screen">ninja -C build uninstall</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-ubuntu"></a>Ubuntu Linux</h3>
-              </div>
-            </div>
-          </div>
-          <p>Install dependencies</p>
-          <p>
-				</p>
-          <pre class="screen">sudo apt-get update
+</pre><p>
+			</p><p>Build</p><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
+			</p><p>Run tests</p><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+			</p><p>Install</p><p>
+				</p><pre class="screen">meson install -C build</pre><p>
+			</p><p>Start netatalk</p><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+			</p><p>Uninstall</p><p>
+				</p><pre class="screen">ninja -C build uninstall</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-ubuntu"></a>Ubuntu Linux</h3></div></div></div><p>Install dependencies</p><p>
+				</p><pre class="screen">sudo apt-get update
 sudo apt-get install --assume-yes --no-install-recommends bison \
 cmark-gfm \
 docbook-xsl \
@@ -642,68 +309,49 @@ tracker-miner-fs \
 unicode-data \
 xsltproc
 
-</pre>
-          <p>
-			</p>
-          <p>Configure</p>
-          <p>
-				</p>
-          <pre class="screen">meson setup build \
+</pre><p>
+			</p><p>Configure</p><p>
+				</p><pre class="screen">meson setup build \
   -Dwith-appletalk=true \
   -Dwith-init-hooks=false \
+  -Dwith-manual-l10n=ja \
   -Dwith-tests=true
-</pre>
-          <p>
-			</p>
-          <p>Build</p>
-          <p>
-				</p>
-          <pre class="screen">meson compile -C build</pre>
-          <p>
-			</p>
-          <p>Run distribution tests</p>
-          <p>
-				</p>
-          <pre class="screen">cd build &amp;&amp; meson dist</pre>
-          <p>
-			</p>
-          <p>Install</p>
-          <p>
-				</p>
-          <pre class="screen">sudo meson install -C build</pre>
-          <p>
-			</p>
-          <p>Start netatalk</p>
-          <p>
-				</p>
-          <pre class="screen">sudo systemctl start netatalk &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre>
-          <p>
-			</p>
-          <p>Stop netatalk</p>
-          <p>
-				</p>
-          <pre class="screen">sudo systemctl stop netatalk</pre>
-          <p>
-			</p>
-          <p>Uninstall</p>
-          <p>
-				</p>
-          <pre class="screen">sudo ninja -C build uninstall</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-dflybsd"></a>DragonflyBSD</h3>
-              </div>
-            </div>
-          </div>
-          <p>必要なパッケージをインストールする</p>
-          <p>
-				</p>
-          <pre class="screen">pkg install -y \
+</pre><p>
+			</p><p>Build</p><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
+			</p><p>Run distribution tests</p><p>
+				</p><pre class="screen">cd build &amp;&amp; meson dist</pre><p>
+			</p><p>Install</p><p>
+				</p><pre class="screen">sudo meson install -C build</pre><p>
+			</p><p>Start netatalk</p><p>
+				</p><pre class="screen">sudo systemctl start netatalk &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
+			</p><p>Stop netatalk</p><p>
+				</p><pre class="screen">sudo systemctl stop netatalk</pre><p>
+			</p><p>Uninstall</p><p>
+				</p><pre class="screen">sudo ninja -C build uninstall</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-macos"></a>macOS</h3></div></div></div><p>Install dependencies</p><p>
+				</p><pre class="screen">brew install berkeley-db cmark-gfm docbook-xsl libxslt meson mysql talloc wolfssl
+wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
+</pre><p>
+			</p><p>Configure</p><p>
+				</p><pre class="screen">meson setup build \
+  -Dwith-appletalk=true \
+  -Dwith-tests=true
+</pre><p>
+			</p><p>Build</p><p>
+				</p><pre class="screen">meson compile -C build</pre><p>
+			</p><p>Run tests</p><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+			</p><p>Install</p><p>
+				</p><pre class="screen">sudo meson install -C build</pre><p>
+			</p><p>Start netatalk</p><p>
+				</p><pre class="screen">sudo netatalkd start &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
+			</p><p>Stop netatalk</p><p>
+				</p><pre class="screen">sudo netatalkd stop</pre><p>
+			</p><p>Uninstall</p><p>
+				</p><pre class="screen">sudo ninja -C build uninstall</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-dflybsd"></a>DragonflyBSD</h3></div></div></div><p>必要なパッケージをインストールする</p><p>
+				</p><pre class="screen">pkg install -y \
   avahi \
   bison \
   db5 \
@@ -725,13 +373,9 @@ xsltproc
   tracker3 \
   wget \
   wolfssl
-</pre>
-          <p>
-			</p>
-          <p>コンフィグレーションとビルド</p>
-          <p>
-				</p>
-          <pre class="screen">set -e
+</pre><p>
+			</p><p>コンフィグレーションとビルド</p><p>
+				</p><pre class="screen">set -e
 wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
 meson setup build \
   -Dwith-appletalk=true
@@ -739,22 +383,9 @@ meson compile -C build
 meson install -C build
 /usr/local/sbin/netatalk -V
 ninja -C build uninstall
-</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-freebsd"></a>FreeBSD</h3>
-              </div>
-            </div>
-          </div>
-          <p>必要なパッケージをインストールする</p>
-          <p>
-				</p>
-          <pre class="screen">pkg install -y \
+</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-freebsd"></a>FreeBSD</h3></div></div></div><p>必要なパッケージをインストールする</p><p>
+				</p><pre class="screen">pkg install -y \
   avahi \
   bison \
   db5 \
@@ -773,13 +404,9 @@ ninja -C build uninstall
   tracker3 \
   wget \
   wolfssl
-</pre>
-          <p>
-			</p>
-          <p>コンフィグレーションとビルド</p>
-          <p>
-				</p>
-          <pre class="screen">set -e
+</pre><p>
+			</p><p>コンフィグレーションとビルド</p><p>
+				</p><pre class="screen">set -e
 wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
 meson setup build \
   -Dpkg_config_path=/usr/local/libdata/pkgconfig \
@@ -792,22 +419,9 @@ sleep 2
 /usr/local/etc/rc.d/netatalk stop
 /usr/local/etc/rc.d/netatalk disable
 ninja -C build uninstall
-</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-netbsd"></a>NetBSD</h3>
-              </div>
-            </div>
-          </div>
-          <p>必要なパッケージをインストールする</p>
-          <p>
-				</p>
-          <pre class="screen">pkg_add \
+</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-netbsd"></a>NetBSD</h3></div></div></div><p>必要なパッケージをインストールする</p><p>
+				</p><pre class="screen">pkg_add \
   avahi \
   bison \
   db5 \
@@ -828,13 +442,9 @@ ninja -C build uninstall
   pkg-config \
   talloc \
   tex-unicode-data
-</pre>
-          <p>
-			</p>
-          <p>コンフィグレーションとビルド</p>
-          <p>
-				</p>
-          <pre class="screen">set -e
+</pre><p>
+			</p><p>コンフィグレーションとビルド</p><p>
+				</p><pre class="screen">set -e
 meson setup build \
   -Dpkg_config_path=/usr/pkg/lib/pkgconfig \
   -Dwith-appletalk=true \
@@ -849,22 +459,9 @@ sleep 2
 asip-status localhost
 service netatalk onestop
 ninja -C build uninstall
-</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-openbsd"></a>OpenBSD</h3>
-              </div>
-            </div>
-          </div>
-          <p>必要なパッケージをインストールする</p>
-          <p>
-				</p>
-          <pre class="screen">pkg_add -I \
+</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-openbsd"></a>OpenBSD</h3></div></div></div><p>必要なパッケージをインストールする</p><p>
+				</p><pre class="screen">pkg_add -I \
   avahi \
   bison \
   dbus-glib \
@@ -883,13 +480,9 @@ ninja -C build uninstall
   pkgconf \
   tracker3 \
   wget
-</pre>
-          <p>
-			</p>
-          <p>コンフィグレーションとビルド</p>
-          <p>
-				</p>
-          <pre class="screen">set -e
+</pre><p>
+			</p><p>コンフィグレーションとビルド</p><p>
+				</p><pre class="screen">set -e
 wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
 meson setup build \
   -Dpkg_config_path=/usr/local/lib/pkgconfig \
@@ -902,84 +495,9 @@ asip-status localhost
 rcctl -d stop netatalk
 rcctl -d disable netatalk
 ninja -C build uninstall
-</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-macos"></a>macOS</h3>
-              </div>
-            </div>
-          </div>
-          <p>Install dependencies</p>
-          <p>
-				</p>
-          <pre class="screen">brew install berkeley-db cmark-gfm docbook-xsl libxslt meson mysql talloc wolfssl
-wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
-</pre>
-          <p>
-			</p>
-          <p>Configure</p>
-          <p>
-				</p>
-          <pre class="screen">meson setup build \
-  -Dwith-appletalk=true \
-  -Dwith-tests=true
-</pre>
-          <p>
-			</p>
-          <p>Build</p>
-          <p>
-				</p>
-          <pre class="screen">meson compile -C build</pre>
-          <p>
-			</p>
-          <p>Run tests</p>
-          <p>
-				</p>
-          <pre class="screen">cd build &amp;&amp; meson test</pre>
-          <p>
-			</p>
-          <p>Install</p>
-          <p>
-				</p>
-          <pre class="screen">sudo meson install -C build</pre>
-          <p>
-			</p>
-          <p>Start netatalk</p>
-          <p>
-				</p>
-          <pre class="screen">sudo netatalkd start &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre>
-          <p>
-			</p>
-          <p>Stop netatalk</p>
-          <p>
-				</p>
-          <pre class="screen">sudo netatalkd stop</pre>
-          <p>
-			</p>
-          <p>Uninstall</p>
-          <p>
-				</p>
-          <pre class="screen">sudo ninja -C build uninstall</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-omnios"></a>OmniOS</h3>
-              </div>
-            </div>
-          </div>
-          <p>必要なパッケージをインストールする</p>
-          <p>
-				</p>
-          <pre class="screen">pkg install \
+</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-omnios"></a>OmniOS</h3></div></div></div><p>必要なパッケージをインストールする</p><p>
+				</p><pre class="screen">pkg install \
   build-essential \
   pkg-config
 curl -O https://pkgsrc.smartos.org/packages/SmartOS/bootstrap/bootstrap-trunk-x86_64-20240116.tar.gz
@@ -997,13 +515,9 @@ pkgin -y install \
   mysql-client \
   nettle \
   talloc
-</pre>
-          <p>
-			</p>
-          <p>コンフィグレーションとビルド</p>
-          <p>
-				</p>
-          <pre class="screen">set -e
+</pre><p>
+			</p><p>コンフィグレーションとビルド</p><p>
+				</p><pre class="screen">set -e
 export PATH=/opt/local/sbin:/opt/local/bin:/usr/gnu/bin:/usr/bin:/usr/sbin:/sbin:$PATH
 wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
 meson setup build \
@@ -1012,27 +526,15 @@ meson setup build \
   -Dwith-ldap-path=/opt/local
 meson compile -C build
 meson install -C build
+sleep 2
 svcadm enable svc:/network/netatalk:default
 sleep 2
 /usr/local/bin/asip-status localhost
 svcadm disable svc:/network/netatalk:default
 ninja -C build uninstall
-</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage">
-            <div>
-              <div>
-                <h3 class="title"><a id="build-solaris"></a>Solaris</h3>
-              </div>
-            </div>
-          </div>
-          <p>必要なパッケージをインストールする</p>
-          <p>
-				</p>
-          <pre class="screen">pkg install \
+</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-solaris"></a>Solaris</h3></div></div></div><p>必要なパッケージをインストールする</p><p>
+				</p><pre class="screen">pkg install \
   bison \
   flex \
   gcc \
@@ -1041,15 +543,12 @@ ninja -C build uninstall
   nettle \
   ninja \
   pkg-config \
+  python/pip \
   wget
 pip install meson
-</pre>
-          <p>
-			</p>
-          <p>コンフィグレーションとビルド</p>
-          <p>
-				</p>
-          <pre class="screen">set -e
+</pre><p>
+			</p><p>コンフィグレーションとビルド</p><p>
+				</p><pre class="screen">set -e
 wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
 meson setup build \
   -Dpkg_config_path=/usr/lib/amd64/pkgconfig \
@@ -1060,36 +559,12 @@ meson compile -C build
 cd build &amp;&amp; meson test
 cd ..
 meson install -C build
+sleep 2
 svcadm enable svc:/network/netatalk:default
 sleep 2
 /usr/local/bin/asip-status localhost
 svcadm disable svc:/network/netatalk:default
 ninja -C build uninstall
-</pre>
-          <p>
-			</p>
-        </div>
-        <div class="sect2">
-          <div class="titlepage"></div>
-        </div>
-      </div>
-    </div>
-    <div class="navfooter">
-      <hr />
-      <table width="100%" summary="Navigation footer">
-        <tr>
-          <td width="40%" align="left"><a accesskey="p" href="timelord.8.html">戻る</a> </td>
-          <td width="20%" align="center"> </td>
-          <td width="40%" align="right"> <a accesskey="n" href="gpl.html">次へ</a></td>
-        </tr>
-        <tr>
-          <td width="40%" align="left" valign="top">timelord </td>
-          <td width="20%" align="center">
-            <a accesskey="h" href="index.html">ホーム</a>
-          </td>
-          <td width="40%" align="right" valign="top"> 付録B GNU General Public License</td>
-        </tr>
-      </table>
-    </div>
-  </body>
+</pre><p>
+			</p></div><div class="sect2"><div class="titlepage"></div></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="timelord.8.html">戻る</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="gpl.html">次へ</a></td></tr><tr><td width="40%" align="left" valign="top">timelord </td><td width="20%" align="center"><a accesskey="h" href="index.html">ホーム</a></td><td width="40%" align="right" valign="top"> 付録B GNU General Public License</td></tr></table></div></body>
 </html>
