@@ -120,13 +120,35 @@
   <h1>Latest News</h1>
 
 <hr />
+  <small>24th of September 2024</small>
+  <h2>Netatalk 2.4.10 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 2.4 release series.
+  This release contains a handful of minor bug fixes and build system improvements.
+  All users of Netatalk 3.2 are encouraged to upgrade their systems to 2.4.9.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/2.4/ReleaseNotes2.4.10.html">Release Notes</a>.</p>
+
+<hr />
+  <small>24th of September 2024</small>
+  <h2>Netatalk 3.2.10 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 3.2 release series.
+  This release contains a handful of minor bug fixes and build system improvements.
+  All users of Netatalk 3.2 are encouraged to upgrade their systems to 3.2.10.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/3.2/ReleaseNotes3.2.10.html">Release Notes</a>.</p>
+
+<hr />
   <small>15th of September 2024</small>
   <h2>Netatalk 2.4.9 is available</h2>
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 2.4 release series.
   This release contains bug fixes for the DHX2 and DHX user authentication modules.
-  All users of Netatalk 3.2 are encouraged to upgrade their systems to 2.4.9.</p>
+  All users of Netatalk 2.4 are encouraged to upgrade their systems to 2.4.9.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/2.4/ReleaseNotes2.4.9.html">Release Notes</a>.</p>
 
@@ -140,28 +162,6 @@
   All users of Netatalk 3.2 are encouraged to upgrade their systems to 3.2.9.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/3.2/ReleaseNotes3.2.9.html">Release Notes</a>.</p>
-
-<hr />
-  <small>8th of September 2024</small>
-  <h2>Netatalk 2.4.8 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 2.4 release series.
-  This release contains security fixes for the bundled WolfSSL library.
-  All users of Netatalk 2.4 who use the bundled WolfSSL library are strongly encouraged to upgrade their systems to 2.4.8.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/2.4/ReleaseNotes2.4.8.html">Release Notes</a>.</p>
-
-<hr />
-  <small>8th of September 2024</small>
-  <h2>Netatalk 3.2.8 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 3.2 release series.
-  This release contains security fixes for the bundled WolfSSL library.
-  All users of Netatalk 3.2 who use the bundled WolfSSL library are strongly encouraged to upgrade their systems to 3.2.8.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/3.2/ReleaseNotes3.2.8.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
