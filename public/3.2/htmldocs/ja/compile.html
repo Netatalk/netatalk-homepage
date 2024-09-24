@@ -24,8 +24,8 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 3.2.9</div>
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">付録A Netatalk をソースコードからコンパイルする</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="netatalk-config.1.html">戻る</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">次へ</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="compile"></a>付録A Netatalk をソースコードからコンパイルする</h1></div><div><p class="pubdate">2024-09-15</p></div></div></div><div class="toc"><p><strong>目次</strong></p><dl class="toc"><dt><span class="sect1"><a href="compile.html#compile-overview">概要</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.4"></a></span></dt><dt><span class="sect1"><a href="compile.html#compile-os">オペレーティング システム一覧</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.6"></a></span></dt><dd><dl><dt><span class="sect2"><a href="compile.html#build-alpine">Alpine Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-archlinux">Arch Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-debian">Debian Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-fedora">Fedora Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-opensuse">openSUSE Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-ubuntu">Ubuntu Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-macos">macOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-dflybsd">DragonflyBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-freebsd">FreeBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-netbsd">NetBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-openbsd">OpenBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-omnios">OmniOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-solaris">Solaris</a></span></dt><dt><span class="sect2"><a href="compile.html#id-1.9.6.14"></a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-overview"></a>概要</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><p>本付録では、以下オペレーティング システムで Netatalk のソースコードをコンパイルする手順が記載されている。</p><p>本手順書は自動的に生成されたため、ご使用のシステムに最適化されていない可能性があるのでご了承ください。</p><p>Autotools か Meson のビルドシステムは選択可能。 テスト手順は任意である。</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-os"></a>オペレーティング システム一覧</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-alpine"></a>Alpine Linux</h3></div></div></div><p>Install dependencies</p><p>
+    <div xmlns="" class="navheader" align="center">Netatalk 3.2.10</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">付録A Netatalk をソースコードからコンパイルする</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="netatalk-config.1.html">戻る</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">次へ</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="compile"></a>付録A Netatalk をソースコードからコンパイルする</h1></div><div><p class="pubdate">2024-09-24</p></div></div></div><div class="toc"><p><strong>目次</strong></p><dl class="toc"><dt><span class="sect1"><a href="compile.html#compile-overview">概要</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.4"></a></span></dt><dt><span class="sect1"><a href="compile.html#compile-os">オペレーティング システム一覧</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.6"></a></span></dt><dd><dl><dt><span class="sect2"><a href="compile.html#build-alpine">Alpine Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-archlinux">Arch Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-debian">Debian Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-fedora">Fedora Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-opensuse">openSUSE Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-ubuntu">Ubuntu Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-macos">macOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-dflybsd">DragonflyBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-freebsd">FreeBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-netbsd">NetBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-openbsd">OpenBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-omnios">OmniOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-solaris">Solaris</a></span></dt><dt><span class="sect2"><a href="compile.html#id-1.9.6.14"></a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-overview"></a>概要</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><p>本付録では、以下オペレーティング システムで Netatalk のソースコードをコンパイルする手順が記載されている。</p><p>本手順書は自動的に生成されたため、ご使用のシステムに最適化されていない可能性があるのでご了承ください。</p><p>Autotools か Meson のビルドシステムは選択可能。 テスト手順は任意である。</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-os"></a>オペレーティング システム一覧</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-alpine"></a>Alpine Linux</h3></div></div></div><p>Install dependencies</p><p>
 				</p><pre class="screen">apk add \
   acl-dev \
   autoconf \
@@ -70,6 +70,7 @@
   --enable-krbV-uam \
   --enable-pgp-uam \
   --with-cracklib \
+  --with-dbus-sysconf-dir=/usr/share/dbus-1/system.d \
   --with-init-style=openrc \
   --with-tracker-pkgconfig-version=3.0
 </pre><p>
@@ -80,11 +81,14 @@
 			</p><p>Autotools - Install</p><p>
 				</p><pre class="screen">make install</pre><p>
 			</p><p>Autotools - Start netatalk</p><p>
-				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+</pre><p>
 			</p><p>Autotools - Uninstall</p><p>
 				</p><pre class="screen">make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-style=openrc \
   -Dwith-tests=true
 </pre><p>
@@ -95,7 +99,9 @@
 			</p><p>Meson - Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
 			</p><p>Meson - Start netatalk</p><p>
-				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-archlinux"></a>Arch Linux</h3></div></div></div><p>Install dependencies</p><p>
@@ -118,6 +124,7 @@
 				</p><pre class="screen">./configure \
   --disable-init-hooks \
   --with-cracklib \
+  --with-dbus-sysconf-dir=/usr/share/dbus-1/system.d \
   --with-init-style=systemd
 </pre><p>
 			</p><p>Autotools - Build</p><p>
@@ -127,11 +134,14 @@
 			</p><p>Autotools - Install</p><p>
 				</p><pre class="screen">make install</pre><p>
 			</p><p>Autotools - Start netatalk</p><p>
-				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+</pre><p>
 			</p><p>Autotools - Uninstall</p><p>
 				</p><pre class="screen">make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-hooks=false \
   -Dwith-init-style=systemd \
   -Dwith-tests=true
@@ -143,7 +153,9 @@
 			</p><p>Meson - Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
 			</p><p>Meson - Start netatalk</p><p>
-				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-debian"></a>Debian Linux</h3></div></div></div><p>Install dependencies</p><p>
@@ -196,6 +208,7 @@ apt-get install --assume-yes --no-install-recommends \
   --enable-pgp-uam \
   --enable-quota \
   --with-cracklib \
+  --with-dbus-sysconf-dir=/usr/share/dbus-1/system.d \
   --with-init-style=debian-systemd \
   --with-tracker-pkgconfig-version=3.0
 </pre><p>
@@ -206,11 +219,14 @@ apt-get install --assume-yes --no-install-recommends \
 			</p><p>Autotools - Install</p><p>
 				</p><pre class="screen">make install</pre><p>
 			</p><p>Autotools - Start netatalk</p><p>
-				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+</pre><p>
 			</p><p>Autotools - Uninstall</p><p>
 				</p><pre class="screen">make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-hooks=false \
   -Dwith-init-style=debian-systemd \
   -Dwith-pkgconfdir-path=/etc/netatalk \
@@ -223,7 +239,9 @@ apt-get install --assume-yes --no-install-recommends \
 			</p><p>Meson - Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
 			</p><p>Meson - Start netatalk</p><p>
-				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-fedora"></a>Fedora Linux</h3></div></div></div><p>Install dependencies</p><p>
@@ -265,6 +283,7 @@ apt-get install --assume-yes --no-install-recommends \
   --enable-pgp-uam \
   --enable-quota \
   --with-cracklib \
+  --with-dbus-sysconf-dir=/usr/share/dbus-1/system.d \
   --with-init-style=redhat-systemd \
   --with-tracker-pkgconfig-version=3.0
 </pre><p>
@@ -275,11 +294,14 @@ apt-get install --assume-yes --no-install-recommends \
 			</p><p>Autotools - Install</p><p>
 				</p><pre class="screen">sudo make install</pre><p>
 			</p><p>Autotools - Start netatalk</p><p>
-				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+</pre><p>
 			</p><p>Autotools - Uninstall</p><p>
 				</p><pre class="screen">sudo make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-hooks=false \
   -Dwith-init-style=redhat-systemd \
   -Dwith-tests=true
@@ -291,7 +313,9 @@ apt-get install --assume-yes --no-install-recommends \
 			</p><p>Meson - Install</p><p>
 				</p><pre class="screen">sudo meson install -C build</pre><p>
 			</p><p>Meson - Start netatalk</p><p>
-				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">sudo ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-opensuse"></a>openSUSE Linux</h3></div></div></div><p>Install dependencies</p><p>
@@ -336,6 +360,7 @@ zypper in -y \
   --disable-krbV-uam \
   --enable-pgp-uam \
   --with-cracklib \
+  --with-dbus-sysconf-dir=/usr/share/dbus-1/system.d \
   --with-init-style=suse-systemd \
   --with-tracker-pkgconfig-version=3.0
 </pre><p>
@@ -346,11 +371,14 @@ zypper in -y \
 			</p><p>Autotools - Install</p><p>
 				</p><pre class="screen">make install</pre><p>
 			</p><p>Autotools - Start netatalk</p><p>
-				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+</pre><p>
 			</p><p>Autotools - Uninstall</p><p>
 				</p><pre class="screen">make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-hooks=false \
   -Dwith-init-style=suse-systemd \
   -Dwith-tests=true
@@ -362,7 +390,9 @@ zypper in -y \
 			</p><p>Meson - Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
 			</p><p>Meson - Start netatalk</p><p>
-				</p><pre class="screen">/usr/local/sbin/netatalk -V</pre><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-ubuntu"></a>Ubuntu Linux</h3></div></div></div><p>Install dependencies</p><p>
@@ -370,6 +400,7 @@ zypper in -y \
 sudo apt-get install --assume-yes --no-install-recommends autoconf \
 automake \
 bison \
+cracklib-runtime \
 docbook-xsl \
 flex \
 libacl1-dev \
@@ -412,6 +443,7 @@ xsltproc
   --enable-pgp-uam \
   --enable-quota \
   --with-cracklib \
+  --with-dbus-sysconf-dir=/usr/share/dbus-1/system.d \
   --with-docbook=/usr/share/xml/docbook/stylesheet/docbook-xsl \
   --with-init-style=debian-systemd \
   --with-tracker-pkgconfig-version=3.0
@@ -426,28 +458,39 @@ xsltproc
 				</p><pre class="screen">make distcheck</pre><p>
 			</p><p>Autotools - Install</p><p>
 				</p><pre class="screen">sudo make install</pre><p>
-			</p><p>Start netatalk</p><p>
-				</p><pre class="screen">sudo systemctl start netatalk &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
-			</p><p>Stop netatalk</p><p>
+			</p><p>Autotools - Start netatalk</p><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+sudo systemctl start netatalk
+sleep 2
+asip-status localhost
+</pre><p>
+			</p><p>Autotools - Stop netatalk</p><p>
 				</p><pre class="screen">sudo systemctl stop netatalk</pre><p>
 			</p><p>Autotools - Uninstall</p><p>
 				</p><pre class="screen">sudo make uninstall</pre><p>
 			</p><p>Meson - Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-manual=true \
   -Dwith-init-hooks=false \
   -Dwith-init-style=debian-systemd \
   -Dwith-tests=true
 </pre><p>
-			</p><p>Meson - Build and generate manual pages</p><p>
+			</p><p>Meson - Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Meson - Run distribution tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson dist</pre><p>
 			</p><p>Meson - Install</p><p>
 				</p><pre class="screen">sudo meson install -C build</pre><p>
-			</p><p>Start netatalk</p><p>
-				</p><pre class="screen">sudo systemctl start netatalk &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
-			</p><p>Stop netatalk</p><p>
+			</p><p>Meson - Start netatalk</p><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+sudo systemctl start netatalk
+sleep 1
+asip-status localhost
+</pre><p>
+			</p><p>Meson - Stop netatalk</p><p>
 				</p><pre class="screen">sudo systemctl stop netatalk</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">sudo ninja -C build uninstall</pre><p>
@@ -469,9 +512,12 @@ xsltproc
 				</p><pre class="screen">make check</pre><p>
 			</p><p>Autotools - Install</p><p>
 				</p><pre class="screen">sudo make install</pre><p>
-			</p><p>Start netatalk</p><p>
-				</p><pre class="screen">sudo /usr/local/bin/netatalkd start &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
-			</p><p>Stop netatalk</p><p>
+			</p><p>Autotools - Start netatalk</p><p>
+				</p><pre class="screen">/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
+sudo /usr/local/bin/netatalkd start &amp;&amp; sleep 2 &amp;&amp; asip-status localhost
+</pre><p>
+			</p><p>Autotools - Stop netatalk</p><p>
 				</p><pre class="screen">sudo netatalkd stop</pre><p>
 			</p><p>Autotools - Uninstall</p><p>
 				</p><pre class="screen">sudo make uninstall</pre><p>
@@ -486,9 +532,12 @@ xsltproc
 				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
 			</p><p>Meson - Install</p><p>
 				</p><pre class="screen">sudo meson install -C build</pre><p>
-			</p><p>Start netatalk</p><p>
-				</p><pre class="screen">sudo netatalkd start &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
-			</p><p>Stop netatalk</p><p>
+			</p><p>Meson - Start netatalk</p><p>
+				</p><pre class="screen">/opt/homebrew/sbin/netatalk -V
+/opt/homebrew/sbin/afpd -V
+sudo netatalkd start &amp;&amp; sleep 2 &amp;&amp; asip-status localhost
+</pre><p>
+			</p><p>Meson - Stop netatalk</p><p>
 				</p><pre class="screen">sudo netatalkd stop</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">sudo ninja -C build uninstall</pre><p>
@@ -527,12 +576,14 @@ echo "Building with Autotools"
 gmake -j2
 gmake install
 /usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
 gmake uninstall
 echo "Building with Meson"
 meson setup build
 meson compile -C build
 meson install -C build
 /usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
 ninja -C build uninstall
 </pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-freebsd"></a>FreeBSD</h3></div></div></div><p>必要なパッケージをインストールする</p><p>
@@ -570,6 +621,8 @@ echo "Building with Autotools"
   PKG_CONFIG_PATH=/usr/local/libdata/pkgconfig
 gmake -j $(nproc)
 gmake install
+/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
 /usr/local/etc/rc.d/netatalk start
 sleep 2
 /usr/local/bin/asip-status localhost
@@ -581,6 +634,8 @@ meson setup build \
   -Dwith-init-style=freebsd
 meson compile -C build
 meson install -C build
+/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
 /usr/local/etc/rc.d/netatalk start
 sleep 2
 /usr/local/bin/asip-status localhost
@@ -623,6 +678,8 @@ echo "Building with Autotools"
   --with-tracker-pkgconfig-version=3.0
 gmake -j $(nproc)
 gmake install
+/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
 service netatalk onestart
 sleep 2
 asip-status localhost
@@ -638,6 +695,8 @@ meson compile -C build
 cd build &amp;&amp; meson test
 cd ..
 meson install -C build
+/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
 service netatalk onestart
 sleep 2
 asip-status localhost
@@ -652,7 +711,7 @@ ninja -C build uninstall
   bison \
   dbus-glib \
   db-4.6.21p7v0 \
-  gcc-11.2.0p9 \
+  gcc-11.2.0p11 \
   gmake \
   libevent \
   libgcrypt \
@@ -660,7 +719,7 @@ ninja -C build uninstall
   libtool \
   mariadb-client \
   meson \
-  openldap-client-2.6.6v0 \
+  openldap-client-2.6.7v0 \
   openpam \
   pkgconf \
   tracker3
@@ -686,6 +745,8 @@ meson setup build \
   -Dwith-init-style=openbsd
 meson compile -C build
 meson install -C build
+/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
 rcctl -d start netatalk
 sleep 2
 asip-status localhost
@@ -720,11 +781,14 @@ export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig
 ./configure \
   --enable-pgp-uam \
   --with-bdb=/opt/local \
+  --with-dbus-sysconf-dir=/usr/share/dbus-1/system.d \
   --with-init-style=solaris \
   --with-ldap=/opt/local \
   --with-tracker-pkgconfig-version=3.0
 make -j $(nproc)
 make install
+/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
 sleep 2
 svcadm enable svc:/network/netatalk:default
 sleep 2
@@ -734,11 +798,14 @@ make uninstall
 echo "Building with Meson"
 meson setup build \
   -Dpkg_config_path=/opt/local/lib/pkgconfig \
+  -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-style=solaris \
   -Dwith-ldap-path=/opt/local \
   -Dwith-pgp-uam=true
 meson compile -C build
 meson install -C build
+/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
 sleep 2
 svcadm enable svc:/network/netatalk:default
 sleep 2
@@ -781,6 +848,7 @@ echo "Building with Autotools"
 ./configure \
   --enable-krbV-uam \
   --enable-pgp-uam \
+  --with-dbus-sysconf-dir=/usr/share/dbus-1/system.d \
   --with-init-style=solaris \
   --with-tracker-pkgconfig-version=2.0 \
   --without-afpstats \
@@ -788,6 +856,8 @@ echo "Building with Autotools"
   PKG_CONFIG_PATH=/usr/lib/amd64/pkgconfig
 gmake -j $(nproc)
 gmake install
+/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
 sleep 2
 svcadm enable svc:/network/netatalk:default
 sleep 2
@@ -797,6 +867,7 @@ gmake uninstall
 echo "Building with Meson"
 meson setup build \
   -Dpkg_config_path=/usr/lib/amd64/pkgconfig \
+  -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-style=solaris \
   -Dwith-pgp-uam=true \
   -Dwith-tests=true
@@ -804,6 +875,8 @@ meson compile -C build
 cd build &amp;&amp; meson test
 cd ..
 meson install -C build
+/usr/local/sbin/netatalk -V
+/usr/local/sbin/afpd -V
 sleep 2
 svcadm enable svc:/network/netatalk:default
 sleep 2
