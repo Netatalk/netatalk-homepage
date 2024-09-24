@@ -24,8 +24,8 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 2.4.9</div>
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Compile Netatalk from Source</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="uniconv.1.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">Next</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="compile"></a>Appendix A. Compile Netatalk from Source</h1></div><div><p class="pubdate">2024-09-15</p></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="compile.html#compile-overview">Overview</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.4"></a></span></dt><dt><span class="sect1"><a href="compile.html#compile-os">Operating Systems</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.6"></a></span></dt><dd><dl><dt><span class="sect2"><a href="compile.html#build-alpine">Alpine Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-archlinux">Arch Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-debian">Debian Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-fedora">Fedora Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-opensuse">openSUSE Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-ubuntu">Ubuntu Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-macos">macOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-dflybsd">DragonflyBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-freebsd">FreeBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-netbsd">NetBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-openbsd">OpenBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-omnios">OmniOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-solaris">Solaris</a></span></dt><dt><span class="sect2"><a href="compile.html#id-1.9.6.14"></a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-overview"></a>Overview</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><p>This appendix describes how to compile Netatalk from source for specific operating systems.</p><p>Please note that the steps below are automatically generated, and may not be optimized for your system.</p><p>Choose one of the build systems: Autotools or Meson. Test steps are optional.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-os"></a>Operating Systems</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-alpine"></a>Alpine Linux</h3></div></div></div><p>Install dependencies</p><p>
+    <div xmlns="" class="navheader" align="center">Netatalk 2.4.10</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Compile Netatalk from Source</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="uniconv.1.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">Next</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="compile"></a>Appendix A. Compile Netatalk from Source</h1></div><div><p class="pubdate">2024-09-24</p></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="compile.html#compile-overview">Overview</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.4"></a></span></dt><dt><span class="sect1"><a href="compile.html#compile-os">Operating Systems</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.9.6"></a></span></dt><dd><dl><dt><span class="sect2"><a href="compile.html#build-alpine">Alpine Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-archlinux">Arch Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-debian">Debian Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-fedora">Fedora Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-opensuse">openSUSE Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-ubuntu">Ubuntu Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-macos">macOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-dflybsd">DragonflyBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-freebsd">FreeBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-netbsd">NetBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-openbsd">OpenBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-omnios">OmniOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-solaris">Solaris</a></span></dt><dt><span class="sect2"><a href="compile.html#id-1.9.6.14"></a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-overview"></a>Overview</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><p>This appendix describes how to compile Netatalk from source for specific operating systems.</p><p>Please note that the steps below are automatically generated, and may not be optimized for your system.</p><p>Choose one of the build systems: Autotools or Meson. Test steps are optional.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-os"></a>Operating Systems</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-alpine"></a>Alpine Linux</h3></div></div></div><p>Install dependencies</p><p>
 				</p><pre class="screen">apk add \
   acl-dev \
   autoconf \
@@ -141,6 +141,7 @@
 				</p><pre class="screen">apt-get update
 apt-get install --assume-yes --no-install-recommends autoconf \
 automake \
+cracklib-runtime \
 docbook-xsl \
 libacl1-dev \
 libavahi-client-dev \
@@ -328,6 +329,7 @@ zypper in -y \
 				</p><pre class="screen">sudo apt-get update
 sudo apt-get install --assume-yes --no-install-recommends autoconf \
 automake \
+cracklib-runtime \
 docbook-xsl \
 libacl1-dev \
 libavahi-client-dev \
@@ -373,9 +375,13 @@ xsltproc
 				</p><pre class="screen">make distcheck</pre><p>
 			</p><p>Autotools - Install</p><p>
 				</p><pre class="screen">sudo make install</pre><p>
-			</p><p>Start netatalk</p><p>
-				</p><pre class="screen">sudo systemctl start afpd &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
-			</p><p>Stop netatalk</p><p>
+			</p><p>Autotools - Start netatalk</p><p>
+				</p><pre class="screen">/usr/local/sbin/afpd -V
+sudo systemctl start afpd
+sleep 2
+asip-status localhost
+</pre><p>
+			</p><p>Autotools - Stop netatalk</p><p>
 				</p><pre class="screen">sudo systemctl stop afpd</pre><p>
 			</p><p>Autotools - Uninstall</p><p>
 				</p><pre class="screen">sudo make uninstall</pre><p>
@@ -387,7 +393,7 @@ xsltproc
   -Dwith-quota=true \
   -Dwith-tests=true
 </pre><p>
-			</p><p>Meson - Build and generate man pages</p><p>
+			</p><p>Meson - Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Meson - Tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
@@ -395,9 +401,13 @@ xsltproc
 				</p><pre class="screen">cd build &amp;&amp; meson dist</pre><p>
 			</p><p>Meson - Install</p><p>
 				</p><pre class="screen">sudo meson install -C build</pre><p>
-			</p><p>Start netatalk</p><p>
-				</p><pre class="screen">sudo systemctl start afpd &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
-			</p><p>Stop netatalk</p><p>
+			</p><p>Meson - Start netatalk</p><p>
+				</p><pre class="screen">/usr/local/sbin/afpd -V
+sudo systemctl start afpd
+sleep 2
+asip-status localhost
+</pre><p>
+			</p><p>Meson - Stop netatalk</p><p>
 				</p><pre class="screen">sudo systemctl stop afpd</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">sudo ninja -C build uninstall</pre><p>
@@ -420,9 +430,13 @@ xsltproc
 				</p><pre class="screen">make check</pre><p>
 			</p><p>Autotools - Install</p><p>
 				</p><pre class="screen">sudo make install</pre><p>
-			</p><p>Start netatalk</p><p>
-				</p><pre class="screen">sudo netatalkd start &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
-			</p><p>Stop netatalk</p><p>
+			</p><p>Autotools - Start netatalk</p><p>
+				</p><pre class="screen">/usr/local/sbin/afpd -V
+sudo netatalkd start
+sleep 2
+asip-status localhost
+</pre><p>
+			</p><p>Autotools - Stop netatalk</p><p>
 				</p><pre class="screen">sudo netatalkd stop</pre><p>
 			</p><p>Autotools - Uninstall</p><p>
 				</p><pre class="screen">sudo make uninstall</pre><p>
@@ -437,9 +451,13 @@ xsltproc
 				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
 			</p><p>Meson - Install</p><p>
 				</p><pre class="screen">sudo meson install -C build</pre><p>
-			</p><p>Start netatalk</p><p>
-				</p><pre class="screen">sudo netatalkd start &amp;&amp; sleep 2 &amp;&amp; asip-status localhost</pre><p>
-			</p><p>Stop netatalk</p><p>
+			</p><p>Meson - Start netatalk</p><p>
+				</p><pre class="screen">/opt/homebrew/sbin/afpd -V
+sudo netatalkd start
+sleep 2
+asip-status localhost
+</pre><p>
+			</p><p>Meson - Stop netatalk</p><p>
 				</p><pre class="screen">sudo netatalkd stop</pre><p>
 			</p><p>Meson - Uninstall</p><p>
 				</p><pre class="screen">sudo ninja -C build uninstall</pre><p>
@@ -504,12 +522,14 @@ echo "Building with Autotools"
   PKG_CONFIG_PATH=/usr/local/libdata/pkgconfig
 gmake -j $(nproc)
 gmake install
+/usr/local/sbin/afpd -V
 gmake uninstall
 echo "Building with Meson"
 meson setup build \
   -Dpkg_config_path=/usr/local/libdata/pkgconfig
 meson compile -C build
 meson install -C build
+/usr/local/sbin/afpd -V
 ninja -C build uninstall
 </pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-netbsd"></a>NetBSD</h3></div></div></div><p>Install required packages</p><p>
@@ -539,6 +559,7 @@ echo "Building with Autotools"
   --enable-pgp-uam
 gmake -j $(nproc)
 gmake install
+/usr/local/sbin/afpd -V
 service afpd onestart
 sleep 2
 asip-status localhost
@@ -553,6 +574,7 @@ meson compile -C build
 cd build &amp;&amp; meson test
 cd ..
 meson install -C build
+/usr/local/sbin/afpd -V
 service afpd onestart
 sleep 2
 asip-status localhost
@@ -565,12 +587,12 @@ ninja -C build uninstall
   automake-1.16.5 \
   avahi \
   db-4.6.21p7v0 \
-  gcc-11.2.0p9 \
+  gcc-11.2.0p11 \
   gmake \
   libgcrypt \
   libtool \
   meson \
-  openldap-client-2.6.6v0 \
+  openldap-client-2.6.7v0 \
   openpam \
   pkgconf
 </pre><p>
@@ -588,6 +610,7 @@ autoreconf -fi
   PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 gmake -j $(nproc)
 gmake install
+/usr/local/sbin/afpd -V
 gmake uninstall
 echo "Building with Meson"
 meson setup build \
@@ -595,6 +618,7 @@ meson setup build \
   -Dwith-ddp=false
 meson compile -C build
 meson install -C build
+/usr/local/sbin/afpd -V
 ninja -C build uninstall
 </pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-omnios"></a>OmniOS</h3></div></div></div><p>Install required packages</p><p>
@@ -624,6 +648,7 @@ echo "Building with Autotools"
   --without-ldap
 make -j $(nproc)
 make install
+/usr/local/sbin/afpd -V
 make uninstall
 echo "Building with Meson"
 meson setup build \
@@ -633,6 +658,7 @@ meson setup build \
   -Dwith-pgp-uam=true
 meson compile -C build
 meson install -C build
+/usr/local/sbin/afpd -V
 chmod 744 /etc/rc2.d/S90netatalk
 chmod 744 /etc/rc0.d/K04netatalk
 /etc/rc2.d/S90netatalk start
@@ -676,6 +702,7 @@ echo "Building with Autotools"
   --enable-cups=no
 gmake -j $(nproc) all
 gmake install
+/usr/local/sbin/afpd -V
 gmake uninstall
 echo "Building with Meson"
 meson setup build \
@@ -687,6 +714,7 @@ meson compile -C build
 cd build &amp;&amp; meson test
 cd ..
 meson install -C build
+/usr/local/sbin/afpd -V
 chmod 744 /etc/rc2.d/S90netatalk
 chmod 744 /etc/rc0.d/K04netatalk
 /etc/rc2.d/S90netatalk start
