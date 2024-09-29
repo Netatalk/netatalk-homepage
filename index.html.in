@@ -41,7 +41,7 @@
   </tr>
   <tr>
   <td>Supported Host OS</td>
-  <td>Linux, FreeBSD, NetBSD, OpenBSD, macOS, OmniOS, Open Indiana, Solaris 11</td>
+  <td>Linux, FreeBSD, NetBSD, OpenBSD, macOS, OmniOS, OpenIndiana, Solaris 11</td>
   </tr>
   <tr>
   <td>Supported Clients</td>
