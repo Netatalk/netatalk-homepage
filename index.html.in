@@ -1,10 +1,10 @@
 <div id="content">
   <h1>Welcome to the Netatalk Homepage!</h1>
 
-  <p>Netatalk is a Free and Open Source implementation of the
+  <p>Netatalk is a Free and Open Source file server that implements the
   <a href="https://en.wikipedia.org/wiki/Apple_Filing_Protocol">Apple Filing Protocol</a> (AFP).
-  A macOS, Linux, BSD, or Solaris system running Netatalk can act as an AppleShare file server,
-  providing file sharing services to multiple macOS, Classic Mac OS,
+  A macOS, Linux, BSD, or Solaris system running Netatalk can act as an AppleShare server,
+  providing file sharing services to any number of macOS, Classic Mac OS,
   and Apple II clients simultaneously.</p>
 
   <p>Since 1990, Netatalk has been providing highly performant and versatile file sharing for Macs from
@@ -21,8 +21,8 @@
   official <a href="https://hub.docker.com/u/netatalk">Docker images
   on Docker Hub</a>. These require Docker Engine to be installed.</p>
 
-  <p>Finally, if you wamt to build Netatalk from source,
-  a C compiler (gcc or clang recommended) together with dependent libraries are required.
+  <p>Finally, if you want to build Netatalk from source,
+  a C compiler (gcc or clang are recommended) together with dependent libraries are required.
   Read more in the <a href="stable/htmldocs/installation">Netatalk manual</a>
   or the OS specific guides in the <a href="docs">wiki</a>.</p>
 
@@ -45,7 +45,7 @@
   </tr>
   <tr>
   <td>Supported Clients</td>
-  <td>macOS, Mac OS X, Mac OS 8/9, Macintosh System Software 6.0.x/7.x, Apple IIGS, Apple //e</td>
+  <td>macOS, Mac OS X, Mac OS 8/9, Macintosh System Software 6.0.x/7.x, Apple II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span>, Apple //e</td>
   </tr>
   <tr>
   <td>AFP Protocol Versions</td>
