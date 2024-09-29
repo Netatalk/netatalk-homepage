@@ -6,60 +6,33 @@
 <p>The most recent stable Netatalk releases can be downloaded
 from the <b>navbar to the left</b> on this website.</p>
 
-<p>For older releases, go to
-<a href="https://sourceforge.net/projects/netatalk/files/">
-    Netatalk Files on SourceForge.net</a>
+<p>You can also find the release tarballs attached to the
+<a href="https://github.com/Netatalk/netatalk/releases">
+release notes</a> on GitHub.
 </p>
 
-<p>More recent stable versions can also be found under
-<a href="https://github.com/Netatalk/netatalk/releases">
-    GitHub Releases</a>
+<p>For older releases, go to
+<a href="https://sourceforge.net/projects/netatalk/files/">
+Netatalk Files on SourceForge</a>.
 </p>
 
 <h3>Webmin Module</h3>
-<h5>For Netatalk 3.x</h5>
-<ul>
-    <li>
-        <a href="https://sourceforge.net/projects/netatalk/files/Webmin/netatalk3-wbm-1.1.tgz/download">
-            Download Webmin Module 1.1
-        </a>
-    </li>
-    <li>
-        <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk3-1.1">
-            Release Notes
-        </a>
-    </li>
-</ul>
-<h5>For Netatalk 2.x</h5>
-<ul>
-    <li>
-        <a href="https://sourceforge.net/projects/netatalk/files/Webmin/netatalk2-wbm-2.0.tgz/download">
-            Download Webmin Module 2.0
-        </a>
-    </li>
-    <li>
-        <a href="https://github.com/Netatalk/netatalk-webmin/releases/tag/netatalk2-2.0">
-            Release Notes
-        </a>
-    </li>
-</ul>
+
+<p>The Webmin modules for Netatalk 4.0 and later are distributed with each release.</p>
+
+<p>The Webmin modules for Netatalk 3.x and earlier can be downloaded from
+<a href"https://sourceforge.net/projects/netatalk/files/Webmin/">SourceForge Files</a> section.</p>
 
 <h3>AFP Test-Suite</h3>
-<ul>
-    <li>
-        <a href="https://sourceforge.net/projects/netatalk/files/Testsuite/afptest-1.0.6.tar.gz/download">
-            Download afptest 1.0.6
-        </a>
-    </li>
-</ul>
+
+<p>Find stable afptest release tarballs in the
+<a href="https://sourceforge.net/projects/netatalk/files/Testsuite/">
+SourceForge Files</a> section.</p>
 
 <h3>Docker</h3>
-<ul>
-    <li>
-        <a href="https://hub.docker.com/u/netatalk">
-            Official Netatalk images on Docker Hub
-        </a>
-    </li>
-</ul>
+
+<p>The Netatalk development team maintains Docker images for Netatalk.
+For more details, see the <a href="https://hub.docker.com/u/netatalk">
+Netatalk organization on Docker Hub</a>.</p>
 
 </div>
