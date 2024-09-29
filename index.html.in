@@ -14,110 +14,113 @@
   <h2>Getting Started</h2>
   <p>So you want to get started with running your own Netatalk file server
   for your local network of Macs and Apple IIs? Well, you have come to the right place!
-  For starters, the official (or an unofficial) package manager for your operating system
-  may be distributing a ready-made binary <b>netatalk</b> package that you can install right away.</p>
+  For starters, many open source distributions and package repositories include Netatalk.
+  Try searching for a <tt>netatalk</tt> package in your favorite package manager.</p>
 
-  <p>If you prefer a containerized installation, the Netatalk team distributes
+  <p>If you prefer a containerized deployment, the Netatalk team distributes
   official <a href="https://hub.docker.com/u/netatalk">Docker images
   on Docker Hub</a>. These require Docker Engine to be installed.</p>
 
-  <p>Finally, if you need to build Netatalk from the source code,
-  a C compiler (gcc or clang) and dependent libraries are required.
-  Read more in the <a href="stable/htmldocs">Netatalk manual</a>
+  <p>Finally, if you wamt to build Netatalk from source,
+  a C compiler (gcc or clang recommended) together with dependent libraries are required.
+  Read more in the <a href="stable/htmldocs/installation">Netatalk manual</a>
   or the OS specific guides in the <a href="docs">wiki</a>.</p>
 
-  <p>Once Netatalk is up and running, test that the AFP server responds on port 548 by running
-  <tt>asip-status [server address]</tt>.
-  If you get an "AFP reply" response, the Netatalk server is functioning properly!
-  You will likely need to adjust the configurations to suit your setup.
+  <p>You will likely need to adjust the Netatalk configuration to suit your setup.
   Netatalk has a dizzying amount of options which can be daunting initially.
   The <a href="stable/htmldocs/configuration">Configuration chapter</a>
   in the Netatalk manual is a good place to start.</p>
 
   <h2>Features</h2>
-  <p>This table breaks down the major differences between Netatalk v3 and v2.
-  This might assist you in deciding which version works best for your use case.</p>
+  <p>Below is an overview of Netatalk features.</p>
 
   <table summary="Netatalk feature comparison">
   <tr>
   <th>Feature</th>
-  <th>Netatalk v3</th>
-  <th>Netatalk v2</th>
+  <th>Details</th>
+  </tr>
+  <tr>
+  <td>Host OS</td>
+  <td>Linux, FreeBSD, NetBSD, OpenBSD, macOS, OmniOS, Open Indiana, Solaris 11</td>
   </tr>
   <tr>
   <td>Client Support</td>
-  <td>Mac OS 7.5 ~ Mac OS 9, Mac OS X, macOS</td>
   <td>Apple II, Macintosh System 6 ~ Mac OS 9, Mac OS X, macOS</td>
   </tr>
   <tr>
   <td>AFP Protocol Versions</td>
-  <td>2.2, 3.0, 3.1, 3.2, 3.3, 3.4</td>
-  <td>1.1, 2.0, 2.1, 2.2, 3.0, 3.1, 3.2, 3.3</td>
+  <td>1.1, 2.0, 2.1, 2.2, 3.0, 3.1, 3.2, 3.3. 3.4</td>
   </tr>
   <tr>
   <td>AFP over TCP</td>
   <td>Yes</td>
-  <td>Yes</td>
   </tr>
   <tr>
   <td>AFP over AppleTalk</td>
-  <td>No</td>
-  <td>Yes</td>
+  <td>Yes (Linux, NetBSD)</td>
   </tr>
   <tr>
-  <td>Macintosh Resource Forks</td>
-  <td>Extended Attributes, AppleDouble v2</td>
-  <td>AppleDouble v2, AppleDouble v1</td>
+  <td>Macintosh File System Metadata</td>
+  <td>Filesystem EA, AppleDouble v2</td>
   </tr>
   <tr>
   <td>Service Discovery</td>
-  <td>Mac OS X 10.2 and later (Zeroconf)</td>
-  <td>Any AppleShare client (AppleTalk), Mac OS X 10.1 (SLP), Mac OS X 10.2 and later (Zeroconf)</td>
+  <td>Any AppleShare client (AppleTalk), Mac OS X 10.2 and later (Zeroconf)</td>
   </tr>
   <tr>
   <td><i>Time Machine</i> Backups</td>
   <td>Yes</td>
-  <td>Yes</td>
   </tr>
   <tr>
   <td>Indexed Search</td>
-  <td>Mac OS X 10.4 or later (Spotlight)</td>
-  <td>Mac OS 8 to Mac OS X 10.3 (CatSearch)</td>
+  <td>Mac OS X 10.4 or later (Spotlight); Mac OS 8 to Mac OS X 10.3 (CatSearch)</td>
   </tr>
   <tr>
   <td>Samba Interoperability</td>
   <td>Yes</td>
-  <td>Partial</td>
   </tr>
   <tr>
   <td>AppleTalk Printing</td>
-  <td>No</td>
-  <td>Yes: LocalTalk, lpd and CUPS</td>
+  <td>Yes, via CUPS</td>
   </tr>
   <tr>
   <td>AppleTalk Time Server</td>
-  <td>No</td>
   <td>Yes: <i>Timelord</i> compatible</td>
   </tr>
   <tr>
   <td>Apple II Netbooting</td>
-  <td>No</td>
   <td>Yes: //e and II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span></td>
   </tr>
   <tr>
   <td>Built-in AppleTalk Router</td>
-  <td>No</td>
+  <td>Yes</td>
+  </tr>
+  <tr>
+  <td>Built-in MacIP Gateway</td>
   <td>Yes</td>
   </tr>
   <tr>
   <td>Administrative GUI</td>
-  <td><a href="https://github.com/Netatalk/netatalk-webmin/releases?expanded=false">Webmin Module</a></td>
-  <td><a href="https://github.com/Netatalk/netatalk-webmin/releases?expanded=false">Webmin Module</a></td>
+  <td>Webmin module</td>
   </tr>
 </table>
 
 <hr />
   <h1>Latest News</h1>
+
+<hr />
+  <small>29th of September 2024</small>
+  <h2>Netatalk 4.0.0 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the first release
+  of the Netatalk 4.0 release series.
+  In this release series, we are bringing back the entire AppleTalk networking suite
+  that was removed in Netatalk 3.0.
+  See the <a href="/4.0/htmldocs/upgrade">upgrade chapter</a>
+  of the manual for instructions how to upgrade existing 3.x or 2.x deployments.</p>
+  <p>Early adopters are encouraged to upgrade to 4.0.0. We look forward to your feedback!</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/4.0/ReleaseNotes4.0.0.html">Release Notes</a>.</p>
 
 <hr />
   <small>24th of September 2024</small>
@@ -140,28 +143,6 @@
   All users of Netatalk 3.2 are encouraged to upgrade their systems to 3.2.10.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/3.2/ReleaseNotes3.2.10.html">Release Notes</a>.</p>
-
-<hr />
-  <small>15th of September 2024</small>
-  <h2>Netatalk 2.4.9 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 2.4 release series.
-  This release contains bug fixes for the DHX2 and DHX user authentication modules.
-  All users of Netatalk 2.4 are encouraged to upgrade their systems to 2.4.9.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/2.4/ReleaseNotes2.4.9.html">Release Notes</a>.</p>
-
-<hr />
-  <small>15th of September 2024</small>
-  <h2>Netatalk 3.2.9 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 3.2 release series.
-  This release contains bug fixes for the DHX2 and DHX user authentication modules.
-  All users of Netatalk 3.2 are encouraged to upgrade their systems to 3.2.9.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/3.2/ReleaseNotes3.2.9.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>

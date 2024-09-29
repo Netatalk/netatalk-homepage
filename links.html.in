@@ -60,12 +60,8 @@
   <td>*NIX StyleWriter driver with optional AppleTalk support (depends on Netatalk)</td>
   </tr>
   <tr>
-  <td><a href="https://macipgw.sourceforge.io">macipgw (FreeBSD)</a></td>
-  <td><a href="https://en.wikipedia.org/wiki/MacIP">MacIP</a> bridge for LocalTalk-only Macs (depends on Netatalk)</td>
-  </tr>
-  <tr>
-  <td><a href="https://github.com/jasonking3/macipgw">macipgw (Linux)</a></td>
-  <td>Linux port of the above</td>
+  <td><a href="https://macipgw.sourceforge.io">macipgw</a></td>
+  <td><a href="https://en.wikipedia.org/wiki/MacIP">MacIP</a> bridge for LocalTalk-only Macs (bundled with Netatalk as of version 4.0.0)</td>
   </tr>
   <tr>
   <td><a href="https://github.com/mgcaret/davex-mg-utils">MG's davex utils</a></td>
