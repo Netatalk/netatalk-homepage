@@ -40,12 +40,12 @@
   <th>Details</th>
   </tr>
   <tr>
-  <td>Host OS</td>
+  <td>Supported Host OS</td>
   <td>Linux, FreeBSD, NetBSD, OpenBSD, macOS, OmniOS, Open Indiana, Solaris 11</td>
   </tr>
   <tr>
-  <td>Client Support</td>
-  <td>Apple II, Macintosh System 6 ~ Mac OS 9, Mac OS X, macOS</td>
+  <td>Supported Clients</td>
+  <td>macOS, Mac OS X, Mac OS 8/9, Macintosh System Software 6.0.x/7.x, Apple IIGS, Apple //e</td>
   </tr>
   <tr>
   <td>AFP Protocol Versions</td>
@@ -81,7 +81,7 @@
   </tr>
   <tr>
   <td>AppleTalk Printing</td>
-  <td>Yes, via CUPS</td>
+  <td>Yes: to modern printers via CUPS, and LocalTalk printers via PAP</td>
   </tr>
   <tr>
   <td>AppleTalk Time Server</td>
