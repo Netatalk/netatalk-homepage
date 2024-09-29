@@ -24,7 +24,7 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 4.0.0dev</div>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.0.0</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">afp.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="aecho.1.html">戻る</a> </td><th width="60%" align="center">第6章 マニュアルページ</th><td width="20%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">次へ</a></td></tr></table><hr /></div><div class="refentry"><a id="afp.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>名前</h2><p>afp.conf — Netatalkの設定ファイル</p></div><div class="refsect1"><a id="id-1.9.6.3"></a><h2>概要</h2><p><code class="filename">afp.conf</code>は<span class="bold"><strong>Netatalk</strong></span> AFPファイルサーバの設定ファイルである。</p><p>全てのAFP固有の設定とAFPボリュームの定義がこのファイルを通して行われる。</p></div><div class="refsect1"><a id="FILEFORMATSECT"></a><h2>ファイルの書式</h2><p>ファイルはセクションとパラメータから構成される。セクションはブラケット[各括弧]で囲まれたセクション名に始まり、次のセクションが始まるまで続く。セクションには次のような書式のパラメータが含まれている:</p><pre class="programlisting">
     <em class="replaceable"><code>name</code></em> = <em class="replaceable"><code>value </code></em>
     </pre><p>このファイルは行を基本とする。それぞれの行は改行文字で終端し、コメント、セクション名、パラメータのうちどれかを表す。</p><p>セクション名とパラメータ名は大文字と小文字の区別がある。</p><p>パラメータに最初に現れる等号だけは重要な意味を持つ。最初の等号の前後にある空白は破棄される。セクション名とパラメータ名の前、後、途中にある空白は意味を持たない。パラメータ値の前後の空白は破棄される。パラメータ値の途中の空白はそのま維持される。</p><p>セミコロン(<span class="quote">「<span class="quote">;</span>」</span>)やハッシュ文字(<span class="quote">「<span class="quote">#</span>」</span>)で始まるいかなる行も、空白だけの行と同様に無視される。</p><p><span class="quote">「<span class="quote"> <code class="literal">\</code>
@@ -91,11 +91,14 @@
             portの組み合わせは角かっこを使ったフォーマット[IPv6]:portのURLを使わなければならない。</p></dd><dt><span class="term">afp port = <em class="replaceable"><code>port number</code></em>
           <span class="type">(G)</span></span></dt><dd><p>異なるTCPポートをAFPに使わせる。デフォルトは548である。<code class="option">afp
             listen</code>オプションで何も指定しなかった場合も適用されたデフォルトポートを設定する。</p></dd><dt><span class="term">appletalk = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
-          <span class="emphasis"><em>no</em></span>) <span class="type">(G)</span></span></dt><dd><p>AFP-over-Appletalk のサポートを有効にする。このオプションを使用するには、オペレーティング
-            システムが AppleTalk ネットワーク プロトコルをサポートしている必要がある。</p></dd><dt><span class="term">cnid listen = <em class="replaceable"><code>ip address[:port] [ip
+          <span class="emphasis"><em>no</em></span>) <span class="type">(G)</span></span></dt><dd><p>AFP-over-Appletalk のサポートを有効にする。このオプションを使用するには、オペレーティング システムが
+            AppleTalk ネットワーク プロトコルをサポートしている必要がある。</p></dd><dt><span class="term">cnid listen = <em class="replaceable"><code>ip address[:port] [ip
           address[:port] ...]</code></em> <span class="type">(G)</span></span></dt><dd><p>CNIDサーバがリッスンするIPアドレスを指定する。デフォルトは<span class="bold"><strong>localhost:4700</strong></span>である。</p></dd><dt><span class="term">ddp address = <em class="replaceable"><code>ddp address</code></em>
           <span class="type">(G)</span></span></dt><dd><p>サーバーの DDP アドレスを指定する。デフォルトでは、アドレス (0.0)
-            が自動的に割り当てられる。これは、複数のインターフェイスで AppleTalk を実行している場合にのみ役立つ。</p></dd><dt><span class="term">disconnect time = <em class="replaceable"><code>number</code></em>
+            が自動的に割り当てられる。これは、複数のインターフェイスで AppleTalk を実行している場合にのみ役立つ。</p></dd><dt><span class="term">ddp zone = <em class="replaceable"><code>ddp zone</code></em>
+          <span class="type">(G)</span></span></dt><dd><p>サーバーを登録する AppleTalk
+            ゾーンを指定する。デフォルトでは、システムによって最後に構成されたインターフェースのデフォルト
+            ゾーンにサーバーが登録される。</p></dd><dt><span class="term">disconnect time = <em class="replaceable"><code>number</code></em>
           <span class="type">(G)</span></span></dt><dd><p>ドロップする前に、切断されたAFPセッションを<em class="parameter"><code>number</code></em>時間維持する。デフォルトは24時間である。</p></dd><dt><span class="term">dsireadbuf = <em class="replaceable"><code>number</code></em>
           <span class="type">(G)</span></span></dt><dd><p>DSI/TCP先読みバッファのサイズを決定する係数。デフォルトは12である。これにDSI server quantum
             (デフォルトは1MiB)をかけるとバッファサイズになる。この値を増やすと速いローカルネットワークでのボリュームからボリュームへのコピーのスループットが増えるかもしれない。
@@ -115,8 +118,8 @@
           <span class="type">(G)</span></span></dt><dd><p>setsockopt()を使ってTCP送信バッファの設定を試みる。しばしばOSはこの値を設定しようとするアプリケーションの資格を制限します。</p></dd><dt><span class="term">recvfile = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
           <span class="emphasis"><em>no</em></span>) <span class="type">(G)</span></span></dt><dd><p>データ受信のためにLinuxのsplice()を使うかどうか。</p></dd><dt><span class="term">splice size = <em class="replaceable"><code>number</code></em> (デフォルト:
           <span class="emphasis"><em>64k</em></span>) <span class="type">(G)</span></span></dt><dd><p>spliceする最大バイト数。</p></dd><dt><span class="term">use sendfile = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
-          <span class="emphasis"><em>yes</em></span>) <span class="type">(G)</span></span></dt><dd><p>クライアントにファイルデータを送るためにsendfile<a id="id-1.9.6.9.5.2.19.2.1.1" class="indexterm"></a>システムコールを使うかどうか。</p></dd><dt><span class="term">zeroconf = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
-          <span class="emphasis"><em>yes</em></span>) <span class="type">(G)</span></span></dt><dd><p>AvahiまたはmDNSResponder込みでコンパイル済の場合、自動的なZeroconf<a id="id-1.9.6.9.5.2.20.2.1.1" class="indexterm"></a>サービス登録を使うかどうか。</p></dd></dl></div></div><div class="refsect2"><a id="id-1.9.6.9.6"></a><h3>雑多なオプション</h3><div class="variablelist"><dl class="variablelist"><dt><span class="term">afp read locks = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
+          <span class="emphasis"><em>yes</em></span>) <span class="type">(G)</span></span></dt><dd><p>クライアントにファイルデータを送るためにsendfile<a id="id-1.9.6.9.5.2.20.2.1.1" class="indexterm"></a>システムコールを使うかどうか。</p></dd><dt><span class="term">zeroconf = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
+          <span class="emphasis"><em>yes</em></span>) <span class="type">(G)</span></span></dt><dd><p>AvahiまたはmDNSResponder込みでコンパイル済の場合、自動的なZeroconf<a id="id-1.9.6.9.5.2.21.2.1.1" class="indexterm"></a>サービス登録を使うかどうか。</p></dd></dl></div></div><div class="refsect2"><a id="id-1.9.6.9.6"></a><h3>雑多なオプション</h3><div class="variablelist"><dl class="variablelist"><dt><span class="term">afp read locks = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
           <span class="emphasis"><em>no</em></span>) <span class="type">(G)</span></span></dt><dd><p>FPReadコールにおいてバイト領域リードロックを適用するかどうか。AFPの仕様はこれを義務付けるが、実際のところこれはUNIXの動作に合致しないし、パフォーマンスを抑え込む。</p></dd><dt><span class="term">afpstats = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
           <span class="emphasis"><em>no</em></span>) <span class="type">(G)</span></span></dt><dd><p>dbusを介してAFPランタイム統計 (接続ユーザ、開いてるボリューム) を提供するかどうか。</p></dd><dt><span class="term">basedir regex = <em class="replaceable"><code>regex</code></em>
           <span class="type">(H)</span></span></dt><dd><p>ユーザホームの親ディレクトリにマッチする正規表現。<code class="option">basedir

@@ -24,7 +24,7 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 4.0.0dev</div>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.0.0</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 2. Installation</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="intro.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="configuration.html">Next</a></td></tr></table><hr /></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="installation"></a>Chapter 2. Installation</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="installation.html#id-1.5.3">How to obtain Netatalk</a></span></dt><dd><dl><dt><span class="sect2"><a href="installation.html#id-1.5.3.3">Binary packages</a></span></dt><dt><span class="sect2"><a href="installation.html#id-1.5.3.4">Source packages</a></span></dt></dl></dd><dt><span class="sect1"><a href="installation.html#id-1.5.4">Compiling Netatalk</a></span></dt><dd><dl><dt><span class="sect2"><a href="installation.html#id-1.5.4.2">Prerequisites</a></span></dt><dt><span class="sect2"><a href="installation.html#compiling-netatalk">Configure and build Netatalk</a></span></dt></dl></dd><dt><span class="sect1"><a href="installation.html#id-1.5.5">Starting and stopping Netatalk</a></span></dt></dl></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>Before upgrading from Netatalk 2 or 3 to Netatalk 4, please read the
     <a class="link" href="upgrade.html" title="Chapter 5. Upgrading from prior Netatalk versions">upgrading</a> chapter in this manual.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id-1.5.3"></a>How to obtain Netatalk</h2></div></div></div><p>Please have a look at the <a class="ulink" href="https://netatalk.io" target="_top">Netatalk
     homepage</a> for the most up to date information on where to find the
@@ -59,9 +59,10 @@ Resolving deltas: 100% (32227/32227), done.
             at least version 4.6.</p><p>The recommended version is 5.3, the final release under the
             permissive Sleepycat license, and therefore the most widely
             distributed version.</p></li><li class="listitem"><p>libevent</p><p>Internal event callbacks in the netatalk service controller
-            daemon are built on libevent version 2.</p></li><li class="listitem"><p>Libgcrypt</p><p>The <a class="ulink" href="http://directory.fsf.org/wiki/Libgcrypt" target="_top">
-            Libgcrypt</a> library enables the DHX2 UAM, which is required
-            to authenticate with OS X 10.7 and later.</p></li><li class="listitem"><p>Perl and UnicodeData.txt</p><p>The build system uses Perl and the Unicode Character
+            daemon are built on libevent version 2.</p></li><li class="listitem"><p>Libgcrypt</p><p>The <a class="ulink" href="https://gnupg.org/software/libgcrypt/" target="_top">
+            Libgcrypt</a> library supplies the encryption for the standard
+            User Authentication Modules (UAMs). They are: DHX2, DHCAST128
+            (a.k.a. DHX) and RandNum.</p></li><li class="listitem"><p>Perl and UnicodeData.txt</p><p>The build system uses Perl and the Unicode Character
             Database to generate Netatalk's Unicode character conversion
             sources.</p><p>Additionally, Netatalk's administrative utility scripts rely
             on the Perl runtime, version 5.8 or later. The required Perl
@@ -78,7 +79,8 @@ Resolving deltas: 100% (32227/32227), done.
             support.</p></li><li class="listitem"><p>CrackLib</p><p>When using the Random Number UAMs and netatalk's own
             <strong class="userinput"><code>afppasswd</code></strong> password manager, CrackLib can
             help protect against setting weak passwords for authentication
-            with netatalk.</p></li><li class="listitem"><p>D-Bus and GLib bindings</p><p>Used by the <strong class="userinput"><code>afpstats</code></strong> tool to inquire
+            with netatalk.</p><p>The CrackLib dictionary, which is sometimes distributed
+            separately in a runtime package, is also a requirement.</p></li><li class="listitem"><p>D-Bus and GLib</p><p>Used by the <strong class="userinput"><code>afpstats</code></strong> tool to inquire
             afpd about file server usage statistics.</p></li><li class="listitem"><p>DocBook XSL and xsltproc</p><p>The Netatalk documentation, including this manual, are
             authored in XML format. Then we leverage DocBook XSL stylesheets
             and xsltproc to transcode the XML to other human-readable formats
@@ -92,19 +94,14 @@ Resolving deltas: 100% (32227/32227), done.
             authentication with existing Kerberos infrastructure.</p></li><li class="listitem"><p>MySQL or MariaDB</p><p>By leveraging a MySQL-compatible client library, netatalk
             can be built with a MySQL CNID backend that is highly scalable and
             reliable. The administrator has to provide a separate database
-            instance for use with this backend.</p></li><li class="listitem"><p>Nettle and WolfSSL</p><p>Nettle and WolfSSL are needed for the DHCAST128 (a.k.a. DHX)
-            UAM, which provides the strongest password encryption for Classic
-            Mac OS. The older Random Number UAMs rely on these libraries,
-            too.</p><p>Note: We currently bundle WolfSSL with Netatalk in case a
-            full-featured WolfSSL library isn't distributed with your
-            OS.</p></li><li class="listitem"><p>PAM<a id="id-1.5.4.2.3.3.10.1.1" class="indexterm"></a></p><p>PAM provides a flexible mechanism for authenticating users.
-            PAM was invented by SUN<a id="id-1.5.4.2.3.3.10.2.1" class="indexterm"></a> Microsystems. Linux-PAM is a suite of shared
+            instance for use with this backend.</p></li><li class="listitem"><p>PAM<a id="id-1.5.4.2.3.3.9.1.1" class="indexterm"></a></p><p>PAM provides a flexible mechanism for authenticating users.
+            PAM was invented by SUN<a id="id-1.5.4.2.3.3.9.2.1" class="indexterm"></a> Microsystems. Linux-PAM is a suite of shared
             libraries that enable the local system administrator to choose how
             applications authenticate users.</p></li><li class="listitem"><p>TCP wrappers</p><p>Wietse Venema's network logger, also known as TCPD or
             LOG_TCP.</p><p>Security options are: access control per host, domain and/or
             service; detection of host name spoofing or host address spoofing;
             booby traps to implement an early-warning system.</p></li><li class="listitem"><p>Tracker / talloc / bison / flex</p><p>Netatalk uses <a class="ulink" href="https://tracker.gnome.org" target="_top">Tracker</a> as the metadata
-            backend for Spotlight<a id="id-1.5.4.2.3.3.12.2.2" class="indexterm"></a> search indexing. The minimum required version is
+            backend for Spotlight<a id="id-1.5.4.2.3.3.11.2.2" class="indexterm"></a> search indexing. The minimum required version is
             0.7 as this was the first version to support <a class="ulink" href="https://gnome.pages.gitlab.gnome.org/tracker/" target="_top">SPARQL</a>.</p><p>Samba's talloc library, a Yacc parser such as bison, and a
             lexer like flex are also required for Spotlight.</p></li></ul></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="compiling-netatalk"></a>Configure and build<a id="id-1.5.4.3.1.1" class="indexterm"></a> Netatalk</h3></div></div></div><p>Instructions on how to use the build system to configure and build
       netatalk source code are documented in the <a class="ulink" href="https://github.com/Netatalk/netatalk/blob/main/INSTALL" target="_top">INSTALL</a>

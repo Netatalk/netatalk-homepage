@@ -24,10 +24,10 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 4.0.0dev</div>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.0.0</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">papd.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="papd.8.html">Prev</a> </td><th width="60%" align="center">Chapter 6. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="papstatus.8.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="papd.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>papd.conf — Configuration file used by <span class="command"><strong>papd</strong></span>(8) to
     determine the configuration of printers used by the Netatalk printing
-    daemon<a id="id-1.9.31.2.2.2" class="indexterm"></a></p></div><div class="refsect1"><a id="id-1.9.31.3"></a><h2>Description</h2><p><span class="emphasis"><em>papd.conf</em></span> is the configuration file
+    daemon<a id="id-1.9.32.2.2.2" class="indexterm"></a></p></div><div class="refsect1"><a id="id-1.9.32.3"></a><h2>Description</h2><p><span class="emphasis"><em>papd.conf</em></span> is the configuration file
     used by papd to configure the printing services offered by netatalk.
     <span class="emphasis"><em>papd</em></span> shares the same defaults as lpd on
     many systems. One notable exception is Solaris.</p><p>The format of papd.conf is derived from <span class="citerefentry"><span class="refentrytitle">printcap</span>(5)</span> and can contain configurations for one or more printers.
@@ -67,11 +67,11 @@
           needed.</p></dd><dt><span class="term"><span class="emphasis"><em>pd=(path to ppd file)</em></span></span></dt><dd><p>Specifies a particular PPD (printer description file) to
           associate with the selected printer.</p></dd><dt><span class="term"><span class="emphasis"><em>pr=(lpd/CUPS printer name or pipe
         command)</em></span></span></dt><dd><p>Sets the <span class="emphasis"><em>lpd</em></span> or <span class="emphasis"><em>CUPS</em></span> printer that this is spooled to. Default
-          value is "lp".</p></dd></dl></div></div><div class="refsect1"><a id="id-1.9.31.4"></a><h2>Examples</h2><p>Unless CUPS support has been compiled in (which is default from
+          value is "lp".</p></dd></dl></div></div><div class="refsect1"><a id="id-1.9.32.4"></a><h2>Examples</h2><p>Unless CUPS support has been compiled in (which is default from
     Netatalk 2.0 on) one simply defines the lpd queue in question by setting
     the <code class="option">pr</code> parameter to the queue name, in the following
     example "ps". If no <code class="option">pr</code> parameter is set, the default
-    printer will be used.</p><div class="example"><a id="id-1.9.31.4.3"></a><p class="title"><strong>Example 6.6. papd.conf System V printing system examples</strong></p><div class="example-contents"><p>The first spooler is known by the AppleTalk name Mac Printer
+    printer will be used.</p><div class="example"><a id="id-1.9.32.4.3"></a><p class="title"><strong>Example 6.6. papd.conf System V printing system examples</strong></p><div class="example-contents"><p>The first spooler is known by the AppleTalk name Mac Printer
       Spooler, and uses a PPD file located in
       <code class="filename">/usr/share/lib/ppd</code>. In addition, the user mcs will
       be the owner of all jobs that are spooled. The second spooler is known
@@ -83,7 +83,7 @@
 HP Printer:\
    :</pre></div></div><br class="example-break" /><p>An alternative to the technique outlined above is to direct papd's
     output via a pipe into another program. Almost any printing system can be
-    driven using this mechanism.</p><div class="example"><a id="id-1.9.31.4.5"></a><p class="title"><strong>Example 6.7. papd.conf examples using pipes</strong></p><div class="example-contents"><p>The first spooler is known as HP 8100. It pipes the print job to
+    driven using this mechanism.</p><div class="example"><a id="id-1.9.32.4.5"></a><p class="title"><strong>Example 6.7. papd.conf examples using pipes</strong></p><div class="example-contents"><p>The first spooler is known as HP 8100. It pipes the print job to
       <span class="command"><strong>/usr/bin/lpr</strong></span> for printing. PSSP authenticated
       printing is enabled, as is CAP-style authenticated printing. Both
       methods support guest and cleartext authentication as specified by the
@@ -102,7 +102,7 @@ HP Printer:\
     present as the first entry then all available CUPS queues will be served
     automagically using the parameters assigned to this global share. But
     subsequent printer definitions can be used to override these global
-    settings for individual spoolers.</p><div class="example"><a id="id-1.9.31.4.8"></a><p class="title"><strong>Example 6.8. papd.conf CUPS examples</strong></p><div class="example-contents"><p>The first entry sets up automatic sharing of all CUPS printers.
+    settings for individual spoolers.</p><div class="example"><a id="id-1.9.32.4.8"></a><p class="title"><strong>Example 6.8. papd.conf CUPS examples</strong></p><div class="example-contents"><p>The first entry sets up automatic sharing of all CUPS printers.
       All those shares appear in the zone "1st floor" and since no additional
       settings have been made, they use the CUPS printer name as NBP name and
       use the PPD configured in CUPS. The second entry defines different
@@ -111,7 +111,7 @@ HP Printer:\
       </p><pre class="programlisting">cupsautoadd@1st floor:op=root:
 
 Boss' LaserWriter@2nd floor:\
-   :pr=laserwriter-chief:</pre></div></div><br class="example-break" /></div><div class="refsect1"><a id="id-1.9.31.5"></a><h2>Caveats</h2><p>If you are using more than 15 printers in your network, you must
+   :pr=laserwriter-chief:</pre></div></div><br class="example-break" /></div><div class="refsect1"><a id="id-1.9.32.5"></a><h2>Caveats</h2><p>If you are using more than 15 printers in your network, you must
     specify AppleTalk zones for the papd printer configurations. Otherwise,
-    only some of the printers may appear in the Chooser on Mac clients.</p></div><div class="refsect1"><a id="id-1.9.31.6"></a><h2>See Also</h2><p><span class="citerefentry"><span class="refentrytitle">papd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">atalkd.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">lpd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">lpoptions</span>(8)</span></p></div><div class="refsect1"><a id="id-1.9.31.7"></a><h2>Author</h2><p>See <a class="ulink" href="https://github.com/Netatalk/netatalk/blob/main/CONTRIBUTORS" target="_top">CONTRIBUTORS</a></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="papd.8.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="papstatus.8.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">papd </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> papstatus</td></tr></table></div></body>
+    only some of the printers may appear in the Chooser on Mac clients.</p></div><div class="refsect1"><a id="id-1.9.32.6"></a><h2>See Also</h2><p><span class="citerefentry"><span class="refentrytitle">papd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">atalkd.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">lpd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">lpoptions</span>(8)</span></p></div><div class="refsect1"><a id="id-1.9.32.7"></a><h2>Author</h2><p>See <a class="ulink" href="https://github.com/Netatalk/netatalk/blob/main/CONTRIBUTORS" target="_top">CONTRIBUTORS</a></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="papd.8.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="papstatus.8.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">papd </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> papstatus</td></tr></table></div></body>
 </html>
