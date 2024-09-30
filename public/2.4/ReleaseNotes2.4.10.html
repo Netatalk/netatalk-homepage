@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Release Notes - 3.2.8</title>
+    <title>Netatalk Release Notes - 2.4.10</title>
     <meta name="description" content="Netatalk Release Notes">
-    <link rel="canonical" href="https://netatalk.io/3.2/ReleaseNotes3.2.8.html">
+    <link rel="canonical" href="https://netatalk.io/2.4/ReleaseNotes2.4.10.html">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -110,28 +110,24 @@
   </div>
 </div>
 <div id="content">
-<h1>Netatalk 3.2.8</h1><hr />
-<h1>DOCKER COMPATIBILITY ALERT</h1>
-<p>If you previously used the Netatalk 3.1.18 <em>Docker image</em> for making Time Machine backups in macOS, you may <a href="https://github.com/Netatalk/netatalk/issues/1068">run into errors</a> after upgrading to the Netatalk 3.2.0 image or later. It is recommended to discard the backup sparsebundle and redo the backup. If you absolutely must access the older backup sparsebundle, downgrading to the 3.1.18 image should restore access.</p>
-<hr />
-<h1>Netatalk 3.2.8 is available!</h1>
-<p>The Netatalk team is proud to announce the latest version in the <strong>Netatalk 3.2</strong> release series.</p>
-<p>This release contains primarily improvements and bug fixes for the Meson build system. All users of the 3.2 release series who build with Meson are recommended to upgrade their versions to 3.2.8.</p>
-<p>Notably, it bumps the bundled WolfSSL library from release version 5.7.0 to <a href="https://github.com/wolfSSL/wolfssl/releases/tag/v5.7.2-stable">5.7.2</a>. Among other things, this addresses security vulnerabilities CVE-2024-1544, CVE-2024-5288, CVE-2024-5991, and CVE-2024-5814</p>
+<h1>Netatalk 2.4.10</h1><hr />
+<h1>Netatalk 2.4.10 is available</h1>
+<p>The Netatalk team is proud to announce the latest version in the <strong>Netatalk 2.4</strong> release series.</p>
+<p>The notable bugfix in this release is an errors when authenticating with the ClearTxt UAM with shadow passwords. Does not affect PAM. This bug was introduced in Netatalk 2.4.1.</p>
+<p>All users of the 2.4 release series are recommended to upgrade their versions to 2.4.10.</p>
 <h2>What&rsquo;s Changed</h2>
 <ul>
-<li>[3.2] include wolfssl/settings.h by @knight-of-ni in <a href='https://github.com/Netatalk/netatalk/pull/1424'>https://github.com/Netatalk/netatalk/pull/1424</a></li>
-<li>[3.2] define DES_KEY_SZ if its not defined by @knight-of-ni in <a href='https://github.com/Netatalk/netatalk/pull/1423'>https://github.com/Netatalk/netatalk/pull/1423</a></li>
-<li>[3.2] Bump to WolfSSL 5.7.2 while reverting local modifications by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1434'>https://github.com/Netatalk/netatalk/pull/1434</a></li>
-<li>[3.2] meson: Do not define rpath with a linker argument by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1444'>https://github.com/Netatalk/netatalk/pull/1444</a></li>
+<li>[2.4] GitHub CI: Use the latest runners and vmactions runner by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1483'>https://github.com/Netatalk/netatalk/pull/1483</a></li>
+<li>[2.4] meson: Use a valid code snippet for the TCP Wrappers check by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1494'>https://github.com/Netatalk/netatalk/pull/1494</a></li>
+<li>[2.4] meson: Throw missing cracklib dictionary warning separately by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1498'>https://github.com/Netatalk/netatalk/pull/1498</a></li>
+<li>[2.4] meson: Format afpd help text output to match autotools by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1502'>https://github.com/Netatalk/netatalk/pull/1502</a></li>
+<li>[2.4] GitHub CI: Bump vmactions image versions by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1512'>https://github.com/Netatalk/netatalk/pull/1512</a></li>
+<li>[2.4] cnid_dbd: Set explicit max length of db_params to prevent buffer overflow by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1521'>https://github.com/Netatalk/netatalk/pull/1521</a></li>
+<li>[2.4] uams: Correct shadow password length check for ClearTxt by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1531'>https://github.com/Netatalk/netatalk/pull/1531</a></li>
 </ul>
-<h2>New Contributors</h2>
-<ul>
-<li>@knight-of-ni made their first contribution in <a href='https://github.com/Netatalk/netatalk/pull/1424'>https://github.com/Netatalk/netatalk/pull/1424</a></li>
-</ul>
-<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-2-7&hellip;netatalk-3-2-8'>https://github.com/Netatalk/netatalk/compare/netatalk-3-2-7&hellip;netatalk-3-2-8</a></p><hr />
-<p>Release published on 2024-09-08</p>
-<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-2-8">GitHub</a></p>
+<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-2-4-9&hellip;netatalk-2-4-10'>https://github.com/Netatalk/netatalk/compare/netatalk-2-4-9&hellip;netatalk-2-4-10</a></p><hr />
+<p>Release published on 2024-09-24</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-2-4-10">GitHub</a></p>
 <hr />
 </div>
 <div class="footer">

@@ -49,25 +49,20 @@
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
 <li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
-<p>Netatalk v3 Installation</p>
+<p>Install Netatalk</p>
 <ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora-Linux.html">Installing Netatalk 3 on Fedora Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
-</ul>
-<p>Netatalk v2 Installation</p>
-<ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Alpine-Linux.html">Installing Netatalk 2 on Alpine Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian-Linux.html">Installing Netatalk 2 on Debian Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora-Linux.html">Installing Netatalk 2 on Fedora Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-NetBSD.html">Installing Netatalk 2 on NetBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Alpine-Linux.html">Installing Netatalk on Alpine Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Debian-Linux.html">Installing Netatalk on Debian Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Fedora-Linux.html">Installing Netatalk on Fedora Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-FreeBSD.html">Installing Netatalk on FreeBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-macOS.html">Installing Netatalk on macOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-NetBSD.html">Installing Netatalk on NetBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OmniOS.html">Installing Netatalk on OmniOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OpenBSD.html">Installing Netatalk on OpenBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OpenIndiana.html">Installing Netatalk on OpenIndiana</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-openSUSE.html">Installing Netatalk on openSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Solaris.html">Installing Netatalk on Solaris</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Ubuntu.html">Installing Netatalk on Ubuntu</a></li>
 </ul>
 <p>Technical Docs</p>
 <ul>
@@ -89,9 +84,12 @@
 </div></div>
 <div id="content">
 <h1 id="Webmin-Module">Webmin Module</h1><hr/>
-<p>The official <a href="https://webmin.com/">Webmin</a> module for Netatalk was first created in the year 2000. It facilitates the administration of the AFP server via a user friendly Web GUI.</p>
-<p>At the time of writing, maintained modules for the latest stable Netatalk v3 as well as oldstable Netatalk v2 exist. Find the source code and release tarballs for both in the <a href="https://github.com/Netatalk/netatalk-webmin">netatalk-webmin</a> Git repository. They are confirmed compatible with Debian, Fedora, and Solaris.</p>
-<p>This page is meant to give an overview of the feature set and usage notes of the module. Installation instructions can be found in the respective README file, and will not be repeated here.</p>
+<p>The official <a href="https://webmin.com/">Webmin</a> module for Netatalk was introduced around 2000. It facilitates the administration of the AFP server via a user friendly Web GUI.</p>
+<p>As of Netatalk 4.0, the Webmin module is bundled with Netatalk proper. For the old stable versions Netatalk v3 and Netatalk v2 exist, find the source code and release tarballs in the <a href="https://github.com/Netatalk/netatalk-webmin">netatalk-webmin</a> Git repository.</p>
+<p>The module is tested on Debian, Fedora, and Solaris.</p>
+<p>This page is meant to give an overview of the feature set and usage notes of the module. Installation instructions can be found in the module&rsquo;s README file, and will not be repeated here.</p>
+<h2>v4 Module</h2>
+<p>Netatalk v4 combines the best aspects of v3 and v2, so the Webmin module does the same. While building on the solid foundations of the v3 module, it adds the ability to manage AppleTalk services.</p>
 <h2>v3 Module</h2>
 <p>Netatalk v3 got an entirely rewritten ini-style configuration file format, replacing the legacy format in v2 and earlier. Therefore, the backend of the Webmin module was entirely rewritten from scratch.</p>
 <p>The module index is the hub for all of the module&rsquo;s features. You can see the configured shared volumes, as well as start and stop the netatalk daemons from here.</p>
@@ -131,7 +129,7 @@
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Webmin-Module">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-09-13</p>
+    <p>Last updated 2024-09-30</p>
     <hr />
     </div>
 <div class="footer">

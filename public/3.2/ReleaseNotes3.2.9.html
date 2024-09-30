@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Release Notes - 3.2.8</title>
+    <title>Netatalk Release Notes - 3.2.9</title>
     <meta name="description" content="Netatalk Release Notes">
-    <link rel="canonical" href="https://netatalk.io/3.2/ReleaseNotes3.2.8.html">
+    <link rel="canonical" href="https://netatalk.io/3.2/ReleaseNotes3.2.9.html">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -110,28 +110,26 @@
   </div>
 </div>
 <div id="content">
-<h1>Netatalk 3.2.8</h1><hr />
+<h1>Netatalk 3.2.9</h1><hr />
 <h1>DOCKER COMPATIBILITY ALERT</h1>
 <p>If you previously used the Netatalk 3.1.18 <em>Docker image</em> for making Time Machine backups in macOS, you may <a href="https://github.com/Netatalk/netatalk/issues/1068">run into errors</a> after upgrading to the Netatalk 3.2.0 image or later. It is recommended to discard the backup sparsebundle and redo the backup. If you absolutely must access the older backup sparsebundle, downgrading to the 3.1.18 image should restore access.</p>
 <hr />
-<h1>Netatalk 3.2.8 is available!</h1>
+<h1>Netatalk 3.2.9 is available</h1>
 <p>The Netatalk team is proud to announce the latest version in the <strong>Netatalk 3.2</strong> release series.</p>
-<p>This release contains primarily improvements and bug fixes for the Meson build system. All users of the 3.2 release series who build with Meson are recommended to upgrade their versions to 3.2.8.</p>
-<p>Notably, it bumps the bundled WolfSSL library from release version 5.7.0 to <a href="https://github.com/wolfSSL/wolfssl/releases/tag/v5.7.2-stable">5.7.2</a>. Among other things, this addresses security vulnerabilities CVE-2024-1544, CVE-2024-5288, CVE-2024-5991, and CVE-2024-5814</p>
+<p>Notably, this release fixes bugs in the DHX2 and DHX UAMs that could cause intermittent errors when authenticating from a client. All users of the 3.2 release series are recommended to upgrade their versions to 3.2.9.</p>
 <h2>What&rsquo;s Changed</h2>
 <ul>
-<li>[3.2] include wolfssl/settings.h by @knight-of-ni in <a href='https://github.com/Netatalk/netatalk/pull/1424'>https://github.com/Netatalk/netatalk/pull/1424</a></li>
-<li>[3.2] define DES_KEY_SZ if its not defined by @knight-of-ni in <a href='https://github.com/Netatalk/netatalk/pull/1423'>https://github.com/Netatalk/netatalk/pull/1423</a></li>
-<li>[3.2] Bump to WolfSSL 5.7.2 while reverting local modifications by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1434'>https://github.com/Netatalk/netatalk/pull/1434</a></li>
-<li>[3.2] meson: Do not define rpath with a linker argument by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1444'>https://github.com/Netatalk/netatalk/pull/1444</a></li>
+<li>[3.2] Update the Solaris manifest import command per Oracle docs by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1453'>https://github.com/Netatalk/netatalk/pull/1453</a></li>
+<li>[3.2] GitHub CI: Enable Solaris job and use latest image by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1455'>https://github.com/Netatalk/netatalk/pull/1455</a></li>
+<li>[3.2] uams: Make sure the DHX2 client nonce is aligned appropriately by @demonfoo in <a href='https://github.com/Netatalk/netatalk/pull/1460'>https://github.com/Netatalk/netatalk/pull/1460</a></li>
+<li>[3.2] uams: Fix DHCAST128 key alignment problem. by @demonfoo in <a href='https://github.com/Netatalk/netatalk/pull/1466'>https://github.com/Netatalk/netatalk/pull/1466</a></li>
+<li>[3.2] wolfssl: OpenSSL coexistence tweaks by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1472'>https://github.com/Netatalk/netatalk/pull/1472</a></li>
+<li>[3.2] docs: Remove straggler path substitution in afp.conf by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1480'>https://github.com/Netatalk/netatalk/pull/1480</a></li>
 </ul>
-<h2>New Contributors</h2>
-<ul>
-<li>@knight-of-ni made their first contribution in <a href='https://github.com/Netatalk/netatalk/pull/1424'>https://github.com/Netatalk/netatalk/pull/1424</a></li>
-</ul>
-<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-2-7&hellip;netatalk-3-2-8'>https://github.com/Netatalk/netatalk/compare/netatalk-3-2-7&hellip;netatalk-3-2-8</a></p><hr />
-<p>Release published on 2024-09-08</p>
-<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-2-8">GitHub</a></p>
+<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-2-8&hellip;netatalk-3-2-9'>https://github.com/Netatalk/netatalk/compare/netatalk-3-2-8&hellip;netatalk-3-2-9</a></p>
+<p><strong>Note</strong>: The Debian deb package distributed with this release is built for Debian 12 Bookworm.</p><hr />
+<p>Release published on 2024-09-15</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-2-9">GitHub</a></p>
 <hr />
 </div>
 <div class="footer">

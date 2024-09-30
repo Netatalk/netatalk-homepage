@@ -49,25 +49,20 @@
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
 <li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
-<p>Netatalk v3 Installation</p>
+<p>Install Netatalk</p>
 <ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora-Linux.html">Installing Netatalk 3 on Fedora Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
-</ul>
-<p>Netatalk v2 Installation</p>
-<ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Alpine-Linux.html">Installing Netatalk 2 on Alpine Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian-Linux.html">Installing Netatalk 2 on Debian Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora-Linux.html">Installing Netatalk 2 on Fedora Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-NetBSD.html">Installing Netatalk 2 on NetBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Alpine-Linux.html">Installing Netatalk on Alpine Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Debian-Linux.html">Installing Netatalk on Debian Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Fedora-Linux.html">Installing Netatalk on Fedora Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-FreeBSD.html">Installing Netatalk on FreeBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-macOS.html">Installing Netatalk on macOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-NetBSD.html">Installing Netatalk on NetBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OmniOS.html">Installing Netatalk on OmniOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OpenBSD.html">Installing Netatalk on OpenBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OpenIndiana.html">Installing Netatalk on OpenIndiana</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-openSUSE.html">Installing Netatalk on openSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Solaris.html">Installing Netatalk on Solaris</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Ubuntu.html">Installing Netatalk on Ubuntu</a></li>
 </ul>
 <p>Technical Docs</p>
 <ul>
@@ -143,10 +138,11 @@ Netatalk.</p>
 </code></pre>
 <hr />
 <p><strong>Q.</strong> How can I run the netatalk integration tests?</p>
-<p><strong>A.</strong> In order to run the integration tests located in test/ run make with the
-<code>check</code> target:</p>
-<pre><code>$ make -j
-$ make check
+<p><strong>A.</strong> In order to run the integration tests located in test/ , build Netatalk with tests enabled, then run the <code>meson test</code> target:</p>
+<pre><code>meson setup build -Dwith-tests=true
+meson compile -C build
+cd build
+meson test
 </code></pre>
 <hr />
 <p><strong>Q.</strong> How do I revert a commit?</p>
@@ -190,7 +186,7 @@ branch?</a>.</p><hr />
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Developer-FAQ">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-09-13</p>
+    <p>Last updated 2024-09-30</p>
     <hr />
     </div>
 <div class="footer">

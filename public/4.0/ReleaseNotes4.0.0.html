@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Release Notes - 4.0.0</title>
+    <meta name="description" content="Netatalk Release Notes">
+    <link rel="canonical" href="https://netatalk.io/4.0/ReleaseNotes4.0.0.html">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
+</head>
+<body>
+<div id="header">
+    <div id="logo"></div>
+    <div id="menlinks">
+        <a href="/" title="Return to Netatalk home">[main]</a>
+        <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+        <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
+        <a href="/download.html" title="Download Netatalk">[downloads]</a>
+        <a href="/support.html" title="Support">[support]</a>
+        <a href="/links.html" title="Netatalk related links">[links]</a>
+        <img src="/gfx/end.gif" alt="" width="125" height="7" />
+    </div>
+</div>
+
+<div id="header-print">
+    <h1>netatalk.io</h1>
+</div>
+
+<div class="search">
+    <h2>search netatalk.io</h2>
+    <form method="get" action="https://www.google.com/search">
+        <p>
+            <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text" />
+            <input type="hidden" name="sitesearch" value="netatalk.io" />
+            <input type="submit" name="btnG" value="Go" title="search netatalk.io" />
+        </p>
+    </form>
+    <span class="italic">powered by Google</span>
+</div>
+
+<div id="navbars">
+  <div class="navbar">
+    <h2>current releases</h2>
+    <p><b>stable</b></p>
+    <ul>
+      <li>
+        <a
+        title="download 4.0.0 xz compressed"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-4-0-0/netatalk-4.0.0.tar.xz/download">
+        Netatalk 4.0.0 (source code)
+        </a>
+      </li>
+      <li>
+        <a
+        title="download 4.0.0 checksum"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-4-0-0/netatalk-4.0.0.tar.xz.sha256sum/download">
+        Netatalk 4.0.0 (sha256sum)
+        </a>
+      </li>
+      <li>
+        <a
+        title="download 4.0.0 Webmin module"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-4-0-0/netatalk-4.0.0.wbm.gz/download">
+        Webmin Module
+        </a>
+      </li>
+      <li>
+        <a
+        title="view 4.0.0 Release Notes"
+        href="/4.0/ReleaseNotes4.0.0.html">
+        Release Notes
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar">
+    <h2>documentation</h2>
+    <h3><b>Manual</b></h3>
+    <ol>
+      <li><a href="/stable/htmldocs">Index</a></li>
+      <li><a href="/stable/htmldocs/intro">Introduction</a></li>
+      <li><a href="/stable/htmldocs/installation">Installation</a></li>
+      <li><a href="/stable/htmldocs/configuration">Configuration</a></li>
+      <li><a href="/stable/htmldocs/appletalk">AppleTalk</a></li>
+      <li><a href="/stable/htmldocs/upgrade">Upgrading</a></li>
+      <li><a href="/stable/htmldocs/man-pages">Manual Pages</a></li>
+      <li><a href="/stable/htmldocs/compile">Compile from Source</a></li>
+      <li><a href="/stable/htmldocs/gpl">License</a></li>
+    </ol>
+  </div>
+  <div class="navbar">
+    <h2>community</h2>
+    <ul>
+       <li><a title="Wiki" href="https://github.com/Netatalk/netatalk/wiki">Contribute to Wiki Pages</a></li>
+       <li><a title="Discussions" href="https://github.com/Netatalk/netatalk/discussions">Participate in Discussions</a></li>
+       <li><a title="Mailing Lists" href="https://sourceforge.net/p/netatalk/mailman/">Subscribe to Mailing Lists</a></li>
+    </ul>
+  </div>
+  <div class="navbar">
+    <h2>development</h2>
+    <ul>
+       <li><a title="Code Repository" href="https://github.com/Netatalk/netatalk">Code Repository</a></li>
+       <li><a title="How to Contribute" href="https://netatalk.io/docs/Developer-Notes.html">
+        How to Contribute</a></li>
+    </ul>
+    <p><a href="https://sonarcloud.io/summary/overall?id=Netatalk_netatalk">
+      <img alt="Sonarcloud Scan Build Status" height="30"
+         src="https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg"/>
+    </a></p>
+  </div>
+</div>
+<div id="content">
+<h1>Netatalk 4.0.0</h1><hr />
+<h1>Netatalk 4.0.0 is available!</h1>
+<p>The Netatalk team is proud to announce the first release in the <strong>Netatalk 4.0</strong> release series.</p>
+<p>This release constitutes major changes over Netatalk 3.2, and is recommended for early adopters. We strongly suggest that you take a backup of your production environment before attempting to upgrade an existing Netatalk deployment to 4.0.0.</p>
+<p>The standout change in this release version is the reintroduction of traditional Macintosh and Apple II networking, namely the AppleTalk transport layer and corresponding tool suite.</p>
+<p>This partially reverses the drastic changes in Netatalk 3.0.0 released in early 2012. While the decision made sense in the context of that era, a big part of the appeal of the AFP protocol today lies in the ability to communicate seamlessly between the very latest and very oldest networked Apple machines. Hence, we are excited to bring back the pre-TCP/IP era of Apple networking in today&rsquo;s release!</p>
+<p>In short, we are combining the modern niceties of Netatalk 3 with the backwards compatibility of Netatalk 2, to produce the ultimate Apple networking suite.</p>
+<p>Please see <a href="https://github.com/Netatalk/netatalk/blob/netatalk-4-0-0/NEWS">NEWS</a> for the full changelog, and find reference documentation in the <a href="https://netatalk.io/4.0/htmldocs/">manual</a>. We are providing a thorough <a href="https://netatalk.io/4.0/htmldocs/upgrade">upgrade guide</a> for you who are doing an in-place upgrade of a 3.x or 2.x deployment.</p>
+<h2>New Features</h2>
+<h3>AppleTalk</h3>
+<p>The Netatalk AFP file server can once again serve files over AppleTalk, to Macs running System Software 7.x, 6.0.x, as well as networked Apple IIGS and Apple //e machines. In addition, Classic Mac OS 8/9 get the benefit of automatic service discovery that relies on AppleTalk.</p>
+<p>We also bring back PAP printing (print from old Macs to modern printers, or a modern machine to LocalTalk printers), an AppleTalk time server, and an Apple II netboot server.</p>
+<p>To enable AppleTalk support, Netatalk needs to be built with the <code>-Dwith-appletalk=true</code> flag, and you need to set <code>appletalk = yes</code> in your afp.conf file.</p>
+<h4>New daemons</h4>
+<ul>
+<li>atalkd – AppleTalk network management</li>
+<li>papd – Print server</li>
+<li>timelord – Time server</li>
+<li>a2boot – Apple II netboot server</li>
+</ul>
+<h4>New config files</h4>
+<ul>
+<li>atalkd.conf</li>
+<li>papd.conf</li>
+</ul>
+<h4>New utilities</h4>
+<ul>
+<li>aecho – ping AppleTalk servers</li>
+<li>getzones – inquire about AppleTalk zones</li>
+<li>nbplkup – inquire about AppleTalk services</li>
+<li>nbprgstr – register AppleTalk service</li>
+<li>nbpunrgstr – release AppleTalk service registration</li>
+<li>pap – print to LocalTalk printer</li>
+<li>papstatus – inquire the status of a LocalTalk printer</li>
+</ul>
+<h3>Bundled MacIP</h3>
+<p>We now bundle the venerable <code>macipgw</code> daemon with Netatalk, which enables Macs that for some reason don&rsquo;t have access to a TCP/IP network to browse the web or do file sharing over AFP.</p>
+<p><code>macipgw</code> was originally written by Stefan Bethke in the late 90s, and has now been bundled with Netatalk with his blessing.</p>
+<p>Note that <code>macipgw</code> is not a plug&rsquo;n&rsquo;play app. The user needs to configure a network tunnel and IPv4 address forwarding (and most likely NAT, too) for it to work.</p>
+<h3>Webmin Module</h3>
+<p><a href="https://webmin.com/">Webmin</a> is a platform for system administration via a user friendly web app. A first-party Webmin module for Netatalk has existed for 25 years, but for the first time it is now bundled with Netatalk proper. You can build it by passing <code>-Dwith-webmin=true</code> to the build system, or download and install the module tarball distributed with this release.</p>
+<h3>Added build time options</h3>
+<p>Pass the following options to <code>meson setup build</code> when building Netatalk from source.</p>
+<ul>
+<li><code>-Dwith-appletalk=true|false</code> – Enable or disable the AppleTalk transport layer.</li>
+<li><code>-Dwith-webmin=true|false</code> - Enable or disable packaging and installing the Webmin module.</li>
+<li><code>-Dwith-manual=none|local|www</code> - The type of html manual to build. (In 3.2 it was a boolean option.)</li>
+<li><code>-Dwith-manual-l10n</code> - List of manual translations to build. Currently supporting only <code>ja</code> (Japanese).</li>
+<li><code>-Dwith-readmes=true|false</code> - Install README docs, converted from markdown to plain text</li>
+<li><code>-Dwith-init-style</code> - Now takes a comma separated list of init styles to build. (In 3.2 it was a single style.)</li>
+<li><code>-Dwith-unicode-data-path</code> - Specify the path to the dir containing UnicodeData.txt (see below.)</li>
+</ul>
+<h3>Added runtime options</h3>
+<p>The following options can be enabled in <code>afp.conf</code>.</p>
+<ul>
+<li><code>appletalk</code> – Enable AFP-over-DDP (AppleTalk) transport layer.</li>
+<li><code>ddp address</code> – The DDP address to bind the AFP file server to.</li>
+<li><code>ddp zone</code> – The AppleTalk zone that the AFP file server will register with.</li>
+<li><code>legacy volume size</code> – Limit the reported volume size to 2GB for very old clients.</li>
+<li><code>prodos</code> – Enable Apple II compatibility mode.</li>
+</ul>
+<h2>Dependency Changes</h2>
+<h3>Libgcrypt</h3>
+<p>Netatalk now requires only Libgcrypt for all user authentication. Dependencies on OpenSSL, LibreSSL, and wolfSSL have been completely removed.</p>
+<h3>GLib and D-Bus</h3>
+<p>The dependency on the obsoleted <code>dbus-glib</code> library for the <code>afpstats</code> tool has been removed, and we now use the native GDBus API of GLib itself.</p>
+<h3>UnicodeData.txt</h3>
+<p>While Netatalk previously had pre-generated Unicode lookup tables based on fixed Unicode revisions, we now generate this code on the fly using the UnicodeData.txt database file. Many distributions ship a Unicode package that contains this file, but if your distro lacks one you can <a href="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt">download it from unicode.org</a> and point <code>-Dwith-unicode-data-path</code> to the location where you put it.</p>
+<h3>DocBook XSL and xstlproc</h3>
+<p>Netatalk no longer ships canned troff manual pages, but will generate them on the fly from XML sources using xsltproc and DocBook XSL stylesheets. If either of these dependencies is missing, you can disable the documentation with <code>-Dwith-manual=none</code>.</p>
+<h2>Deprecated Features</h2>
+<h3>PGP User Authentication Method</h3>
+<p>The PGP UAM relies on an unofficial Mac OS client that was released as an experiment in the late 90s, and hasn&rsquo;t been proven working with modern PGP keys. Removed as part of the Libgcrypt migration.</p>
+<h3>Autotools</h3>
+<p>The traditional Autotools (libtool / autoconf / automake) build system has been removed, in favor of the Meson build system.</p>
+<h2>What&rsquo;s Changed</h2>
+<ul>
+<li>Bump to version 1.0.0 of bstrlib by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1152'>https://github.com/Netatalk/netatalk/pull/1152</a></li>
+<li>Fix some compiler warnings generated by clang on macOS in <a href='https://github.com/Netatalk/netatalk/pull/1103'>https://github.com/Netatalk/netatalk/pull/1103</a></li>
+<li>Eliminate unused code identified by cppcheck by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1264'>https://github.com/Netatalk/netatalk/pull/1264</a></li>
+<li>meson: Detect init style and allow multiple init styles by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1267'>https://github.com/Netatalk/netatalk/pull/1267</a></li>
+<li>Remove Autotools build system by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1272'>https://github.com/Netatalk/netatalk/pull/1272</a></li>
+<li>Generate and install man pages directly from xml sources by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1275'>https://github.com/Netatalk/netatalk/pull/1275</a></li>
+<li>Generate unicode character table sources on the fly by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1276'>https://github.com/Netatalk/netatalk/pull/1276</a></li>
+<li>Option to build html manual for local or Web consumption by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1283'>https://github.com/Netatalk/netatalk/pull/1283</a></li>
+<li>meson: Move to native method for variable substitution and configure afp.conf by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1288'>https://github.com/Netatalk/netatalk/pull/1288</a></li>
+<li>meson: Better output when cryptographic UAMs aren&rsquo;t built by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1300'>https://github.com/Netatalk/netatalk/pull/1300</a></li>
+<li>meson: Install more documentation by default and organize it better by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1309'>https://github.com/Netatalk/netatalk/pull/1309</a></li>
+<li>meson: Refactor UAM detection and simplify summary by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1316'>https://github.com/Netatalk/netatalk/pull/1316</a></li>
+<li>meson: Rearrange the setup summary for brevity and clarity by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1323'>https://github.com/Netatalk/netatalk/pull/1323</a></li>
+<li>Reintroduce AppleTalk transport layer by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1303'>https://github.com/Netatalk/netatalk/pull/1303</a></li>
+<li>Reintroduce AppleTalk related manual pages by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1351'>https://github.com/Netatalk/netatalk/pull/1351</a></li>
+<li>Initial AppleTalk fixes by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1339'>https://github.com/Netatalk/netatalk/pull/1339</a></li>
+<li>Fix ASP services to work with 3.x codebase. by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1355'>https://github.com/Netatalk/netatalk/pull/1355</a></li>
+<li>Create Docker readme; install only converted markdown readme by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1366'>https://github.com/Netatalk/netatalk/pull/1366</a></li>
+<li>meson: Install only one CNID README by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1367'>https://github.com/Netatalk/netatalk/pull/1367</a></li>
+<li>AppleTalk daemon support in init scripts by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1369'>https://github.com/Netatalk/netatalk/pull/1369</a></li>
+<li>meson: Allow selecting multiple init styles by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1371'>https://github.com/Netatalk/netatalk/pull/1371</a></li>
+<li>meson: Detect Linux distro and choose an appropriate init style by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1372'>https://github.com/Netatalk/netatalk/pull/1372</a></li>
+<li>Flesh out CNID README and put it in the proper subdir by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1373'>https://github.com/Netatalk/netatalk/pull/1373</a></li>
+<li>Merge the brunt of AppleTalk documentation by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1374'>https://github.com/Netatalk/netatalk/pull/1374</a></li>
+<li>Make largefile mandatory, and clean up Meson controlled features by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1375'>https://github.com/Netatalk/netatalk/pull/1375</a></li>
+<li>meson: Introduce option to control which manual l10n to build by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1376'>https://github.com/Netatalk/netatalk/pull/1376</a></li>
+<li>meson: Install two AppleTalk headers by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1399'>https://github.com/Netatalk/netatalk/pull/1399</a></li>
+<li>Add Back Legacy Options by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1405'>https://github.com/Netatalk/netatalk/pull/1405</a></li>
+<li>Add AppleTalk support back into afpd by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1435'>https://github.com/Netatalk/netatalk/pull/1435</a></li>
+<li>Add back &ldquo;ddp address&rdquo; option. by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1450'>https://github.com/Netatalk/netatalk/pull/1450</a></li>
+<li>docker: Build and start AppleTalk services by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1449'>https://github.com/Netatalk/netatalk/pull/1449</a></li>
+<li>docs: Update with manual 4.x capabilities and dependencies by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1457'>https://github.com/Netatalk/netatalk/pull/1457</a></li>
+<li>Add configuration option for AppleTalk Zone. by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1468'>https://github.com/Netatalk/netatalk/pull/1468</a></li>
+<li>docs: Japanese localization for 4.0.0 manual by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1470'>https://github.com/Netatalk/netatalk/pull/1470</a></li>
+<li>Fix crash in uam.c when connecting via ASP by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1479'>https://github.com/Netatalk/netatalk/pull/1479</a></li>
+<li>docker: Make AFP_GROUP mandatory, refactor group assignments by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1478'>https://github.com/Netatalk/netatalk/pull/1478</a></li>
+<li>docker: The ability to customize the secondary shared volume by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1484'>https://github.com/Netatalk/netatalk/pull/1484</a></li>
+<li>docs: Flag newly added options in the Upgrade chapter by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1485'>https://github.com/Netatalk/netatalk/pull/1485</a></li>
+<li>Look for poll.h header in standard location by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1486'>https://github.com/Netatalk/netatalk/pull/1486</a></li>
+<li>Switch Randnum UAM to use libgcrypt by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1488'>https://github.com/Netatalk/netatalk/pull/1488</a></li>
+<li>docs: RandNum UAM now relies on Libgcrypt by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1489'>https://github.com/Netatalk/netatalk/pull/1489</a></li>
+<li>Migrate afpstats from dbus-glib to GDBus by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1490'>https://github.com/Netatalk/netatalk/pull/1490</a></li>
+<li>cnid_dbd: Run setgroups() before changing user by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1510'>https://github.com/Netatalk/netatalk/pull/1510</a></li>
+<li>Switch DHCAST128 UAM to use libgcrypt by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1506'>https://github.com/Netatalk/netatalk/pull/1506</a></li>
+<li>Fix sighandler crash when using AppleTalk by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1523'>https://github.com/Netatalk/netatalk/pull/1523</a></li>
+<li>Fix RandNum UAM password change by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1524'>https://github.com/Netatalk/netatalk/pull/1524</a></li>
+<li>Remove PGP UAM by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1525'>https://github.com/Netatalk/netatalk/pull/1525</a></li>
+<li>Updates to docs and Dockerfile for 4.0.0 release by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1526'>https://github.com/Netatalk/netatalk/pull/1526</a></li>
+<li>Remove the bundled wolfSSL library by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1527'>https://github.com/Netatalk/netatalk/pull/1527</a></li>
+<li>Update systemd.netatalk.service.in to support atalkd by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1539'>https://github.com/Netatalk/netatalk/pull/1539</a></li>
+<li>Cleanup libgcrypt initialization by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1540'>https://github.com/Netatalk/netatalk/pull/1540</a></li>
+<li>Use .in as file ending for templates consistently by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1535'>https://github.com/Netatalk/netatalk/pull/1535</a></li>
+<li>Bundle, configure and install the Webmin module by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1532'>https://github.com/Netatalk/netatalk/pull/1532</a></li>
+<li>meson: Link with gobject and gio dependencies for afpstats by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1542'>https://github.com/Netatalk/netatalk/pull/1542</a></li>
+<li>Integrate macipgw into the project by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1543'>https://github.com/Netatalk/netatalk/pull/1543</a></li>
+<li>Fix macipgw, allow it to bind to DDP Port 72 by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1552'>https://github.com/Netatalk/netatalk/pull/1552</a></li>
+<li>initscripts: add atalkd dependencies and remove NBP unregister steps by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1548'>https://github.com/Netatalk/netatalk/pull/1548</a></li>
+<li>uams: Disable incorrect libgcrypt library version validation by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1553'>https://github.com/Netatalk/netatalk/pull/1553</a></li>
+<li>macipgw: Merge Jason King&rsquo;s rewrite of the Linux tunnel by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1556'>https://github.com/Netatalk/netatalk/pull/1556</a></li>
+<li>initscripts: Don&rsquo;t define nonexistent pid file for NetBSD scripts by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1561'>https://github.com/Netatalk/netatalk/pull/1561</a></li>
+<li>initscripts: Create macipgw template start scripts by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1560'>https://github.com/Netatalk/netatalk/pull/1560</a></li>
+<li>Fix critical read error in fork.c by @NJRoadfan in <a href='https://github.com/Netatalk/netatalk/pull/1564'>https://github.com/Netatalk/netatalk/pull/1564</a></li>
+<li>errno.h should always be available by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1563'>https://github.com/Netatalk/netatalk/pull/1563</a></li>
+<li>NEWS for 4.0.0 release by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1544'>https://github.com/Netatalk/netatalk/pull/1544</a></li>
+<li>GitHub CI: Update ignore rules by @rdmark in <a href='https://github.com/Netatalk/netatalk/pull/1565'>https://github.com/Netatalk/netatalk/pull/1565</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href='https://github.com/Netatalk/netatalk/compare/netatalk-3-2-10&hellip;netatalk-4-0-0'>https://github.com/Netatalk/netatalk/compare/netatalk-3-2-10&hellip;netatalk-4-0-0</a></p>
+<p><strong>Note</strong>: The Debian deb package distributed with this release is built for Debian 12 Bookworm.</p><hr />
+<p>Release published on 2024-09-29</p>
+<p>Generated from the original at <a href="https://github.com/Netatalk/netatalk/releases/tag/netatalk-4-0-0">GitHub</a></p>
+<hr />
+</div>
+<div class="footer">
+    <a href="https://validator.w3.org/check?uri=referer">
+      <img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a>
+    <a href="https://jigsaw.w3.org/css-validator/check?uri=referer">
+      <img style="border:0;width:88px;height:31px"
+      src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+</div>
+</body>
+</html>
+

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Wiki - Installing Netatalk 3 on Solaris</title>
+    <title>Netatalk Wiki - Installing Netatalk on Solaris</title>
     <meta name="description" content="Netatalk Wiki">
-    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-3-on-Solaris">
+    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-on-Solaris">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -49,25 +49,20 @@
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
 <li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
-<p>Netatalk v3 Installation</p>
+<p>Install Netatalk</p>
 <ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora-Linux.html">Installing Netatalk 3 on Fedora Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
-</ul>
-<p>Netatalk v2 Installation</p>
-<ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Alpine-Linux.html">Installing Netatalk 2 on Alpine Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian-Linux.html">Installing Netatalk 2 on Debian Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora-Linux.html">Installing Netatalk 2 on Fedora Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-NetBSD.html">Installing Netatalk 2 on NetBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Alpine-Linux.html">Installing Netatalk on Alpine Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Debian-Linux.html">Installing Netatalk on Debian Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Fedora-Linux.html">Installing Netatalk on Fedora Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-FreeBSD.html">Installing Netatalk on FreeBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-macOS.html">Installing Netatalk on macOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-NetBSD.html">Installing Netatalk on NetBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OmniOS.html">Installing Netatalk on OmniOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OpenBSD.html">Installing Netatalk on OpenBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OpenIndiana.html">Installing Netatalk on OpenIndiana</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-openSUSE.html">Installing Netatalk on openSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Solaris.html">Installing Netatalk on Solaris</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Ubuntu.html">Installing Netatalk on Ubuntu</a></li>
 </ul>
 <p>Technical Docs</p>
 <ul>
@@ -88,7 +83,7 @@
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-3-on-Solaris">Installing Netatalk 3 on Solaris</h1><hr/>
+<h1 id="Installing-Netatalk-on-Solaris">Installing Netatalk on Solaris</h1><hr/>
 <h1>See Also</h1>
 <ul>
 <li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-solaris">Compile Netatalk from Source: Solaris</a></strong> in the Manual</li>
@@ -96,6 +91,7 @@
 </ul>
 <h1>Solaris 11</h1>
 <p>Tested on <a href="https://www.oracle.com/solaris/solaris11/downloads/solaris-downloads.html">Solaris 11.4.42</a></p>
+<p>Below follows the build instructions for the legacy Autotools build system. In most cases, you want to follow the instructions in the links at the top of this page instead.</p>
 <h2>Prep work</h2>
 <p>The Solaris system will need to get the very latest package updates from Oracle in order to build contemporary Netatalk.</p>
 <p>First, run a full system update.</p>
@@ -212,10 +208,10 @@ make install
 </code></pre><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
-        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-Solaris">visit the original page</a>
+        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-Solaris">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-09-13</p>
+    <p>Last updated 2024-09-30</p>
     <hr />
     </div>
 <div class="footer">

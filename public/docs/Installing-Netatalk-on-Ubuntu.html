@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Wiki - Installing Netatalk 3 on openSUSE</title>
+    <title>Netatalk Wiki - Installing Netatalk on Ubuntu</title>
     <meta name="description" content="Netatalk Wiki">
-    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-3-on-openSUSE">
+    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-on-Ubuntu">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -49,25 +49,20 @@
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
 <li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
-<p>Netatalk v3 Installation</p>
+<p>Install Netatalk</p>
 <ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora-Linux.html">Installing Netatalk 3 on Fedora Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
-</ul>
-<p>Netatalk v2 Installation</p>
-<ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Alpine-Linux.html">Installing Netatalk 2 on Alpine Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian-Linux.html">Installing Netatalk 2 on Debian Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora-Linux.html">Installing Netatalk 2 on Fedora Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-NetBSD.html">Installing Netatalk 2 on NetBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Alpine-Linux.html">Installing Netatalk on Alpine Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Debian-Linux.html">Installing Netatalk on Debian Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Fedora-Linux.html">Installing Netatalk on Fedora Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-FreeBSD.html">Installing Netatalk on FreeBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-macOS.html">Installing Netatalk on macOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-NetBSD.html">Installing Netatalk on NetBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OmniOS.html">Installing Netatalk on OmniOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OpenBSD.html">Installing Netatalk on OpenBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OpenIndiana.html">Installing Netatalk on OpenIndiana</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-openSUSE.html">Installing Netatalk on openSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Solaris.html">Installing Netatalk on Solaris</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Ubuntu.html">Installing Netatalk on Ubuntu</a></li>
 </ul>
 <p>Technical Docs</p>
 <ul>
@@ -88,66 +83,74 @@
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-3-on-openSUSE">Installing Netatalk 3 on openSUSE</h1><hr/>
-<h1>See Also</h1>
+<h1 id="Installing-Netatalk-on-Ubuntu">Installing Netatalk on Ubuntu</h1><hr/>
+<h1>Install the latest Netatalk</h1>
+<p><strong>netatalk</strong> is distributed as a package in Ubuntu. You can use <code>apt</code> to install it.</p>
+<p>For building and installing from source yourself, find links to the official documentation below.</p>
 <ul>
-<li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-opensuse">Compile Netatalk from Source: openSUSE</a></strong> in the Manual</li>
+<li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-ubuntu">Compile Netatalk from Source: Ubuntu</a></strong> in the Manual</li>
 <li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
 </ul>
-<h1>Overview</h1>
-<p>This installation guide was originally written for Netatalk 3.1.11 on
-openSUSE Leap 42.2</p>
 <h2>Required Packages</h2>
-<p>Install the following packages by <code>zypper in</code>.</p>
+<p>This page describes how to build Netatalk from code, using the legacy Autotools build system. In most cases, you want to follow the instructions in the links at the top of this page instead.</p>
+<p>Install the following packages by <code>sudo apt install</code>.</p>
 <ul>
-<li><code>gcc</code></li>
-<li><code>libtool</code></li>
-<li><code>make</code></li>
-<li><code>libevent-devel</code> (used by netatalk(8))</li>
-<li><code>db-devel</code> (dbd CNID backend)</li>
-<li><code>libtdb-devel</code> (tdb CNID backend)</li>
-<li><code>libmysqlclient-devel</code> (mysql CNID backend)</li>
-<li><code>libgcrypt-devel</code> (DHX2 auth)</li>
-<li><code>libopenssl-devel</code> or <code>libressl-devel</code> (DHX auth aka DHCAST128)</li>
-<li><code>krb5-devel</code> (Kerberos V auth)</li>
-<li><code>pam-devel</code> (PAM)</li>
-<li><code>libavahi-devel</code> (Bonjour support)</li>
-<li><code>cracklib-devel</code> (password ckeck)</li>
-<li><code>tcpd-devel</code> (TCP Wrapper)</li>
-<li><code>libacl-devel</code> (ACL support)</li>
-<li><code>openldap2-devel</code> (enhanced ACL support)</li>
-<li><code>dbus-1-devel</code> (used by afpstats command)</li>
-<li><code>dbus-1-glib-devel</code> (used by afpstats command)</li>
-<li><code>glib2-devel</code> (used by afpstats command)</li>
-<li><code>perl-IO-Socket-INET6</code> (used by asip-status.pl command)</li>
-<li><code>systemtap-sdt-devel</code> (DTrace-compatible)</li>
+<li><code>build-essential</code></li>
+<li><code>libevent-dev</code> (used by netatalk(8))</li>
+<li><code>libssl-dev</code> (DHX auth aka DHCAST128)</li>
+<li><code>libgcrypt-dev</code> (DHX2 auth)</li>
+<li><code>libkrb5-dev</code> (Kerberos V auth)</li>
+<li><code>libpam0g-dev</code> (PAM)</li>
+<li><code>libwrap0-dev</code> (TCP Wrapper)</li>
+<li><code>libdb-dev</code> (dbd CNID backend)</li>
+<li><code>libtdb-dev</code> (tdb CNID backend)</li>
+<li><code>libmysqlclient-dev</code> (mysql CNID backend)</li>
+<li><code>avahi-daemon</code> (Bonjour support)</li>
+<li><code>libavahi-client-dev</code> (Bonjour support)</li>
+<li><code>libacl1-dev</code> (ACL support)</li>
+<li><code>libldap2-dev</code> (enhanced ACL support)</li>
+<li><code>libcrack2-dev</code> (password check)</li>
+<li><code>systemtap-sdt-dev</code> (DTrace-compatible)</li>
+<li><code>libdbus-1-dev</code> (used by afpstats command)</li>
+<li><code>libdbus-glib-1-dev</code> (used by afpstats command)</li>
+<li><code>libglib2.0-dev</code> (used by afpstats command)</li>
+<li><code>libio-socket-inet6-perl</code> (used by asip-status.pl command)</li>
+<li><code>libtalloc-dev</code> (used for spotlight indexing)</li>
 <li><code>tracker</code> (used for spotlight indexing)</li>
-<li><code>tracker-devel</code> (used for spotlight indexing)</li>
+<li><code>tracker-miner-fs</code> (used for spotlight indexing)</li>
+<li><code>libtracker-sparql-3.0-dev</code> (used for spotlight indexing) (version number may differ)</li>
+<li><code>bison</code> (required to build spotlight)</li>
+<li><code>flex</code> (required to build spotlight)</li>
+<li><code>quota</code> (used for quota)</li>
+<li><code>libtirpc-dev</code> (used for quota)</li>
 </ul>
+<p>If tracker&rsquo;s version is unknown, you can know using command
+<code>apt search libtracker</code>.</p>
 <h2>Build</h2>
-<p>Get the tarball from <a href="http://netatalk.sourceforge.net/">Netatalk Web
-Site</a>.</p>
-<p>Extract the tarball.</p>
-<pre><code>$ tar xvf netatalk-3.1.11.tar.bz2
-$ cd netatalk-3.1.11
+<p>Get the tarball from <a href="http://netatalk.io/">Netatalk Web Site</a>.</p>
+<p>Extract the tarball</p>
+<pre><code>$ tar xvf netatalk-3.1.18.tar.xz $ cd
+netatalk-3.1.18
 </code></pre>
 <p>You should read the help message, in order to know configure options.</p>
 <p>If the applicable libraries are installed, many options will be detected
-automatically.</p>
+automati
+lly.</p>
 <pre><code>$ ./configure --help
 </code></pre>
 <p>Do configure! The following options are not auto-detected.</p>
 <pre><code>$ ./configure \
-   --with-init-style=suse-systemd \
-   --without-libevent \
-   --without-tdb \
-   --with-cracklib \
-   --enable-krbV-uam \
-   --with-pam-confdir=/etc/pam.d \
-   --with-dbus-sysconf-dir=/etc/dbus-1/system.d \
-   --with-tracker-pkgconfig-version=1.0
+       --with-init-style=debian-systemd \
+       --with-cracklib \
+       --enable-krbV-uam \
+       --with-pam-confdir=/etc/pam.d \
+       --with-dbus-daemon=/usr/bin/dbus-daemon \
+       --with-dbus-sysconf-dir=/etc/dbus-1/system.d \
+       --with-tracker-pkgconfig-version=3.0
 </code></pre>
-<p>The version 1.0 <code>--with-tracker-pkgconfig-version=1.0</code> must match the
+<p>If you use Ubuntu 14.10 or earlier, the value of <code>--with-init-style</code>
+option is <code>debian-sysv</code>, not <code>debian-systemd</code>.</p>
+<p>The version 3.0 <code>--with-tracker-pkgconfig-version=3.0</code> must match the
 pkg-config version of the installed Tracker libraries. Use the following
 commands for finding the version info:</p>
 <pre><code>$ pkg-config --list-all | grep tracker
@@ -164,13 +167,13 @@ following:</p>
        LIBS   =
        CFLAGS = -pthread
    TRACKER:
-       LIBS   = -ltracker-sparql-1.0 -lgio-2.0 -lgobject-2.0 -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0
-       CFLAGS = -pthread -I/usr/include/tracker-1.0 -I/usr/include/tracker-1.0/libtracker-sparql -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include
+       LIBS   = -ltracker-sparql-2.0 -lgio-2.0 -lgobject-2.0 -Wl,--export-dynamic -lgmodule-2.0 -pthread -lglib-2.0
+       CFLAGS = -pthread -I/usr/include/tracker-2.0 -I/usr/include/tracker-2.0/libtracker-sparql -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include
    SSL:
        LIBS   =  -L/usr/lib64 -lcrypto
        CFLAGS =  -I/usr/include/openssl
    LIBGCRYPT:
-       LIBS   = -L/usr/lib64 -lgcrypt -ldl -lgpg-error
+       LIBS   = -lgcrypt
        CFLAGS =
    PAM:
        LIBS   =  -lpam
@@ -179,11 +182,11 @@ following:</p>
        LIBS   = -lwrap
        CFLAGS =
    BDB:
-       LIBS   =  -L/usr/lib64 -ldb
+       LIBS   =  -L/usr/lib64 -ldb-5.3
        CFLAGS =
    GSSAPI:
-       LIBS   = -lgssapi_krb5  -lcrack
-       CFLAGS = -D_U_=&quot;__attribute__((unused))&quot; -g -O2
+       LIBS   = -L/usr/lib/x86_64-linux-gnu/mit-krb5 -Wl,-Bsymbolic-functions -Wl,-z,relro -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
+       CFLAGS = -isystem /usr/include/mit-krb5
    ZEROCONF:
        LIBS   =  -lavahi-common -lavahi-client
        CFLAGS =  -D_REENTRANT
@@ -197,13 +200,13 @@ following:</p>
        LIBS   = -ltdb
        CFLAGS =
    MySQL:
-       LIBS   = -L/usr/lib64 -lmysqlclient -lpthread -lz -lm -lssl -lcrypto -ldl
+       LIBS   = -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -latomic -ldl
        CFLAGS = -I/usr/include/mysql
 
 Configure summary:
 
    INIT STYLE:
-        suse-systemd
+        debian-systemd
    AFP:
         Extended Attributes: ad | sys
         ACL support: yes
@@ -224,37 +227,39 @@ Configure summary:
         valid shell check:       yes
         cracklib support:        yes
         ACL support:             auto
-        Kerberos support:        auto
+        Kerberos support:        yes
         LDAP support:            yes
         AFP stats via dbus:      yes
         dtrace probes:           yes
    Paths:
         Netatalk lockfile:       /var/lock/netatalk
-        init directory:          /usr/lib/systemd/system
+        init directory:          /lib/systemd/system
         dbus system directory:   /etc/dbus-1/system.d
-        dbus daemon path:        /bin/dbus-daemon
+        dbus daemon path:        /usr/bin/dbus-daemon
         tracker prefix:          /usr
-        tracker install prefix:  /usr
+        tracker ins
+ll prefix:  /usr
         tracker manager:         /usr/bin/tracker daemon
         pam config directory:    /etc/pam.d
    Documentation:
         Docbook:                 no
 </code></pre>
-<p>Docbook is not needed because it is for developers only.</p>
+<p>Docbook is not needed unless you want to create fresh manual
+pages.</p>
 <p>Make and install.</p>
 <pre><code>$ make
-# make install
+$ sudo make install
 </code></pre>
 <h2>Check</h2>
 <p>Check features and paths, using <code>netatalk -V</code> and <code>afpd -V</code>.</p>
-<pre><code>$ /usr/local/sbin/netatalk -V netatalk 3.1.11 - Netatalk AFP server
+<pre><code>$ /usr/local/sbin/netatalk -V netatalk 3.1.12 - Netatalk AFP server
 service controller daemon
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or (at
-your option) any later version. Please see the file COPYING for
-further information and details.
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version. Please see the file COPYING for further
+information and details.
 
 netatalk has been compiled with support for these features:
 
@@ -264,20 +269,19 @@ netatalk has been compiled with support for these features:
                  afpd: /usr/local/sbin/afpd
            cnid_metad: /usr/local/sbin/cnid_metad
       tracker manager: /usr/bin/tracker daemon
-          dbus-daemon: /bin/dbus-daemon
+          dbus-daemon: /usr/bin/dbus-daemon
              afp.conf: /usr/local/etc/afp.conf
     dbus-session.conf: /usr/local/etc/dbus-session.conf
    netatalk lock file: /var/lock/netatalk
 </code></pre>
 <pre><code>$ /usr/local/sbin/afpd -V
-afpd 3.1.11 - Apple Filing Protocol
-(AFP) daemon of Netatalk
+afpd 3.1.12 - Apple Filing Protocol (AFP) daemon of Netatalk
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or (at
-your option) any later version. Please see the file COPYING for
-further information and details.
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version. Please see the file COPYING for further
+information and details.
 
 afpd has been compiled with support for these features:
 
@@ -294,7 +298,7 @@ afpd has been compiled with support for these features:
          LDAP support: Yes
         D-Bus support: Yes
     Spotlight support: Yes
-        DTrace probes: Yes`
+        DTrace probes: Yes
 
              afp.conf: /usr/local/etc/afp.conf
           extmap.conf: /usr/local/etc/extmap.conf
@@ -303,8 +307,9 @@ afpd has been compiled with support for these features:
      afp_voluuid.conf: /usr/local/var/netatalk/afp_voluuid.conf
       UAM search path: /usr/local/lib/netatalk//
  Server messages path: /usr/local/var/netatalk/msg/
+
 </code></pre>
-<h2>Setting</h2>
+<h2>Setting Up</h2>
 <p>Edit <code>/usr/local/etc/afp.conf</code>.</p>
 <p>Ex:</p>
 <pre><code>[Global]
@@ -321,31 +326,34 @@ afpd has been compiled with support for these features:
 
    path = /export/timemachine
    time machine = yes
+
 </code></pre>
-<p>It&rsquo;s recommended to enable extended attributes of filesystem. It&rsquo;s no
-problem in case of btrfs.</p>
-<p>If you use ext2,3 or 4, you should check it by <code>getfattr</code> and
-<code>setfattr</code> commands. If you use ACL, you shoud check it by <code>getfacl</code>
-and <code>setfacl</code> commands. If these are disabled, use <code>tune2fs</code> command
-or edit <code>/etc/fstab</code> file.</p>
+<p>It&rsquo;s recommended to enable extended attributes of filesystem. You can
+check it by <code>getfattr</code> and <code>setfattr</code> commands.</p>
+<p>If you use ACL, you shoud check it by <code>getfacl</code> and <code>setfacl</code>
+commands.</p>
+<p>If these are disabled, use <code>tune2fs</code> command or edit <code>/etc/fstab</code>
+file.</p>
 <p>Ex:</p>
-<pre><code> /dev/sdc2    /mountpoint    ext4    defaults,user_xattr,acl    0 2
+<pre><code>/dev/sdc2    /mountpoint    ext4    defaults,user_xattr,acl    0 2
 </code></pre>
 <p>You should check firewall. AFP&rsquo;s port number is <code>548</code>. Zeroconf&rsquo;s port
 number is <code>5353</code>.</p>
 <h2>Enabling and Starting</h2>
-<p>You must run Avahi ahead of Netatalk.</p>
-<pre><code># systemctl enable avahi-daemon
-# systemctl enable netatalk
-# systemctl start avahi-daemon
-# systemctl start netatalk
+<p>The systemd unit file is <code>/lib/systemd/system/netatalk.service</code>. You
+must run Avahi ahead of Netatalk.</p>
+<pre><code>$ sudo systemctl enable avahi-daemon
+$ sudo systemctl enable netatalk
+$ sudo systemctl start avahi-daemon
+$ sudo systemctl start netatalk
 </code></pre>
 <h2>Spotlight Feature</h2>
 <p>If you use Spotlight feature, read
 <a href="http://netatalk.sourceforge.net/3.1/htmldocs/configuration.html">Spotlight</a>
 section in Netatalk Manual.</p>
 <p>Set <code>spotlight = yes</code>.</p>
-<p>Set <code>spotlight = no</code> for Time Machine&rsquo;s volume. The mining for
+<p>Set <code>spotlight = no</code> for Time Machine&rsquo;s
+volume. The mining for
 sparsebundle is wasteful.</p>
 <p>Ex:</p>
 <pre><code>[Global]
@@ -365,7 +373,17 @@ sparsebundle is wasteful.</p>
    path = /export/timemachine
    time machine = yes
    spotlight = no
+
 </code></pre>
+<p>A problem has been reported.</p>
+<ul>
+<li><a href="http://sourceforge.net/p/netatalk/bugs/543/">Bug#543 Spotlight cannot search in user
+    homes</a> and <a href="https://github.com/Netatalk/Netatalk/pull/7">FIX:
+    Spotlight: searching in user homes, bug #543 by hat001 · Pull
+    Request #7 ·
+    Netatalk/Netatalk</a> -
+    There is still a problem with this patch.</li>
+</ul>
 <h2>Interoperation with Samba</h2>
 <p>Recent Netatalk and Samba can store metadata in the compatible format.</p>
 <p>Using this way, the following access becomes possible.</p>
@@ -378,7 +396,8 @@ sparsebundle is wasteful.</p>
 <p>Using <code>vol preset</code> option, the same configuration is set for all
 volumes.</p>
 <p>Using <code>ea = samba</code>, Extended Attributes become compatible with Samba.</p>
-<p>Edit <code>/usr/local/etc/afp.conf</code>.</p>
+<p>Edi
+<code>/usr/local/etc/afp.conf</code>.</p>
 <p>Ex:</p>
 <pre><code>[Global]
 
@@ -409,38 +428,42 @@ compatibility with Apple SMB clients and interoperability with a
 Netatalk.</p>
 <p>Using <code>hide files</code>, the invisible files created via Netatalk are
 hidden from Windows. Use <code>hide files</code>, not <code>veto files</code>.</p>
-<p>Don&rsquo;t use <code>fruit:locking = netatalk</code> because it has <a href="https://lists.samba.org/archive/samba/2015-December/196828.html">a
-bug</a>.</p>
+<p>Don&rsquo;t set the time machine at both of Netatalk and Samba, otherwise
+advertisement by Avahi will duplicate.</p>
 <p>Edit <code>/etc/samba/smb.conf</code>.</p>
 <p>Ex:</p>
 <pre><code>[global]
+    foo = bar
+    baz = qux
 
-   ea support = Yes
-   vfs objects = catia fruit streams_xattr`
+    ea support = Yes
+    vfs objects = catia fruit streams_xattr
+    fruit:locking = netatalk
+    fruit:encoding = native
+    streams_xattr:prefix = user.
+    streams_xattr:store_stream_type = no
+    mdns name = mdns
 
-   fruit:encoding = native
-   streams_xattr:prefix = user.
-   streams_xattr:store_stream_type = no`
+    hide files = /.DS_Store/Network Trash Folder/TheFindByContentFolder/TheVolumeSettingsFolder/Temporary Items/.TemporaryItems/.VolumeIcon.icns/Icon?/.FBCIndex/.FBCLockFolder/
 
-   hide files = /.DS_Store/Network Trash Folder/TheFindByContentFolder/TheVolumeSettingsFolder/Temporary Items/.TemporaryItems/.VolumeIcon.icns/Icon?/.FBCIndex/.FBCLockFolder/
-
-   read only = No
+    read only = No
 
 [homes]
 
 [Test Volume]
+    path = /export/test1
 
-   path = /export/test1
+[My Time Machine Volume]
+    path = /export/timemachine
+    time machine = yes
 
-[My Time Machine Volume]  
-path = /export/timemachine  
 </code></pre><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
-        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-3-on-openSUSE">visit the original page</a>
+        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-Ubuntu">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-09-13</p>
+    <p>Last updated 2024-09-30</p>
     <hr />
     </div>
 <div class="footer">

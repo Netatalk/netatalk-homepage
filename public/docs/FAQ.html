@@ -49,25 +49,20 @@
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
 <li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
-<p>Netatalk v3 Installation</p>
+<p>Install Netatalk</p>
 <ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Fedora-Linux.html">Installing Netatalk 3 on Fedora Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-FreeBSD.html">Installing Netatalk 3 on FreeBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-macOS.html">Installing Netatalk 3 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenBSD.html">Installing Netatalk 3 on OpenBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-OpenIndiana.html">Installing Netatalk 3 on OpenIndiana</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-openSUSE.html">Installing Netatalk 3 on openSUSE</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Solaris.html">Installing Netatalk 3 on Solaris</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-3-on-Ubuntu.html">Installing Netatalk 3 on Ubuntu</a></li>
-</ul>
-<p>Netatalk v2 Installation</p>
-<ul>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Alpine-Linux.html">Installing Netatalk 2 on Alpine Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Debian-Linux.html">Installing Netatalk 2 on Debian Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-Fedora-Linux.html">Installing Netatalk 2 on Fedora Linux</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-macOS.html">Installing Netatalk 2 on macOS</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-NetBSD.html">Installing Netatalk 2 on NetBSD</a></li>
-<li><a class="wikilink" href="/docs/Installing-Netatalk-2-on-OmniOS.html">Installing Netatalk 2 on OmniOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Alpine-Linux.html">Installing Netatalk on Alpine Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Debian-Linux.html">Installing Netatalk on Debian Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Fedora-Linux.html">Installing Netatalk on Fedora Linux</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-FreeBSD.html">Installing Netatalk on FreeBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-macOS.html">Installing Netatalk on macOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-NetBSD.html">Installing Netatalk on NetBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OmniOS.html">Installing Netatalk on OmniOS</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OpenBSD.html">Installing Netatalk on OpenBSD</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-OpenIndiana.html">Installing Netatalk on OpenIndiana</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-openSUSE.html">Installing Netatalk on openSUSE</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Solaris.html">Installing Netatalk on Solaris</a></li>
+<li><a class="wikilink" href="/docs/Installing-Netatalk-on-Ubuntu.html">Installing Netatalk on Ubuntu</a></li>
 </ul>
 <p>Technical Docs</p>
 <ul>
@@ -98,6 +93,10 @@ higher transmissions speeds for older Macs compared with accessing a
 server via Samba/NFS while providing clients with the best user
 experience (full support for Macintosh metadata, flawlessly supporting
 mixed environments of classic Mac OS and Mac OS X / macOS clients).</p>
+<h2>What changed between Netatalk 3.x and 4.x?</h2>
+<p>Netatalk v4 brings back AFP-over-AppleTalk support, as well as essential AppleTalk networking and PAP printing utilities.</p>
+<p>It also bundles Stefan Bethke&rsquo;s <code>macipgw</code> MacIP Gateway daemon, which enables networking for Macs without direct access to a TCP/IP network.</p>
+<p>See the <a href="https://netatalk.io/4.0/ReleaseNotes-4.0.0">release notes for Netatalk 4.0.0</a>.</p>
 <h2>What changed between Netatalk 2.x and 3.x?</h2>
 <p>Netatalk v3 supports Mac OS X / macOS style filesystem metadata, while providing seamless
 interoperability with Samba. It is compliant with AFP 3.4, which was the final revision of the
@@ -105,7 +104,7 @@ protocol, and supports Spotlight in version 3.1 and later.</p>
 <p>However, it is less useful for Classic Mac OS or Apple II clients,
 because AppleTalk support was removed, and with it the ability to connect with
 AFP 2.1 clients or earlier.</p>
-<p>See also the <a href="https://netatalk.io/3.0/ReleaseNotes-3.0">release notes for Netatalk 3.0.0</a>.</p>
+<p>See the <a href="https://netatalk.io/3.0/ReleaseNotes-3.0">release notes for Netatalk 3.0.0</a>.</p>
 <h2>What changed between Netatalk 1.x and 2.x?</h2>
 <p>Let&rsquo;s have a look at what has changed compared to 1.6.4:</p>
 <ol>
@@ -126,7 +125,7 @@ shares (this violation of AFP specs is not supported any longer) and
 willing to complete the sometimes extensive upgrade process should
 switch to 2.0. But be sure to read carefully the chapter about upgrading
 in the docs first.</p>
-<p>See also the <a href="https://netatalk.io/2.0/ReleaseNotes2.0.0">release notes for Netatalk 2.0.0</a>.</p>
+<p>See the <a href="https://netatalk.io/2.0/ReleaseNotes2.0.0">release notes for Netatalk 2.0.0</a>.</p>
 <h2>I think I found a bug in Netatalk. Where should I report it?</h2>
 <p>First of all, try to isolate the problem and see whether it&rsquo;s not a
 feature instead (some of the underlying Mac-related basics like
@@ -251,7 +250,7 @@ exactly for this purpose:
         Please <a href="https://github.com/Netatalk/netatalk/wiki/FAQ">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-09-13</p>
+    <p>Last updated 2024-09-30</p>
     <hr />
     </div>
 <div class="footer">

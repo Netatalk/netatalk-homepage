@@ -45,46 +45,29 @@
     <ul>
       <li>
         <a
-        title="download 3.2.8 xz compressed"
-        href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-8/netatalk-3.2.8.tar.xz/download">
-        3.2.8 (xz)
+        title="download 4.0.0 xz compressed"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-4-0-0/netatalk-4.0.0.tar.xz/download">
+        Netatalk 4.0.0 (source code)
         </a>
       </li>
-        <li>
-          <a
-          title="download 3.2.8 checksum"
-          href="https://sourceforge.net/projects/netatalk/files/netatalk-3-2-8/netatalk-3.2.8.tar.xz.sha256sum/download">
-          3.2.8 (sha256sum)
-          </a>
-        </li>
       <li>
         <a
-        title="view 3.2.8 Release Notes"
-        href="/3.2/ReleaseNotes3.2.8.html">
-        Release Notes
+        title="download 4.0.0 checksum"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-4-0-0/netatalk-4.0.0.tar.xz.sha256sum/download">
+        Netatalk 4.0.0 (sha256sum)
         </a>
       </li>
-    </ul>
-    <p><b>old stable (AppleTalk)</b></p>
-    <ul>
       <li>
         <a
-        title="download 2.4.8 xz compressed"
-        href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-8/netatalk-2.4.8.tar.xz/download">
-        2.4.8 (xz)
+        title="download 4.0.0 Webmin module"
+        href="https://sourceforge.net/projects/netatalk/files/netatalk-4-0-0/netatalk-4.0.0.wbm.gz/download">
+        Webmin Module
         </a>
       </li>
-        <li>
-          <a
-          title="download 2.4.8 checksum"
-          href="https://sourceforge.net/projects/netatalk/files/netatalk-2-4-8/netatalk-2.4.8.tar.xz.sha256sum/download">
-          2.4.8 (sha256sum)
-          </a>
-        </li>
       <li>
         <a
-        title="view 2.4.8 Release Notes"
-        href="/2.4/ReleaseNotes2.4.8.html">
+        title="view 4.0.0 Release Notes"
+        href="/4.0/ReleaseNotes4.0.0.html">
         Release Notes
         </a>
       </li>
@@ -92,21 +75,17 @@
   </div>
   <div class="navbar">
     <h2>documentation</h2>
-    <h3><b>Manual (version 3)</b></h3>
+    <h3><b>Manual</b></h3>
     <ol>
-      <li><a href="/stable/htmldocs/intro.html">Introduction</a></li>
-      <li><a href="/stable/htmldocs/installation.html">Installation</a></li>
-      <li><a href="/stable/htmldocs/configuration.html">Configuration</a></li>
-      <li><a href="/stable/htmldocs/upgrade.html">Upgrading</a></li>
-      <li><a href="/stable/htmldocs/man-pages.html">Man Pages</a></li>
-    </ol>
-    <h3><b>Manual (version 2)</b></h3>
-    <ol>
-      <li><a href="/oldstable/htmldocs/intro.html">Introduction</a></li>
-      <li><a href="/oldstable/htmldocs/installation.html">Installation</a></li>
-      <li><a href="/oldstable/htmldocs/configuration.html">Configuration</a></li>
-      <li><a href="/oldstable/htmldocs/upgrade.html">Upgrading</a></li>
-      <li><a href="/oldstable/htmldocs/man-pages.html">Man Pages</a></li>
+      <li><a href="/stable/htmldocs">Index</a></li>
+      <li><a href="/stable/htmldocs/intro">Introduction</a></li>
+      <li><a href="/stable/htmldocs/installation">Installation</a></li>
+      <li><a href="/stable/htmldocs/configuration">Configuration</a></li>
+      <li><a href="/stable/htmldocs/appletalk">AppleTalk</a></li>
+      <li><a href="/stable/htmldocs/upgrade">Upgrading</a></li>
+      <li><a href="/stable/htmldocs/man-pages">Manual Pages</a></li>
+      <li><a href="/stable/htmldocs/compile">Compile from Source</a></li>
+      <li><a href="/stable/htmldocs/gpl">License</a></li>
     </ol>
   </div>
   <div class="navbar">
@@ -133,8 +112,8 @@
 <div id="content">
 <h1>Netatalk 3.2.0</h1><hr />
 <h1>REDISTRIBUTION LICENSING ALERT</h1>
-<p>If you redistribute binary Netatalk packages, please be advised that there may be <a href="https://github.com/Netatalk/netatalk/issues/1185">incompatible licensing terms</a> in this source package. To avoid potential issues when redistributing, it is strongly recommended to build this package with <code>-Dwith-embedded-ssl=false</code> when using the Meson build system. The Autotools build system is not affected. A future release version will address this issue.</p>
-<h1>COMPATIBILITY ALERT</h1>
+<p>If you redistribute binary Netatalk packages, please be advised that there may be <a href="https://github.com/Netatalk/netatalk/issues/1185">incompatible licensing terms</a> in this source package. To avoid potential issues when redistributing, it is strongly recommended to build this package with <code>-Dwith-embedded-ssl=false</code> when using the Meson build system. The Autotools build system is not affected. Alternatively, upgrade to Netatalk 3.2.2 or later.</p>
+<h1>DOCKER COMPATIBILITY ALERT</h1>
 <p>If you previously used the Netatalk 3.1.18 <em>Docker image</em> for making Time Machine backups in macOS, you may <a href="https://github.com/Netatalk/netatalk/issues/1068">run into errors</a> after upgrading to the Netatalk 3.2.0 image or later. It is recommended to discard the backup sparsebundle and redo the backup. If you absolutely must access the older backup sparsebundle, downgrading to the 3.1.18 image should restore access.</p>
 <hr />
 <h1>Netatalk 3.2.0 is available!</h1>
@@ -147,15 +126,15 @@
 <p>The Meson build system has been introduced, and exists in parallel with the traditional GNU Autotools build system. We plan to remove Autotools in a future feature release version of Netatalk.</p>
 <p>Please see <a href="https://github.com/Netatalk/netatalk/blob/netatalk-3-2-0/INSTALL">INSTALL</a> for instructions how to use the new build system. The online manual also has a <a href="https://netatalk.io/3.2/htmldocs/compile">new appendix</a> with build instructions for specific operating systems.</p>
 <p>Consequently, starting with this release, we no longer distribute tarballs that were bootstrapped by autoconf. We still ship the bootstrap script and all the macros required so that you can bootstrap it yourself if needed.</p>
-<h3>Bundled WolfSSL</h3>
-<p>OpenSSL 3.0 has deprecated the <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">DHCAST128</a> and <a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard">DES</a> encryption algorithms used by Apple&rsquo;s <strong>DHX</strong> and <strong>Random Number</strong> UAMs, respectively. These UAMs are used for (somewhat) secure authentication with very old Mac OS clients (early OS X, Classic Mac OS, and Apple IIGS.)</p>
-<p>We are now bundling a subset of <a href="https://www.wolfssl.com/">WolfSSL</a> with Netatalk, as the default encryption provider for these UAMs. Building Netatalk with bundled WolfSSL requires the use of the Meson build system.</p>
+<h3>Bundled wolfSSL</h3>
+<p>OpenSSL 3.0 has deprecated the <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">DHCAST128</a> and <a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard">DES</a> encryption algorithms used by Apple&rsquo;s <strong>DHX</strong> and <strong>Random Number</strong> UAMs, respectively. These UAMs are used for (somewhat) secure authentication with very old Apple clients (early Mac OS X, Classic Mac OS, Macintosh System Software, and Apple IIGS.)</p>
+<p>We are now bundling a subset of <a href="https://www.wolfssl.com/">wolfSSL</a> with Netatalk, as the default encryption provider for these UAMs. Building Netatalk with bundled wolfSSL requires the use of the Meson build system.</p>
 <h3>Init Scripts</h3>
 <p>New init scripts have been added: FreeBSD, OpenBSD, and OpenRC (previously: Gentoo).</p>
 <p>Additionally, the macOS launchd init script plist has been renamed to <code>io.netatalk.*</code> (from <code>com.netatalk.*</code>)</p>
 <h3>Added compile time options</h3>
 <ul>
-<li><code>-Dwith-embedded-ssl</code> – Enable or disable the bundled SSL provider (currently: WolfSSL).</li>
+<li><code>-Dwith-embedded-ssl</code> – Enable or disable the bundled SSL provider (currently: wolfSSL).</li>
 <li><code>-Dwith-init-style=</code> / <code>--with-init-style=</code> <code>freebsd</code> | <code>openbsd</code> | <code>openrc</code></li>
 <li><code>-Ddisable-init-hooks</code> / <code>--disable-init-hooks</code> – Ask the build system to skip a any install or uninstall hooks that may require heightened privileges. This enables distribution scripts or installation in certain non-privileged chroot environments. Recommended for downstream packaging.</li>
 </ul>
@@ -168,14 +147,14 @@
 <h2>Dependency Changes</h2>
 <h3>LDAP API</h3>
 <p>We have bumped the LDAP API version, and now require OpenLDAP v2.3 or later.</p>
-<p>As a result, a new afp.conf option <code>ldap uri</code> has been introduced, while the old <code>ldap server</code> has been removed. The new option has a different syntax. See the <a href="https://netatalk.io/3.2/htmldocs/afp.conf.5">manual</a> for more information.</p>
+<p>As a result, a new afp.conf option <code>ldap uri</code> has been introduced, while the old <code>ldap server</code> has been retired. The new option has a different syntax. See the <a href="https://netatalk.io/3.2/htmldocs/afp.conf.5">manual</a> for more information.</p>
 <h3>Spotlight toolchain</h3>
 <p>The bundled <code>talloc</code> library, as well as pre-generated SPARQL parser code, have been removed from distribution. These are key parts of the Spotlight tech stack, and must now be supplied by the user or packager for Spotlight functionality.</p>
 <p>This introduces a compile- and runtime dependency on a system-supplied shared <code>talloc</code> library, which most contemporary operating systems have at the time of writing.</p>
 <p>Additionally, a yacc parser (e.g. <code>bison</code>) and lexer (e.g. <code>flex</code>) are now compile time dependencies for building with Spotlight support.</p>
 <h3>Perl</h3>
 <p>The Perl runtime is now an <em>optional</em> dependency for Netatalk (it was previously mandatory.) Only when Perl is detected at compile time, the administrative CLI utilities that use the Perl runtime are installed.</p>
-<p>At the same time, the <code>afpstats</code> CLI utility has been rewritten in Perl (previously: Python.)</p>
+<p>At the same time, the <code>afpstats</code> CLI utility has been rewritten in Perl to remove the runtime dependency on Python.</p>
 <h2>Deprecated Features</h2>
 <h3>Andrew File System</h3>
 <p>Andrew File System is a historical distributed file system with limited adoption at the time of writing. The AFS integration layer in Netatalk has not been functional for years, and was removed in this version.</p>
