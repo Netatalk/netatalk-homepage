@@ -49,7 +49,7 @@
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
 <li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
-<p>Install Netatalk</p>
+<p>OS Specific Guides</p>
 <ul>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-on-Alpine-Linux.html">Installing Netatalk on Alpine Linux</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-on-Debian-Linux.html">Installing Netatalk on Debian Linux</a></li>
@@ -72,6 +72,7 @@
 <li><a class="wikilink" href="/docs/Spotlight.html">Spotlight</a></li>
 <li><a class="wikilink" href="/docs/AppleTalk-Kernel-Module.html">AppleTalk Kernel Module</a></li>
 <li><a class="wikilink" href="/docs/Print-Server.html">Print Server</a></li>
+<li><a class="wikilink" href="/docs/MacIP-Gateway.html">MacIP Gateway</a></li>
 </ul>
 <p>Development</p>
 <ul>
@@ -87,12 +88,12 @@
 <h1>Install the latest Netatalk</h1>
 <p>For building and installing from source yourself, find links to the official documentation below.</p>
 <ul>
-<li><strong><a href="https://netatalk.io/oldstable/htmldocs/compile#build-omnios">Compile Netatalk from Source: OmniOS</a></strong> in the Manual</li>
-<li><strong><a href="https://github.com/Netatalk/netatalk/blob/branch-netatalk-2-4/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
+<li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-omnios">Compile Netatalk from Source: OmniOS</a></strong> in the Manual</li>
+<li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
 </ul>
 <h1>Introduction</h1>
 <p>This page contains notes on configuring and installing Netatalk 2.x on <a href="https://omnios.org">OmniOS Community Edition</a>; specific version used for this article was r151044.</p>
-<p>It covers the legacy Autotools build system. In most cases, you want to follow the instructions in the links at the top of this page instead.</p>
+<p>It covers the legacy Autotools build system. In most cases, you want to follow the instructions in the links at the top of this page to install later versions instead.</p>
 <h1>Prepare environment</h1>
 <p>A git client as well as the autotools, gcc compiler and Berkeley DB are needed.</p>
 <pre><code>pkg install git libtool automake gcc7 bdb pkg-config
@@ -117,7 +118,7 @@ sudo /etc/rc2.d/S90netatalk stop
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-OmniOS">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-09-30</p>
+    <p>Last updated 2024-10-02</p>
     <hr />
     </div>
 <div class="footer">

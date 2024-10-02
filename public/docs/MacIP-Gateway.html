@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Wiki - Installing Netatalk on NetBSD</title>
+    <title>Netatalk Wiki - MacIP Gateway</title>
     <meta name="description" content="Netatalk Wiki">
-    <link rel="canonical" href="https://netatalk.io/docs/Installing-Netatalk-on-NetBSD">
+    <link rel="canonical" href="https://netatalk.io/docs/MacIP-Gateway">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -84,54 +84,40 @@
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-on-NetBSD">Installing Netatalk on NetBSD</h1><hr/>
-<h1>Install the latest Netatalk</h1>
-<p>NetBSD is one out of a handful of distributions that still actively maintain an AppleTalk kernel module.</p>
-<p>Additionally, it has both a <a href="https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/net/netatalk3/index.html">Netatalk 3.x</a> as well as a <a href="https://pkgsrc.se/net/netatalk22">Netatalk 2.x package</a> in the pkgsrc repository that work out of the box.</p>
-<p>For building and installing from source yourself, find links to the official documentation below.</p>
+<h1 id="MacIP-Gateway">MacIP Gateway</h1><hr/>
+<p>As of Netatalk 4.0.0, we bundle Stefan Bethke&rsquo;s <a href="https://macipgw.sourceforge.io/">macipgw daemon</a> in our tarball, enabling you to build and launch it as any other Netatalk daemon.</p>
+<p>The <code>macipgw</code> daemon provides a <a href="https://en.wikipedia.org/wiki/MacIP">MacIP</a> gateway that allow old Macs to use the MacIP network stack to access TCP/IP resources from a LocalTalk network.</p>
+<p>Previously, <code>macipgw</code> was a stand-alone daemon that linked against Netatalk&rsquo;s libatalk shared library to access the AppleTalk stack and <code>atalkd</code> network management daemon.</p>
+<p>In order to use the Mac IP gateway, you need to configure a network tunnel and IPv4 packet forwarding.</p>
+<p>On Linux, this can be done with f.e. iptables or nft. On *BSD you can use pf or npf. You may need to set up NAT (Network Address Translation) .</p>
+<p>When launching <code>macipgw</code>, choose a subnet address and mask that doesn&rsquo;t conflict with the rest of your network. For the nameserver, you can use your own or a public DNS server such as Google&rsquo;s (<code>8.8.8.8</code> and <code>8.8.4.4</code>).</p>
+<p>If you want to see debug information, launch it with an appropriate debug flag with <code>-d</code>, example below that enables all debug logging.</p>
+<pre><code>macipgw -d0x111 -n 8.8.8.8 192.168.151.0 255.255.255.0
+</code></pre>
+<h1>Mac client</h1>
+<p>Make sure your Mac has MacTCP or Open Transport installed. From for instance the TCP/IP control panel, choose the &ldquo;MacIP&rdquo; network stack. Let the server assign the IP address. Pick the correct AppleTalk zone if the server is defining one.</p>
+<p>Once both the server and client have synchronized with the AppleTalk network, you should see both of them represented in the NBP cache, f.e.:</p>
+<pre><code>$ nbplkup 
+                  192.168.151.1:IPGATEWAY                          65280.21:72
+                          alien:TimeLord                           65280.21:129
+                          alien:AFPServer                          65280.21:128
+                          alien:netatalk                           65280.21:4
+                          alien:Workstation                        65280.21:4
+                  192.168.151.2:IPADDRESS                          65280.177:72
+                         rescue:AFPServer                          65280.177:253
+                         rescue:Workstation                        65280.177:4
+</code></pre>
+<p>When the gateway and tunnel are up and running, you should be able to browse the web or access an AFP-over-TCP server from the Mac.</p>
+<h1>Caveats</h1>
+<p>The Linux kernel has a feature called IPDDP which unfortunately filters out the traffic that the MacIP gateway relies on. This feature was <a href="https://github.com/torvalds/linux/commit/85605fb694f084ba017c93c150e668882445ce73">removed from the Linux kernel</a> in version 6.7. If you are using an earlier version, you need to recompile your kernel with IPDDP disabled. Later versions of the kernel should work out of the box.</p>
+<h1>See also</h1>
 <ul>
-<li><strong><a href="https://netatalk.io/oldstable/htmldocs/compile#build-netbsd">Compile Netatalk from Source: NetBSD</a></strong> in the Manual</li>
-<li><strong><a href="https://github.com/Netatalk/netatalk/blob/branch-netatalk-2-4/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
-</ul>
-<h1>Required packages</h1>
-<p>Before starting, make sure you have a <a href="http://www.netbsd.org/docs/misc/index.html#package-management">working pkgsrc environment</a>. </p>
-<p>Install the packages that netatalk22 depends on:</p>
-<pre><code>pkg_add \
-  git \
-  mozilla-rootcerts-openssl \
-  gcc13 \
-  autoconf \
-  libtool \
-  pkg-config \
-  db5 \
-  libgcrypt \
-  libressl \
-  gmake \
-  cups \
-  cracklib
-</code></pre>
-<p>Install netatalk22 itself:</p>
-<pre><code>pkg_add netatalk22
-</code></pre>
-<h1>Configuration</h1>
-<p>In older versions of Netatalk, you had to enable the NetBSD init script with the <code>--enable-netbsd</code> or equivalent compile time flag.</p>
-<p>Once installed, you can control the netatalk service as <a href="https://www.netbsd.org/docs/guide/en/chap-rc.html">any other NetBSD service</a>.</p>
-<p>If needed, copy the installed netatalk initscripts to the <code>/etc/rc.d</code> directory.</p>
-<h1>AppleTalk</h1>
-<p>NetBSD comes with an AppleTalk kernel module (<code>/sys/netatalk</code>) which Netatalk can use for DDP transport protocol out of the box.</p>
-<p>In order to register with the AppleTalk protocols, the <code>/etc/services</code> file must contain proper protocol definitions. Make sure the following entries are present on your installation:</p>
-<pre><code>rtmp        1/ddp       # Routing Table Maintenance Protocol
-nbp     2/ddp       # Name Binding Protocol
-echo        4/ddp       # AppleTalk Echo Protocol
-zip     6/ddp       # Zone Information Protocol
-
-afpovertcp  548/tcp     # AFP over TCP
-afpovertcp  548/udp
-</code></pre>
-<p>From: https://github.com/Netatalk/netatalk/blob/main/config/services.atalk</p><hr />
+<li><a href="https://netatalk.io/stable/htmldocs/macipgw.8">macipgw manual page</a></li>
+<li><a href="https://github.com/NJRoadfan/a2server/blob/currentdev/files/macipgw-start.sh.txt">Example of NAT configuration on Debian Linux</a>, from A2SERVER</li>
+</ul><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
-        Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-NetBSD">visit the original page</a>
+        Please <a href="https://github.com/Netatalk/netatalk/wiki/MacIP-Gateway">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
     <p>Last updated 2024-10-02</p>

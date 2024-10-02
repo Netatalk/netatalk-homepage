@@ -49,7 +49,7 @@
 <li><a class="wikilink" href="/docs/Webmin-Module.html">Webmin Module</a></li>
 <li><a class="wikilink" href="/docs/Benchmarks.html">Benchmarks</a></li>
 </ul>
-<p>Install Netatalk</p>
+<p>OS Specific Guides</p>
 <ul>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-on-Alpine-Linux.html">Installing Netatalk on Alpine Linux</a></li>
 <li><a class="wikilink" href="/docs/Installing-Netatalk-on-Debian-Linux.html">Installing Netatalk on Debian Linux</a></li>
@@ -72,6 +72,7 @@
 <li><a class="wikilink" href="/docs/Spotlight.html">Spotlight</a></li>
 <li><a class="wikilink" href="/docs/AppleTalk-Kernel-Module.html">AppleTalk Kernel Module</a></li>
 <li><a class="wikilink" href="/docs/Print-Server.html">Print Server</a></li>
+<li><a class="wikilink" href="/docs/MacIP-Gateway.html">MacIP Gateway</a></li>
 </ul>
 <p>Development</p>
 <ul>
@@ -179,14 +180,9 @@ meson install -C build --tags webmin
 <pre><code>docker login -u yourusername
 </code></pre>
 <ol>
-<li>
-<p>Cross compile Docker images with docker buildx, and push to the Docker Hub container registry. We currently cross compile for 32bit/64bit x86, and 32bit/64bit ARM.</p>
-</li>
-<li>
-<p>Tag both &ldquo;latest&rdquo; as well as the current release version, e.g. &ldquo;3.2.0&rdquo;.</p>
-</li>
+<li>Cross compile and tag Docker images with <code>docker buildx</code> and push to the Docker Hub container registry. We currently cross compile for 32bit/64bit x86, and 32bit/64bit ARM.</li>
 </ol>
-<pre><code>docker buildx build --push --platform=linux/386,linux/amd64,linux/arm/v6,linux/arm64 . -t netatalk/netatalk3:latest -t netatalk/netatalk3:3.2.0
+<pre><code>docker buildx build --push --platform=linux/386,linux/amd64,linux/arm/v6,linux/arm64 . -t netatalk/netatalk:latest -t netatalk/netatalk:4 -t netatalk/netatalk:4.0 -t netatalk/netatalk:4.0.0
 </code></pre>
 <ol>
 <li>That&rsquo;s it! Confirm that the new image is published in the right repository: https://hub.docker.com/u/netatalk</li>
@@ -279,7 +275,7 @@ gbp:info: Successfully imported version 3.2.0 of ../netatalk_3.2.0.orig.tar.xz
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Release-Process">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-09-30</p>
+    <p>Last updated 2024-10-02</p>
     <hr />
     </div>
 <div class="footer">
