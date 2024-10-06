@@ -109,6 +109,19 @@
   <h1>Latest News</h1>
 
 <hr />
+  <small>6th of October 2024</small>
+  <h2>Netatalk 4.0.1 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 4.0 release series.
+  This is a minor bugfix release that addresses build and distribution specific issues.
+  See the <a href="/4.0/htmldocs/upgrade">upgrade chapter</a>
+  of the manual for instructions how to upgrade existing 3.x or 2.x deployments.</p>
+  <p>Early adopters are encouraged to upgrade to 4.0.0. We look forward to your feedback!</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/4.0/ReleaseNotes4.0.1.html">Release Notes</a>.</p>
+
+<hr />
   <small>29th of September 2024</small>
   <h2>Netatalk 4.0.0 is available</h2>
 
