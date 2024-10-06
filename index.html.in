@@ -57,15 +57,15 @@
   </tr>
   <tr>
   <td>AFP over AppleTalk</td>
-  <td>Yes (Linux, NetBSD)</td>
+  <td>Yes (supported on Linux, NetBSD)</td>
   </tr>
   <tr>
   <td>Macintosh File System Metadata</td>
-  <td>Filesystem EA, AppleDouble v2</td>
+  <td>Yes: macOS extended attributes, Classic Mac OS resource forks</td>
   </tr>
   <tr>
   <td>Service Discovery</td>
-  <td>Any AppleShare client (AppleTalk), Mac OS X 10.2 and later (Zeroconf)</td>
+  <td>Yes: <i>Zeroconf</i> on macOS, <i>AppleTalk</i> on Classic Mac OS</td>
   </tr>
   <tr>
   <td><i>Time Machine</i> Backups</td>
@@ -73,7 +73,7 @@
   </tr>
   <tr>
   <td>Indexed Search</td>
-  <td>Mac OS X 10.4 or later (Spotlight); Mac OS 8 to Mac OS X 10.3 (CatSearch)</td>
+  <td>Yes: <i>Spotlight</i> on macOS, <i>Catalog Search</i> on Classic Mac OS</td>
   </tr>
   <tr>
   <td>Samba Interoperability</td>
@@ -117,7 +117,7 @@
   This is a minor bugfix release that addresses build and distribution specific issues.
   See the <a href="/4.0/htmldocs/upgrade">upgrade chapter</a>
   of the manual for instructions how to upgrade existing 3.x or 2.x deployments.</p>
-  <p>Early adopters are encouraged to upgrade to 4.0.0. We look forward to your feedback!</p>
+  <p>Early adopters are encouraged to upgrade to 4.0.1. We look forward to your feedback!</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/4.0/ReleaseNotes4.0.1.html">Release Notes</a>.</p>
 
@@ -145,17 +145,6 @@
   All users of Netatalk 2.4 are encouraged to upgrade their systems to 2.4.10.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/2.4/ReleaseNotes2.4.10.html">Release Notes</a>.</p>
-
-<hr />
-  <small>24th of September 2024</small>
-  <h2>Netatalk 3.2.10 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 3.2 release series.
-  This release contains a handful of minor bug fixes and build system improvements.
-  All users of Netatalk 3.2 are encouraged to upgrade their systems to 3.2.10.</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/3.2/ReleaseNotes3.2.10.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
