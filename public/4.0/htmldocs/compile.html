@@ -24,8 +24,15 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 4.0.0</div>
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Compile Netatalk from Source</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="timelord.8.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">Next</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="compile"></a>Appendix A. Compile Netatalk from Source</h1></div><div><p class="pubdate">2024-09-29</p></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="compile.html#compile-overview">Overview</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.10.4"></a></span></dt><dt><span class="sect1"><a href="compile.html#compile-os">Operating Systems</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.10.6"></a></span></dt><dd><dl><dt><span class="sect2"><a href="compile.html#build-alpine">Alpine Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-archlinux">Arch Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-debian">Debian Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-fedora">Fedora Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-opensuse">openSUSE Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-ubuntu">Ubuntu Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-macos">macOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-dflybsd">DragonflyBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-freebsd">FreeBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-netbsd">NetBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-openbsd">OpenBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-omnios">OmniOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-solaris">Solaris</a></span></dt><dt><span class="sect2"><a href="compile.html#id-1.10.6.14"></a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-overview"></a>Overview</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><p>This appendix describes how to compile Netatalk from source for specific operating systems.</p><p>Please note that the steps below are automatically generated, and may not be optimized for your system.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-os"></a>Operating Systems</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-alpine"></a>Alpine Linux</h3></div></div></div><p>Install dependencies</p><p>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.0.1</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Compile Netatalk from Source</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="timelord.8.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">Next</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="compile"></a>Appendix A. Compile Netatalk from Source</h1></div><div><p class="pubdate">2024-10-06</p></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="compile.html#compile-overview">Overview</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.10.4"></a></span></dt><dt><span class="sect1"><a href="compile.html#compile-os">Operating Systems</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.10.6"></a></span></dt><dd><dl><dt><span class="sect2"><a href="compile.html#build-alpine">Alpine Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-archlinux">Arch Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-debian">Debian Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-fedora">Fedora Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-opensuse">openSUSE Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-ubuntu">Ubuntu Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-macos">macOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-dflybsd">DragonflyBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-freebsd">FreeBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-netbsd">NetBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-openbsd">OpenBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-omnios">OmniOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-solaris">Solaris</a></span></dt><dt><span class="sect2"><a href="compile.html#id-1.10.6.14"></a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-overview"></a>Overview</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><p>
+  This appendix describes how to compile Netatalk from source for specific operating systems.
+  Before starting, please read through the Installation chapter first.
+  You need to have a copy of Netatalk's source code before proceeding.
+  </p><p>
+  Please note that these guides are automatically generated, and may not be optimized for your system.
+  Also, the steps for launching Netatalk are incomplete for some OSes, because of technical constraints.
+  </p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-os"></a>Operating Systems</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-alpine"></a>Alpine Linux</h3></div></div></div><p>Install dependencies</p><p>
 				</p><pre class="screen">apk add \
   acl-dev \
   avahi-compat-libdns_sd \
@@ -66,6 +73,7 @@
 </pre><p>
 			</p><p>Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dbuildtype=release \
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-tests=true
@@ -73,10 +81,10 @@
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Run tests</p><p>
-				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
-			</p><p>Start netatalk</p><p>
+			</p><p>Check netatalk capabilities</p><p>
 				</p><pre class="screen">/usr/local/sbin/netatalk -V
 /usr/local/sbin/afpd -V
 </pre><p>
@@ -102,6 +110,7 @@
 </pre><p>
 			</p><p>Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dbuildtype=release \
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-docbook-path=/usr/share/xml/docbook/xsl-stylesheets-1.79.2 \
@@ -111,10 +120,10 @@
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Run tests</p><p>
-				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
-			</p><p>Start netatalk</p><p>
+			</p><p>Check netatalk capabilities</p><p>
 				</p><pre class="screen">/usr/local/sbin/netatalk -V
 /usr/local/sbin/afpd -V
 </pre><p>
@@ -158,6 +167,7 @@ xsltproc
 </pre><p>
 			</p><p>Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dbuildtype=release \
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-hooks=false \
@@ -168,10 +178,10 @@ xsltproc
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Run tests</p><p>
-				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
-			</p><p>Start netatalk</p><p>
+			</p><p>Check netatalk capabilities</p><p>
 				</p><pre class="screen">/usr/local/sbin/netatalk -V
 /usr/local/sbin/afpd -V
 </pre><p>
@@ -210,6 +220,7 @@ xsltproc
 </pre><p>
 			</p><p>Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dbuildtype=release \
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-hooks=false \
@@ -218,10 +229,10 @@ xsltproc
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Run tests</p><p>
-				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">sudo meson install -C build</pre><p>
-			</p><p>Start netatalk</p><p>
+			</p><p>Check netatalk capabilities</p><p>
 				</p><pre class="screen">/usr/local/sbin/netatalk -V
 /usr/local/sbin/afpd -V
 </pre><p>
@@ -261,6 +272,7 @@ xsltproc
 </pre><p>
 			</p><p>Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dbuildtype=release \
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-docbook-path=/usr/share/xml/docbook/stylesheet/nwalsh/1.79.2 \
@@ -270,10 +282,10 @@ xsltproc
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Run tests</p><p>
-				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
-			</p><p>Start netatalk</p><p>
+			</p><p>Check netatalk capabilities</p><p>
 				</p><pre class="screen">/usr/local/sbin/netatalk -V
 /usr/local/sbin/afpd -V
 </pre><p>
@@ -317,6 +329,7 @@ xsltproc
 </pre><p>
 			</p><p>Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dbuildtype=release \
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-hooks=false \
@@ -326,13 +339,15 @@ xsltproc
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Run distribution tests</p><p>
-				</p><pre class="screen">cd build &amp;&amp; meson dist</pre><p>
+				</p><pre class="screen">cd build &amp;&amp; meson dist &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">sudo meson install -C build</pre><p>
-			</p><p>Start netatalk</p><p>
+			</p><p>Check netatalk capabilities</p><p>
 				</p><pre class="screen">/usr/local/sbin/netatalk -V
 /usr/local/sbin/afpd -V
-sudo systemctl start netatalk
+</pre><p>
+			</p><p>Start netatalk</p><p>
+				</p><pre class="screen">sudo systemctl start netatalk
 sleep 1
 asip-status localhost
 </pre><p>
@@ -342,23 +357,26 @@ asip-status localhost
 				</p><pre class="screen">sudo ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-macos"></a>macOS</h3></div></div></div><p>Install dependencies</p><p>
 				</p><pre class="screen">brew install berkeley-db cmark-gfm docbook-xsl libxslt meson mysql talloc
-wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
+curl https://www.unicode.org/Public/UNIDATA/UnicodeData.txt --output UnicodeData.txt
 </pre><p>
 			</p><p>Configure</p><p>
 				</p><pre class="screen">meson setup build \
+  -Dbuildtype=release \
   -Dwith-appletalk=true \
   -Dwith-tests=true
 </pre><p>
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
 			</p><p>Run tests</p><p>
-				</p><pre class="screen">cd build &amp;&amp; meson test</pre><p>
+				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">sudo meson install -C build</pre><p>
-			</p><p>Start netatalk</p><p>
+			</p><p>Check netatalk capabilities</p><p>
 				</p><pre class="screen">/opt/homebrew/sbin/netatalk -V
 /opt/homebrew/sbin/afpd -V
-sudo netatalkd start
+</pre><p>
+			</p><p>Start netatalk</p><p>
+				</p><pre class="screen">sudo netatalkd start
 sleep 1
 asip-status localhost
 </pre><p>
@@ -385,13 +403,13 @@ asip-status localhost
   py39-sqlite3 \
   py39-tkinter \
   talloc \
-  tracker3 \
-  wget
+  tracker3
 </pre><p>
 			</p><p>Configure and build</p><p>
 				</p><pre class="screen">set -e
-wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
+curl https://www.unicode.org/Public/UNIDATA/UnicodeData.txt --output UnicodeData.txt
 meson setup build \
+  -Dbuildtype=release \
   -Dwith-appletalk=true
 meson compile -C build
 meson install -C build
@@ -416,13 +434,13 @@ ninja -C build uninstall
   perl5 \
   pkgconf \
   talloc \
-  tracker3 \
-  wget
+  tracker3
 </pre><p>
 			</p><p>Configure and build</p><p>
 				</p><pre class="screen">set -e
-wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
+curl https://www.unicode.org/Public/UNIDATA/UnicodeData.txt --output UnicodeData.txt
 meson setup build \
+  -Dbuildtype=release \
   -Dpkg_config_path=/usr/local/libdata/pkgconfig \
   -Dwith-appletalk=true
 meson compile -C build
@@ -460,12 +478,14 @@ ninja -C build uninstall
 			</p><p>Configure and build</p><p>
 				</p><pre class="screen">set -e
 meson setup build \
+  -Dbuildtype=release \
   -Dpkg_config_path=/usr/pkg/lib/pkgconfig \
   -Dwith-appletalk=true \
   -Dwith-dtrace=false \
   -Dwith-tests=true
 meson compile -C build
-cd build &amp;&amp; meson test
+cd build
+meson test
 cd ..
 meson install -C build
 /usr/local/sbin/netatalk -V
@@ -494,13 +514,13 @@ ninja -C build uninstall
   openpam \
   p5-Net-DBus \
   pkgconf \
-  tracker3 \
-  wget
+  tracker3
 </pre><p>
 			</p><p>Configure and build</p><p>
 				</p><pre class="screen">set -e
-wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
+curl https://www.unicode.org/Public/UNIDATA/UnicodeData.txt --output UnicodeData.txt
 meson setup build \
+  -Dbuildtype=release \
   -Dpkg_config_path=/usr/local/lib/pkgconfig \
   -Dwith-appletalk=true
 meson compile -C build
@@ -535,8 +555,9 @@ pkgin -y install \
 			</p><p>Configure and build</p><p>
 				</p><pre class="screen">set -e
 export PATH=/opt/local/sbin:/opt/local/bin:/usr/gnu/bin:/usr/bin:/usr/sbin:/sbin:$PATH
-wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
+curl https://www.unicode.org/Public/UNIDATA/UnicodeData.txt --output UnicodeData.txt
 meson setup build \
+  -Dbuildtype=release \
   -Dpkg_config_path=/opt/local/lib/pkgconfig \
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
@@ -561,21 +582,22 @@ ninja -C build uninstall
   libgcrypt \
   ninja \
   pkg-config \
-  python/pip \
-  wget
+  python/pip
 pip install meson
 </pre><p>
 			</p><p>Configure and build</p><p>
 				</p><pre class="screen">set -e
-wget https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
+curl https://www.unicode.org/Public/UNIDATA/UnicodeData.txt --output UnicodeData.txt
 meson setup build \
+  -Dbuildtype=release \
   -Dpkg_config_path=/usr/lib/amd64/pkgconfig \
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-docbook-path=/usr/share/sgml/docbook/xsl-stylesheets \
   -Dwith-tests=true
 meson compile -C build
-cd build &amp;&amp; meson test
+cd build
+meson test
 cd ..
 meson install -C build
 /usr/local/sbin/netatalk -V
