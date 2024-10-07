@@ -16,7 +16,7 @@
 <li><a href="https://github.com/Netatalk/netatalk-webmin">Webmin Module</a>, GUI for administration of Netatalk servers</li>
 </ul>
 
-<h3>3rd Party Projects</h3>
+<h3>3rd Party Projects, a.k.a. Friends of Netatalk</h3>
 <p>Other free and open source projects for old-school Mac and Apple II networking that make great Netatalk companions.</p>
 <table summary="3rd party projects">
   <tr>
@@ -53,7 +53,11 @@
   </tr>
   <tr>
   <td><a href="https://github.com/mabam/CAP">Columbia AppleTalk Package</a></td>
-  <td>Historical AppleTalk network stack for *NIX-like systems</td>
+  <td>AppleTalk network stack and AFP implementation for *NIX-like systems which directly inspired Netatalk</td>
+  </tr>
+  <tr>
+  <td><a href="https://github.com/saybur/kea-mboot">kea-mboot</a></td>
+  <td>Macintosh NetBoot Kea DHCP server hooks (depends on Netatalk)</td>
   </tr>
   <tr>
   <td><a href="https://github.com/Godzil/lpstyl">lpstyl</a></td>
