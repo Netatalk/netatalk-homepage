@@ -80,20 +80,24 @@
   <td>Yes</td>
   </tr>
   <tr>
+  <td>Macintosh NetBoot</td>
+  <td>Yes: NetBoot 1.0 (See: <a href="https://github.com/saybur/kea-mboot">kea-mboot</a>)</td>
+  </tr>
+  <tr>
+  <td>Apple II NetBoot</td>
+  <td>Yes: //e and II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span></td>
+  </tr>
+  <tr>
+  <td>Built-in AppleTalk Router</td>
+  <td>Yes</td>
+  </tr>
+  <tr>
   <td>AppleTalk Printing</td>
   <td>Yes: to modern printers via CUPS, and LocalTalk printers via PAP</td>
   </tr>
   <tr>
   <td>AppleTalk Time Server</td>
   <td>Yes: <i>Timelord</i> compatible</td>
-  </tr>
-  <tr>
-  <td>Apple II Netbooting</td>
-  <td>Yes: //e and II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span></td>
-  </tr>
-  <tr>
-  <td>Built-in AppleTalk Router</td>
-  <td>Yes</td>
   </tr>
   <tr>
   <td>Built-in MacIP Gateway</td>
