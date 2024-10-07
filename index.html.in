@@ -68,12 +68,12 @@
   <td>Yes: <i>Zeroconf</i> on macOS, <i>AppleTalk</i> on Classic Mac OS</td>
   </tr>
   <tr>
-  <td><i>Time Machine</i> Backups</td>
-  <td>Yes</td>
+  <td>Remote Backups</td>
+  <td>Yes, <i><a href="https://en.wikipedia.org/wiki/Time_Machine_(macOS)">Time Machine</a></i> compatible</td>
   </tr>
   <tr>
   <td>Indexed Search</td>
-  <td>Yes: <i>Spotlight</i> on macOS, <i>Catalog Search</i> on Classic Mac OS</td>
+  <td>Yes: <i><a href="https://en.wikipedia.org/wiki/Spotlight_(Apple)">Spotlight</a></i> on macOS, <i>CatalogSearch</i> on Classic Mac OS</td>
   </tr>
   <tr>
   <td>Samba Interoperability</td>
@@ -81,27 +81,31 @@
   </tr>
   <tr>
   <td>Macintosh NetBoot</td>
-  <td>Yes: NetBoot 1.0 (See: <a href="https://github.com/saybur/kea-mboot">kea-mboot</a>)</td>
+  <td>Yes: NetBoot 1.0 (Ex: <a href="https://github.com/saybur/kea-mboot">kea-mboot</a>)</td>
   </tr>
   <tr>
   <td>Apple II NetBoot</td>
-  <td>Yes: //e and II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span></td>
+  <td>Yes: //e and II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span> (via <tt>a2boot</tt>)</td>
   </tr>
   <tr>
-  <td>Built-in AppleTalk Router</td>
-  <td>Yes</td>
+  <td>AppleTalk Printing to modern printers</td>
+  <td>Yes (via <tt>papd</tt>)</td>
   </tr>
   <tr>
-  <td>AppleTalk Printing</td>
-  <td>Yes: to modern printers via CUPS, and LocalTalk printers via PAP</td>
+  <td>Printing to LocalTalk printers</td>
+  <td>Yes (via <tt>pap</tt>)</td>
   </tr>
   <tr>
   <td>AppleTalk Time Server</td>
-  <td>Yes: <i>Timelord</i> compatible</td>
+  <td>Yes: <i>Timelord</i> compatible (via <tt>timelord</tt>)</td>
+  </tr>
+  <tr>
+  <td>Built-in AppleTalk Router</td>
+  <td>Yes (via <tt>atalkd</tt>)</td>
   </tr>
   <tr>
   <td>Built-in MacIP Gateway</td>
-  <td>Yes</td>
+  <td>Yes (via <tt>macipgw</tt>)</td>
   </tr>
   <tr>
   <td>Administrative GUI</td>
