@@ -69,15 +69,11 @@
   </tr>
   <tr>
   <td>Remote Backups</td>
-  <td>Yes, <i><a href="https://en.wikipedia.org/wiki/Time_Machine_(macOS)">Time Machine</a></i> compatible</td>
+  <td>Yes: <i><a href="https://en.wikipedia.org/wiki/Time_Machine_(macOS)">Time Machine</a></i> compatible</td>
   </tr>
   <tr>
   <td>Indexed Search</td>
   <td>Yes: <i><a href="https://en.wikipedia.org/wiki/Spotlight_(Apple)">Spotlight</a></i> on macOS, <i>CatalogSearch</i> on Classic Mac OS</td>
-  </tr>
-  <tr>
-  <td>Samba Interoperability</td>
-  <td>Yes</td>
   </tr>
   <tr>
   <td>Macintosh NetBoot</td>
