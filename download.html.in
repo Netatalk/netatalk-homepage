@@ -25,7 +25,9 @@ Netatalk Files on SourceForge</a>.
 
 <h3>AFP Test-Suite</h3>
 
-<p>Find stable afptest release tarballs in the
+<p>As of Netatalk 4.0.2, the afptest test suite is part of the Netatalk package.</p>
+
+<p>Find historical afptest release tarballs in the
 <a href="https://sourceforge.net/projects/netatalk/files/Testsuite/">
 SourceForge Files</a> section.</p>
 
