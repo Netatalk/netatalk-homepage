@@ -32,7 +32,7 @@
   in the Netatalk manual is a good place to start.</p>
 
   <h2>Features</h2>
-  <p>Below is an overview of Netatalk features.</p>
+  <p>Below is an overview of the capabilities and various facilities that Netatalk provides.</p>
 
   <table summary="Netatalk feature comparison">
   <tr>
@@ -40,7 +40,7 @@
   <th>Details</th>
   </tr>
   <tr>
-  <td>Supported Host OS</td>
+  <td>Supported Host OSes</td>
   <td>Linux, FreeBSD, NetBSD, OpenBSD, macOS, OmniOS, OpenIndiana, Solaris 11</td>
   </tr>
   <tr>
