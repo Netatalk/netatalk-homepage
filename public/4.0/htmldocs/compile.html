@@ -24,8 +24,8 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 4.0.1</div>
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Compile Netatalk from Source</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="timelord.8.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">Next</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="compile"></a>Appendix A. Compile Netatalk from Source</h1></div><div><p class="pubdate">2024-10-06</p></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="compile.html#compile-overview">Overview</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.10.4"></a></span></dt><dt><span class="sect1"><a href="compile.html#compile-os">Operating Systems</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.10.6"></a></span></dt><dd><dl><dt><span class="sect2"><a href="compile.html#build-alpine">Alpine Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-archlinux">Arch Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-debian">Debian Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-fedora">Fedora Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-opensuse">openSUSE Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-ubuntu">Ubuntu Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-macos">macOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-dflybsd">DragonflyBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-freebsd">FreeBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-netbsd">NetBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-openbsd">OpenBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-omnios">OmniOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-solaris">Solaris</a></span></dt><dt><span class="sect2"><a href="compile.html#id-1.10.6.14"></a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-overview"></a>Overview</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><p>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.0.2</div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Compile Netatalk from Source</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="timelord.8.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">Next</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="compile"></a>Appendix A. Compile Netatalk from Source</h1></div><div><p class="pubdate">2024-10-18</p></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="compile.html#compile-overview">Overview</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.10.4"></a></span></dt><dt><span class="sect1"><a href="compile.html#compile-os">Operating Systems</a></span></dt><dt><span class="sect1"><a href="compile.html#id-1.10.6"></a></span></dt><dd><dl><dt><span class="sect2"><a href="compile.html#build-alpine">Alpine Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-archlinux">Arch Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-debian">Debian Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-fedora">Fedora Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-opensuse">openSUSE Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-ubuntu">Ubuntu Linux</a></span></dt><dt><span class="sect2"><a href="compile.html#build-macos">macOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-dflybsd">DragonflyBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-freebsd">FreeBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-netbsd">NetBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-openbsd">OpenBSD</a></span></dt><dt><span class="sect2"><a href="compile.html#build-omnios">OmniOS</a></span></dt><dt><span class="sect2"><a href="compile.html#build-solaris">Solaris</a></span></dt><dt><span class="sect2"><a href="compile.html#id-1.10.6.14"></a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="compile-overview"></a>Overview</h2></div></div></div></div><div class="sect1"><div class="titlepage"></div><p>
   This appendix describes how to compile Netatalk from source for specific operating systems.
   Before starting, please read through the Installation chapter first.
   You need to have a copy of Netatalk's source code before proceeding.
@@ -76,11 +76,12 @@
   -Dbuildtype=release \
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
-  -Dwith-tests=true
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 </pre><p>
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
-			</p><p>Run tests</p><p>
+			</p><p>Run integration tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
@@ -115,11 +116,12 @@
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-docbook-path=/usr/share/xml/docbook/xsl-stylesheets-1.79.2 \
   -Dwith-init-hooks=false \
-  -Dwith-tests=true
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 </pre><p>
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
-			</p><p>Run tests</p><p>
+			</p><p>Run integration tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
@@ -131,39 +133,39 @@
 				</p><pre class="screen">ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-debian"></a>Debian Linux</h3></div></div></div><p>Install dependencies</p><p>
 				</p><pre class="screen">apt-get update
-apt-get install --assume-yes --no-install-recommends bison \
-cmark-gfm \
-cracklib-runtime \
-docbook-xsl \
-file \
-flex \
-libacl1-dev \
-libavahi-client-dev \
-libcrack2-dev \
-libcups2-dev \
-libdb-dev \
-libdbus-1-dev \
-libevent-dev \
-libgcrypt-dev \
-libglib2.0-dev \
-libkrb5-dev \
-libldap2-dev \
-libmariadb-dev \
-libpam0g-dev \
-libtalloc-dev \
-libtirpc-dev \
-libtracker-sparql-3.0-dev \
-libwrap0-dev \
-meson \
-ninja-build \
-quota \
-systemtap-sdt-dev \
-tcpd \
-tracker \
-tracker-miner-fs \
-unicode-data \
-xsltproc
-
+apt-get install --assume-yes --no-install-recommends \
+  bison \
+  cmark-gfm \
+  cracklib-runtime \
+  docbook-xsl \
+  file \
+  flex \
+  libacl1-dev \
+  libavahi-client-dev \
+  libcrack2-dev \
+  libcups2-dev \
+  libdb-dev \
+  libdbus-1-dev \
+  libevent-dev \
+  libgcrypt-dev \
+  libglib2.0-dev \
+  libkrb5-dev \
+  libldap2-dev \
+  libmariadb-dev \
+  libpam0g-dev \
+  libtalloc-dev \
+  libtirpc-dev \
+  libtracker-sparql-3.0-dev \
+  libwrap0-dev \
+  meson \
+  ninja-build \
+  quota \
+  systemtap-sdt-dev \
+  tcpd \
+  tracker \
+  tracker-miner-fs \
+  unicode-data \
+  xsltproc
 </pre><p>
 			</p><p>Configure</p><p>
 				</p><pre class="screen">meson setup build \
@@ -173,11 +175,12 @@ xsltproc
   -Dwith-init-hooks=false \
   -Dwith-init-style=debian-sysv,systemd \
   -Dwith-pkgconfdir-path=/etc/netatalk \
-  -Dwith-tests=true
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 </pre><p>
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
-			</p><p>Run tests</p><p>
+			</p><p>Run integration tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
@@ -224,11 +227,12 @@ xsltproc
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-hooks=false \
-  -Dwith-tests=true
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 </pre><p>
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
-			</p><p>Run tests</p><p>
+			</p><p>Run integration tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">sudo meson install -C build</pre><p>
@@ -277,11 +281,12 @@ xsltproc
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-docbook-path=/usr/share/xml/docbook/stylesheet/nwalsh/1.79.2 \
   -Dwith-init-hooks=false \
-  -Dwith-tests=true
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 </pre><p>
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
-			</p><p>Run tests</p><p>
+			</p><p>Run integration tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">meson install -C build</pre><p>
@@ -293,39 +298,39 @@ xsltproc
 				</p><pre class="screen">ninja -C build uninstall</pre><p>
 			</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="build-ubuntu"></a>Ubuntu Linux</h3></div></div></div><p>Install dependencies</p><p>
 				</p><pre class="screen">sudo apt-get update
-sudo apt-get install --assume-yes --no-install-recommends bison \
-cmark-gfm \
-cracklib-runtime \
-docbook-xsl \
-file \
-flex \
-libacl1-dev \
-libavahi-client-dev \
-libcrack2-dev \
-libcups2-dev \
-libdb-dev \
-libdbus-1-dev \
-libevent-dev \
-libgcrypt-dev \
-libglib2.0-dev \
-libkrb5-dev \
-libldap2-dev \
-libmariadb-dev \
-libpam0g-dev \
-libtalloc-dev \
-libtirpc-dev \
-libtracker-sparql-3.0-dev \
-libwrap0-dev \
-meson \
-ninja-build \
-quota \
-systemtap-sdt-dev \
-tcpd \
-tracker \
-tracker-miner-fs \
-unicode-data \
-xsltproc
-
+sudo apt-get install --assume-yes --no-install-recommends \
+  bison \
+  cmark-gfm \
+  cracklib-runtime \
+  docbook-xsl \
+  file \
+  flex \
+  libacl1-dev \
+  libavahi-client-dev \
+  libcrack2-dev \
+  libcups2-dev \
+  libdb-dev \
+  libdbus-1-dev \
+  libevent-dev \
+  libgcrypt-dev \
+  libglib2.0-dev \
+  libkrb5-dev \
+  libldap2-dev \
+  libmariadb-dev \
+  libpam0g-dev \
+  libtalloc-dev \
+  libtirpc-dev \
+  libtracker-sparql-3.0-dev \
+  libwrap0-dev \
+  meson \
+  ninja-build \
+  quota \
+  systemtap-sdt-dev \
+  tcpd \
+  tracker \
+  tracker-miner-fs \
+  unicode-data \
+  xsltproc
 </pre><p>
 			</p><p>Configure</p><p>
 				</p><pre class="screen">meson setup build \
@@ -334,7 +339,8 @@ xsltproc
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-init-hooks=false \
   -Dwith-manual-l10n=ja \
-  -Dwith-tests=true
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 </pre><p>
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
@@ -363,11 +369,12 @@ curl https://www.unicode.org/Public/UNIDATA/UnicodeData.txt --output UnicodeData
 				</p><pre class="screen">meson setup build \
   -Dbuildtype=release \
   -Dwith-appletalk=true \
-  -Dwith-tests=true
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 </pre><p>
 			</p><p>Build</p><p>
 				</p><pre class="screen">meson compile -C build</pre><p>
-			</p><p>Run tests</p><p>
+			</p><p>Run integration tests</p><p>
 				</p><pre class="screen">cd build &amp;&amp; meson test &amp;&amp; cd ..</pre><p>
 			</p><p>Install</p><p>
 				</p><pre class="screen">sudo meson install -C build</pre><p>
@@ -410,7 +417,9 @@ asip-status localhost
 curl https://www.unicode.org/Public/UNIDATA/UnicodeData.txt --output UnicodeData.txt
 meson setup build \
   -Dbuildtype=release \
-  -Dwith-appletalk=true
+  -Dwith-appletalk=true \
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 meson compile -C build
 meson install -C build
 /usr/local/sbin/netatalk -V
@@ -442,8 +451,13 @@ curl https://www.unicode.org/Public/UNIDATA/UnicodeData.txt --output UnicodeData
 meson setup build \
   -Dbuildtype=release \
   -Dpkg_config_path=/usr/local/libdata/pkgconfig \
-  -Dwith-appletalk=true
+  -Dwith-appletalk=true \
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 meson compile -C build
+cd build
+meson test
+cd ..
 meson install -C build
 /usr/local/sbin/netatalk -V
 /usr/local/sbin/afpd -V
@@ -463,6 +477,7 @@ ninja -C build uninstall
   flex \
   gcc13 \
   gnome-tracker \
+  heimdal \
   libcups \
   libevent \
   libgcrypt \
@@ -482,7 +497,9 @@ meson setup build \
   -Dpkg_config_path=/usr/pkg/lib/pkgconfig \
   -Dwith-appletalk=true \
   -Dwith-dtrace=false \
-  -Dwith-tests=true
+  -Dwith-krbV-uam=false \
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 meson compile -C build
 cd build
 meson test
@@ -503,14 +520,14 @@ ninja -C build uninstall
   db-4.6.21p7v0 \
   dbus \
   docbook-xsl \
-  gcc-11.2.0p11 \
+  gcc-11.2.0p14 \
   libevent \
   libgcrypt \
   libtalloc \
   libxslt \
   mariadb-client \
   meson \
-  openldap-client-2.6.7v0 \
+  openldap-client-2.6.8v0 \
   openpam \
   p5-Net-DBus \
   pkgconf \
@@ -522,7 +539,9 @@ curl https://www.unicode.org/Public/UNIDATA/UnicodeData.txt --output UnicodeData
 meson setup build \
   -Dbuildtype=release \
   -Dpkg_config_path=/usr/local/lib/pkgconfig \
-  -Dwith-appletalk=true
+  -Dwith-appletalk=true \
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 meson compile -C build
 meson install -C build
 /usr/local/sbin/netatalk -V
@@ -561,8 +580,13 @@ meson setup build \
   -Dpkg_config_path=/opt/local/lib/pkgconfig \
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
-  -Dwith-ldap-path=/opt/local
+  -Dwith-ldap-path=/opt/local \
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 meson compile -C build
+cd build
+meson test
+cd ..
 meson install -C build
 /usr/local/sbin/netatalk -V
 /usr/local/sbin/afpd -V
@@ -594,7 +618,8 @@ meson setup build \
   -Dwith-appletalk=true \
   -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d \
   -Dwith-docbook-path=/usr/share/sgml/docbook/xsl-stylesheets \
-  -Dwith-tests=true
+  -Dwith-tests=true \
+  -Dwith-testsuite=true
 meson compile -C build
 cd build
 meson test

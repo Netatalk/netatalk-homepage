@@ -24,7 +24,7 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 4.0.1</div>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.0.2</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">afp.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="aecho.1.html">戻る</a> </td><th width="60%" align="center">第6章 マニュアルページ</th><td width="20%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">次へ</a></td></tr></table><hr /></div><div class="refentry"><a id="afp.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>名前</h2><p>afp.conf — Netatalkの設定ファイル</p></div><div class="refsect1"><a id="id-1.9.6.3"></a><h2>概要</h2><p><code class="filename">afp.conf</code>は<span class="bold"><strong>Netatalk</strong></span> AFPファイルサーバの設定ファイルである。</p><p>全てのAFP固有の設定とAFPボリュームの定義がこのファイルを通して行われる。</p></div><div class="refsect1"><a id="FILEFORMATSECT"></a><h2>ファイルの書式</h2><p>ファイルはセクションとパラメータから構成される。セクションはブラケット[各括弧]で囲まれたセクション名に始まり、次のセクションが始まるまで続く。セクションには次のような書式のパラメータが含まれている:</p><pre class="programlisting">
     <em class="replaceable"><code>name</code></em> = <em class="replaceable"><code>value </code></em>
     </pre><p>このファイルは行を基本とする。それぞれの行は改行文字で終端し、コメント、セクション名、パラメータのうちどれかを表す。</p><p>セクション名とパラメータ名は大文字と小文字の区別がある。</p><p>パラメータに最初に現れる等号だけは重要な意味を持つ。最初の等号の前後にある空白は破棄される。セクション名とパラメータ名の前、後、途中にある空白は意味を持たない。パラメータ値の前後の空白は破棄される。パラメータ値の途中の空白はそのま維持される。</p><p>セミコロン(<span class="quote">「<span class="quote">;</span>」</span>)やハッシュ文字(<span class="quote">「<span class="quote">#</span>」</span>)で始まるいかなる行も、空白だけの行と同様に無視される。</p><p><span class="quote">「<span class="quote"> <code class="literal">\</code>
@@ -86,9 +86,10 @@
           <span class="emphasis"><em>no</em></span>) <span class="type">(G)</span></span></dt><dd><p>古いMac OS
             Xクライアント(10.3.3から10.4)にSSHでトンネルしたAFP接続を魔法のように自動的に確立させる。このオプションを設定した場合、クライアントのFPGetSrvrInfo要求へのサーバの返答は追加エントリを含む。これはクライアントの設定と<span class="citerefentry"><span class="refentrytitle">sshd</span>(8)</span>が正しく設定されて動作するサーバ上で実行中であるかに依存する。</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">注記</h3><p>SSHを介した全体を暗号化するAFP接続はサーバの負荷を著しく増加させるので、このオプションの設定は推奨しない。一方、バージョン10.3.4より前のMacOS
               Xにおけるこの機能のAppleクライアント側の実装はセキュリティ欠陥があった。</p></div></dd><dt><span class="term">afp interfaces = <em class="replaceable"><code>name [name ...]</code></em>
-          <span class="type">(G)</span></span></dt><dd><p>サーバがリッスンするネットワークインターフェースを指定する。デフォルトではシステムの最初のIPアドレスを宣伝するが、入ってくる如何なる要求もリッスンする。</p></dd><dt><span class="term">afp listen = <em class="replaceable"><code>ip address[:port] [ip address[:port]
+          <span class="type">(G)</span></span></dt><dd><p>サーバがリッスンするネットワークインターフェースを指定する。デフォルトではシステムの最初のIPアドレスを宣伝するが、入ってくる如何なる要求もリッスンする。</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">注記</h3><p><code class="option">afp listen</code> オプションと同時に使用しないでください。</p></div></dd><dt><span class="term">afp listen = <em class="replaceable"><code>ip address[:port] [ip address[:port]
           ...]</code></em> <span class="type">(G)</span></span></dt><dd><p>サーバが宣伝<span class="bold"><strong>および</strong></span>リッスンするIPアドレスを指定する。デフォルトではシステムの最初のIPアドレスを宣伝するが、入ってくる如何なる要求もリッスンする。ネットワークアドレスはIPv4のドット付き10進数フォーマットやIPv6の16進数フォーマットのどちらでも指定してよい。</p><p>IPv6 address +
-            portの組み合わせは角かっこを使ったフォーマット[IPv6]:portのURLを使わなければならない。</p></dd><dt><span class="term">afp port = <em class="replaceable"><code>port number</code></em>
+            portの組み合わせは角かっこを使ったフォーマット[IPv6]:portのURLを使わなければならない。</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">注記</h3><p><code class="option">afp interfaces</code>
+              オプションと同時に使用しないでください。</p></div></dd><dt><span class="term">afp port = <em class="replaceable"><code>port number</code></em>
           <span class="type">(G)</span></span></dt><dd><p>異なるTCPポートをAFPに使わせる。デフォルトは548である。<code class="option">afp
             listen</code>オプションで何も指定しなかった場合も適用されたデフォルトポートを設定する。</p></dd><dt><span class="term">appletalk = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
           <span class="emphasis"><em>no</em></span>) <span class="type">(G)</span></span></dt><dd><p>AFP-over-Appletalk のサポートを有効にする。このオプションを使用するには、オペレーティング システムが
@@ -150,7 +151,10 @@
           norename</code></em> <span class="type">(G)/(V)</span></span></dt><dd><p>サーバが無視すべきファイルとディレクトリの属性を設定する。<code class="option">all</code>はオプション全部という意味である。</p><p>OS Xにおいて、Finderがファイル/ディレクトリのロックを設定する場合、またはターミナルでBSD
             uchgフラグを設定する場合、3つの属性が全て使われる。従って、Finderロック/BSD
             uchgフラグを無視する目的で<span class="emphasis"><em>ignored attributes =
-            all</em></span>の設定を追加してください。</p></dd><dt><span class="term">login message = <em class="replaceable"><code>message</code></em>
+            all</em></span>の設定を追加してください。</p></dd><dt><span class="term">legacy icon = <em class="replaceable"><code>icon</code></em>
+          <span class="type">(G)</span></span></dt><dd><p>Classic Mac OS の Finder に表示される共有ボリューム アイコンを設定する。
+            デフォルトでは、使用されているトランスポート層 (TCP/IP または AppleTalk) を示すアイコンが表示される。
+            有効なアイコン名の例は以下になる。</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="option">daemon</code></p></li><li class="listitem"><p><code class="option">globe</code></p></li><li class="listitem"><p><code class="option">sdcard</code></p></li></ul></div></dd><dt><span class="term">login message = <em class="replaceable"><code>message</code></em>
           <span class="type">(G)/(V)</span></span></dt><dd><p>クライアントがサーバにログオンしたときに表示されるメッセージを設定する。メッセージは<code class="option">unix
             charset</code>で書く。拡張文字が使える。</p></dd><dt><span class="term">mimic model = <em class="replaceable"><code>model</code></em>
           <span class="type">(G)</span></span></dt><dd><p>クライアント上に表示されるアイコンモデルを指定する。デフォルトではクライアント Mac
@@ -161,16 +165,18 @@
           <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト: <span class="emphasis"><em>yes</em></span>)
           <span class="type">(G)</span></span></dt><dd><p>Solarisの共有予約を利用する。Solaris
             CIFSサーバもこれを利用するので、ロックを統一したマルチプロトコルサーバを形成する。</p></dd><dt><span class="term">sparql results limit = <em class="replaceable"><code>NUMBER</code></em>
-          (デフォルト: <span class="emphasis"><em>無制限</em></span>) <span class="type">(G)</span></span></dt><dd><p>SPARQLクエリを介したTrackerからのクエリ結果の数に制限を課す。</p></dd><dt><span class="term">spotlight = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
+          (デフォルト: <span class="emphasis"><em>無制限</em></span>) <span class="type">(G)</span></span></dt><dd><p>SPARQLクエリを介した Tracker もしくは LocalSearch
+            からのクエリ結果の数に制限を課す。</p></dd><dt><span class="term">spotlight = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
           <span class="emphasis"><em>no</em></span>) <span class="type">(G)/(V)</span></span></dt><dd><p>Spotlight検索を有効にするかどうか。注記:
             一度グローバルオプションで有効にすると、有効でないボリュームは全く検索できない。<span class="emphasis"><em>dbus
             daemon</em></span>オプションも見よ。</p></dd><dt><span class="term">spotlight attributes = <em class="replaceable"><code>カンマで分割した文字列</code></em>
           (デフォルト: <span class="emphasis"><em>空</em></span>) <span class="type">(G)</span></span></dt><dd><p>Spotlight検索で使うことを許された属性のリスト。デフォルトでは全ての属性を検索できるが、文字列を渡せば属性をその文字列の要素に制限できる。
             例: </p><pre class="programlisting">spotlight attributes = *,kMDItemTextContent</pre></dd><dt><span class="term">spotlight expr = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
           <span class="emphasis"><em>yes</em></span>) <span class="type">(G)</span></span></dt><dd><p>検索において論理式の使用を認めるかどうか。</p></dd><dt><span class="term">start dbus = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
-          <span class="emphasis"><em>yes</em></span>) <span class="type">(G)</span></span></dt><dd><p>Trackerを使うためにdbusインスタンスを開始するかどうか。</p></dd><dt><span class="term">start tracker = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
-          <span class="emphasis"><em>yes</em></span>) <span class="type">(G)</span></span></dt><dd><p>"<span class="command"><strong>tracker daemon
-            -s</strong></span>"によってTrackerを開始するかどうか。古いTrackerの場合、"<span class="command"><strong>tracker-control
+          <span class="emphasis"><em>yes</em></span>) <span class="type">(G)</span></span></dt><dd><p>Tracker もしくは LocalSearch を使うためにdbusインスタンスを開始するかどうか。</p></dd><dt><span class="term">start tracker = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
+          <span class="emphasis"><em>yes</em></span>) <span class="type">(G)</span></span></dt><dd><p>"<span class="command"><strong>tracker daemon -s</strong></span>"、
+            "<span class="command"><strong>localsearch daemon -s</strong></span>" によって Tracker もしくは
+            LocalSearch を開始するかどうか。古いTrackerの場合、"<span class="command"><strong>tracker-control
             -s</strong></span>"が代わりに使われる。</p></dd><dt><span class="term">veto message = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
           <span class="emphasis"><em>no</em></span>) <span class="type">(G)</span></span></dt><dd><p>禁止ファイルに関するオプションのAFPメッセージを送る。クライアントが禁止名を持つファイルやディレクトリにアクセスを試みたとき、名前とディレクトリを示したAFPメッセージを送る。</p></dd><dt><span class="term">vol dbpath = <em class="replaceable"><code>path</code></em>
           <span class="type">(G)/(V)</span></span></dt><dd><p>データベース情報をpathに格納するように設定する。ボリュームが読み込み専用だったとしても、書き込み可能な場所を設定しなければならない。</p></dd><dt><span class="term">vol dbnest = <em class="replaceable"><code>BOOLEAN</code></em> (デフォルト:
