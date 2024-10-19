@@ -28,8 +28,9 @@
 
   <p>You will likely need to adjust the Netatalk configuration to suit your setup.
   Netatalk has a dizzying amount of options which can be daunting initially.
-  The <a href="stable/htmldocs/configuration">Configuration chapter</a>
-  in the Netatalk manual is a good place to start.</p>
+  The <a href="stable/htmldocs/configuration">Configuration</a> chapter
+  and <a href="https://netatalk.io/stable/htmldocs/afp.conf.5">afp.conf</a> page
+  in the Netatalk manual are good places to start.</p>
 
   <h2>Features</h2>
   <p>Below is an overview of the capabilities and various facilities that Netatalk provides.</p>
