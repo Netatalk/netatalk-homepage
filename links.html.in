@@ -1,7 +1,21 @@
 <div id="content">
 <h1>Netatalk Links</h1>
 
-<h3>3rd Party Projects, a.k.a. Friends of Netatalk</h3>
+<h2>Web Discussion Boards</h2>
+<p>If you want to ask advice or socialize with the community, try one of these friendly discussion boards:</p>
+<ul>
+<li>
+<a href="https://68kmla.org/bb/index.php">68kmla</a>
+</li>
+<li>
+<a href="https://www.emaculation.com/forum/">E-Maculation</a>
+</li>
+<li>
+<a href="https://tinkerdifferent.com/">TinkerDifferent</a>
+</li>
+</ul>
+
+<h2>3rd Party Projects, a.k.a. Friends of Netatalk</h2>
 <p>Other free and open source projects for old-school Mac and Apple II networking that make great Netatalk companions.</p>
 <table summary="3rd party projects">
   <tr>
