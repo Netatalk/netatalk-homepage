@@ -1,20 +1,5 @@
 <div id="content">
 <h1>Netatalk Links</h1>
-<!-- Link Page created by Nathaniel Pendleton of Pendleton Press LLC. Copyleft 2000. -->
-
-<h3>Official Netatalk Pages</h3>
-<ul>
-<li><a href="https://github.com/Netatalk">Netatalk Development Project at GitHub</a></li>
-<li><a href="https://netatalk.io/">Netatalk website (Here!)</a></li>
-<li><a href="https://sourceforge.net/projects/netatalk/">Netatalk's previous home at SourceForce</a></li>
-<li><a href="https://websites.umich.edu/~rsug/netatalk/">UMich RSUG - Netatalk's first home</a></li>
-</ul>
-
-<h3>Sub-Projects</h3>
-<ul>
-<li><a href="https://github.com/Netatalk/afptest">AFP Test-Suite</a>, compliance and performance tests for AFP servers</li>
-<li><a href="https://github.com/Netatalk/netatalk-webmin">Webmin Module</a>, GUI for administration of Netatalk servers</li>
-</ul>
 
 <h3>3rd Party Projects, a.k.a. Friends of Netatalk</h3>
 <p>Other free and open source projects for old-school Mac and Apple II networking that make great Netatalk companions.</p>
