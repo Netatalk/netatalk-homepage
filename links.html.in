@@ -10,7 +10,7 @@
   </tr>
   <tr>
   <td><a href="https://appleii.ivanx.com/a2server/">A2SERVER</a></td>
-  <td>Plug'n'play distribution for Apple II file sharing and netbooting (ships with Netatalk)</td>
+  <td>Plug'n'play distribution for Apple II file sharing and netbooting (bundles Netatalk)</td>
   </tr>
   <tr>
   <td><a href="https://github.com/demonfoo/afp-perl">afp-perl</a></td>
@@ -37,8 +37,12 @@
   <td>SCSI emulator device that can provide Ethernet interface emulation</td>
   </tr>
   <tr>
-  <td><a href="https://github.com/mabam/CAP">Columbia AppleTalk Package</a></td>
+  <td><a href="https://github.com/mabam/CAP">Columbia AppleTalk Package</a> (fork)</td>
   <td>AppleTalk network stack and AFP implementation for *NIX-like systems which directly inspired Netatalk</td>
+  </tr>
+  <tr>
+  <td><a href="https://marchintosh.com/globaltalk.html">GlobalTalk</a></td>
+  <td>AppleTalk networking over the Internet</td>
   </tr>
   <tr>
   <td><a href="https://github.com/saybur/kea-mboot">kea-mboot</a></td>
@@ -62,15 +66,15 @@
   </tr>
   <tr>
   <td><a href="http://web.archive.org/web/20130518225412/http://www.vmeng.com/vinnie/papers/pgpuam.html">PGPuam</a></td>
-  <td>Classic Mac OS UAM on which netatalk's <i>uams_pgp.so</i> was based</td>
+  <td>Classic Mac OS UAM on which netatalk's historical <i>uams_pgp.so</i> authentication module was based</td>
   </tr>
   <tr>
   <td><a href="https://github.com/PiSCSI/piscsi">PiSCSI</a></td>
-  <td>SCSI device emulator hat for Raspberry Pi that can provide Ethernet interface emulation (ships with Netatalk)</td>
+  <td>SCSI device emulator hat for Raspberry Pi that can provide Ethernet interface emulation (bundles Netatalk)</td>
   </tr>
   <tr>
   <td><a href="https://github.com/danmons/retronas">RetroNAS</a></td>
-  <td>NAS software bundle that specializes in retro networking (ships with Netatalk)</td>
+  <td>NAS software bundle that specializes in retro networking (bundles Netatalk)</td>
   </tr>
   <tr>
   <td><a href="https://web.archive.org/web/20010303220117/http://www.cs.mu.oz.au/appletalk/readmes/TMLD.README.html">tardis/Timelord</a></td>
