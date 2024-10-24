@@ -157,8 +157,6 @@
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
 
-  <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
-  General Public License 2.0</a>.</p>
   <p>If you are interested in contributing to the development process, or just
   want to peruse the code, please visit our
   <a href="https://github.com/Netatalk/netatalk">GitHub project page</a>.</p>
