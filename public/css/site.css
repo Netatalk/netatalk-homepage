@@ -124,6 +124,10 @@ div.navbar {
   margin: 0px 0px 0px 2px;
 }
 
+.navbar ol.alpha {
+  list-style-type: upper-latin;
+}
+
 .navbar h2,
 .search h2 {
   font-size: 100%;
