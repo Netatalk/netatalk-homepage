@@ -24,7 +24,7 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 4.0.2</div>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.0.3</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">atalk_aton</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="atalkd.conf.5.html">戻る</a> </td><th width="60%" align="center">第6章 マニュアルページ</th><td width="20%" align="right"> <a accesskey="n" href="cnid_dbd.8.html">次へ</a></td></tr></table><hr /></div><div class="refentry"><a id="atalk_aton.3"></a><div class="titlepage"></div><div class="refnamediv"><h2>名前</h2><p>atalk_aton — AppleTalk アドレス解析<a id="id-1.9.18.2.2.1" class="indexterm"></a></p></div><div class="refsynopsisdiv"><h2>概要</h2><div class="funcsynopsis"><pre class="funcsynopsisinfo">#include &lt;sys/types.h&gt;
 #include &lt;netatalk/at.h&gt;</pre><table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;"><tr><td><code class="funcdef"><strong class="fsfunc">atalk_aton</strong>(</code></td><td><var class="pdparam">cp</var>, </td><td> </td></tr><tr><td> </td><td><var class="pdparam">ata</var><code>)</code>;</td><td> </td></tr></table><div class="paramdef-list"><code>char * <var class="pdparam">cp</var></code>;<br /><code>struct at_addr * <var class="pdparam">ata</var></code>;</div><div class="funcprototype-spacer"> </div></div></div><div class="refsect1"><a id="id-1.9.18.4"></a><h2>説明</h2><p><code class="function">atalk_aton()</code> ルーチンは、AppleTalk アドレスの ASCII
     表現をシステム コールに適した形式に変換します。許容される ASCII 表現には、16 進数と 10 進数の両方が含まれ、3 桁または 2
