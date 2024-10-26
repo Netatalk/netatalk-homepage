@@ -2,6 +2,20 @@
   <h1>News Archive</h1>
 
 <hr />
+  <small>29th of September 2024</small>
+  <h2>Netatalk 4.0.0 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the first release
+  of the Netatalk 4.0 release series.
+  In this release series, we are bringing back the entire AppleTalk networking suite
+  that was removed in Netatalk 3.0.</p>
+  <p>See the <a href="/4.0/htmldocs/upgrade">upgrade chapter</a>
+  of the manual for instructions how to upgrade existing 3.x or 2.x deployments.
+  Early adopters are encouraged to upgrade to the 4.0 release series. We look forward to your feedback!</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/4.0/ReleaseNotes4.0.0.html">Release Notes</a>.</p>
+
+<hr />
   <small>24th of September 2024</small>
   <h2>Netatalk 2.4.10 is available</h2>
 
