@@ -89,7 +89,7 @@
 <p>The <code>macipgw</code> daemon provides a <a href="https://en.wikipedia.org/wiki/MacIP">MacIP</a> gateway that allow old Macs to use the MacIP network stack to access TCP/IP resources from a LocalTalk network.</p>
 <p>Previously, <code>macipgw</code> was a stand-alone daemon that linked against Netatalk&rsquo;s libatalk shared library to access the AppleTalk stack and <code>atalkd</code> network management daemon.</p>
 <p>In order to use the Mac IP gateway, you need to configure a network tunnel and IPv4 packet forwarding.</p>
-<p>On Linux, this can be done with f.e. iptables or nft. On *BSD you can use pf or npf. You may need to set up NAT (Network Address Translation) .</p>
+<p>On Linux, this can be done with f.e. <strong>iptables</strong> or <strong>nft</strong>. On <em>BSD you can use </em><em>pf</em><em> or </em><em>npf</em>*. You may need to set up NAT (Network Address Translation) .</p>
 <p>When launching <code>macipgw</code>, choose a subnet address and mask that doesn&rsquo;t conflict with the rest of your network. For the nameserver, you can use your own or a public DNS server such as Google&rsquo;s (<code>8.8.8.8</code> and <code>8.8.4.4</code>).</p>
 <p>If you want to see debug information, launch it with an appropriate debug flag with <code>-d</code>, example below that enables all debug logging.</p>
 <pre><code>macipgw -d0x111 -n 8.8.8.8 192.168.151.0 255.255.255.0
@@ -120,7 +120,7 @@
         Please <a href="https://github.com/Netatalk/netatalk/wiki/MacIP-Gateway">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-02</p>
+    <p>Last updated 2024-10-31</p>
     <hr />
     </div>
 <div class="footer">
@@ -131,7 +131,8 @@
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
+    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    General Public License 2.0</a>.</p>
 </div>
 </body>
 </html>
-

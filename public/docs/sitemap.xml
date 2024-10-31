@@ -14,7 +14,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/CatalogSearch.html</loc>
-    <lastmod>2024-01-13</lastmod>
+    <lastmod>2024-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -26,7 +26,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Developer-FAQ.html</loc>
-    <lastmod>2024-09-14</lastmod>
+    <lastmod>2024-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -55,26 +55,140 @@
     <priority>1.0</priority>
 </url>
 <url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Alpine-Linux.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Debian-Linux.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Debian.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-Fedora-Linux.html</loc>
-    <lastmod>2024-07-11</lastmod>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-NetBSD.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-OmniOS.html</loc>
+    <lastmod>2024-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-2-on-macOS.html</loc>
-    <lastmod>2024-07-16</lastmod>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-2.2-on-OmniOS.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-2.2-on-macOS.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-Debian-and-Ubuntu.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-Fedora-Linux.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-Fedora.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-FreeBSD.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-OpenBSD.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-OpenIndiana.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-Solaris.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-Ubuntu.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-macOS.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3-on-openSUSE.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3.1-on-OpenIndiana.html</loc>
+    <lastmod>2024-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+</url>
+<url>
+    <loc>https://netatalk.io/docs/Installing-Netatalk-3.1-on-OpenSUSE.html</loc>
+    <lastmod>2024-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-on-Alpine-Linux.html</loc>
-    <lastmod>2024-10-02</lastmod>
+    <lastmod>2024-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Installing-Netatalk-on-Debian-Linux.html</loc>
-    <lastmod>2024-10-02</lastmod>
+    <lastmod>2024-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -146,7 +260,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/MacIP-Gateway.html</loc>
-    <lastmod>2024-09-30</lastmod>
+    <lastmod>2024-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -158,7 +272,7 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Release-Process.html</loc>
-    <lastmod>2024-10-01</lastmod>
+    <lastmod>2024-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
@@ -188,13 +302,13 @@
 </url>
 <url>
     <loc>https://netatalk.io/docs/Webmin-Module.html</loc>
-    <lastmod>2024-09-30</lastmod>
+    <lastmod>2024-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>
 <url>
     <loc>https://netatalk.io/docs/Work-with-Documentation.html</loc>
-    <lastmod>2024-08-11</lastmod>
+    <lastmod>2024-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 </url>

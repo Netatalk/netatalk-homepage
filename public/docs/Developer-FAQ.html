@@ -88,16 +88,14 @@
 <p><strong>Q.</strong> How can I create stand-alone patch files?</p>
 <p><strong>A.</strong>
 This describes the traditional method of creating plain text patch
-files. It can be useful when requesting feedback for your code on the
-mailing lists, or when contributing patches to downstream distros.</p>
-<p><strong>Note:</strong> We do not use this workflow (anymore) for contributing patches to Netatalk.
-Please use the GitHub PR workflow instead.</p>
+files. If you prefer to not use GitHub, you can create a patch file
+and submit it to the <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-devel/">netatalk-devel</a> mailing list.</p>
 <p>Assuming your patches are the last three commits on your current local
 git branch, this is the easiest way to create patches from them:</p>
 <pre><code>$ git format-patch -3
 </code></pre>
 <p>This will create three patch files in your current directory that you
-can then send to the netatalk-devel mailing list.</p>
+can then send to the mailing list.</p>
 <p>Note that if you have a number of patches against a specific branch and
 don&rsquo;t feel like counting them, the following works as well (e.g. against
 the main branch):</p>
@@ -187,7 +185,7 @@ branch?</a>.</p><hr />
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Developer-FAQ">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-02</p>
+    <p>Last updated 2024-10-31</p>
     <hr />
     </div>
 <div class="footer">
@@ -198,7 +196,8 @@ branch?</a>.</p><hr />
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
+    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    General Public License 2.0</a>.</p>
 </div>
 </body>
 </html>
-

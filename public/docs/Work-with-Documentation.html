@@ -97,18 +97,24 @@ Both are generated from <a href="https://docbook.org/">docbook</a> XML sources h
 such as adding, changing or deprecating functionality, please make sure
 the updates to the XML sources for the documentation are included as
 part of the changeset in your PR.</p>
-<p>If the changeset of your PR warrants a bullet point in the changelog,
-please include an update to the NEWS file as part of your changeset as well.</p>
+<p>The localized documentation (manual and man pages) needs to be updated as well.
+Currently, a single localized language is supported: Japanese.
+These days, Google Translate does a good job with technical documentation.
+You can drop snippets of XML with embedded text into the translation service
+and get valid XML back. Just make sure to format the XML afterwards as per the next section.</p>
 <h3>Docbook editor</h3>
-<p>A free WYSIWYG editor with only one minor drawback is <a href="http://www.xmlmind.com/xmleditor/">XMLEditor from XMLmind</a>.</p>
-<p>Drawback: in order to be able to edit any of the  nested xml files, you have to
+<p>A free WYSIWYG editor with only one minor drawback is <a href="http://www.xmlmind.com/xmleditor/">XMLmind XML Editor</a>.</p>
+<p>Drawback: in order to be able to edit any of the nested xml files, you have to
 &ldquo;promote&rdquo; them to valid Docbook files by referencing the Docbook DTD, insert as line 2+3:</p>
 <pre><code>&lt;!DOCTYPE book PUBLIC &quot;-//OASIS//DTD DocBook XML V4.5//EN&quot;
 &quot;http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd&quot;&gt;
 </code></pre>
-<p>These changes will however prevent XMLeditor from opening the master xml file
+<p>These changes will however prevent XML tools from opening or parsing the master xml file
 <code>manual.xml</code>. Before further processing or committing to git can be done,
 these changes then have to be reverted for any changed file.</p>
+<p>After making manual edits to XML documentation, it is recommended to follow these steps
+to open and make trivial edits to the XML files through the XMLmind editor.
+This way, the editor will auto-format the XML code and make it ready to be committed to git.</p>
 <h2>Generating documentation</h2>
 <p>We use DocBook XSL stylesheets to transform the Docbook XML to troff manual pages for installation on Unix like systems, or html pages for publishing on the web.
 The Netatalk build system provides this facility through the <code>-Dbuild-manual</code> configure option, which uses the <code>xsltproc</code> tool on the back end. If your DocBook XSL stylesheet directory isn&rsquo;t automatically detected, use <code>-Dwith-docbook=[path]</code> to tell the build system where it is.</p>
@@ -148,7 +154,7 @@ Wrote to ./ja/manual/compile.xml
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Work-with-Documentation">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-02</p>
+    <p>Last updated 2024-10-31</p>
     <hr />
     </div>
 <div class="footer">
@@ -159,7 +165,8 @@ Wrote to ./ja/manual/compile.xml
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
+    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    General Public License 2.0</a>.</p>
 </div>
 </body>
 </html>
-

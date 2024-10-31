@@ -97,7 +97,7 @@
 <p>This guide was written for Netatalk 2.4.x for the legacy Autotools build system. In most cases, you want to follow the instructions in the links at the top of this page to install a later version instead.</p>
 <p>Install dependent packages with the package manager of your choice.
 Some of these are mandatory to build and run netatalk; others are optional and provide additional functionality.</p>
-<pre><code>$ sudo apt install \
+<pre><code>sudo apt install \
     autoconf \
     automake \
     docbook-xsl \
@@ -149,14 +149,14 @@ Some of these are mandatory to build and run netatalk; others are optional and p
 repository and check out the latest bleeding-edge Netatalk 2 branch.</p>
 <p>If you chose the latter option, you need to first bootstrap the build
 system with autoconf to generate the configure script.</p>
-<pre><code>$ git clone https://github.com/Netatalk/netatalk.git -b branch-netatalk-2-4 netatalk2
-$ ./bootstrap
+<pre><code>git clone https://github.com/Netatalk/netatalk.git -b branch-netatalk-2-4 netatalk2
+./bootstrap
 </code></pre>
 <p>Run the configure script with the following parameters, then compile and
 install the software:</p>
-<pre><code>$ ./configure --enable-systemd --sysconfdir=/etc --with-uams-path=/usr/lib/netatalk
-$ make all
-$ sudo make install
+<pre><code>./configure --enable-systemd --sysconfdir=/etc --with-uams-path=/usr/lib/netatalk
+make all
+sudo make install
 </code></pre>
 <p>If this process finishes without errors, you should now have the
 Netatalk software installed on your system. The next step is to tweak
@@ -168,10 +168,10 @@ limitations of classic Mac OS the password cannot be longer than 8
 characters.</p>
 <p>The following example uses the a user called &ldquo;pi&rdquo;, a single shared
 directory, and a single routerless AppleTalk network without Zones.</p>
-<pre><code>$ mkdir ~/afpshare $ chmod 2775 ~/afpshare
+<pre><code>mkdir ~/afpshare $ chmod 2775 ~/afpshare
 </code></pre>
 <p>Edit the following configuration files:</p>
-<pre><code>$ sudo pico /etc/netatalk/AppleVolumes.default
+<pre><code>sudo pico /etc/netatalk/AppleVolumes.default
 </code></pre>
 <p>At the bottom of the file, add this line:</p>
 <pre><code>/home/pi/afpshare &quot;File Server&quot;
@@ -179,7 +179,7 @@ directory, and a single routerless AppleTalk network without Zones.</p>
 <p>Tip: You can append <code>adouble:v1 volcharset:ASCII</code> if you are having
 issues with very old versions of Mac OS.</p>
 <p>Next file to edit:</p>
-<pre><code>$ sudo pico /etc/netatalk/afpd.conf
+<pre><code>sudo pico /etc/netatalk/afpd.conf
 </code></pre>
 <p>Add this to the bottom of the file:</p>
 <pre><code>- -transall -uamlist uams_guest.so,uams_clrtxt.so,uams_dhx2.so -nosavepassword
@@ -201,7 +201,7 @@ different codepage than UTF-8, you can specify that with
 available.</p>
 <p>(Optional - Netatalk will autodetect the network in most cases) Finally,
 edit this file:</p>
-<pre><code>$ sudo pico /etc/netatalk/atalkd.conf
+<pre><code>sudo pico /etc/netatalk/atalkd.conf
 </code></pre>
 <p>Specify the interface you want Netatalk to use by adding this to the
 bottom of the file using eth0 as an example:</p>
@@ -219,7 +219,7 @@ functionality. Without an AppleTalk networking stack, you will only be
 able to use Netatalk with TCP.</p>
 <p>To check if your kernel has AppleTalk support, issue this command and
 inspect the output:</p>
-<pre><code>$ lsmod | grep appletalk
+<pre><code>lsmod | grep appletalk
 </code></pre>
 <p>If the module isn&rsquo;t detected, try launching <strong>atalkd</strong> first and try
 again. If <strong>atalkd</strong> errors out complaining about &ldquo;Address family not
@@ -229,19 +229,19 @@ topic that you can follow.</p>
 <h1>Using Netatalk</h1>
 <p>At this point, you should be able to run the Netatalk daemons on your
 system.</p>
-<pre><code>$ sudo systemctl enable atalkd.service afpd.service cnid.service
-$ sudo systemctl start atalkd.service afpd.service cnid.service
+<pre><code>sudo systemctl enable atalkd.service afpd.service cnid.service
+sudo systemctl start atalkd.service afpd.service cnid.service
 </code></pre>
 <p>Optional services:</p>
-<pre><code>$ sudo systemctl enable papd.service timelord.service a2boot.service
-$ sudo systemctl start papd.service timelord.service a2boot.service
+<pre><code>sudo systemctl enable papd.service timelord.service a2boot.service
+sudo systemctl start papd.service timelord.service a2boot.service
 </code></pre><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-Debian-Linux">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-02</p>
+    <p>Last updated 2024-10-31</p>
     <hr />
     </div>
 <div class="footer">
@@ -252,7 +252,8 @@ $ sudo systemctl start papd.service timelord.service a2boot.service
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
+    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    General Public License 2.0</a>.</p>
 </div>
 </body>
 </html>
-

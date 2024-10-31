@@ -86,30 +86,35 @@
 <div id="content">
 <h1 id="Release-Process">Release Process</h1><hr/>
 <p>Process for preparing and publishing Netatalk releases. The intended audience for this document is Netatalk project maintainers.</p>
+<h2>Run the spectest test suite</h2>
+<p>The spectest test suite ensures that there are no breakages in AFP specification conformance.</p>
+<ul>
+<li>Build netatalk with the testsuite Add-on enabled.</li>
+</ul>
+<pre><code>meson setup build -Dwith-testsuite=true
+meson compile -C build
+</code></pre>
+<ul>
+<li>Follow the instructions in <a href="https://github.com/Netatalk/netatalk/blob/main/test/testsuite/README">test/testsuite/README</a> to configure and run the tests</li>
+</ul>
+<p>Fix any failing tests, either the test code itself (if it is malfunctioning) or the non-compliant netatalk code.</p>
 <h2>Making a stable release</h2>
 <ul>
-<li>
-<p>Bump version number by editing <code>meson.build</code> and update the &ldquo;version&rdquo; line near the top. Commit the changes.</p>
-</li>
-<li>
-<p>For 3.2 and 2.4 branches, also update the version string in <code>VERSION</code>.</p>
-</li>
 <li>
 <p>Update <code>NEWS</code> and commit the changes.</p>
 </li>
 <li>
-<p>Build netatalk with manual and tests (requires <code>docbook-xsl</code> and <code>xsltproc</code> on your dev machine)</p>
+<p>Bump version number by editing <code>meson.build</code> and update the &ldquo;version&rdquo; line near the top. Commit the changes.</p>
 </li>
 </ul>
-<pre><code>meson setup build -Dwith-appletalk=true -Dwith-manual=www -Dwith-manual-l10n=ja -Dwith-tests=true
+<p><strong><em>Note</em></strong> For 3.2 and 2.4 branches, also update the version string in <code>VERSION</code>.</p>
+<ul>
+<li>Build netatalk with manual and tests (requires <code>docbook-xsl</code> and <code>xsltproc</code> on your dev machine)</li>
+</ul>
+<pre><code>meson setup build -Dwith-appletalk=true -Dwith-manual=www -Dwith-manual-l10n=ja -Dwith-tests=true -Dwith-testsuite=true
 meson compile -C build
 </code></pre>
-<ul>
-<li>Commit the regenerated troff man pages (for 3.x and 2.x branches)</li>
-</ul>
-<pre><code>git add man
-git commit -a -m &quot;Generate manpages from XML&quot;
-</code></pre>
+<p><strong><em>Note</em></strong> For 3.x and 2.x branches, commit the regenerated troff man pages in the <code>man/</code> dir at this point</p>
 <p>Read more about how to <a class="wikilink" href="/docs/work-with-Documentation.html">work with Documentation</a></p>
 <ul>
 <li>Run the distribution script, and fix any errors</li>
@@ -127,7 +132,7 @@ git push origin netatalk-3-2-0
 <ul>
 <li>Create the Webmin Module release tarball</li>
 </ul>
-<pre><code>meson setup build -Dwith-webmin=true -Dwith-install-hooks=false --reconfigure
+<pre><code>meson setup build --prefix=/ -Dwith-webmin=true -Dwith-install-hooks=false --reconfigure
 meson compile -C build
 meson install -C build --tags webmin
 </code></pre>
@@ -191,7 +196,7 @@ meson install -C build --tags webmin
 <p>This section is written from the perspective of a Debian package maintainer, but can be leveraged to build your own deb package for personal use or unofficial distribution. Please note that this is just <em>one</em> of many ways to package software for Debian. When in doubt, refer to official Debian documentation rather than this section. </p>
 <p>The modified Debian source code is managed in git in <a href="https://salsa.debian.org/netatalk-team/netatalk">Debian Salsa</a>. You can also get it with the <code>apt source netatalk</code> command (requires your release to have the package.)</p>
 <h3>Environment prep</h3>
-<p>First off, install all <a href="https://www.debian.org/doc/manuals/debmake-doc/ch03.en.html">Debian packaging tools</a> and configure the environment.</p>
+<p>First off, install all <a href="https://www.debian.org/doc/manuals/debmake-doc/ch04.en.html">Debian packaging tools</a> and configure the environment.</p>
 <p>Then, read through the rest of the chapters in the linked manual before proceeding.</p>
 <p>Leverage <a href="https://www.debian.org/doc/manuals/debmake-doc/ch07.en.html#chroot">chroot environments</a> to have a clean system for building and testing. Note that debuild will create deb packages for the specific OS version it is running on, so chroot enables you to control this.</p>
 <p>If needed, set up <a href="https://wiki.debian.org/CrossCompiling">cross-compilation</a> to generate debs for architectures other than your actual machine.</p>
@@ -259,7 +264,7 @@ gbp:info: Successfully imported version 3.2.0 of ../netatalk_3.2.0.orig.tar.xz
 <li>Make appropriate updates to any other files under &ldquo;debian/&rdquo;</li>
 <li>Remove any obsoleted patches under &ldquo;debian/patches&rdquo;</li>
 <li>Unfuzz patches that apply with fuzz, or not at all. e.g. <code>dquilt push 202_privacy.patch -f</code> &hellip; edit then <code>dquilt refresh</code></li>
-<li>If needed, <a href="https://www.debian.org/doc/manuals/debmake-doc/ch04.en.html#dquilt">create new patches</a> with <code>dquilt</code> and put them under &ldquo;debian/patches&rdquo;</li>
+<li>If needed, <a href="https://wiki.debian.org/UsingQuilt">create new patches</a> with <code>dquilt</code> and put them under &ldquo;debian/patches&rdquo;</li>
 <li>From the root of the Debian source, run <code>dch -v x.y.z~ds-n</code> (with appropriate versioning numbers) to generate the changelog</li>
 <li>Write the changelog and commit</li>
 <li>From the root of the Debian source, run <code>debuild</code></li>
@@ -275,7 +280,7 @@ gbp:info: Successfully imported version 3.2.0 of ../netatalk_3.2.0.orig.tar.xz
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Release-Process">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-02</p>
+    <p>Last updated 2024-10-31</p>
     <hr />
     </div>
 <div class="footer">
@@ -286,7 +291,8 @@ gbp:info: Successfully imported version 3.2.0 of ../netatalk_3.2.0.orig.tar.xz
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
+    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    General Public License 2.0</a>.</p>
 </div>
 </body>
 </html>
-
