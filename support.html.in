@@ -74,6 +74,12 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>2023/10/05</td>
 <td>3.1.0 - 3.1.17</td>
 </tr>
+<tr>
+<td><a href="/security/CVE-2018-1160.html">CVE-2018-1160</a></td>
+<td>afpd daemon vulnerable to symlink redirection</td>
+<td>2018/12/13</td>
+<td>2.0.0 - 3.1.11</td>
+</tr>
 </table>
 
 <h3>See Also</h3>
