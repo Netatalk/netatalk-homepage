@@ -223,9 +223,9 @@
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 2.4 release series. It includes a patch for security issues
-  <a href="security/CVE-2024-38439.html">CVE-2024-38439</a>,
-  <a href="security/CVE-2024-38440.html">CVE-2024-38440</a>, and
-  <a href="security/CVE-2024-38441.html">CVE-2024-38441</a>.
+  <a href="/security/CVE-2024-38439.html">CVE-2024-38439</a>,
+  <a href="/security/CVE-2024-38440.html">CVE-2024-38440</a>, and
+  <a href="/security/CVE-2024-38441.html">CVE-2024-38441</a>.
   All users of Netatalk 2.4 are encouraged to upgrade their systems to 2.4.1.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/2.4/ReleaseNotes2.4.1.html">Release Notes</a>.</p>
@@ -236,9 +236,9 @@
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.2 release series. It includes a patch for security issues
-  <a href="security/CVE-2024-38439.html">CVE-2024-38439</a>,
-  <a href="security/CVE-2024-38440.html">CVE-2024-38440</a>, and
-  <a href="security/CVE-2024-38441.html">CVE-2024-38441</a>. Additionally, the Meson
+  <a href="/security/CVE-2024-38439.html">CVE-2024-38439</a>,
+  <a href="/security/CVE-2024-38440.html">CVE-2024-38440</a>, and
+  <a href="/security/CVE-2024-38441.html">CVE-2024-38441</a>. Additionally, the Meson
   build system options have been completely reworked for ease of use.
   All users of Netatalk 3.2 are encouraged to upgrade their systems to 3.2.1.</p>
   <p>For a summary of news and a detailed list of changes see the
@@ -250,9 +250,9 @@
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. It includes a patch for security issues
-  <a href="security/CVE-2024-38439.html">CVE-2024-38439</a>,
-  <a href="security/CVE-2024-38440.html">CVE-2024-38440</a>, and
-  <a href="security/CVE-2024-38441.html">CVE-2024-38441</a>.
+  <a href="/security/CVE-2024-38439.html">CVE-2024-38439</a>,
+  <a href="/security/CVE-2024-38440.html">CVE-2024-38440</a>, and
+  <a href="/security/CVE-2024-38441.html">CVE-2024-38441</a>.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.19.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/3.1/ReleaseNotes3.1.19.html">Release Notes</a>.</p>
@@ -375,7 +375,7 @@
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. It includes a patch for security issue
-  <a href="security/CVE-2022-22995.html">CVE-2022-22995</a>.
+  <a href="/security/CVE-2022-22995.html">CVE-2022-22995</a>.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.18.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/3.1/ReleaseNotes3.1.18.html">Release Notes</a>.</p>
@@ -397,7 +397,7 @@
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. It includes a 0-day fix for security issue
-  <a href="security/CVE-2023-42464.html">CVE-2023-42464</a>.
+  <a href="/security/CVE-2023-42464.html">CVE-2023-42464</a>.
   All users of Netatalk 3.1 are encouraged to upgrade their systems to 3.1.17.</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/3.1/ReleaseNotes3.1.17.html">Release Notes</a>.</p>
@@ -469,7 +469,7 @@
   <h2>Netatalk 2.2.7 is available</h2>
   <p>The Netatalk development team is proud to announce version 2.2.7
   of the Netatalk File Sharing suite. This release fixes the following major
-  security issues: <a href="https://www.cve.org/CVERecord?id=CVE-2018-1160">CVE-2018-1160</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23121">CVE-2022-23121</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23123">CVE-2022-23123</a>, and <a href="https://www.cve.org/CVERecord?id=CVE-2022-23125">CVE-2022-23125</a>.
+  security issues: <a href="/security/CVE-2018-1160.html">CVE-2018-1160</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23121">CVE-2022-23121</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23123">CVE-2022-23123</a>, and <a href="https://www.cve.org/CVERecord?id=CVE-2022-23125">CVE-2022-23125</a>.
   In addition, it restores full compatibility with Linux, while introducing cross-platform
   systemd service support. Finally, a large number of 3.1 backports and community patches
   have been adopted for improved usability and stability.
@@ -503,7 +503,7 @@
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. Please update to this latest
   release as soon as possible as this releases fixes a major security
-  issue (<a href="https://www.cve.org/CVERecord?id=CVE-2018-1160">CVE-2018-1160</a>).</p>
+  issue (<a href="/security/CVE-2018-1160.html">CVE-2018-1160</a>).</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/3.1/ReleaseNotes3.1.12.html">Release Notes</a>.</p>
 
