@@ -18,10 +18,10 @@ Netatalk Files on SourceForge</a>.
 
 <h3>Webmin Module</h3>
 
-<p>The Webmin modules for Netatalk 4.0 and later are distributed with each release.</p>
+<p>As of Netatalk 4.0.0, the Webmin module is part of the Netatalk package. Module tarballs are distributed with stable releases.</p>
 
 <p>The Webmin modules for Netatalk 3.x and earlier can be downloaded from
-<a href"https://sourceforge.net/projects/netatalk/files/Webmin/">SourceForge Files</a> section.</p>
+<a href="https://sourceforge.net/projects/netatalk/files/Webmin/">SourceForge Files</a> section.</p>
 
 <h3>AFP Test-Suite</h3>
 
