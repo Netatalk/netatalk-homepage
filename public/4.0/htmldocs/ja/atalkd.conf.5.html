@@ -24,9 +24,9 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 4.0.3</div>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.0.4</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">atalkd.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="atalkd.8.html">戻る</a> </td><th width="60%" align="center">第6章 マニュアルページ</th><td width="20%" align="right"> <a accesskey="n" href="atalk_aton.3.html">次へ</a></td></tr></table><hr /></div><div class="refentry"><a id="atalkd.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>名前</h2><p>atalkd.conf — AppleTalk が使用するインターフェイスを構成するために <span class="command"><strong>atalkd</strong></span>(8)
-    が使用する構成ファイル<a id="id-1.9.17.2.2.2" class="indexterm"></a><a id="id-1.9.17.2.2.3" class="indexterm"></a><a id="id-1.9.17.2.2.4" class="indexterm"></a></p></div><div class="refsect1"><a id="id-1.9.17.3"></a><h2>説明</h2><p><span class="emphasis"><em>atalkd.conf</em></span> は、atalkd が Appletalk
+    が使用する構成ファイル<a id="id-1.9.18.2.2.2" class="indexterm"></a><a id="id-1.9.18.2.2.3" class="indexterm"></a><a id="id-1.9.18.2.2.4" class="indexterm"></a></p></div><div class="refsect1"><a id="id-1.9.18.3"></a><h2>説明</h2><p><span class="emphasis"><em>atalkd.conf</em></span> は、atalkd が Appletalk
     インターフェイスとその動作を設定するために使用する設定ファイルです</p><p>先頭に <span class="emphasis"><em>#</em></span>
     が付いていない行はすべて解釈されます。各インターフェイスは、分割行をサポートせず、中断のない行で設定する必要があります。設定行の形式は次のとおりです:</p><p><span class="emphasis"><em>interface</em></span> [ <code class="option">-seed</code> ]
     [ <code class="option">-phase</code> <em class="replaceable"><code>number</code></em> ] [
@@ -59,9 +59,9 @@
           <code class="option">-route</code>
           を使用します。これにより、不足しているすべての引数がネットワークから自動的に構成されます。</p></dd><dt><span class="term"><code class="option">-zone
         <em class="replaceable"><code>zonename</code></em></code></span></dt><dd><p>このインターフェイスが表示される特定のゾーンを指定します (例: <code class="option">-zone "Parking
-          Lot"</code>)。スペースやその他の特殊文字を含むゾーンは、括弧で囲む必要があることに注意してください。</p></dd></dl></div></div><div class="refsect1"><a id="id-1.9.17.4"></a><h2>例</h2><p>Solaris 上の単一インターフェイスと自動検出パラメータ。</p><pre class="programlisting"> le0</pre><p>Linux でも同様です。</p><pre class="programlisting"> eth0</pre><p>以下は Sun 4/40 の設定ファイルの例です。マシンには 2
+          Lot"</code>)。スペースやその他の特殊文字を含むゾーンは、括弧で囲む必要があることに注意してください。</p></dd></dl></div></div><div class="refsect1"><a id="id-1.9.18.4"></a><h2>例</h2><p>Solaris 上の単一インターフェイスと自動検出パラメータ。</p><pre class="programlisting"> le0</pre><p>Linux でも同様です。</p><pre class="programlisting"> eth0</pre><p>以下は Sun 4/40 の設定ファイルの例です。マシンには 2
     つのインターフェイス「le0」と「le1」があります。「le0」インターフェイスは、ネットワーク上の他のルーターから自動的に設定されます。このマシンは、``le1''
     インターフェースの唯一のルーターです。</p><pre class="programlisting">le0
-le1 -seed -net 9461-9471 -zone netatalk -zone Argus</pre></div><div class="refsect1"><a id="id-1.9.17.5"></a><h2>参照</h2><p><span class="citerefentry"><span class="refentrytitle">atalkd</span>(8)</span></p></div><div class="refsect1"><a id="id-1.9.17.6"></a><h2>著者</h2><p><a class="ulink" href="https://github.com/Netatalk/netatalk/blob/main/CONTRIBUTORS" target="_top">CONTRIBUTORS</a>
+le1 -seed -net 9461-9471 -zone netatalk -zone Argus</pre></div><div class="refsect1"><a id="id-1.9.18.5"></a><h2>参照</h2><p><span class="citerefentry"><span class="refentrytitle">atalkd</span>(8)</span></p></div><div class="refsect1"><a id="id-1.9.18.6"></a><h2>著者</h2><p><a class="ulink" href="https://github.com/Netatalk/netatalk/blob/main/CONTRIBUTORS" target="_top">CONTRIBUTORS</a>
     を参照</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="atalkd.8.html">戻る</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">上に戻る</a></td><td width="40%" align="right"> <a accesskey="n" href="atalk_aton.3.html">次へ</a></td></tr><tr><td width="40%" align="left" valign="top">atalkd </td><td width="20%" align="center"><a accesskey="h" href="index.html">ホーム</a></td><td width="40%" align="right" valign="top"> atalk_aton</td></tr></table></div></body>
 </html>
