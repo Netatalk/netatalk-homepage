@@ -454,8 +454,10 @@
   <h2>Netatalk 3.1.15 is available</h2>
 
   <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 3.1 release series. It includes fixes for security issues <a href="https://www.cve.org/CVERecord?id=CVE-2022-43634">CVE-2022-43634</a> and
-  <a href="https://www.cve.org/CVERecord?id=CVE-2022-45188">CVE-2022-45188</a>, as well as a range of other bug fixes. Additionally, Netatalk now runs on macOS Ventura hosts.</p>
+  of the Netatalk 3.1 release series. It includes fixes for security issues
+  <a href="/security/CVE-2022-43634.html">CVE-2022-43634</a> and
+  <a href="/security/CVE-2022-45188.html">CVE-2022-45188</a>,
+  as well as a range of other bug fixes. Additionally, Netatalk now runs on macOS Ventura hosts.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/3.1/ReleaseNotes3.1.15.html">Release Notes</a>.</p>
 
@@ -463,7 +465,8 @@
   <small>26th of April 2023</small>
   <h2>Netatalk 2.2.9 is available</h2>
   <p>The Netatalk development team is proud to announce version 2.2.9
-  of the Netatalk File Sharing suite. This release contains a fix for security issue <a href="https://www.cve.org/CVERecord?id=CVE-2022-45188">CVE-2022-45188</a>
+  of the Netatalk File Sharing suite. This release contains a fix for security issue
+  <a href="/security/CVE-2022-45188.html">CVE-2022-45188</a>
   in addition to other minor bug fixes.
   All Netatalk 2.2 users are encouraged to upgrade their systems to 2.2.9.</p>
   <p>For a summary of news and a detailed list of changes see the
@@ -496,7 +499,10 @@
   <h2>Netatalk 2.2.7 is available</h2>
   <p>The Netatalk development team is proud to announce version 2.2.7
   of the Netatalk File Sharing suite. This release fixes the following major
-  security issues: <a href="/security/CVE-2018-1160.html">CVE-2018-1160</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23121">CVE-2022-23121</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23123">CVE-2022-23123</a>, and <a href="https://www.cve.org/CVERecord?id=CVE-2022-23125">CVE-2022-23125</a>.
+  security issues: <a href="/security/CVE-2018-1160.html">CVE-2018-1160</a>,
+  <a href="/security/CVE-2022-23121.html">CVE-2022-23121</a>,
+  <a href="/security/CVE-2022-23123.html">CVE-2022-23123</a>,
+  and <a href="/security/CVE-2022-23125.html">CVE-2022-23125</a>.
   In addition, it restores full compatibility with Linux, while introducing cross-platform
   systemd service support. Finally, a large number of 3.1 backports and community patches
   have been adopted for improved usability and stability.
@@ -508,8 +514,12 @@
   <small>10th of January 2023</small>
   <h2>Netatalk releases moving to GitHub</h2>
 
-  <p>Future Netatalk releases and release notes will be hosted on <a href="https://github.com/Netatalk/netatalk">GitHub</a>.
-  Over the last several years, the git repository, wiki, and issue tracker have been gradually moved to GitHub. This last move represents the next step in this process. Legacy release archives will remain on SourceForge, and so will this website as well as the mailing lists.</p>
+  <p>Future Netatalk releases and release notes will be hosted on
+  <a href="https://github.com/Netatalk/netatalk">GitHub</a>.
+  Over the last several years, the git repository, wiki,
+  and issue tracker have been gradually moved to GitHub.
+  This last move represents the next step in this process.
+  Legacy release archives will remain on SourceForge, and so will this website as well as the mailing lists.</p>
 
 <hr />
   <small>22th of March 2022</small>
@@ -518,8 +528,13 @@
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 3.1 release series. Please update to this latest
   release as soon as possible as this releases fixes the following major security
-  issues: <a href="https://www.cve.org/CVERecord?id=CVE-2021-31439">CVE-2021-31439</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23121">CVE-2022-23121</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23122">CVE-2022-23122</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23123">CVE-2022-23123</a>,
-  <a href="https://www.cve.org/CVERecord?id=CVE-2022-23124">CVE-2022-23124</a>, <a href="https://www.cve.org/CVERecord?id=CVE-2022-23125">CVE-2022-23125</a> and <a href="https://www.cve.org/CVERecord?id=CVE-2022-0194">CVE-2022-0194</a>.</p>
+  issues: <a href="/security/CVE-2021-31439.html">CVE-2021-31439</a>,
+  <a href="/security/CVE-2022-23121.html">CVE-2022-23121</a>,
+  <a href="/security/CVE-2022-23122.html">CVE-2022-23122</a>,
+  <a href="/security/CVE-2022-23123.html">CVE-2022-23123</a>,
+  <a href="/security/CVE-2022-23124.html">CVE-2022-23124</a>,
+  <a href="/security/CVE-2022-23125.html">CVE-2022-23125</a> and
+  <a href="/security/CVE-2022-0194">CVE-2022-0194.html</a>.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/3.1/ReleaseNotes3.1.13.html">Release Notes</a>.</p>
 
@@ -912,7 +927,12 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
 <hr />
   <small>10th of November 2009</small>
   <h2>Netatalk 2.0.5 is available</h2>
-  <p>The Netatalk development team is proud to announce version 2.0.5 of the Netatalk File Sharing suite. This is the latest stable version. It contains several important bugfixes, including a more complete security fix for <a href="https://www.cve.org/CVERecord?id=CVE-2008-5718">CVE-2008-5718</a>.  Time Machine support has been added with the new volume option "tm".  All users are encouraged to upgrade their systems to 2.0.5.</p>
+  <p>The Netatalk development team is proud to announce version 2.0.5 of the Netatalk File Sharing suite.
+  This is the latest stable version. It contains several important bugfixes,
+  including a more complete security fix for
+  <a href="https://www.cve.org/CVERecord?id=CVE-2008-5718">CVE-2008-5718</a>.
+  Time Machine support has been added with the new volume option "tm".
+  All users are encouraged to upgrade their systems to 2.0.5.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/2.0/ReleaseNotes2.0.5.html">Release Notes</a>.</p>
 
@@ -921,8 +941,9 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
 <h2>Netatalk 2.0.4 is available!</h2>
   <p>The Netatalk development team is proud to announce version 2.0.4 of the
 Netatalk File Sharing suite. This is the latest stable version. It
-contains several important bugfixes, including a security fix for papd (see <a href="https://www.cve.org/CVERecord?id=CVE-2008-5718">CVE-2008-5718</a>), therefore <i>all users are encouraged
-to upgrade their systems to 2.0.4.</i></p>
+contains several important bugfixes, including a security fix for papd
+(see <a href="https://www.cve.org/CVERecord?id=CVE-2008-5718">CVE-2008-5718</a>),
+therefore <i>all users are encouraged to upgrade their systems to 2.0.4.</i></p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/2.0/ReleaseNotes2.0.4.html">Release Notes</a>.</p>
 
@@ -949,7 +970,10 @@ to upgrade their systems to 2.0.2.</i></p>
 <hr />
 <small>28th of October 2004</small>
   <h2>Netatalk 1.6.4a released</h2>
-  <p>This release is a security fix for the etc2ps.sh script.  See <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0974">CAN-2004-0974</a> for details.  No other changes were made from Netatalk 1.6.4.</p>
+  <p>This release is a security fix for the etc2ps.sh script.
+  See <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0974">
+  CAN-2004-0974</a> for details.
+  No other changes were made from Netatalk 1.6.4.</p>
 
    <hr />
 <small>27th of October 2004</small>
@@ -959,7 +983,8 @@ Netatalk File Sharing suite. This is the latest stable version. It
 contains several important bugfixes, therefore <i>all users are encouraged
 to upgrade their systems to 2.0.1.</i></p>
   <p>The etc2ps.sh script delivered with all Netatalk versions prior to 2.0.1
-has been found to be vulnerable to symlink attacks. See <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0974">CAN-2004-0974</a> for
+has been found to be vulnerable to symlink attacks. See
+<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0974">CAN-2004-0974</a> for
 details.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/2.0/ReleaseNotes2.0.1.html">Release Notes</a>.</p>
