@@ -89,7 +89,7 @@
   <td>Yes (via <tt>papd</tt>)</td>
   </tr>
   <tr>
-  <td>Printing to LocalTalk printers</td>
+  <td>Printing to <a href=https://en.wikipedia.org/wiki/LocalTalk>LocalTalk</a> printers</td>
   <td>Yes (via <tt>pap</tt>)</td>
   </tr>
   <tr>
@@ -101,7 +101,7 @@
   <td>Yes (via <tt>atalkd</tt>)</td>
   </tr>
   <tr>
-  <td>Built-in <a href=https://en.wikipedia.org/wiki/MacIP>MacIP Gateway</a></td>
+  <td>Built-in <a href=https://en.wikipedia.org/wiki/MacIP>MacIP</a> Gateway</td>
   <td>Yes (via <tt>macipgw</tt>)</td>
   </tr>
   <tr>
