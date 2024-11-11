@@ -42,10 +42,10 @@
   </tr>
   <tr>
   <td>Supported Host OSes</td>
-  <td>Linux, FreeBSD, NetBSD, OpenBSD, macOS, OmniOS, OpenIndiana, Solaris 11</td>
+  <td>Linux, DragonFlyBSD, FreeBSD, NetBSD, OpenBSD, macOS, OmniOS, OpenIndiana, Solaris 11</td>
   </tr>
   <tr>
-  <td>Supported Clients</td>
+  <td>Supported Client OSes</td>
   <td>macOS, Mac OS X, Mac OS 8/9, Macintosh System Software 6.0.x/7.x, Apple II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span>, Apple //e</td>
   </tr>
   <tr>
@@ -57,31 +57,31 @@
   <td>Yes</td>
   </tr>
   <tr>
-  <td>AFP over AppleTalk</td>
+  <td>AFP over <a href=https://en.wikipedia.org/wiki/AppleTalk>AppleTalk</a></td>
   <td>Yes (supported on Linux, NetBSD)</td>
   </tr>
   <tr>
   <td>Macintosh File System Metadata</td>
-  <td>Yes: macOS extended attributes, Classic Mac OS resource forks</td>
+  <td>macOS / OSX extended attributes, Classic Mac OS resource forks</td>
   </tr>
   <tr>
   <td>Service Discovery</td>
-  <td>Yes: <i>Zeroconf</i> on macOS, <i>AppleTalk</i> on Classic Mac OS</td>
+  <td><i><a href=https://en.wikipedia.org/wiki/Bonjour_(software)>Bonjour</a></i> compatible on macOS / OSX, <i>AppleTalk</i> on Classic Mac OS</td>
   </tr>
   <tr>
   <td>Remote Backups</td>
-  <td>Yes: <i><a href="https://en.wikipedia.org/wiki/Time_Machine_(macOS)">Time Machine</a></i> compatible</td>
+  <td><i><a href="https://en.wikipedia.org/wiki/Time_Machine_(macOS)">Time Machine</a></i> compatible</td>
   </tr>
   <tr>
   <td>Indexed Search</td>
-  <td>Yes: <i><a href="https://en.wikipedia.org/wiki/Spotlight_(Apple)">Spotlight</a></i> on macOS, <i>CatalogSearch</i> on Classic Mac OS</td>
+  <td><i><a href="https://en.wikipedia.org/wiki/Spotlight_(Apple)">Spotlight</a></i> compatible on macOS / OSX, <i>CatalogSearch</i> on Classic Mac OS</td>
   </tr>
   <tr>
-  <td>Macintosh NetBoot</td>
-  <td>Yes: NetBoot 1.0 (Ex: <a href="https://github.com/saybur/kea-mboot">kea-mboot</a>)</td>
+  <td>Macintosh Network Booting</td>
+  <td><i><a href=https://en.wikipedia.org/wiki/NetBoot>NetBoot</a></i> 1.0 compatible (Ex: <a href="https://github.com/saybur/kea-mboot">kea-mboot</a>)</td>
   </tr>
   <tr>
-  <td>Apple II NetBoot</td>
+  <td>Apple II Network Booting</td>
   <td>Yes: //e and II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span> (via <tt>a2boot</tt>)</td>
   </tr>
   <tr>
@@ -94,19 +94,19 @@
   </tr>
   <tr>
   <td>AppleTalk Time Server</td>
-  <td>Yes: <i>Timelord</i> compatible (via <tt>timelord</tt>)</td>
+  <td><i><a href=https://web.archive.org/web/20010303220117/http://www.cs.mu.oz.au/appletalk/readmes/TMLD.README.html>Timelord</a></i> compatible (via <tt>timelord</tt>)</td>
   </tr>
   <tr>
   <td>Built-in AppleTalk Router</td>
   <td>Yes (via <tt>atalkd</tt>)</td>
   </tr>
   <tr>
-  <td>Built-in MacIP Gateway</td>
+  <td>Built-in <a href=https://en.wikipedia.org/wiki/MacIP>MacIP Gateway</a></td>
   <td>Yes (via <tt>macipgw</tt>)</td>
   </tr>
   <tr>
   <td>Administrative GUI</td>
-  <td>Webmin module</td>
+  <td><i><a href=https://webmin.com/>Webmin</a></i> module</td>
   </tr>
 </table>
 
