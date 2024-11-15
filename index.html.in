@@ -114,6 +114,20 @@
   <h1>Latest News</h1>
 
 <hr />
+  <small>15th of November 2024</small>
+  <h2>Netatalk 4.0.6 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 4.0 release series.
+  This release contains fixes for older AppleShare Clients, the Webmin module,
+  and the Meson build system.</p>
+  <p>See the <a href="/4.0/htmldocs/upgrade">upgrade chapter</a>
+  of the manual for instructions how to upgrade existing 3.x or 2.x deployments.
+  All users of previous Netatalk versions are encouraged to upgrade to 4.0!</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/4.0/ReleaseNotes4.0.6.html">Release Notes</a>.</p>
+
+<hr />
   <small>10th of November 2024</small>
   <h2>Netatalk 4.0.5 is available</h2>
 
@@ -140,20 +154,6 @@
   Early adopters are encouraged to upgrade to the 4.0 release series. We look forward to your feedback!</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/4.0/ReleaseNotes4.0.4.html">Release Notes</a>.</p>
-
-<hr />
-  <small>26th of October 2024</small>
-  <h2>Netatalk 4.0.3 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 4.0 release series.
-  This release contains a number of minor bugfixes in afpd, improvements to the build system,
-  as well as a major overhaul to the afptest test suite.</p>
-  <p>See the <a href="/4.0/htmldocs/upgrade">upgrade chapter</a>
-  of the manual for instructions how to upgrade existing 3.x or 2.x deployments.
-  Early adopters are encouraged to upgrade to the 4.0 release series. We look forward to your feedback!</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/4.0/ReleaseNotes4.0.3.html">Release Notes</a>.</p>
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>

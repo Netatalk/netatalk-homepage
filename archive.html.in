@@ -2,6 +2,20 @@
   <h1>News Archive</h1>
 
 <hr />
+  <small>26th of October 2024</small>
+  <h2>Netatalk 4.0.3 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 4.0 release series.
+  This release contains a number of minor bugfixes in afpd, improvements to the build system,
+  as well as a major overhaul to the afptest test suite.</p>
+  <p>See the <a href="/4.0/htmldocs/upgrade">upgrade chapter</a>
+  of the manual for instructions how to upgrade existing 3.x or 2.x deployments.
+  Early adopters are encouraged to upgrade to the 4.0 release series. We look forward to your feedback!</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/4.0/ReleaseNotes4.0.3.html">Release Notes</a>.</p>
+
+<hr />
   <small>18th of October 2024</small>
   <h2>Netatalk 4.0.2 is available</h2>
 
