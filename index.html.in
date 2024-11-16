@@ -57,7 +57,7 @@
   <td>Yes</td>
   </tr>
   <tr>
-  <td>AFP over <a href=https://en.wikipedia.org/wiki/AppleTalk>AppleTalk</a></td>
+  <td>AFP over <a href="https://en.wikipedia.org/wiki/AppleTalk">AppleTalk</a></td>
   <td>Yes (supported on Linux, NetBSD)</td>
   </tr>
   <tr>
@@ -66,7 +66,7 @@
   </tr>
   <tr>
   <td>Service Discovery</td>
-  <td><i><a href=https://en.wikipedia.org/wiki/Bonjour_(software)>Bonjour</a></i> compatible on macOS / OSX, <i>AppleTalk</i> on Classic Mac OS</td>
+  <td><i><a href="https://en.wikipedia.org/wiki/Bonjour_(software)">Bonjour</a></i> compatible on macOS / OSX, <i>AppleTalk</i> on Classic Mac OS</td>
   </tr>
   <tr>
   <td>Remote Backups</td>
@@ -78,7 +78,7 @@
   </tr>
   <tr>
   <td>Macintosh Network Booting</td>
-  <td><i><a href=https://en.wikipedia.org/wiki/NetBoot>NetBoot</a></i> 1.0 compatible (Ex: <a href="https://github.com/saybur/kea-mboot">kea-mboot</a>)</td>
+  <td><i><a href="https://en.wikipedia.org/wiki/NetBoot">NetBoot</a></i> 1.0 compatible (Ex: <a href="https://github.com/saybur/kea-mboot">kea-mboot</a>)</td>
   </tr>
   <tr>
   <td>Apple II Network Booting</td>
@@ -89,24 +89,24 @@
   <td>Yes (via <tt>papd</tt>)</td>
   </tr>
   <tr>
-  <td>Printing to <a href=https://en.wikipedia.org/wiki/LocalTalk>LocalTalk</a> printers</td>
+  <td>Printing to <a href="https://en.wikipedia.org/wiki/LocalTalk">LocalTalk</a> printers</td>
   <td>Yes (via <tt>pap</tt>)</td>
   </tr>
   <tr>
   <td>AppleTalk Time Server</td>
-  <td><i><a href=https://web.archive.org/web/20010303220117/http://www.cs.mu.oz.au/appletalk/readmes/TMLD.README.html>Timelord</a></i> compatible (via <tt>timelord</tt>)</td>
+  <td><i><a href="https://web.archive.org/web/20010303220117/http://www.cs.mu.oz.au/appletalk/readmes/TMLD.README.html">Timelord</a></i> compatible (via <tt>timelord</tt>)</td>
   </tr>
   <tr>
   <td>Built-in AppleTalk Router</td>
   <td>Yes (via <tt>atalkd</tt>)</td>
   </tr>
   <tr>
-  <td>Built-in <a href=https://en.wikipedia.org/wiki/MacIP>MacIP</a> Gateway</td>
+  <td>Built-in <a href="https://en.wikipedia.org/wiki/MacIP">MacIP</a> Gateway</td>
   <td>Yes (via <tt>macipgw</tt>)</td>
   </tr>
   <tr>
   <td>Administrative GUI</td>
-  <td><i><a href=https://webmin.com/>Webmin</a></i> module</td>
+  <td><i><a href="https://webmin.com/">Webmin</a></i> module</td>
   </tr>
 </table>
 
