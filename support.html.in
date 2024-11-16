@@ -47,7 +47,7 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>2024/06/28</td>
 <td>3.2.0<br>
 3.0.0 - 3.1.18<br>
-2.0.0 - 2.4.0</td>
+1.5.0 - 2.4.0</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2024-38439.html">CVE-2024-38439</a></td>
@@ -55,7 +55,7 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>2024/06/28</td>
 <td>3.2.0<br>
 3.0.0 - 3.1.18<br>
-2.0.0 - 2.4.0</td>
+1.5.0 - 2.4.0</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2023-42464.html">CVE-2023-42464</a></td>
@@ -68,7 +68,7 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>Arbitrary code execution in afp_getappl</td>
 <td>2023/03/26</td>
 <td>3.0.0 - 3.1.14<br>
-2.0.0 - 2.2.8</td>
+1.5.0 - 2.2.8</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-43634.html">CVE-2022-43634</a></td>
@@ -81,7 +81,7 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>Arbitrary code execution in copyapplfile</td>
 <td>2022/03/21</td>
 <td>3.0.0 - 3.1.12<br>
-2.0.0 - 2.2.6</td>
+1.3.3 - 2.2.6</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-23124.html">CVE-2022-23124</a></td>
@@ -94,7 +94,7 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>Information leak in getdirparams</td>
 <td>2022/03/21</td>
 <td>3.0.0 - 3.1.12<br>
-2.0.0 - 2.2.6</td>
+1.5.0 - 2.2.6</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-23122.html">CVE-2022-23122</a></td>
@@ -107,7 +107,7 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>Arbitrary code execution in parse_entries</td>
 <td>2022/03/21</td>
 <td>3.0.0 - 3.1.12<br>
-2.0.0 - 2.2.6</td>
+1.5.0 - 2.2.6</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-22995.html">CVE-2022-22995</a></td>
@@ -120,7 +120,7 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>Arbitrary code execution in ad_addcomment</td>
 <td>2022/03/21</td>
 <td>3.0.0 - 3.1.12<br>
-2.0.0 - 2.2.6</td>
+1.5.0 - 2.2.6</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2021-31439.html">CVE-2021-31439</a></td>
@@ -133,7 +133,7 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>Unauthenticated remote code execution</td>
 <td>2018/12/13</td>
 <td>3.0.0 - 3.1.11<br>
-2.0.0 - 2.2.6</td>
+1.5.0 - 2.2.6</td>
 </tr>
 </table>
 
