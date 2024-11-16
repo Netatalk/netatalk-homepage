@@ -21,7 +21,9 @@
 
   <p>If you prefer a containerized deployment, the Netatalk team distributes
   official <a href="https://hub.docker.com/u/netatalk">Docker images
-  on Docker Hub</a>. These require Docker Engine to be installed.</p>
+  on Docker Hub</a>. With Docker Engine installed, do:</p>
+
+  <p><pre>$ docker pull netatalk/netatalk:latest</pre></p>
 
   <p>Finally, if you want to build Netatalk from source,
   a C compiler (gcc or clang are recommended) together with dependent libraries are required.
@@ -159,10 +161,6 @@
 
 <hr />
   <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
-
-  <p>If you are interested in contributing to the development process, or just
-  want to peruse the code, please visit our
-  <a href="https://github.com/Netatalk/netatalk">GitHub project page</a>.</p>
 
 <hr />
 
