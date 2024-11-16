@@ -135,6 +135,19 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>3.0.0 - 3.1.11<br>
 1.5.0 - 2.2.6</td>
 </tr>
+<tr>
+<td><a href="/security/CVE-2008-5718.html">CVE-2008-5718</a></td>
+<td>papd daemon vulnerable to remote command execution</td>
+<td>2009/11/10</td>
+<td>2.0.0 - 2.0.4</td>
+</tr>
+<tr>
+<td><a href="/security/CVE-2004-0974.html">CAN-2004-0974</a></td>
+<td>etc2ps.sh vulnerable to symlink attack</td>
+<td>2004/10/24</td>
+<td>2.0.0<br>
+1.3.3 - 1.6.4</td>
+</tr>
 </table>
 
 <h3>See Also</h3>

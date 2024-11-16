@@ -944,7 +944,7 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
   <p>The Netatalk development team is proud to announce version 2.0.5 of the Netatalk File Sharing suite.
   This is the latest stable version. It contains several important bugfixes,
   including a more complete security fix for
-  <a href="https://www.cve.org/CVERecord?id=CVE-2008-5718">CVE-2008-5718</a>.
+  <a href="/security/CVE-2008-5718.html">CVE-2008-5718</a>.
   Time Machine support has been added with the new volume option "tm".
   All users are encouraged to upgrade their systems to 2.0.5.</p>
   <p>For a summary of news and a detailed list of changes see the
@@ -956,7 +956,7 @@ of the next Netatalk version 3.1. This release is intended for testing only.</p>
   <p>The Netatalk development team is proud to announce version 2.0.4 of the
 Netatalk File Sharing suite. This is the latest stable version. It
 contains several important bugfixes, including a security fix for papd
-(see <a href="https://www.cve.org/CVERecord?id=CVE-2008-5718">CVE-2008-5718</a>),
+(see <a href="/security/CVE-2008-5718.html">CVE-2008-5718</a>),
 therefore <i>all users are encouraged to upgrade their systems to 2.0.4.</i></p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/2.0/ReleaseNotes2.0.4.html">Release Notes</a>.</p>
@@ -985,7 +985,7 @@ to upgrade their systems to 2.0.2.</i></p>
 <small>28th of October 2004</small>
   <h2>Netatalk 1.6.4a released</h2>
   <p>This release is a security fix for the etc2ps.sh script.
-  See <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0974">
+  See <a href="/security/CVE-2004-0974.html">
   CAN-2004-0974</a> for details.
   No other changes were made from Netatalk 1.6.4.</p>
 
@@ -998,7 +998,7 @@ contains several important bugfixes, therefore <i>all users are encouraged
 to upgrade their systems to 2.0.1.</i></p>
   <p>The etc2ps.sh script delivered with all Netatalk versions prior to 2.0.1
 has been found to be vulnerable to symlink attacks. See
-<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0974">CAN-2004-0974</a> for
+<a href="/security/CVE-2004-0974.html">CAN-2004-0974</a> for
 details.</p>
   <p>For a summary of news and a detailed list of changes see the
      <a href="/2.0/ReleaseNotes2.0.1.html">Release Notes</a>.</p>
