@@ -1,9 +1,101 @@
 <div id="content">
 <h1>Download Netatalk</h1>
 
-<h3>Netatalk Releases</h3>
+<h3>Netatalk Binary Packages</h3>
 
-<p>The most recent stable Netatalk releases can be downloaded
+<p>This project relies on downstream packagers, for instance Linux or *BSD distributions,
+to package and distribute pre-built binary packages for Netatalk.</p>
+
+<p>Here is an (incomplete) list of current distributions of Netatalk.
+In most cases, you would use the package manager of your operating system to install Netatalk.</p>
+
+<p>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/alpine_3_20/netatalk.svg" alt="Alpine Linux 3.20 package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/aur/netatalk.svg" alt="Arch Linux package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/debian_13/netatalk.svg" alt="Debian 13 package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/devuan_4_0/netatalk.svg" alt="Devuan 4.0 package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/fedora_41/netatalk.svg" alt="Fedora 41 package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/freebsd/netatalk.svg" alt="FreeBSD port">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/gentoo/netatalk.svg" alt="Gentoo package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/kali_rolling/netatalk.svg" alt="Kali Linux Rolling package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/liguros_stable/netatalk.svg" alt="LiGurOS stable package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/macports/netatalk.svg" alt="MacPorts package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/mageia_9/netatalk.svg" alt="Mageia 9 package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/mports/netatalk.svg" alt="MidnightBSD port">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/pkgsrc_current/netatalk.svg" alt="NetBSD pkgsrc current package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/nix_stable_24_05/netatalk.svg" alt="NixOS stable 24.05 package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/openbsd/netatalk.svg" alt="OpenBSD port">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/openpkg_current/netatalk.svg" alt="OpenPKG package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/opensuse_leap_42_3/netatalk.svg" alt="openSUSE Leap 42.3 package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/openwrt_21_02_x86_64/netatalk.svg" alt="OpenWrt 21.02 x86_64 package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/parabola/netatalk.svg" alt="Parabola package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/pclinuxos/netatalk.svg" alt="PCLinuxOS package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/pld/netatalk.svg" alt="PLD Linux package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/pureos_byzantium/netatalk.svg" alt="PureOS byzantium package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/raspbian_stable/netatalk.svg" alt="Raspberry Pi OS Stable package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/slackware_current/netatalk.svg" alt="Slackware current package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/slitaz_next/netatalk.svg" alt="SliTaz Next package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/trisquel_11_0/netatalk.svg" alt="Trisquel 11.0 package">
+</a>
+<a href="https://repology.org/project/netatalk/versions">
+  <img src="https://repology.org/badge/version-for-repo/ubuntu_24_10/netatalk.svg" alt="Ubuntu 24.10 package">
+</a>
+</p>
+
+<h3>Netatalk Source Code Releases</h3>
+
+<p>The most recent stable Netatalk source code releases can be downloaded
 from the <b>navbar to the left</b> on this website.</p>
 
 <p>You can also find the release tarballs attached to the
