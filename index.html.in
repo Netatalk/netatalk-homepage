@@ -1,15 +1,17 @@
 <div id="content">
   <h1>Welcome to the Netatalk Homepage!</h1>
 
-  <p>Netatalk is a Free and Open Source file server that implements the
-  <a href="https://en.wikipedia.org/wiki/Apple_Filing_Protocol">Apple Filing Protocol</a> (AFP).
-  A macOS, Linux, BSD, or Solaris system running Netatalk can act as an AppleShare server,
-  providing file sharing services to any number of macOS, Classic Mac OS,
-  and Apple II clients simultaneously.</p>
+  <p>Netatalk is a Free and Open Source file server for Macs.
+  Written in pure C, it is light-weight, performant, and portable.
+  Conformant to the <a href="https://en.wikipedia.org/wiki/Apple_Filing_Protocol">
+  Apple Filing Protocol</a> (AFP) specifiction up to and including AFP 3.4,
+  any macOS, Mac OS X, or Mac OS system can talk to a Netatalk file server natively.
+  </p>
 
-  <p>Since 1990, Netatalk has been providing highly performant and versatile file sharing for Macs from
-  UNIX-like hosts, providing seamless support for the intricate requirements
-  of Macintosh networking, file systems, and operating system services.</p>
+  <p>Since 1990, Netatalk has been leveraged by universities, enterprises,
+  and home users for collaboration and data backup on Macs.
+  It enables any UNIX-like host to integrate seamlessly with
+  macOS networking, file systems, and operating system services.</p>
 
   <h2>Getting Started</h2>
   <p>So you want to get started with running your own Netatalk file server
