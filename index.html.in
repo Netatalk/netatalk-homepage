@@ -78,7 +78,9 @@
 
   <h3>3. Build from source</h3>
 
-  <p>Arrange a C compiler (we use <i>gcc</i> or <i>clang</i>) together with
+  <p>Arrange a C compiler (we use <i>gcc</i> or <i>clang</i>),
+  the <a href="https://mesonbuild.com/">Meson</a> build system with
+  <a href="https://ninja-build.org/">Ninja</a>, together with
   <a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md#external-software-dependencies">needed
   libraries</a>.
   Read more in the <a href="stable/htmldocs/installation">Netatalk manual</a>
@@ -106,7 +108,8 @@
   </p>
 
   <h2>Features</h2>
-  <p>Below is an overview of the capabilities and bundled utilities that Netatalk provides.
+  <p>Below is an overview of the capabilities and bundled utilities
+  that the latest version of Netatalk provides.
   </p>
 
   <table summary="Netatalk feature comparison">
