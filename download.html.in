@@ -7,7 +7,7 @@
 to package and distribute pre-built binary packages for Netatalk.</p>
 
 <p>Either use your operating system's package manager to search for a <i>netatalk</i> package,
-or refer to the list of known packages at <a href="https://repology.org/project/netatalk/packages">
+or refer to the <a href="https://repology.org/project/netatalk/packages">list of known packages at
 Repology</a>.</p>
 
 <h3>Netatalk Source Code Releases</h3>

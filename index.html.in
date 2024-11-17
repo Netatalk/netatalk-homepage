@@ -1,23 +1,35 @@
 <div id="content">
+  <h1>Netatalk, Open Source File Server for Macs</h1>
+
   <p>Netatalk is a Free and Open Source file server for Macs.
-  Written in pure C, it is light-weight, performant, and portable.
+  The Netatalk software runs on a UNIX-like operating system (such as Linux, BSD or macOS)
+  and allows Macintosh computers to easily connect with each other and share files
+  on a local network or over the Internet.
+  </p>
+
+  <p>Written in pure C, it is light-weight, performant, and portable.
   Conforming to the <a href="https://developer.apple.com/library/archive/documentation/Networking/Conceptual/AFP/Introduction/Introduction.html#//apple_ref/doc/uid/TP40000854-CH1-SW1">
   Apple Filing Protocol</a> specifiction up to and including AFP 3.4,
-  any macOS, Mac OS X, or Mac OS system can talk to a Netatalk file server natively.
+  any macOS, Mac OS X, or Mac OS system can talk to a Netatalk file server out of the box.
   </p>
 
   <p>Since 1990, Netatalk has been leveraged by universities, enterprises,
   and home users for collaboration and remote data backup on Macs.
   With Netatalk, any UNIX-like host is able to integrate seamlessly with
-  macOS network file system services.</p>
+  macOS network file system services.
+  </p>
 
   <h2>Getting Started</h2>
   <p>There are roughly three ways to get started with Netatalk:
-  Install a pre-built binary package, pull a container image, or build it yourself from source.</p>
+  Install a pre-built binary package, pull a container image, or build the software yourself from source.
+  Knowledge of how to install packages, edit configuration files, and starting/stopping
+  system services are required.
+  </p>
 
-  <h3>1. Find a pre-built package in your distribution</h3>
+  <h3>1. Install a pre-built package for your distribution</h3>
   <p>Use your operating system's package manager to find the latest <i>netatalk</i> package.
-  This is not an exhaustive list.</p>
+  This is not an exhaustive list.
+  </p>
 
   <p>
   <a href="https://repology.org/project/netatalk/versions">
@@ -110,9 +122,15 @@
   </p>
 
   <h3>2. Pull a container image</h3>
-  <p>Make sure you have Docker Engine or equivalent installed, then do:</p>
+  <p>With Docker Engine or equivalent installed, do:
+  </p>
 
-  <p><pre>$ docker pull netatalk/netatalk:latest</pre></p>
+  <p><pre>$ docker pull netatalk/netatalk:latest</pre>
+  </p>
+
+  <p>Then follow the <a href="https://hub.docker.com/r/netatalk/netatalk">instructions</a>
+  on how to configure the container.
+  </p>
 
   <h3>3. Build from source</h3>
 
@@ -120,17 +138,32 @@
   <a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md#external-software-dependencies">needed
   libraries</a>.
   Read more in the <a href="stable/htmldocs/installation">Netatalk manual</a>
-  or the OS specific guides in the <a href="docs">wiki</a>.</p>
+  or the OS specific guides in the <a href="docs">wiki</a>.
+  </p>
 
-  <p>Before starting Netatalk for the first time,
-  you will likely need to adjust the Netatalk configuration to suit your setup.
+  <h2>How to Use</h2>
+
+  <p>By default, Netatalk shares the home directory of each authorized user,
+  with secure authentication methods compatible with macOS, Mac OS X, Mac OS 9 and Mac OS 8.
+  </p>
+  
+  <p>If you need a different setup, you have to configure the host system before starting Netatalk.
   Netatalk has a dizzying amount of options which can be daunting initially.
   The <a href="stable/htmldocs/configuration">Configuration</a> chapter
   and <a href="https://netatalk.io/stable/htmldocs/afp.conf.5">afp.conf</a> page
-  in the Netatalk manual are good places to start. Enjoy!</p>
+  in the Netatalk manual are good places to start.
+  </p>
+
+  <p>Once Netatalk is up and running, in the macOS Finder,
+  active Netatalk file servers appear under <i>Locations</i>,
+  or in the <i>Network</i> drawer.
+  On Classic Mac OS, you use the <i>AppleShare</i>
+  client within the <i>Chooser</i> desk accessory.
+  </p>
 
   <h2>Features</h2>
-  <p>Below is an overview of the capabilities and bundled utilities that Netatalk provides.</p>
+  <p>Below is an overview of the capabilities and bundled utilities that Netatalk provides.
+  </p>
 
   <table summary="Netatalk feature comparison">
   <tr>
@@ -138,11 +171,11 @@
   <th>Details</th>
   </tr>
   <tr>
-  <td>Supported Host OSes</td>
+  <td>Tested and Supported on</td>
   <td>Linux, DragonFlyBSD, FreeBSD, NetBSD, OpenBSD, macOS, OmniOS, OpenIndiana, Solaris 11</td>
   </tr>
   <tr>
-  <td>Supported Client OSes</td>
+  <td>Client Support</td>
   <td>macOS, Mac OS X, Mac OS 8/9, Macintosh System Software 6.0.x/7.x, Apple II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span>, Apple //e</td>
   </tr>
   <tr>
@@ -163,19 +196,19 @@
   </tr>
   <tr>
   <td>Service Discovery</td>
-  <td><i><a href="https://en.wikipedia.org/wiki/Bonjour_(software)">Bonjour</a></i> compatible on macOS / OSX, <i>AppleTalk</i> on Classic Mac OS</td>
+  <td><i><a href="https://en.wikipedia.org/wiki/Bonjour_(software)">Bonjour</a></i>-compatible on macOS / OSX, <i>AppleTalk</i> on Classic Mac OS</td>
   </tr>
   <tr>
   <td>Remote Backups</td>
-  <td><i><a href="https://en.wikipedia.org/wiki/Time_Machine_(macOS)">Time Machine</a></i> compatible</td>
+  <td><i><a href="https://en.wikipedia.org/wiki/Time_Machine_(macOS)">Time Machine</a></i>-compatible</td>
   </tr>
   <tr>
   <td>Indexed Search</td>
-  <td><i><a href="https://en.wikipedia.org/wiki/Spotlight_(Apple)">Spotlight</a></i> compatible on macOS / OSX, <i>CatalogSearch</i> on Classic Mac OS</td>
+  <td><i><a href="https://en.wikipedia.org/wiki/Spotlight_(Apple)">Spotlight</a></i>-compatible on macOS / OSX, <i>CatalogSearch</i> on Classic Mac OS</td>
   </tr>
   <tr>
   <td>Macintosh Network Booting</td>
-  <td><i><a href="https://en.wikipedia.org/wiki/NetBoot">NetBoot</a></i> 1.0 compatible (Ex: <a href="https://github.com/saybur/kea-mboot">kea-mboot</a>)</td>
+  <td><i><a href="https://en.wikipedia.org/wiki/NetBoot">NetBoot</a></i> 1.0-compatible (Ex: <a href="https://github.com/saybur/kea-mboot">kea-mboot</a>)</td>
   </tr>
   <tr>
   <td>Apple II Network Booting</td>
@@ -191,14 +224,14 @@
   </tr>
   <tr>
   <td>AppleTalk Time Server</td>
-  <td><i><a href="https://web.archive.org/web/20010303220117/http://www.cs.mu.oz.au/appletalk/readmes/TMLD.README.html">Timelord</a></i> compatible (via <tt>timelord</tt>)</td>
+  <td><i><a href="https://web.archive.org/web/20010303220117/http://www.cs.mu.oz.au/appletalk/readmes/TMLD.README.html">Timelord</a></i>-compatible (via <tt>timelord</tt>)</td>
   </tr>
   <tr>
-  <td>Built-in AppleTalk Router</td>
+  <td>AppleTalk Router</td>
   <td>Yes (via <tt>atalkd</tt>)</td>
   </tr>
   <tr>
-  <td>Built-in <a href="https://en.wikipedia.org/wiki/MacIP">MacIP</a> Gateway</td>
+  <td><a href="https://en.wikipedia.org/wiki/MacIP">MacIP</a> Gateway</td>
   <td>Yes (via <tt>macipgw</tt>)</td>
   </tr>
   <tr>
@@ -207,7 +240,6 @@
   </tr>
 </table>
 
-<hr />
   <h1>Latest News</h1>
 
 <hr />
@@ -253,8 +285,8 @@
   <a href="/4.0/ReleaseNotes4.0.4.html">Release Notes</a>.</p>
 
 <hr />
-  <p>For a list of older announcements, go to the <a href="archive.html">News Archive</a>.</p>
 
-<hr />
+  <h2>See Also</h2>
+  <p><a href="archive.html">News Archive</a></p>
 
 </div>
