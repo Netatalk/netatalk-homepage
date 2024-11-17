@@ -29,7 +29,8 @@
 
   <h3>1. Install a pre-built package for your distribution</h3>
   <p>Use your operating system's package manager to find the latest <i>netatalk</i> package.
-  This is a dynamic, non-exhaustive list of packages.
+  This is a dynamic, non-exhaustive <a href="https://repology.org/project/netatalk/packages">
+  list of current packages</a>.
   </p>
 
   <p>
