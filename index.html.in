@@ -8,7 +8,8 @@
   </p>
 
   <p>Written in pure C, it is light-weight, performant, and portable.
-  Conforming to the <a href="https://developer.apple.com/library/archive/documentation/Networking/Conceptual/AFP/Introduction/Introduction.html#//apple_ref/doc/uid/TP40000854-CH1-SW1">
+  Conforming to the
+  <a href="https://developer.apple.com/library/archive/documentation/Networking/Conceptual/AFP/Introduction/Introduction.html#//apple_ref/doc/uid/TP40000854-CH1-SW1">
   Apple Filing Protocol</a> specifiction up to and including AFP 3.4,
   any macOS, Mac OS X, or Mac OS system can talk to a Netatalk file server out of the box.
   </p>
@@ -28,97 +29,39 @@
 
   <h3>1. Install a pre-built package for your distribution</h3>
   <p>Use your operating system's package manager to find the latest <i>netatalk</i> package.
-  This is not an exhaustive list.
+  This is a dynamic, non-exhaustive list of packages.
   </p>
 
   <p>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/alpine_edge/netatalk.svg" alt="Alpine Linux Edge package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/aur/netatalk.svg" alt="Arch Linux package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/buildroot_master/netatalk.svg" alt="Buildroot master package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/debian_unstable/netatalk.svg" alt="Debian Unstable package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/devuan_unstable/netatalk.svg" alt="Devuan Unstable package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/epel_9/netatalk.svg" alt="EPEL 9 package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/fedora_rawhide/netatalk.svg" alt="Fedora Rawhide package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/freebsd/netatalk.svg" alt="FreeBSD port">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/gentoo/netatalk.svg" alt="Gentoo package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/kali_rolling/netatalk.svg" alt="Kali Linux Rolling package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/liguros_stable/netatalk.svg" alt="LiGurOS stable package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/macports/netatalk.svg" alt="MacPorts package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/mageia_cauldron/netatalk.svg" alt="Mageia cauldron package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/mports/netatalk.svg" alt="MidnightBSD port">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/pkgsrc_current/netatalk.svg" alt="NetBSD pkgsrc current package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/nix_unstable/netatalk.svg" alt="nixpkgs unstable package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/openbsd/netatalk.svg" alt="OpenBSD port">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/openpkg_current/netatalk.svg" alt="OpenPKG package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/opensuse_leap_42_3/netatalk.svg" alt="openSUSE Leap 42.3 package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/openwrt_21_02_x86_64/netatalk.svg" alt="OpenWrt 21.02 x86_64 package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/parabola/netatalk.svg" alt="Parabola package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/pclinuxos/netatalk.svg" alt="PCLinuxOS package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/pld/netatalk.svg" alt="PLD Linux package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/pureos_landing/netatalk.svg" alt="PureOS landing package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/raspbian_testing/netatalk.svg" alt="Raspbian Testing package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/slackware_current/netatalk.svg" alt="Slackware current package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/slitaz_next/netatalk.svg" alt="SliTaz Next package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/trisquel_11_0/netatalk.svg" alt="Trisquel 11.0 package">
-  </a>
-  <a href="https://repology.org/project/netatalk/versions">
-    <img src="https://repology.org/badge/version-for-repo/ubuntu_25_04/netatalk.svg" alt="Ubuntu 25.04 package">
-  </a>
+  <img src="https://repology.org/badge/version-for-repo/alpine_edge/netatalk.svg" alt="Alpine Linux Edge package">
+  <img src="https://repology.org/badge/version-for-repo/aur/netatalk.svg" alt="Arch Linux package">
+  <img src="https://repology.org/badge/version-for-repo/buildroot_master/netatalk.svg" alt="Buildroot master package">
+  <img src="https://repology.org/badge/version-for-repo/debian_unstable/netatalk.svg" alt="Debian Unstable package">
+  <img src="https://repology.org/badge/version-for-repo/devuan_unstable/netatalk.svg" alt="Devuan Unstable package">
+  <img src="https://repology.org/badge/version-for-repo/epel_9/netatalk.svg" alt="EPEL 9 package">
+  <img src="https://repology.org/badge/version-for-repo/fedora_rawhide/netatalk.svg" alt="Fedora Rawhide package">
+  <img src="https://repology.org/badge/version-for-repo/freebsd/netatalk.svg" alt="FreeBSD port">
+  <img src="https://repology.org/badge/version-for-repo/gentoo/netatalk.svg" alt="Gentoo package">
+  <img src="https://repology.org/badge/version-for-repo/kali_rolling/netatalk.svg" alt="Kali Linux Rolling package">
+  <img src="https://repology.org/badge/version-for-repo/liguros_stable/netatalk.svg" alt="LiGurOS stable package">
+  <img src="https://repology.org/badge/version-for-repo/macports/netatalk.svg" alt="MacPorts package">
+  <img src="https://repology.org/badge/version-for-repo/mageia_cauldron/netatalk.svg" alt="Mageia cauldron package">
+  <img src="https://repology.org/badge/version-for-repo/mports/netatalk.svg" alt="MidnightBSD port">
+  <img src="https://repology.org/badge/version-for-repo/pkgsrc_current/netatalk.svg" alt="NetBSD pkgsrc current package">
+  <img src="https://repology.org/badge/version-for-repo/nix_unstable/netatalk.svg" alt="nixpkgs unstable package">
+  <img src="https://repology.org/badge/version-for-repo/openbsd/netatalk.svg" alt="OpenBSD port">
+  <img src="https://repology.org/badge/version-for-repo/openpkg_current/netatalk.svg" alt="OpenPKG package">
+  <img src="https://repology.org/badge/version-for-repo/opensuse_leap_42_3/netatalk.svg" alt="openSUSE Leap 42.3 package">
+  <img src="https://repology.org/badge/version-for-repo/openwrt_21_02_x86_64/netatalk.svg" alt="OpenWrt 21.02 x86_64 package">
+  <img src="https://repology.org/badge/version-for-repo/parabola/netatalk.svg" alt="Parabola package">
+  <img src="https://repology.org/badge/version-for-repo/pclinuxos/netatalk.svg" alt="PCLinuxOS package">
+  <img src="https://repology.org/badge/version-for-repo/pld/netatalk.svg" alt="PLD Linux package">
+  <img src="https://repology.org/badge/version-for-repo/pureos_landing/netatalk.svg" alt="PureOS landing package">
+  <img src="https://repology.org/badge/version-for-repo/raspbian_testing/netatalk.svg" alt="Raspbian Testing package">
+  <img src="https://repology.org/badge/version-for-repo/slackware_current/netatalk.svg" alt="Slackware current package">
+  <img src="https://repology.org/badge/version-for-repo/slitaz_next/netatalk.svg" alt="SliTaz Next package">
+  <img src="https://repology.org/badge/version-for-repo/trisquel_11_0/netatalk.svg" alt="Trisquel 11.0 package">
+  <img src="https://repology.org/badge/version-for-repo/ubuntu_25_04/netatalk.svg" alt="Ubuntu 25.04 package">
   </p>
 
   <h3>2. Pull a container image</h3>
