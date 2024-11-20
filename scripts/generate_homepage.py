@@ -1,4 +1,68 @@
 import os
+import re
+import requests
+
+url = "https://raw.githubusercontent.com/Netatalk/netatalk/refs/heads/main/NEWS"
+
+try:
+    response = requests.get(url)
+    response.raise_for_status()
+
+    file_contents = """
+<div id="content">
+<h1>Netatalk NEWS</h1>
+<pre>
+""" + response.text + """
+</pre>
+
+</div>
+"""
+
+except requests.exceptions.RequestException as e:
+    print(f"An error occurred: {e}")
+
+output_file = "./news.html.in"
+
+try:
+    with open(output_file, "w") as file:
+        file.write(file_contents)
+    
+    print(f"File '{output_file}' created successfully!")
+
+except Exception as e:
+    print(f"An error occurred: {e}")
+
+url = "https://raw.githubusercontent.com/Netatalk/netatalk/refs/heads/main/CONTRIBUTORS"
+
+try:
+    response = requests.get(url)
+    response.raise_for_status()
+    
+    file_contents = re.sub(r"(<[^<>]+@[a-zA-Z0-9._-]+>", "", response.text)
+
+    file_contents = """
+<div id="content">
+<h1>Netatalk CONTRIBUTORS</h1>
+<pre>
+""" + file_contents + """
+</pre>
+
+</div>
+"""
+
+except requests.exceptions.RequestException as e:
+    print(f"An error occurred: {e}")
+
+output_file = "./contributors.html.in"
+
+try:
+    with open(output_file, "w") as file:
+        file.write(file_contents)
+    
+    print(f"File '{output_file}' created successfully!")
+
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 files = []
 
