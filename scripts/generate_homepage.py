@@ -38,7 +38,7 @@ try:
     response = requests.get(url)
     response.raise_for_status()
     
-    file_contents = re.sub(r"(<[^<>]+@[a-zA-Z0-9._-]+>", "", response.text)
+    file_contents = re.sub(r"\s<[^<>]+@[a-zA-Z0-9._-]+>", "", response.text)
 
     file_contents = """
 <div id="content">
