@@ -70,9 +70,10 @@
 
   <h3>2. Pull a container image</h3>
 
-  <p>This option is either for users who already leverage containers extensively in their setup,
+  <p>This option is either for users who already leverage containers in their setup,
   or for when a binary package is outdated and you want to run the latest Netatalk version.
-  Running a docker image has a relatively lower barrier to entry compared to building from source.</p>
+  Running a docker image has a relatively lower barrier to entry compared to building from source.
+  </p>
 
   <p>With Docker Engine or equivalent installed, do:
   </p>
