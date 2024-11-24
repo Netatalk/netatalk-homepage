@@ -203,6 +203,19 @@
   <h1>Latest News</h1>
 
 <hr />
+  <small>24th of November 2024</small>
+  <h2>Netatalk 4.0.7 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the latest release
+  of the Netatalk 4.0 release series.
+  We have fixed a range of build system bugs for *BSD hosts in particular.</p>
+  <p>See the <a href="/4.0/htmldocs/upgrade">upgrade chapter</a>
+  of the manual for instructions how to upgrade existing 3.x or 2.x deployments.
+  All users of previous Netatalk versions are encouraged to upgrade to 4.0!</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/4.0/ReleaseNotes4.0.7.html">Release Notes</a>.</p>
+
+<hr />
   <small>15th of November 2024</small>
   <h2>Netatalk 4.0.6 is available</h2>
 
@@ -229,20 +242,6 @@
   All users of previous Netatalk versions are now encouraged to upgrade!</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/4.0/ReleaseNotes4.0.5.html">Release Notes</a>.</p>
-
-<hr />
-  <small>2nd of November 2024</small>
-  <h2>Netatalk 4.0.4 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 4.0 release series.
-  This is a minor bugfix release that addresses build and distribution specific issues.
-  Additionally, the bundled test suite has seen major refinement.</p>
-  <p>See the <a href="/4.0/htmldocs/upgrade">upgrade chapter</a>
-  of the manual for instructions how to upgrade existing 3.x or 2.x deployments.
-  Early adopters are encouraged to upgrade to the 4.0 release series. We look forward to your feedback!</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/4.0/ReleaseNotes4.0.4.html">Release Notes</a>.</p>
 
 <hr />
 
