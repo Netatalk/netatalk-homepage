@@ -49,6 +49,7 @@ versions = [
     "4.0.5",
     "4.0.6",
     "4.0.7",
+    "4.0.8",
 ]
 
 url_pattern = re.compile(r'((?:^|\s)(https?://\S+)(?=<))')
