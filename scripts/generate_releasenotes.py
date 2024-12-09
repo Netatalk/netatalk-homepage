@@ -92,7 +92,7 @@ for release_version in versions:
 
     pre_footer = f"""<hr />
 <p>Release published on {published_at}</p>
-<p>Generated from the original at <a href=\"https://github.com/Netatalk/netatalk/releases/tag/{github_tag}\">GitHub</a></p>
+<p>Generated from <a href=\"https://github.com/Netatalk/netatalk/releases/tag/{github_tag}\">GitHub Release Notes</a></p>
 <hr />
 </div>
 """
