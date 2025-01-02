@@ -2,7 +2,7 @@
 <h1>Netatalk Manuals</h1>
 <p>The manual covers topics on how to install, configure, control, and upgrade Netatalk.</p>
 
-<h3>Netatalk version 4 release series</h3>
+<h3>Netatalk 4 Documentation</h3>
 <ul>
     <li>
         <a href="/4.0/htmldocs">
@@ -16,7 +16,7 @@
     </li>
 </ul>
 
-<h3>Netatalk version 3 release series</h3>
+<h3>Netatalk 3 Documentation</h3>
 <ul>
     <li>
         <a href="/3.2/htmldocs">
@@ -45,7 +45,7 @@
     </li>
 </ul>
 
-<h3>Netatalk version 2 release series</h3>
+<h3>Netatalk 2 Documentation</h3>
 <ul>
     <li>
         <a href="/2.4/htmldocs">
