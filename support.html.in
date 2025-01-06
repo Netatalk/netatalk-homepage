@@ -32,6 +32,7 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <th>Subject</th>
 <th>Publish Date</th>
 <th>Affected Versions</th>
+<th>Fixed Versions</th>
 </tr>
 <tr>
 <td><a href="/security/CVE-2024-38441.html">CVE-2024-38441</a></td>
@@ -40,6 +41,9 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>3.2.0<br>
 3.0.0 - 3.1.18<br>
 2.0.0 - 2.4.0</td>
+<td>3.2.1<br>
+3.1.19<br>
+2.4.1</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2024-38440.html">CVE-2024-38440</a></td>
@@ -48,6 +52,9 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>3.2.0<br>
 3.0.0 - 3.1.18<br>
 1.5.0 - 2.4.0</td>
+<td>3.2.1<br>
+3.1.19<br>
+2.4.1</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2024-38439.html">CVE-2024-38439</a></td>
@@ -56,12 +63,16 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>3.2.0<br>
 3.0.0 - 3.1.18<br>
 1.5.0 - 2.4.0</td>
+<td>3.2.1<br>
+3.1.19<br>
+2.4.1</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2023-42464.html">CVE-2023-42464</a></td>
 <td>afpd daemon vulnerable to type confusion</td>
 <td>2023/09/17</td>
 <td>3.1.0 - 3.1.16</td>
+<td>3.1.17</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-45188.html">CVE-2022-45188</a></td>
@@ -69,12 +80,15 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>2023/03/26</td>
 <td>3.0.0 - 3.1.14<br>
 1.5.0 - 2.2.8</td>
+<td>3.1.15<br>
+2.2.9</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-43634.html">CVE-2022-43634</a></td>
 <td>Arbitrary code execution in dsi_writeinit</td>
 <td>2023/02/06</td>
 <td>3.0.0 - 3.1.14</td>
+<td>3.1.15</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-23125.html">CVE-2022-23125</a></td>
@@ -82,12 +96,15 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>2022/03/21</td>
 <td>3.0.0 - 3.1.12<br>
 - 2.2.6</td>
+<td>3.1.13<br>
+2.2.7</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-23124.html">CVE-2022-23124</a></td>
 <td>Information leak in get_finderinfo</td>
 <td>2022/03/21</td>
 <td>3.0.0 - 3.1.12</td>
+<td>3.1.13</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-23123.html">CVE-2022-23123</a></td>
@@ -95,12 +112,15 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>2022/03/21</td>
 <td>3.0.0 - 3.1.12<br>
 1.5.0 - 2.2.6</td>
+<td>3.1.13<br>
+2.2.7</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-23122.html">CVE-2022-23122</a></td>
 <td>Arbitrary code execution in setfilparams</td>
 <td>2022/03/21</td>
 <td>3.0.0 - 3.1.12</td>
+<td>3.1.13</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-23121.html">CVE-2022-23121</a></td>
@@ -108,12 +128,15 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>2022/03/21</td>
 <td>3.0.0 - 3.1.12<br>
 1.5.0 - 2.2.6</td>
+<td>3.1.13<br>
+2.2.7</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-22995.html">CVE-2022-22995</a></td>
 <td>afpd daemon vulnerable to symlink redirection</td>
 <td>2023/10/05</td>
 <td>3.1.0 - 3.1.17</td>
+<td>3.1.18</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2022-0194.html">CVE-2022-0194</a></td>
@@ -121,12 +144,15 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>2022/03/21</td>
 <td>3.0.0 - 3.1.12<br>
 1.5.0 - 2.2.6</td>
+<td>3.1.13<br>
+2.2.7</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2021-31439.html">CVE-2021-31439</a></td>
 <td>Arbitrary code execution in dsi_stream_receive</td>
 <td>2022/03/21</td>
 <td>3.0.0 - 3.1.12</td>
+<td>3.1.13</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2018-1160.html">CVE-2018-1160</a></td>
@@ -134,12 +160,15 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>2018/12/13</td>
 <td>3.0.0 - 3.1.11<br>
 1.5.0 - 2.2.6</td>
+<td>3.1.12<br>
+2.2.7</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2008-5718.html">CVE-2008-5718</a></td>
 <td>papd daemon vulnerable to remote command execution</td>
 <td>2009/11/10</td>
 <td>2.0.0 - 2.0.4</td>
+<td>2.0.5</td>
 </tr>
 <tr>
 <td><a href="/security/CVE-2004-0974.html">CAN-2004-0974</a></td>
@@ -147,6 +176,8 @@ new security vulnerability report</a> via GitHub. This enables us to collaborate
 <td>2004/10/24</td>
 <td>2.0.0<br>
 - 1.6.4</td>
+<td>2.0.1<br>
+1.6.4a</td>
 </tr>
 </table>
 
