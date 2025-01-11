@@ -203,6 +203,20 @@
   <h1>Latest News</h1>
 
 <hr />
+  <small>11th of January 2025</small>
+  <h2>Netatalk 4.1.0 is available</h2>
+
+  <p>The Netatalk development team is proud to announce the first release
+  of the Netatalk 4.1 release series.
+  This is a minor feature release that further improves interoperability on macOS hosts,
+  makes the MacIP Gateway deamon more usable,
+  and introduces a number of bugfixes and build system improvements.</p>
+  <p>All users of previous Netatalk versions are encouraged to upgrade to 4.1,
+  with a few caveats outlined in the Release Notes.</p>
+  <p>For a summary of news and a detailed list of changes see the
+  <a href="/4.1/ReleaseNotes4.1.0.html">Release Notes</a>.</p>
+
+<hr />
   <small>9th of December 2024</small>
   <h2>Netatalk 4.0.8 is available</h2>
 
@@ -227,20 +241,6 @@
   All users of previous Netatalk versions are encouraged to upgrade to 4.0!</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/4.0/ReleaseNotes4.0.7.html">Release Notes</a>.</p>
-
-<hr />
-  <small>15th of November 2024</small>
-  <h2>Netatalk 4.0.6 is available</h2>
-
-  <p>The Netatalk development team is proud to announce the latest release
-  of the Netatalk 4.0 release series.
-  This release contains fixes for older AppleShare Clients, the Webmin module,
-  and the Meson build system.</p>
-  <p>See the <a href="/4.0/htmldocs/upgrade">upgrade chapter</a>
-  of the manual for instructions how to upgrade existing 3.x or 2.x deployments.
-  All users of previous Netatalk versions are encouraged to upgrade to 4.0!</p>
-  <p>For a summary of news and a detailed list of changes see the
-  <a href="/4.0/ReleaseNotes4.0.6.html">Release Notes</a>.</p>
 
 <hr />
 
