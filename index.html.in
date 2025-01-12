@@ -131,11 +131,11 @@
   <th>Details</th>
   </tr>
   <tr>
-  <td>Tested and Supported on</td>
-  <td>Linux, DragonFlyBSD, FreeBSD, NetBSD, OpenBSD, macOS, OmniOS, OpenIndiana, Solaris 11</td>
+  <td>Host OS Support</td>
+  <td>Linux (glibc & musl), DragonFlyBSD, FreeBSD, NetBSD, OpenBSD, macOS, OmniOS, Solaris 11</td>
   </tr>
   <tr>
-  <td>Client Support</td>
+  <td>Client OS Support</td>
   <td>macOS, Mac OS X, Mac OS 8/9, Macintosh System Software 6.0.x/7.x, Apple II<span style="font-variant: small-caps; text-transform: lowercase;">GS</span>, Apple //e</td>
   </tr>
   <tr>
