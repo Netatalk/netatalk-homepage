@@ -263,25 +263,26 @@ div.footer {
 
 /* default settings */
 
+h1, h2, h3 {
+  font-size: 130%;
+  padding: 2px;
+  margin-top: 0px;
+}
+
 h1 {
-  font-size: 150%;
-  font-weight: bold;
-  color: #000000;
-  margin-bottom: 1em;
+  background-color: #605e5e;
+  color: #FFFFFF;
 }
 
 h2 {
-  font-size: 130%;
-  font-weight: bold;
-  color: #000000;
-  margin-bottom: 1em;
+  background-color: #424242;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 h3 {
-  font-size: 110%;
-  font-weight: bold;
-  color: #000000;
-  margin-top: 1em;
+  background-color: #330000;
+  color: #FFFFFF;
 }
 
 /* we use h4 for the left div titles */
@@ -320,7 +321,14 @@ a, a:visited {
   color: #660000;
 }
 
-code {
+pre {
+  border: #630 1px dashed;
   color: #993300;
   padding: 2px;
+  font-size: 100%;
+  white-space: pre-wrap;
+}
+
+code {
+  color: #993300;
 }
