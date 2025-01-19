@@ -124,6 +124,7 @@
   that the latest version of Netatalk provides.
   </p>
 
+  <p>
   <table summary="Netatalk feature comparison">
   <tr>
   <th>Feature</th>
@@ -197,13 +198,13 @@
   <td>Administrative GUI</td>
   <td><i><a href="https://webmin.com/">Webmin</a></i> module</td>
   </tr>
-</table>
+  </table>
+  </p>
 
   <h1>Latest News</h1>
 
-<hr />
-  <small>11th of January 2025</small>
   <h2>Netatalk 4.1.0 is available</h2>
+  <small>11th of January 2025</small>
 
   <p>The Netatalk development team is proud to announce the first release
   of the Netatalk 4.1 release series.
@@ -215,9 +216,8 @@
   <p>For a summary of news and a detailed list of changes see the
   <a href="/4.1/ReleaseNotes4.1.0.html">Release Notes</a>.</p>
 
-<hr />
-  <small>9th of December 2024</small>
   <h2>Netatalk 4.0.8 is available</h2>
+  <small>9th of December 2024</small>
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 4.0 release series.
@@ -228,9 +228,8 @@
   <p>For a summary of news and a detailed list of changes see the
   <a href="/4.0/ReleaseNotes4.0.8.html">Release Notes</a>.</p>
 
-<hr />
-  <small>24th of November 2024</small>
   <h2>Netatalk 4.0.7 is available</h2>
+  <small>24th of November 2024</small>
 
   <p>The Netatalk development team is proud to announce the latest release
   of the Netatalk 4.0 release series.
@@ -240,8 +239,6 @@
   All users of previous Netatalk versions are encouraged to upgrade to 4.0!</p>
   <p>For a summary of news and a detailed list of changes see the
   <a href="/4.0/ReleaseNotes4.0.7.html">Release Notes</a>.</p>
-
-<hr />
 
   <h2>See Also</h2>
   <p><a href="archive.html">News Archive</a></p>

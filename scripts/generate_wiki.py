@@ -96,7 +96,7 @@ for file in files:
         output_file.write(html_head(page_title))
         output_file.write(header)
         output_file.write(navbar)
-        output_file.write(f"<div id=\"content\">\n<h1 id=\"{file.split('.')[0]}\">{file.split('.')[0].replace('-', ' ')}</h1><hr/>\n")
+        output_file.write(f"<div id=\"content\">\n<h1 id=\"{file.split('.')[0]}\">{file.split('.')[0].replace('-', ' ')}</h1>\n")
         output_file.write(html)
         output_file.write(pre_footer(page_title))
         output_file.write(footer)
