@@ -24,7 +24,7 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 4.1.0</div>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.1.1</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 3. Setting up Netatalk</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="installation.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="appletalk.html">Next</a></td></tr></table><hr /></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="configuration"></a>Chapter 3. Setting up Netatalk</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="configuration.html#id-1.6.2">Setting up the AFP file server</a></span></dt><dd><dl><dt><span class="sect2"><a href="configuration.html#id-1.6.2.7">afp.conf</a></span></dt></dl></dd><dt><span class="sect1"><a href="configuration.html#CNID-backends">CNID backends</a></span></dt><dd><dl><dt><span class="sect2"><a href="configuration.html#id-1.6.3.8">dbd</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.3.9">last</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.3.10">mysql</a></span></dt></dl></dd><dt><span class="sect1"><a href="configuration.html#charsets">Charsets/Unicode</a></span></dt><dd><dl><dt><span class="sect2"><a href="configuration.html#id-1.6.4.2">Why Unicode?</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.4.3">Character sets used by Apple</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.4.4">afpd and character sets</a></span></dt></dl></dd><dt><span class="sect1"><a href="configuration.html#authentication">Authentication</a></span></dt><dd><dl><dt><span class="sect2"><a href="configuration.html#id-1.6.5.2">AFP authentication basics</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.5.3">UAMs supported by Netatalk</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.5.4">Which UAMs to activate?</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.5.5">Using different authentication sources with specific UAMs</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.5.6">Netatalk UAM overview table</a></span></dt><dt><span class="sect2"><a href="configuration.html#sshtunnel">SSH tunneling</a></span></dt></dl></dd><dt><span class="sect1"><a href="configuration.html#acls">ACL Support</a></span></dt><dd><dl><dt><span class="sect2"><a href="configuration.html#id-1.6.6.3">Configuration</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.6.4">macOS ACLs</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.6.5">ZFS ACLs</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.6.6">POSIX ACLs</a></span></dt></dl></dd><dt><span class="sect1"><a href="configuration.html#fce">Filesystem Change Events</a></span></dt><dt><span class="sect1"><a href="configuration.html#id-1.6.8">Spotlight</a></span></dt><dd><dl><dt><span class="sect2"><a href="configuration.html#id-1.6.8.3">Configuration</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.8.4">Using Tracker commandline tools on the server</a></span></dt><dt><span class="sect2"><a href="configuration.html#id-1.6.8.5">Supported metadata attributes</a></span></dt></dl></dd></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id-1.6.2"></a>Setting up the AFP file server</h2></div></div></div><p>AFP<a id="id-1.6.2.2.1" class="indexterm"></a> (the Apple Filing Protocol) is a protocol used on the Apple
     Macintosh for file services<a id="id-1.6.2.2.2" class="indexterm"></a>. The protocol has evolved over the years. The final
     revision of the protocol, AFP 3.4, was introduced with OS X Lion<a id="id-1.6.2.2.3" class="indexterm"></a> (10.7).</p><p>Netatalk's <span class="command"><strong>afpd</strong></span> daemon offers AFP fileservices to
@@ -89,9 +89,11 @@ basedir regex = /usr/home</pre><p>For a more detailed explanation of the availab
       the CNID database is restricted to the cnid_dbd daemon process. afpd
       processes communicate with the daemon for database reads and updates.
       The probability for database corruption is practically zero.</p><p>This is the default backend since Netatalk 2.1.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="id-1.6.3.9"></a>last<a id="id-1.6.3.9.1.1" class="indexterm"></a></h3></div></div></div><p>The last backend is an in-memory tdb database. It is not
-      persistent. Starting with netatalk 3.0, it operates in <span class="emphasis"><em>read
-      only mode</em></span> automatically. This is useful e.g. for mounting
-      CD-ROMs.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="id-1.6.3.10"></a>mysql<a id="id-1.6.3.10.1.1" class="indexterm"></a></h3></div></div></div><p>CNID backend using a MySQL server. The MySQL server has to be
+      persistent, with IDs valid only for the current session. Starting with
+      netatalk 3.0, it operates in <span class="emphasis"><em>read only mode</em></span>. This
+      backend is useful e.g. for mounting CD-ROMs, or for automated
+      testing.</p><p>This is basically equivalent to how <span class="command"><strong>afpd</strong></span> stored
+      CNID data in netatalk 1.5 and earlier.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="id-1.6.3.10"></a>mysql<a id="id-1.6.3.10.1.1" class="indexterm"></a></h3></div></div></div><p>CNID backend using a MySQL server. The MySQL server has to be
       provisioned by the system administrator.</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="charsets"></a>Charsets<a id="id-1.6.4.1.1" class="indexterm"></a>/Unicode<a id="id-1.6.4.1.2" class="indexterm"></a></h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="id-1.6.4.2"></a>Why Unicode?</h3></div></div></div><p>Internally, computers don't know anything about characters and
       texts, they only know numbers. Therefore, each letter is assigned a
       number. A character set, often referred to as
@@ -187,8 +189,8 @@ basedir regex = /usr/home</pre><p>For a more detailed explanation of the availab
       automatically mean that a client can use it. Client-side support is also
       necessary. For older Macintoshes running Classic Mac OS, DHCAST128
       support exists since AppleShare client 3.8.x.</p><p>On macOS, there exist some client-side techniques to make the
-      AFP-client more verbose, so one can have a look at what's happening while
-      negotiating the UAMs to use. Compare with this <a class="ulink" href="https://web.archive.org/web/20080312054723/http://article.gmane.org/gmane.network.netatalk.devel/7383/" target="_top">hint</a>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="id-1.6.5.4"></a>Which UAMs to activate?</h3></div></div></div><p>It depends primarily on your needs and on the kind of macOS
+      AFP-client more verbose, so one can have a look at what's happening
+      while negotiating the UAMs to use. Compare with this <a class="ulink" href="https://web.archive.org/web/20080312054723/http://article.gmane.org/gmane.network.netatalk.devel/7383/" target="_top">hint</a>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a id="id-1.6.5.4"></a>Which UAMs to activate?</h3></div></div></div><p>It depends primarily on your needs and on the kind of macOS
       clients you have to support. If your network consists of exclusively
       macOS (Mac OS X) clients, DHX2 is sufficient, and provides the strongest
       encryption.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Unless you really have to supply guest access to your server's
@@ -408,12 +410,12 @@ aclmode = passthrough</pre><p>For an explanation of what this knob does and how 
         permissions bits of the UNIX permissions correspond to the value of
         the ACL_MASK entry, i. e. calling "chmod g-w" will not only revoke
         write access for the group, but for all entities which have been
-        granted write access by ACL_USER or ACL_GROUP entries.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a id="id-1.6.6.6.3"></a>Mapping POSIX ACLs to macOS ACLs</h4></div></div></div><p>When a client wants to read an object's ACL, afpd maps its
-        POSIX ACL onto an equivalent macOS ACL. Writing an object's ACL
-        requires afpd to map an macOS ACL onto a POSIX ACL. Due to
-        architectural restrictions of POSIX ACLs, it is usually impossible to
-        find an exact mapping so that the result of the mapping process will
-        be an approximation of the original ACL's semantic.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>afpd silently discard entries which deny a set of
+        granted write access by ACL_USER or ACL_GROUP entries.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a id="id-1.6.6.6.3"></a>Mapping POSIX ACLs to macOS ACLs</h4></div></div></div><p>When a client wants to read an object's ACL, afpd maps its POSIX
+        ACL onto an equivalent macOS ACL. Writing an object's ACL requires
+        afpd to map an macOS ACL onto a POSIX ACL. Due to architectural
+        restrictions of POSIX ACLs, it is usually impossible to find an exact
+        mapping so that the result of the mapping process will be an
+        approximation of the original ACL's semantic.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>afpd silently discard entries which deny a set of
               permissions because they they can't be represented within the
               POSIX architecture.</p></li><li class="listitem"><p>As entries within POSIX ACLs are unordered, it is
               impossible to preserve order.</p></li><li class="listitem"><p>Inheritance control is subject to severe limitations as

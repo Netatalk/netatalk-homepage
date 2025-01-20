@@ -24,7 +24,7 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 4.1.0</div>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.1.1</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">afp.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="aecho.1.html">Prev</a> </td><th width="60%" align="center">Chapter 6. Manual Pages</th><td width="20%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">Next</a></td></tr></table><hr /></div><div class="refentry"><a id="afp.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>afp.conf — Netatalk configuration file</p></div><div class="refsect1"><a id="id-1.9.7.3"></a><h2>Synopsis</h2><p>The <code class="filename">afp.conf</code> file is the configuration file for
     the <span class="bold"><strong>Netatalk</strong></span> AFP file server.</p><p>All AFP-specific configurations and AFP volume definitions are done
     via this file.</p></div><div class="refsect1"><a id="FILEFORMATSECT"></a><h2>File Format</h2><p>The file consists of sections and parameters. A section begins with
@@ -163,7 +163,8 @@
             <span class="emphasis"><em>LOCALE</em></span> is set, the systems locale is used.
             Defaults to <span class="emphasis"><em>UTF8</em></span>.</p></dd><dt><span class="term">vol charset = <em class="parameter"><code>CHARSET</code></em>
           <span class="type">(G)/(V)</span></span></dt><dd><p>Specifies the encoding of the volumes filesystem. By
-            default, it is the same as <code class="option">unix charset</code>.</p></dd></dl></div></div><div class="refsect2"><a id="id-1.9.7.9.4"></a><h3>Password Options</h3><div class="variablelist"><dl class="variablelist"><dt><span class="term">passwd file = <em class="parameter"><code>path</code></em>
+            default, it is the same as <code class="option">unix charset</code>.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>It is highly recommended to stick to the default UTF-8
+              encoding.</p></div></dd></dl></div></div><div class="refsect2"><a id="id-1.9.7.9.4"></a><h3>Password Options</h3><div class="variablelist"><dl class="variablelist"><dt><span class="term">passwd file = <em class="parameter"><code>path</code></em>
           <span class="type">(G)</span></span></dt><dd><p>Sets the path to the Randnum UAM passwd file for this
             server.</p></dd><dt><span class="term">passwd minlen = <em class="parameter"><code>number</code></em>
           <span class="type">(G)</span></span></dt><dd><p>Sets the minimum password length, if supported by the
@@ -178,8 +179,8 @@
               implementation of this feature in MacOS X versions prior to
               10.3.4 contained a security flaw.</p></div></dd><dt><span class="term">afp interfaces = <em class="replaceable"><code>name [name ...]</code></em>
           <span class="type">(G)</span></span></dt><dd><p>Specifies the network interfaces that the server should
-            listens on. The default is advertise the first IP address of the
-            system, but to listen for any incoming request.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Do not use at the same time as the <code class="option">afp
+            listen on. The default is to advertise the first IP address of the
+            system, while listening for any incoming request.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Do not use at the same time as the <code class="option">afp
               listen</code> option.</p></div></dd><dt><span class="term">afp listen = <em class="replaceable"><code>ip address[:port] [ip address[:port]
           ...]</code></em> <span class="type">(G)</span></span></dt><dd><p>Specifies the IP address that the server should advertise
             <span class="bold"><strong>and</strong></span> listens to. The default is
@@ -277,8 +278,8 @@
             network address may be specified either in dotted-decimal format
             for IPv4 or in hexadecimal format for IPv6.-</p></dd><dt><span class="term">dbus daemon = <em class="parameter"><code>path</code></em>
           <span class="type">(G)</span></span></dt><dd><p>Sets the path to dbus-daemon binary used by the Spotlight
-            feature. Can be used when the compile-time default path
-            does not match the runtime environment.</p></dd><dt><span class="term">dircachesize = <em class="replaceable"><code>number</code></em>
+            feature. Can be used when the compile-time default path does not
+            match the runtime environment.</p></dd><dt><span class="term">dircachesize = <em class="replaceable"><code>number</code></em>
           <span class="type">(G)</span></span></dt><dd><p>Maximum possible entries in the directory cache. The cache
             stores directories and files. It is used to cache the full path to
             directories and CNIDs which considerably speeds up directory
@@ -306,8 +307,8 @@
             are used. Thus in order to ignore the Finder lock/BSD uchg flag,
             add set <span class="emphasis"><em>ignored attributes = all</em></span>.</p></dd><dt><span class="term">legacy icon = <em class="replaceable"><code>icon</code></em>
           <span class="type">(G)</span></span></dt><dd><p>Sets the shared volume icon displayed in the Finder in
-            Classic Mac OS. Note that some versions of Classic Mac OS
-            ignores this icon. Examples of valid icon styles:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="option">daemon</code></p></li><li class="listitem"><p><code class="option">globe</code></p></li><li class="listitem"><p><code class="option">sdcard</code></p></li></ul></div></dd><dt><span class="term">login message = <em class="replaceable"><code>message</code></em>
+            Classic Mac OS. Note that some versions of Classic Mac OS ignores
+            this icon. Examples of valid icon styles:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="option">daemon</code></p></li><li class="listitem"><p><code class="option">globe</code></p></li><li class="listitem"><p><code class="option">sdcard</code></p></li></ul></div></dd><dt><span class="term">login message = <em class="replaceable"><code>message</code></em>
           <span class="type">(G)/(V)</span></span></dt><dd><p>Sets a message to be displayed when clients logon to the
             server. The message should be in <code class="option">unix charset</code>.
             Extended characters are allowed.</p></dd><dt><span class="term">mimic model = <em class="replaceable"><code>model</code></em>
@@ -512,7 +513,12 @@
             2001:db8::1428:57ab</p></dd><dt><span class="term">cnid scheme = <em class="replaceable"><code>backend</code></em>
           <span class="type">(V)</span></span></dt><dd><p>set the CNID backend to be used for the volume, default is
             ["dbd"] available schemes:
-            ["dbd last mysql"]</p></dd><dt><span class="term">ea = <em class="replaceable"><code>none|auto|sys|ad|samba</code></em>
+            ["dbd last"]</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The "mysql" backend requires the system administrator to
+              configure a MySQL database instance for use with
+              netatalk.</p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>Do <span class="emphasis"><em>NOT</em></span> use the "last" backend for
+              volumes, because <span class="command"><strong>afpd</strong></span> relies heavily on a
+              persistent ID database. Aliases will likely not work and
+              filename mangling is not supported.</p></div></dd><dt><span class="term">ea = <em class="replaceable"><code>none|auto|sys|ad|samba</code></em>
           <span class="type">(V)</span></span></dt><dd><p>Specify how Extended Attributes<a id="id-1.9.7.10.2.3.9.2.1.1" class="indexterm"></a> are stored. <code class="option">auto</code> is the
             default.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">auto</span></dt><dd><p>Try <code class="option">sys</code> (by setting an EA on the
                   shared directory itself), fallback to <code class="option">ad</code>.
@@ -621,43 +627,5 @@
             volume.</p></dd><dt><span class="term">unix priv = <em class="replaceable"><code>BOOLEAN</code></em> (default:
           <span class="emphasis"><em>yes</em></span>) <span class="type">(V)</span></span></dt><dd><p>Whether to use AFP3 UNIX privileges. This should be set for
             OS X clients. See also: <code class="option">file perm</code>,
-            <code class="option">directory perm</code> and <code class="option">umask</code>.</p></dd></dl></div></div></div><div class="refsect1"><a id="id-1.9.7.11"></a><h2>CNID backends</h2><p>The AFP protocol primarily refers to files and directories by ID and
-    not by name. Netatalk needs a way to store these IDs in a persistent way.
-    To achieve this, Netatalk provides multiple CNID backends with different
-    capabilities. The CNID databases are by default located under
-    localstatedir.</p><div class="variablelist"><dl class="variablelist"><dt><span class="term">dbd</span></dt><dd><p>Access to the CNID database is restricted to the
-          <span class="command"><strong>cnid_metad</strong></span> daemon process.
-          <span class="command"><strong>afpd</strong></span> processes communicate with the daemon for
-          database reads and updates. If built with Berkeley DB transactions
-          the probability for database corruption is practically zero, but
-          performance can be slower than with <code class="option">cdb</code></p></dd><dt><span class="term">last</span></dt><dd><p>This backend is an exception, in terms of ID persistency. ID's
-          are only valid for the current session. This is basically what
-          <span class="command"><strong>afpd</strong></span> did in the 1.5 (and 1.6) versions. This
-          backend is still available, as it is useful for e.g. sharing CD-ROMs.
-          Starting with Netatalk 3.0, it becomes the <span class="emphasis"><em>read only
-          mode</em></span> automatically.</p><p><span class="bold"><strong>Warning</strong></span>: It is
-          <span class="emphasis"><em>NOT</em></span> recommended to use this backend for volumes
-          anymore, as <span class="command"><strong>afpd</strong></span> now relies heavily on a
-          persistent ID database. Aliases will likely not work and filename
-          mangling is not supported.</p></dd></dl></div><p>Even though <span class="command"><strong>./configure --help</strong></span> might show that
-    there are other CNID backends available, be warned those are likely broken
-    or mainly used for testing. Don't use them unless you know what you're
-    doing, they may be removed without further notice from future
-    versions.</p></div><div class="refsect1"><a id="id-1.9.7.12"></a><h2>Charset options</h2><p>With OS X Apple introduced the AFP3 protocol. One of the most
-    important changes was that AFP3 uses unicode names encoded as UTF-8
-    decomposed. Previous AFP/OS versions used codepages, like MacRoman,
-    MacCentralEurope, etc.</p><p><span class="command"><strong>afpd</strong></span> needs a way to preserve extended Macintosh
-    characters, or characters illegal in unix filenames, when saving files on
-    a unix filesystem. This version now uses UTF-8 as the default encoding for
-    names. '<span class="keycode">/</span>' will be converted to
-    '<span class="keycode">:</span>'.</p><p>Earlier versions used the the so called CAP encoding. An extended
-    character (&gt;0x7F) would be converted to a :xx sequence, e.g. the Apple
-    Logo (MacRoman: 0xF0) was saved as <code class="literal">:f0</code>. Some special
-    characters would be converted as to :xx notation as well.
-    '<span class="keycode">/</span>' would be encoded to <code class="literal">:2f</code>, a
-    leading dot '<span class="keycode">.</span>' might be encoded as
-    <code class="literal">:2e</code>.</p><p>The <code class="option">vol charset</code> option will allow you to select
-    another volume encoding. <span class="command"><strong>afpd</strong></span> will accept any
-    <span class="citerefentry"><span class="refentrytitle"><span class="command"><strong>iconv</strong></span></span>(1)</span> provided charset. It is highly recommended to stick to
-    the default UTF-8.</p></div><div class="refsect1"><a id="id-1.9.7.13"></a><h2>See Also</h2><p><span class="citerefentry"><span class="refentrytitle">afpd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">afppasswd</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">afp_signature.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">extmap.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">cnid_metad</span>(8)</span></p></div><div class="refsect1"><a id="id-1.9.7.14"></a><h2>Author</h2><p>See <a class="ulink" href="https://netatalk.io/contributors" target="_top">CONTRIBUTORS</a></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="aecho.1.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">aecho </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> afp_signature.conf</td></tr></table></div></body>
+            <code class="option">directory perm</code> and <code class="option">umask</code>.</p></dd></dl></div></div></div><div class="refsect1"><a id="id-1.9.7.11"></a><h2>See Also</h2><p><span class="citerefentry"><span class="refentrytitle">afpd</span>(8)</span>, <span class="citerefentry"><span class="refentrytitle">afppasswd</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">afp_signature.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">extmap.conf</span>(5)</span>, <span class="citerefentry"><span class="refentrytitle">cnid_metad</span>(8)</span></p></div><div class="refsect1"><a id="id-1.9.7.12"></a><h2>Author</h2><p>See <a class="ulink" href="https://netatalk.io/contributors" target="_top">CONTRIBUTORS</a></p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="aecho.1.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="man-pages.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">aecho </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> afp_signature.conf</td></tr></table></div></body>
 </html>
