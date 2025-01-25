@@ -16,9 +16,9 @@ AppleTalk プロトコル ファミリは、データグラム配信プロトコ
 
 # アドレス指定
 
-AppleTalk addresses are three byte quantities, stored in network byte
-order. The include file <*netatalk/at.h*\> defines the AppleTalk
-address format.
+AppleTalk アドレスは 3 バイトの量で、ネットワーク バイト
+オーダーで保存される。インクルード ファイル <*netatalk/at.h*\> は
+AppleTalk アドレス形式を定義する。
 
 AppleTalk プロトコル ファミリのソケットは、次のアドレス構造を使用する:
 

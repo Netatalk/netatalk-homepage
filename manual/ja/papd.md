@@ -35,13 +35,13 @@ Netatalk 2.0 以降では、CUPS もサポートされている。 *cupsautoadd*
 
 -f <configfile\>
 
-> Consult <configfile\> instead of `papd.conf` for the configuration
-information.
+> 設定情報については、`papd.conf` ではなく、<configfile\>
+を参照してください。
 
 -p <printcap\>
 
-> Consult <printcap\> instead of `/etc/printcap` for LPD configuration
-information.
+> LPD 構成情報については、`/etc/printcap` ではなく、<printcap\>
+を参照してください。
 
 -P <pidfile\>
 

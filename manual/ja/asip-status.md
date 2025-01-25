@@ -12,14 +12,10 @@ asip-status — AFP サーバに機能を問い合わせる
 
 # 説明
 
-`asip-status` sends an FPGetSrvrInfo request to an AFP server at
-<HOSTNAME\>:<PORT\> and displays the results: "Machine type", the
-server's name, supported AFP versions, UAMs and AFP flags, the "server
-signature" and the network addresses that the server provides AFP
-services on.
+`asip-status`は、<HOSTNAME\>:<PORT\>で示したAFPサーバにFPGetSrvrInfoリクエストを送信し、その結果を表示する。すなわち、そのサーバがAFPサービスで提供する"Machine
+type"、サーバ名、サポートするAFPバージョン、ユーザ認証モジュール(UAM)、AFPフラグ、サーバシグネチャ、ネットワークアドレスである。
 
-When you don't supply <PORT\>, then the default AFP port, 548, will be
-used.
+<PORT\>を与えない場合は、デフォルトのAFPポートである548が使われる。
 
 Netatalk 3.1.9以降では、 `asip-status`
 はIPv4とIPv6の両方をサポートする。どちらのIPバージョンを利用するかは、あなたのシステムが決定する。利用するIPバージョンを指定するには、-4または-6オプションを使うことができる。

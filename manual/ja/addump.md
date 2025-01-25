@@ -23,30 +23,25 @@ addump - AppleSingle/AppleDouble フォーマットのデータをダンプす�
 このスクリプトはメーラ、アーカイバ、Mac OS
 X、Netatalkなどが生成する様々なAppleSingle/AppleDoubleデータをダンプできる。
 
-With no <FILE\>|<DIR\>, or when <FILE\>|<DIR\> is '-', read standard
-input.
+<FILE\>\|<DIR\>がない、または<FILE\>\|<DIR\>が「-」であるとき、標準入力を読み込む。
 
 # オプション
 
 `-a` \[<FILE\>|<DIR\>\]
 
-> This is the default. Dump AppleSingle/AppleDouble data for <FILE\> or
-<DIR\> automatically. If FILE is not in AppleSingle/AppleDouble format,
-look for extended attributes, <.AppleDouble/FILE\> and <.\_FILE\>. If
-<DIR\>, look for extended attributes, <DIR/.AppleDouble/.Parent\> and
-<.\_DIR\>.
+> これがデフォルトである。<FILE\>または<DIR\>のためのAppleSingle/AppleDoubleデータを自動的にダンプする。もしFILEがAppleSingle/AppleDoubleフォーマットでないなら、拡張属性と<.AppleDouble/FILE\>と<.\_FILE\>を探する。もし<DIR\>なら、拡張属性と<DIR/.AppleDouble/.Parent\>と<.\_DIR\>を探する。
 
 `-e` <FILE\>|<DIR\>
 
-> Dump extended attributes of <FILE\> or <DIR\>.
+> <FILE\>または<DIR\>の拡張属性をダンプする。
 
 `-f` \[<FILE\>\]
 
-> Dump <FILE\>. Assume FinderInfo to be FileInfo.
+> <FILE\>をダンプする。FinderInfoがFileInfoであると仮定する。
 
 `-d` \[<FILE\>\]
 
-> Dump <FILE\>. Assume FinderInfo to be DirInfo.
+> <FILE\>をダンプする。FinderInfoがDirInfoであると仮定する。
 
 `-h, -help, --help`
 

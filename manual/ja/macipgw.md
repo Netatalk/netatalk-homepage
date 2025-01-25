@@ -39,8 +39,8 @@ MacIP (以前は KIP と呼ばれていました) は、IP パケットを Apple
 
 -f <configfile\>
 
-> Consult <configfile\> instead of `macipgw.conf` for the configuration
-information.
+> 設定情報については、`macipgw.conf` ではなく、<configfile\>
+を参照する。
 
 -n <nameserver\>
 

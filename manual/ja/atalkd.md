@@ -36,8 +36,8 @@ OS の init システムは通常、起動時に `atalkd` デーモンを起動�
 
 -f <configfile\>
 
-> Consult <configfile\> instead of `atalkd.conf` for the configuration
-information.
+> 設定情報については、`atalkd.conf` ではなく、<configfile\>
+を参照する。
 
 -P <pidfile\>
 
