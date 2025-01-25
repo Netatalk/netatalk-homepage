@@ -89,7 +89,7 @@ for lang in locales:
                     'smarty',
                     'tables',
                     WikiLinkExtension(
-                        base_url="/manual/{lang}/",
+                        base_url=f"/manual/{lang}/",
                         end_url=END_URL,
                         build_url=build_url,
                         html_class=''
