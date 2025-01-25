@@ -191,6 +191,10 @@ div#content {
   color: #660000;
 }
 
+#content a.toclink {
+  color: #FFFFFF;
+}
+
 
 #content td {
   font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;

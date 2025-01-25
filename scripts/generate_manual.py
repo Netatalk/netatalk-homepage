@@ -2,6 +2,7 @@ import os
 import re
 import markdown
 from markdown.extensions.wikilinks import WikiLinkExtension
+from markdown.extensions.toc import TocExtension
 
 navbar = ""
 locales = ["en", "ja"]
@@ -82,19 +83,23 @@ for lang in locales:
             continue
         with open(f"./manual/{lang}/{file}", "r", encoding="utf-8") as input_file:
             text = input_file.read()
+            text = "[TOC]\n" + text
             html = markdown.markdown(
                 text,
                 extensions=[
                     'fenced_code',
                     'smarty',
                     'tables',
+                    TocExtension(
+                        anchorlink=True,
+                    ),
                     WikiLinkExtension(
                         base_url=f"/manual/{lang}/",
                         end_url=END_URL,
                         build_url=build_url,
                         html_class=''
-                    )
-                ]
+                    ),
+                ],
             )
         page_title = file.replace('.md', '')
         new_name = file.replace('.md', '.html')
@@ -135,8 +140,8 @@ for file in files:
                     end_url=END_URL,
                     build_url=build_url,
                     html_class=''
-                )
-            ]
+                ),
+            ],
         )
     page_title = file.replace('.md', '')
     new_name = file.replace('.md', '.html').lower()
