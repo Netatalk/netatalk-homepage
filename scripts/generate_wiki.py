@@ -4,6 +4,7 @@ import re
 import markdown
 import datetime
 from markdown.extensions.wikilinks import WikiLinkExtension
+from markdown.extensions.toc import TocExtension
 from git import Repo
 import urllib.parse
 
@@ -66,7 +67,19 @@ def site_map():
 
 with open("./wiki/_Sidebar.md", "r", encoding="utf-8") as input_file:
     text = input_file.read()
-    html = markdown.markdown(text, extensions=['fenced_code', 'smarty', 'tables', WikiLinkExtension(base_url="/docs/", end_url=".html", build_url=build_url)])
+    html = markdown.markdown(
+        text,
+        extensions=[
+            'fenced_code',
+            'smarty',
+            'tables',
+            WikiLinkExtension(
+                base_url="/docs/",
+                end_url=".html",
+                build_url=build_url,
+            ),
+        ],
+    )
     navbar = f"""<div id="navbars">
 <div class="navbar">
 <h2>Table of contents</h2>
@@ -86,7 +99,23 @@ for file in files:
         continue
     with open(f"./wiki/{file}", "r", encoding="utf-8") as input_file:
         text = input_file.read()
-        html = markdown.markdown(text, extensions=['fenced_code', 'smarty', 'tables', WikiLinkExtension(base_url="/docs/", end_url=".html", build_url=build_url)])
+        text = "[TOC]\n" + text
+        html = markdown.markdown(
+            text,
+            extensions=[
+                'fenced_code',
+                'smarty',
+                'tables',
+                TocExtension(
+                    anchorlink=True,
+                ),
+                WikiLinkExtension(
+                    base_url="/docs/",
+                    end_url=".html",
+                    build_url=build_url,
+                ),
+            ],
+        )
     page_title = file.replace('.md', '')
     new_name = file.replace('.md', '.html')
     if new_name == "Home.html":
