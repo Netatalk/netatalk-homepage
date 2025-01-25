@@ -20,7 +20,7 @@
 * [[dbd]]
 * [[getzones]]
 * [[macusers]]
-* [[npb]]
+* [[nbp]]
 * [[pap]]
 
 コンフィグファイル

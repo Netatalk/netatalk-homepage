@@ -3,7 +3,6 @@ import re
 import markdown
 from markdown.extensions.wikilinks import WikiLinkExtension
 
-files = []
 navbar = ""
 locales = ["en", "ja"]
 
@@ -27,6 +26,7 @@ def build_url(label, base, end):
     return '{}{}{}'.format(base, clean_label, end)
 
 for lang in locales:
+    files = []
     base_url = f"/manual/{lang}/"
     end_url = ".html"
     with open(f"./manual/{lang}/_Sidebar.md", "r", encoding="utf-8") as input_file:
@@ -51,13 +51,13 @@ for lang in locales:
             (fr"/{re.escape(lang)}/en.html", r'/en/index.html'),
             (fr"/{re.escape(lang)}/ja.html", r'/ja/index.html'),
             # FIXME: Workaround for https://github.com/Python-Markdown/markdown/pull/1504
-            (r"\[\[afp\.conf\]\]", fr'<a href="{base_url}afp.conf.{end_url}">afp.conf</a>'),
-            (r"\[\[afp_signature\.conf\]\]", fr'<a href="{base_url}afp_signature.conf.{end_url}">afp_signature.conf</a>'),
-            (r"\[\[afp_voluuid\.conf\]\]", fr'<a href="{base_url}afp_voluuid.conf.{end_url}">afp_voluuid.conf</a>'),
-            (r"\[\[afp\.conf\]\]", fr'<a href="{base_url}afp.conf.{end_url}">afp.conf</a>'),
-            (r"\[\[atalkd\.conf\]\]", fr'<a href="{base_url}atalkd.conf.{end_url}">atalkd.conf</a>'),
-            (r"\[\[extmap\.conf\]\]", fr'<a href="{base_url}extmap.conf.{end_url}">extmap.conf</a>'),
-            (r"\[\[papd\.conf\]\]", fr'<a href="{base_url}papd.conf.{end_url}">papd.conf</a>')
+            (r"\[\[afp\.conf\]\]", fr'<a href="{base_url}afp.conf{end_url}">afp.conf</a>'),
+            (r"\[\[afp_signature\.conf\]\]", fr'<a href="{base_url}afp_signature.conf{end_url}">afp_signature.conf</a>'),
+            (r"\[\[afp_voluuid\.conf\]\]", fr'<a href="{base_url}afp_voluuid.conf{end_url}">afp_voluuid.conf</a>'),
+            (r"\[\[afp\.conf\]\]", fr'<a href="{base_url}afp.conf{end_url}">afp.conf</a>'),
+            (r"\[\[atalkd\.conf\]\]", fr'<a href="{base_url}atalkd.conf{end_url}">atalkd.conf</a>'),
+            (r"\[\[extmap\.conf\]\]", fr'<a href="{base_url}extmap.conf{end_url}">extmap.conf</a>'),
+            (r"\[\[papd\.conf\]\]", fr'<a href="{base_url}papd.conf{end_url}">papd.conf</a>')
         ]
 
         for pattern, replacement in replacements:

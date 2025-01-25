@@ -20,7 +20,7 @@ User Tools
 * [[dbd]]
 * [[getzones]]
 * [[macusers]]
-* [[npb]]
+* [[nbp]]
 * [[pap]]
 
 Configuration Files
