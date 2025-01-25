@@ -76,21 +76,39 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Home">Home</h1><hr/>
+<h1 id="Home">Home</h1>
 <p>Welcome to the Netatalk wiki - Open Source file sharing for the Apple Macintosh since 1990!
 Here you can find and contribute to collaborative articles covering topics regarding Netatalk features as well as Mac and Apple II file sharing and networking.</p>
 <h1>What is Netatalk?</h1>
 <p>Netatalk is a cross-platform open source implementation of AFP (Apple Filing
 Protocol), the protocol used for file sharing on Apple II, Classic Mac
 OS, and Mac OS X. At the time of writing, AFP is one of several file sharing protocols with client support in macOS.</p>
+<p>The Netatalk software runs on a <em>NIX host machine (Linux distro, </em>BSD distro, Solaris, or macOS) while a Mac client would connect to the file server via the Network drawer / Locations (on macOS) or the Chooser (on Classic Mac OS.)</p>
+<p><img src="https://netatalk.io/gfx/network-drawer-macos15.png" alt="macOS Network Drawer screenshot" width="50%" height="auto"></p>
+<p><em>macOS 15.1 Network Drawer Example</em></p>
+<p>Examples of clients that Netatalk has been tested with:</p>
+<ul>
+<li>AppleShare Workstation 1.1 (AFP1.1)</li>
+<li>Apple IIgs GS/OS System 6.0.1 (AFP2.0)</li>
+<li>Apple IIgs GS/OS System 6.0.1 using AFPBridge to connect via TCP/IP (AFP2.0)</li>
+<li>Apple IIgs ProDOS 8 2.0.3 client bundled with the above (AFP2.0)</li>
+<li>Macintosh System 7.1 with the stock AppleShare Client 3.5 (AFP2.1)</li>
+<li>Mac OS 8.1 with the stock AppleShare Client 3.7.4 via both AppleTalk and TCP/IP (AFP2.2)</li>
+<li>Mac OS 9.0.4 with the stock AppleShare Client 3.8.6 via TCP/IP (AFP2.2)</li>
+<li>Mac OS X 10.1 via TCP/IP (AFP3.0)</li>
+<li>Mac OS X 10.4 via TCP/IP (AFP3.2)</li>
+<li>macOS 15.1 via TCP/IP (AFP3.4)</li>
+</ul>
 <h2>Architecture</h2>
 <p><em>Netatalk</em> implements <strong>AFP over TCP</strong>.
 The session layer used to carry AFP over TCP is called <strong>DSI</strong>.
@@ -123,20 +141,27 @@ The complete stack looks like this:</p>
     +-----------------------+------------+--------------+
     |                       |     TCP    |    UDP       |
     |          DDP          +------------+--------------+
-    |                       |           IP              |
+    |                       |       IP v4 or v6         |
     +-----------------------+---------------------------+
     |                Network Interface                  |
     +---------------------------------------------------+
 </code></pre>
 <p>See the <a href="https://github.com/Netatalk/netatalk/blob/main/doc/DEVELOPER">DEVELOPER</a> readme for descriptions of the AppleTalk family of protocols.</p>
 <h1>External Links</h1>
-<p>See <a href="https://netatalk.io/links">Netatalk Links</a></p><hr />
+<ul>
+<li><a href="https://www.netatalk.org/">netatalk.org</a> (original UMich homepage, still online as of Nov 2024)</li>
+<li><a href="https://websites.umich.edu/~rsug/netatalk/faq.html">Netatalk 1.3.3 era FAQ</a></li>
+<li><a href="http://web.archive.org/web/20010702130020/http://sunsite.org.uk/packages/netatalk/">sunsite.org.uk mirror with netatalk-admins ML 1992-2001 archive</a></li>
+<li><a href="https://web.archive.org/web/19990203173815/http://www.thehamptons.com/anders/netatalk/">Linux Netatalk-HOWTO ca. 1999</a></li>
+<li><a href="https://medium.com/tenable-techblog/exploiting-an-18-year-old-bug-b47afe54172">Exploiting an 18 Year Old Bug</a></li>
+</ul>
+<p>See also <a href="https://netatalk.io/links">Netatalk Links</a></p><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Home">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -147,7 +172,7 @@ The complete stack looks like this:</p>
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

@@ -76,18 +76,20 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Developer-FAQ">Developer FAQ</h1><hr/>
-<p><strong>Q.</strong> How can I create stand-alone patch files?</p>
-<p><strong>A.</strong>
-This describes the traditional method of creating plain text patch
+<h1 id="Developer-FAQ">Developer FAQ</h1>
+<h1>FAQ for Netatalk Developers</h1>
+<h2>How can I create stand-alone patch files?</h2>
+<p>This describes the traditional method of creating plain text patch
 files. If you prefer to not use GitHub, you can create a patch file
 and submit it to the <a href="https://sourceforge.net/p/netatalk/mailman/netatalk-devel/">netatalk-devel</a> mailing list.</p>
 <p>Assuming your patches are the last three commits on your current local
@@ -107,20 +109,21 @@ branch but not in origin/main.</p>
 export them into one file:</p>
 <pre><code>$ git format-patch --stdout origin/main &gt; develop-featureX-01.patches.txt
 </code></pre>
-<hr />
-<p><strong>Q.</strong> How can I debug process crashes?</p>
-<p><strong>A.</strong> We need a stack-backtrace (SBT) from a corefile with debugging symbols.</p>
+<h2>How can I debug process crashes?</h2>
+<p>We need a stack-backtrace (SBT) from a corefile with debugging symbols.</p>
 <ul>
 <li>Compile Netatalk with debugging symbols and without optimizations,
-    e.g. for gcc</li>
+    e.g. when building with Meson:</li>
 </ul>
-<pre><code>CFLAGS=&quot;-g -O0&quot; ./configure ... &amp;&amp; make &amp;&amp; make install
+<pre><code>meson setup build -Dbuildtype=debug
+meson compile -vC build
+meson install -vC build
 </code></pre>
 <ul>
 <li>Enable global corefile generation
     (<a href="http://www.google.com/search?q=linux+enable+core+dump">Linux</a>,
     <a href="http://www.google.com/search?q=man+coreadm">Solaris</a>)</li>
-<li>Enable corefile generation for Netatalk by adding</li>
+<li>Enable corefile generation for Netatalk by adding:</li>
 </ul>
 <pre><code>ulimit -c unlimited
 </code></pre>
@@ -135,17 +138,10 @@ Netatalk.</p>
 ...
 (gdb) exit
 </code></pre>
-<hr />
-<p><strong>Q.</strong> How can I run the netatalk integration tests?</p>
-<p><strong>A.</strong> In order to run the integration tests located in test/ , build Netatalk with tests enabled, then run the <code>meson test</code> target:</p>
-<pre><code>meson setup build -Dwith-tests=true
-meson compile -C build
-cd build
-meson test
-</code></pre>
-<hr />
-<p><strong>Q.</strong> How do I revert a commit?</p>
-<p><strong>A.</strong> The &ldquo;git reset&rdquo; command allows you to reset the HEAD of the
+<h2>How can I run the netatalk tests?</h2>
+<p>See <a class="wikilink" href="/docs/Testing.html">Testing</a></p>
+<h2>How do I revert a commit?</h2>
+<p>The &ldquo;git reset&rdquo; command allows you to reset the HEAD of the
 branch to any given point in history. To go back one commit, run</p>
 <pre><code>$ git reset HEAD^
 </code></pre>
@@ -157,11 +153,9 @@ amended branch. Please be careful with force pushing, since it can be a
 destructive action.</p>
 <pre><code>$ git push origin my-work-branch --force
 </code></pre>
-<hr />
-<p><strong>Q.</strong> How can I maintain a feature branch against the upstream Netatalk
-branches?</p>
-<p><strong>A.</strong> You clone the Netatalk repository as per the instructions above.
-Then you make a new feature branch: </p>
+<h2>How can I maintain a feature branch against the upstream Netatalk branches?</h2>
+<p>You clone the Netatalk repository as per the instructions above.
+Then you make a new feature branch:</p>
 <pre><code>$ git checkout -b feature_foo main
 </code></pre>
 <p>Now you do your development in your feature branch. Any time the main
@@ -179,13 +173,30 @@ Committed: e20a8c521d7860d9b7bd724ed5ea19c7306530ab
 <p>Rebase works best when you use it for local branches that are never
 pushed to a public repository, see <a href="https://archive.kernel.org/oldwiki/git.wiki.kernel.org/index.php/GitFaq.html#Why_won.27t_.22git_push.22_work_after_I_rebase_a_branch.3F">Why won&rsquo;t &ldquo;git push&rdquo; work after I
 rebased a
-branch?</a>.</p><hr />
+branch?</a>.</p>
+<h2>How can I develop and test on other architectures?</h2>
+<p>You can use <a href="https://www.qemu.org/">QEMU</a> to emulate machines
+of other architectures than that of your physical machine.
+On macOS, you can use the <a href="https://mac.getutm.app/">UTM</a> frontend
+for QEMU.</p>
+<p>It is also possible to run QEMU in Docker, which allows for instantly
+spinning up a fully functional environment.</p>
+<p>The following example uses Docker images by the
+<a href="https://hub.docker.com/r/multiarch/qemu-user-static/">multiarch</a> project.
+Note that this only works on amd64 hosts at the time of writing.</p>
+<p>These steps will create the QEMU mulitarch container,
+and then use it for emulating the IBM s390x architecture with
+a pre-configured Debian Testing container.</p>
+<pre><code>docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+docker run -ti --platform linux/s390x --volume s390xhome:/home --name s390x_deb s390x/debian:testing
+docker exec -ti s390x_deb /bin/bash
+</code></pre><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Developer-FAQ">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -196,7 +207,7 @@ branch?</a>.</p><hr />
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

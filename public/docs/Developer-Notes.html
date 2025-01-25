@@ -76,15 +76,17 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Developer-Notes">Developer Notes</h1><hr/>
+<h1 id="Developer-Notes">Developer Notes</h1>
 <h1>How to Contribute</h1>
 <p>Netatalk source code is hosted in a shared git repository.</p>
 <p>This section describes the general workflow and lifecycle of code
@@ -119,7 +121,8 @@ reviewed-by tag. Very formal, but it encourages better coding and
 documentation.</p>
 <p>This means every commit in main should have been reviewed by two team
 members (if the author is a team member, only one review by another team
-member needed).</p>
+member needed).
+This rule is suspended when the project has only one active team member.</p>
 <p>This is inspired by the process used in the
 <a href="https://wiki.samba.org/index.php/CodeReview">Samba</a> project.</p>
 <h2>Commit messages</h2>
@@ -143,11 +146,11 @@ then work from your own fork of the Netatalk repository. Please follow
 the <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">GitHub workflow to create your
 fork</a>,
 and then clone that fork in the steps below.</p>
-<p>Step Zero is to set your name and email address for commits: </p>
+<p>Step Zero is to set your name and email address for commits:</p>
 <pre><code>$ git config --global user.email Your.Email@domain.com
 $ git config --global user.name &quot;Your Real Name&quot;
 </code></pre>
-<p>Next, clone the repository: </p>
+<p>Next, clone the repository:</p>
 <pre><code>$ git clone https://github.com/Netatalk/netatalk.git 
 Initialized empty Git repository in /home/frank/test/.git/
 remote: Counting objects: 31503, done.
@@ -157,7 +160,7 @@ Receiving objects: 100% (31503/31503), 6.52 MiB | 2.38 MiB/s, done.
 Resolving deltas: 100% (24830/24830), done.
 $ cd netatalk
 </code></pre>
-<p>List local and remote branches: </p>
+<p>List local and remote branches:</p>
 <pre><code>$ git branch
   * main
 
@@ -198,13 +201,13 @@ $ git status
 #       new file:   git-test/README
 #
 </code></pre>
-<p>Commit changes </p>
+<p>Commit changes:</p>
 <pre><code>$ git commit -m &quot;Example file for HOWTO&quot;
 Created commit ad9a1eb: Example file for HOWTO
  1 files changed, 1 insertions(+), 0 deletions(-)
  create mode 100644 git-test/README
 </code></pre>
-<p>Do some more work and commit local changes....</p>
+<p>Do some more work and commit local changes&hellip;</p>
 <p>Now fetch the remote branch history: </p>
 <pre><code>$ git fetch
 </code></pre>
@@ -280,7 +283,7 @@ muonfmt
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Developer-Notes">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -291,7 +294,7 @@ muonfmt
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

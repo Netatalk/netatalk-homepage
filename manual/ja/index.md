@@ -3,8 +3,10 @@
 ## 法的条項
 
 Netatalk のソフトウェアのパッケージまたは本ドキュメントは GNU 一般公衆利用許諾書 (GPL) バージョン 2 のもとで配布されている。
-Netatalk ソース一式にも本ドキュメントと同様に許諾書のコピーが同梱されている。許諾書のコピーのオンライン版は
-<http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt> で閲覧できる。
+Netatalk ソース一式にも本ドキュメントと同様に許諾書のコピーが同梱されている。
+
+[許諾書のコピーのオンライン版](http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt)
+はフリーソフトウェア財団によって配布されている。
 
 ## Netatalk 概要
 

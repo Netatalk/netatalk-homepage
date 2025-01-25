@@ -34,12 +34,12 @@ OS の init システムは通常、起動時に `atalkd` デーモンを起動�
 > デーモンをターミナルから切り離さないで、追加のデバッグ情報を stdout
 に書き込む。
 
--f \<configfile\>
+-f <configfile\>
 
-> 設定情報については、`atalkd.conf` ではなく、\<configfile\>
-を参照する。
+> Consult <configfile\> instead of `atalkd.conf` for the configuration
+information.
 
--P \<pidfile\>
+-P <pidfile\>
 
 > `atalkd` がプロセス ID を保存するファイルを指定する。
 

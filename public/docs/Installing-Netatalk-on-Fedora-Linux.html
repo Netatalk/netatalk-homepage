@@ -76,15 +76,17 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-on-Fedora-Linux">Installing Netatalk on Fedora Linux</h1><hr/>
+<h1 id="Installing-Netatalk-on-Fedora-Linux">Installing Netatalk on Fedora Linux</h1>
 <h1>Install the latest Netatalk</h1>
 <p>The easiest way to get Netatalk on Fedora is to install the <a href="https://src.fedoraproject.org/rpms/netatalk">netatalk</a> RPM package with <code>dnf</code>.</p>
 <p>For building and installing from source yourself, find the official documentation below.</p>
@@ -93,13 +95,21 @@
 <li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
 </ul>
 <h2>AppleTalk</h2>
-<p>If you want to use Netatalk as an AppleTalk server, you will need to remove Fedora&rsquo;s default blacklist of the <code>atalk</code> kernel module.
-This can be achieved by typing the following, either when logged in as root or with <code>sudo</code>:
-<code>rm /etc/modprobe.d/appletalk-blacklist.conf</code></p>
+<p>If you want to use Netatalk as an AppleTalk server, you may need to install the <code>kernel-modules-extra</code> subpackage if not already present on your system.</p>
+<p>Then you need to remove Fedora&rsquo;s default blacklist of the <code>appletalk</code> kernel module.
+This can be achieved by editing the following file and commenting out the line that says &ldquo;blacklist appletalk&rdquo;.</p>
+<p><code>/etc/modprobe.d/appletalk-blacklist.conf</code></p>
 <p>This will allow Fedora to load the <code>appletalk</code> kernel module.</p>
+<p>Note: Do <em>not</em> delete this file. The system will simply recreate it at a later point.</p>
+<h1>Netatalk v4</h1>
+<p>Since Fedora 41, Netatatalk 4.0 is available as an rpm package, and can be installed with dnf or your favorite package manager.</p>
+<pre><code>sudo dnf install --assumeyes netatalk
+</code></pre>
+<p>Note that if you upgraded from Fedora 40 to 41, you may have to update your PAM configuration to avoid an authentication error. See <a href="https://github.com/Netatalk/netatalk/issues/1807">issue#1807</a> for further details.</p>
 <h1>Netatalk v3</h1>
-<p>This installation guide was originally written for Netatalk 3.2.0
-on Fedora 39.</p>
+<p>This installation guide was originally written for Netatalk 3.2.0 on Fedora 39.</p>
+<p>It describes the steps for using the Autotools build system, which was removed in Netatalk 4.0.0.
+For building Netatalk v4, please see the links above.</p>
 <h2>Required Packages</h2>
 <p>Install the following packages by <code>dnf</code>.</p>
 <ul>
@@ -114,7 +124,7 @@ on Fedora 39.</p>
 <li><code>krb5-devel</code> (Kerberos V auth)</li>
 <li><code>pam-devel</code> (PAM)</li>
 <li><code>avahi-devel</code> (Bonjour support)</li>
-<li><code>cracklib-devel</code> (password ckeck)</li>
+<li><code>cracklib-devel</code> (password check)</li>
 <li><code>libacl-devel</code> (ACL support)</li>
 <li><code>openldap-devel</code> (enhanced ACL support)</li>
 <li><code>dbus-devel</code> (used by afpstats command)</li>
@@ -297,7 +307,7 @@ port number is <code>5353</code>.</p>
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-Fedora-Linux">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -308,7 +318,7 @@ port number is <code>5353</code>.</p>
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

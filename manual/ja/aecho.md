@@ -35,7 +35,7 @@ nbp タイプのデフォルトは \`*Workstation*' である。
 
 # オプション
 
-`-c` \<count\>
+`-c` <count\>
 
 > *count* パケット後に停止する。
 

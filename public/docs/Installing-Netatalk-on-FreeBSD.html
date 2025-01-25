@@ -76,24 +76,30 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-on-FreeBSD">Installing Netatalk on FreeBSD</h1><hr/>
-<h1>Install the latest Netatalk</h1>
+<h1 id="Installing-Netatalk-on-FreeBSD">Installing Netatalk on FreeBSD</h1>
+<h1>Install Netatalk</h1>
 <p>The easiest way to get Netatalk on FreeBSD is to install the <a href="https://www.freshports.org/net/netatalk3/">netatalk3</a> port with <code>pkg</code>.</p>
 <p>For building and installing from source yourself, find the official documentation below.</p>
 <ul>
 <li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-freebsd">Compile Netatalk from Source: FreeBSD</a></strong> in the Manual</li>
 <li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
 </ul>
+<h1>Netatalk v3</h1>
+<p>With root privileges, install the netatalk3 package:</p>
+<pre><code>pkg install netatalk3
+</code></pre>
 <h2>Run</h2>
-<p>The Netatalk ships with an init script for FreeBSD.</p>
+<p>Netatalk ships with an init script for FreeBSD.</p>
 <p>If needed, activate the script with:</p>
 <pre><code>/etc/rc.d/netatalk enable
 </code></pre>
@@ -104,8 +110,9 @@
 <p>If you use D-Bus for, for instance, <code>afpstats</code>, please make sure that the <code>dbus</code> service is started before you launch <code>netatalk</code>.</p>
 <pre><code>service dbus onestart
 </code></pre>
-<h1>Netatalk v3</h1>
-<p>Here follows build instructions for the legacy Autotools build system in Netatalk v3.</p>
+<h1>Autotools</h1>
+<p>Here follows build instructions for the legacy Autotools build system in Netatalk v3.1 and earlier.
+As of v3.2, the project has moved to the Meson build system.</p>
 <h2>Packages</h2>
 <p>Packages required to bootstrap the code:</p>
 <pre><code>pkg install autoconf automake libtool pkgconf
@@ -146,7 +153,7 @@ gmake install
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-FreeBSD">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -157,7 +164,7 @@ gmake install
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

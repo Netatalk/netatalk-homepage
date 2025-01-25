@@ -76,24 +76,30 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-on-Ubuntu">Installing Netatalk on Ubuntu</h1><hr/>
+<h1 id="Installing-Netatalk-on-Ubuntu">Installing Netatalk on Ubuntu</h1>
 <h1>Install the latest Netatalk</h1>
 <p><a href="https://launchpad.net/ubuntu/+source/netatalk">netatalk</a> is distributed as a package in Ubuntu. You can use <code>apt</code> to install it.</p>
+<p>Ex. (with root privileges)</p>
+<pre><code>apt install netatalk
+</code></pre>
 <p>For building and installing from source yourself, find links to the official documentation below.</p>
 <ul>
 <li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-ubuntu">Compile Netatalk from Source: Ubuntu</a></strong> in the Manual</li>
 <li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
 </ul>
 <h2>Required Packages</h2>
-<p>This page describes how to build Netatalk from code, using the legacy Autotools build system. In most cases, you want to follow the instructions in the links at the top of this page instead.</p>
+<p>This page describes how to build Netatalk from code, using the legacy Autotools build system. The final netatalk version that you can build with these steps is <strong>3.2</strong>.</p>
+<p>For more recent versions, you want to follow the instructions in the links at the top of this page instead.</p>
 <p>Install the following packages by <code>sudo apt install</code>.</p>
 <ul>
 <li><code>build-essential</code></li>
@@ -464,7 +470,7 @@ advertisement by Avahi will duplicate.</p>
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-Ubuntu">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -475,7 +481,7 @@ advertisement by Avahi will duplicate.</p>
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

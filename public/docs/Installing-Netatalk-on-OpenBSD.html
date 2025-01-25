@@ -76,16 +76,22 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-on-OpenBSD">Installing Netatalk on OpenBSD</h1><hr/>
-<h1>Install the latest Netatalk</h1>
+<h1 id="Installing-Netatalk-on-OpenBSD">Installing Netatalk on OpenBSD</h1>
+<h1>Install Netatalk</h1>
+<p>A binary <a href="https://openports.pl/path/net/netatalk3">netatalk3</a> port exists for OpenBSD (despite the name, it packages netatalk 4.0 at the time of writing.)</p>
+<p>Ex. (with root privileges)</p>
+<pre><code>pkg_add -I netatalk3
+</code></pre>
 <p>For building and installing from source yourself, find links to the official documentation below.</p>
 <ul>
 <li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-openbsd">Compile Netatalk from Source: OpenBSD</a></strong> in the Manual</li>
@@ -125,7 +131,7 @@ make
 make install
 </code></pre>
 <h1>Run</h1>
-<p>The Netatalk 3.2 release series ships with an OpenBSD init script.</p>
+<p>Netatalk 3.2 and later ships with an OpenBSD init script.</p>
 <p>Enable and start the service</p>
 <pre><code>rcctl -d enable netatalk
 rcctl -d start netatalk
@@ -135,7 +141,7 @@ rcctl -d start netatalk
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-OpenBSD">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -146,7 +152,7 @@ rcctl -d start netatalk
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

@@ -14,17 +14,17 @@ afpldaptest — afp.conf の LDAP パラメータを構文チェックする
 
 # オプション
 
-`-u` \<USER\>
+`-u` <USER\>
 
-> \<USER\>のためのuuidを表示する。
+> Show uuid for <USER\>.
 
-`-g` \<GROUP\>
+`-g` <GROUP\>
 
-> \<GROUP\>のためのuuidを表示する。
+> Show uuid for <GROUP\>.
 
-`-i` \<UUID\>
+`-i` <UUID\>
 
-> \<UUID\>のためのuserかgroupかlocal-uuidを表示する。
+> Show user, group or local-uuid for <UUID\>.
 
 `-h, -?, -:`
 

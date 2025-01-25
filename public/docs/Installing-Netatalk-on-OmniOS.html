@@ -76,38 +76,64 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-on-OmniOS">Installing Netatalk on OmniOS</h1><hr/>
-<h1>Install the latest Netatalk</h1>
+<h1 id="Installing-Netatalk-on-OmniOS">Installing Netatalk on OmniOS</h1>
+<h1>Install Netatalk</h1>
+<p>The unofficial OpenCSW package repository for Solaris and Solaris-likes distributes a <a href="https://www.opencsw.org/packages/CSWnetatalk/">netatalk</a> binary package that can be installed through their package manager.</p>
 <p>For building and installing from source yourself, find links to the official documentation below.</p>
 <ul>
 <li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-omnios">Compile Netatalk from Source: OmniOS</a></strong> in the Manual</li>
 <li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
 </ul>
-<h1>Introduction</h1>
-<p>This page contains notes on configuring and installing Netatalk 2.x on <a href="https://omnios.org">OmniOS Community Edition</a>; specific version used for this article was r151044.</p>
-<p>It covers the legacy Autotools build system. In most cases, you want to follow the instructions in the links at the top of this page to install later versions instead.</p>
-<h1>Prepare environment</h1>
-<p>A git client as well as the autotools, gcc compiler and Berkeley DB are needed.</p>
-<pre><code>pkg install git libtool automake gcc7 bdb pkg-config
+<h1>Netatalk 4.x</h1>
+<p>Note that Netatalk 3.x and 4.x require libevent v2 which is not distributed with vanilla OmniOS. Therefore applying the SmartOS bootstrap layer is recommended to get modern libraries, including Meson, Tracker, Libgcrypt etc. This process is described in the Compile chapter linked above.</p>
+<p>An alternative route is to build <a href="https://github.com/libevent/libevent">libevent v2</a> from scratch, which should theoretically work but has not been demonstrated (yet). The libevent build system uses CMake.</p>
+<p>Beyond this, the following should get you started with Netatalk 4.x:</p>
+<h2>Prepare environment</h2>
+<pre><code>pkg install bdb bison build-essential flex ninja pkg-config
+/usr/lib/python3.12/bin/pip install meson
 </code></pre>
-<h1>Configure and compile</h1>
+<h2>Configure and compile</h2>
+<pre><code>meson setup build \
+              -Dbuildtype=release \
+              -Dwith-bdb-path=/opt/ooce \
+              -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d
+meson compile -C build
+meson install -C build
+</code></pre>
+<h2>Starting and stopping</h2>
+<p>Start Netatalk.</p>
+<pre><code>svcadm enable svc:/network/netatalk:default
+</code></pre>
+<p>Stop Netatalk.</p>
+<pre><code>svcadm disable svc:/network/netatalk:default
+</code></pre>
+<h1>Netatalk 2.x</h1>
+<p>This section contains notes on configuring and installing Netatalk 2.x on <a href="https://omnios.org">OmniOS Community Edition</a>; specific version used for this article was r151044.</p>
+<p>It covers the legacy Autotools build system. In most cases, you want to follow the instructions in the links at the top of this page to install later versions instead.</p>
+<h2>Prepare environment</h2>
+<p>A git client as well as the autotools, gcc compiler and Berkeley DB are needed.</p>
+<pre><code>pkg install git libtool automake build-essential bdb pkg-config
+</code></pre>
+<h2>Configure and compile</h2>
 <p>Here we assume a bootstrapped tarball release is used, so we skip the bootstrap step</p>
 <pre><code>./configure --with-bdb=/opt/ooce
 make all
 make install
 </code></pre>
-<h1>PAM support</h1>
+<h2>PAM support</h2>
 <p>OmniOS uses an old-school PAM configuration, so manual modification of <code>/etc/pam.conf</code> is required</p>
 <p>See one example in this blog post titled <a href="https://www.marzocchi.net/Olafsen/Software/NetatalkWithPAMIntegration?setview=en">OmniOS: Netatalk with PAM Authentication</a></p>
-<h1>Controlling the Netatalk service</h1>
+<h2>Controlling the Netatalk service</h2>
 <p>Use the init script in <code>/etc/rc2.d/S90netatalk</code> to control the Netatalk service.</p>
 <p>Ex.</p>
 <pre><code>sudo /etc/rc2.d/S90netatalk start
@@ -118,7 +144,7 @@ sudo /etc/rc2.d/S90netatalk stop
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-OmniOS">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -129,7 +155,7 @@ sudo /etc/rc2.d/S90netatalk stop
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

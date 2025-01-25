@@ -8,8 +8,8 @@ AppleTalk は Apple が作成したネットワーク プロトコル ファミ�
 Netatalk は、AFP 経由でファイルを提供し、古い Mac および Apple II クライアントにその他のサービスを提供するために
 AppleTalk プロトコルを実装している。
 
-完全な概要は、[開発者向けドキュメント](https://github.com/Netatalk/netatalk/blob/main/doc/README.AppleTalk)
-にある。
+A complete overview can be found inside the [developer
+documentation](https://netatalk.io/appletalk).
 
 ### AppleTalk を使用するかどうか
 
@@ -205,8 +205,9 @@ eth0 に接続されたネットワークにアクティブなシード ルー�
 
 ## 印刷
 
-Netatalk は、AppleTalk 対応プリンタにアクセスするための PAP クライアントとしても、PAP サーバとしても機能する。前者は
-`(1)` ユーティリティを使用し、後者は `(8)` サービスを起動することで行う。
+Netatalk can act both as a PAP client to access AppleTalk-capable printers,
+and as a PAP server. The former by using the `pap(1)` utility and the latter
+by starting the `papd(8)` service.
 
 AppleTalk プロトコル スイートの一部である「プリンタ アクセス プロトコル」は、1985 年に Apple によって開発された、完全に 8
 ビット対応の双方向印刷プロトコルである。*8 ビット対応* とは、バイト セット全体を印刷に使用できることを意味する(バイナリ
@@ -244,12 +245,12 @@ Netatalk には以前、System V lpd 印刷のサポートが組み込まれて�
 (注: CUPS サポートがコンパイルされている場合、SysV lpd サポートはまったく機能しません)。詳細な例は、`papd.conf(5)`
 マニュアル ページにある。
 
-#### `papd` と SysV lpd の統合
+#### Integrating papd with SysV lpd
 
 CUPS サポートがコンパイルされていない場合 (Netatalk 2.0 以降ではデフォルト)、`pr` パラメータをキュー名に設定することで、問題の
 lpd キューを定義するだけです。 `pr` パラメータが設定されていない場合は、デフォルトのプリンタが使用される。
 
-#### `papd` でパイプを使用する
+#### Using pipes with papd
 
 上記で概説した手法の代わりとして、papd
 の出力をパイプ経由で別のプログラムに送る方法がある。このメカニズムを使用すると、ほぼすべての印刷システムを操作できる。
@@ -267,7 +268,8 @@ CUPSキューは、このグローバル共有に割り当てられたパラメ�
 
 ### AppleTalk プリンタの使用
 
-Netatalk の `(8)` は AppleTalk プリンタのクエリに使用でき、 `(1)` はプリンタに印刷するのに使用できる。
+Netatalk's `papstatus(8)` can be used to query AppleTalk printers, `pap(1)`
+to print to them.
 
 `pap` はスタンドアロンで使用することも、出力フィルタまたは CUPS バックエンドの一部として使用することもできる
 (すべてのプリンタを処理する必要がないため、この方法の方が推奨される)オプション)。

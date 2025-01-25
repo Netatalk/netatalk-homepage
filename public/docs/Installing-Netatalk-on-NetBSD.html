@@ -76,49 +76,62 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-on-NetBSD">Installing Netatalk on NetBSD</h1><hr/>
+<h1 id="Installing-Netatalk-on-NetBSD">Installing Netatalk on NetBSD</h1>
 <h1>Install the latest Netatalk</h1>
 <p>NetBSD is one out of a handful of distributions that still actively maintain an AppleTalk kernel module.</p>
-<p>Additionally, it has both a <a href="https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/net/netatalk3/index.html">Netatalk 3.x</a> as well as a <a href="https://pkgsrc.se/net/netatalk22">Netatalk 2.x package</a> in the pkgsrc repository that work out of the box.</p>
+<p>The pkgsrc package repository distributes a <a href="https://pkgsrc.se/net/netatalk4">netatalk4</a>, a <a href="https://pkgsrc.se/net/netatalk3">netatalk3</a> as well as a <a href="https://pkgsrc.se/net/netatalk22">netatalk22</a> package, which can be installed with <code>pkg_add</code>.</p>
 <p>For building and installing from source yourself, find links to the official documentation below.</p>
 <ul>
 <li><strong><a href="https://netatalk.io/oldstable/htmldocs/compile#build-netbsd">Compile Netatalk from Source: NetBSD</a></strong> in the Manual</li>
 <li><strong><a href="https://github.com/Netatalk/netatalk/blob/branch-netatalk-2-4/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
 </ul>
 <h1>Required packages</h1>
-<p>Before starting, make sure you have a <a href="http://www.netbsd.org/docs/misc/index.html#package-management">working pkgsrc environment</a>. </p>
-<p>Install the packages that netatalk22 depends on:</p>
-<pre><code>pkg_add \
-  git \
-  mozilla-rootcerts-openssl \
-  gcc13 \
-  autoconf \
-  libtool \
-  pkg-config \
-  db5 \
-  libgcrypt \
-  libressl \
-  gmake \
-  cups \
-  cracklib
-</code></pre>
-<p>Install netatalk22 itself:</p>
-<pre><code>pkg_add netatalk22
+<p>Before starting, make sure you have a <a href="http://www.netbsd.org/docs/misc/index.html#package-management">working pkgsrc environment</a>.</p>
+<p>At this point, you should be able to install the latest netatalk package with <code>pkg_add</code> (root privileges required.)</p>
+<pre><code>pkg_add netatalk
 </code></pre>
 <h1>Configuration</h1>
 <p>In older versions of Netatalk, you had to enable the NetBSD init script with the <code>--enable-netbsd</code> or equivalent compile time flag.</p>
 <p>Once installed, you can control the netatalk service as <a href="https://www.netbsd.org/docs/guide/en/chap-rc.html">any other NetBSD service</a>.</p>
-<p>If needed, copy the installed netatalk initscripts to the <code>/etc/rc.d</code> directory.</p>
+<p>If needed, manually copy the installed netatalk initscripts to the <code>/etc/rc.d</code> directory.</p>
 <h1>AppleTalk</h1>
-<p>NetBSD comes with an AppleTalk kernel module (<code>/sys/netatalk</code>) which Netatalk can use for DDP transport protocol out of the box.</p>
+<p>NetBSD comes with an AppleTalk kernel module which Netatalk can use for DDP transport protocol out of the box on most configurations. Source for this module is available under <code>/usr/src/sys/netatalk</code> in the source tree.</p>
+<p>Some NetBSD ports, notably evbarm (arm64), are built with the NETATALK kernel module disabled by default. To test this, try running the atalkd service. If you get the following error messages, it means that your kernel was not built with netatalk support:</p>
+<pre><code># service atalkd onestart
+Starting atalkd.
+socket: Address family not supported by protocol family
+socket: Address family not supported by protocol family
+atalkd: can't get interfaces, exiting.
+</code></pre>
+<h2>Rebuilding the kernel to enable netatalk (if necessary)</h2>
+<p>If you see these &ldquo;Address family not supported by protocol family&rdquo; errors, you can try building your own kernel with NETATALK enabled. First, you&rsquo;ll need to download the kernel source. This is the <code>syssrc.tgz</code> file that can be found online in the <code>/source/sets</code> directory for your build version (e.g. <code>https://cdn.netbsd.org/pub/NetBSD/NetBSD-10.0/source/sets/syssrc.tgz</code>). Extract the source tarball as root:</p>
+<pre><code># cd /
+# tar xzf /path/to/syssrc.tgz
+</code></pre>
+<p>This puts the source code under /usr/src. Look for your architecture under <code>/usr/src/sys/arch/</code>, then find the configuration file in the <code>conf</code> directory that was used to build your kernel. You can find which configuration was used by running <code>uname -a</code>:</p>
+<pre><code># uname -a
+NetBSD arm64 10.0 NetBSD 10.0 (GENERIC64) #0: Thu Dec 12 16:59:45 PST 2024  root@arm64:/usr/src/sys/arch/evbarm/compile/GENERIC64 evbarm
+</code></pre>
+<p>In this example, our kernel was built for the <code>evbarm</code> architecture using the <code>GENERIC64</code> configuration. Inspecting the file <code>/usr/src/sys/arch/evbarm/conf/GENERIC64</code> does not show any instances of the string <code>NETATALK</code>, but we see it includes three other files:</p>
+<pre><code>include &quot;arch/evbarm/conf/std.generic64&quot;
+include &quot;arch/evbarm/conf/files.generic64&quot;
+include &quot;arch/evbarm/conf/GENERIC.common&quot;
+</code></pre>
+<p>and in <code>GENERIC.common</code>, the following line is commented out:</p>
+<pre><code>#options         NETATALK        # AppleTalk networking
+</code></pre>
+<p>Uncomment the line by removing the leading <code>#</code>, save the file, and you are ready to follow the <a href="https://netbsd.org/docs/guide/en/chap-kernel.html">instructions for rebuilding and installing the new kernel.</a>.</p>
+<h2>Configure DDP-based services</h2>
 <p>In order to register with the AppleTalk protocols, the <code>/etc/services</code> file must contain proper protocol definitions. Make sure the following entries are present on your installation:</p>
 <pre><code>rtmp        1/ddp       # Routing Table Maintenance Protocol
 nbp     2/ddp       # Name Binding Protocol
@@ -128,13 +141,13 @@ zip     6/ddp       # Zone Information Protocol
 afpovertcp  548/tcp     # AFP over TCP
 afpovertcp  548/udp
 </code></pre>
-<p>From: https://github.com/Netatalk/netatalk/blob/main/config/services.atalk</p><hr />
+<p>From: <a href="https://github.com/Netatalk/netatalk/blob/main/config/services.atalk">services.atalk</a> in the Netatalk code tree</p><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-NetBSD">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -145,7 +158,7 @@ afpovertcp  548/udp
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

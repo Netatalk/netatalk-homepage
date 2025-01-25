@@ -76,61 +76,52 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Webmin-Module">Webmin Module</h1><hr/>
-<p>The official <a href="https://webmin.com/">Webmin</a> module for Netatalk was introduced around 2000. It facilitates the administration of the AFP server via a user friendly Web GUI.</p>
+<h1 id="Webmin-Module">Webmin Module</h1>
+<p>The initial version of the Netatalk <a href="https://webmin.com/">Webmin</a> module was developed around 2000. It facilitates the administration of the AFP server via a user friendly Web GUI.</p>
 <p>As of Netatalk 4.0, the Webmin module is bundled with Netatalk proper. For the old stable versions Netatalk v3 and Netatalk v2 exist, find the source code and release tarballs in the <a href="https://github.com/Netatalk/netatalk-webmin">netatalk-webmin</a> Git repository.</p>
 <p>The module is tested on Debian, Fedora, and Solaris.</p>
 <p>This page is meant to give an overview of the feature set and usage notes of the module. Installation instructions can be found in the module&rsquo;s <a href="https://github.com/Netatalk/netatalk/blob/main/contrib/webmin_module/README.md">README</a> file, and will not be repeated here.</p>
-<h2>v4 Module</h2>
-<p>Netatalk v4 combines the best aspects of v3 and v2, so the Webmin module does the same. While building on the solid foundations of the v3 module, it adds the ability to manage AppleTalk services.</p>
-<h2>v3 Module</h2>
-<p>Netatalk v3 got an entirely rewritten ini-style configuration file format, replacing the legacy format in v2 and earlier. Therefore, the backend of the Webmin module was entirely rewritten from scratch.</p>
-<p>The module index is the hub for all of the module&rsquo;s features. You can see the configured shared volumes, as well as start and stop the netatalk daemons from here.</p>
-<p><img src="https://netatalk.io/gfx/webmin3_1.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
+<h2>Capabilities</h2>
+<p>Netatalk v4 combines the best aspects of Netatalk v3 and v2, so the Netatalk Webmin module does the same. While building on the solid foundations of the v3 module, it adds the ability to manage AppleTalk services.</p>
+<p><img src="https://netatalk.io/gfx/webmin4-1.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
+<p><em>(Screenshot from 4.0 module)</em></p>
 <h3>Create or edit a shared volume</h3>
 <p><img src="https://netatalk.io/gfx/webmin3_2.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
+<p><em>(Screenshot from 3.x module)</em></p>
 <h3>Create or edit volume presets</h3>
 <p>Can be used to streamline configuration of multiple volumes at once.</p>
 <p><img src="https://netatalk.io/gfx/webmin3_3.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
+<p><em>(Screenshot from 3.x module)</em></p>
 <h3>Create or edit home shares</h3>
 <p><img src="https://netatalk.io/gfx/webmin3_4.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
+<p><em>(Screenshot from 3.x module)</em></p>
 <h3>Modify global server settings</h3>
 <p><img src="https://netatalk.io/gfx/webmin3_5.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
-<h2>v2 Module</h2>
-<p>The legacy v2 version of the Webmin module allows you to control the AFP server as well as the AppleTalk services.</p>
-<p>The module index is the hub for all of the module&rsquo;s features. You can see the configured shared volumes and virtual servers, as well as start and stop the Netatalk and AppleTalk daemons from here.</p>
-<p><img src="https://netatalk.io/gfx/webmin2_1.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
-<h3>Create or edit shared volume</h3>
-<p>Complete support for all volume options are available when creating new or editing shared volumes. Equivalent to editing <code>AppleVolumes.default</code>.</p>
-<p><img src="https://netatalk.io/gfx/webmin2_2.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
-<h3>Global server settings</h3>
-<p>All virtual AppleShare server options are available through the GUI. Equivalent to editing <code>afpd.conf</code>.</p>
-<p><img src="https://netatalk.io/gfx/webmin2_3.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
-<h3>Config editor</h3>
-<p>An interactive config file editor is also available for manual fine tuning of settings.</p>
-<p><img src="https://netatalk.io/gfx/webmin2_6.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
-<h2>Common Functions</h2>
-<p>These functions are identical between the v3 and v2 versions of the module.</p>
+<p><em>(Screenshot from 3.x module)</em></p>
 <h3>Connected user management</h3>
 <p>Each connected user has its own forked <code>afpd</code> daemon process that is owned by that user. By killing the process, the connected user will be effectively kicked off the server.</p>
 <p><img src="https://netatalk.io/gfx/webmin2_4.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
+<p><em>(Screenshot from 2.x module)</em></p>
 <h3>Server capabilities</h3>
 <p>The response from <code>asip-status</code> gives you an overview of the addresses and capabilities of the AFP server.</p>
-<p><img src="https://netatalk.io/gfx/webmin2_5.png" alt="Webmin Module screenshot" width="75%" height="auto"></p><hr />
+<p><img src="https://netatalk.io/gfx/webmin2_5.png" alt="Webmin Module screenshot" width="75%" height="auto"></p>
+<p><em>(Screenshot from 2.x module)</em></p><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Webmin-Module">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -141,7 +132,7 @@
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

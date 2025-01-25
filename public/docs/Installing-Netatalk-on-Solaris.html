@@ -76,16 +76,20 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-on-Solaris">Installing Netatalk on Solaris</h1><hr/>
-<h1>See Also</h1>
+<h1 id="Installing-Netatalk-on-Solaris">Installing Netatalk on Solaris</h1>
+<h1>Install Netatalk</h1>
+<p>The unofficial OpenCSW package repository for Solaris distributes a <a href="https://www.opencsw.org/packages/CSWnetatalk/">netatalk</a> binary package that can be installed through their package manager.</p>
+<p>For building and installing from source yourself, find links to the official documentation below.</p>
 <ul>
 <li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-solaris">Compile Netatalk from Source: Solaris</a></strong> in the Manual</li>
 <li><strong><a href="https://github.com/Netatalk/netatalk/blob/main/INSTALL.md">INSTALL.md</a></strong> in the source tree</li>
@@ -203,16 +207,19 @@ env PKG_CONFIG_PATH=/opt/csw/lib/pkgconfig ./configure \
 make
 make install
 </code></pre>
-<h2>Starting</h2>
+<h2>Starting and stopping</h2>
 <p>Start Netatalk.</p>
 <pre><code>svcadm enable svc:/network/netatalk:default
+</code></pre>
+<p>Stop Netatalk.</p>
+<pre><code>svcadm disable svc:/network/netatalk:default
 </code></pre><hr />
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-Solaris">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -223,7 +230,7 @@ make install
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

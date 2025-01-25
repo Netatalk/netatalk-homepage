@@ -76,15 +76,17 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Connect-to-AFP-Server">Connect to AFP Server</h1><hr/>
+<h1 id="Connect-to-AFP-Server">Connect to AFP Server</h1>
 <h1>Overview</h1>
 <p>Getting started with Netatalk, or AFP file sharing in general, on
 Classic Mac OS and earlier OSX can be a daunting task. This page aims to
@@ -92,7 +94,7 @@ summarize a handful of tips &amp; tricks for getting started with and
 troubleshooting your vintage Mac network.</p>
 <h2>Connect from a Mac client with TCP</h2>
 <p>If you have configured Netatalk with support for Zeroconf (for Mac OS X
-10.2 or later) or SLP (for Mac OS X 10.0 and 10.1) service discovery
+10.2 or later) or SLP (if running Netatalk 2.x; for Mac OS X 10.0 and 10.1) service discovery
 should work, and the file server should automatically be listed in the
 Network drawer.</p>
 <p>In Classic Mac OS, you may have to enter the IP address to the AFP file
@@ -104,18 +106,18 @@ install <a href="https://macintoshgarden.org/apps/appleshare-client-372">AppleSh
 later.) It is also recommended to install <a href="https://macintoshgarden.org/apps/open-transport-13-gold-master">Open Transport
 1.3</a> if
 a compatible version of Open Transport is not already installed.</p>
-<p>On Classic Mac OS, open the Chooser, click on AppleTalk, and then the
-Server IP Address button.</p>
-<p>On Mac OS X 10.8 or earlier, enter the Go menu, Connect to Server, enter
+<p>On Classic Mac OS, open the Chooser, click on AppleShare, and then the
+<strong>Server IP Address&hellip;</strong> button.</p>
+<p>On Mac OS X 10.8 or earlier, enter the <strong>Go</strong> menu, <strong>Connect to Server</strong>, enter
 afp://[ip address], Connect, and then the same username and
 password as above.</p>
-<h3>Troubleshooting</h3>
+<h3>TCP Troubleshooting</h3>
 <p>Netatalk comes with a handy tool for inquiring the status of an AFP
 server, <code>asip-status</code>, regardless of whether it&rsquo;s run by Netatalk or a
 real Mac. Pass the ip (v4/v6) address or &ldquo;localhost&rdquo; to the script to
 get a status summary of a running AFP server.</p>
 <h2>Connect with AppleTalk</h2>
-<p>Note: Netatalk v3 cannot do AppleTalk networking.</p>
+<p>Note: Netatalk 4.x or 2.x is required for AppleTalk networking.</p>
 <p>AppleTalk is compatible with the oldest version of the Macintosh System
 Software that supported networking, as well as network enabled Apple II
 and Lisa systems, up until Mac OS X 10.8.</p>
@@ -130,7 +132,7 @@ configured before opening the Chooser.</p>
 file server should be detected automatically.</p>
 <p>On Mac OS X 10.8 or earlier, open the Finder and select Network from the
 left drawer. The file server should be detected automatically.</p>
-<h3>Troubleshooting</h3>
+<h3>AppleTalk Troubleshooting</h3>
 <p>Bootstrapping an AppleTalk network can be fiddly on a modern network.</p>
 <p>For AppleTalk routing to work on wireless networks, the Wi-Fi AP must be
 AppleTalk compatible, for instance early Apple AirPort routers. See also
@@ -141,7 +143,7 @@ update its own atalkd.conf config file with address ranges and phase
 settings. If the default configuration fails, edit the config file
 manually to f.e. change to a different network interface. If atalkd
 insists in rewriting its own config file in undesired ways, make the
-file global read-only with file system privileges (chmod).</p>
+file global read-only with file system privileges (with <code>chmod</code>).</p>
 <p>Inspect the AppleTalk network with the <code>nbplkup</code> (uses the NBP protocol
 to look up registered servers.) For instance, turn on personal file
 sharing on a Classic Mac OS system on the network (Apple&rsquo;s own AFP
@@ -152,7 +154,7 @@ server. If you can see only the latter, the routing between the Netatalk
 <p>Sometimes the <code>atalkd</code> daemon fails to register the other services with
 NBP. This can happen when the other daemons start before <code>atalkd</code>. In
 this case, wait until <code>atalkd</code> is fully started, and then restart
-<code>afpd</code>, <code>a2boot</code>, <code>papd</code>, and <code>timelord</code>.</p>
+<code>netatalk</code> and any AppleTalk services you were running.</p>
 <h2>Mac Emulators</h2>
 <p>The AFP share can be accessed also from within a Mac emulator with a
 network bridge, such as Basilisk II.</p>
@@ -165,7 +167,7 @@ to reach the shared drive through TCP, if not DDP.</p>
 <h1>Cross-Platform Client</h1>
 <p>It is possible to connect to an AFP server from a non-Mac machine by using a cross-platform open source AFP client called <code>afpfs-ng</code>.</p>
 <p>The original project has been dormant for many years. However, there are a number of forks available that aim to keep the software up to date.</p>
-<p><a href="https://github.com/rdmark/afpfs-ng">One such fork is maintained by a netatalk project member</a>. It runs well on modern systems via the afpcmd CLI tool. However, the Fuse filesystem integration is unstable at the time of writing and is not recommended </p>
+<p><a href="https://github.com/rdmark/afpfs-ng">One such fork is maintained by a netatalk project member</a>. It runs well on modern systems via the afpcmd CLI tool. However, the Fuse filesystem integration is unstable at the time of writing and is not recommended.</p>
 <h1>See Also</h1>
 <ul>
 <li><a href="http://www.applefool.com/se30/#afpnetwork">Classic Mac Networking
@@ -181,7 +183,7 @@ to reach the shared drive through TCP, if not DDP.</p>
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Connect-to-AFP-Server">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -192,7 +194,7 @@ to reach the shared drive through TCP, if not DDP.</p>
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

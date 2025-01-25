@@ -4,15 +4,15 @@ nbplkup, nbprgstr, nbpunrgstr — NBP データベースにアクセスするツ
 
 # 説明
 
-`nbprgstr` は、指定された \<port\> で、`atalkd(8)` に \<nbpname\>
-を登録する。`nbpunrgstr` は、*atalkd* に、\<nbpname\>
-がアドバタイズされなくなったことを通知する。
+`nbprgstr` registers <nbpname\> with `atalkd(8)`, at the given
+<port\>. `nbpunrgstr` informs *atalkd* that <nbpname\> is no longer to
+be advertised.
 
-`nbplkup` は、AppleTalk インターネットに登録されているエンティティを最大
-\<maxresponses\> (デフォルトは 1000) 個表示する。 *\<nbpname\>*
-は、`nbp_name(3)`によって解析される。 *object*
-または*type*の\`*=*'は任意のものに一致し、*zone*の\`*\**'はローカルゾーンを意味する。デフォルト値は、*NBPLKUP*
-環境変数から取得され、\<nbpname\> として解析される。
+`nbplkup` displays up to <maxresponses\> (default 1000) entities
+registered on the AppleTalk internet. *<nbpname\>* is parsed by
+`nbp_name(3)`. An \`*=*' for the *object* or *type* matches anything,
+and an \`*\**' for *zone* means the local zone. The default values are
+taken from the *NBPLKUP* environment variable, parsed as an <nbpname\>.
 
 # 環境変数
 

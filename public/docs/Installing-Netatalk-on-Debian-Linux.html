@@ -76,18 +76,23 @@
 </ul>
 <p>Development</p>
 <ul>
+<li><a class="wikilink" href="/docs/Roadmap.html">Roadmap</a></li>
 <li><a class="wikilink" href="/docs/Developer-Notes.html">Developer Notes</a></li>
 <li><a class="wikilink" href="/docs/Developer-FAQ.html">Developer FAQ</a></li>
 <li><a class="wikilink" href="/docs/Work-with-Documentation.html">Work with Documentation</a></li>
 <li><a class="wikilink" href="/docs/Release-Process.html">Release Process</a></li>
+<li><a class="wikilink" href="/docs/Testing.html">Testing</a></li>
 <li><a class="wikilink" href="/docs/Using-GDB-to-Analyze-a-Crash.html">Using GDB to Analyze a Crash</a></li>
 </ul>
 </div></div>
 <div id="content">
-<h1 id="Installing-Netatalk-on-Debian-Linux">Installing Netatalk on Debian Linux</h1><hr/>
+<h1 id="Installing-Netatalk-on-Debian-Linux">Installing Netatalk on Debian Linux</h1>
 <h1>Install the latest Netatalk</h1>
 <p><a href="https://tracker.debian.org/pkg/netatalk">Netatalk</a> is distributed as a deb package in all Debian releases except Debian 12 Bookworm. You can install it with <code>apt</code> and other package managers.</p>
-<p>The recent release series at the time of writing, we distribute Debian deb packages built for Bookworm amd64 together with Debian releases. See the assets attached with releases on GitHub.</p>
+<p>Ex. (with root privileges)</p>
+<pre><code>apt install netatalk
+</code></pre>
+<p>If you are running Bookworm, you can build your own debs from the <a href="https://salsa.debian.org/netatalk-team/netatalk">downstream Salsa repo</a>. See the <a href="https://github.com/Netatalk/netatalk/wiki/Release-Process#debian-deb-packaging">Debian deb packaging</a> chapter for instructions on how to get started.</p>
 <p>For building and installing from source yourself, find links to the official documentation below.</p>
 <ul>
 <li><strong><a href="https://netatalk.io/stable/htmldocs/compile#build-debian">Compile Netatalk from Source: Debian</a></strong> in the Manual</li>
@@ -241,7 +246,7 @@ sudo systemctl start papd.service timelord.service a2boot.service
         Please <a href="https://github.com/Netatalk/netatalk/wiki/Installing-Netatalk-on-Debian-Linux">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
-    <p>Last updated 2024-10-31</p>
+    <p>Last updated 2025-01-25</p>
     <hr />
     </div>
 <div class="footer">
@@ -252,7 +257,7 @@ sudo systemctl start papd.service timelord.service a2boot.service
       <img style="border:0;width:88px;height:31px"
       src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
     </a>
-    <p>Netatalk is licensed under the <a href="/stable/htmldocs/gpl">GNU
+    <p>Netatalk and the Netatalk website are licensed under the <a href="/stable/htmldocs/gpl">GNU
     General Public License 2.0</a>.</p>
 </div>
 </body>

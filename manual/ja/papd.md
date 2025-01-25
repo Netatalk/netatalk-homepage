@@ -33,17 +33,17 @@ Netatalk 2.0 以降では、CUPS もサポートされている。 *cupsautoadd*
 
 > ターミナルからフォークまたは切断しません。
 
--f \<configfile\>
+-f <configfile\>
 
-> 設定情報については、`papd.conf` ではなく、\<configfile\>
-を参照してください。
+> Consult <configfile\> instead of `papd.conf` for the configuration
+information.
 
--p \<printcap\>
+-p <printcap\>
 
-> LPD 構成情報については、`/etc/printcap` ではなく、\<printcap\>
-を参照してください。
+> Consult <printcap\> instead of `/etc/printcap` for LPD configuration
+information.
 
--P \<pidfile\>
+-P <pidfile\>
 
 > `papd` がプロセス ID を保存するファイルを指定する。
 
