@@ -5,6 +5,7 @@ from markdown.extensions.wikilinks import WikiLinkExtension
 
 navbar = ""
 locales = ["en", "ja"]
+END_URL = ".html"
 
 
 def html_head(name):
@@ -12,7 +13,7 @@ def html_head(name):
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Manual - {name.replace('-', ' ')}</title>
+    <title>Netatalk Manual - {name.replace('index', 'Index').replace('-', ' ')}</title>
     <meta name="description" content="Netatalk Manual">
     <link rel="canonical" href="https://netatalk.io/manual/{name}">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
@@ -28,7 +29,6 @@ def build_url(label, base, end):
 for lang in locales:
     files = []
     base_url = f"/manual/{lang}/"
-    end_url = ".html"
     with open(f"./manual/{lang}/_Sidebar.md", "r", encoding="utf-8") as input_file:
         text = input_file.read()
         html = markdown.markdown(
@@ -39,7 +39,7 @@ for lang in locales:
                 'tables',
                 WikiLinkExtension(
                     base_url=base_url,
-                    end_url=end_url,
+                    end_url=END_URL,
                     build_url=build_url,
                     html_class='',
                 ),
@@ -51,13 +51,13 @@ for lang in locales:
             (fr"/{re.escape(lang)}/en.html", r'/en/index.html'),
             (fr"/{re.escape(lang)}/ja.html", r'/ja/index.html'),
             # FIXME: Workaround for https://github.com/Python-Markdown/markdown/pull/1504
-            (r"\[\[afp\.conf\]\]", fr'<a href="{base_url}afp.conf{end_url}">afp.conf</a>'),
-            (r"\[\[afp_signature\.conf\]\]", fr'<a href="{base_url}afp_signature.conf{end_url}">afp_signature.conf</a>'),
-            (r"\[\[afp_voluuid\.conf\]\]", fr'<a href="{base_url}afp_voluuid.conf{end_url}">afp_voluuid.conf</a>'),
-            (r"\[\[afp\.conf\]\]", fr'<a href="{base_url}afp.conf{end_url}">afp.conf</a>'),
-            (r"\[\[atalkd\.conf\]\]", fr'<a href="{base_url}atalkd.conf{end_url}">atalkd.conf</a>'),
-            (r"\[\[extmap\.conf\]\]", fr'<a href="{base_url}extmap.conf{end_url}">extmap.conf</a>'),
-            (r"\[\[papd\.conf\]\]", fr'<a href="{base_url}papd.conf{end_url}">papd.conf</a>')
+            (r"\[\[afp\.conf\]\]", fr'<a href="{base_url}afp.conf{END_URL}">afp.conf</a>'),
+            (r"\[\[afp_signature\.conf\]\]", fr'<a href="{base_url}afp_signature.conf{END_URL}">afp_signature.conf</a>'),
+            (r"\[\[afp_voluuid\.conf\]\]", fr'<a href="{base_url}afp_voluuid.conf{END_URL}">afp_voluuid.conf</a>'),
+            (r"\[\[afp\.conf\]\]", fr'<a href="{base_url}afp.conf{END_URL}">afp.conf</a>'),
+            (r"\[\[atalkd\.conf\]\]", fr'<a href="{base_url}atalkd.conf{END_URL}">atalkd.conf</a>'),
+            (r"\[\[extmap\.conf\]\]", fr'<a href="{base_url}extmap.conf{END_URL}">extmap.conf</a>'),
+            (r"\[\[papd\.conf\]\]", fr'<a href="{base_url}papd.conf{END_URL}">papd.conf</a>')
         ]
 
         for pattern, replacement in replacements:
@@ -90,7 +90,7 @@ for lang in locales:
                     'tables',
                     WikiLinkExtension(
                         base_url="/manual/{lang}/",
-                        end_url=".html",
+                        end_url=END_URL,
                         build_url=build_url,
                         html_class=''
                     )
@@ -109,3 +109,45 @@ for lang in locales:
             output_file.write(footer)
 
         print(f"Converted: {lang}/{file}")
+
+
+files = []
+
+for file in os.listdir("./manual/"):
+    if file.endswith(".md"):
+        files.append(f"{file}")
+with open("./templates/header.html", "r", encoding="utf-8") as header_file:
+    header = header_file.read()
+with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
+    footer = footer_file.read()
+for file in files:
+    with open(f"./manual/{file}", "r", encoding="utf-8") as input_file:
+        text = input_file.read()
+        text = re.sub(r"\s<[^<>]+@[a-zA-Z0-9._-]+>", "", text)
+        html = markdown.markdown(
+            text,
+            extensions=[
+                'fenced_code',
+                'smarty',
+                'tables',
+                WikiLinkExtension(
+                    base_url="/manual/",
+                    end_url=END_URL,
+                    build_url=build_url,
+                    html_class=''
+                )
+            ]
+        )
+    page_title = file.replace('.md', '')
+    new_name = file.replace('.md', '.html').lower()
+
+    with open(f"./public/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
+        output_file.write(html_head(page_title.capitalize()))
+        output_file.write(header)
+        output_file.write(navbar)
+        output_file.write("<div id=\"content\">")
+        output_file.write(html)
+        output_file.write("</div>")
+        output_file.write(footer)
+
+    print(f"Converted: {new_name}")
