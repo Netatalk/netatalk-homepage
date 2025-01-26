@@ -1,66 +1,14 @@
-<div id="header">
-
-<div id="logo">
-
-</div>
-
-<div id="menlinks">
-
-[\[main\]](/ "Return to Netatalk home")
-[\[wiki\]](/docs "Netatalk Wiki")
-[\[documentation\]](/documentation.html "Netatalk Manual")
-[\[downloads\]](/download.html "Download Netatalk")
-[\[support\]](/support.html "Support")
-[\[links\]](/links.html "Netatalk related links")
-<img src="/gfx/end.gif" width="125" height="7" />
-
-</div>
-
-</div>
-
-<div id="header-print">
-
-# netatalk.io
-
-</div>
-
-<div class="search">
-
-#### search netatalk.io
-
-<span class="italic">powered by Google</span>
-
-</div>
-
-<div id="content">
-
 # Netatalk 3.1.0
-
-<div id="body">
-
-<div class="paragraph">
 
 The Netatalk development team is proud to announce the first release of
 the Netatalk 3.1 release series. Early adopters are encouraged to update
 production systems.
 
-</div>
-
-<div class="paragraph">
-
 Netatalk is a freely-available Open Source AFP fileserver. A \*NIX/\*BSD
 system running Netatalk is capable of serving many Macintosh clients
 simultaneously as an AppleShare file server (AFP).
 
-</div>
-
-<div class="paragraph">
-
 The suite contains:
-
-</div>
-
-<div class="ulist">
 
 - netatalk - the main server service controller
 
@@ -72,70 +20,32 @@ The suite contains:
 
 - various supporting programs and utilities
 
-</div>
-
-</div>
-
 ### Summary of major new features and enhancements in 3.1
-
-<div class="ulist">
 
 - AFP Spotlight Support with Gnome Tracker:
   <https://projects.gnome.org/tracker/>
 
-</div>
-
-<div class="paragraph">
-
 Please refer to the online manual for details about compiling Netatalk
 with Spotlight support and how to configure:
 
-</div>
-
-<div class="paragraph">
-
 <http://netatalk.sourceforge.net/3.1/htmldocs/installation.html#compiling-netatalk>
 
-</div>
-
-<div class="paragraph">
-
 <http://netatalk.sourceforge.net/3.1/htmldocs/configuration.html>
-
-</div>
-
-<div class="paragraph">
 
 Please make sure to read the upgrading section in the Netatalk online
 manual before trying to upgrade your system from version 2:
 
-</div>
-
-<div class="paragraph">
-
 <http://netatalk.sourceforge.net/3.1/htmldocs/upgrade.html>
 
-</div>
-
 ### License
-
-<div class="paragraph">
 
 Netatalk is a Free/Open Source Software project and is released under
 the GNU General Public License (GPLv2). The full license text is
 available at:
 
-</div>
-
-<div class="paragraph">
-
 <http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt>
 
-</div>
-
 ### Changes in 3.1.0
-
-<div class="ulist">
 
 - NEW: AFP Spotlight support with Gnome Tracker
 
@@ -162,11 +72,7 @@ available at:
 - UPD: Use dedicated exit code for AFP connections that were dropped by
   the client right after the TCP handshake
 
-</div>
-
 ### Changes in 3.0.6
-
-<div class="ulist">
 
 - FIX: charset conversion failed when copying from Mac OS 9. Bug \#523.
 
@@ -177,11 +83,7 @@ available at:
 - FIX: Active Directory LDAP queries for ACL support with new options
   "ldap user filter" and "ldap group filter". Bug \#526.
 
-</div>
-
 ### Changes in 3.0.6
-
-<div class="ulist">
 
 - FIX: charset conversion failed when copying from Mac OS 9. Bug \#523.
 
@@ -214,11 +116,7 @@ available at:
 - NEW: Configure option --with-tbd which can be used to disable the use
   of the bundled tdb and use a system installed version.
 
-</div>
-
 ### Changes in 3.0.5
-
-<div class="ulist">
 
 - FIX: Fix a crash when using pam_winbind. Fixes bug \#516.
 
@@ -243,11 +141,7 @@ available at:
 - FIX: Saving files from application like MS Word may result in the file
   loosing metadata like the Finder label. Bug \#521.
 
-</div>
-
 ### Changes in 3.0.4
-
-<div class="ulist">
 
 - FIX: Opening files without metadata EA may result in an invalid
   metadata EA. Check for malformed metadata EAs and delete them. Fixes
@@ -278,11 +172,7 @@ available at:
 - NEW: New option "afp interfaces" which allows specifying where
   Netatalk listens for AFP connections by interface names. From FR \#79.
 
-</div>
-
 ### Changes in 3.0.3
-
-<div class="ulist">
 
 - UPD: afpd: Increase default DSI server quantum to 1 MB
 
@@ -306,7 +196,7 @@ available at:
   specify alternative path.
 
 - NEW: AFP stats about active session via dbus IPC. Client side python
-  program <span class="monospaced">afpstats</span>. Requires dbus,
+  program `afpstats`. Requires dbus,
   dbus-glib any python-dbus. configure option --dbus-sysconf-dir for
   specifying dbus system security configuration files. New option
   *afpstats* (default: no) which determines whether to enable the
@@ -347,11 +237,7 @@ available at:
 - FIX: "ad ls" segfault if requested object is not in an AFP volume.
   Fixes bug \#496.
 
-</div>
-
 ### Changes in 3.0.2
-
-<div class="ulist">
 
 - NEW: afpd: Put file extension type/creator mapping back in which had
   been removed in 3.0.
@@ -402,11 +288,7 @@ available at:
 - FIX: dbd failed to convert appledouble files of symlinks. Fixes bug
   \#490.
 
-</div>
-
 ### Changes in 3.0.1
-
-<div class="ulist">
 
 - NEW: afpd: Optional "ldap uuid encoding = string \| ms-guid" parameter
   to afp.conf, allowing for usage of the binary objectGUID fields from
@@ -443,11 +325,7 @@ available at:
 - REM: Remove --with-smbsharemodes configure option, it was an empty
   stub not yet implemented
 
-</div>
-
 ### Changes in 3.0
-
-<div class="ulist">
 
 - UPD: afpd: force read only mode if cnid scheme is last
 
@@ -455,21 +333,13 @@ available at:
 
 - FIX: CNID path for user homes
 
-</div>
-
 ### Changes in 3.0 beta2
-
-<div class="ulist">
 
 - UPD: Solaris and friends: Replace initscript with SMF manifest
 
 - FIX: Solaris and friends: resource fork handling
 
-</div>
-
 ### Changes in 3.0 beta1
-
-<div class="ulist">
 
 - UPD: afpd: Performance tuning of read/write AFP operations. New option
   "afp read locks" (default: no) which disables that the server applies
@@ -478,11 +348,7 @@ available at:
 - UPD: apple_dump: Extended Attributes AppleDouble support. (\*BSD is
   not supported yet)
 
-</div>
-
 ### Changes in 3.0 alpha3
-
-<div class="ulist">
 
 - NEW: afpd: Per volume "login message", NetAFP bug ID \#18
 
@@ -506,11 +372,7 @@ available at:
 - FIX: afpd: Byte order detection. Fixes an error where Netatalk on
   OpenIndiana returned wrong volume size information.
 
-</div>
-
 ### Changes in 3.0 alpha2
-
-<div class="ulist">
 
 - UPD: afpd: Store *.* as is and */* as *:* on the server, don’t CAP
   hexencode as "2e" and "2f" respectively
@@ -540,11 +402,7 @@ available at:
 
 - REM: Volumes options "use dots" and "hex encoding"
 
-</div>
-
 ### Changes in 3.0 alpha1
-
-<div class="ulist">
 
 - NEW: Central configuration file afp.conf which replaces all previous
   files
@@ -583,17 +441,9 @@ available at:
 
 - REM: afpd: AppleDouble backends v1, osx and sfm have been removed
 
-</div>
-
 ### Supported Platforms
 
-<div class="paragraph">
-
 As of Netatalk 3.0 the following operating systems are supported:
-
-</div>
-
-<div class="ulist">
 
 - FreeBSD
 
@@ -605,104 +455,43 @@ As of Netatalk 3.0 the following operating systems are supported:
 
 - Solaris and derivates
 
-</div>
-
-<div class="paragraph">
-
 Netatalk may compile and run on other operating systems as well, but it
 is not well-tested on those. We welcome patches and suggestions for
 enhancing the portability of Netatalk as well as success and failure
 stories. Please write to <netatalk-devel@lists.sourceforge.net>.
 
-</div>
-
 ### Availability
-
-<div class="paragraph">
 
 Netatalk tar-balls can be found at:
 
-</div>
-
-<div class="paragraph">
-
 <http://sourceforge.net/project/showfiles.html?group_id=8642>
-
-</div>
-
-<div class="paragraph">
 
 Netatalk is also available via anonymous git. See the SourceForge
 project site for anonymous git instructions.
 
-</div>
-
 ### Contact
-
-<div class="paragraph">
 
 For more information about Netatalk, see its web page at:
 
-</div>
-
-<div class="paragraph">
-
 <http://netatalk.sourceforge.net/>
-
-</div>
-
-<div class="paragraph">
 
 The project is hosted at SourceForge. The SourceForge project page is
 located at:
 
-</div>
-
-<div class="paragraph">
-
 <http://sourceforge.net/projects/netatalk/>
-
-</div>
-
-<div class="paragraph">
 
 The Netatalk development team can be reached via the mailing list
 <netatalk-devel@lists.sourceforge.net>. For subscription information and
 archives see Netatalk’s SourceForge project page.
 
-</div>
-
-<div class="paragraph">
-
 <netatalk-admins@lists.sourceforge.net> is a mailing list for Netatalk
 system administrators. For subscription information and archives see the
 Netatalk web page.
 
-</div>
-
 ### Acknowledgements
-
-<div class="paragraph">
 
 We would like to thank all contributors to the Netatalk project for
 their commitment. Without the many suggestions, bug and problem reports,
 patches, and reviews this project wouldn’t be where it is.
 
-</div>
-
-<div class="ulist">
-
 - The Netatalk Development Team, October 2013
-
-</div>
-
-</div>
-
-<div class="footer">
-
-[<img src="https://www.w3.org/Icons/valid-xhtml10" width="88" height="31"
-alt="Valid XHTML 1.0 Strict" />](https://validator.w3.org/check?uri=referer)
-[<img src="https://jigsaw.w3.org/css-validator/images/vcss"
-style="border:0;width:88px;height:31px" alt="Valid CSS!" />](https://jigsaw.w3.org/css-validator/check?uri=referer)
-
-</div>

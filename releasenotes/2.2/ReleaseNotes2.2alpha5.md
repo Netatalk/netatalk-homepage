@@ -1,39 +1,3 @@
-<div id="header">
-
-<div id="logo">
-
-</div>
-
-<div id="menlinks">
-
-[\[main\]](/ "Return to Netatalk home")
-[\[wiki\]](/docs "Netatalk Wiki")
-[\[documentation\]](/documentation.html "Netatalk Manual")
-[\[downloads\]](/download.html "Download Netatalk")
-[\[support\]](/support.html "Support")
-[\[links\]](/links.html "Netatalk related links")
-<img src="/gfx/end.gif" width="125" height="7" />
-
-</div>
-
-</div>
-
-<div id="header-print">
-
-# netatalk.io
-
-</div>
-
-<div class="search">
-
-#### search netatalk.io
-
-<span class="italic">powered by Google</span>
-
-</div>
-
-<div id="content">
-
 ## Netatalk 2.2alpha5
 
 The Netatalk development team is proud to announce version 2.2alpha5 of
@@ -109,6 +73,7 @@ at:
   ".AppleDesktop/.volinfo" file of the volume in order to figure out the
   CNID db path and the volume charset encoding.
 
+
 ### Changes in 2.2alpha4
 
 - NEW: Enhanced CNID "dbd" database for fast name search support.
@@ -123,17 +88,20 @@ at:
 - UPD: cnid_dbd: CNID database versioning and upgrading. Additional CNID
   database index for fast name searches.
 
+
 ### Changes in 2.2alpha3
 
 - FIX: afpd: various fixes
 
 - FIX: Any daemon did not run if atalkd doesn't exist (redhat/debian)
 
+
 ### Changes in 2.2alpha2
 
 - FIX: afpd: fix compilation error when ACL support is not available
 
 - FIX: Ensure Appletalk manpages and config files are distributed
+
 
 ### Changes in 2.2alpha1
 
@@ -168,6 +136,7 @@ at:
 
 - REM: afile/achfile/apple_cm/apple_mv/apple_rm: use ad
 
+
 ### Supported Platforms
 
 As of Netatalk 2.2 the following operating systems are supported:
@@ -189,6 +158,7 @@ is not well-tested on those. We welcome patches and suggestions for
 enhancing the portability of Netatalk as well as success and failure
 stories. Please write to netatalk-devel@lists.sourceforge.net.
 
+
 ### Availability
 
 Netatalk tar-balls can be found at:
@@ -197,6 +167,7 @@ Netatalk tar-balls can be found at:
 
 Netatalk is also available via anonymous git. See the SourceForge
 project site for anonymous git instructions.
+
 
 ### Contact
 
@@ -218,6 +189,7 @@ netatalk-admins@lists.sourceforge.net is a mailing list for Netatalk
 system administrators. For subscription information and archives see the
 Netatalk web page.
 
+
 ### Acknowledgements
 
 We would like to thank all contributors to the Netatalk project for
@@ -225,14 +197,3 @@ their commitment. Without the many suggestions, bug and problem reports,
 patches, and reviews this project wouldn't be where it is.
 
 - The Netatalk Development Team, December 2010
-
-</div>
-
-<div class="footer">
-
-[<img src="https://www.w3.org/Icons/valid-xhtml10" width="88" height="31"
-alt="Valid XHTML 1.0 Strict" />](https://validator.w3.org/check?uri=referer)
-[<img src="https://jigsaw.w3.org/css-validator/images/vcss"
-style="border:0;width:88px;height:31px" alt="Valid CSS!" />](https://jigsaw.w3.org/css-validator/check?uri=referer)
-
-</div>

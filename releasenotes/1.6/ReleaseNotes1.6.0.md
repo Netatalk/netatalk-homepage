@@ -1,39 +1,3 @@
-<div id="header">
-
-<div id="logo">
-
-</div>
-
-<div id="menlinks">
-
-[\[main\]](/ "Return to Netatalk home")
-[\[wiki\]](/docs "Netatalk Wiki")
-[\[documentation\]](/documentation.html "Netatalk Manual")
-[\[downloads\]](/download.html "Download Netatalk")
-[\[support\]](/support.html "Support")
-[\[links\]](/links.html "Netatalk related links")
-<img src="/gfx/end.gif" width="125" height="7" />
-
-</div>
-
-</div>
-
-<div id="header-print">
-
-# netatalk.io
-
-</div>
-
-<div class="search">
-
-#### search netatalk.io
-
-<span class="italic">powered by Google</span>
-
-</div>
-
-<div id="content">
-
 ## Netatalk 1.6.0
 
 The Netatalk development team is proud to announce version 1.6.0 of the
@@ -92,6 +56,7 @@ enhanced in future versions. Some of the upcoming features include:
 
 - Improved Documentation
 
+
 ### Supported Platforms
 
 As of Netatalk 1.6.0 the following operating systems are supported:
@@ -111,6 +76,7 @@ is not well-tested on those. We welcome patches and suggestions for
 enhancing the portability of Netatalk as well as success and failure
 stories. Please write to netatalk-devel@lists.sourceforge.net.
 
+
 ### Availability
 
 Netatalk tar-balls can be found at:
@@ -126,6 +92,7 @@ Netatalk is also available via anonymous CVS. See the SourceForge
 project site for anonymous CVS instructions. Main development is
 happening in the trunk. Well-tested patches are back-ported to
 branch-netatalk-1-6, which is also the basis for official releases.
+
 
 ### Contact
 
@@ -146,6 +113,7 @@ netatalk-admins@lists.sourceforge.net is a mailing list for Netatalk
 system administrators. For subscription information and archives see the
 Netatalk web page.
 
+
 ### Acknowledgements
 
 We would like to thank all contributors to the Netatalk project for
@@ -153,14 +121,3 @@ their commitment. Without the many suggestions, bug and problem reports,
 patches, and reviews this project wouldn't be where it is.
 
 - The Netatalk Development Team, December 2002
-
-</div>
-
-<div class="footer">
-
-[<img src="https://www.w3.org/Icons/valid-xhtml10" width="88" height="31"
-alt="Valid XHTML 1.0 Strict" />](https://validator.w3.org/check?uri=referer)
-[<img src="https://jigsaw.w3.org/css-validator/images/vcss"
-style="border:0;width:88px;height:31px" alt="Valid CSS!" />](https://jigsaw.w3.org/css-validator/check?uri=referer)
-
-</div>
