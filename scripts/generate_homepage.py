@@ -7,7 +7,7 @@ END_URL = ".html"
 
 subdirs = [
     './',
-    './articles/',
+    './blog/',
     './security/',
 # Historical release notes; later ones are built in generate_releasenotes.py
     './1.5/',
