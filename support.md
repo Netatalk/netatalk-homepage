@@ -33,4 +33,4 @@ disclosed and fixed.
 
 If you think you have found a new exploit in Netatalk, or want to
 read previous security advisories, please see the
-[Security Policy](security.html) page.
+[Security Policy](/security.html) page.

@@ -189,7 +189,7 @@ be out of support after May 31st, 2025. Users and downstream packagers
 are encouraged to upgrade to the latest Netatalk 4.1 release series.
 
 For more information, see the [Security
-Policy](security.html).
+Policy](/security.html).
 
 ## Netatalk 4.1.0 is available
 
