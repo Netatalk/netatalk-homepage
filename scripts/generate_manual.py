@@ -8,14 +8,14 @@ locales = ["en", "ja"]
 END_URL = ".html"
 
 
-def html_head(name):
+def html_head(page_title, new_name):
     return f"""<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Manual - {name.replace('index', 'Index').replace('-', ' ')}</title>
+    <title>Netatalk Manual - {page_title}</title>
     <meta name="description" content="Netatalk Manual">
-    <link rel="canonical" href="https://netatalk.io/manual/{name}">
+    <link rel="canonical" href="https://netatalk.io/{new_name}">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
@@ -26,10 +26,7 @@ with open("./templates/header.html", "r", encoding="utf-8") as header_file:
 with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
     footer = footer_file.read()
 
-def build_url(label, base, end):
-    """ Build a URL from the label, a base, and an end. """
-    clean_label = re.sub(r'([ ]+_)|([_][ ]+)|([ ]+)', '-', label)
-    return '{}{}{}'.format(base, clean_label, end)
+# Generate manual
 
 for lang in locales:
     files = []
@@ -76,7 +73,7 @@ for lang in locales:
         new_name = file.replace('.md', '.html')
 
         with open(f"./public/manual/{lang}/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
-            output_file.write(html_head(page_title))
+            output_file.write(html_head(page_title, "manual/" + lang + "/" + new_name))
             output_file.write(header)
             output_file.write(navbar)
             output_file.write("<div id=\"content\">")
@@ -86,6 +83,8 @@ for lang in locales:
 
         print(f"Converted: {lang}/{file}")
 
+
+# Generate READMEs
 
 files = []
 
@@ -106,11 +105,11 @@ for file in files:
                 'tables',
             ],
         )
-    page_title = file.replace('.md', '')
+    page_title = file.replace('index', 'Index').replace('.md', '')
     new_name = file.replace('.md', '.html').lower()
 
     with open(f"./public/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
-        output_file.write(html_head(page_title.capitalize()))
+        output_file.write(html_head(page_title.capitalize(), new_name))
         output_file.write(header)
         output_file.write(navbar)
         output_file.write("<div id=\"content\">")
