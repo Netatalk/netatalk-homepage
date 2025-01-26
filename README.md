@@ -1,9 +1,13 @@
 # netatalk-homepage
+
 Netatalk html website.
 
-The first layer of index pages are generated from local Markdown sources.
+The entire site, save for historical manual pages, is generated from Markdown sources.
 
-Release notes as well as wiki documentation pages are static html generated from markdown sources hosted on GitHub.
+Release notes as well as wiki documentation pages are generated from Markdown sources from GitHub release notes and wiki on the fly.
+
+The contents of `manual/` should not be modified directly, but rather built from netatalk sources and installed into this location.
+See the [Netatalk release process](https://github.com/Netatalk/netatalk/wiki/Release-Process) for the detailed procedure.
 
 # New release procedure
 - Create a news story at the top of `index.md`.
@@ -15,6 +19,3 @@ Release notes as well as wiki documentation pages are static html generated from
 - Validate the correctness and absence of spam in generated html sources in `public/`.
 - Commit all above changes and push to remote git.
 - The web host (currently: CloudFlare) will automatically build and publish the site via a webhook trigger.
-
-# See also
-- [Netatalk release process wiki](https://github.com/Netatalk/netatalk/wiki/Developer-Notes#user-content-Making_a_release)
