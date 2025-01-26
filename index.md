@@ -151,7 +151,7 @@ latest version of Netatalk provides.
 | Service Discovery | *[Bonjour](https://en.wikipedia.org/wiki/Bonjour_(software))*-compatible on macOS / OSX, *AppleTalk* on Classic Mac OS |
 | Remote Backups | *[Time Machine](https://en.wikipedia.org/wiki/Time_Machine_(macOS))*-compatible |
 | Indexed Search | *[Spotlight](https://en.wikipedia.org/wiki/Spotlight_(Apple))*-compatible on macOS / OSX, *CatalogSearch* on Classic Mac OS |
-| Macintosh Network Booting | *[NetBoot](https://en.wikipedia.org/wiki/NetBoot)* 1.0-compatible (Ex: [kea-mboot](https://github.com/saybur/kea-mboot)) |
+| Macintosh Network Booting | *[NetBoot](https://en.wikipedia.org/wiki/NetBoot)* 1.0-compatible (usage example: [kea-mboot](https://github.com/saybur/kea-mboot)) |
 | Apple II Network Booting | Yes: //e and II<span class="smallcaps">GS* (via `a2boot`) |
 | AppleTalk Printing to modern printers | Yes (via `papd`) |
 | Printing to [LocalTalk](https://en.wikipedia.org/wiki/LocalTalk) printers | Yes (via `pap`) |
