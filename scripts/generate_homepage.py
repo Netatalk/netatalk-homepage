@@ -9,6 +9,7 @@ subdirs = [
     './',
     './articles/',
     './security/',
+# Historical release notes; later ones are built in generate_releasenotes.py
     './1.5/',
     './1.6/',
     './2.0/',
@@ -23,9 +24,9 @@ def html_head(name):
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk Manual - {name.replace('index', 'Index').replace('-', ' ')}</title>
-    <meta name="description" content="Netatalk Manual">
-    <link rel="canonical" href="https://netatalk.io/manual/{name}">
+    <title>Netatalk - {name.replace('index', 'Index').replace('-', ' ')}</title>
+    <meta name="description" content="Netatalk Homepage">
+    <link rel="canonical" href="https://netatalk.io/{name}">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
 </head>
