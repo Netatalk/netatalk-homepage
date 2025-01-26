@@ -99,7 +99,7 @@ for file in files:
         continue
     with open(f"./wiki/{file}", "r", encoding="utf-8") as input_file:
         text = input_file.read()
-        text = "[TOC]\n" + text
+        text = "[TOC]\n\n" + text
         html = markdown.markdown(
             text,
             extensions=[
