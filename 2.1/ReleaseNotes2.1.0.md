@@ -102,7 +102,7 @@ New options:
 
 Webmin:
 
-- --with-webmin path where webmin is installed \[\$PKGCONFDIR/webmin\]
+- --with-webmin path where webmin is installed \[$PKGCONFDIR/webmin\]
 
 - --with-webminuser name for the webmin admin user
 
@@ -178,13 +178,13 @@ All CNID databases in the same directory:
 
 - AppleVolumes.default:
 
-     :DEFAULT: dbpath:/var/lib/afpd/\$v
+     :DEFAULT: dbpath:/var/lib/afpd/$v
 
 - with /var/lib/afpd:
 
      drwxr-xr-x afpd afpd 4096 2009-11-24 15:12 /var/lib/afpd
 
-afpd or cnid_metad will create the substituded subdirectory (\$v is
+afpd or cnid_metad will create the substituded subdirectory ($v is
 replaced by the volume name)
 
 

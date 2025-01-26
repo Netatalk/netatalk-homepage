@@ -56,7 +56,7 @@ available at:
 - FIX: netatalk: refresh Zeroconf registration when receiving SIGHUP
 
 - NEW: configure option "--with-init-style=debian-systemd" for Debian 8
-  jessieand later. "--with-init-style=debian" is renamed
+  jessie and later. "--with-init-style=debian" is renamed
   "--with-init-style=debian-sysv".
 
 ### Supported Platforms

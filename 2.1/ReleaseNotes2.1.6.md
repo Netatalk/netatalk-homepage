@@ -48,7 +48,7 @@ at:
 - FIX: afpd: generate mersenne primes for DHX2 UAM once at startup, not
   for every login, backport from 2.2.0
 
-- FIX: gentoo: cannot set \$CNID_CONFIG
+- FIX: gentoo: cannot set $CNID_CONFIG
 
 - FIX: ubuntu: servername was empty
 

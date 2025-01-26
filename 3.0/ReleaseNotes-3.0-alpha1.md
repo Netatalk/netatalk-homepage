@@ -55,7 +55,7 @@ available at:
 
 - NEW: afpd: Extended Attributes AppleDouble backend (default)
 
-- UPD: CNID databases are stored in \$localstatedir/netatalk/CNID
+- UPD: CNID databases are stored in $localstatedir/netatalk/CNID
   (default: /var/netatalk/CNID), databases found in AFP volumes are
   automatically moved
 
@@ -68,10 +68,10 @@ available at:
   has been removed
 
 - UPD: afpd: afp_voluuid.conf and afp_signature.conf location has been
-  changed to \$localstatedir/netatalk/ (default: /var/netatalk/)
+  changed to $localstatedir/netatalk/ (default: /var/netatalk/)
 
 - UPD: afpd: default server messages dir changed to
-  \$localstatedir/netatalk/msg/
+  $localstatedir/netatalk/msg/
 
 - UPD: dbd: new option -C for conversion from AppleDouble v2 to ea
 
