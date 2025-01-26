@@ -22,6 +22,11 @@ def html_head(name):
 </head>
 """
 
+with open("./templates/header.html", "r", encoding="utf-8") as header_file:
+    header = header_file.read()
+with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
+    footer = footer_file.read()
+
 def build_url(label, base, end):
     """ Build a URL from the label, a base, and an end. """
     clean_label = re.sub(r'([ ]+_)|([_][ ]+)|([ ]+)', '-', label)
@@ -74,10 +79,6 @@ for lang in locales:
     for file in os.listdir(f"./manual/{lang}/"):
         if file.endswith(".md"):
             files.append(f"{file}")
-    with open("./templates/header.html", "r", encoding="utf-8") as header_file:
-        header = header_file.read()
-    with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
-        footer = footer_file.read()
     for file in files:
         if file == "_Sidebar.md":
             continue
@@ -121,10 +122,8 @@ files = []
 for file in os.listdir("./manual/"):
     if file.endswith(".md"):
         files.append(f"{file}")
-with open("./templates/header.html", "r", encoding="utf-8") as header_file:
-    header = header_file.read()
-with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
-    footer = footer_file.read()
+with open("./templates/navbar.html", "r", encoding="utf-8") as navbar_file:
+    navbar = navbar_file.read()
 for file in files:
     with open(f"./manual/{file}", "r", encoding="utf-8") as input_file:
         text = input_file.read()
