@@ -1,7 +1,6 @@
 import os
 import re
 import markdown
-from markdown.extensions.wikilinks import WikiLinkExtension
 
 END_URL = ".html"
 
@@ -59,12 +58,6 @@ for dir in subdirs:
                     'fenced_code',
                     'smarty',
                     'tables',
-                    WikiLinkExtension(
-                        base_url=dir,
-                        end_url=END_URL,
-                        build_url=build_url,
-                        html_class='',
-                    ),
                 ],
             )
         page_title = file.replace('.md', '')

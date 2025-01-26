@@ -1,7 +1,6 @@
 import os
 import re
 import markdown
-from markdown.extensions.wikilinks import WikiLinkExtension
 from markdown.extensions.toc import TocExtension
 
 navbar = ""
@@ -43,31 +42,8 @@ for lang in locales:
                 'fenced_code',
                 'smarty',
                 'tables',
-                WikiLinkExtension(
-                    base_url=base_url,
-                    end_url=END_URL,
-                    build_url=build_url,
-                    html_class='',
-                ),
             ],
         )
-
-        replacements = [
-            # FIXME: A more scalable approach to create intra-linguistic navbar links.
-            (fr"/{re.escape(lang)}/en.html", r'/en/index.html'),
-            (fr"/{re.escape(lang)}/ja.html", r'/ja/index.html'),
-            # FIXME: Workaround for https://github.com/Python-Markdown/markdown/pull/1504
-            (r"\[\[afp\.conf\]\]", fr'<a href="{base_url}afp.conf{END_URL}">afp.conf</a>'),
-            (r"\[\[afp_signature\.conf\]\]", fr'<a href="{base_url}afp_signature.conf{END_URL}">afp_signature.conf</a>'),
-            (r"\[\[afp_voluuid\.conf\]\]", fr'<a href="{base_url}afp_voluuid.conf{END_URL}">afp_voluuid.conf</a>'),
-            (r"\[\[afp\.conf\]\]", fr'<a href="{base_url}afp.conf{END_URL}">afp.conf</a>'),
-            (r"\[\[atalkd\.conf\]\]", fr'<a href="{base_url}atalkd.conf{END_URL}">atalkd.conf</a>'),
-            (r"\[\[extmap\.conf\]\]", fr'<a href="{base_url}extmap.conf{END_URL}">extmap.conf</a>'),
-            (r"\[\[papd\.conf\]\]", fr'<a href="{base_url}papd.conf{END_URL}">papd.conf</a>')
-        ]
-
-        for pattern, replacement in replacements:
-            html = re.sub(pattern, replacement, html)
 
         navbar = f"""<div id="navbars">
     <div class="navbar">
@@ -93,12 +69,6 @@ for lang in locales:
                     'tables',
                     TocExtension(
                         anchorlink=True,
-                    ),
-                    WikiLinkExtension(
-                        base_url=f"/manual/{lang}/",
-                        end_url=END_URL,
-                        build_url=build_url,
-                        html_class=''
                     ),
                 ],
             )
@@ -134,12 +104,6 @@ for file in files:
                 'fenced_code',
                 'smarty',
                 'tables',
-                WikiLinkExtension(
-                    base_url="/manual/",
-                    end_url=END_URL,
-                    build_url=build_url,
-                    html_class=''
-                ),
             ],
         )
     page_title = file.replace('.md', '')
