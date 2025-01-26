@@ -24,7 +24,7 @@ def html_head(name):
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Netatalk - {name.replace('index', 'Index').replace('-', ' ')}</title>
+    <title>Netatalk - {name.replace('index', 'Index')}</title>
     <meta name="description" content="Netatalk Homepage">
     <link rel="canonical" href="https://netatalk.io/{name}">
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
