@@ -1,68 +1,76 @@
 import os
 import re
-import requests
+import markdown
+from markdown.extensions.wikilinks import WikiLinkExtension
 
+END_URL = ".html"
 
-files = []
+subdirs = [
+    './',
+    './articles/',
+    './security/',
+]
 
-for file in os.listdir("./"):
-    if file.endswith(".in"):
-        files.append(f"{file}")
+def html_head(name):
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Netatalk Manual - {name.replace('index', 'Index').replace('-', ' ')}</title>
+    <meta name="description" content="Netatalk Manual">
+    <link rel="canonical" href="https://netatalk.io/manual/{name}">
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
+</head>
+"""
+
 with open("./templates/header.html", "r", encoding="utf-8") as header_file:
     header = header_file.read()
 with open("./templates/navbar.html", "r", encoding="utf-8") as navbar_file:
     navbar = navbar_file.read()
 with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
     footer = footer_file.read()
-for file in files:
-    with open(f"./{file}", "r", encoding="utf-8") as input_file:
-        html = input_file.read()
-    new_name = file.replace('.html.in', '.html')
-    page_title = new_name.replace('.html', '')
-    if new_name[0:3] == "CVE":
-        new_name = new_name.replace("CVE", "security/CVE")
-    if page_title == "index":
-        page_title = "Networking Apple Macintosh through Open Source"
 
-    html_head = f"""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="Netatalk - Networking Apple Macintosh through Open Source" />
-<meta
-  name="keywords"
-  content="Netatalk, AFP, AFP Server, AppleShare, File Server, PAP, Print Server, AppleTalk, Macintosh, Mac, OSX, OS X, OS9, OS 9, macOS, Apple II, IIGS, GS/OS, IIe" />
-<meta name="language" content="EN" />
-<meta name="publisher" content="netatalk.io" />
-<meta name="robots" content="index,follow" />
-<meta name="audience" content="all" />
+def build_url(label, base, end):
+    """ Build a URL from the label, a base, and an end. """
+    clean_label = re.sub(r'([ ]+_)|([_][ ]+)|([ ]+)', '-', label)
+    return '{}{}{}'.format(base, clean_label, end)
 
-<link rel="stylesheet" type="text/css" href="/css/site.css" />
-<link rel="stylesheet" type="text/css" href="/css/printer.css" media="print" />
-<link rel="alternate stylesheet" type="text/css" href="/css/printer.css" title="Printer" />
-<link
-  rel="copyright"
-  title="GNU General Public License, version 2"
-  href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html" />
-<link rel="author" title="The Netatalk Development Team" href="http://netatalk.io" />
-<link rel="help" href="/stable/htmldocs/" title="Documentation" />
-<link rel="home" href="index.html" title="Netatalk Home" />
-<link rel="home" href="https://github.com/Netatalk/netatalk" title="Netatalk GitHub" />
-<link rel="bookmark" href="/stable/htmldocs/" title="Netatalk Documentation" />
-<link rel="bookmark" href="https://github.com/Netatalk/netatalk/wiki" title="wiki" />
-<link rel="bookmark" href="https://sourceforge.net/projects/netatalk/files/" title="Downloads" />
-<link rel="icon" type="image/x-icon" href="/gfx/favicon.ico" />
+for dir in subdirs:
+    files = []
 
-<title>Netatalk - {page_title}</title>
-</head>
-"""
+    for file in os.listdir(dir):
+        if file.endswith(".md"):
+            files.append(f"{file}")
+    for file in files:
+        with open(f"./{dir}/{file}", "r", encoding="utf-8") as input_file:
+            text = input_file.read()
+            html = markdown.markdown(
+                text,
+                extensions=[
+                    'fenced_code',
+                    'smarty',
+                    'tables',
+                    WikiLinkExtension(
+                        base_url=dir,
+                        end_url=END_URL,
+                        build_url=build_url,
+                        html_class='',
+                    ),
+                ],
+            )
+        page_title = file.replace('.md', '')
+        new_name = file.replace('.md', '.html')
+        if page_title == "index":
+            page_title = "Networking Apple Macintosh through Open Source"
 
-    with open(f"./public/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
-        output_file.write(html_head)
-        output_file.write(header)
-        output_file.write(navbar)
-        output_file.write(html)
-        output_file.write(footer)
+        with open(f"./public/{dir}/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
+            output_file.write(html_head(page_title))
+            output_file.write(header)
+            output_file.write(navbar)
+            output_file.write("<div id=\"content\">")
+            output_file.write(html)
+            output_file.write("</div>")
+            output_file.write(footer)
 
-    print(f"Converted: {file}")
+        print(f"Converted: {file}")
