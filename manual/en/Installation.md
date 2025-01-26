@@ -3,7 +3,7 @@
 > **WARNING**
 
 > Before upgrading to Netatalk 4 from an earlier version, please read the
-[[Upgrade]] chapter in this manual.
+[Upgrade](Upgrade.html) chapter in this manual.
 
 ## How to obtain Netatalk
 
@@ -178,6 +178,13 @@ functionality.
   version 5.8 or later. The required Perl modules include
   *IO::Socket::IP* (asip-status) and *Net::DBus* (afpstats).
 
+- po4a
+
+  With the help of po4a, Netatalk's documentation can be translated
+  into other languages. It uses gettext to extract translatable
+  strings from source files and merge them with the translations
+  stored in PO files.
+
 - TCP wrappers
 
   Wietse Venema's network logger, also known as TCPD or LOG_TCP.
@@ -214,7 +221,7 @@ netatalk source code are documented in the
 file in the Netatalk source tree.
 
 For examples of concrete steps to compile on specific operating systems,
-refer to the [Compile Netatalk from Source](#compile) appendix in this
+refer to the [Compile Netatalk from Source](Compilation.html) appendix in this
 manual, which is automatically generated from the CI build scripts.
 
 ## Starting and stopping Netatalk
@@ -257,5 +264,5 @@ be by running the `netatalk -V` command.
 
 If you want to run AppleTalk services, you also need to start the
 `atalkd` daemon, plus the optional `papd`, `timelord`, and `a2boot`
-daemons. See the [AppleTalk](#appletalk) chapter in this manual for more
+daemons. See the [AppleTalk](AppleTalk.html) chapter in this manual for more
 information.

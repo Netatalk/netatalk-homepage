@@ -8,7 +8,7 @@ AppleTalk は Apple が作成したネットワーク プロトコル ファミ�
 Netatalk は、AFP 経由でファイルを提供し、古い Mac および Apple II クライアントにその他のサービスを提供するために
 AppleTalk プロトコルを実装している。
 
-完全な概要は、[開発者向けドキュメント](https://netatalk.io/appletalk) にある。
+完全な概要は、[開発者向けドキュメント](/appletalk.html) にある。
 
 ### AppleTalk を使用するかどうか
 

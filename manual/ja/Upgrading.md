@@ -37,7 +37,7 @@ Netatalk 4 の主要な変更は以下の3点：
 > **警告**
 
 > ほとんどのオプション名は変更されたので、 詳細については
-[afp.conf](#afp.conf.5) の manpage 全体を読むこと
+[afp.conf](afp.conf.html) の manpage 全体を読むこと
 
 `extmap.conf`
 
@@ -86,7 +86,7 @@ Netatalk 4 の主要な変更は以下の3点：
 
 ### そのほかの主要な変更点
 
-- AFP 及び CNID デーモンの起動・再起動を担う新しいサービスコントローラデーモン [netatalk](#netatalk.8)
+- AFP 及び CNID デーモンの起動・再起動を担う新しいサービスコントローラデーモン [netatalk](netatalk.html)
   の導入。バンドルされているスタートスクリプトが すべて更新されているため、自分の環境でもアップデートされているか確認する必要あり！
 
 - CNID データベースはデフォルトで `$prefix/var/netatalk/CNID/`

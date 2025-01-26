@@ -509,7 +509,8 @@ afp の ACL サポートは Solaris の ZFS ACL、派生したプラットフォ
 は読み込み専用アイコンを表示するだろうし、ユーザーはそのフォルダーに書き込みはできないであろう。
 
 デフォルトでは、認証ユーザーに有効なパーミションは UNIX のモードではなく、前記 UARights
-の機構のみに対応付けられる。この挙動は設定オプション [map acls](#map_acls) で修正することができる。
+の機構のみに対応付けられる。この挙動は設定オプション [map acls](afp.conf#options-for-acl-handling)
+で修正することができる。
 
 しかしながら、Finder の“情報を見る”ウィンドウでもターミナルでも、ACL を見ることは不可能で、そこで見ているのは OS X で ACL
 がどのように設計されたのかという結果である。もしクライアント上でも ACL
@@ -551,9 +552,9 @@ OpenLDAP）に使用されていない属性を再利用する（あるいは新
 
     - サーバーは nsswitch と PAM 経由で使用されるよう構成しなければならない。
 
-    - Netatalk が LDAP 検索クエリでユーザーとグループの UUID
-      を引き出せるように、[afp.conf](#afp.conf.5) 内で [ACL 専用のオプションを](#acl_options)使って
-      Netatalk を設定しなければならない。
+    - Netatalk が LDAP 検索クエリでユーザーとグループの UUID を引き出せるように、`afp.conf` 内で [ACL
+      専用のオプションを](afp.conf#options-for-acl-handling)使って Netatalk
+      を設定しなければならない。
 
 ### macOS の ACL
 
@@ -733,8 +734,8 @@ The `dbus-daemon` バイナリは Spotlight 機能のためにインストール
 
   それ故、ライブでのファイルシステム監視は無効にして、その代わりに定期的に
   Tracker にファイルシステム変更のスキャンを行わせることを推奨する。下記
-  Tracker オプション、[enable-monitors](#enable-monitors) および
-  [crawling-interval](#crawling-interval) を参照のこと。
+  [Tracker オプション](#advanced-tracker-command-line-configuration)、enable-monitors および
+  crawling-interval を参照のこと。
 
 - home ディレクトリのインデックスは作成されない
 

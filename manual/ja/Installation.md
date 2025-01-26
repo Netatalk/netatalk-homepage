@@ -3,7 +3,7 @@
 > **警告**
 
 > Netatalk 2 または 3 から Netatalk 4
-にアップグレードする前に、このマニュアルの [[アップグレード]]
+にアップグレードする前に、このマニュアルの[アップグレード](Upgrade.html)
 の章を必ずお読みください。
 
 ## Netatalk の入手の仕方
@@ -168,6 +168,12 @@ cmark を使用して Markdown ソースから roff マニュアル ページを
   5.8 以降に依存する。必須 Perl モジュールは以下： *IO::Socket::IP*
   (asip-status) 又は *Net::DBus* (afpstats)。
 
+- po4a
+
+  po4a の助けを借りて、Netatalk のドキュメントは他の言語に翻訳できる。gettext
+  を使用して、ソース ファイルから翻訳可能な文字列を抽出し、PO
+  ファイルに保存されている翻訳と結合する。
+
 - TCP ラッパー
 
   Wietse Venema のネットワーク ロガー。TCPD または LOG_TCP
@@ -204,7 +210,8 @@ cmark を使用して Markdown ソースから roff マニュアル ページを
 [INSTALL](https://github.com/Netatalk/netatalk/blob/main/INSTALL)
 ファイルを参考してください。
 
-特定の OS に対しての具体的なビルド事例は [ Netatalk をソースコードからコンパイルする](#compile) 付録を参考してください。
+特定の OS に対しての具体的なビルド事例は [Netatalk をソースコードからコンパイルする](Compilation.html)
+付録を参考してください。
 
 ## Netatalk の起動と停止
 
@@ -232,4 +239,4 @@ Linux ディストリビューション、RPM、または BSD パッケージな
 コマンドを実行すると、netatalk がファイルの場所を予測しているかどうかを問い合わせることができる。
 
 AppleTalk サービスを実行する場合は、`atalkd` デーモンに加えて、オプションの `papd`、`timelord`、`a2boot`
-デーモンも起動する必要がある。詳細については、このマニュアルの [AppleTalk](#appletalk) の章を参照してください。
+デーモンも起動する必要がある。詳細については、このマニュアルの [AppleTalk](AppleTalk.html) の章を参照してください。
