@@ -553,7 +553,7 @@ OpenLDAP）に使用されていない属性を再利用する（あるいは新
     - サーバーは nsswitch と PAM 経由で使用されるよう構成しなければならない。
 
     - Netatalk が LDAP 検索クエリでユーザーとグループの UUID を引き出せるように、`afp.conf` 内で [ACL
-      専用のオプションを](afp.conf#options-for-acl-handling)使って Netatalk
+      専用のオプション](afp.conf#options-for-acl-handling)を使って Netatalk
       を設定しなければならない。
 
 ### macOS の ACL
