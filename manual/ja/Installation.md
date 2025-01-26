@@ -3,7 +3,7 @@
 > **警告**
 
 > Netatalk 2 または 3 から Netatalk 4
-にアップグレードする前に、このマニュアルの[アップグレード](Upgrade.html)
+にアップグレードする前に、このマニュアルの[アップグレード](Upgrading.html)
 の章を必ずお読みください。
 
 ## Netatalk の入手の仕方
@@ -206,9 +206,8 @@ cmark を使用して Markdown ソースから roff マニュアル ページを
 
 ### Netatalk のコンパイル
 
-ビルドシステムの使い方、コードのコンフィグ又はビルドの手順書は
-[INSTALL](https://github.com/Netatalk/netatalk/blob/main/INSTALL)
-ファイルを参考してください。
+ビルドシステムの使い方、コードのコンフィグ又はビルドの手順書は [Install Quick Start](/install.html)
+というのがあるので、ご参考まで。
 
 特定の OS に対しての具体的なビルド事例は [Netatalk をソースコードからコンパイルする](Compilation.html)
 付録を参考してください。

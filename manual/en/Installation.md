@@ -3,7 +3,7 @@
 > **WARNING**
 
 > Before upgrading to Netatalk 4 from an earlier version, please read the
-[Upgrade](Upgrade.html) chapter in this manual.
+[Upgrade](Upgrading.html) chapter in this manual.
 
 ## How to obtain Netatalk
 
@@ -217,8 +217,7 @@ functionality.
 
 Instructions on how to use the build system to configure and build
 netatalk source code are documented in the
-[INSTALL.md](https://github.com/Netatalk/netatalk/blob/main/INSTALL.md)
-file in the Netatalk source tree.
+[Install Quick Start](/install.html) guide.
 
 For examples of concrete steps to compile on specific operating systems,
 refer to the [Compile Netatalk from Source](Compilation.html) appendix in this
