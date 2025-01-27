@@ -143,7 +143,7 @@ latest version of Netatalk provides.
 | Feature | Details |
 |----|----|
 | Host OS Support | Linux (glibc & musl), DragonFlyBSD, FreeBSD, NetBSD, OpenBSD, macOS, OmniOS, Solaris 11 |
-| Client OS Support | macOS, Mac OS X, Mac OS 8/9, Macintosh System Software 6.0.x/7.x, Apple II<span class="smallcaps">GS*, Apple //e |
+| Client OS Support | macOS, Mac OS X, Mac OS 8/9, Macintosh System Software 6.0.x/7.x, GS/OS, ProDOS |
 | AFP Protocol Versions | 1.1, 2.0, 2.1, 2.2, 3.0, 3.1, 3.2, 3.3. 3.4 |
 | AFP over TCP | Yes |
 | AFP over [AppleTalk](https://en.wikipedia.org/wiki/AppleTalk) | Yes (supported on Linux, NetBSD) |
@@ -152,7 +152,7 @@ latest version of Netatalk provides.
 | Remote Backups | *[Time Machine](https://en.wikipedia.org/wiki/Time_Machine_(macOS))*-compatible |
 | Indexed Search | *[Spotlight](https://en.wikipedia.org/wiki/Spotlight_(Apple))*-compatible on macOS / OSX, *CatalogSearch* on Classic Mac OS |
 | Macintosh Network Booting | *[NetBoot](https://en.wikipedia.org/wiki/NetBoot)* 1.0-compatible (usage example: [kea-mboot](https://github.com/saybur/kea-mboot)) |
-| Apple II Network Booting | Yes: //e and II<span class="smallcaps">GS* (via `a2boot`) |
+| Apple II Network Booting | Yes: //e and IIGS (via `a2boot`) |
 | AppleTalk Printing to modern printers | Yes (via `papd`) |
 | Printing to [LocalTalk](https://en.wikipedia.org/wiki/LocalTalk) printers | Yes (via `pap`) |
 | AppleTalk Time Server | *[Timelord](https://web.archive.org/web/20010303220117/http://www.cs.mu.oz.au/appletalk/readmes/TMLD.README.html)*-compatible (via `timelord`) |
