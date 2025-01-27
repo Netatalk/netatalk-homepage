@@ -16,8 +16,8 @@ def html_head(page_title, new_name, lang):
     <title>Netatalk Manual - {page_title}</title>
     <meta name="description" content="Netatalk Manual">
     <link rel="canonical" href="https://netatalk.io/{new_name}">
-    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
-    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css">
+    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico">
 </head>
 """
 

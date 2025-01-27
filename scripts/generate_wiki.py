@@ -22,8 +22,8 @@ def html_head(name):
     <title>Netatalk Wiki - {name.replace('-', ' ')}</title>
     <meta name="description" content="Netatalk Wiki">
     <link rel="canonical" href="https://netatalk.io/docs/{name}">
-    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css" />
-    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css">
+    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico">
 </head>
 """
 
