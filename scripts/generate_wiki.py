@@ -23,7 +23,7 @@ navbar = ""
 
 
 def pre_footer(name):
-    return f"""<h2>Footnotes</h2>
+    return f"""<h1>Footnotes</h1>
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/{name}">visit the original page</a>

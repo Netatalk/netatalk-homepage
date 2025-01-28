@@ -38,7 +38,7 @@ for release_version in RELEASENOTES:
     html = url_pattern.sub(r" <a href='\2'>\2</a>", html)
     html = github_pattern.sub(r"<a href='https://github.com/Netatalk/netatalk/issues/\2'>\1\2</a>", html)
 
-    pre_footer = f"""<h2>Footnotes</h2>
+    pre_footer = f"""<h1>Footnotes</h1>
 <p>Release published on {published_at}</p>
 <p>Generated from <a href=\"https://github.com/Netatalk/netatalk/releases/tag/{github_tag}\">GitHub Release Notes</a></p>
 </div>
