@@ -7,6 +7,7 @@ from common import (
     RELEASENOTES,
     VERSION,
     html_head,
+    html_menlinks,
     html_navbar,
     html_foot,
 )
@@ -45,6 +46,7 @@ for release_version in RELEASENOTES:
 
     with open(f"./public/{minor_version}/{file_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
         output_file.write(html_head(f"Netatalk Release Notes - {release_version}", f"{minor_version}/{file_name}"))
+        output_file.write(html_menlinks())
         output_file.write(html_navbar(VERSION))
         output_file.write("<div id=\"content\">\n")
         output_file.write(html)

@@ -11,6 +11,7 @@ import urllib.parse
 from common import (
     VERSION,
     html_head,
+    html_menlinks,
     html_navbar,
     html_foot,
 )
@@ -83,8 +84,6 @@ with open("./wiki/_Sidebar.md", "r", encoding="utf-8") as input_file:
 for file in os.listdir("./wiki/"):
     if file.endswith(".md"):
         files.append(f"{file}")
-with open("./templates/header.html", "r", encoding="utf-8") as header_file:
-    header = header_file.read()
 for file in files:
     if file == "_Sidebar.md":
         continue
@@ -114,7 +113,8 @@ for file in files:
 
     with open(f"./public/docs/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
         output_file.write(html_head(f"Netatalk Wiki - {page_title.replace('-', ' ')}", f"/docs/{new_name}"))
-        output_file.write(html_navbar(VERSION))
+        output_file.write(html_menlinks())
+        output_file.write(navbar)
         output_file.write(f"<div id=\"content\">\n<h1 id=\"{file.split('.')[0]}\">{file.split('.')[0].replace('-', ' ')}</h1>\n")
         output_file.write(html)
         output_file.write(pre_footer(page_title))

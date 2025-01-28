@@ -67,10 +67,8 @@ def html_head(title, path, lang="en"):
 </head>
 """
 
-def html_navbar(version):
-    minor_version = re.search(r"^(\d+\.\d+)", version).group()
-    dashed_version = version.replace(".", "-")
-    return f"""<body>
+def html_menlinks():
+    return """<body>
 <div id="header">
     <div id="logo"></div>
     <div id="menlinks">
@@ -99,6 +97,12 @@ def html_navbar(version):
     </form>
     <span class="italic">powered by DuckDuckGo</span>
 </div>
+"""
+
+def html_navbar(version):
+    minor_version = re.search(r"^(\d+\.\d+)", version).group()
+    dashed_version = version.replace(".", "-")
+    return f"""
 <div id="navbars">
   <div class="navbar">
     <h2>current releases</h2>
