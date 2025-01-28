@@ -1,3 +1,5 @@
+import re
+
 VERSION = "4.1.1"
 LOCALES = ["en", "ja"]
 
@@ -63,6 +65,121 @@ def html_head(title, path, lang="en"):
     <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css">
     <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico">
 </head>
+"""
+
+def html_navbar(version):
+    minor_version = re.search(r"^(\d+\.\d+)", version).group()
+    dashed_version = version.replace(".", "-")
+    return f"""<body>
+<div id="header">
+    <div id="logo"></div>
+    <div id="menlinks">
+        <a href="/" title="Return to Netatalk home">[main]</a>
+        <a href="/docs" title="Netatalk Wiki">[wiki]</a>
+        <a href="/documentation.html" title="Netatalk Manual">[documentation]</a>
+        <a href="/download.html" title="Download Netatalk">[downloads]</a>
+        <a href="/support.html" title="Support">[support]</a>
+        <a href="/links.html" title="Netatalk related links">[links]</a>
+        <img src="/gfx/end.gif" alt="" width="125" height="7">
+    </div>
+</div>
+
+<div id="header-print">
+    <h1>netatalk.io</h1>
+</div>
+
+<div class="search">
+    <h2>search netatalk.io</h2>
+    <form method="get" action="https://duckduckgo.com/">
+        <p>
+            <input type="text" name="q" size="10" maxlength="255" value="" title="enter search text">
+            <input type="hidden" name="sites" value="netatalk.io">
+            <input type="submit" value="Go" title="search netatalk.io">
+        </p>
+    </form>
+    <span class="italic">powered by DuckDuckGo</span>
+</div>
+<div id="navbars">
+  <div class="navbar">
+    <h2>current releases</h2>
+    <ul>
+      <li>
+        <a
+        title="download {version} xz compressed source code"
+        href="https://github.com/Netatalk/netatalk/releases/download/netatalk-{dashed_version}/netatalk-{version}.tar.xz">
+        Netatalk {version} (source code)
+        </a>
+      </li>
+      <li>
+        <a
+        title="download {version} checksum"
+        href="https://github.com/Netatalk/netatalk/releases/download/netatalk-{dashed_version}/netatalk-{version}.tar.xz.sha256sum">
+        Netatalk {version} (sha256sum)
+        </a>
+      </li>
+      <li>
+        <a
+        title="download {version} Webmin module"
+        href="https://github.com/Netatalk/netatalk/releases/download/netatalk-{dashed_version}/netatalk-{version}.wbm.gz">
+        Webmin Module
+        </a>
+      </li>
+      <li>
+        <a
+        title="view {version} Release Notes"
+        href="/{minor_version}/ReleaseNotes{version}.html">
+        Release Notes
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar">
+    <h2>netatalk manual</h2>
+    <div><a href="/stable/htmldocs">Table of Contents</a></div>
+    <ol>
+      <li><a href="/stable/htmldocs/intro">Introduction</a></li>
+      <li><a href="/stable/htmldocs/installation">Installation</a></li>
+      <li><a href="/stable/htmldocs/configuration">Configuration</a></li>
+      <li><a href="/stable/htmldocs/appletalk">AppleTalk</a></li>
+      <li><a href="/stable/htmldocs/upgrade">Upgrading</a></li>
+      <li><a href="/stable/htmldocs/man-pages">List of Manual Pages</a></li>
+    </ol>
+    <ol class="alpha">
+      <li><a href="/stable/htmldocs/compile">Appendix: Compile</a></li>
+      <li><a href="/stable/htmldocs/gpl">Appendix: License</a></li>
+    </ol>
+  </div>
+  <div class="navbar">
+    <h2>community</h2>
+    <ul>
+       <li><a title="Wiki" href="https://github.com/Netatalk/netatalk/wiki">Contribute to Wiki Pages</a></li>
+       <li><a title="Discussions" href="https://github.com/Netatalk/netatalk/discussions">Participate in Discussions</a></li>
+       <li><a title="Mailing Lists" href="https://sourceforge.net/p/netatalk/mailman/">Subscribe to Mailing Lists</a></li>
+    </ul>
+  </div>
+  <div class="navbar">
+    <h2>development</h2>
+    <ul>
+      <li><a title="Code Repository, GitHub" href="https://github.com/Netatalk/netatalk">Code Repository</a></li>
+      <li><a title="Code Repository, GitLab" href="https://gitlab.com/netatalk-team/netatalk">GitLab Mirror</a></li>
+      <li><a title="How to Contribute" href="https://netatalk.io/docs/Developer-Notes.html">
+        How to Contribute</a></li>
+      <li><a title="Static Analysis" href="https://sonarcloud.io/summary/overall?id=Netatalk_netatalk">
+        Static Analysis by SonarQube</a></li>
+    </ul>
+  </div>
+  <div class="navbar">
+    <h2>continuous integration</h2>
+    <p><a href="https://github.com/Netatalk/netatalk/actions/workflows/build.yml">
+      <img alt="GitHub Continuous Integration Status" height="22"
+         src="https://github.com/Netatalk/netatalk/actions/workflows/build.yml/badge.svg"/>
+    </a></p>
+    <p><a href="https://github.com/Netatalk/netatalk/actions/workflows/containers.yml">
+      <img alt="GitHub Continuous Integration Status" height="22"
+         src="https://github.com/Netatalk/netatalk/actions/workflows/containers.yml/badge.svg"/>
+    </a></p>
+  </div>
+</div>
 """
 
 def html_foot(path):

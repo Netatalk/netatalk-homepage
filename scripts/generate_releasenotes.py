@@ -5,7 +5,9 @@ import requests
 
 from common import (
     RELEASENOTES,
+    VERSION,
     html_head,
+    html_navbar,
     html_foot,
 )
 
@@ -41,15 +43,9 @@ for release_version in RELEASENOTES:
 </div>
 """
 
-    with open("./templates/header.html", "r", encoding="utf-8") as header_file:
-        header = header_file.read()
-    with open("./templates/navbar.html", "r", encoding="utf-8") as navbar_file:
-        navbar = navbar_file.read()
-
     with open(f"./public/{minor_version}/{file_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
         output_file.write(html_head(f"Netatalk Release Notes - {release_version}", f"{minor_version}/{file_name}"))
-        output_file.write(header)
-        output_file.write(navbar)
+        output_file.write(html_navbar(VERSION))
         output_file.write("<div id=\"content\">\n")
         output_file.write(html)
         output_file.write(pre_footer)

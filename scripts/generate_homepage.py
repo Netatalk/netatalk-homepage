@@ -4,10 +4,9 @@ import markdown
 from common import (
     VERSION,
     html_head,
+    html_navbar,
     html_foot,
 )
-
-END_URL = ".html"
 
 subdirs = [
     '.',
@@ -22,26 +21,6 @@ subdirs = [
     '3.0',
     '3.1',
 ]
-
-def html_head(page_title, new_path):
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Netatalk - {page_title}</title>
-    <meta name="description" content="Netatalk Homepage">
-    <link rel="canonical" href="https://netatalk.io/{new_path}">
-    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css">
-    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico">
-</head>
-"""
-
-with open("./templates/header.html", "r", encoding="utf-8") as header_file:
-    header = header_file.read()
-with open("./templates/navbar.html", "r", encoding="utf-8") as navbar_file:
-    navbar = navbar_file.read()
-with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
-    footer = footer_file.read()
 
 for dir in subdirs:
     files = []
@@ -73,10 +52,10 @@ for dir in subdirs:
             new_path = new_name
         with open(f"./public/{new_path}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
             output_file.write(html_head(f"Netatalk - {page_title}", new_path))
-            output_file.write(header)
-            output_file.write(navbar)
+            output_file.write(html_navbar(VERSION))
             output_file.write("<div id=\"content\">\n")
             output_file.write(html)
+            output_file.write("</div>\n")
             output_file.write(html_foot(new_path))
 
         print(f"Converted: {file}")
