@@ -12,6 +12,12 @@ from common import (
     html_foot,
 )
 
+index_title = {
+    "en": f"Manual for Netatalk {VERSION}",
+    "ja": f"Netatalk {VERSION} マニュアル",
+}
+
+
 # Generate manual
 
 for lang in LOCALES:
@@ -45,6 +51,8 @@ for lang in LOCALES:
         with open(f"./manual/{lang}/{file}", "r", encoding="utf-8") as input_file:
             text = input_file.read()
             text = "[TOC]\n\n" + text
+            if file == "index.md":
+                text = f"# {index_title[lang]}\n\n" + text
             html = markdown.markdown(
                 text,
                 extensions=[
@@ -56,7 +64,7 @@ for lang in LOCALES:
                     ),
                 ],
             )
-        page_title = file.replace('.md', '')
+        page_title = file.replace('index', 'Index').replace('.md', '')
         new_name = file.replace('.md', '.html')
 
         with open(f"./public/manual/{lang}/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
