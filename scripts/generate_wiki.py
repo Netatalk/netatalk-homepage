@@ -8,34 +8,26 @@ from markdown.extensions.toc import TocExtension
 from git import Repo
 import urllib.parse
 
+from common import (
+    VERSION,
+    html_head,
+    html_foot,
+)
+
 now = datetime.datetime.now()
 date_time = now.strftime("%Y-%m-%d")
 files = []
 navbar = ""
 
 
-def html_head(name):
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Netatalk Wiki - {name.replace('-', ' ')}</title>
-    <meta name="description" content="Netatalk Wiki">
-    <link rel="canonical" href="https://netatalk.io/docs/{name}">
-    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css">
-    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico">
-</head>
-"""
-
 def pre_footer(name):
-    return f"""<hr />
+    return f"""<h2>Footnotes</h2>
     <p>
         This is a mirror of the Netatalk GitHub Wiki.
         Please <a href="https://github.com/Netatalk/netatalk/wiki/{name}">visit the original page</a>
         if you want to correct an error or contribute new contents.
     </p>
     <p>Last updated {date_time}</p>
-    <hr />
     </div>
 """
 
@@ -92,8 +84,6 @@ for file in os.listdir("./wiki/"):
         files.append(f"{file}")
 with open("./templates/header.html", "r", encoding="utf-8") as header_file:
     header = header_file.read()
-with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
-    footer = footer_file.read()
 for file in files:
     if file == "_Sidebar.md":
         continue
@@ -122,13 +112,13 @@ for file in files:
         new_name = "index.html"
 
     with open(f"./public/docs/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
-        output_file.write(html_head(page_title))
+        output_file.write(html_head(f"Netatalk Wiki - {page_title.replace('-', ' ')}", f"/docs/{new_name}"))
         output_file.write(header)
         output_file.write(navbar)
         output_file.write(f"<div id=\"content\">\n<h1 id=\"{file.split('.')[0]}\">{file.split('.')[0].replace('-', ' ')}</h1>\n")
         output_file.write(html)
         output_file.write(pre_footer(page_title))
-        output_file.write(footer)
+        output_file.write(html_foot(f"docs/{new_name}"))
 
     print(f"Converted: {file}")
 

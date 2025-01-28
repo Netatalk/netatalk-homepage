@@ -1,6 +1,11 @@
 import os
-import re
 import markdown
+
+from common import (
+    VERSION,
+    html_head,
+    html_foot,
+)
 
 END_URL = ".html"
 
@@ -67,12 +72,11 @@ for dir in subdirs:
         if dir == ".":
             new_path = new_name
         with open(f"./public/{new_path}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
-            output_file.write(html_head(page_title, new_path))
+            output_file.write(html_head(f"Netatalk - {page_title}", new_path))
             output_file.write(header)
             output_file.write(navbar)
-            output_file.write("<div id=\"content\">")
+            output_file.write("<div id=\"content\">\n")
             output_file.write(html)
-            output_file.write("</div>")
-            output_file.write(footer)
+            output_file.write(html_foot(new_path))
 
         print(f"Converted: {file}")

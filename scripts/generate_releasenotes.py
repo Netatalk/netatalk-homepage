@@ -3,66 +3,21 @@ import re
 import markdown
 import requests
 
-# Netatalk releases 2023 onward which have release notes on GitHub.
-# Earlier versions have static release notes html pages.
-versions = [
-    "2.2.7",
-    "2.2.8",
-    "2.2.9",
-    "2.2.10",
-    "2.3.0",
-    "2.3.1",
-    "2.3.2",
-    "2.4.0",
-    "2.4.1",
-    "2.4.2",
-    "2.4.3",
-    "2.4.4",
-    "2.4.5",
-    "2.4.6",
-    "2.4.7",
-    "2.4.8",
-    "2.4.9",
-    "2.4.10",
-    "3.1.14",
-    "3.1.15",
-    "3.1.16",
-    "3.1.17",
-    "3.1.18",
-    "3.1.19",
-    "3.2.0",
-    "3.2.1",
-    "3.2.2",
-    "3.2.3",
-    "3.2.4",
-    "3.2.5",
-    "3.2.6",
-    "3.2.7",
-    "3.2.8",
-    "3.2.9",
-    "3.2.10",
-    "4.0.0",
-    "4.0.1",
-    "4.0.2",
-    "4.0.3",
-    "4.0.4",
-    "4.0.5",
-    "4.0.6",
-    "4.0.7",
-    "4.0.8",
-    "4.1.0",
-    "4.1.1",
-]
+from common import (
+    RELEASENOTES,
+    html_head,
+    html_foot,
+)
 
 url_pattern = re.compile(r'((?:^|\s)(https?://\S+)(?=<))')
 github_pattern = re.compile(r'(GitHub #)(\d+)')
 
 github_token = os.environ["GITHUB_TOKEN"]
 
-for release_version in versions:
+for release_version in RELEASENOTES:
     github_tag = "netatalk-" + release_version.replace(".", "-")
     minor_version = re.search(r"^(\d+\.\d+)", release_version).group()
-    file_name = "ReleaseNotes" + release_version + ".html"
+    file_name = f"ReleaseNotes{release_version}.html"
     url = f"https://api.github.com/repos/Netatalk/netatalk/releases/tags/{github_tag}"
 
     headers = {
@@ -75,27 +30,14 @@ for release_version in versions:
     body = response.json()
     published_at = re.search(r"^(\d{4}-\d{2}-\d{2})", body["published_at"]).group()
 
-    html_head = f"""<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Netatalk Release Notes - {release_version}</title>
-    <meta name="description" content="Netatalk Release Notes">
-    <link rel="canonical" href="https://netatalk.io/{minor_version}/{file_name}">
-    <link rel="stylesheet" type="text/css" href="https://netatalk.io/css/site.css">
-    <link rel="icon" type="image/x-icon" href="https://netatalk.io/gfx/favicon.ico">
-</head>
-"""
-
     html = markdown.markdown(body["body"], extensions=['fenced_code', 'smarty', 'tables'])
 
     html = url_pattern.sub(r" <a href='\2'>\2</a>", html)
     html = github_pattern.sub(r"<a href='https://github.com/Netatalk/netatalk/issues/\2'>\1\2</a>", html)
 
-    pre_footer = f"""<hr />
+    pre_footer = f"""<h2>Footnotes</h2>
 <p>Release published on {published_at}</p>
 <p>Generated from <a href=\"https://github.com/Netatalk/netatalk/releases/tag/{github_tag}\">GitHub Release Notes</a></p>
-<hr />
 </div>
 """
 
@@ -103,16 +45,14 @@ for release_version in versions:
         header = header_file.read()
     with open("./templates/navbar.html", "r", encoding="utf-8") as navbar_file:
         navbar = navbar_file.read()
-    with open("./templates/footer.html", "r", encoding="utf-8") as footer_file:
-        footer = footer_file.read()
 
     with open(f"./public/{minor_version}/{file_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
-        output_file.write(html_head)
+        output_file.write(html_head(f"Netatalk Release Notes - {release_version}", f"{minor_version}/{file_name}"))
         output_file.write(header)
         output_file.write(navbar)
-        output_file.write(f"<div id=\"content\">\n<h1>Netatalk {release_version}</h1><hr />\n")
+        output_file.write("<div id=\"content\">\n")
         output_file.write(html)
         output_file.write(pre_footer)
-        output_file.write(footer)
+        output_file.write(html_foot(f"{minor_version}/{file_name}"))
 
         print(f"Converted: {file_name}")
