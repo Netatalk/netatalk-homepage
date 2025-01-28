@@ -80,7 +80,7 @@ and on a regular basis. Default: 1.
 > Determines the size of the Berkeley DB cache in kilobytes.
 Default: 8192. Each `cnid_dbd` process grabs that much memory on top of
 its normal memory footprint. It can be used to tune database
-performance. The *db_stat* utility with the `-m` option that comes with
+performance. The *db_stat* utility with the **-m** option that comes with
 Berkeley DB can help you determine whether you need to change this
 value. The default is pretty conservative so that a large percentage of
 requests should be satisfied from the cache directly. If memory is not a
@@ -144,7 +144,7 @@ Berkeley DB library versions, follow this steps:
 
 # See Also
 
-`cnid_metad(8)`, `afpd(8)`, `dbd(1)`
+cnid_metad(8), afpd(8), dbd(1)
 
 # Author
 

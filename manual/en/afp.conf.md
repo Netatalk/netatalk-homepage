@@ -4,7 +4,7 @@ afp.conf - Netatalk configuration file
 
 # Synopsis
 
-The `afp.conf` file is the configuration file for the **Netatalk** AFP
+The **afp.conf** file is the configuration file for the **Netatalk** AFP
 file server.
 
 All AFP-specific configurations and AFP volume definitions are done via
@@ -32,7 +32,7 @@ Internal whitespace within a parameter value is retained verbatim.
 Any line beginning with a semicolon (“;”) or a hash (“\#”) character is
 ignored, as are lines containing only whitespace.
 
-Any line ending in a “ `\` ” is continued on the next line in the
+Any line ending in a “ **\\** ” is continued on the next line in the
 customary UNIX fashion.
 
 The values following the equals sign in parameters are all either a
@@ -89,7 +89,7 @@ denoted by a (G) below are must be set in this section.
 This section enable sharing of the UNIX server user home directories.
 Specifying an optional `path` parameter means that not the whole user
 home will be shared but the subdirectory `path`. It is necessary to
-define the `basedir regex` option. It should be a regex which matches
+define the **basedir regex** option. It should be a regex which matches
 the parent directory of the user homes. Parameters denoted by a (H)
 belong to volume sections. The optional parameter `home name` can be
 used to change the AFP volume name which *$u's home* by default. See
@@ -105,7 +105,7 @@ are stored under `/home`:
 For a user *john* this results in an AFP home volume with a path of
 `/home/john/afp-data`.
 
-If `basedir regex` contains symlink, set the canonicalized absolute
+If **basedir regex** contains symlink, set the canonicalized absolute
 path. When `/home` links to `/usr/home`:
 
      [Homes]
@@ -252,8 +252,8 @@ uams_randnum.so
 
 > allows Random Number and Two-Way Random Number Exchange for
 authentication (requires a separate file containing the passwords,
-either the default afppasswd file or the one specified via
-"`passwd file`"). See `afppasswd(1)` for details. (legacy)
+either the default *afppasswd* file or the one specified via
+"`passwd file`"). See **afppasswd(1)** for details. (legacy)
 
 uams_dhx.so
 
@@ -280,26 +280,26 @@ was, that AFP3 uses Unicode names encoded as Decomposed UTF-8
 (UTF8-MAC). Previous AFP/OS versions used charsets like MacRoman,
 MacCentralEurope, etc.
 
-To be able to serve AFP3 and older clients at the same time, `afpd`
+To be able to serve AFP3 and older clients at the same time, **afpd**
 needs to be able to convert between UTF-8 and Mac charsets. Even OS X
-clients partly still rely on the mac charset. As there's no way, `afpd`
+clients partly still rely on the mac charset. As there's no way, **afpd**
 can detect the codepage a pre AFP3 client uses, you have to specify it
-using the `mac charset` option. The default is MacRoman, which should be
+using the **mac charset** option. The default is MacRoman, which should be
 fine for most western users.
 
-As `afpd` needs to interact with UNIX operating system as well, it needs
+As **afpd** needs to interact with UNIX operating system as well, it needs
 to be able to convert from UTF8-MAC / Mac charset to the UNIX charset.
-By default `afpd` uses *UTF8*. You can set the UNIX charset using the
-`unix charset` option. If you're using extended characters in the
-configuration files for `afpd`, make sure your terminal matches the
-`unix charset`.
+By default **afpd** uses *UTF8*. You can set the UNIX charset using the
+**unix charset** option. If you're using extended characters in the
+configuration files for **afpd**, make sure your terminal matches the
+**unix charset**.
 
 mac charset = `CHARSET` `(G)/(V)`
 
 > Specifies the Mac clients charset, e.g. *MAC_ROMAN*. This is used to
 convert strings and filenames to the clients codepage for OS9 and
 Classic, i.e. for authentication and AFP messages (SIGUSR2 messaging).
-This will also be the default for the volumes `mac charset`. Defaults to
+This will also be the default for the volumes **mac charset**. Defaults to
 *MAC_ROMAN*.
 
 unix charset = `CHARSET` `(G)`
@@ -312,7 +312,7 @@ the systems locale is used. Defaults to *UTF8*.
 vol charset = `CHARSET` `(G)/(V)`
 
 > Specifies the encoding of the volumes filesystem. By default, it is the
-same as `unix charset`.
+same as **unix charset**.
 
 > **NOTE**
 
@@ -490,7 +490,7 @@ volumes) via dbus.
 basedir regex = <regex\> `(H)`
 
 > Regular expression which matches the parent directory of the user homes.
-If `basedir regex` contains symlink, you must set the canonicalized
+If **basedir regex** contains symlink, you must set the canonicalized
 absolute path. In the simple case this is just a path i.e.
 `basedir regex = /home`
 
@@ -601,7 +601,7 @@ valid icon styles:
 login message = <message\> `(G)/(V)`
 
 > Sets a message to be displayed when clients logon to the server. The
-message should be in `unix charset`. Extended characters are allowed.
+message should be in **unix charset**. Extended characters are allowed.
 
 mimic model = <model\> `(G)`
 
@@ -625,7 +625,7 @@ signature = <STRING\> `(G)`
 > Specify a server signature. The maximum length is 16 characters. This
 option is useful for clustered environments, to provide fault isolation
 etc. By default, afpd generates a signature and saves it to a file
-called `afp_signature.conf` automatically (based on random numbers). See
+called **afp_signature.conf** automatically (based on random numbers). See
 also asip-status(1).
 
 solaris share reservations = <BOOLEAN\> (default: *yes*) `(G)`
@@ -1051,7 +1051,7 @@ MySQL database instance for use with netatalk.
 
 > **WARNING**
 
-> Do *NOT* use the "last" backend for volumes, because `afpd` relies
+> Do *NOT* use the "last" backend for volumes, because **afpd** relies
 heavily on a persistent ID database. Aliases will likely not work and
 filename mangling is not supported.
 
@@ -1063,7 +1063,7 @@ stored. `auto` is the default.
 auto
 
 > Try `sys` (by setting an EA on the shared directory itself), fallback to
-`ad`. Requires writable volume for performing test. "`read only = yes`"
+**ad**. Requires writable volume for performing test. "`read only = yes`"
 overwrites `auto` with `none`. Use explicit "`ea = sys|ad`" for
 read-only volumes where appropriate.
 
@@ -1182,10 +1182,10 @@ device number is not constant across a reboot, e.g. cluster, ...
 
 convert appledouble = <BOOLEAN\> (default: *yes*) `(V)`
 
-> Whether automatic conversion from `appledouble = v2` to
-`appledouble = ea` is performed when accessing filesystems from clients.
+> Whether automatic conversion from **appledouble = v2** to
+**appledouble = ea** is performed when accessing filesystems from clients.
 This is generally useful, but costs some performance. It's recommendable
-to run `dbd` on volumes and do the conversion with that. Then this
+to run **dbd** on volumes and do the conversion with that. Then this
 option can be set to no.
 
 delete veto files = <BOOLEAN\> (default: *no*) `(V)`
@@ -1272,8 +1272,8 @@ clients. See also: `file perm`, `directory perm` and `umask`.
 
 # See Also
 
-`afpd(8)`, `afppasswd(5)`, `afp_signature.conf(5)`, `extmap.conf(5)`,
-`cnid_metad(8)`
+afpd(8), `afppasswd(5)`, `afp_signature.conf(5)`, `extmap.conf(5)`,
+cnid_metad(8)
 
 # Author
 

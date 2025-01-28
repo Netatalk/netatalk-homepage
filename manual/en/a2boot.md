@@ -31,11 +31,11 @@ see the documentation for AppleShare File Server for Macintosh.
 
 # Options
 
-`-d`
+**-d**
 
 > Debug mode, i.e. don't disassociate from controlling TTY.
 
-`-n` <nbpname\>
+**-n** <nbpname\>
 
 > Register this server as *nbpname*. This defaults to the hostname.
 

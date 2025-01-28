@@ -20,16 +20,18 @@ atalkd.conf — AppleTalk が使用するインターフェイスを構成する
 動作するネットワーク インターフェースを設定する。インターフェースは、Linux の場合は *eth0*、Solaris の場合は *le0* など
 
 インターフェース以外のフィールドはすべてオプションであることに注意してください。ループバック インターフェースは自動的に構成される。`-seed`
-が指定されている場合は、他のすべてのフィールドが存在する必要がある。また、ルーターがシード情報に同意しない場合、`atalkd`
+が指定されている場合は、他のすべてのフィールドが存在する必要がある。また、ルーターがシード情報に同意しない場合、**atalkd**
 は起動時に終了する。`-seed` が指定されていない場合は、他のすべての情報が自動構成中に上書きされる可能性がある。 `-phase`
 オプションが指定されていない場合は、コマンドラインで指定されたデフォルトのフェーズが使用される (デフォルトは 2)。`-addr`
 が指定されていて、`-net` が指定されていない場合は、net-range が 1 であると想定される。
 
-各インターフェースの最初の -zone ディレクティブは \`\`default'' ゾーンです。フェーズ 1 では、ゾーンは 1 つだけ。フェーズ 2
-では、ネットワーク上のすべてのルーターがデフォルト ゾーンで構成され、一致する必要がある。`atalkd` は \`\`\*''
-を最初のインターフェースのデフォルト ゾーンにマップする。注: マシンのデフォルト ゾーンは、ローカル
-ルーターの構成によって決定される。デフォルト以外のゾーンに表示されるには、各サービス (例: `afpd`)
-で、必要なゾーンを個別に指定する必要がある。 `nbp_name(3)` も参照してください。
+The first -zone directive for each interface is the \**\\**default'' zone.
+Under Phase 1, there is only one zone. Under Phase 2, all routers on the
+network are configured with the default zone and must agree. **atalkd** maps
+\**\\**\*'' to the default zone of the first interface. Note: The default
+zone for a machine is determined by the configuration of the local routers;
+to appear in a non-default zone, each service, e.g.  **afpd**, must
+individually specify the desired zone. See also **nbp_name(3)**.
 
 使用可能なオプションとその意味は次のとおり。
 
@@ -71,16 +73,17 @@ Linux でも同様。
 
        eth0
 
-以下は Sun 4/40 の設定ファイルの例になる。マシンには 2
-つのインターフェイス「le0」と「le1」がある。「le0」インターフェイスは、ネットワーク上の他のルーターから自動的に設定される。このマシンは、\`\`le1''
-インターフェースの唯一のルーターである。
+Below is an example configuration file from a Sun 4/40. The machine has two
+interfaces, \**\\**le0'' and \**\\**le1''. The \**\\**le0'' interface is
+configured automatically from other routers on the network. The machine is
+the only router for the \**\\**le1'' interface.
 
        le0
        le1 -seed -net 9461-9471 -zone netatalk -zone Argus
 
 # 関連項目
 
-`atalkd(8)`
+atalkd(8)
 
 # 著者
 

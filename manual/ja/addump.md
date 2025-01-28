@@ -18,7 +18,7 @@ addump - AppleSingle/AppleDouble フォーマットのデータをダンプす�
 
 # 説明
 
-`addump`はAppleSingle/AppleDoubleフォーマットのデータをダンプするperlスクリプトである。
+**addump** はAppleSingle/AppleDoubleフォーマットのデータをダンプする。
 
 このスクリプトはメーラ、アーカイバ、Mac OS
 X、Netatalkなどが生成する様々なAppleSingle/AppleDoubleデータをダンプできる。
@@ -27,27 +27,27 @@ X、Netatalkなどが生成する様々なAppleSingle/AppleDoubleデータをダ
 
 # オプション
 
-`-a` \[<FILE\>|<DIR\>\]
+**-a** \[<FILE\>|<DIR\>\]
 
 > これがデフォルトである。<FILE\>または<DIR\>のためのAppleSingle/AppleDoubleデータを自動的にダンプする。もしFILEがAppleSingle/AppleDoubleフォーマットでないなら、拡張属性と<.AppleDouble/FILE\>と<.\_FILE\>を探する。もし<DIR\>なら、拡張属性と<DIR/.AppleDouble/.Parent\>と<.\_DIR\>を探する。
 
-`-e` <FILE\>|<DIR\>
+**-e** <FILE\>|<DIR\>
 
 > <FILE\>または<DIR\>の拡張属性をダンプする。
 
-`-f` \[<FILE\>\]
+**-f** \[<FILE\>\]
 
 > <FILE\>をダンプする。FinderInfoがFileInfoであると仮定する。
 
-`-d` \[<FILE\>\]
+**-d** \[<FILE\>\]
 
 > <FILE\>をダンプする。FinderInfoがDirInfoであると仮定する。
 
-`-h, -help, --help`
+**-h**, **-help**, **--help**
 
 > ヘルプを表示して終了する
 
-`-v, -version, --version`
+**-v**, **-version**, **--version**
 
 > バージョンを表示して終了する
 
@@ -59,8 +59,7 @@ FinderInfoがFileInfoなのかDirInfoなのかを検出する方法がありま�
 
 # 関連項目
 
-`ad(1)`, `getfattr(1)`, `attr(1)`, `runat(1)`, `getextattr(8)`,
-`lsextattr(8)`
+ad(1), getfattr(1), attr(1), runat(1), getextattr(8), lsextattr(8)
 
 # 著者
 

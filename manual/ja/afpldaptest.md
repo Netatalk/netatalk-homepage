@@ -10,29 +10,29 @@ afpldaptest — afp.conf の LDAP パラメータを構文チェックする
 
 # 説明
 
-`afpldaptest`はafp.confのldapパラメータを構文チェックするシンプルなコマンドである。
+**afpldaptest**はafp.confのldapパラメータを構文チェックするシンプルなコマンドである。
 
 # オプション
 
-`-u` <USER\>
+**-u** <USER\>
 
 > <USER\>のためのuuidを表示する。
 
-`-g` <GROUP\>
+**-g** <GROUP\>
 
 > <GROUP\>のためのuuidを表示する。
 
-`-i` <UUID\>
+**-i** <UUID\>
 
 > <UUID\>のためのuserかgroupかlocal-uuidを表示する。
 
-`-h, -?, -:`
+**-h**, **-?**, **-:**
 
 > ヘルプを表示して終了する。
 
 # 関連項目
 
-`afp.conf(5)`
+afp.conf(5)
 
 # 著者
 

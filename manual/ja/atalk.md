@@ -29,16 +29,18 @@ AppleTalk プロトコル ファミリのソケットは、次のアドレス構
         char sat_zero[ 8 ];
     };
 
-ソケットのポートは、`bind(2)` で設定できる。 *bind* のノードは、常に *ATADDR_ANYNODE*: \`\`このノード。''
-でなければなりません。ネットは、*ATADDR_ANYNET* または *ATADDR_LATENET* 。 *ATADDR_ANYNET*
-は、マシンの \`\`プライマリ'' アドレス (最初に構成されたアドレス) に対応する。 *ATADDR_LATENET*
-により、送信パケット内のアドレスはパケットの送信時に決定される(つまり、遅れて決定される)。*ATADDR_LATENET* は、ネットワーク
-インターフェイスごとに 1 つのソケットを開くことと同じ。ソケットのポートと プライマリ アドレスまたは *ATADDR_LATENET*
-のいずれかが、`getsockname(2)` で返される。
+The port of a socket may be set with **bind(2)**. The node for *bind* must
+always be *ATADDR_ANYNODE*: \**\\**this node.'' The net may be
+*ATADDR_ANYNET* or *ATADDR_LATENET*. *ATADDR_ANYNET* corresponds to the
+machine's \**\\**primary'' address (the first configured). *ATADDR_LATENET*
+causes the address in outgoing packets to be determined when a packet is
+sent, i.e. determined late. *ATADDR_LATENET* is equivalent to opening one
+socket for each network interface. The port of a socket and either the
+primary address or *ATADDR_LATENET* are returned with **getsockname(2)**.
 
 # 関連項目
 
-`bind(2)`, `getsockname(2)`, `atalkd(8)`.
+bind(2), getsockname(2), atalkd(8)
 
 # 著者
 

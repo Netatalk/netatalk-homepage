@@ -25,21 +25,21 @@ The interface is the network interface that this to work over, such as
 
 Note that all fields except the interface are optional. The loopback
 interface is configured automatically. If `-seed` is specified, all
-other fields must be present. Also, `atalkd` will exit during startup if
+other fields must be present. Also, **atalkd** will exit during startup if
 a router disagrees with its seed information. If `-seed` is not given,
 all other information may be overridden during auto-configuration. If no
 `-phase` option is given, the default phase as given on the command line
 is used (the default is 2). If `-addr` is given and `-net` is not, a
 net-range of one is assumed.
 
-The first -zone directive for each interface is the \`\`default'' zone.
+The first -zone directive for each interface is the \**\\**default'' zone.
 Under Phase 1, there is only one zone. Under Phase 2, all routers on the
-network are configured with the default zone and must agree. `atalkd`
-maps \`\`\*'' to the default zone of the first interface. Note: The
+network are configured with the default zone and must agree. **atalkd**
+maps \**\\**\*'' to the default zone of the first interface. Note: The
 default zone for a machine is determined by the configuration of the
 local routers; to appear in a non-default zone, each service, e.g.
-`afpd`, must individually specify the desired zone. See also
-`nbp_name(3)`.
+**afpd**, must individually specify the desired zone. See also
+**nbp_name(3)**.
 
 The possible options and their meanings are:
 
@@ -90,16 +90,16 @@ The same on Linux.
        eth0
 
 Below is an example configuration file from a Sun 4/40. The machine has
-two interfaces, \`\`le0'' and \`\`le1''. The \`\`le0'' interface is
+two interfaces, \**\\**le0'' and \**\\**le1''. The \**\\**le0'' interface is
 configured automatically from other routers on the network. The machine
-is the only router for the \`\`le1'' interface.
+is the only router for the \**\\**le1'' interface.
 
        le0
        le1 -seed -net 9461-9471 -zone netatalk -zone Argus
 
 # See Also
 
-`atalkd(8)`
+atalkd(8)
 
 # Author
 

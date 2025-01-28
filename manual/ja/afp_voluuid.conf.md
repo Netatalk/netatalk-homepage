@@ -4,7 +4,7 @@ afp_voluuid.conf — AFP ボリュームの UUID を指定するために afpd �
 
 # 説明
 
-`afp_voluuid.conf`は全てのAFPボリュームのUUIDを魔法のように自動的に指定するために`afpd`が利用する設定ファイルである。設定行は以下のように構成される。
+**afp_voluuid.conf** は全てのAFPボリュームのUUIDを魔法のように自動的に指定するために **afpd** が利用する設定ファイルである。設定行は以下のように構成される。
 
 <"volume-name"\> <uuid-string\>
 
@@ -32,7 +32,7 @@ Machineボリュームの強固な曖昧さ除去を提供する目的でZerocon
 
 # 参照
 
-`afpd(8)`, `afp.conf(5)`, `avahi-daemon(8)`, `mDNSResponder(8)`
+afpd(8), afp.conf(5), avahi-daemon(8), mDNSResponder(8)
 
 # 著者
 

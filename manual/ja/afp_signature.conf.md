@@ -4,7 +4,7 @@ afp_signature.conf — サーバシグネチャを指定するために afpd が
 
 # 説明
 
-`afp_signature.conf`はサーバシグネチャを魔法のように自動的に指定するために`afpd`が利用する設定ファイルである。設定行は以下のように構成される。
+**afp_signature.conf** はサーバシグネチャを魔法のように自動的に指定するために **afpd** が利用する設定ファイルである。設定行は以下のように構成される。
 
 <"server-name"\> <hexa-string\>
 
@@ -33,7 +33,7 @@ afp_signature.conf — サーバシグネチャを指定するために afpd が
 
 # 参照
 
-`afpd(8)`, `afp.conf(5)`, `asip-status(1)`
+afpd(8), afp.conf(5), asip-status(1)
 
 # 著者
 

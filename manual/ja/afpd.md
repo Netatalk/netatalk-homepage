@@ -10,10 +10,9 @@ afpd — Apple Filing Protocol デーモン
 
 # 説明
 
-`afpd`はUnixファイルシステムにApple Filing Protocol
-(AFP)インターフェースを提供する。これは通常、`netatalk`(8)によってブート時に起動される。
+**afpd**はUnixファイルシステムにApple Filing Protocol (AFP)インターフェースを提供する。これは通常、**netatalk**(8)によってブート時に起動される。
 
-`afpd`はファイルサーバの挙動と設定を決めるために`afp.conf`を利用する。
+**afpd**はファイルサーバの挙動と設定を決めるために**afp.conf**を利用する。
 
 # オプション
 
@@ -39,11 +38,11 @@ afpd — Apple Filing Protocol デーモン
 
 # シグナル
 
-最終手段を除いて、ユーザの`afpd`をシャットダウンするために`SIGKILL
-(-9)`を使うのは推奨しない。なぜなら、CNIDデータベースが矛盾したままになるかもしれないからである。`afpd`を終了する安全な方法は、`SIGTERM
+最終手段を除いて、ユーザの**afpd**をシャットダウンするために`SIGKILL
+(-9)`を使うのは推奨しない。なぜなら、CNIDデータベースが矛盾したままになるかもしれないからである。**afpd**を終了する安全な方法は、`SIGTERM
 (-15)`シグナルを送ってそれ自身が停止するのを待つことである。
 
-メインの`afpd`プロセスにSIGTERMやSIGUSR1を送れば子プロセスに伝わるので、全部に作用するだろう。
+メインの**afpd**プロセスにSIGTERMやSIGUSR1を送れば子プロセスに伝わるので、全部に作用するだろう。
 
 SIGTERM
 
@@ -51,7 +50,7 @@ SIGTERM
 
 SIGQUIT
 
-> マスタ`afpd`にこれを送ると全ての子プロセスを終了する。休止時間なしでAFPサービスを実施するのに使われる。
+> マスタ**afpd**にこれを送ると全ての子プロセスを終了する。休止時間なしでAFPサービスを実施するのに使われる。
 
 SIGHUP
 
@@ -59,32 +58,32 @@ SIGHUP
 
 SIGINT
 
-> 子プロセスの`afpd`に`SIGINT`を送ると、このプロセスの*max_debug*ログを有効にする。ログは`/tmp/afpd.PID.XXXXXX`に送られる。更に`SIGINT`を送ると元のログ設定に戻る。
+> 子プロセスの**afpd**に`SIGINT`を送ると、このプロセスの*max_debug*ログを有効にする。ログは`/tmp/afpd.PID.XXXXXX`に送られる。更に`SIGINT`を送ると元のログ設定に戻る。
 
 SIGUSR1
 
-> `afpd`プロセスはクライアントに「The server is going down for
+> **afpd**プロセスはクライアントに「The server is going down for
 maintenance.」というメッセージを送り、5分後に自身を終了する。新規接続を許しません。子プロセスのafpdにこれを送った場合、他の子プロセスには影響しません。それでもメインプロセスは終了するだろうし、全ての新規接続は無効になる。
 
 SIGUSR2
 
-> `afpd`プロセスはビルド時に設定したメッセージディレクトリの下のmessage.pidという名前のファイルを探する。発見したプロセスについて、その内容をメッセージとして対応するAFPクライアントに送る。メッセージを送った後にファイルは削除される。このシグナルは子プロセスの`afpd`にのみ送るべき。
+> **afpd**プロセスはビルド時に設定したメッセージディレクトリの下のmessage.pidという名前のファイルを探する。発見したプロセスについて、その内容をメッセージとして対応するAFPクライアントに送る。メッセージを送った後にファイルは削除される。このシグナルは子プロセスの**afpd**にのみ送るべき。
 
 # ファイル
 
-`afp.conf`
+**afp.conf**
 
 > afpdが使う設定ファイル
 
-`afp_signature.conf`
+**afp_signature.conf**
 
 > サーバシグネチャのリスト
 
-`afp_voluuid.conf`
+**afp_voluuid.conf**
 
 > Time MachineボリュームのUUIDのリスト
 
-`extmap.conf`
+**extmap.conf**
 
 > ファイル名拡張子マッピング
 
@@ -94,8 +93,8 @@ SIGUSR2
 
 # 関連項目
 
-`netatalk(8)`, `hosts_access(5)`, `afp.conf(5)`, `afp_signature.conf(5)`,
-`afp_voluuid.conf(5)`, `extmap.conf(5)`, `dbd(1)`.
+`netatalk(8)`, `hosts_access(5)`, afp.conf(5), `afp_signature.conf(5)`,
+`afp_voluuid.conf(5)`, `extmap.conf(5)`, dbd(1).
 
 # 著者
 

@@ -4,15 +4,14 @@ afppasswd — AFP パスワード保守ユーティリティ
 
 # 概要
 
-`afppasswd [-acfn] [-p afppasswd file] [-u minimum uid] [-w password
+`afppasswd [-acfn] [-p *afppasswd* file] [-u minimum uid] [-w password
 string]`
 
 # 説明
 
-`afppasswd` は、「Randnum exchange」および「2-Way Randnum
-exchange」ユーザー認証モジュールのユーザー資格情報を提供する afppasswd ファイルを作成および管理する。
+**afppasswd** は、「Randnum exchange」および「2-Way Randnum exchange」ユーザー認証モジュールのユーザー資格情報を提供する afppasswd ファイルを作成および管理する。
 
-`afppasswd`は、rootがパラメータ付きで呼び出すことも、一般のユーザが自分のAFPパスワードを変更するためにパラメータなしで呼び出すこともできる。
+**afppasswd**は、rootがパラメータ付きで呼び出すことも、一般のユーザが自分のAFPパスワードを変更するためにパラメータなしで呼び出すこともできる。
 
 > **注記**
 
@@ -31,39 +30,39 @@ exchange」ユーザー認証モジュールのユーザー資格情報を提供
 
 # オプション
 
-`-a`
+**-a**
 
-> `afppasswd`ファイルに新しいユーザを追加する。
+> **afppasswd**ファイルに新しいユーザを追加する。
 
-`-c`
+**-c**
 
-> `afppasswd`ファイルまたは特定ユーザを作成する。(さらに/または)初期化する。
+> **afppasswd**ファイルまたは特定ユーザを作成する。(さらに/または)初期化する。
 
-`-f`
+**-f**
 
 > 現在の動作を強制する。
 
-`-p` <パス\>
+**-p** <パス\>
 
-> `afppasswd`ファイルのパス。
+> **afppasswd**ファイルのパス。
 
-`-n`
+**-n**
 
 > もしcracklibサポートが*netatalk*に組み込まれており、cracklib辞書に対して実行されたパスワードを持つことをスーパユーザが望まないなら、このオプションはcracklibチェックを無効にできるだろう。
 
-`-u` <minimum uid\>
+**-u** <minimum uid\>
 
-> これは、`afppasswd`がユーザを作成するときに使う最小の*ユーザid*
+> これは、**afppasswd**がユーザを作成するときに使う最小の*ユーザid*
 (uid)である。
 
-`-w` <パスワード文字列\>
+**-w** <パスワード文字列\>
 
 > パスワードを対話形式で入力するのではなく、文字列をパスワードとして使用する。
 パスワードは平文で端末履歴に残るため、このオプションは絶対に必要な場合にのみ使用してください。
 
 # 関連項目
 
-`afpd(8)`, `afp.conf(5)`.
+afpd(8), afp.conf(5)
 
 # 著者
 

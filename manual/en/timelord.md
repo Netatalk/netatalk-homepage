@@ -22,16 +22,16 @@ latter requires tardis 1.4).
 
 # Options
 
-`-d`
+**-d**
 
 > Debug mode, i.e. don't disassociate from controlling TTY.
 
-`-l`
+**-l**
 
 > Return the time zone adjusted localtime of the server. The default
 behavior without this option is GMT.
 
-`-n` <nbpname\>
+**-n** <nbpname\>
 
 > Register this server as *nbpname*. This defaults to the hostname.
 

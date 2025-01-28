@@ -31,7 +31,7 @@ tar で固めた Netatalk 安定版ソースコードは [GitHub の Netatalk
 
 Git レポジトリ のダウンロードは迅速で容易である：
 
-1.  Git がインストールしてあることを確認する。`which git` は git のパスを示してくれるはずである。
+1.  Git がインストールしてあることを確認する。**which git** は git のパスを示してくれるはずである。
 
         $ which git
         /usr/bin/git
@@ -45,7 +45,7 @@ Git レポジトリ のダウンロードは迅速で容易である：
         Resolving deltas: 100% (32227/32227), done.
 
     上記で Git リポジトリから、Netatalk
-    のソース全体の完全でまっさらのコピーを含む `netatalk-code`
+    のソース全体の完全でまっさらのコピーを含む **netatalk-code**
     という名前のローカルディレクトリが作成される。
 
 3.  ブランチやタグを指定しない場合は、最先端の開発コードが取得さる。例えば、最新の安定した Netatalk 3.1
@@ -115,7 +115,7 @@ cmark を使用して Markdown ソースから roff マニュアル ページを
 
 - CrackLib
 
-  Random Number UAM と netatalk 独自の `afppasswd` パスワード
+  Random Number UAM と netatalk 独自の **afppasswd** パスワード
   マネージャを使用する場合、CrackLib は netatalk
   での認証に弱いパスワードを設定するのを防ぐのに役立つ。
 
@@ -126,11 +126,11 @@ cmark を使用して Markdown ソースから roff マニュアル ページを
 
   D-Bus はプロセス間にメッセージを通信するメカニズムを提供し、下記
   Netatalk 機能に使われる： Spotlight、Avahi を使用した Zeroconf、および
-  `afpstats` ツール。
+  **afpstats** ツール。
 
 - GLib および GIO
 
-  D-Bus とのインターフェースとして、`afpstats` ツールに使われる。
+  D-Bus とのインターフェースとして、**afpstats** ツールに使われる。
 
 - iconv
 
@@ -219,7 +219,7 @@ Netatalk ディストリビューションには、コンパイル前にビル�
 バリアント、Solaris 派生、および macOS 用のプラットフォーム固有のスクリプトに加えて、systemd、openrc 用に提供されている。
 
 ソースからビルドする場合、Netatalk ビルド システムは、どの
-initスタイルがプラットフォームに適しているかを検出しようとする。また、`with-init-style`オプションを指定して、必要な特定のタイプの起動スクリプト
+initスタイルがプラットフォームに適しているかを検出しようとする。また、**with-init-style**オプションを指定して、必要な特定のタイプの起動スクリプト
 をインストールするようにビルドシステムを構成することもできる。構文については、ビルド システムのヘルプテキストを参照してください。
 
 新しい Linux、\*BSD、および Solaris
@@ -234,8 +234,9 @@ Linux ディストリビューション、RPM、または BSD パッケージな
 
 スタートアップ スクリプトがない場合は、このデーモンを直接 (root として)  起動し、使い終わったら SIGTERM で終了することもできる。
 
-さらに、構成ファイル `afp.conf` が適切な場所にあることを確認してください。 `netatalk -V`
+さらに、構成ファイル **afp.conf** が適切な場所にあることを確認してください。 **netatalk -V**
 コマンドを実行すると、netatalk がファイルの場所を予測しているかどうかを問い合わせることができる。
 
-AppleTalk サービスを実行する場合は、`atalkd` デーモンに加えて、オプションの `papd`、`timelord`、`a2boot`
-デーモンも起動する必要がある。詳細については、このマニュアルの [AppleTalk](AppleTalk.html) の章を参照してください。
+AppleTalk サービスを実行する場合は、**atalkd** デーモンに加えて、オプションの
+**papd**、**timelord**、**a2boot** デーモンも起動する必要がある。詳細については、このマニュアルの
+[AppleTalk](AppleTalk.html) の章を参照してください。

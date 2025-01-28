@@ -4,17 +4,17 @@ afpstats — AFP サーバの利用状況を参照する
 
 # 概要
 
-`afpstats`
+**afpstats**
 
 # 説明
 
-`afpstats` は接続中のユーザ、マウント中のボリュームなどの利用状況が参照できる。
+**afpstats** は接続中のユーザ、マウント中のボリュームなどの利用状況が参照できる。
 
 # 注記
 
-`afpd`がD-Busをサポートしなければならない。"`afpd -V`"でそれをチェックしてください。
+**afpd**がD-Busをサポートしなければならない。"**afpd -v**"でそれをチェックしてください。
 
-その上、`afp.conf` で"`afpstats = yes`"を設定しなければならない。
+その上、**afp.conf** で"**afpstats = yes**"を設定しなければならない。
 
 # 例
 
@@ -25,7 +25,7 @@ afpstats — AFP サーバの利用状況を参照する
 
 # 関連項目
 
-`afpd(8)`, `afp.conf(5)`, `dbus-daemon(1)`
+afpd(8), afp.conf(5), dbus-daemon(1)
 
 # 著者
 

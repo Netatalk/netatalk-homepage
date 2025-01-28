@@ -6,7 +6,7 @@ Netatalk 3 から Netatalk 4 へのアップグレードは簡単。古いバー
 4 での主要な変更点は、Netatalk 2 と Netatalk 3 の間で削除された AppleTalk
 サービス、構成ファイル、およびツールを一部復活させたことである。
 
-主に、`atalkd` デーモンと `atalkd.conf` 設定ファイル、また `papd` デーモンと `papd.conf`
+主に、**atalkd** デーモンと **atalkd.conf** 設定ファイル、また **papd** デーモンと **papd.conf**
 設定ファイルが追加された。
 
 ## Netatalk 2 からのアップグレード
@@ -14,56 +14,56 @@ Netatalk 3 から Netatalk 4 へのアップグレードは簡単。古いバー
 Netatalk 4 の主要な変更は以下の3点：
 
 1.  これまでの AFP 設定ファイルすべてが廃止され、AFP に関してのほぼ全オプション名を変更し、新しい設定ファイルを追加した：
-    `afp.conf` と `extmap.conf`
+    **afp.conf** と **extmap.conf**
 
-2.  マックのメタデータとリソースフォークをファイルシステムの拡張属性に保存する `appledouble = ea` という新しい
+2.  マックのメタデータとリソースフォークをファイルシステムの拡張属性に保存する **appledouble = ea** という新しい
     AppleDouble のバックエンド。
 
 3.  AppleTalk トランスポート層はデフォルトで無効になっている。非常に古い Mac で Netatalk
-    を使用する場合は、`afp.conf` にて `appletalk = yes` オプションで有効にしてください。
-    それから、`netatalk` を起動する前に `atalkd` デーモンを立ち上げてください。
+    を使用する場合は、**afp.conf** にて **appletalk = yes** オプションで有効にしてください。
+    それから、**netatalk** を起動する前に **atalkd** デーモンを立ち上げてください。
 
 ### 設定まわりの変更点
 
-`afp.conf`
+**afp.conf**
 
 - （Samba の smb.conf のような） "ini" スタイルの構文
 
 - 一つで設定すべてを指示するという点： AFP 及びボリュームの構成を共に一つのファイルで設定することになるという点
 
-- `afpd.conf`、 `netatalk.conf`、 `AppleVolumes.default` 及び、 `afp_ldap.conf`
-  の廃止
+- **afpd.conf**、 **netatalk.conf**、 **AppleVolumes.default** 及び、
+  **afp_ldap.conf** の廃止
 
 > **警告**
 
 > ほとんどのオプション名は変更されたので、 詳細については
 [afp.conf](afp.conf.html) の manpage 全体を読むこと
 
-`extmap.conf`
+**extmap.conf**
 
 - Classic Mac OS type/creator と拡張子の関連付け
 
 - 2.x とは異なり、マッピングはデフォルトで無効になっている。有効にするには、ファイル内の行のコメントを解除する
 
-- `AppleVolumes.system` の廃止
+- **AppleVolumes.system** の廃止
 
 ### 新たな AppleDouble バックエンド
 
-マックのメタデータとリソースフォークをファイルシステムの拡張属性に保存する `appledouble = ea` という新しい AppleDouble
-のバックエンド。
+マックのメタデータとリソースフォークをファイルシステムの拡張属性に保存する **appledouble = ea** という新しい
+AppleDouble のバックエンド。
 
 - デフォルトのバックエンドである（！）
 
-- 拡張属性のあるファイルシステムが必須。 さもなくば `appledouble = v2` オプションの使用が代替となる
+- 拡張属性のあるファイルシステムが必須。 さもなくば **appledouble = v2** オプションの使用が代替となる
 
-- `appledouble = v2` から `appledouble = ea`
+- **appledouble = v2** から **appledouble = ea**
   ファイルシステムへの変換はアクセス時、その都度行われる（無効にすることも可能）
 
-- 一括で変換する場合 `dbd` を用いることができる
+- 一括で変換する場合 **dbd** を用いることができる
 
 実装の詳細：
 
-- Mac のメタデータ（すなわち FinderInfo、AFP フラグ、コメント、CNID）は “`org.netatalk.Metadata`”
+- Mac のメタデータ（すなわち FinderInfo、AFP フラグ、コメント、CNID）は “*org.netatalk.Metadata*”
   という名前の拡張属性に保存される。
 
   - さらに、Netatalk 4.1.0以降を実行しているmacOSホストでは、FinderInfo
@@ -71,9 +71,9 @@ Netatalk 4 の主要な変更は以下の3点：
 
 - マックのリソースフォークは：
 
-  - ZFS を用いた Solaris では “`org.netatalk.ResourceFork`” という拡張属性に保存される。
+  - ZFS を用いた Solaris では “*org.netatalk.ResourceFork*” という拡張属性に保存される。
 
-  - ないしは、ファイル名が “`file`” であるものに対して各々、“`._file`” という名の別の AppleDouble
+  - ないしは、ファイル名が “*file*” であるものに対して各々、“*._file*” という名の別の AppleDouble
     ファイルに保存される。
 
   - Netatalk 4.1.0 以降、macOS ホスト上のリソース フォークにネイティブに保存されている。
@@ -81,7 +81,7 @@ Netatalk 4 の主要な変更は以下の3点：
 - ".\_" ファイルのフォーマットは、 たとえそのファイルシステムに CIFS サーバー (Samba) 経由でアクセスした場合でも、 マックの
   CIFS クライアントが想定しているフォーマットと全く同じである。 なので、データを失う危険性（リソースもメタデータも）なく、
   マックから同じデータセットに AFP 経由と CIFS 経由と並行してアクセスすることができる。 一方、ウィンドウズから当該データセットに CIFS
-  経由でアクセスした場合は、未だに “`file`” と “`file`” の紐付けを失うこととなるであろう（非 ZFS
+  経由でアクセスした場合は、未だに “*file*” と “*file*” の紐付けを失うこととなるであろう（非 ZFS
   ファイルシステムの場合。上記参照）。 今のところその点で拡張 Samba VFS モジュールが必要である（改善中）。
 
 ### そのほかの主要な変更点
@@ -89,7 +89,7 @@ Netatalk 4 の主要な変更は以下の3点：
 - AFP 及び CNID デーモンの起動・再起動を担う新しいサービスコントローラデーモン [netatalk](netatalk.html)
   の導入。バンドルされているスタートスクリプトが すべて更新されているため、自分の環境でもアップデートされているか確認する必要あり！
 
-- CNID データベースはデフォルトで `$prefix/var/netatalk/CNID/`
+- CNID データベースはデフォルトで *$prefix/var/netatalk/CNID/*
   以下に保存される。以前は各共有ボリュームにて保存されていた。
 
 - Netatalk 2.x のボリュームオプション “usedots” 及び “upriv” はデフォルトとなった。
@@ -102,13 +102,13 @@ Netatalk 4 の主要な変更は以下の3点：
 
 2.  Netatalk 4 をインストールする
 
-3.  設定 `afp.conf` 及び `extmap.conf` を自力で書き換える
+3.  設定 **afp.conf** 及び **extmap.conf** を自力で書き換える
 
-4.  `afpd` と `cnid_metad` の代わりに `netatalk` 起動にのみ関連している、 Netatalk
+4.  **afpd** と **cnid_metad** の代わりに **netatalk** 起動にのみ関連している、 Netatalk
     起動スクリプトを更新するか、標準の起動スクリプトに置き換える。
 
-5.  `afp_voluuid.conf` 及び `afp_signature.conf` を localstate ディレクトリ （デフォルトでは
-    `$prefix/var/netatalk/`）、に移動。 正しいパスを見つけるために `afpd -v` コマンドが有用
+5.  **afp_voluuid.conf** 及び **afp_signature.conf** を localstate ディレクトリ
+    （デフォルトでは *$prefix/var/netatalk/*）、に移動。 正しいパスを見つけるために **afpd -v** コマンドが有用
 
 6.  Netatalk 4 を起動する
 

@@ -13,15 +13,15 @@ AppleTalk プロトコルを実装している。
 ### AppleTalk を使用するかどうか
 
 TCP 経由で AFP を使用できない古い AFP クライアントにファイル サービスを提供するには、Netatalk に組み込まれた AppleTalk
-サポートが必要。また、`papd(8)` による PAP 経由の印刷サービス、古い Mac クライアント用のタイムサーバー
-`timelord(8)`、および Apple II クライアント用の NetBoot サーバー `a2boot(8)` も有効になる。
+サポートが必要。また、**papd** による PAP 経由の印刷サービス、古い Mac クライアント用のタイムサーバー
+**timelord**、および Apple II クライアント用の NetBoot サーバー **a2boot** も有効になる。
 
 さらに、Classic Mac OS クライアントにサービスを提供している場合は、ネットワーク
 クライアントの使いやすさを考慮して、サービスの伝播/場所の指定に AppleTalk を使用することを検討してください。 Apple
 のエンジニアは、AppleTalk 経由で AFP サーバーを簡単に見つける方法を実装しましたが、AFP 接続自体は AFP over TCP
 経由で確立する (この優れた機能の詳細については、開発者向けドキュメントも参照してください)。
 
-Netatalk でさまざまな基本 AppleTalk プロトコルを使用するには、`atalkd(8)` を使用する必要がある。また、AppleTalk
+Netatalk でさまざまな基本 AppleTalk プロトコルを使用するには、**atalkd** を使用する必要がある。また、AppleTalk
 ルーターとして使用して、異なる独立したネットワーク セグメントを相互に接続することもできる。
 
 AppleTalk/atalkd を使用するには、システムが AppleTalk のカーネル サポートを備えている必要がある。指定しない場合は、TCP
@@ -205,7 +205,7 @@ eth0 に接続されたネットワークにアクティブなシード ルー�
 ## 印刷
 
 Netatalk は、AppleTalk 対応プリンタにアクセスするための PAP クライアントとしても、PAP サーバとしても機能する。前者は
-`pap(1)` ユーティリティを使用し、後者は `papd(8)` サービスを起動することで行う。
+`pap(1)` ユーティリティを使用し、後者は **papd** サービスを起動することで行う。
 
 AppleTalk プロトコル スイートの一部である「プリンタ アクセス プロトコル」は、1985 年に Apple によって開発された、完全に 8
 ビット対応の双方向印刷プロトコルである。*8 ビット対応* とは、バイト セット全体を印刷に使用できることを意味する(バイナリ
@@ -227,7 +227,7 @@ TechNote
 
 ### PAP 印刷サーバーの設定
 
-Netatalk の `papd` は、Macintosh、またはより正確には一般的な PAP クライアントに AppleTalk
+Netatalk の **papd** は、Macintosh、またはより正確には一般的な PAP クライアントに AppleTalk
 印刷サービスを提供できる。 Netatalk 自体には本格的なスプーラ実装は含まれておらず、papd は双方向通信と PAP
 クライアントからの印刷ジョブの送信のみを処理する。そのため、通常は、papd を Unix 印刷システム (例:クラシック SysV lpd、BSD
 lpr、LPRng、CUPS など。
@@ -257,7 +257,7 @@ lpd キューを定義するだけです。 `pr` パラメータが設定され�
 
 Netatalk 2.0 以降では、直接 CUPS 統合が使用可能。この場合、キュー名のみを `pr` パラメータとして定義すると、SysV lpd
 デーモンは呼び出されず、代わりに CUPS が使用される。 `pd` スイッチを使用して特定の PPD が割り当てられていない限り、CUPS
-で構成された PPD は `papd` でも使用される。
+で構成された PPD は **papd** でも使用される。
 
 *cupsautoadd* という特別な共有が 1 つ存在する。これが papd.confに存在する場合、使用可能なすべての
 CUPSキューは、このグローバル共有に割り当てられたパラメータを使用して自動的に処理される。ただし、後続のプリンタ定義を使用して、個々のスプーラのこれらのグローバル設定を上書きできる。
@@ -269,8 +269,7 @@ CUPSキューは、このグローバル共有に割り当てられたパラメ�
 Netatalk の `papstatus(8)` は AppleTalk プリンタのクエリに使用でき、 `pap(1)`
 はプリンタに印刷するのに使用できる。
 
-`pap` はスタンドアロンで使用することも、出力フィルタまたは CUPS バックエンドの一部として使用することもできる
-(すべてのプリンタを処理する必要がないため、この方法の方が推奨される)オプション)。
+**pap** はスタンドアロンで使用することも、出力フィルタまたは CUPS バックエンドの一部として使用することもできる (すべてのプリンタを処理する必要がないため、この方法の方が推奨される)オプション)。
 
     pap -p"ColorLaserWriter 16/600@*" /usr/share/doc/gs/examples/tiger.ps
 
@@ -281,29 +280,27 @@ Netatalk の `papstatus(8)` は AppleTalk プリンタのクエリに使用で�
     gs -q -dNOPAUSE -sDEVICE=cdjcolor -sOutputFile=test.ps | pap -E
 
 GhostScript は、PostScriptジョブをColor DeskWriterに適したPCL3出力に変換するために使用される。コマンド
-ラインにファイルが指定されていないため、`pap`はstdinからデータを読み取る。プリンタのアドレスは、同じディレクトリにある`.paprc`ファイルから読み取られ、`pap`が呼び出される(この例では、単に「Color
-DeskWriter:DeskWriter@Printers」が含まれている)。`-E`スイッチにより、`pap`はプリンタからのEOFを待たなくなる。
+ラインにファイルが指定されていないため、**pap**はstdinからデータを読み取る。プリンタのアドレスは、同じディレクトリにある*.paprc*ファイルから読み取られ、**pap**が呼び出される(この例では、単に「Color
+DeskWriter:DeskWriter@Printers」が含まれている)。**-e**スイッチにより、**pap**はプリンタからのEOFを待たなくなる。
 
 ## タイム サービス
 
 ### Timelord
 
-`timelord` は AppleTalk ベースのタイム サーバーで、NTP をサポートしていない古い Macintosh または Apple II
-クライアントのシステム時間を自動的に同期するのに役立つ。
+**timelord** は AppleTalk ベースのタイム サーバーで、NTP をサポートしていない古い Macintosh または Apple II クライアントのシステム時間を自動的に同期するのに役立つ。
 
-Netatalk の `timelord` は
+Netatalk の **timelord** は
 [メルボルン大学](https://web.archive.org/web/20010303220117/http://www.cs.mu.oz.au/appletalk/readmes/TMLD.README.html)で開発された
 Macintosh 用の tardis クライアントと互換性がある。
 
-詳細については、`timelord(8)` マニュアル ページをご覧ください。
+詳細については、**timelord** マニュアル ページをご覧ください。
 
 ## ネットブート サービス
 
 ### Apple 2 ネットブート
 
-`a2boot` は、 Apple //e または Apple IIGS を、Netatalk が提供する AFP ボリュームを介して ProDOS
-または GS/OS にブートする。
+**a2boot** は、 Apple //e または Apple IIGS を、Netatalk が提供する AFP ボリュームを介して ProDOS または GS/OS にブートする。
 
 Apple が提供する適切なブート ブロックとシステム ファイルを自分で用意する必要がある。
 
-詳細については、`a2boot(8)` マニュアル ページを参照してください。
+詳細については、[a2boot](a2boot.html) マニュアル ページを参照してください。

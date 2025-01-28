@@ -10,30 +10,30 @@ afpldaptest — Syntactically check LDAP parameters in afp.conf
 
 # Description
 
-`afpldaptest` is a simple command to syntactically check ldap parameters
+**afpldaptest** is a simple command to syntactically check ldap parameters
 in afp.conf.
 
 # Options
 
-`-u` <USER\>
+**-u** <USER\>
 
 > Show uuid for <USER\>.
 
-`-g` <GROUP\>
+**-g** <GROUP\>
 
 > Show uuid for <GROUP\>.
 
-`-i` <UUID\>
+**-i** <UUID\>
 
 > Show user, group or local-uuid for <UUID\>.
 
-`-h, -?, -:`
+**-h**, **-?**, **-:**
 
 > Show the help and exit.
 
 # See Also
 
-`afp.conf(5)`
+afp.conf(5)
 
 # Author
 

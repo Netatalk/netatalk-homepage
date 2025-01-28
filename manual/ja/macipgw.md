@@ -89,7 +89,7 @@ MacIP (以前は KIP と呼ばれていました) は、IP パケットを Apple
 
 # 関連項目
 
-`tun(4)`, `ip(4)`, `atalkd(8)`, `syslog(3)`, `syslogd(8)`
+`tun(4)`, `ip(4)`, atalkd(8), `syslog(3)`, `syslogd(8)`
 
 # バグ
 

@@ -133,7 +133,7 @@ Starting with Netatalk 2.0, direct CUPS integration is available. In
 this case, defining only a queue name as `pr` parameter won't invoke the
 SysV lpd daemon but uses CUPS instead. Unless a specific PPD has been
 assigned using the `pd` switch, the PPD configured in CUPS will be used
-by `papd`, too.
+by **papd**, too.
 
 There exists one special share named "cupsautoadd". If this is present
 as the first entry then all available CUPS queues will be served
@@ -163,7 +163,7 @@ some of the printers may appear in the Chooser on Mac clients.
 
 # See Also
 
-`papd(8)`, `atalkd.conf(5)`, `lpd(8)`, `lpoptions(8)`
+papd(8), atalkd.conf(5), lpd(8), lpoptions(8)
 
 # Author
 
