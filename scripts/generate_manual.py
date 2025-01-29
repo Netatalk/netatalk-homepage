@@ -45,7 +45,7 @@ for lang in LOCALES:
             continue
         with open(f"./manual/{lang}/{file}", "r", encoding="utf-8") as input_file:
             text = input_file.read()
-            text = f"# Netatalk {VERSION}\n\n[TOC]\n\n" + text
+            text = f"**Netatalk {VERSION}**\n\n[TOC]\n\n" + text
             html = markdown.markdown(
                 text,
                 extensions=[
