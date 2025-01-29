@@ -16,20 +16,20 @@ more available.
 There are three major changes between Netatalk 2 and Netatalk 4:
 
 1.  New configuration files that replaces most of the previous ones:
-    **afp.conf** and **extmap.conf**
+    *afp.conf* and **extmap.conf**
 
 2.  New AppleDouble backend **appledouble = ea** which stores Mac metadata
     and resource forks in extended attributes of the filesystem.
 
 3.  The AppleTalk transport layer is disabled by default. If you want to
     use Netatalk with very old Macs, turn it on with the
-    **appletalk = yes** option in **afp.conf**. Then start the **atalkd**
+    **appletalk = yes** option in *afp.conf*. Then start the **atalkd**
     daemon before **netatalk** in order to activate the AppleTalk
     transport layer.
 
 ### New configuration
 
-**afp.conf**
+*afp.conf*
 
 - ini style syntax (akin to Samba's smb.conf)
 
@@ -105,7 +105,7 @@ Implementation details:
 - All CNID databases are now stored under *$prefix/var/netatalk/CNID/*
   by default, rather than in the individual shared volume directories
 
-- Netatalk 2.x volume options “usedots” and “upriv” now enabled by
+- Netatalk 2.x volume options “**usedots**” and “**upriv**” now enabled by
   default
 
 - Removed SLP and AFP proxy support
@@ -116,7 +116,7 @@ Implementation details:
 
 2.  Install Netatalk 4
 
-3.  Manually recreate configurations in **afp.conf** and **extmap.conf**
+3.  Manually recreate configurations in *afp.conf* and **extmap.conf**
 
 4.  Update your Netatalk init script to start **netatalk** instead of
     **afpd** and **cnid_metad**, or replace it with the appropriate stock

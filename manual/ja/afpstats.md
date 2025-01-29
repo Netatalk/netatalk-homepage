@@ -14,7 +14,7 @@ afpstats — AFP サーバの利用状況を参照する
 
 **afpd**がD-Busをサポートしなければならない。"**afpd -v**"でそれをチェックしてください。
 
-その上、**afp.conf** で"**afpstats = yes**"を設定しなければならない。
+その上、*afp.conf* で"**afpstats = yes**"を設定しなければならない。
 
 # 例
 

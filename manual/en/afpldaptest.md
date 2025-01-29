@@ -15,17 +15,17 @@ in afp.conf.
 
 # Options
 
-**-u** <USER\>
+**-u** <user\>
 
-> Show uuid for <USER\>.
+> Show uuid for <user\>.
 
-**-g** <GROUP\>
+**-g** <group\>
 
-> Show uuid for <GROUP\>.
+> Show uuid for <group\>.
 
-**-i** <UUID\>
+**-i** <uuid\>
 
-> Show user, group or local-uuid for <UUID\>.
+> Show user, group or local-uuid for <uuid\>.
 
 **-h**, **-?**, **-:**
 

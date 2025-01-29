@@ -23,15 +23,15 @@ the *nbpname* of a printer. Blank lines and lines that begin with a
 zone of the local host, respectively.
 
 Note that **pap** is designed to be useful as a communication filter for
-sending **lpd(8)** spooled print jobs to AppleTalk connected printers. See
-**psf(8)** for hints on how to use it this way.
+sending **lpd**(8) spooled print jobs to AppleTalk connected printers. See
+**psf**(8) for hints on how to use it this way.
 
 # Options
 
 **-A** <address\>
 
 > Connect to the printer with Appletalk address *address* and do not
-consult the *.paprc* file to find a printer name. See **atalk_aton(3)**
+consult the *.paprc* file to find a printer name. See **atalk_aton**(3)
 for the syntax of *address*.
 
 **-c**
@@ -47,7 +47,7 @@ waiting.
 
 **-e**
 
-> Send any message from the printer to stderr instead of stdout. **psf(8)**
+> Send any message from the printer to stderr instead of stdout. **psf**(8)
 invokes **pap** with this option.
 
 **-E**
@@ -61,7 +61,7 @@ related bugs in their implementation.
 **-p** <nbpname\>
 
 > Connect to the printer named *nbpname* and do not consult the *.paprc*
-file to find a printer name. See **nbp_name(3)** for the syntax of
+file to find a printer name. See **nbp_name**(3) for the syntax of
 *nbpname*.
 
 **-s** <statusfile\>
@@ -70,7 +70,7 @@ file to find a printer name. See **nbp_name(3)** for the syntax of
 message from the printer. **pap** gets the status from the printer when it
 is waiting for the printer to process input. The *statusfile* will
 contain a single line terminated with a newline. This is useful when
-**pap** is invoked by **psf(8)** within *lpd*'s spool directory.
+**pap** is invoked by **psf**(8) within *lpd*'s spool directory.
 
 **-w**
 

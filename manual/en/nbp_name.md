@@ -25,16 +25,14 @@ proceeded by \`*:*', and *zone* must be preceded by \`*@*'.
 
 # Examples
 
-The argument of **afpd(8)**'s **-n** option is parsed with **nbp_name()**. The
+The argument of **afpd**(8)'s **-n** option is parsed with **nbp_name()**. The
 default value of *obj* is the first component of the machine's hostname
-(as returned by **gethostbyname(3)**). The default value of *type* is
-\**\\**AFPServer'', and of *zone* is \**\\**\*'', the default zone. To cause
+(as returned by **gethostbyname**(3)). The default value of *type* is
+"AFPServer", and of *zone* is "\*", the default zone. To cause
 *afpd* to register itself in some zone other than the default, one would
-invoke it as
+invoke it as below where *obj* and *type* would retain their default values.
 
     afpd -n @some-other-zone
-
-*obj* and *type* would retain their default values.
 
 # Bugs
 

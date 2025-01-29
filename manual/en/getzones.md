@@ -11,7 +11,7 @@ getzones — list AppleTalk zone names
 *Getzones* is used to obtain a list of AppleTalk zone names using the
 Zone Information Protocol (ZIP). It sends a GetZoneList request to an
 AppleTalk router. By default, it sends the request to the locally
-running **atalkd(8)**.
+running **atalkd**(8).
 
 # Options
 
@@ -28,7 +28,7 @@ request.
 *address*
 
 > Contact the AppleTalk router at *address.* *address* is parsed by
-**atalk_aton(3)**.
+**atalk_aton**(3).
 
 # See Also
 

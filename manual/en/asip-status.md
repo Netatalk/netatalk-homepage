@@ -8,7 +8,7 @@ asip-status — Queries an AFP server for its capabilities
 
 `asip-status [ -4 | -6 ] [-d] [-i] [-x] [ HOSTNAME:PORT ]`
 
-`asip-status [ -v | -version | --version ]`
+`asip-status [ -v | -Version | --version ]`
 
 # Description
 
@@ -23,7 +23,7 @@ used.
 
 Starting with Netatalk 3.1.9, **asip-status** supports both IPv4 and IPv6.
 By default, your system automatically decides which protocol version to
-use. You can use -4 or -6 option to force IPv4 or IPv6, respectively.
+use. You can use **-4** or **-6** option to force IPv4 or IPv6, respectively.
 
 # Options
 

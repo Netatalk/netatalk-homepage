@@ -16,15 +16,15 @@ normally started at boot time by an init system.
 
 # Options
 
--d
+**-d**
 
 > Do not disassociate daemon from terminal.
 
--F <configfile\>
+**-F** <configfile\>
 
 > Specifies the configuration file to use.
 
--v | -V
+**-v** | **-V**
 
 > Print version information and exit.
 
@@ -36,18 +36,18 @@ SIGTERM
 
 SIGHUP
 
-> Sending a `SIGHUP` will cause the AFP daemon reload its configuration
+> Sending a *SIGHUP* will cause the AFP daemon reload its configuration
 file.
 
 # Files
 
-**afp.conf**
+*afp.conf*
 
 > configuration file used by **netatalk**(8), **afpd**(8) and **cnid_metad**(8)
 
 # See Also
 
-afpd(8), cnid_metad(8), afp.conf(5).
+afpd(8), cnid_metad(8), afp.conf(5)
 
 # Author
 

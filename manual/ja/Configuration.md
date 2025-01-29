@@ -5,7 +5,7 @@
 AFP (Apple Filing Protocol)  はアップル・マッキントッシュのファイルサービスに用いるプロトコルである。AFP
 プロトコルは年を追うごとに進展を見せ、最終バージョンは OS X Lion (10.7) で加えられた "AFP 3.4" である。
 
-Netatalk の afpd デーモンはアップルのクライアントに対して AFP ファイルサービスを提供する。設定ファイルは **afp.conf**
+Netatalk の afpd デーモンはアップルのクライアントに対して AFP ファイルサービスを提供する。設定ファイルは *afp.conf*
 のみで、"ini" スタイルの構文で記述する。
 
 [Spotlight](#spotlight) サポートは Netatalk 3.1 より加えられた。
@@ -23,9 +23,9 @@ Netatalk 2.1 以降では UNIX シンボリックリンクをサーバー上で�
 
 ### afp.conf
 
-**afp.conf** は、AFP ファイルサーバー及び提供する AFP ボリュームの挙動と設定を決定するために afpd が使用する設定ファイルである。
+*afp.conf* は、AFP ファイルサーバー及び提供する AFP ボリュームの挙動と設定を決定するために afpd が使用する設定ファイルである。
 
-**afp.conf** は複数のサーバーセクションに分割できる。すなわち：
+*afp.conf* は複数のサーバーセクションに分割できる。すなわち：
 
 \[Global\]
 
@@ -58,8 +58,8 @@ Netatalk 2.1 以降では UNIX シンボリックリンクをサーバー上で�
     [Homes]
     basedir regex = /RAID./.*homes
 
-もし、**basedir regex** にシンボリックリンクが含まれる場合、 正規化された絶対パスを指定すべきである。つまり、パス `/home`
-から `/usr/home` にシンボリックリンクがはられていた場合：
+もし、**basedir regex** にシンボリックリンクが含まれる場合、 正規化された絶対パスを指定すべきである。つまり、パス */home*
+から */usr/home* にシンボリックリンクがはられていた場合：
 
     [Homes]
     basedir regex = /usr/home
@@ -84,7 +84,7 @@ Netatalk はホストのファイルシステム内で ID
 とファイルあるいはフォルダーのマップ（ID
 との対応付け）をする必要がある。 それを実現するためにいくつかの異なる
 CNID
-バックエンドが用意されていて、**afp.conf**
+バックエンドが用意されていて、*afp.conf*
 設定ファイル内で **cnid scheme**
 オプションで選択が可能である。CNID
 バックエンドは基本的には、ストアされた ID <-\>
@@ -392,23 +392,24 @@ Security](http://developer.apple.com/library/mac/#documentation/Networking/Conce
 
 いくつかの UAM は別の認証“バックエンド”を使えるようにしてある。いわゆる
 **uams_cleartxt.so**、**uams_cleartxt.so** 及び **uams_cleartxt.so**である。これらは
-`/etc/passwd` (`/etc/shadow`) からの古典的 UNIX パスワードでも、システムがサポートしていれば PAM
+*/etc/passwd* (*/etc/shadow*) からの古典的 UNIX パスワードでも、システムがサポートしていれば PAM
 でもどちらでも使うことができる。 **uams_cleartxt.so** は **uams_passwd.so** ないしは
 **uams_pam.so** へのシンボリックリンクとして、 **uams_cleartxt.so** は
 **uams_dhx_passwd.so** ないしは **uams_dhx_pam.so** へのシンボリックリンクとして、さらには
 **uams_cleartxt.so** は **uams_dhx2_passwd.so** ないしは
 **uams_dhx2_pam.so**へのシンボリックリンクとすることができる。
 
-なので、もし Netatalk の UAM フォルダー（デフォルトで `/etc/netatalk/uams/`）が以下のようであれば：
+なので、もし Netatalk の UAM フォルダー（デフォルトで */etc/netatalk/uams/*）が以下のようであれば、PAM
+さもなくば古典的な UNIX パスワードを使用しているわけである。
 
     uams_clrtxt.so -> uams_pam.so
     uams_dhx.so -> uams_dhx_pam.so
     uams_dhx2.so -> uams_dhx2_pam.so
 
-PAM さもなくば古典的な UNIX パスワードを使用しているわけである。PAM を使用することで最も有利なのは、例えば LDAP 経由、あるいは
-NIS 経由などの集約した認証環境に Netatalk を統合できることである。そのような環境でのユーザーのログイン資格情報 (credentials)
-の保護は、UAM そのものが供している暗号化の強さにもまた依存している。 ということを常に念頭においていただきたい。なので、"ClearTxt
-Passwrd" や "Randnum exchange" のような弱い UAM をネットワーク上から 完全に除去することを考えるべきである。
+PAM を使用することで最も有利なのは、例えば LDAP 経由、あるいは NIS 経由などの集約した認証環境に Netatalk
+を統合できることである。そのような環境でのユーザーのログイン資格情報 (credentials) の保護は、UAM
+そのものが供している暗号化の強さにもまた依存している。 ということを常に念頭においていただきたい。なので、"ClearTxt Passwrd" や
+"Randnum exchange" のような弱い UAM をネットワーク上から 完全に除去することを考えるべきである。
 
 ### Netatalk UAM を概要表
 
@@ -552,8 +553,8 @@ OpenLDAP）に使用されていない属性を再利用する（あるいは新
 
     - サーバーは nsswitch と PAM 経由で使用されるよう構成しなければならない。
 
-    - Netatalk が LDAP 検索クエリでユーザーとグループの UUID を引き出せるように、**afp.conf** 内で [ACL
-      専用のオプション](afp.conf#options-for-acl-handling)を使って Netatalk
+    - Netatalk が LDAP 検索クエリでユーザーとグループの UUID を引き出せるように、*afp.conf* 内で [ACL
+      専用のオプション](afp.conf.html#options-for-acl-handling)を使って Netatalk
       を設定しなければならない。
 
 ### macOS の ACL

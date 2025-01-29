@@ -10,7 +10,7 @@ a2boot — Apple II ネットブート サーバー デーモン
 
 # 説明
 
-*a2boot* は、Apple IIe および IIGS コンピュータ用のネットブート
+**a2boot** は、Apple IIe および IIGS コンピュータ用のネットブート
 サーバーである。互換性のあるクライアントが AppleTalk ネットワーク経由で
 ProDOS または GS/OS を起動できるようにする。 これは、AppleShare File
 Server for Macintosh の初期バージョンに含まれていた Apple II
@@ -39,7 +39,7 @@ Server for Macintosh の初期バージョンに含まれていた Apple II
 > このサーバーを *nbpname*
 として登録する。デフォルトではホスト名になる。
 
--v | -V
+**-v** | **-V**
 
 > バージョン情報を出力して終了する。
 

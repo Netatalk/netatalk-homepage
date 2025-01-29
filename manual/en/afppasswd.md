@@ -4,7 +4,7 @@ afppasswd — AFP password maintenance utility
 
 # Synopsis
 
-`afppasswd [-acfn] [-p *afppasswd* file] [-u minimum uid] [-w password string]`
+`afppasswd [-acfn] [-p afppasswd file] [-u minimum uid] [-w password string]`
 
 # Description
 
@@ -36,11 +36,11 @@ Local user changing their own password:
 
 **-a**
 
-> Add a new user to the **afppasswd** file.
+> Add a new user to the *afppasswd* file.
 
 **-c**
 
-> Create and/or initialize **afppasswd** file or specific user.
+> Create and/or initialize *afppasswd* file or specific user.
 
 **-f**
 
@@ -48,7 +48,7 @@ Local user changing their own password:
 
 **-p** <path\>
 
-> Path to **afppasswd** file.
+> Path to *afppasswd* file.
 
 **-n**
 

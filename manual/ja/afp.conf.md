@@ -22,14 +22,13 @@ afp.conf - Netatalk の設定ファイル
 
 セミコロン(“;”)やハッシュ文字(“\#”)で始まるいかなる行も、空白だけの行と同様に無視される。
 
-Any line ending in a “ **\\** ” is continued on the next line in the
-customary UNIX fashion.
+“**\\**”で終わるいかなる行も、通例のUNIX方式で次の行に続くことを意味する。
 
 パラメータにおいて等号の後ろに続く値は、文字列(引用符は必要ない)または真偽値である。真偽値はyes/no、1/0、true/falseで表現する。大文字と小文字の区別は真偽値では意味を持たないが、文字列では保存される。「file
 perm」のようないくつかの項目は数値を表す。
 
-「`include =
-path`」というパラメータは、設定ファイルの中にもう一つの設定ファイルを組み込むことを可能にする。そのファイルはまるでその場所に書き込まれたように、そっくりそのまま組み込まれる。入れ子になった組み込みはサポートされない。
+「**include =
+path**」というパラメータは、設定ファイルの中にもう一つの設定ファイルを組み込むことを可能にする。そのファイルはまるでその場所に書き込まれたように、そっくりそのまま組み込まれる。入れ子になった組み込みはサポートされない。
 
 # セクションの説明
 
@@ -37,15 +36,15 @@ path`」というパラメータは、設定ファイルの中にもう一つの
 
 \[Global\]と\[Homes\]という二つの特殊なセクションがあるが、これについては下の方の*特殊なセクション*で説明する。以下の解説は通常のセクションに適用される。
 
-一つのボリュームは、アクセスを許可するディレクトリ設定と、そのサービスにおいてユーザに与えるアクセス権設定で成り立つ。ボリュームに対して`path`オプションを使って共有ディレクトリを指定しなければならない。
+一つのボリュームは、アクセスを許可するディレクトリ設定と、そのサービスにおいてユーザに与えるアクセス権設定で成り立つ。ボリュームに対して**path**オプションを使って共有ディレクトリを指定しなければならない。
 
-`path`オプションのないボリュームセクションは、他のボリュームセクションから`vol
-preset`オプション経由で呼び出され、ボリュームのデフォルト値を決める*ボリュームプリセット*と見なされる。プリセット*と*ボリュームセクションの両方で指定されたオプションについては、ボリュームオプション設定がプリセットオプションを完全に上書きする。
+**path**オプションのないボリュームセクションは、他のボリュームセクションから**vol
+preset**オプション経由で呼び出され、ボリュームのデフォルト値を決める*ボリュームプリセット*と見なされる。プリセット*と*ボリュームセクションの両方で指定されたオプションについては、ボリュームオプション設定がプリセットオプションを完全に上書きする。
 
 サーバが許可したアクセス権は、ホストシステムの特定のUNIXユーザまたはゲストユーザのアクセス権でマスクされる。サーバはホストシステムの許可以上の許可をしない。
 
 以下のセクションの例は、一つのAFPボリュームを定義している。ユーザはパス`/foo/bar`への完全なアクセス権を持つ。
-`baz`という共有名でアクセスできる:
+*baz*という共有名でアクセスできる:
 
      [baz]
         path = /foo/bar
@@ -58,20 +57,20 @@ preset`オプション経由で呼び出され、ボリュームのデフォル�
 
 ## \[Homes\]セクション
 
-このセクションはUNIXサーバ側のユーザのホームディレクトリを共有できるようにする。オプションの`path`パラメータを指定すると、ユーザのホームディレクトリ全体ではなく、サブディレクトリ`path`が共有される。**basedir
-regex**オプションを定義する必要がある。これはホームディレクトリの親ディレクトリにマッチする正規表現である。(H)の印がついているパラメータはこのボリュームセクション用である。オプションパラメータ`home
-name`はAFPボリューム名を変更するのに使うものであり、デフォルトは*$u's home*である。下の「変数置換」の項を見よ。
+このセクションはUNIXサーバ側のユーザのホームディレクトリを共有できるようにする。オプションの**path**パラメータを指定すると、ユーザのホームディレクトリ全体ではなく、サブディレクトリ**path**が共有される。**basedir
+regex**オプションを定義する必要がある。これはホームディレクトリの親ディレクトリにマッチする正規表現である。(H)の印がついているパラメータはこのボリュームセクション用である。オプションパラメータ**home
+name**はAFPボリューム名を変更するのに使うものであり、デフォルトは*$u's home*である。下の「変数置換」の項を見よ。
 
-以下の例でこれを解説する。全てのユーザのホームディレクトリは`/home`の下にある:
+以下の例でこれを解説する。全てのユーザのホームディレクトリは*/home*の下にある:
 
      [Homes]
           path = afp-data
           basedir regex = /home
 
-ユーザ*john*について、`/home/john/afp-data`というパスがAFPホームボリュームになる。
+ユーザ*john*について、*/home/john/afp-data*というパスがAFPホームボリュームになる。
 
 **basedir
-regex**ががシンボリックリンクを含む場合、正規化した絶対パスを設定してください。`/home`が`/usr/home`にリンクしているとき:
+regex**ががシンボリックリンクを含む場合、正規化した絶対パスを設定してください。*/home*が*/usr/home*にリンクしているとき:
 
      [Homes]
           basedir regex = /usr/home
@@ -80,8 +79,8 @@ regex**ががシンボリックリンクを含む場合、正規化した絶対�
 
 パラメータはセクション固有の属性を定義する。
 
-いくつかのパラメータは\[Global\]セクションに固有のものである(たとえば*log
-type*)。それ以外は全てボリュームセクションのみに許される。(*G*)はパラメータが\[Global\]セクション固有であることを示す。(*V*)はボリューム固有のセクションで指定できることを示す。
+いくつかのパラメータは\[Global\]セクションに固有のものである(たとえば**log
+type**)。それ以外は全てボリュームセクションのみに許される。(*G*)はパラメータが\[Global\]セクション固有であることを示す。(*V*)はボリューム固有のセクションで指定できることを示す。
 
 # 変数置換
 
@@ -141,44 +140,44 @@ $$
 
 ## 認証オプション
 
-ad domain = `DOMAIN` `(G)`
+ad domain = <domain\> **(G)**
 
 > 認証時にユーザ名に@DOMAINを追加する。Active
 Directory環境で有用。さもなくば、完全な文字列user@domainで参加するユーザを要求するだろう。
 
-admin auth user = `user` `(G)`
+admin auth user = <user\> **(G)**
 
-> 例えば"`admin auth user = root`"を指定すると、通常ユーザのログインが失敗したときにafpdは必ず指定した`admin auth user`として認証を試みる。これが成功した場合、元の接続ユーザとして通常のセッションが確立される。言い換えると、あなたが`admin auth user`のパスワードを知っている場合、如何なる他のユーザとしてでも認証できる。
+> 例えば"**admin auth user = root**"を指定すると、通常ユーザのログインが失敗したときにafpdは必ず指定した**admin auth user**として認証を試みる。これが成功した場合、元の接続ユーザとして通常のセッションが確立される。言い換えると、あなたが**admin auth user**のパスワードを知っている場合、如何なる他のユーザとしてでも認証できる。
 
-admin group = <group\> `(G)`
+admin group = <group\> **(G)**
 
 > 信頼できるグループのユーザがログインしたときスーパユーザとして見えるようにする。このオプションはデフォルトで無効である。
 
-mac charset = <CHARSET\> `(V)`
+force user = <user\> **(G)**
 
 > このサーバに接続する全ユーザへ、デフォルトユーザとして割り当てるUNIXユーザ名を指定する。これは共有ファイルに役立つ。間違ってセキュリティ問題を引き起こすような使い方が可能なので、それにも注意して利用すべきである。
 
-force group = <GROUP\> `(G)`
+force group = <group\> **(G)**
 
 > このサーバに接続する全ユーザへ、デフォルトプライマリグループとして割り当てるUNIXグループ名を指定する。
 
-k5 keytab = <path\> `(G)`; k5 service = <service\> `(G)`; k5 realm = <realm\> `(G)`
+k5 keytab = <path\> **(G)**; k5 service = <service\> **(G)**; k5 realm = <realm\> **(G)**
 
 > サーバがKerberos 5認証UAMをサポートする場合、これらが必要である。
 
-nt domain = `DOMAIN` `(G)`; nt separator = `SEPARATOR` `(G)`
+nt domain = <domain\> **(G)**; nt separator = <SEPARATOR\> **(G)**
 
 > 例えばwinbind認証で利用し、有効かつ動作中のUAM認証を通して、ログイン時のユーザ名の前に両方の文字列を付けたもので認証を試みる。
 
-save password = <BOOLEAN\> (デフォルト: *yes*) `(G)`
+save password = <BOOLEAN\> (デフォルト: *yes*) **(G)**
 
 > パスワードをローカルに保存するクライアントの機能を有効または無効にする。
 
-set password = <BOOLEAN\> (デフォルト: *no*) `(G)`
+set password = <BOOLEAN\> (デフォルト: *no*) **(G)**
 
 > chooserや「サーバへ接続」のダイアログを通してパスワードの変更をするクライアントの機能を有効または無効にする。
 
-uam list = <uam list\> `(G)`
+uam list = <uam list\> **(G)**
 
 > スペースまたはカンマで区切られたUAMの一覧。(デフォルトは「uams_dhx.so
 uams_dhx2.so」)
@@ -192,13 +191,13 @@ uams_guest.so
 uams_clrtxt.so
 
 > (uams_pam.soまたはuams_passwd.so)
-暗号化なしで転送されたパスワードによるログインを許可する。(時代遅れ)
+暗号化なしで転送されたパスワードによるログインを許可する。Mac OS 9 以前と互換性がある。
 
 uams_randnum.so
 
 > 認証のための乱数および双方向乱数交換を許可する
-(パスワードを含んだファイル、つまりafppasswdファイルか"`passwd file`"で指定したファイルのどちらかが必要)。詳細は
-**afppasswd(1)**を見よ。(時代遅れ)
+(パスワードを含んだファイル、つまりafppasswdファイルか"**passwd file**"で指定したファイルのどちらかが必要)。詳細は
+**afppasswd**(1)を見よ。Mac OS 9 以前と互換性がある。
 
 uams_dhx.so
 
@@ -214,7 +213,7 @@ uam_gss.so
 
 > 認証のためのKerberos Vを許可する。(オプション)
 
-uam path = <path\> `(G)`
+uam path = <path\> **(G)**
 
 > このサーバのためのUAMのデフォルトパスを設定する。
 
@@ -231,16 +230,16 @@ charset**オプションを使ってそれを指定しなけらばならない�
 charset**オプションを使ってUNIX文字セットを設定できる。**afpd**のための設定ファイルで拡張文字セットを使う場合、端末が`unix
 charset`に一致することを確認してください。
 
-mac charset = `CHARSET` `(G)/(V)`
+mac charset = <charset\> **(G)**/**(V)**
 
 > Macクライアントの文字セット、例えば*MAC_ROMAN*を指定する。これは文字列やファイル名をOS9やClassic環境のクライアントコードページに変換するために用いられる。すなわち認証やAFPメッセージ(SIGUSR2
 messaging)である。これはボリュームの**mac charset**のデフォルトにもなる。デフォルトは*MAC_ROMAN*。
 
-unix charset = `CHARSET` `(G)`
+unix charset = <charset\> **(G)**
 
 > サーバのunix文字セット、例えば*ISO-8859-15*や*EUC-JP*を指定する。これは文字列をシステムロケールとの間で変換するのに使われる。すなわち認証やサーバメッセージやボリューム名である。LOCALEが設定された場合、システムロケールが使われる。デフォルトはUTF8。
 
-vol charset = `CHARSET` `(G)/(V)`
+vol charset = <charset\> **(G)**/**(V)**
 
 > ボリュームのファイルシステムのエンコーディングを指定する。デフォルトでは**unix charset**と同じである。
 
@@ -250,35 +249,35 @@ vol charset = `CHARSET` `(G)/(V)`
 
 ## パスワードオプション
 
-passwd file = `path` `(G)`
+passwd file <path\> **(G)**
 
 > このサーバの乱数UAMパスワードファイルのパスを設定する。
 
-passwd minlen = `number` `(G)`
+passwd minlen = <number\> **(G)**
 
 > UAMが最小パスワード長をサポートする場合、それを設定する。
 
 ## ネットワークオプション
 
-advertise ssh = <BOOLEAN\> (デフォルト: *no*) `(G)`
+advertise ssh = <BOOLEAN\> (デフォルト: *no*) **(G)**
 
 > 古いMac OS
-Xクライアント(10.3.3から10.4)にSSHでトンネルしたAFP接続を魔法のように自動的に確立させる。このオプションを設定した場合、クライアントのFPGetSrvrInfo要求へのサーバの返答は追加エントリを含む。これはクライアントの設定と`sshd(8)`が正しく設定されて動作するサーバ上で実行中であるかに依存する。
+Xクライアント(10.3.3から10.4)にSSHでトンネルしたAFP接続を魔法のように自動的に確立させる。このオプションを設定した場合、クライアントのFPGetSrvrInfo要求へのサーバの返答は追加エントリを含む。これはクライアントの設定と**sshd**(8)が正しく設定されて動作するサーバ上で実行中であるかに依存する。
 
 > **注記**
 
 > SSHを介した全体を暗号化するAFP接続はサーバの負荷を著しく増加させるので、このオプションの設定は推奨しない。一方、バージョン10.3.4より前のMacOS
 Xにおけるこの機能のAppleクライアント側の実装はセキュリティ欠陥があった。
 
-afp interfaces = <name \[name ...\]\> `(G)`
+afp interfaces = <name \[name ...\]\> **(G)**
 
 > サーバがリッスンするネットワークインターフェースを指定する。デフォルトではシステムの最初のIPアドレスを宣伝するが、入ってくる如何なる要求もリッスンする。
 
 > **注記**
 
-> `afp listen` オプションと同時に使用しないでください。
+> **afp listen** オプションと同時に使用しないでください。
 
-afp listen = <ip address\[:port\] \[ip address\[:port\] ...\]\> `(G)`
+afp listen = <ip address\[:port\] \[ip address\[:port\] ...\]\> **(G)**
 
 > サーバが宣伝**および**リッスンするIPアドレスを指定する。デフォルトではシステムの最初のIPアドレスを宣伝するが、入ってくる如何なる要求もリッスンする。ネットワークアドレスはIPv4のドット付き10進数フォーマットやIPv6の16進数フォーマットのどちらでも指定してよい。
 
@@ -286,40 +285,40 @@ IPv6 address + portの組み合わせは角かっこを使ったフォーマッ�
 
 > **注記**
 
-> `afp interfaces` オプションと同時に使用しないでください。
+> **afp interfaces** オプションと同時に使用しないでください。
 
-afp port = <port number\> `(G)`
+afp port = <port number\> **(G)**
 
-> 異なるTCPポートをAFPに使わせる。デフォルトは548である。`afp listen`オプションで何も指定しなかった場合も適用されたデフォルトポートを設定する。
+> 異なるTCPポートをAFPに使わせる。デフォルトは548である。**afp listen**オプションで何も指定しなかった場合も適用されたデフォルトポートを設定する。
 
-appletalk = <BOOLEAN\> (デフォルト: *no*) `(G)`
+appletalk = <BOOLEAN\> (デフォルト: *no*) **(G)**
 
 > AFP-over-Appletalk
 のサポートを有効にする。このオプションを使用するには、オペレーティング
 システムが AppleTalk ネットワーク
 プロトコルをサポートしている必要がある。
 
-cnid listen = <ip address\[:port\] \[ip address\[:port\] ...\]\> `(G)`
+cnid listen = <ip address\[:port\] \[ip address\[:port\] ...\]\> **(G)**
 
 > CNIDサーバがリッスンするIPアドレスを指定する。デフォルトは**localhost:4700**である。
 
-ddp address = <ddp address\> `(G)`
+ddp address = <ddp address\> **(G)**
 
 > サーバーの DDP アドレスを指定する。デフォルトでは、アドレス (0.0)
 が自動的に割り当てられる。これは、複数のインターフェイスで AppleTalk
 を実行している場合にのみ役立つ。
 
-ddp zone = <ddp zone\> `(G)`
+ddp zone = <ddp zone\> **(G)**
 
 > サーバーを登録する AppleTalk
 ゾーンを指定する。デフォルトでは、システムによって最後に構成されたインターフェースのデフォルト
 ゾーンにサーバーが登録される。
 
-splice size = <number\> (デフォルト: *64k*) `(G)`
+splice size = <number\> (デフォルト: *64k*) **(G)**
 
-> ドロップする前に、切断されたAFPセッションを`number`時間維持する。デフォルトは24時間である。
+> ドロップする前に、切断されたAFPセッションを<number\>時間維持する。デフォルトは24時間である。
 
-dsireadbuf = <number\> `(G)`
+dsireadbuf = <number\> **(G)**
 
 > DSI/TCP先読みバッファのサイズを決定する係数。デフォルトは12である。これにDSI
 server quantum
@@ -328,116 +327,116 @@ server quantum
 このバッファはafpdの子プロセス毎に割り当てられるので、大きな値を指定すると大量のメモリが食われる
 (バッファサイズ \* クライアント数)。
 
-fqdn = <name\[:port\]\> `(G)`
+fqdn = <name\[:port\]\> **(G)**
 
 > 完全修飾ドメイン名をオプションのポート番号と共に指定する。サーバがこれを解決できない場合は破棄される。AppleShare
 clients
 3.8.3以前はこのオプションを評価しない。このオプションはデフォルトで無効である。これによりクライアント側は名前解決を二段階踏むことになるので注意して使ってください。afpdはこのname:portの組み合わせを宣伝するが自動的にはリッスンしないことにも注意してください。
 
-hostname = <name\> `(G)`
+hostname = <name\> **(G)**
 
-> 宣伝用のIPアドレスを決定するため、ホスト名の呼出結果の代わりにこれを用いる。従って、このホスト名から宣伝用IPアドレスが解決されるようになる。これはリスニングには使われないし、`afp listen`によっても上書きされてしまう。
+> 宣伝用のIPアドレスを決定するため、ホスト名の呼出結果の代わりにこれを用いる。従って、このホスト名から宣伝用IPアドレスが解決されるようになる。これはリスニングには使われないし、**afp listen**によっても上書きされてしまう。
 
-max connections = <number\> `(G)`
+max connections = <number\> **(G)**
 
 > 同時にサーバに接続できるクライアントの最大数を設定する(デフォルトは200)。
 
-server quantum = <number\> `(G)`
+server quantum = <number\> **(G)**
 
 > これはDSI server quantumを指定する。デフォルト値は0x100000
 (1MiB)である。最大値は0xFFFFFFFFFであり最小値は32000である。範囲外の値を指定した場合、デフォルト値が設定される。自分が何をしようとしているか確信がない限り、この値を変更しないでください。
 
-splice size = <number\> (デフォルト: *64k*) `(G)`
+splice size = <number\> (デフォルト: *64k*) **(G)**
 
-> スリープモードにおいてクライアントを切断する前に、スリープ中のAFPセッションを`number`時間維持する。デフォルトは10時間である。
+> スリープモードにおいてクライアントを切断する前に、スリープ中のAFPセッションを<number\>時間維持する。デフォルトは10時間である。
 
-tcprcvbuf = <number\> `(G)`
+tcprcvbuf = <number\> **(G)**
 
 > setsockopt()を使ってTCP受信バッファの設定を試みる。しばしばOSはこの値を設定しようとするアプリケーションの資格を制限する。
 
-tcpsndbuf = <number\> `(G)`
+tcpsndbuf = <number\> **(G)**
 
 > setsockopt()を使ってTCP送信バッファの設定を試みる。しばしばOSはこの値を設定しようとするアプリケーションの資格を制限する。
 
-recvfile = <BOOLEAN\> (デフォルト: *no*) `(G)`
+recvfile = <BOOLEAN\> (デフォルト: *no*) **(G)**
 
 > データ受信のためにLinuxのsplice()を使うかどうか。
 
-splice size = <number\> (デフォルト: *64k*) `(G)`
+splice size = <number\> (デフォルト: *64k*) **(G)**
 
 > spliceする最大バイト数。
 
-use sendfile = <BOOLEAN\> (デフォルト: *yes*) `(G)`
+use sendfile = <BOOLEAN\> (デフォルト: *yes*) **(G)**
 
 > クライアントにファイルデータを送るためにsendfileシステムコールを使うかどうか。
 
-zeroconf = <BOOLEAN\> (デフォルト: *yes*) `(G)`
+zeroconf = <BOOLEAN\> (デフォルト: *yes*) **(G)**
 
 > AvahiまたはmDNSResponder込みでコンパイル済の場合、自動的なZeroconfサービス登録を使うかどうか。
 
 ## 雑多なオプション
 
-afp read locks = <BOOLEAN\> (デフォルト: *no*) `(G)`
+afp read locks = <BOOLEAN\> (デフォルト: *no*) **(G)**
 
 > FPReadコールにおいてバイト領域リードロックを適用するかどうか。AFPの仕様はこれを義務付けるが、実際のところこれはUNIXの動作に合致しないし、パフォーマンスを抑え込む。
 
-afpstats = <BOOLEAN\> (デフォルト: *no*) `(G)`
+afpstats = <BOOLEAN\> (デフォルト: *no*) **(G)**
 
 > dbusを介してAFPランタイム統計 (接続ユーザ、開いてるボリューム)
 を提供するかどうか。
 
-basedir regex = <regex\> `(H)`
+basedir regex = <regex\> **(H)**
 
-> ユーザホームの親ディレクトリにマッチする正規表現。**basedir regex**がシンボリックリンクを含む場合、正規化した絶対パスを設定しなければならない。簡単なケースだとこれは単に一つのパスである。つまり`basedir regex = /home`である。
+> ユーザホームの親ディレクトリにマッチする正規表現。**basedir regex**がシンボリックリンクを含む場合、正規化した絶対パスを設定しなければならない。簡単なケースだとこれは単に一つのパスである。つまり**basedir regex = /home**である。
 
-chmod request = <preserve (デフォルト) \| ignore \| simple\> `(G)/(V)`
+chmod request = <preserve (デフォルト) \| ignore \| simple\> **(G)**/**(V)**
 
 > ACLに対応する高度なパーミッション制御。
 
-- `ignore` -
+- **number** -
   UNIXのchmod()要求を完全に無視する。新規作成を上書きして親ディレクトリのACL継承に完全コントロールさせるためにこのオプションを使う。
 
-- `preserve` - 名前付きユーザとグループのためのZFS ACEやPOSIX ACLグループマスクを維持する
+- **preserve** - 名前付きユーザとグループのためのZFS ACEやPOSIX ACLグループマスクを維持する
 
-- `simple` - いかなる追加の手順も踏まず、単に要求通りにchmod()する
+- **simple** - いかなる追加の手順も踏まず、単に要求通りにchmod()する
 
-close vol = <BOOLEAN\> (デフォルト: *no*) `(G)`
+close vol = <BOOLEAN\> (デフォルト: *no*) **(G)**
 
 > ボリュームが設定から削除され、その設定が再読み込みされたとき、クライアントが既に開いているボリュームを可能な限り閉じるかどうか。
 
-cnid mysql host = <MySQL server address\> `(G)`
+cnid mysql host = <MySQL server address\> **(G)**
 
 > mysql CNIDバックエンド利用時のMySQLサーバの名前またはアドレス。
 
-cnid mysql user = <MySQL user\> `(G)`
+cnid mysql user = <MySQL user\> **(G)**
 
 > MySQLサーバ認証のためのユーザ名。
 
-cnid mysql pw = <password\> `(G)`
+cnid mysql pw = <password\> **(G)**
 
 > MySQLサーバのためのパスワード。
 
-cnid mysql db = <database name\> `(G)`
+cnid mysql db = <database name\> **(G)**
 
 > 指定ユーザが完全アクセス権を持つための存続しているデータベースの名前。
 
-cnid server = <ipaddress\[:port\]\> `(G)/(V)`
+cnid server = <ipaddress\[:port\]\> **(G)**/**(V)**
 
 > cnid_metadサーバのIPアドレスとポート番号を指定する。CNID
 dbdバックエンドのために必要。デフォルトはlocalhost:4700。ネットワークアドレスはIPv4のドット分割10進数フォーマットでもよいし、IPv6の16進数フォーマットでもよい。
 
-dbus daemon = `path` `(G)`
+dbus daemon <path\> **(G)**
 
 > Spotlight機能が使用するdbus-daemon実行ファイルのパスを設定する。
 コンパイル時のデフォルト値が実行環境と一致しない場合に使用する。
 
-splice size = <number\> (デフォルト: *64k*) `(G)`
+splice size = <number\> (デフォルト: *64k*) **(G)**
 
 > ディレクトリキャッシュにおける最大エントリ数。キャッシュはディレクトリとファイルを格納する。これはディレクトリのフルパスと、ディレクトリ一覧を大幅にスピードアップするCNIDをキャッシュするために使われる。
 
 デフォルトサイズは8192、最大サイズは131072。与えられた値は最も近い2の累乗に丸められる。それぞれのエントリは約100バイトを消費し、これは大きな値とは言えないが、それぞれの接続ユーザ毎のafpd子プロセスがキャッシュを持つことを念頭に置いてください。
 
-extmap file = `path` `(G)`
+extmap file <path\> **(G)**
 
 > ファイル拡張子とタイプ/クリエータのマッピングを定義するファイルのパスを設定する。
 
@@ -447,17 +446,17 @@ force xattr with sticky bit = <BOOLEAN\> (デフォルト: *no*) `(G/V)`
 
 このオプションを有効にするとNetatalkはroot権限でメタデータ(拡張属性)を書き込む。
 
-guest account = <name\> `(G)`
+guest account = <name\> **(G)**
 
 > ゲストが利用するユーザ名を指定する (デフォルトは nobody である)。
 本ユーザ名はシステム上の有効なユーザーである必要がある。
 
-home name = <name\> `(H)`
+home name = <name\> **(H)**
 
 > AFPユーザのホームのボリューム名。デフォルトは*$u's home*である。
 ボリューム名の文字列に"*$u*"は必須である。
 
-ignored attributes = <all \| nowrite \| nodelete \| norename\> `(G)/(V)`
+ignored attributes = <all \| nowrite \| nodelete \| norename\> **(G)**/**(V)**
 
 > サーバが無視すべきファイルとディレクトリの属性を設定する。`all`はオプション全部という意味である。
 
@@ -465,84 +464,84 @@ OS Xにおいて、Finderがファイル/ディレクトリのロックを設定
 uchgフラグを設定する場合、3つの属性が全て使われる。従って、Finderロック/BSD uchgフラグを無視する目的で*ignored
 attributes = all*の設定を追加してください。
 
-legacy icon = <icon\> `(G)`
+legacy icon = <icon\> **(G)**
 
 > Classic Mac OS の Finder に表示される共有ボリューム アイコンを設定する。
 参考に、ある Classic Mac OS
 バージョンでは、このアイコン設定が無視される。
 有効なアイコン名の例は以下になる。
 
-- `daemon`
+- **daemon**
 
-- `globe`
+- **globe**
 
-- `sdcard`
+- **sdcard**
 
-login message = <message\> `(G)/(V)`
+login message = <message\> **(G)**/**(V)**
 
 > クライアントがサーバにログオンしたときに表示されるメッセージを設定する。メッセージは**unix charset**で書く。拡張文字が使える。
 
-mimic model = <model\> `(G)`
+mimic model = <model\> **(G)**
 
 > クライアント上に表示されるアイコンモデルを指定する。デフォルトではクライアント
 Mac
 に任せること。netatalkがZeroconfをサポートしなければならないことに注意してください。例:
 
-- `Laptop`
+- **Laptop**
 
-- `RackMount`
+- **RackMount**
 
-- `Tower`
+- **Tower**
 
 macOSは認識しているモデルコードは
-`/System/Library/CoreServices/CoreTypes.bundle/Contents/Info.plist`
+*/System/Library/CoreServices/CoreTypes.bundle/Contents/Info.plist*
 を参照すれば確認できる。(macOS 14 Sonoma の場合)
 
-signature = <STRING\> `(G)`
+signature = <STRING\> **(G)**
 
 > サーバシグネチャを指定する。最大長は16文字である。このオプションは障害隔離などを提供するクラスタ環境において有用である。デフォルトでは、afpdは自動的にシグネチャを(乱数を元に)生成し、それを**afp_signature.conf**に保存する。asip-status(1)も見よ。
 
-solaris share reservations = <BOOLEAN\> (デフォルト: *yes*) `(G)`
+solaris share reservations = <BOOLEAN\> (デフォルト: *yes*) **(G)**
 
 > Solarisの共有予約を利用する。Solaris
 CIFSサーバもこれを利用するので、ロックを統一したマルチプロトコルサーバを形成する。
 
-sparql results limit = <NUMBER\> (デフォルト: *無制限*) `(G)`
+sparql results limit = <NUMBER\> (デフォルト: *無制限*) **(G)**
 
 > SPARQLクエリを介した Tracker もしくは LocalSearch
 からのクエリ結果の数に制限を課す。
 
-spotlight = <BOOLEAN\> (デフォルト: *no*) `(G)/(V)`
+spotlight = <BOOLEAN\> (デフォルト: *no*) **(G)**/**(V)**
 
 > Spotlight検索を有効にするかどうか。注記:
 一度グローバルオプションで有効にすると、有効でないボリュームは全く検索できない。*dbus
 daemon*オプションも見よ。
 
-spotlight attributes = <カンマで分割した文字列\> (デフォルト: *空*) `(G)`
+spotlight attributes = <カンマで分割した文字列\> (デフォルト: *空*) **(G)**
 
 > Spotlight検索で使うことを許された属性のリスト。デフォルトでは全ての属性を検索できるが、文字列を渡せば属性をその文字列の要素に制限できる。
 例:
 
     spotlight attributes = *,kMDItemTextContent
 
-spotlight expr = <BOOLEAN\> (デフォルト: *yes*) `(G)`
+spotlight expr = <BOOLEAN\> (デフォルト: *yes*) **(G)**
 
 > 検索において論理式の使用を認めるかどうか。
 
-veto message = <BOOLEAN\> (デフォルト: *no*) `(G)`
+veto message = <BOOLEAN\> (デフォルト: *no*) **(G)**
 
 > 禁止ファイルに関するオプションのAFPメッセージを送る。クライアントが禁止名を持つファイルやディレクトリにアクセスを試みたとき、名前とディレクトリを示したAFPメッセージを送る。
 
-vol dbpath = <path\> `(G)/(V)`
+vol dbpath = <path\> **(G)**/**(V)**
 
 > データベース情報をpathに格納するように設定する。ボリュームが読み込み専用だったとしても、書き込み可能な場所を設定しなければならない。
 
-vol dbnest = <BOOLEAN\> (デフォルト: *no*) `(G)`
+vol dbnest = <BOOLEAN\> (デフォルト: *no*) **(G)**
 
 > このオプションをtrueに設定するとNetatalk
 2の動作に立ち返る。つまり、それぞれの共有のボリュームルートの下にある.AppleDBというフォルダにCNIDデータベースを格納する。
 
-volnamelen = <number\> `(G)`
+volnamelen = <number\> **(G)**
 
 > Mac OS
 XのためのUTF8-MACボリューム名の最大長。ハングルはこれに特に敏感なので注意してください。
@@ -553,28 +552,28 @@ XのためのUTF8-MACボリューム名の最大長。ハングルはこれに�
 
 Mac OS 9以前はこれに影響されない。なぜならMac文字セットのボリューム名は常に27バイト制限がある。
 
-vol size limit = <MiB 単位でのサイズ\> `(V)`
+vol size limit = <MiB 単位でのサイズ\> **(V)**
 
 > (\[Global\]セクションで設定したときは)
-全ボリューム、(ボリュームセクションで設定したときは)そのボリュームのオプション初期設定となるセクションの`name`を使う。
+全ボリューム、(ボリュームセクションで設定したときは)そのボリュームのオプション初期設定となるセクションの<simple\>を使う。
 
-zeroconf name = <name\> `(G)`
+zeroconf name = <name\> **(G)**
 
 > 登録サービスをユニークに表した、人間が読めるnameを設定する。このzeroconf
 nameは最大長63オクテット（バイト）のUTF-8で宣伝される。netatalkがZeroconfをサポートしなければならないことに注意してください。
 
 ## ログのオプション
 
-log file = <logfile\> `(G)`
+log file = <logfile\> **(G)**
 
-> ログを`logfile`に出力する。指定しない場合、Netatalkはsyslogデーモン機能にログを出力する。
+> ログを**logfile**に出力する。指定しない場合、Netatalkはsyslogデーモン機能にログを出力する。
 
-log level = <type:level \[type:level ...\]\> `(G)`; log level =
-<type:level,\[type:level, ...\]\> `(G)`
+log level = <type:level \[type:level ...\]\> **(G)**; log level =
+<type:level,\[type:level, ...\]\> **(G)**
 
-> 与えられた`log level`までのログレベルのメッセージを出力するように設定する。
+> 与えられた**log level**までのログレベルのメッセージを出力するように設定する。
 
-デフォルトではafpdは`default:note`に相当する設定でsyslogに出力する。
+デフォルトではafpdは**default:note**に相当する設定でsyslogに出力する。
 
 ログタイプ: default, afpdaemon, logger, uamsdaemon
 
@@ -585,9 +584,9 @@ debug9, maxdebug
 
 > ログタイプとログレベルはどちらも大文字小文字を区別しない。
 
-log microseconds = <BOOLEAN\> (デフォルト: *yes*) `(G)`
+log microseconds = <BOOLEAN\> (デフォルト: *yes*) **(G)**
 
-> タイムスタンプをマイクロ秒単位の精度でログに記録する。無効にすると、タイムスタンプは秒単位のみを記録する。`log file`
+> タイムスタンプをマイクロ秒単位の精度でログに記録する。無効にすると、タイムスタンプは秒単位のみを記録する。**log file**
 オプションと組み合わせて使用​​した場合にのみ有効になる。
 
 ## ファイルシステム変更イベント (FCE)
@@ -597,53 +596,53 @@ Netatalk には素敵なファイルシステム変更イベント機構が含�
 
 以下の FCE イベントが定義されている:
 
-- ファイル変更 (`fmod`)
+- ファイル変更 (**fmod**)
 
-- ファイル削除 (`fdel`)
+- ファイル削除 (**fdel**)
 
-- ディレクトリ削除 (`ddel`)
+- ディレクトリ削除 (**ddel**)
 
-- ファイル作成 (`fcre`)
+- ファイル作成 (**fcre**)
 
-- ディレクトリ作成 (`dcre`)
+- ディレクトリ作成 (**dcre**)
 
-- ファイル移動または名前変更 (`fmov`)
+- ファイル移動または名前変更 (**fmov**)
 
-- ディレクトリ移動または名前変更 (`dmov`)
+- ディレクトリ移動または名前変更 (**dmov**)
 
-- ログイン (`login`)
+- ログイン (**login**)
 
-- ログアウト (`logout`)
+- ログアウト (**logout**)
 
-fce listener = <host\[:port\]\> `(G)`
+fce listener = <host\[:port\]\> **(G)**
 
-> FCE イベントを指定された `host`
+> FCE イベントを指定された **host**
 に送ることができるようにする。もし指定されていなければデフォルトの
-`port` は 12250
+**port** は 12250
 である。複数のリスナーを指定するにはそれぞれのリスナーに対するオプションを一度に指定することである。
 
-fce version = <1|2\> `(G)`
+fce version = <1|2\> **(G)**
 
 > FCE プロトコルのヴァージョンで、デフォルトでは 1
 である。fmov、dmov、login あるいは logout イベントのためにはバージョン 2
 が必要である。
 
-fce events = <fmod,fdel,ddel,fcre,dcre,fmov,dmov,login,logout\> `(G)`
+fce events = <fmod,fdel,ddel,fcre,dcre,fmov,dmov,login,logout\> **(G)**
 
 > どの FCE イベントがアクティブかを指定する。デフォルトでは
-`fmod,fdel,ddel,fcre,dcre` である。
+**fmod,fdel,ddel,fcre,dcre** である。
 
-fce coalesce = <all|delete|create\> `(G)`
+fce coalesce = <all|delete|create\> **(G)**
 
 > FCE イベントを結合する。
 
-fce holdfmod = <seconds\> `(G)`
+fce holdfmod = <seconds\> **(G)**
 
 > これは、もしクライアントによって FCE ファイル変更イベント (fmod)
 を送信する前に同じファイルに対する別の変更が同時に行われる場合、常に待機する遅延時間を秒単位で決定する。例えば、フォトショップでファイルを保存することでそのファイル自体の複数のイベントを引き起こす。なぜなら、アプリケーションはその“保存する”たびにファイルを複数回、開き、変更しそして閉じるからである。デフォルトでは
 60 秒である。
 
-fce sendwait = <milliseconds\> `(G)`
+fce sendwait = <milliseconds\> **(G)**
 
 > 各 FCE イベントの発行間の遅延をミリ秒単位で定義する。
 非常に多くのファイルを一度に作成または削除するときに、FCE
@@ -652,18 +651,18 @@ fce sendwait = <milliseconds\> `(G)`
 オーバーフローが発生し、その後パケット損失が発生する可能性がある。 0
 から 999 までの値は設定可能。デフォルト: 0 ミリ秒。
 
-fce ignore names = <NAME\[/NAME2/...\]\> `(G)`
+fce ignore names = <NAME\[/NAME2/...\]\> **(G)**
 
 > FCE
 イベントを生成すべきでないファイル名をスラッシュで区切ったリスト。デフォルトでは
 .DS_Store。
 
-fce ignore directories = <NAME\[,NAME2,...\]\> `(G)`
+fce ignore directories = <NAME\[,NAME2,...\]\> **(G)**
 
 > FCE
 イベントが生成されないディレクトリのカンマ区切りのリスト。デフォルトは無し。
 
-fce notify script = <PATH\> `(G)`
+fce notify script = <PATH\> **(G)**
 
 > 各々の FCE
 イベントに対して実行されるスクリプト。スクリプト例については、Netatalk
@@ -673,15 +672,15 @@ fce notify script = <PATH\> `(G)`
 
 これらのオプションはデバッグのみに有用である。
 
-tickleval = <number\> `(G)`
+tickleval = <number\> **(G)**
 
 > tickleタイムアウトの間隔を(秒単位で)設定する。デフォルトは30。
 
-timeout = <number\> `(G)`
+timeout = <number\> **(G)**
 
 > 接続がタイムアウトする前に送るtickleの数を指定する。デフォルトは4なので、2分後に接続がタイムアウトする。
 
-client polling = <BOOLEAN\> (デフォルト: *no*) `(G)`
+client polling = <BOOLEAN\> (デフォルト: *no*) **(G)**
 
 > このオプションを有効にすると、afpdはserver
 notificationの機能があることを宣伝しない。これは、接続中のクライアントが開いているサーバのウインドウの変更を検出するために10秒毎にポーリングするのを目的としている。*注記*:
@@ -692,10 +691,10 @@ notificationを正確にサポートしており、接続中のクライアン�
 
 ## ACL処理のためのオプション
 
-デフォルトでは、認証済ユーザの有効な権限は記載済UARights権限構造にだけマップされる。UNIXモードではない。この挙動は設定オプション`map
-acls`で調整できる:
+デフォルトでは、認証済ユーザの有効な権限は記載済UARights権限構造にだけマップされる。UNIXモードではない。この挙動は設定オプション**map
+acls**で調整できる:
 
-map acls = `none|rights|mode` `(G)`
+map acls = <none|rights|mode\> **(G)**
 
 > none
 
@@ -721,9 +720,9 @@ Directory）か、ディレクトリサーバー（例えばOpenLDAP）の未使
 
 Netatalk では以下の LDAP オプションが設定されなければならない:
 
-ldap auth method = `none|simple|sasl` `(G)`
+ldap auth method = <none|simple|sasl\> **(G)**
 
-> 認証方式: `none | simple | sasl`
+> 認証方式: **none** | **simple | **sasl**
 
 none
 
@@ -737,15 +736,15 @@ sasl
 
 > SASL. まだサポートされていない!
 
-ldap auth dn = `dn` `(G)`
+ldap auth dn = <dn\> **(G)**
 
 > 簡易認証でのユーザーの識別名。
 
-ldap auth pw = `password` `(G)`
+ldap auth pw = <password\> **(G)**
 
 > 簡易認証でのパスワード。
 
-ldap uri = `ldap://somehost:1234/` `(G)`
+ldap uri = <ldap://somehost:1234/\> **(G)**
 
 > 接続先のLDAP サーバーのURI。選択可能の URI スキームは ldap、ldapi 又は
 ldaps である。TCP、ICP 又は TLS プロトコルに当たる。実際のサポートは
@@ -753,39 +752,39 @@ LDAP ライブラリ次第。本オプションは LDAP に UUID
 の問い合わせをできるようにするために、明示的な ACL
 サポートを必要とする時のみ必要。
 
-設定の構文的なチェックのために `afpldaptest(1)` を使うこともできる。
+設定の構文的なチェックのために **afpldaptest**(1) を使うこともできる。
 
-ldap userbase = `base dn` `(G)`
+ldap userbase = <base dn\> **(G)**
 
 > LDAP 内のユーザーコンテナの DN。
 
-ldap userscope = `scope` `(G)`
+ldap userscope = <scope\> **(G)**
 
-> ユーザー検索での検索スコープ: `base | one | sub`
+> ユーザー検索での検索スコープ: **base** | **one** | **sub**
 
-ldap groupbase = `base dn` `(G)`
+ldap groupbase = <base dn\> **(G)**
 
 > LDAP 内のグループコンテナの DN。
 
-ldap groupscope = `scope` `(G)`
+ldap groupscope = <scope\> **(G)**
 
-> グループ検索での検索スコープ: `base | one | sub`
+> グループ検索での検索スコープ: **base** | **one** | **sub**
 
-ldap uuid attr = `dn` `(G)`
+ldap uuid attr = <dn\> **(G)**
 
 > UUID のある LDAP 属性の名前。
 
 注記: これはユーザーでもグループでも双方で用いられる。
 
-ldap name attr = `dn` `(G)`
+ldap name attr = <dn\> **(G)**
 
 > ユーザーの短縮名のある LDAP 属性の名前。
 
-ldap group attr = `dn` `(G)`
+ldap group attr = <dn\> **(G)**
 
 > グループの短縮名のある LDAP 属性の名前。
 
-ldap uuid string = `STRING` `(G)`
+ldap uuid string = <STRING\> **(G)**
 
 > ディレクトリでの UUID 文字列のフォーマット。'x' と
 '-'を続けたもので、それぞれの 'x' は 0-9a-f の値を示し、'-'
@@ -793,7 +792,7 @@ ldap uuid string = `STRING` `(G)`
 
 デフォルト: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
-ldap uuid encoding = `string | ms-guid (デフォルト: string)` `(G)`
+ldap uuid encoding = <string | ms-guid (デフォルト: string)\> **(G)**
 
 > LDAP 属性の UUID のフォーマットは Active Directory からの obhectGUID
 バイナリーフィールドの使用を許す。もし未指定のままだと string
@@ -803,7 +802,7 @@ ldap uuid encoding = `string | ms-guid (デフォルト: string)` `(G)`
 内にあるオブジェクトの objectGUID 属性で用いられる内部 UUID
 表記とバイナリー形式が相互に変換される。
 
-オプション `ldap user filter` 及び `ldap group filter` も参照のこと。
+オプション **ldap user filter** 及び **ldap group filter** も参照のこと。
 
 string
 
@@ -813,21 +812,21 @@ ms-guid
 
 > Active Directory からの objectGUID バイナリー。
 
-ldap user filter = `STRING (デフォルト: 未使用)` `(G)`
+ldap user filter = <STRING (デフォルト: 未使用)\> **(G)**
 
 > ユーザーオブジェクトにマッチする任意の LDAP
 フィルター。これは、ユーザーとグループが同じディレクトリのサブツリーに保存されている
 Active Directory 環境で必要。
 
-Active Directory での推奨設定: `objectClass=user`
+Active Directory での推奨設定: **objectClass=user**
 
-ldap group filter = `STRING (デフォルト: 未使用)` `(G)`
+ldap group filter = <STRING (デフォルト: 未使用)\> **(G)**
 
 > グループオブジェクトにマッチする任意の LDAP
 フィルター。これは、ユーザーとグループが同じディレクトリのサブツリーに保存されている
 Active Directory 環境で必要。
 
-Active Directory での推奨設定: `objectClass=group`
+Active Directory での推奨設定: **objectClass=group**
 
 # ボリュームパラメータの説明
 
@@ -837,22 +836,22 @@ Active Directory での推奨設定: `objectClass=group`
 を含むことはできない。ボリューム名がとても長ければマングルされる。Mac キャラクターセットのボリューム名は27 文字までに制限される。UTF8-MAC
 ボリューム名は volnamelen パラメータで制限される。
 
-mac charset = <CHARSET\> `(V)`
+mac charset = <CHARSET\> **(V)**
 
 > パス名は完全修飾パス名でなければならない。
 
-appledouble = <ea|v2\> `(V)`
+appledouble = <ea|v2\> **(V)**
 
 > メタデータファイルのフォーマットを指定する。これは Mac
 のリソースフォークの保存にも用いられる。初期のバージョンでは AppleDouble
 v2 が用いられ、新しいデフォルトのフォーマットは **ea** である。
 
-vol size limit = <MiB 単位でのサイズ\> `(V)`
+vol size limit = <MiB 単位でのサイズ\> **(V)**
 
 > Time Machine に有用：報告されるボリュームサイズを制限する。故に Time
 Machine
 がバックアップのために実ディスク領域全体を使うことを防止する。例えば
-"vol size limit = 1000" は報告されるディスク領域を 1 GB
+"**vol size limit = 1000**" は報告されるディスク領域を 1 GB
 に制限する。
 
 > **重要**
@@ -865,19 +864,19 @@ sparsebundle の Info.plist XML
 バンド／ディレクトリ
 を読む、そしてお互いの乗算をする。ことによって行われる。
 
-valid users = <user @group\> `(V)`
+valid users = <user @group\> **(V)**
 
 > この許可オプションは指定された共有にそのユーザーとグループのアクセスを許可する。ユーザーとグループはスペースかコンマで区切って指定する。グループは
 @ プレフィックスで明示する。例:
 
     valid users = user @group
 
-invalid users = <users/groups\> `(V)`
+invalid users = <users/groups\> **(V)**
 
 > この拒否オプションはその共有にアクセスを許可しないユーザーとグループを指定する。それ以外は
 "valid users" オプションと同じフォーマットである。
 
-hosts allow = <IPホストアドレス/IPマスクビット \[ ... \]\> `(V)`
+hosts allow = <IPホストアドレス/IPマスクビット \[ ... \]\> **(V)**
 
 > 列挙されたホストとネットワークのみが許可され、ほかの全ては拒否される。ネットワークアドレスは
 IPv4
@@ -885,13 +884,13 @@ IPv4
 
 例: hosts allow = 10.1.0.0/16 10.2.1.100 2001:0db8:1234::/48
 
-hosts deny = <IPホストアドレス/IPマスクビット \[ ... \]\> `(V)`
+hosts deny = <IPホストアドレス/IPマスクビット \[ ... \]\> **(V)**
 
 > 列挙されたホストとネットのみが拒否され、ほかの全ては許可される。
 
 例: hosts deny = 192.168.100/24 10.1.1.1 2001:db8::1428:57ab
 
-cnid scheme = <backend\> `(V)`
+cnid scheme = <backend\> **(V)**
 
 > そのボリュームに使う CNID
 バックエンドをセットする。デフォルトのバックエンドは
@@ -908,19 +907,19 @@ MySQL データベース インスタンスを構成する必要がある。
 > **afpd** が持続性のある ID
 データベースに重く依存しているので、このバックエンドをボリュームに使用するのは推奨*されていない*。エイリアスはおそらく機能しないだろうし、ファイル名のマングリングもサポートされていない。
 
-ea = <none|auto|sys|ad|samba\> `(V)`
+ea = <none|auto|sys|ad|samba\> **(V)**
 
-> 拡張属性をどのように保存するか指定する。`auto`
+> 拡張属性をどのように保存するか指定する。**auto**
 がデフォルトである。
 
 auto
 
-> （共有ディレクトリ自体に EA を設定することにより） `sys`
+> （共有ディレクトリ自体に EA を設定することにより） **sys**
 を試行して、フォールバックすると **ad**
-になる。試行を実行するためにはボリュームが書き込み可能であることが必要である。"`read only = yes`"
-ならば `auto` は `none`
+になる。試行を実行するためにはボリュームが書き込み可能であることが必要である。"**read only = yes**"
+ならば **auto** は **none**
 で上書きされる。書き込み専用のボリュームには必要に応じて明確に
-"`ea = sys|ad`" を使ってください。
+"**ea = sys|ad**" を使ってください。
 
 sys
 
@@ -943,81 +942,81 @@ none
 > **samba** オプションは、以前に **sys**
 に設定されたボリュームでは使用しないでください。これにより、データが失われる可能性がある。
 
-mac charset = <CHARSET\> `(V)`
+mac charset = <charset\> **(V)**
 
 > もしグローバル設定を適用する指定がなければ、そのボリュームに対しての Mac
 クライアントのキャラクターセット、例えば *MAC_ROMAN*、*MAC_CYRILLIC*
 等を指定する。この設定は Mac キャラクターセットが \[Global\]
 セクションで全体的にセットしたキャラクターセットと異なるというボリュームを必要とする時のみ必須である。
 
-casefold = `option` `(V)`
+casefold = <option\> **(V)**
 
 > ファイル名の大文字小文字を変更すべき場合、casefold
 オプションが処理する。有効なオプションは:
 
-`tolower` - 双方向で名前を小文字に変換する。
+**tolower** - 双方向で名前を小文字に変換する。
 
-`toupper` - 双方向で名前を大文字に変換する。
+**toupper** - 双方向で名前を大文字に変換する。
 
-`xlatelower` - クライアントでは小文字に見えて、サーバでは大文字に見える。
+**xlatelower** - クライアントでは小文字に見えて、サーバでは大文字に見える。
 
-`xlateupper` - クライアントでは大文字に見えて、サーバでは小文字にみえる。
+**xlateupper** - クライアントでは大文字に見えて、サーバでは小文字にみえる。
 
-password = <password\> `(V)`
+password = <password\> **(V)**
 
 > このオプションはボリュームパスワードの設定を許可する。パスワードは最大で
 8 文字の長さ（これを記入するときには ASCII を強く推奨）
 
-file perm = <mode\> `(V)`; directory perm = <mode\> `(V)`
+file perm = <mode\> **(V)**; directory perm = <mode\> **(V)**
 
-> クライアントが要求した権限との論理和(or)をとる。`file perm`
-はファイルにのみ、`directory perm` はディレクトリにのみ用いる。
-"`unix priv = no`" と共に用いてはならない。
+> クライアントが要求した権限との論理和(or)をとる。**file perm**
+はファイルにのみ、**directory perm** はディレクトリにのみ用いる。
+"**unix priv = no**" と共に用いてはならない。
 
 ## 例：共同作業グループ向けのボリューム
 
     file perm = 0660
     directory perm = 0770
 
-umask = <mode\> `(V)`
+umask = <mode\> **(V)**
 
-> 権限のマスクを設定する。"`unix priv = no`" と共に用いてはならない。
+> 権限のマスクを設定する。"**unix priv = no**" と共に用いてはならない。
 
-preexec = <command\> `(V)`
+preexec = <command\> **(V)**
 
 > ボリュームがマウントされる時に実行されるコマンド
 
-postexec = <command\> `(V)`
+postexec = <command\> **(V)**
 
 > ボリュームが閉じられる時に実行されるコマンド
 
-rolist = `users/groups` `(V)`
+rolist = <users/groups\> **(V)**
 
 > 信頼するユーザー及びグループの共有に対する読み込み専用アクセスを許可する。フォーマットは
 allow オプションに準ずる。
 
-rwlist = <users/groups\> `(V)`
+rwlist = <users/groups\> **(V)**
 
 > 信頼するユーザー及びグループの共有に対する読み込み／書き込みアクセスを許可する。フォーマットは
 allow オプションに準ずる。
 
-veto files = <vetoed names\> `(V)`
+veto files = <vetoed names\> **(V)**
 
 > '/' で区切られた
 禁止名のどれかに一致するパスのファイルとディレクトリを隠す。禁止文字列は常に
-'/' で終わらなければならない。例えば、"veto files = veto1/"、"veto files
+'/' で終わらなければならない。例えば、"**veto files = veto1/**"、"veto files
 = veto1/veto2/"。
 
 ## ボリュームオプション
 
 ブーリアン型のボリュームオプション。
 
-acls = <BOOLEAN\> (デフォルト: *yes*) `(V)`
+acls = <BOOLEAN\> (デフォルト: *yes*) **(V)**
 
 > ボリュームが ACL をサポートしてるというフラグを立てるかどうか。もし ACL
 サポートでコンパイルしていれば、これはデフォルトで yes。
 
-case sensitive = <BOOLEAN\> (デフォルト: *yes*) `(V)`
+case sensitive = <BOOLEAN\> (デフォルト: *yes*) **(V)**
 
 > ボリュームが大文字小文字を区別したファイル名をサポートしてるというフラグを立てるかどうか。
 もしファイルシステムが大文字小文字を区別しなければ no
@@ -1030,12 +1029,12 @@ case sensitive = <BOOLEAN\> (デフォルト: *yes*) `(V)`
 フラグを通知しなかった。バージョン 3.1.4
 からはデフォルトで正しく通知される。
 
-cnid dev = <BOOLEAN\> (デフォルト: *yes*) `(V)`
+cnid dev = <BOOLEAN\> (デフォルト: *yes*) **(V)**
 
 > CNID バックエンド内でデバイス番号を使うかどうか。
 例えばクラスターなどでリブートを経るとデバイス番号が固定ではない時有用。
 
-convert appledouble = <BOOLEAN\> (デフォルト: *yes*) `(V)`
+convert appledouble = <BOOLEAN\> (デフォルト: *yes*) **(V)**
 
 > クライアントからのファイルシステムへのアクセス時、**appledouble = v2**
 から **appledouble = ea**
@@ -1043,7 +1042,7 @@ convert appledouble = <BOOLEAN\> (デフォルト: *yes*) `(V)`
 **dbd** を実行しそれで変換をするのが推奨される。その後このオプションを no
 に設定することもできる。
 
-delete veto files = <BOOLEAN\> (デフォルト: *no*) `(V)`
+delete veto files = <BOOLEAN\> (デフォルト: *no*) **(V)**
 
 > このオプションは Netatalk が一つあるいはそれ以上の veto
 されたファイルあるいはディレクトリ（veto files
@@ -1054,7 +1053,7 @@ no に設定し（デフォルト）、そしてもしあるディレクトリ�
 もしこのオプションが yes に設定されていたら、Netatalk は veto
 化ディレクトリ・ディレクトリ内も含めあらゆるファイル、ディレクトリを再帰的に削除しようとするであろう。
 
-follow symlinks = <BOOLEAN\> (デフォルト: *no*) `(V)`
+follow symlinks = <BOOLEAN\> (デフォルト: *no*) **(V)**
 
 > デフォルトの設定では偽なのでサーバー上でシンボリックリンクは辿られない。これは
 OS X の AFP サーバーと同じ挙動である。オプションを真に設定すると afpd
@@ -1066,7 +1065,7 @@ OS X の AFP サーバーと同じ挙動である。オプションを真に設�
 
 > シンボリックリンクがファイルシステムの境界をまたいで張られている時、このオプションは巧妙に断ち切る。
 
-invisible dots = <BOOLEAN\> (デフォルト: *no*) `(V)`
+invisible dots = <BOOLEAN\> (デフォルト: *no*) **(V)**
 
 > ドットファイルを不可視にする。警告：このオプションを有効にすると、望まない副作用を
 OS X アプリケーションに引き起こす。つまり、
@@ -1076,35 +1075,35 @@ OS 9 でドットからはじまるファイルを見えなくさせるためで
 では、Finder
 でもターミナルでもドットではじまるファイルはいずれにしても隠しファイルなので、完全に無駄である。
 
-legacy volume size = <BOOLEAN\> (デフォルト: *no*) `(V)`
+legacy volume size = <BOOLEAN\> (デフォルト: *no*) **(V)**
 
 > レガシー クライアントのディスク サイズ レポートを 2GB
 に制限する。これは、System 7.1 以前を実行し、新しい AppleShare
 クライアントを使用している古い Macintosh で使用できる。
 
-network ids = <BOOLEAN\> (デフォルト: *yes*) `(V)`
+network ids = <BOOLEAN\> (デフォルト: *yes*) **(V)**
 
 > サーバーがネットワーク id をサポートするかどうか。これを *no*
 に設定すると結果としてクライアントは ACL AFP 機能を使わなくなる。
 
-preexec close = <BOOLEAN\> (デフォルト: *no*) `(V)`
+preexec close = <BOOLEAN\> (デフォルト: *no*) **(V)**
 
 > preexec からの 0
 以外のリターンコードで、クライアントがボリュームをマウントする／見ることを防ぐために当該ボリュームを即座に閉じる。
 
-prodos = <BOOLEAN\> (デフォルト: *no*) `(V)`
+prodos = <BOOLEAN\> (デフォルト: *no*) **(V)**
 
 > ProDOS サポートを有効にする。このオプションは、Apple II
 をネットブートする予定のボリュームに対してのみ有効にする必要がある。ボリュームにブート
 フラグを設定するだけでなく、表示されるボリュームの空き領域を 32MB
 に制限する。
 
-read only = <BOOLEAN\> (デフォルト: *no*) `(V)`
+read only = <BOOLEAN\> (デフォルト: *no*) **(V)**
 
-> その共有を全てのユーザーに対して読み込み専用と指定する。`ea = auto` は
-`ea = none` で上書きされる。
+> その共有を全てのユーザーに対して読み込み専用と指定する。**ea = auto** は
+**ea = none** で上書きされる。
 
-search db = <BOOLEAN\> (デフォルト: *no*) `(V)`
+search db = <BOOLEAN\> (デフォルト: *no*) **(V)**
 
 > 低速な再帰的ファイルシステム検索の代わりに高速な CNID
 データベースの名前検索を用いる。矛盾のない CNID
@@ -1112,26 +1111,25 @@ search db = <BOOLEAN\> (デフォルト: *no*) `(V)`
 やローカルのファイルシステムのアクセスが不正確さらには誤った結果を招く。"dbd"
 CNID db のボリュームのみで動作する。
 
-stat vol = <BOOLEAN\> (デフォルト: *yes*) `(V)`
+stat vol = <BOOLEAN\> (デフォルト: *yes*) **(V)**
 
 > ボリュームリストを列挙するときにボリュームパスを stat
 するかどうか。オートマウントや preexec
 スクリプトで作成されたボリュームに有用である。
 
-time machine = <BOOLEAN\> (デフォルト: *no*) `(V)`
+time machine = <BOOLEAN\> (デフォルト: *no*) **(V)**
 
 > このボリュームの Time Machine サポートを有効にするかどうか。
 
-unix priv = <BOOLEAN\> (デフォルト: *yes*) `(V)`
+unix priv = <BOOLEAN\> (デフォルト: *yes*) **(V)**
 
 > AFP3 UNIX 権限を使うかどうか。これは OS X
-クライアントに対しては設定すべきである。`file perm`、`directory perm`
+クライアントに対しては設定すべきである。**file perm**、**directory perm**
 及び `umask` も参照。
 
 # 関連項目
 
-afpd(8), `afppasswd(5)`, `afp_signature.conf(5)`, `extmap.conf(5)`,
-cnid_metad(8)
+afpd(8), afppasswd(5), afp_signature.conf(5), extmap.conf(5), cnid_metad(8)
 
 # 著者
 

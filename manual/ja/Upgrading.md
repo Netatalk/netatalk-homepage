@@ -14,18 +14,18 @@ Netatalk 3 から Netatalk 4 へのアップグレードは簡単。古いバー
 Netatalk 4 の主要な変更は以下の3点：
 
 1.  これまでの AFP 設定ファイルすべてが廃止され、AFP に関してのほぼ全オプション名を変更し、新しい設定ファイルを追加した：
-    **afp.conf** と **extmap.conf**
+    *afp.conf* と **extmap.conf**
 
 2.  マックのメタデータとリソースフォークをファイルシステムの拡張属性に保存する **appledouble = ea** という新しい
     AppleDouble のバックエンド。
 
 3.  AppleTalk トランスポート層はデフォルトで無効になっている。非常に古い Mac で Netatalk
-    を使用する場合は、**afp.conf** にて **appletalk = yes** オプションで有効にしてください。
+    を使用する場合は、*afp.conf* にて **appletalk = yes** オプションで有効にしてください。
     それから、**netatalk** を起動する前に **atalkd** デーモンを立ち上げてください。
 
 ### 設定まわりの変更点
 
-**afp.conf**
+*afp.conf*
 
 - （Samba の smb.conf のような） "ini" スタイルの構文
 
@@ -92,7 +92,7 @@ AppleDouble のバックエンド。
 - CNID データベースはデフォルトで *$prefix/var/netatalk/CNID/*
   以下に保存される。以前は各共有ボリュームにて保存されていた。
 
-- Netatalk 2.x のボリュームオプション “usedots” 及び “upriv” はデフォルトとなった。
+- Netatalk 2.x のボリュームオプション “**usedots**” 及び “**upriv**” はデフォルトとなった。
 
 - SLP 及び AFP プロキシのサポート機能は削除。
 
@@ -102,7 +102,7 @@ AppleDouble のバックエンド。
 
 2.  Netatalk 4 をインストールする
 
-3.  設定 **afp.conf** 及び **extmap.conf** を自力で書き換える
+3.  設定 *afp.conf* 及び **extmap.conf** を自力で書き換える
 
 4.  **afpd** と **cnid_metad** の代わりに **netatalk** 起動にのみ関連している、 Netatalk
     起動スクリプトを更新するか、標準の起動スクリプトに置き換える。

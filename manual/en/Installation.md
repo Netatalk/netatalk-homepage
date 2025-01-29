@@ -257,7 +257,7 @@ mechanism is used:
 In the absence of a startup script, you can also launch this daemon
 directly (as root), and kill it with SIGTERM when you are done with it.
 
-Additionally, make sure that the configuration file **afp.conf** is in the
+Additionally, make sure that the configuration file *afp.conf* is in the
 right place. You can inquire netatalk where it is expecting the file to
 be by running the **netatalk -V** command.
 

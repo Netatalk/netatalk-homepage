@@ -8,7 +8,7 @@ The final revision of the protocol, AFP 3.4, was introduced
 with OS X Lion (10.7).
 
 Netatalk's **afpd** daemon offers AFP fileservices to Apple clients. The
-configuration is managed through the **afp.conf** file which uses an ini
+configuration is managed through the *afp.conf* file which uses an ini
 style configuration syntax.
 
 Support for [Spotlight](#spotlight) was added in Netatalk 3.1.
@@ -27,11 +27,11 @@ inside the clients filesystem view.
 
 ### afp.conf
 
-**afp.conf** is the configuration file used by afpd to determine the
+*afp.conf* is the configuration file used by afpd to determine the
 behaviour and configuration of the AFP file server and the AFP volume
 that it provides.
 
-The **afp.conf** is divided into several sections:
+The *afp.conf* is divided into several sections:
 
 \[Global\]
 
@@ -69,7 +69,7 @@ The following configuration is required:
     basedir regex = /RAID./.*homes
 
 If **basedir regex** contains a symlink, set the canonicalized absolute
-path. When `/home` links to `/usr/home`:
+path. When */home* links to */usr/home*:
 
     [Homes]
     basedir regex = /usr/home
@@ -99,7 +99,7 @@ Netatalk needs to map IDs to files and folders in the host filesystem.
 To achieve this, several different CNID
 backends are available and can be
 selected with the **cnid scheme** option in
-the **afp.conf** configuration file. A CNID backend is basically a
+the *afp.conf* configuration file. A CNID backend is basically a
 database storing ID <-\> name mappings.
 
 The CNID databases are by default located in
@@ -451,25 +451,25 @@ pages.
 Some UAMs provide the ability to use different authentication
 "backends", namely **uams_cleartxt.so**, **uams_cleartxt.so** and
 **uams_cleartxt.so**. They can use either classic UNIX passwords from
-`/etc/passwd` (`/etc/shadow`) or PAM if the system supports that.
+*/etc/passwd* (*/etc/shadow*) or PAM if the system supports that.
 **uams_cleartxt.so** can be symlinked to either **uams_passwd.so** or
 **uams_pam.so**, **uams_cleartxt.so** to **uams_dhx_passwd.so** or
 **uams_dhx_pam.so** and **uams_cleartxt.so** to **uams_dhx2_passwd.so** or
 **uams_dhx2_pam.so**.
 
 So, if it looks like this in Netatalk's UAMs folder (per default
-`/etc/netatalk/uams/`):
+*/etc/netatalk/uams/*) then you're using PAM, otherwise classic UNIX
+passwords.
 
     uams_clrtxt.so -> uams_pam.so
     uams_dhx.so -> uams_dhx_pam.so
     uams_dhx2.so -> uams_dhx2_pam.so
 
-then you're using PAM, otherwise classic UNIX passwords. The main
-advantage of using PAM is that one can integrate Netatalk in centralized
-authentication scenarios, e.g. via LDAP, NIS and the like. Please always
-keep in mind that the protection of your user's login credentials in
-such scenarios also depends on the strength of encryption that the UAM
-in question supplies. So think about eliminating weak UAMs like
+The main advantage of using PAM is that one can integrate Netatalk in
+centralized authentication scenarios, e.g. via LDAP, NIS and the like.
+Please always keep in mind that the protection of your user's login
+credentials in such scenarios also depends on the strength of encryption
+that the UAM in question supplies. So think about eliminating weak UAMs like
 "ClearTxt Passwrd" and "Randnum exchange" completely from your network.
 
 ### Netatalk UAM overview table
@@ -642,7 +642,7 @@ In detail:
       and PAM
 
     - configure Netatalk via the special [LDAP options for
-      ACLs](afp.conf#options-for-acl-handling) in **afp.conf** so that Netatalk is
+      ACLs](afp.conf.html#options-for-acl-handling) in *afp.conf* so that Netatalk is
       able to retrieve the UUID for users and groups via LDAP search
       queries
 

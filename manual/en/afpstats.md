@@ -15,7 +15,7 @@ their mounted volumes, etc.
 
 **afpd** must be built with D-Bus support. Check this with "**afpd -v**".
 
-Additionally, "**afpstats = yes**" must be set in **afp.conf**.
+Additionally, "**afpstats = yes**" must be set in *afp.conf*.
 
 # Examples
 

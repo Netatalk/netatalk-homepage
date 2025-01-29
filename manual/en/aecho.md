@@ -13,8 +13,8 @@ specified by the given AppleTalk **address** or **nbpname** and reports
 whether a reply was received. Requests are sent at the rate of one per
 second.
 
-**address** is parsed by **atalk_aton(3)**. **nbpname** is parsed by
-**nbp_name(3)**. The nbp type defaults to \`*Workstation*'.
+**address** is parsed by **atalk_aton**(3). **nbpname** is parsed by
+**nbp_name**(3). The nbp type defaults to \`*Workstation*'.
 
 When **aecho** is terminated, it reports the number of packets sent, the
 number of responses received, and the percentage of packets lost. If any

@@ -4,7 +4,7 @@ afppasswd — AFP パスワード保守ユーティリティ
 
 # 概要
 
-`afppasswd [-acfn] [-p *afppasswd* file] [-u minimum uid] [-w password
+`afppasswd [-acfn] [-p afppasswd file] [-u minimum uid] [-w password
 string]`
 
 # 説明
@@ -32,11 +32,11 @@ string]`
 
 **-a**
 
-> **afppasswd**ファイルに新しいユーザを追加する。
+> *afppasswd*ファイルに新しいユーザを追加する。
 
 **-c**
 
-> **afppasswd**ファイルまたは特定ユーザを作成する。(さらに/または)初期化する。
+> *afppasswd*ファイルまたは特定ユーザを作成する。(さらに/または)初期化する。
 
 **-f**
 
@@ -44,7 +44,7 @@ string]`
 
 **-p** <パス\>
 
-> **afppasswd**ファイルのパス。
+> *afppasswd*ファイルのパス。
 
 **-n**
 

@@ -14,7 +14,7 @@ addump - Dump AppleSingle/AppleDouble format data
 
 `addump [ -h | -help | --help ]`
 
-`addump [ -v | -version | --version ]`
+`addump [ -v | -Version | --version ]`
 
 # Description
 
@@ -62,7 +62,7 @@ There is no way to detect whether FinderInfo is FileInfo or DirInfo. By
 default, addump examines whether the file, directory or parent directory
 is .AppleDouble, filename is .\_\*, filename is .Parent, and so on.
 
-When setting option -e, -f or -d, assume FinderInfo and don't look for
+When setting option **-e**, **-f** or **-d**, assume FinderInfo and don't look for
 other data.
 
 # See Also

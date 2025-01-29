@@ -26,7 +26,7 @@ as root..
 
 **-F**
 
-> location of the afp.conf config file
+> location of the *afp.conf* config file
 
 **-s**
 
@@ -52,7 +52,7 @@ filesystem modifications
 # CNID background
 
 The CNID backends maintains name to ID mappings. If you change a
-filename outside afpd(8) (shell, samba), the CNID database will not
+filename outside **afpd**(8) (shell, samba), the CNID database will not
 reflect that change. Netatalk tries to recover from such inconsistencies
 as gracefully as possible.
 

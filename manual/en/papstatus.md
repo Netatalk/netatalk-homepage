@@ -8,11 +8,11 @@ papstatus — get the status of an AppleTalk-connected printer
 
 # Description
 
-*papstatus* is used to obtain the current status message from an
+**papstatus** is used to obtain the current status message from an
 AppleTalk connected printer. It uses the Printer Access Protocol (PAP)
 to obtain the status information.
 
-If no printer is specified on the command line, *papstatus* looks for a
+If no printer is specified on the command line, **papstatus** looks for a
 file called *.paprc* in the current directory and reads it to obtain the
 name of a printer. The *.paprc* file should contain a single line of the
 form *object:type@zone* where each of *object*, *:type,* and *@zone* are
@@ -36,7 +36,7 @@ for the *.paprc* file.
 
 *retrytime*
 
-> Normally, *papstatus* only gets the status from the printer once. If
+> Normally, **papstatus** only gets the status from the printer once. If
 *retrytime* is specified, the status is obtained repeatedly, with a
 sleep of *retrytime* seconds between inquiring the printer.
 
@@ -48,7 +48,7 @@ sleep of *retrytime* seconds between inquiring the printer.
 
 # See Also
 
-`nbp(1)`, `pap(1)`
+nbp(1), pap(1)
 
 # Author
 

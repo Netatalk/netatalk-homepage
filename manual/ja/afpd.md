@@ -12,35 +12,35 @@ afpd — Apple Filing Protocol デーモン
 
 **afpd**はUnixファイルシステムにApple Filing Protocol (AFP)インターフェースを提供する。これは通常、**netatalk**(8)によってブート時に起動される。
 
-**afpd**はファイルサーバの挙動と設定を決めるために**afp.conf**を利用する。
+**afpd**はファイルサーバの挙動と設定を決めるために*afp.conf*を利用する。
 
 # オプション
 
--d
+**-d**
 
 > デーモンをターミナルから切り離さない。
 
--v
+**-v**
 
 > バージョン情報を出力して終了する。
 
--V
+**-V**
 
 > 詳細情報を表示してから終了する。
 
--h
+**-h**
 
 > ヘルプを表示してから終了する。
 
--F <configfile\>
+**-F** <configfile\>
 
 > 利用する設定ファイルを指定する。
 
 # シグナル
 
-最終手段を除いて、ユーザの**afpd**をシャットダウンするために`SIGKILL
-(-9)`を使うのは推奨しない。なぜなら、CNIDデータベースが矛盾したままになるかもしれないからである。**afpd**を終了する安全な方法は、`SIGTERM
-(-15)`シグナルを送ってそれ自身が停止するのを待つことである。
+最終手段を除いて、ユーザの**afpd**をシャットダウンするために*SIGKILL
+(-9)*を使うのは推奨しない。なぜなら、CNIDデータベースが矛盾したままになるかもしれないからである。**afpd**を終了する安全な方法は、*SIGTERM
+(-15)*シグナルを送ってそれ自身が停止するのを待つことである。
 
 メインの**afpd**プロセスにSIGTERMやSIGUSR1を送れば子プロセスに伝わるので、全部に作用するだろう。
 
@@ -54,11 +54,11 @@ SIGQUIT
 
 SIGHUP
 
-> afpdに`SIGHUP`を送ると設定ファイルを再読み込みする。
+> afpdに*SIGHUP*を送ると設定ファイルを再読み込みする。
 
 SIGINT
 
-> 子プロセスの**afpd**に`SIGINT`を送ると、このプロセスの*max_debug*ログを有効にする。ログは`/tmp/afpd.PID.XXXXXX`に送られる。更に`SIGINT`を送ると元のログ設定に戻る。
+> 子プロセスの**afpd**に*SIGINT*を送ると、このプロセスの*max_debug*ログを有効にする。ログは*/tmp/afpd.PID.XXXXXX*に送られる。更に*SIGINT*を送ると元のログ設定に戻る。
 
 SIGUSR1
 
@@ -71,30 +71,30 @@ SIGUSR2
 
 # ファイル
 
-**afp.conf**
+*afp.conf*
 
 > afpdが使う設定ファイル
 
-**afp_signature.conf**
+*afp_signature.conf*
 
 > サーバシグネチャのリスト
 
-**afp_voluuid.conf**
+*afp_voluuid.conf*
 
 > Time MachineボリュームのUUIDのリスト
 
-**extmap.conf**
+*extmap.conf*
 
 > ファイル名拡張子マッピング
 
-`message.pid`
+*message.pid*
 
 > ユーザへ送るメッセージの内容。
 
 # 関連項目
 
-`netatalk(8)`, `hosts_access(5)`, afp.conf(5), `afp_signature.conf(5)`,
-`afp_voluuid.conf(5)`, `extmap.conf(5)`, dbd(1).
+netatalk(8), hosts_access(5), afp.conf(5), afp_signature.conf(5),
+afp_voluuid.conf(5), extmap.conf(5), dbd(1)
 
 # 著者
 

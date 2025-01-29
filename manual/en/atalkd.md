@@ -12,7 +12,7 @@ atalkd — userland AppleTalk network manager daemon
 
 **atalkd** is responsible for all user level AppleTalk network management.
 This includes routing, name registration and lookup, zone lookup, and
-the AppleTalk Echo Protocol (similar to `ping(8)`). Specifically, this
+the AppleTalk Echo Protocol (similar to **ping**(8)). Specifically, this
 corresponds to the RTMP, NBP, ZIP, and AEP protocols in the AppleTalk
 protocol family.
 
@@ -20,38 +20,38 @@ The init system of your OS will typically start the **atalkd** daemon at
 bootup. The daemon first reads from its configuration file,
 **atalkd.conf**. If there is no configuration file, or if no interfaces
 have been defined, **atalkd** will attempt to configure all available
-interfaces and will create a configuration file. See `atalkd.conf(5)`
+interfaces and will create a configuration file. See **atalkd.conf**(5)
 for details on the configuration file format.
 
 # Options
 
--1
+**-1**
 
 > Forces AppleTalk Phase 1.
 
--2
+**-2**
 
 > Forces AppleTalk Phase 2.
 
--d
+**-d**
 
 > Do not disassociate daemon from terminal. Writes some additional
 debugging information to stdout.
 
--f <configfile\>
+**-f** <configfile\>
 
 > Consult <configfile\> instead of **atalkd.conf** for the configuration
 information.
 
--P <pidfile\>
+**-P** <pidfile\>
 
 > Specifies the file in which **atalkd** stores its process id.
 
--t
+**-t**
 
 > Turns on transition routing.
 
--v | -V
+**-v** | **-V**
 
 > Print version information and exit.
 
@@ -74,11 +74,11 @@ one interface, and no other configurations are present.
 
 # Files
 
-**atalkd.conf** configuration file
+*atalkd.conf* configuration file
 
 # See Also
 
-`atalkd.conf(5)`
+atalkd.conf(5)
 
 # Author
 

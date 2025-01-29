@@ -19,16 +19,12 @@ nbp_name — NBP 名の解析
 
 # 例
 
-The argument of **afpd(8)**'s **-n** option is parsed with
-**nbp_name()**. The default value of *obj* is the first component of the
-machine's hostname (as returned by **gethostbyname(3)**). The default value
-of *type* is \**\\**AFPServer'', and of *zone* is \**\\**\*'', the default
-zone. To cause *afpd* to register itself in some zone other than the
-default, one would invoke it as
+**afpd**(8)'s **-n** オプションの引数は、**nbp_name()** で解析される。 *obj*
+のデフォルト値は、マシンのホスト名の最初のコンポーネントになる (**gethostbyname**(3) によって返される)。*type*
+のデフォルト値は "AFPServer" で、*zone* のデフォルト値は "\*" (デフォルト ゾーン) になる。*obj* と *type*
+はデフォルト値を保持しながら、*afpd* をデフォルト以外のゾーンに登録するには、次のように呼び出す。
 
     afpd -n @some-other-zone
-
-*obj* と *type* はデフォルト値を保持する。
 
 # バグ
 

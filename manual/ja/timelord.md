@@ -10,13 +10,13 @@ timelord — Macintosh タイム サーバー デーモン
 
 # 説明
 
-*timelord* は、*tardis* クライアントを使用する Macintosh
+**timelord** は、**tardis** クライアントを使用する Macintosh
 コンピュータ用のシンプルなタイム サーバーである。Macintosh 用の "Timelord"
 CDEV と同じ機能を備えている。
 
-*tardis* は Chooser 拡張機能として実装されている。Chooser で、Mac
-のシステム時間を同期する *timelord*
-インスタンスを選択する。同期されると、*tardis*
+**tardis** は Chooser 拡張機能として実装されている。Chooser で、Mac
+のシステム時間を同期する **timelord**
+インスタンスを選択する。同期されると、**tardis**
 は起動時に自動的にサーバーと同期するか、Mac
 の実行中に定期的にスケジュールされて同期する (後者には tardis 1.4
 が必要)。
@@ -37,7 +37,7 @@ CDEV と同じ機能を備えている。
 > このサーバーを *nbpname*
 として登録する。デフォルトではホスト名になる。
 
--v | -V
+**-v** | **-V**
 
 > バージョン情報を出力して終了する。
 

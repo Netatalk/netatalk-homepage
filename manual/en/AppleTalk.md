@@ -40,7 +40,7 @@ chapter.
     appletalk = yes
 
 If Netatalk has been built with AppleTalk support (pass
-`-Dwith-appletalk=true` to the build system), this activates AFP over
+*-Dwith-appletalk=true* to the build system), this activates AFP over
 AppleTalk.
 
 ### No AppleTalk routing
@@ -107,7 +107,7 @@ interfaces might fail in a situation where one of your network
 interfaces is connected to a network where *no* other active AppleTalk
 router is present and supplies appropriate routing settings.
 
-For further information see `atalkd.conf(5)` and the developer
+For further information see **atalkd.conf**(5) and the developer
 documentation.
 
 ### atalkd acting as an AppleTalk router
@@ -223,7 +223,7 @@ names are published into this segment, "Printers" being the so called
 "standard zone", forcing dumb AppleTalk devices like Laser printers to
 show up automatically into this zone. AppleTalk printer queues supplied
 by netatalk's papd can be registered into the zone "Spoolers" simply by
-adjusting the settings in `papd.conf(5)`. On eth1 we use the different
+adjusting the settings in **papd.conf**(5). On eth1 we use the different
 and non-overlapping netrange 1001-2000, set the default zone to "Macs"
 and publish a fourth zone name "Servers".
 
@@ -277,7 +277,7 @@ per segment
 
 Netatalk can act both as a PAP client to
 access AppleTalk-capable printers, and as a PAP server. The former by
-using the `pap(1)` utility and the latter by starting the **papd** service.
+using the **pap**(1) utility and the latter by starting the **papd** service.
 
 The "Printer Access Protocol" as part of the AppleTalk protocol suite is
 a fully 8 bit aware and bidirectional printing protocol, developed by
@@ -320,19 +320,19 @@ important to be able to print.
 
 Netatalk formerly had built-in support for System V lpd printing in a
 way that papd saved the printed job directly into the spooldir and calls
-`lpd` afterwards, to pick up the file and do the rest. Due to
+**lpd** afterwards, to pick up the file and do the rest. Due to
 incompatibilities with many lpd implementations the normal behaviour was
 to print directly into a pipe instead of specifying a printer by name
 and using lpd interaction. As of Netatalk 2.0, another alternative has
 been implemented: direct interaction with CUPS (Note: when CUPS support
 is compiled in, then the SysV lpd support doesn't work at all). Detailed
-examples can be found in the `papd.conf(5)` manual page.
+examples can be found in the **papd.conf**(5) manual page.
 
 #### Integrating papd with SysV lpd
 
 Unless CUPS support has been compiled in (which is default from Netatalk
-2.0 on) one simply defines the lpd queue in question by setting the `pr`
-parameter to the queue name. If no `pr` parameter is set, the default
+2.0 on) one simply defines the lpd queue in question by setting the **pr**
+parameter to the queue name. If no **pr** parameter is set, the default
 printer will be used.
 
 #### Using pipes with papd
@@ -344,9 +344,9 @@ printing systems can be driven.
 #### Using direct CUPS support
 
 Starting with Netatalk 2.0, direct CUPS integration is available. In
-this case, defining only a queue name as `pr` parameter won't invoke the
+this case, defining only a queue name as **pr** parameter won't invoke the
 SysV lpd daemon but uses CUPS instead. Unless a specific PPD has been
-assigned using the `pd` switch, the PPD configured in CUPS will be used
+assigned using the **pd** switch, the PPD configured in CUPS will be used
 by **papd**, too.
 
 There exists one special share named *cupsautoadd*. If this is present
@@ -359,7 +359,7 @@ settings for individual spoolers.
 
 ### Using AppleTalk printers
 
-Netatalk's `papstatus(8)` can be used to query AppleTalk printers, `pap(1)` to print
+Netatalk's **papstatus**(8) can be used to query AppleTalk printers, **pap**(1) to print
 to them.
 
 **pap** can be used stand-alone or as part of an output filter or a CUPS
@@ -368,7 +368,7 @@ since one does not have to deal with all the options).
 
     pap -p"ColorLaserWriter 16/600@*" /usr/share/doc/gs/examples/tiger.ps
 
-The file `/usr/share/doc/gs/examples/tiger.ps` is sent to a printer
+The file */usr/share/doc/gs/examples/tiger.ps* is sent to a printer
 called "ColorLaserWriter 16/600" in the standard zone "\*". The device
 type is "LaserWriter" (can be suppressed since it is the default).
 
@@ -379,7 +379,7 @@ for a Color DeskWriter. Since no file has been supplied on the command
 line, **pap** reads the data from stdin. The printer's address will be
 read from the *.paprc* file in the same directory, **pap** will be called
 (in our example simply containing "Color
-DeskWriter:DeskWriter@Printers"). The **-e** switch forces **pap** to not
+DeskWriter:DeskWriter@Printers"). The **-E** switch forces **pap** to not
 wait for an EOF from the printer.
 
 ## Time Services
