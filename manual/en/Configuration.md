@@ -334,7 +334,7 @@ filenames, '/' will be converted to ':'. For western users another
 useful setting could be **vol charset = ISO-8859-15**.
 
 If a character cannot be converted from the **mac charset** to the
-selected **vol charset**, you'll receive a -50 error on the mac. *Note*:
+selected **vol charset**, you'll receive a -50 error on the Mac. *Note*:
 Whenever you can, please stick with the default UTF8 volume format.
 
 ## Authentication

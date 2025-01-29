@@ -321,7 +321,7 @@ same as **unix charset**.
 
 ## Password Options
 
-passwd file <path\> **(G)**
+passwd file = <path\> **(G)**
 
 > Sets the path to the Randnum UAM passwd file for this server.
 
@@ -499,7 +499,7 @@ chmod request = <preserve (default) | ignore | simple\> **(G)**/**(V)**
 
 > Advanced permission control that deals with ACLs.
 
-- **number** - UNIX chmod() requests are completely ignored, use this
+- **ignore** - UNIX chmod() requests are completely ignored, use this
   option to allow the parent directory's ACL inheritance full control
   over new items.
 
@@ -537,7 +537,7 @@ CNID dbd backend. Defaults to localhost:4700. The network address may be
 specified either in dotted-decimal format for IPv4 or in hexadecimal
 format for IPv6.-
 
-dbus daemon <path\> **(G)**
+dbus daemon = <path\> **(G)**
 
 > Sets the path to dbus-daemon binary used by the Spotlight feature. Can
 be used when the compile-time default path does not match the runtime
@@ -554,7 +554,7 @@ to nearest power of 2. Each entry takes about 100 bytes, which is not
 much, but remember that every afpd child process for every connected
 user has its cache.
 
-extmap file <path\> **(G)**
+extmap file = <path\> **(G)**
 
 > Sets the path to the file which defines file extension type/creator
 mappings.
@@ -688,7 +688,7 @@ volume name is always limited to 27 bytes.
 
 vol preset = <name\> **(G)**/**(V)**
 
-> Use section <simple\> as option preset for all volumes (when set in the
+> Use section <name\> as option preset for all volumes (when set in the
 \[Global\] section) or for one volume (when set in that volume's
 section).
 

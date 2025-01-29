@@ -6,7 +6,7 @@ macusers — List the users connecting via AFP
 
 **macusers**
 
-`macusers [ -v | -Version | --version | -h | -help | --help ]`
+`macusers [ -v | -version | --version | -h | -help | --help ]`
 
 # Description
 

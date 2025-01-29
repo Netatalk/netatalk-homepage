@@ -8,7 +8,7 @@ asip-status — AFP サーバに機能を問い合わせる
 
 `asip-status [ -4 | -6 ] [-d] [-i] [-x] [ HOSTNAME:PORT ]`
 
-`asip-status [ -v | -Version | --version ]`
+`asip-status [ -v | -version | --version ]`
 
 # 説明
 

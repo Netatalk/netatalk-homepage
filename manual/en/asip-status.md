@@ -8,7 +8,7 @@ asip-status — Queries an AFP server for its capabilities
 
 `asip-status [ -4 | -6 ] [-d] [-i] [-x] [ HOSTNAME:PORT ]`
 
-`asip-status [ -v | -Version | --version ]`
+`asip-status [ -v | -version | --version ]`
 
 # Description
 

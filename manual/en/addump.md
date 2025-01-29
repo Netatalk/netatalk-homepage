@@ -14,7 +14,7 @@ addump - Dump AppleSingle/AppleDouble format data
 
 `addump [ -h | -help | --help ]`
 
-`addump [ -v | -Version | --version ]`
+`addump [ -v | -version | --version ]`
 
 # Description
 

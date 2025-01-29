@@ -30,7 +30,7 @@ AppleTalk プロトコル ファミリのソケットは、次のアドレス構
     };
 
 ソケットのポートは、**bind**(2) で設定できる。 *bind* のノードは、常に *ATADDR_ANYNODE*:
-"このノード"でなければなりません。ネットは、*ATADDR_ANYNET* または *ATADDR_LATENET*。 *ATADDR_ANYNET*
+"このノード"でなければならない。ネットは、*ATADDR_ANYNET* または *ATADDR_LATENET*。 *ATADDR_ANYNET*
 は、マシンの "プライマリ" アドレス (最初に構成されたアドレス) に対応する。 *ATADDR_LATENET*
 により、送信パケット内のアドレスはパケットの送信時に決定される(つまり、遅れて決定される)。*ATADDR_LATENET* は、ネットワーク
 インターフェイスごとに 1 つのソケットを開くことと同じ。ソケットのポートと プライマリ アドレスまたは *ATADDR_LATENET*

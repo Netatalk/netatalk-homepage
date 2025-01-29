@@ -50,7 +50,7 @@ Downloading the Git repository can be done quickly and easily:
         ...
         Resolving deltas: 100% (32227/32227), done.
 
-    This will create a local directory called **netatalk-code** containing
+    This will create a local directory called *netatalk-code* containing
     a complete and fresh copy of the whole Netatalk source tree from the
     Git repository.
 

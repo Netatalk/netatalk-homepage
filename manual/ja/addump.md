@@ -14,7 +14,7 @@ addump - AppleSingle/AppleDouble フォーマットのデータをダンプす�
 
 `addump [ -h | -help | --help ]`
 
-`addump [ -v | -Version | --version ]`
+`addump [ -v | -version | --version ]`
 
 # 説明
 
@@ -53,9 +53,9 @@ X、Netatalkなどが生成する様々なAppleSingle/AppleDoubleデータをダ
 
 # 注記
 
-FinderInfoがFileInfoなのかDirInfoなのかを検出する方法がありません。デフォルトでは、addumpはそれがファイルなのかディレクトリなのか、親ディレクトリが.AppleDoubleか、ファイル名が.\_\*か、ファイル名が.Parentかなどを調査する。
+FinderInfoがFileInfoなのかDirInfoなのかを検出する方法がない。デフォルトでは、addumpはそれがファイルなのかディレクトリなのか、親ディレクトリが.AppleDoubleか、ファイル名が.\_\*か、ファイル名が.Parentかなどを調査する。
 
-もしオプション**-e**または**-f**または**-d**を設定した場合、FinderInfoを仮定し他のデータを探しません。
+もしオプション**-e**または**-f**または**-d**を設定した場合、FinderInfoを仮定し他のデータを探さない。
 
 # 関連項目
 

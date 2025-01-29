@@ -16,7 +16,7 @@ more available.
 There are three major changes between Netatalk 2 and Netatalk 4:
 
 1.  New configuration files that replaces most of the previous ones:
-    *afp.conf* and **extmap.conf**
+    *afp.conf* and *extmap.conf*
 
 2.  New AppleDouble backend **appledouble = ea** which stores Mac metadata
     and resource forks in extended attributes of the filesystem.
@@ -29,28 +29,28 @@ There are three major changes between Netatalk 2 and Netatalk 4:
 
 ### New configuration
 
-*afp.conf*
+#### afp.conf
 
 - ini style syntax (akin to Samba's smb.conf)
 
 - one to rule them all: configure AFP settings and volumes in one file
 
-- obsoletes **afpd.conf**, **netatalk.conf**, **AppleVolumes.default** and
-  **afp_ldap.conf**
+- obsoletes *afpd.conf*, *netatalk.conf*, *AppleVolumes.default* and
+  *afp_ldap.conf*
 
 > **WARNING**
 
 > most option names have changed, read the full manpage
 [afp.conf](afp.conf.html) for details
 
-**extmap.conf**
+#### extmap.conf
 
 - maps file extensions to Classic Mac OS type/creator
 
 - unlike 2.x, the mappings are disabled by default; uncomment the lines
   in the file to enable them
 
-- obsoletes **AppleVolumes.system**
+- obsoletes *AppleVolumes.system*
 
 ### New AppleDouble backend
 
@@ -116,13 +116,13 @@ Implementation details:
 
 2.  Install Netatalk 4
 
-3.  Manually recreate configurations in *afp.conf* and **extmap.conf**
+3.  Manually recreate configurations in *afp.conf* and *extmap.conf*
 
 4.  Update your Netatalk init script to start **netatalk** instead of
     **afpd** and **cnid_metad**, or replace it with the appropriate stock
     init script for your system.
 
-5.  Move **afp_voluuid.conf** and **afp_signature.conf** to the localstate
+5.  Move *afp_voluuid.conf* and *afp_signature.conf* to the localstate
     directory (default *$prefix/var/netatalk/*), you can use **afpd -v**
     in order to find the correct path
 

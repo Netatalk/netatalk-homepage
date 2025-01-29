@@ -14,7 +14,7 @@ Netatalk 3 から Netatalk 4 へのアップグレードは簡単。古いバー
 Netatalk 4 の主要な変更は以下の3点：
 
 1.  これまでの AFP 設定ファイルすべてが廃止され、AFP に関してのほぼ全オプション名を変更し、新しい設定ファイルを追加した：
-    *afp.conf* と **extmap.conf**
+    *afp.conf* と *extmap.conf*
 
 2.  マックのメタデータとリソースフォークをファイルシステムの拡張属性に保存する **appledouble = ea** という新しい
     AppleDouble のバックエンド。
@@ -25,27 +25,27 @@ Netatalk 4 の主要な変更は以下の3点：
 
 ### 設定まわりの変更点
 
-*afp.conf*
+#### afp.conf
 
 - （Samba の smb.conf のような） "ini" スタイルの構文
 
 - 一つで設定すべてを指示するという点： AFP 及びボリュームの構成を共に一つのファイルで設定することになるという点
 
-- **afpd.conf**、 **netatalk.conf**、 **AppleVolumes.default** 及び、
-  **afp_ldap.conf** の廃止
+- *afpd.conf*、 *netatalk.conf*、 *AppleVolumes.default* 及び、 *afp_ldap.conf*
+  の廃止
 
 > **警告**
 
 > ほとんどのオプション名は変更されたので、 詳細については
 [afp.conf](afp.conf.html) の manpage 全体を読むこと
 
-**extmap.conf**
+#### extmap.conf
 
 - Classic Mac OS type/creator と拡張子の関連付け
 
 - 2.x とは異なり、マッピングはデフォルトで無効になっている。有効にするには、ファイル内の行のコメントを解除する
 
-- **AppleVolumes.system** の廃止
+- *AppleVolumes.system* の廃止
 
 ### 新たな AppleDouble バックエンド
 
@@ -102,13 +102,13 @@ AppleDouble のバックエンド。
 
 2.  Netatalk 4 をインストールする
 
-3.  設定 *afp.conf* 及び **extmap.conf** を自力で書き換える
+3.  設定 *afp.conf* 及び *extmap.conf* を自力で書き換える
 
 4.  **afpd** と **cnid_metad** の代わりに **netatalk** 起動にのみ関連している、 Netatalk
     起動スクリプトを更新するか、標準の起動スクリプトに置き換える。
 
-5.  **afp_voluuid.conf** 及び **afp_signature.conf** を localstate ディレクトリ
-    （デフォルトでは *$prefix/var/netatalk/*）、に移動。 正しいパスを見つけるために **afpd -v** コマンドが有用
+5.  *afp_voluuid.conf* 及び *afp_signature.conf* を localstate ディレクトリ （デフォルトでは
+    *$prefix/var/netatalk/*）、に移動。 正しいパスを見つけるために **afpd -v** コマンドが有用
 
 6.  Netatalk 4 を起動する
 
