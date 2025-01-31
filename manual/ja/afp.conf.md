@@ -720,9 +720,9 @@ Directory）か、ディレクトリサーバー（例えばOpenLDAP）の未使
 
 Netatalk では以下の LDAP オプションが設定されなければならない:
 
-ldap auth method = <none|simple|sasl\> **(G)**
+ldap auth method = <none|simple\> **(G)**
 
-> 認証方式: **none** | **simple | **sasl**
+> 認証方式: **none** | **simple**
 
 none
 
@@ -731,10 +731,6 @@ none
 simple
 
 > 簡易 LDAP 認証
-
-sasl
-
-> SASL. まだサポートされていない!
 
 ldap auth dn = <dn\> **(G)**
 
@@ -1126,6 +1122,49 @@ unix priv = <BOOLEAN\> (デフォルト: *yes*) **(V)**
 > AFP3 UNIX 権限を使うかどうか。これは OS X
 クライアントに対しては設定すべきである。**file perm**、**directory perm**
 及び `umask` も参照。
+
+# 例
+
+## 例：現代の Mac クライアント
+
+Netatalk が Spotlight および AFP stats サポート付きでビルドされた場合に有効にする。**mimic model**
+オプションはサーバーを Xserveのように見せるために使われる。
+
+ホームディレクトリは */home/{user}/afp-data* にマウントされる。
+
+```
+[Global]
+afpstats = yes
+spotlight = yes
+mimic model = RackMac
+
+[Home]
+basedir regex = /home
+path = afp-data
+```
+
+## 例：レトロ Mac クライアント
+
+Netatalk が AppleTalk サポートを付きでビルドされた場合に AppleTalk を有効にする。Random Number と
+ClearTxt 認証モジュールが使われる。**legacy icon** オプションはサーバーを BSD デーモンのように見せるために使われる。
+
+**legacy volume size** でボリュームサイズは 2 GB に制限される。**prodos** はボリュームに ProDOS
+ブートフラグを設定する上、ボリュームの空き領域は 32 MB に制限される。
+
+```
+[Global]
+appletalk = yes
+uam list = uams_dhx.so uams_dhx2.so uams_randnum.so uams_clrtxt.so
+legacy icon = daemon
+
+[Mac Volume]
+path = /srv/mac
+legacy volume size = yes
+
+[Apple II Volume]
+path = /srv/apple2
+prodos = yes
+```
 
 # 関連項目
 

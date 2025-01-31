@@ -59,7 +59,7 @@ atalkd は、このネットワーク セグメントに適用される AppleTal
 
 #### 複数のインターフェイスの使用
 
-複数のインターフェイスを使用する場合は、atalkd.conf の *-dontroute* スイッチの後に、1 行ずつ追加する必要がある。
+複数のインターフェイスを使用する場合は、*atalkd.conf* の **-dontroute** スイッチの後に、1行ずつ追加する必要がある。
 
     eth0 -dontroute eth1 -dontroute eth2 -dontroute
 
@@ -81,7 +81,7 @@ TCP への魔法の切り替えを実行しようとする時点では、これ�
 つが、他のアクティブな AppleTalk
 ルーターが存在せず、適切なルーティング設定を提供するネットワークに接続されている状況で、インターフェイスの自動構成が失敗する可能性がある。
 
-詳細については、**atalkd.conf**(5) および開発者向けドキュメントを参照してください。
+詳細については、[atalkd.conf](atalkd.conf.html) および開発者向けドキュメントを参照してください。
 
 ### AppleTalk ルーターとして機能する atalkd
 
@@ -144,15 +144,15 @@ AppleTalk ゾーンは、物理ネットワークとは *まったく* 関係な
 
 atalkd.conf で次のオプションを設定する必要がある:
 
-- -net (各インターフェースに 1 ～ 65279 の適切な値を使用する)
+- **-net** (各インターフェースに 1 ～ 65279 の適切な値を使用する)
 
   この値が抑制されていても -addr が存在する場合は、この特定のアドレスの
   netrange が使用される
 
-- -addr (net 部分は -net 設定 (存在する場合)  と一致する必要がある。ノード アドレスは 142 ～ 255
+- **-addr** (net 部分は -net 設定 (存在する場合)  と一致する必要がある。ノード アドレスは 142 ～ 255
   の範囲である必要がある)
 
-- -zone (1 行に複数回使用できる。最初のエントリはデフォルトのゾーンになる。)
+- **-zone** (1行に複数回使用できる。最初のエントリはデフォルトのゾーンになる。)
 
 「ゾーン マッピング」を設定できることに注意してください。これは、すべての AppleTalk
 セグメントにまったく同じゾーン名を公開するだけでなく、インターフェイスごとに複数のゾーン名を提供することを意味する。 LaserWriter
@@ -164,10 +164,10 @@ atalkd.conf で次のオプションを設定する必要がある:
 
 eth0 の設定により、接続されたネットワーク内の AppleTalk デバイスは、ネットワーク範囲 1 ～ 1000
 のアドレスを自身に割り当てるようになる。このセグメントには 2 つのゾーン名が発行される。「Printers」はいわゆる「標準ゾーン」で、レーザー
-プリンタなどの低機能の AppleTalk デバイスがこのゾーンに自動的に表示されるように強制する。netatalk の papd によって提供される
-AppleTalk プリンタ キューは、**papd.conf**(5) の設定を調整するだけで、ゾーン「Spoolers」に登録できる。eth1
-では、異なる重複しないネット範囲 1001-2000 を使用し、デフォルト ゾーンを「Macs」に設定して、4
-番目のゾーン名「Servers」を発行する。
+プリンタなどの低機能の AppleTalk デバイスがこのゾーンに自動的に表示されるように強制する。netatalk の **papd**
+によって提供される AppleTalk プリンタ キューは、*papd.conf*
+の設定を調整するだけで、ゾーン「Spoolers」に登録できる。eth1 では、異なる重複しないネット範囲 1001-2000 を使用し、デフォルト
+ゾーンを「Macs」に設定して、4 番目のゾーン名「Servers」を発行する。
 
     eth0 -seed -phase 2 -net 1-1000 -addr 1000.142 -zone "foo"
     lo0 -phase 1 -net 1 -addr 1.142 -zone "foo"
@@ -205,7 +205,7 @@ eth0 に接続されたネットワークにアクティブなシード ルー�
 ## 印刷
 
 Netatalk は、AppleTalk 対応プリンタにアクセスするための PAP クライアントとしても、PAP サーバとしても機能する。前者は
-**pap**(1) ユーティリティを使用し、後者は **papd** サービスを起動することで行う。
+**pap** ユーティリティを使用し、後者は **papd** サービスを起動することで行う。
 
 AppleTalk プロトコル スイートの一部である「プリンタ アクセス プロトコル」は、1985 年に Apple によって開発された、完全に 8
 ビット対応の双方向印刷プロトコルである。*8 ビット対応* とは、バイト セット全体を印刷に使用できることを意味する(バイナリ
@@ -227,7 +227,7 @@ TechNote
 
 ### PAP 印刷サーバーの設定
 
-Netatalk の **papd** は、Macintosh、またはより正確には一般的な PAP クライアントに AppleTalk
+Netatalk の [papd](papd.html) は、Macintosh、またはより正確には一般的な PAP クライアントに AppleTalk
 印刷サービスを提供できる。 Netatalk 自体には本格的なスプーラ実装は含まれておらず、papd は双方向通信と PAP
 クライアントからの印刷ジョブの送信のみを処理する。そのため、通常は、papd を Unix 印刷システム (例:クラシック SysV lpd、BSD
 lpr、LPRng、CUPS など。
@@ -240,8 +240,8 @@ Netatalk には以前、System V lpd 印刷のサポートが組み込まれて�
 に直接保存し、その後 **lpd** を呼び出してファイルを取得し、残りの処理を実行していました。多くの lpd
 実装との非互換性のため、通常の動作では、プリンタを名前で指定して lpd
 とのやり取りを使用するのではなく、パイプに直接印刷していました。Netatalk 2.0 では、別の代替手段が実装された。CUPS との直接のやり取り
-(注: CUPS サポートがコンパイルされている場合、SysV lpd サポートはまったく機能しない)。詳細な例は、**papd.conf**(5)
-マニュアル ページにある。
+(注: CUPS サポートがコンパイルされている場合、SysV lpd
+サポートはまったく機能しない)。詳細な例は、[papd.conf](papd.conf.html) マニュアル ページにある。
 
 #### papd と SysV lpd の統合
 
@@ -260,29 +260,44 @@ Netatalk 2.0 以降では、直接 CUPS 統合が使用可能。この場合、�
 デーモンは呼び出されず、代わりに CUPS が使用される。 **pd** スイッチを使用して特定の PPD が割り当てられていない限り、CUPS
 で構成された PPD は **papd** でも使用される。
 
-*cupsautoadd* という特別な共有が 1 つ存在する。これが papd.confに存在する場合、使用可能なすべての
+*cupsautoadd* という特別な共有が 1 つ存在する。これが *papd.conf* に存在する場合、使用可能なすべての
 CUPSキューは、このグローバル共有に割り当てられたパラメータを使用して自動的に処理される。ただし、後続のプリンタ定義を使用して、個々のスプーラのこれらのグローバル設定を上書きできる。
 
     cupsautoadd:op=root:
 
 ### AppleTalk プリンタの使用
 
-Netatalk の **papstatus**(8) は AppleTalk プリンタのクエリに使用でき、 **pap**(1)
-はプリンタに印刷するのに使用できる。
+Netatalk の [papstatus](papstatus.html) は AppleTalk プリンタのクエリに使用でき、
+[pap](pap.html) はプリンタに印刷するのに使用できる。
 
 **pap** はスタンドアロンで使用することも、出力フィルタまたは CUPS バックエンドの一部として使用することもできる (すべてのプリンタを処理する必要がないため、この方法の方が推奨される)オプション)。
 
-    pap -p"ColorLaserWriter 16/600@*" /usr/share/doc/gs/examples/tiger.ps
+#### pap を単独で使用する
 
-ファイル */usr/share/doc/gs/examples/tiger.ps* は、標準ゾーン "\*" にある
+下記事例では、ファイル */usr/share/doc/gs/examples/tiger.ps* を標準ゾーン "\*" にある
 "ColorLaserWriter 16/600" というプリンタに送信される。デバイス タイプは "LaserWriter"
 (デフォルトなので省略できる)。
 
-    gs -q -dNOPAUSE -sDEVICE=cdjcolor -sOutputFile=test.ps | pap -E
+    pap -p"ColorLaserWriter 16/600@*" /usr/share/doc/gs/examples/tiger.ps
 
-GhostScript は、PostScriptジョブをColor DeskWriterに適したPCL3出力に変換するために使用される。コマンド
+続いて、GhostScript は PostScriptジョブをColor DeskWriterに適したPCL3出力に変換するために使用される。コマンド
 ラインにファイルが指定されていないため、**pap**はstdinからデータを読み取る。プリンタのアドレスは、同じディレクトリにある*.paprc*ファイルから読み取られ、**pap**が呼び出される(この例では、単に「Color
 DeskWriter:DeskWriter@Printers」が含まれている)。**-E**スイッチにより、**pap**はプリンタからのEOFを待たなくなる。
+
+    gs -q -dNOPAUSE -sDEVICE=cdjcolor -sOutputFile=test.ps | pap -E
+
+#### pap を CUPS バックエンドとして使用する
+
+Netatalk は CUPS バックエンドを提供し、AppleTalk プリンタに印刷するために使用できる。バックエンドは **pap**
+と呼ばれ、プラットフォームに応じて */usr/lib/cups/backend* または
+*/usr/pkg/libexec/cups/backend* に配置される。
+
+バックエンドは、プリンタ モデルといくつかの他のオプションでファイルを編集することで設定できる。
+
+CUPS 1.x では、「Find New Printers」ウィザードを使用して AppleTalk プリンタを設定できる。ただし、CUPS 2.x
+では、バックエンドを手動で CUPS Web インターフェイスでプリンタ URL を追加することで設定する必要がある。URL は、直接 pap
+バックエンド スクリプトを実行することで取得できます。さらに、CUPS 3.x では、カスタム バックエンド機能が完全に削除されているため、CUPS は
+pap バックエンドを使用できない。
 
 ## タイム サービス
 
@@ -294,7 +309,7 @@ Netatalk の **timelord** は
 [メルボルン大学](https://web.archive.org/web/20010303220117/http://www.cs.mu.oz.au/appletalk/readmes/TMLD.README.html)で開発された
 Macintosh 用の tardis クライアントと互換性がある。
 
-詳細については、**timelord** マニュアル ページをご覧ください。
+詳細については、[timelord](timelord.html) マニュアル ページをご覧ください。
 
 ## ネットブート サービス
 
