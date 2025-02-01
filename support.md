@@ -6,11 +6,12 @@ If you think you have found a bug in Netatalk, first see if the bug has
 already been reported in the [Netatalk issue tracker at
 GitHub](https://github.com/Netatalk/netatalk/issues).
 
-If no similar bug has been reported yet, please create a new ticket and
-provide as much context as possible, including Netatalk version, OS
+If no similar bug has been reported yet, please
+[create a new ticket](https://github.com/Netatalk/netatalk/issues/new/choose)
+and provide as much context as possible, including Netatalk version, OS
 version, contents of configuration files, and debug or backtrace logs.
 
-Feature requests can also be filed via the same issue tracker.
+Feature requests can also be filed in the same issue tracker.
 
 ## Technical Support
 
@@ -25,12 +26,10 @@ As an alternative to GitHub, you can join the [netatalk-admins mailing
 list](https://sourceforge.net/p/netatalk/mailman/netatalk-admins/). New
 release announcements are posted here as well.
 
-## Security Advisories
+## Security
 
-The Netatalk Project takes cyber security very seriously. In this
-section we publish security advisories when vulnerabilities have been
-disclosed and fixed.
+The Netatalk Project takes cyber security very seriously.
 
-If you think you have found a new exploit in Netatalk, or want to
-read previous security advisories, please see the
-[Security Policy](/security.html) page.
+If want to know how to report a new security bug in Netatalk,
+read previous security advisories, or understand our security
+patching practices, please visit our [Security Policy](/security.html) page.
