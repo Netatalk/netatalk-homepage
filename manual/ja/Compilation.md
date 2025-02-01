@@ -7,7 +7,7 @@
 本手順書は自動的に生成されたため、ご使用のシステムに最適化されていない可能性があるのでご了承ください。また、技術的な制約により、一部の OS では
 Netatalk を起動する手順が不完全である。
 
-## オペレーティング システム一覧
+# オペレーティング システム一覧
 
 ## Alpine Linux
 
@@ -20,7 +20,7 @@ apk add acl-dev avahi-compat-libdns_sd avahi-dev bison build-base cmark cracklib
 コンフィグレーション
 
 ```
-meson setup build -Dbuildtype=release -Dwith-appletalk=true -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d -Dwith-tests=true
+meson setup build -Dbuildtype=release -Dwith-appletalk=true -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d -Dwith-docs-l10n=true -Dwith-tests=true
 ```
 
 ビルド
@@ -59,13 +59,13 @@ ninja -C build uninstall
 必要なパッケージをインストールする
 
 ```
-pacman -Sy --noconfirm avahi bison cmark-gfm cracklib cups db flex gcc localsearch mariadb-clients meson ninja perl pkgconfig rpcsvc-proto talloc tinysparql
+pacman -Sy --noconfirm avahi bison cmark-gfm cracklib cups db flex gcc localsearch mariadb-clients meson ninja perl po4a pkgconfig rpcsvc-proto talloc tinysparql
 ```
 
 コンフィグレーション
 
 ```
-meson setup build -Dbuildtype=release -Dwith-appletalk=true -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d -Dwith-init-hooks=false -Dwith-tests=true
+meson setup build -Dbuildtype=release -Dwith-appletalk=true -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d -Dwith-docs-l10n=true -Dwith-init-hooks=false -Dwith-tests=true
 ```
 
 ビルド
@@ -105,13 +105,13 @@ ninja -C build uninstall
 
 ```
 apt-get update
-apt-get install --assume-yes --no-install-recommends bison cmark-gfm cracklib-runtime file flex libacl1-dev libavahi-client-dev libcrack2-dev libcups2-dev libdb-dev libdbus-1-dev libevent-dev libgcrypt20-dev libglib2.0-dev libkrb5-dev libldap2-dev libmariadb-dev libpam0g-dev libtalloc-dev libtirpc-dev libtracker-sparql-3.0-dev libwrap0-dev meson ninja-build quota systemtap-sdt-dev tcpd tracker tracker-miner-fs
+apt-get install --assume-yes --no-install-recommends bison cmark-gfm cracklib-runtime file flex libacl1-dev libavahi-client-dev libcrack2-dev libcups2-dev libdb-dev libdbus-1-dev libevent-dev libgcrypt20-dev libglib2.0-dev libkrb5-dev libldap2-dev libmariadb-dev libpam0g-dev libtalloc-dev libtirpc-dev libtracker-sparql-3.0-dev libwrap0-dev meson ninja-build po4a quota systemtap-sdt-dev tcpd tracker tracker-miner-fs
 ```
 
 コンフィグレーション
 
 ```
-meson setup build -Dbuildtype=release -Dwith-appletalk=true -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d -Dwith-init-hooks=false -Dwith-init-style=debian-sysv,systemd -Dwith-pkgconfdir-path=/etc/netatalk -Dwith-tests=true
+meson setup build -Dbuildtype=release -Dwith-appletalk=true -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d -Dwith-docs-l10n=true -Dwith-init-hooks=false -Dwith-init-style=debian-sysv,systemd -Dwith-pkgconfdir-path=/etc/netatalk -Dwith-tests=true
 ```
 
 ビルド
@@ -202,7 +202,7 @@ sudo apt-get install --assume-yes --no-install-recommends bison cmark-gfm crackl
 コンフィグレーション
 
 ```
-meson setup build -Dbuildtype=release -Dwith-appletalk=true -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d -Dwith-init-hooks=false -Dwith-manual-l10n=ja -Dwith-tests=true
+meson setup build -Dbuildtype=release -Dwith-appletalk=true -Dwith-dbus-sysconf-path=/usr/share/dbus-1/system.d -Dwith-init-hooks=false -Dwith-tests=true
 ```
 
 ビルド
@@ -257,13 +257,13 @@ sudo ninja -C build uninstall
 ```
 brew update
 brew upgrade
-brew install bison cmark-gfm cracklib dbus mariadb meson openldap talloc tracker
+brew install bison cmark-gfm cracklib dbus mariadb meson openldap po4a talloc tracker
 ```
 
 コンフィグレーション
 
 ```
-meson setup build -Dbuildtype=release -Dwith-tests=true
+meson setup build -Dbuildtype=release -Dwith-docs-l10n=true -Dwith-tests=true
 ```
 
 ビルド
