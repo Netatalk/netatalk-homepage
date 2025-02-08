@@ -40,8 +40,7 @@ package](https://repology.org/badge/version-for-repo/buildroot_master/netatalk.s
 package](https://repology.org/badge/version-for-repo/debian_unstable/netatalk.svg)
 ![Devuan Unstable
 package](https://repology.org/badge/version-for-repo/devuan_unstable/netatalk.svg)
-![EPEL 9
-package](https://repology.org/badge/version-for-repo/epel_9/netatalk.svg)
+![EPEL 10 package](https://repology.org/badge/version-for-repo/epel_10/netatalk.svg)
 ![Fedora Rawhide
 package](https://repology.org/badge/version-for-repo/fedora_rawhide/netatalk.svg)
 ![FreeBSD
