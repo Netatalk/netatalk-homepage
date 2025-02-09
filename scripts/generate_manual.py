@@ -95,7 +95,7 @@ for file in files:
     new_name = file.replace('.md', '.html').lower()
 
     with open(f"./public/{new_name}", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
-        output_file.write(html_head(f"Netatalk - {page_title.capitalize()}", new_name, lang))
+        output_file.write(html_head(f"Netatalk - {page_title.capitalize()}", new_name, "en"))
         output_file.write(html_menlinks())
         output_file.write(html_navbar(VERSION))
         output_file.write("<div id=\"content\">")
