@@ -111,8 +111,8 @@ only a subset of features enabled.
 
 Arrange a C compiler (we use *gcc* or *clang*), the
 [Meson](https://mesonbuild.com/) build system with
-[Ninja](https://ninja-build.org/), together with [needed
-libraries](https://github.com/Netatalk/netatalk/blob/main/INSTALL.md#external-software-dependencies).
+[Ninja](https://ninja-build.org/), together with [required
+libraries](https://netatalk.io/install).
 Read more in the [Netatalk manual](stable/htmldocs/installation) or the
 OS specific guides in the [wiki](docs).
 
