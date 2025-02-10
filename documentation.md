@@ -66,6 +66,7 @@ Records of historical Netatalk releases.
 
 ### Netatalk Version 4 Release Series
 
+- [Netatalk 4.1.2](/4.1/ReleaseNotes4.1.2.html)
 - [Netatalk 4.1.1](/4.1/ReleaseNotes4.1.1.html)
 - [Netatalk 4.1.0](/4.1/ReleaseNotes4.1.0.html)
 - [Netatalk 4.0.8](/4.0/ReleaseNotes4.0.8.html)

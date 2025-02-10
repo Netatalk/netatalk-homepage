@@ -1,5 +1,21 @@
 # News Archive
 
+## Netatalk 4.1.0 is available
+
+*11th of January 2025*
+
+The Netatalk development team is proud to announce the first release of
+the Netatalk 4.1 release series. This is a minor feature release that
+further improves interoperability on macOS hosts, makes the MacIP
+Gateway deamon more usable, and introduces a number of bugfixes and
+build system improvements.
+
+All users of previous Netatalk versions are encouraged to upgrade to
+4.1, with a few caveats outlined in the Release Notes.
+
+For a summary of news and a detailed list of changes see the [Release
+Notes](/4.1/ReleaseNotes4.1.0.html).
+
 ## Netatalk 4.0.8 is available
 
 *9th of December 2024*
