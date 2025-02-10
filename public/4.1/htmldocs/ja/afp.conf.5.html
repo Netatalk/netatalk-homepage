@@ -24,7 +24,7 @@
           <img src="/gfx/end.gif" alt="" width="125" height="7" />
         </div>
     </div>
-    <div xmlns="" class="navheader" align="center">Netatalk 4.1.1</div>
+    <div xmlns="" class="navheader" align="center">Netatalk 4.1.2</div>
 <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">afp.conf</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="aecho.1.html">戻る</a> </td><th width="60%" align="center">第6章 マニュアルページ</th><td width="20%" align="right"> <a accesskey="n" href="afp_signature.conf.5.html">次へ</a></td></tr></table><hr /></div><div class="refentry"><a id="afp.conf.5"></a><div class="titlepage"></div><div class="refnamediv"><h2>名前</h2><p>afp.conf — Netatalkの設定ファイル</p></div><div class="refsect1"><a id="id-1.9.7.3"></a><h2>概要</h2><p><code class="filename">afp.conf</code>は<span class="bold"><strong>Netatalk</strong></span> AFPファイルサーバの設定ファイルである。</p><p>全てのAFP固有の設定とAFPボリュームの定義がこのファイルを通して行われる。</p></div><div class="refsect1"><a id="FILEFORMATSECT"></a><h2>ファイルの書式</h2><p>ファイルはセクションとパラメータから構成される。セクションはブラケット[各括弧]で囲まれたセクション名に始まり、次のセクションが始まるまで続く。セクションには次のような書式のパラメータが含まれている:</p><pre class="programlisting">
     <em class="replaceable"><code>name</code></em> = <em class="replaceable"><code>value </code></em>
     </pre><p>このファイルは行を基本とする。それぞれの行は改行文字で終端し、コメント、セクション名、パラメータのうちどれかを表す。</p><p>セクション名とパラメータ名は大文字と小文字の区別がある。</p><p>パラメータに最初に現れる等号だけは重要な意味を持つ。最初の等号の前後にある空白は破棄される。セクション名とパラメータ名の前、後、途中にある空白は意味を持たない。パラメータ値の前後の空白は破棄される。パラメータ値の途中の空白はそのま維持される。</p><p>セミコロン(<span class="quote">「<span class="quote">;</span>」</span>)やハッシュ文字(<span class="quote">「<span class="quote">#</span>」</span>)で始まるいかなる行も、空白だけの行と同様に無視される。</p><p><span class="quote">「<span class="quote"> <code class="literal">\</code>
