@@ -290,11 +290,9 @@ h3 {
   color: #FFFFFF;
 }
 
-/* we use h4 for the left div titles */
 h4 {
   font-size: 100%;
   font-weight: normal;
-  text-align: center;
   color: white;
   background-color: #424242;
   padding: 0px;
