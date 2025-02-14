@@ -176,11 +176,15 @@ def html_navbar(version):
   <div class="navbar">
     <h2>continuous integration</h2>
     <p><a href="https://github.com/Netatalk/netatalk/actions/workflows/build.yml">
-      <img alt="GitHub Continuous Integration Status" height="22"
+      <img alt="GitHub Continuous Integration - Build Status" height="22"
          src="https://github.com/Netatalk/netatalk/actions/workflows/build.yml/badge.svg"/>
     </a></p>
+    <p><a href="https://github.com/Netatalk/netatalk/actions/workflows/test.yml">
+      <img alt="GitHub Continuous Integration - Test Status" height="22"
+         src="https://github.com/Netatalk/netatalk/actions/workflows/test.yml/badge.svg"/>
+    </a></p>
     <p><a href="https://github.com/Netatalk/netatalk/actions/workflows/containers.yml">
-      <img alt="GitHub Continuous Integration Status" height="22"
+      <img alt="GitHub Continuous Integration - Containers Status" height="22"
          src="https://github.com/Netatalk/netatalk/actions/workflows/containers.yml/badge.svg"/>
     </a></p>
   </div>
