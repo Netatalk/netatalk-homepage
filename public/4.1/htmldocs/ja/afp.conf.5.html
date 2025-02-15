@@ -281,7 +281,7 @@
           ]</code></em> <span class="type">(V)</span></span></dt><dd><p>列挙されたホストとネットのみが拒否され、ほかの全ては許可される。</p><p>例: hosts deny = 192.168.100/24 10.1.1.1
             2001:db8::1428:57ab</p></dd><dt><span class="term">cnid scheme = <em class="replaceable"><code>backend</code></em>
           <span class="type">(V)</span></span></dt><dd><p>そのボリュームに使う CNID バックエンドをセットする。デフォルトのバックエンドは
-            ["dbd"] で、有効なバックエンドは ["dbd last"]
+            ["dbd"] で、有効なバックエンドは ["dbd last mysql"]
             である。</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">注記</h3><p>「mysql」バックエンドでは、システム管理者が netatalk で使用するために MySQL データベース
               インスタンスを構成する必要がある。</p></div><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">警告</h3><p><span class="command"><strong>afpd</strong></span> が持続性のある ID
               データベースに重く依存しているので、このバックエンドをボリュームに使用するのは推奨<span class="emphasis"><em>されていない</em></span>。エイリアスはおそらく機能しないだろうし、ファイル名のマングリングもサポートされていない。</p></div></dd><dt><span class="term">ea = <em class="replaceable"><code>none|auto|sys|ad|samba</code></em>
