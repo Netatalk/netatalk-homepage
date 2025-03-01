@@ -16,12 +16,12 @@ The file consists of sections and parameters. A section begins with the
 name of the section in square brackets and continues until the next
 section begins. Sections contain parameters of the form:
 
-        name = value
+        option = value
 
 The file is line-based - that is, each newline-terminated line
 represents either a comment, a section name or a parameter.
 
-Section and parameter names are case sensitive.
+Parameter names are case sensitive, while section names are not.
 
 Only the first equals sign in a parameter is significant. Whitespace
 before or after the first equals sign is discarded. Leading, trailing
@@ -38,7 +38,8 @@ customary UNIX fashion.
 The values following the equals sign in parameters are all either a
 string (no quotes needed) or a boolean, which may be given as yes/no,
 1/0 or true/false. Case is not significant in boolean values, but is
-preserved in string values. Some items such as "file perm"s are numeric.
+preserved in string values. Some options such as **file perm** take
+numeric values.
 
 The parameter **include = path** allows you to include one config file
 inside another. The file is included literally, as though typed in
@@ -47,9 +48,8 @@ place. Nested includes are not supported.
 # Section Descriptions
 
 Each section in the configuration file (except for the \[Global\]
-section) describes a shared resource (known as a “volume”). The section
-name is the name of the volume and the parameters within the section
-define the volume attributes and options.
+section) describes a shared resource (known as a “volume”).
+The parameters within the section define the volume attributes and options.
 
 There are two special sections, \[Global\] and \[Homes\], which are
 described under *special sections*. The following notes apply to
@@ -59,6 +59,10 @@ A volume consists of a directory to which access is being given plus a
 description of the access rights which are granted to the user of the
 service. For volumes the **path** option must specify the directory to
 share.
+
+The name of the volume is defined via the **name** option.
+When absent, the volume name is the name of the section, expressed in
+lowercase.
 
 Any volume section without **path** option is considered a *vol preset*
 which can be selected in other volume sections via the **vol preset**
@@ -72,9 +76,10 @@ server does not grant more access than the host system grants.
 
 The following sample section defines an AFP volume. The user has full
 access to the path */foo/bar*. The share is accessed via the share name
-*baz*:
+*Baz Volume*:
 
-     [baz]
+    [baz]
+        name = Baz Volume
         path = /foo/bar
 
 # Special Sections
@@ -87,20 +92,17 @@ denoted by a (G) below are must be set in this section.
 ## The \[Homes\] section
 
 This section enable sharing of the UNIX server user home directories.
-Specifying an optional **path** parameter means that not the whole user
-home will be shared but the subdirectory **path**. It is necessary to
-define the **basedir regex** option. It should be a regex which matches
-the parent directory of the user homes. Parameters denoted by a (H)
-belong to volume sections. The optional parameter **home name** can be
-used to change the AFP volume name which *$u's home* by default. See
-below under VARIABLE SUBSTITUTIONS.
+The one mandatory option is **basedir regex**. It should be set to a path
+which matches the parent directory of the user homes.
 
+Specifying the optional **path** parameter makes it so that only
+the subdirectory **path** is shared, rather than the entire home directory.
 The following example illustrates this. Given all user home directories
 are stored under */home*:
 
-     [Homes]
-          path = afp-data
-          basedir regex = /home
+    [Homes]
+        path = afp-data
+        basedir regex = /home
 
 For a user *john* this results in an AFP home volume with a path of
 */home/john/afp-data*.
@@ -108,8 +110,21 @@ For a user *john* this results in an AFP home volume with a path of
 If **basedir regex** contains symlink, set the canonicalized absolute
 path. When */home* links to */usr/home*:
 
-     [Homes]
-          basedir regex = /usr/home
+    [Homes]
+        basedir regex = /usr/home
+
+The optional parameter **home name** can be used to change
+the Homes volume name, which is *$u's home* by default. See
+below for more information on VARIABLE SUBSTITUTIONS.
+
+    [Homes]
+        home name = The home of $u
+        basedir regex = /home
+
+For the same user *john* this results in an AFP home volume called
+*The home of john*.
+
+Any parameter denoted by a **(H)** below can be used in the Homes section.
 
 # Parameters
 
@@ -384,8 +399,9 @@ operating system supports the AppleTalk networking protocol.
 
 cnid listen = <ip address\[:port\] \[ip address\[:port\] ...\]\> **(G)**
 
-> Specifies the IP address that the CNID server should listen on. The
-default is **localhost:4700**.
+> Specifies the IP address and port that the CNID server should listen on.
+This should match the address and port of the **cnid server** option
+for most deployments. The default is **localhost:4700**.
 
 ddp address = <ddp address\> **(G)**
 
@@ -427,8 +443,8 @@ hostname = <name\> **(G)**
 
 > Use this instead of the result from calling hostname for determining
 which IP address to advertise, therefore the hostname is resolved to an
-IP which is the advertised. This is NOT used for listening and it is
-also overwritten by **afp listen**.
+IP which is the advertised. This is NOT used for listening and can be
+overridden by **afp listen**.
 
 max connections = <number\> **(G)**
 
@@ -532,10 +548,12 @@ privileges.
 
 cnid server = <ipaddress\[:port\]\> **(G)**/**(V)**
 
-> Specifies the IP address and port of a cnid_metad server, required for
-CNID dbd backend. Defaults to localhost:4700. The network address may be
-specified either in dotted-decimal format for IPv4 or in hexadecimal
-format for IPv6.-
+> Specifies the IP address and port of a cnid_metad server, required
+for the CNID dbd backend. This should match the address and port of the
+**cnid listen** option for most deployments. Defaults to localhost:4700.
+
+> The network address may be specified either in dotted-decimal format
+for IPv4 or in hexadecimal format for IPv6.
 
 dbus daemon = <path\> **(G)**
 
@@ -617,9 +635,16 @@ with Zeroconf. Examples:
 - **Tower**
 
 A complete set of supported model codes by a macOS client can be found
-by inspecting
-*/System/Library/CoreServices/CoreTypes.bundle/Contents/Info.plist* (as
-of macOS 14 Sonoma).
+by inspecting system properties files, such as
+*/System/Library/CoreServices/CoreTypes.bundle/Contents/Info.plist*
+on macOS 15 Sequoia.
+
+server name = <name\> **(G)**
+
+> Specifies a human-readable name that uniquely describes the AFP server.
+Defaults to the value of **hostname** up until the first period.
+When netatalk is built with Zeroconf support, this is also registered as
+the service name and advertised as UTF-8, up to 63 octets (bytes) in length.
 
 signature = <STRING\> **(G)**
 
@@ -691,13 +716,6 @@ vol preset = <name\> **(G)**/**(V)**
 > Use section <name\> as option preset for all volumes (when set in the
 \[Global\] section) or for one volume (when set in that volume's
 section).
-
-zeroconf name = <name\> **(G)**
-
-> Specifies a human-readable name that uniquely describes registered
-services. The zeroconf name is advertised as UTF-8, up to 63 octets
-(bytes) in length. Defaults to hostname. Note that netatalk must support
-Zeroconf.
 
 ## Logging Options
 
@@ -986,12 +1004,6 @@ path = <PATH\> **(V)**
 
 > The path name must be a fully qualified path name.
 
-appledouble = <ea|v2\> **(V)**
-
-> Specify the format of the metadata files, which are used for saving Mac
-resource fork as well. Earlier versions used AppleDouble v2, the new
-default format is **ea**.
-
 vol size limit = <size in MiB\> **(V)**
 
 > Useful for Time Machine: limits the reported volume size, thus
@@ -1052,17 +1064,16 @@ MySQL database instance for use with netatalk.
 heavily on a persistent ID database. Aliases will likely not work and
 filename mangling is not supported.
 
-ea = <none|auto|sys|ad|samba\> **(V)**
+ea = <sys|samba|ad|none\> (default: auto detect) **(V)**
 
-> Specify how Extended Attributes are
-stored. **auto** is the default.
+> Specify how Extended Attributes and Classic Mac OS resource forks are
+stored.
 
-auto
-
-> Try **sys** (by setting an EA on the shared directory itself), fallback to
-**ad**. Requires writable volume for performing test. "**read only = yes**"
-overwrites **auto** with **none**. Use explicit "**ea = sys|ad**" for
-read-only volumes where appropriate.
+By default, we attempt to enable **sys** with a fallback to **ad**.
+For the auto detection to work, the volume needs to be writable
+because we attempt to set an EA on the shared directory itself.
+If **read only = yes** is set, we fallback to **sys**.
+Use explicit "**ea = ad|none**" for read-only volumes where appropriate.
 
 sys
 
@@ -1075,7 +1086,9 @@ order to be compatible with Samba's vfs_streams_xattr.
 
 ad
 
-> Use files in *.AppleDouble* directories.
+> Use AppleDouble v2 metadata stored as files in *.AppleDouble* directories.
+This should only be used when the host's filesystem does not support
+Extended Attributes.
 
 none
 
@@ -1179,11 +1192,11 @@ device number is not constant across a reboot, e.g. cluster, ...
 
 convert appledouble = <BOOLEAN\> (default: *yes*) **(V)**
 
-> Whether automatic conversion from **appledouble = v2** to
-**appledouble = ea** is performed when accessing filesystems from clients.
+> Whether automatic conversion from AppleDouble v2 to Extended Attributes
+is performed when accessing filesystems from clients.
 This is generally useful, but costs some performance. It's recommendable
 to run **dbd** on volumes and do the conversion with that. Then this
-option can be set to no.
+option can be set to *no*.
 
 delete veto files = <BOOLEAN\> (default: *no*) **(V)**
 
@@ -1224,6 +1237,12 @@ legacy volume size = <BOOLEAN\> (default: *no*) **(V)**
 > Limit disk size reporting to 2GB for legacy clients. This can be used
 for older Macintoshes running System 7.1 or earlier and using newer
 AppleShare clients.
+
+volume name = <STRING\> (default: section name in lowercase) **(V)**
+
+> The volume name option specifies the name of the shared AFP volume.
+It defaults to the name of the ini file section where the volume is defined,
+converted to lowercase.
 
 network ids = <BOOLEAN\> (default: *yes*) **(V)**
 
@@ -1306,11 +1325,13 @@ appletalk = yes
 uam list = uams_dhx.so uams_dhx2.so uams_randnum.so uams_clrtxt.so
 legacy icon = daemon
 
-[Mac Volume]
+[mac]
+name = Mac Volume
 path = /srv/mac
 legacy volume size = yes
 
-[Apple II Volume]
+[apple2]
+name = Apple II Volume
 path = /srv/apple2
 prodos = yes
 ```

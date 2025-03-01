@@ -397,7 +397,8 @@ In CUPS 1.x, you can configure your AppleTalk printers through the
 "Find New Printers" wizard.
 In CUPS 2.x, however, the backend needs to be configured by
 manually adding the printer URL in the CUPS web interface.
-The URL can be obtained by running the pap backend script directly.
+The URL can be obtained by running the pap backend script directly,
+without any arguments.
 Furthermore, in CUPS 3.x, the custom backend feature has been
 removed altogether, so CUPS is not able to use the pap backend.
 

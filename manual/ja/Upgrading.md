@@ -16,8 +16,7 @@ Netatalk 4 の主要な変更は以下の3点：
 1.  これまでの AFP 設定ファイルすべてが廃止され、AFP に関してのほぼ全オプション名を変更し、新しい設定ファイルを追加した：
     *afp.conf* と *extmap.conf*
 
-2.  マックのメタデータとリソースフォークをファイルシステムの拡張属性に保存する **appledouble = ea** という新しい
-    AppleDouble のバックエンド。
+2.  ファイルメタデータをファイルシステムの拡張属性に保存する新しいバックエンド。
 
 3.  AppleTalk トランスポート層はデフォルトで無効になっている。非常に古い Mac で Netatalk
     を使用する場合は、*afp.conf* にて **appletalk = yes** オプションで有効にしてください。
@@ -47,17 +46,17 @@ Netatalk 4 の主要な変更は以下の3点：
 
 - *AppleVolumes.system* の廃止
 
-### 新たな AppleDouble バックエンド
+### 新たなメタデータバックエンド
 
-マックのメタデータとリソースフォークをファイルシステムの拡張属性に保存する **appledouble = ea** という新しい
-AppleDouble のバックエンド。
+macOS拡張属性およびClassic Mac OS リソースフォークをファイルシステムの拡張属性に保存する **ea = sys**
+という新しいバックエンド。
 
 - デフォルトのバックエンドである（！）
 
-- 拡張属性のあるファイルシステムが必須。 さもなくば **appledouble = v2** オプションの使用が代替となる
+- 拡張属性のあるファイルシステムが必須。 さもなくば **ea = ad** オプションの使用が代替となる
 
-- **appledouble = v2** から **appledouble = ea**
-  ファイルシステムへの変換はアクセス時、その都度行われる（無効にすることも可能）
+- ファイルシステムを AppleDouble v2 から拡張属性への変換はアクセス時、その都度行われる（**convert appledouble**
+  オプションを無効にすることも可能）
 
 - 一括で変換する場合 **dbd** を用いることができる
 
@@ -154,7 +153,7 @@ AppleDouble のバックエンド。
 
 | 旧 afpd.conf | 新 afp.conf | 旧デフォルト値 | 新デフォルト値 | セクション | 詳細 |
 |----|----|----|----|----|----|
-| 一番目のフィールド（"-" あるいは“サーバー名”) | hostname | \- | \- | \(G\) | デフォルトでは gethostname() を使用 |
+| 一番目のフィールド（"-" あるいは“サーバー名”) | hostname | \- | \- | \(G\) | 4.2.0で新規追加、デフォルトでは hostname を使用 |
 | -uamlist | uam list | uams_dhx.so,uams_dhx2.so | uams_dhx.so uams_dhx2.so | \(G\) | \- |
 | -nozeroconf | zeroconf | \- | （サポートされていれば） yes | \(G\) | \- |
 | -advertise_ssh | advertise ssh | \- | no | \(G\) | \- |
@@ -251,7 +250,7 @@ AppleDouble のバックエンド。
 | veto: | veto files | \- | \- | \(V\) | \- |
 | cnidscheme: | cnid scheme | dbd | dbd | \(V\) | \- |
 | casefold: | casefold | \- | \- | \(V\) | \- |
-| adouble: | appledouble | v2 | ea | \(V\) | v1、osx 及び sfm は廃止 |
+| adouble: | appledouble | v2 | ea | \(V\) | 4.2.0で廃止 |
 | cnidserver: | cnid server | localhost:4700 | localhost:4700 | (G)/(V) | \- |
 | dbpath: | vol dbpath | （ボリュームディレクトリ） | $prefix/var/netatalk/CNID/ | \(G\) | 厳密には $localstatedir に移動 |
 | umask: | umask | 0000 | 0000 | \(V\) | \- |

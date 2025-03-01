@@ -4,7 +4,7 @@ dbd — CNID データベースの保守
 
 # 概要
 
-`dbd [-cfFstuvV] [volumepath]`
+`dbd [-cfFstuv] [volumepath]`
 
 `dbd [-V]`
 
@@ -16,7 +16,7 @@ dbd — CNID データベースの保守
 
 **-c**
 
-> 「**appledouble = v2**」から「**appledouble = ea**」へ変換する
+> *AppleDouble v2*から*拡張属性*へ変換する
 
 **-f**
 

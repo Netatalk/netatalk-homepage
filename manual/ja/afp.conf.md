@@ -12,11 +12,11 @@ afp.conf - Netatalk の設定ファイル
 
 ファイルはセクションとパラメータから構成される。セクションはブラケット\[各括弧\]で囲まれたセクション名に始まり、次のセクションが始まるまで続く。セクションには次のような書式のパラメータが含まれている:
 
-        name = value
+        option = value
 
 このファイルは行を基本とする。それぞれの行は改行文字で終端し、コメント、セクション名、パラメータのうちどれかを表す。
 
-セクション名とパラメータ名は大文字と小文字の区別がある。
+パラメータ名は大文字と小文字の区別があるが、セクション名は区別しない。
 
 パラメータに最初に現れる等号だけは重要な意味を持つ。最初の等号の前後にある空白は破棄される。セクション名とパラメータ名の前、後、途中にある空白は意味を持たない。パラメータ値の前後の空白は破棄される。パラメータ値の途中の空白はそのま維持される。
 
@@ -32,21 +32,24 @@ path**」というパラメータは、設定ファイルの中にもう一つ�
 
 # セクションの説明
 
-設定ファイル中のそれぞれのセクション(\[Global\]セクション以外)は共有リソース(“volume”として知られる)を記述する。セクション名はボリュームの名前であり、セクション内のパラメータはボリューム属性とオプションを定義する。
+設定ファイル中のそれぞれのセクション(\[Global\]セクション以外)は共有リソース(“volume”として知られる)を記述する。セクション内のパラメータはボリューム属性とオプションを定義する。
 
 \[Global\]と\[Homes\]という二つの特殊なセクションがあるが、これについては下の方の*特殊なセクション*で説明する。以下の解説は通常のセクションに適用される。
 
 一つのボリュームは、アクセスを許可するディレクトリ設定と、そのサービスにおいてユーザに与えるアクセス権設定で成り立つ。ボリュームに対して**path**オプションを使って共有ディレクトリを指定しなければならない。
+
+ボリューム名は**name**オプションで定義される。省略された場合、ボリューム名は小文字で表されるセクション名となる。
 
 **path**オプションのないボリュームセクションは、他のボリュームセクションから**vol
 preset**オプション経由で呼び出され、ボリュームのデフォルト値を決める*ボリュームプリセット*と見なされる。プリセット*と*ボリュームセクションの両方で指定されたオプションについては、ボリュームオプション設定がプリセットオプションを完全に上書きする。
 
 サーバが許可したアクセス権は、ホストシステムの特定のUNIXユーザまたはゲストユーザのアクセス権でマスクされる。サーバはホストシステムの許可以上の許可をしない。
 
-以下のセクションの例は、一つのAFPボリュームを定義している。ユーザはパス`/foo/bar`への完全なアクセス権を持つ。
-*baz*という共有名でアクセスできる:
+以下のセクションの例は、一つのAFPボリュームを定義している。ユーザはパス`/foo/bar`への完全なアクセス権を持つ。 *Baz
+Volume*という共有名でアクセスできる:
 
-     [baz]
+    [baz]
+        name = Baz Volume
         path = /foo/bar
 
 # 特殊なセクション
@@ -57,23 +60,33 @@ preset**オプション経由で呼び出され、ボリュームのデフォル
 
 ## \[Homes\]セクション
 
-このセクションはUNIXサーバ側のユーザのホームディレクトリを共有できるようにする。オプションの**path**パラメータを指定すると、ユーザのホームディレクトリ全体ではなく、サブディレクトリ**path**が共有される。**basedir
-regex**オプションを定義する必要がある。これはホームディレクトリの親ディレクトリにマッチする正規表現である。(H)の印がついているパラメータはこのボリュームセクション用である。オプションパラメータ**home
-name**はAFPボリューム名を変更するのに使うものであり、デフォルトは*$u's home*である。下の「変数置換」の項を見よ。
+ユーザのホームディレクトリの共有を可能にする。必須オプションは**basedir
+regex**であり、ユーザのホームディレクトリの親ディレクトリにマッチするパスを設定する。
 
-以下の例でこれを解説する。全てのユーザのホームディレクトリは*/home*の下にある:
+オプションの**path**パラメータを指定すると、ユーザのホームディレクトリ全体ではなく、サブディレクトリ**path**が共有される。以下の例では、全てのユーザのホームディレクトリが*/home*にあることを想定している。
 
-     [Homes]
-          path = afp-data
-          basedir regex = /home
+    [Homes]
+        path = afp-data
+        basedir regex = /home
 
 ユーザ*john*について、*/home/john/afp-data*というパスがAFPホームボリュームになる。
 
 **basedir
 regex**ががシンボリックリンクを含む場合、正規化した絶対パスを設定してください。*/home*が*/usr/home*にリンクしているとき:
 
-     [Homes]
-          basedir regex = /usr/home
+    [Homes]
+        basedir regex = /usr/home
+
+オプションパラメータ**home name**はAFPボリューム名を変更するのに使うものであり、デフォルトは$u's
+homeである。下の「変数置換」の項を見よ。
+
+    [Homes]
+        home name = The home of $u
+        basedir regex = /home
+
+ユーザ*john*について、*The home of john*という名前のAFPホームボリュームが作成される。
+
+(H)の印がついているパラメータはこのボリュームセクション用である。
 
 # パラメータ
 
@@ -300,7 +313,7 @@ appletalk = <BOOLEAN\> (デフォルト: *no*) **(G)**
 
 cnid listen = <ip address\[:port\] \[ip address\[:port\] ...\]\> **(G)**
 
-> CNIDサーバがリッスンするIPアドレスを指定する。デフォルトは**localhost:4700**である。
+> CNIDサーバがリッスンするIPアドレスとポートを指定する。これはほとんどのデプロイメントで**cnid server**オプションと一致するべきである。デフォルトは**localhost:4700**である。
 
 ddp address = <ddp address\> **(G)**
 
@@ -335,7 +348,7 @@ clients
 
 hostname = <name\> **(G)**
 
-> 宣伝用のIPアドレスを決定するため、ホスト名の呼出結果の代わりにこれを用いる。従って、このホスト名から宣伝用IPアドレスが解決されるようになる。これはリスニングには使われないし、**afp listen**によっても上書きされてしまう。
+> 宣伝用のIPアドレスを決定するため、ホスト名の呼出結果の代わりにこれを用いる。従って、このホスト名から宣伝用IPアドレスが解決されるようになる。これはリスニングには使われないし、**afp listen**によって上書きされてしまう。
 
 max connections = <number\> **(G)**
 
@@ -422,8 +435,9 @@ cnid mysql db = <database name\> **(G)**
 
 cnid server = <ipaddress\[:port\]\> **(G)**/**(V)**
 
-> cnid_metadサーバのIPアドレスとポート番号を指定する。CNID
-dbdバックエンドのために必要。デフォルトはlocalhost:4700。ネットワークアドレスはIPv4のドット分割10進数フォーマットでもよいし、IPv6の16進数フォーマットでもよい。
+> cnid_metadサーバのIPアドレスとポート番号を指定する。CNID dbdバックエンドのために必要。これはほとんどのデプロイメントで**cnid listen**オプションと一致するべきである。デフォルトはlocalhost:4700。
+
+> ネットワークアドレスはIPv4のドット分割10進数フォーマットでもよいし、IPv6の16進数フォーマットでもよい。
 
 dbus daemon = <path\> **(G)**
 
@@ -495,7 +509,11 @@ Mac
 
 macOSは認識しているモデルコードは
 */System/Library/CoreServices/CoreTypes.bundle/Contents/Info.plist*
-を参照すれば確認できる。(macOS 14 Sonoma の場合)
+を参照すれば確認できる。(macOS 15 Sequoia の場合。)
+
+server name = <name\> **(G)**
+
+> 一意に AFP サーバを記述する人間が読める名前を指定する。デフォルトでは、最初のピリオドまでの**hostname**の値を使用する。netatalkがZeroconfサポートでビルドされている場合、これはサービス名としても登録され、UTF-8で最大63オクテット(バイト)の長さまで宣伝される。
 
 signature = <STRING\> **(G)**
 
@@ -556,11 +574,6 @@ vol size limit = <MiB 単位でのサイズ\> **(V)**
 
 > (\[Global\]セクションで設定したときは)
 全ボリューム、(ボリュームセクションで設定したときは)そのボリュームのオプション初期設定となるセクションの<name\>を使う。
-
-zeroconf name = <name\> **(G)**
-
-> 登録サービスをユニークに表した、人間が読めるnameを設定する。このzeroconf
-nameは最大長63オクテット（バイト）のUTF-8で宣伝される。netatalkがZeroconfをサポートしなければならないことに注意してください。
 
 ## ログのオプション
 
@@ -836,12 +849,6 @@ mac charset = <CHARSET\> **(V)**
 
 > パス名は完全修飾パス名でなければならない。
 
-appledouble = <ea|v2\> **(V)**
-
-> メタデータファイルのフォーマットを指定する。これは Mac
-のリソースフォークの保存にも用いられる。初期のバージョンでは AppleDouble
-v2 が用いられ、新しいデフォルトのフォーマットは **ea** である。
-
 vol size limit = <MiB 単位でのサイズ\> **(V)**
 
 > Time Machine に有用：報告されるボリュームサイズを制限する。故に Time
@@ -903,19 +910,15 @@ MySQL データベース インスタンスを構成する必要がある。
 > **afpd** が持続性のある ID
 データベースに重く依存しているので、このバックエンドをボリュームに使用するのは推奨*されていない*。エイリアスはおそらく機能しないだろうし、ファイル名のマングリングもサポートされていない。
 
-ea = <none|auto|sys|ad|samba\> **(V)**
+ea = <sys|samba|ad|none\> (default: auto detect) **(V)**
 
-> 拡張属性をどのように保存するか指定する。**auto**
-がデフォルトである。
+> 拡張属性およびリソースフォークをどのように保存するか指定する。
 
-auto
-
-> （共有ディレクトリ自体に EA を設定することにより） **sys**
-を試行して、フォールバックすると **ad**
-になる。試行を実行するためにはボリュームが書き込み可能であることが必要である。"**read only = yes**"
-ならば **auto** は **none**
-で上書きされる。書き込み専用のボリュームには必要に応じて明確に
-"**ea = sys|ad**" を使ってください。
+By default, we attempt to enable **sys** with a fallback to **ad**.  For the
+auto detection to work, the volume needs to be writable because we attempt
+to set an EA on the shared directory itself.  If **read only = yes** is set,
+we fallback to **sys**.  Use explicit "**ea = ad|none**" for read-only
+volumes where appropriate.
 
 sys
 
@@ -927,7 +930,9 @@ samba
 
 ad
 
-> *.AppleDouble* ディレクトリ内のファイルを使う。
+> Use AppleDouble v2 metadata stored as files in *.AppleDouble* directories.
+This should only be used when the host's filesystem does not support
+Extended Attributes.
 
 none
 
@@ -1032,9 +1037,8 @@ cnid dev = <BOOLEAN\> (デフォルト: *yes*) **(V)**
 
 convert appledouble = <BOOLEAN\> (デフォルト: *yes*) **(V)**
 
-> クライアントからのファイルシステムへのアクセス時、**appledouble = v2**
-から **appledouble = ea**
-への自動的な変換を行うかどうか。これは概して有用であるがいくらかパフォーマンスが犠牲となる。ボリューム上で
+> クライアントからのファイルシステムへのアクセス時、AppleTalk v2
+から拡張属性への自動的な変換を行うかどうか。これは概して有用であるがいくらかパフォーマンスが犠牲となる。ボリューム上で
 **dbd** を実行しそれで変換をするのが推奨される。その後このオプションを no
 に設定することもできる。
 
@@ -1076,6 +1080,10 @@ legacy volume size = <BOOLEAN\> (デフォルト: *no*) **(V)**
 > レガシー クライアントのディスク サイズ レポートを 2GB
 に制限する。これは、System 7.1 以前を実行し、新しい AppleShare
 クライアントを使用している古い Macintosh で使用できる。
+
+volume name = <STRING\> (デフォルト: 小文字のセクション名) **(V)**
+
+> ボリュームの名前を指定する。デフォルトでは、ボリュームが定義されている ini ファイルの小文字に変換されたセクション名となる。
 
 network ids = <BOOLEAN\> (デフォルト: *yes*) **(V)**
 
@@ -1157,11 +1165,13 @@ appletalk = yes
 uam list = uams_dhx.so uams_dhx2.so uams_randnum.so uams_clrtxt.so
 legacy icon = daemon
 
-[Mac Volume]
+[mac]
+name = Mac Volume
 path = /srv/mac
 legacy volume size = yes
 
-[Apple II Volume]
+[apple2]
+name = Apple II Volume
 path = /srv/apple2
 prodos = yes
 ```
