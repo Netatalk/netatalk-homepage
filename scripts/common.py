@@ -196,7 +196,7 @@ def html_foot(path):
 <div class="footer">
     <a href="https://validator.nu/?doc=https://netatalk.io/{path}">
       <img style="border:0;width:88px;height:31px"
-      src="https://raw.githubusercontent.com/bradleytaunt/html5-valid-badge/refs/heads/master/html5-validator-badge.svg"
+      src="https://raw.githubusercontent.com/rdmark/html5-valid-badge/refs/heads/master/html5-validator-badge.svg"
       alt="Valid HTML5">
     </a>
     <a href="https://validator.nu/?doc=https://netatalk.io/{path}">
